@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Projects &#8212; CMSC 23300 - Networks and Distributed Systems</title>
+<title>Projects &#8212; CMSC 23320 - Foundations of Computer Networks</title>
 
     <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -41,7 +41,7 @@
           <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="index.html">
-          CMSC 23300 - Networks and Distributed Systems</a>
+          CMSC 23320 - Foundations of Computer Networks</a>
         <span class="navbar-text navbar-version pull-left"><b></b></span>
       </div>
 
@@ -74,7 +74,7 @@
 <div class="row">
     <div class="col-md-12">
         <ul class="breadcrumb">
-          <li><a href="index.html">CMSC 23300 - Networks and Distributed Systems</a></li>
+          <li><a href="index.html">CMSC 23320 - Foundations of Computer Networks</a></li>
             <li class="active">Projects</li>
         </ul>
     </div>
@@ -90,13 +90,18 @@
 <ul>
 <li><p class="first"><strong>Supported software environments</strong>: We can only provide support for work performed
 on a CS Linux machine or using a <a class="reference external" href="https://howto.cs.uchicago.edu/vm:index">CS Virtual Machine</a>
-(version 201819.2 or higher). If you use any other software environment, it is your
+(version 201920.2 or higher). If you use any other software environment, it is your
 responsibility to test your work on a supported environment before submitting your code.</p>
 <p>Note: The CS Virtual Machine is <strong>required</strong> to complete Project 3 (this project uses
 a network simulator that requires root access on a Linux machine, and the easiest way to
 provide this to you is through a virtual machine). Even if you don’t plan on using the virtual
 machine for Projects 1 and 2, you may want to ensure (well ahead of Project 3) that
 you are able to install and use the virtual machine.</p>
+<p>Please note that you will not be required to do all your coding inside the virtual machine in Project 3.
+It will be possible for you to continue to develop your code on your own machine, and to use the virtual
+machine just to run the network simulator. In fact, you can run the VM in
+<a class="reference external" href="https://howto.cs.uchicago.edu/vm:headless">headless mode</a> so it basically
+operates as a Linux server that you can SSH into (and share files with) from your own computer.</p>
 </li>
 <li><p class="first"><a class="reference external" href="git.html">Using Git</a>: If you are unfamiliar with Git, read this first.</p>
 </li>
@@ -124,11 +129,19 @@ suggestions and strategies for working effectively as a pair in the projects.</l
 </div>
 <div class="section" id="project-1-chirc">
 <h2>Project 1: chirc<a class="headerlink" href="#project-1-chirc" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-warning-project-1-has-not-yet-been-updated-for-winter-2020 admonition">
+<p class="first admonition-title">WARNING: Project 1 has not yet been updated for Winter 2020!</p>
+<p class="last">You can find here the links to the project specification, and other resources,
+exactly as they were assigned in 2019. You may find them useful to get a sense
+of what the project will involve, but <strong>DO NOT</strong> work on this project until
+we tell you to do so. Please note that we expect Project 1 to undergo
+some major changes relative to previous years.</p>
+</div>
 <p>In this project, you will implement a simple Internet Relay Chat (IRC)
 server called chirc. This project has three goals:</p>
 <ol class="arabic simple">
-<li>To provide a refresher of socket and concurrent programming covered
-in CMSC 15400.</li>
+<li>To learn how to program with sockets, as well as some basic concurrent programming
+(including refreshing some concepts covered in CMSC 15400)</li>
 <li>To implement a system that is (partially) compliant with an
 established network protocol specification.</li>
 <li>To allow you to become comfortable with high-level networking
@@ -140,6 +153,13 @@ course.</li>
 </div>
 <div class="section" id="project-2-chitcp">
 <h2>Project 2: chitcp<a class="headerlink" href="#project-2-chitcp" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-warning-project-2-has-not-yet-been-updated-for-winter-2020 admonition">
+<p class="first admonition-title">WARNING: Project 2 has not yet been updated for Winter 2020!</p>
+<p class="last">You can find here the links to the project specification, and other resources,
+exactly as they were assigned in 2019. You may find them useful to get a sense
+of what the project will involve, but <strong>DO NOT</strong> work on this project until
+we tell you to do so, as the project specification may change.</p>
+</div>
 <p>In this project you will be implementing the Transmission Control Protocol, as
 specified in <a class="reference external" href="http://tools.ietf.org/html/rfc793">[RFC793]</a>. However, instead
 of implementing it inside the operating system itself, you will be implementing
@@ -160,6 +180,13 @@ they do not implement the entire functionality provided by standard sockets
 </div>
 <div class="section" id="project-3-chirouter">
 <h2>Project 3: chirouter<a class="headerlink" href="#project-3-chirouter" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-warning-project-3-has-not-yet-been-updated-for-winter-2020 admonition">
+<p class="first admonition-title">WARNING: Project 3 has not yet been updated for Winter 2020!</p>
+<p class="last">You can find here the links to the project specification, and other resources,
+exactly as they were assigned in 2019. You may find them useful to get a sense
+of what the project will involve, but <strong>DO NOT</strong> work on this project until
+we tell you to do so, as the project specification may change.</p>
+</div>
 <p>In this project you will be implementing a simple IP router capable of routing IPv4 datagrams between multiple networks. This router will have a static routing table, so you will not have to deal with implementing a routing protocol like RIP or OSPF; instead, the project will focus on the routing of IP datagrams. While, at a high level, this just involves receiving IP datagrams and figuring out what interface they should be sent on, this requires building additional functionality before you can actually start routing IP datagrams.</p>
 <p>The project specification is available <a class="reference external" href="http://chi.cs.uchicago.edu/chirouter/">here</a>.</p>
 <p>Make sure you read the <a class="reference external" href="project3_rubric.html">Project 3 rubric</a> and the <a class="reference external" href="project3_tips.html">Project 3 tips</a>.</p>
@@ -184,7 +211,7 @@ access to such a machine, you can use the <a class="reference external" href="ht
       
     </p>
     <p>
-        &copy; Copyright 2011-2018, The University of Chicago.<br/>
+        &copy; Copyright 2011-2020, The University of Chicago.<br/>
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.<br/>
     </p>
   </div>
