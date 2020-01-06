@@ -10,11 +10,11 @@ Before you get started
   files are in that directory. If the chirc files (``README``, ``src/``, ...) are in the top 
   level of your repository, they will not be graded. Make sure you follow the exact instructions 
   in `Uploading the initial code to your repository <initial_code.html>`_.
-- Don't forget that we are providing you with a `solution <https://github.com/uchicago-cs/cmsc23300/blob/master/samples/chirc/project1a-trivial.c>`_
+- Don't forget that we are providing you with a `solution <https://github.com/uchicago-cs/cmsc23320/blob/master/samples/chirc/project1a-trivial.c>`_
   to Project 1a that will pass nearly half of the tests (but would get a zero in the design portion of 
   the code).
 - When writing the socket code for your chirc server, make sure you take a look at the 
-  `socket samples <https://github.com/uchicago-cs/cmsc23300/tree/master/samples/sockets>`_ covered 
+  `socket samples <https://github.com/uchicago-cs/cmsc23320/tree/master/samples/sockets>`_ covered
   in the discussion section. They can provide a good starting point for writing a multi-threaded
   server in Project 1b.
 
@@ -65,7 +65,7 @@ General Tips
 -  When processing multiple commands (starting in Project 1b), a data 
    structure that can come in handy is a `dispatch table <http://en.wikipedia.org/wiki/Dispatch_table>`_ 
    or `branch table <http://en.wikipedia.org/wiki/Branch_table>`_. You can find some 
-   sample code `here <https://github.com/uchicago-cs/cmsc23300/tree/master/samples/dispatch_table>`_.   
+   sample code `here <https://github.com/uchicago-cs/cmsc23320/tree/master/samples/dispatch_table>`_.
 
 Resolving IRC Ambiguities
 -------------------------

@@ -18,7 +18,7 @@ The GitLab server we use in this class has a built-in Continuous Integration ser
 Using GitLab CI
 ---------------
 
-Enabling CI for your repository just requires adding a configuration file called ``.gitlab-ci.yml`` to the root of your repository. We provide ready-to-use files in our course repository: https://github.com/uchicago-cs/cmsc23300/tree/master/ci Please note that you must take the file for the project you're working on, rename it to ``.gitlab-ci.yml``, add it to the root of your Git repository (not inside your ``chirc``, ``chitcp``, or ``chirouter`` directories), and then commit and push it. After that point, every time you push to your ``master`` branch, it will trigger a build of your code and will run all the tests for that project.
+Enabling CI for your repository just requires adding a configuration file called ``.gitlab-ci.yml`` to the root of your repository. We provide ready-to-use files in our course repository: https://github.com/uchicago-cs/cmsc23320/tree/master/ci Please note that you must take the file for the project you're working on, rename it to ``.gitlab-ci.yml``, add it to the root of your Git repository (not inside your ``chirc``, ``chitcp``, or ``chirouter`` directories), and then commit and push it. After that point, every time you push to your ``master`` branch, it will trigger a build of your code and will run all the tests for that project.
 
 In GitLab CI, the process of building and testing your code after a push is referred to as a *pipeline*. You can see the pipelines that have been run for your repository by logging into the GitLab server (https://mit.cs.uchicago.edu/), going to your repository, and clicking on the Pipelines link on the left:
 

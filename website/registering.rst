@@ -4,11 +4,11 @@ Registering for the projects
 Registering for the first time
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We use a command-line tool called ``chisubmit`` to manage teams and their repositories in this course. Before you can start working on the projects, you will need to register your team with `chisubmit` (this will result in a Git repository being created for your team in our GitLab server). First, choose an empty directory in your CS home directory on which to do your CMSC 23300 work on. Inside that directory, run the following command on a CS Linux machine (or by SSH'ing into linux.cs.uchicago.edu):: 
+We use a command-line tool called ``chisubmit`` to manage teams and their repositories in this course. Before you can start working on the projects, you will need to register your team with `chisubmit` (this will result in a Git repository being created for your team in our GitLab server). First, choose an empty directory in your CS home directory on which to do your CMSC 23320 work on. Inside that directory, run the following command on a CS Linux machine (or by SSH'ing into linux.cs.uchicago.edu)::
 
     chisubmit init
 
-When prompted for your "chisubmit username" and "chisubmit password", just use your CNetID and password. Once you have entered your username and password, you will be shown a list of courses you belong to in ``chisubmit``. If CMSC 23300 does not appear in them, you registration information may not have been added to ``chisubmit`` (if you registered for the class recently, please try again in 24 hours; if not, please contact your instructor).
+When prompted for your "chisubmit username" and "chisubmit password", just use your CNetID and password. Once you have entered your username and password, you will be shown a list of courses you belong to in ``chisubmit``. If CMSC 23320 does not appear in them, you registration information may not have been added to ``chisubmit`` (if you registered for the class recently, please try again in 24 hours; if not, please contact your instructor).
 
 After ``chisubmit init`` runs successfully, you will be able to run ``chisubmit`` commands from inside that directory.
 

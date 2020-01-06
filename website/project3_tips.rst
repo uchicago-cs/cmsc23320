@@ -16,7 +16,7 @@ Using the CS Virtual Machine
 
 The mininet network simulator in Project 3 must be run with root privileges
 on a Linux machine. If you do not have access to such a machine, we recommend
-using the `CS Virtual Machine <https://howto.cs.uchicago.edu/vm:index>`_ (version 201819.2 or higher)
+using the `CS Virtual Machine <https://howto.cs.uchicago.edu/vm:index>`_ (version 201920.2 or higher)
 to run mininet. 
 
 Take into account that this doesn't mean you have to do all your development work inside the virtual machine; you

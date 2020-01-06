@@ -9,7 +9,7 @@ Introduction
 ------------
 
 This style guide is intended to provide some basic coding 
-conventions for the CMSC 23300 projects. These conventions
+conventions for the CMSC 23320 projects. These conventions
 are intended to improve the readability of your code. From
 your perspective as a student, the readability of your code
 is important for two big reasons:

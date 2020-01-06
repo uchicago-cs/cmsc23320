@@ -1,10 +1,12 @@
-CMSC 23300 - Networks and Distributed Systems
+CMSC 23320 - Foundations of Computer Networks
 =============================================
 
-Announcements
-~~~~~~~~~~~~~
+.. admonition:: What happened to CMSC 23300 Networks and Distributed Systems?
 
-- December 22nd, 2018 -- The course website has been updated for Winter 2019.
+   This class was offered for many years under a different code and name, *CMSC 23300 Networks and Distributed Systems*, despite
+   the fact that it only covered Networks topics (with Distributed Systems topics covered in *CMSC 23310 Advanced Distributed
+   Systems*). So, in 2020, we renamed CMSC 23300 to better reflect its contents and scope. However, other than the change in
+   code and name, CMSC 23320 covers the same topics and uses the same projects as CMSC 23300.
 
 Course Staff
 ~~~~~~~~~~~~
@@ -19,7 +21,7 @@ Course Staff
 
 **TAs**
 
-Mark Cohen, Lydia Filipe
+Fırat Çiftçi, Dawson Whitehead
 
 Please do not contact the TAs directly; instead, post your questions on Piazza.
 

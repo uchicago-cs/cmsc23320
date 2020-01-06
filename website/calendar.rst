@@ -1,65 +1,65 @@
-Winter 2019 Course Calendar
+Winter 2020 Course Calendar
 ---------------------------
 
 Lectures take place Tuesdays and Thursdays in Ryerson 251 from 12:30pm to 1:50pm.
 
-Discussion sessions take place Tuesdays in Harper 140 from 3:30pm to 4:50pm. 
+Discussion sessions take place Tuesdays in Stuart 102 from 3:30pm to 4:50pm.
 
 All project deadlines are at 8pm (Chicago local time) on the specified date.
 
 +------+-----------------------+------------------------------+-------+---------+-------------+------------------------------------+
 | Week | Date                  | Lecture                      | CNASA | TIV1    | Project Due | Discussion Session                 |
 +======+=======================+==============================+=======+=========+=============+====================================+
-| 1    | Tuesday, January 8    | Introduction                 | 1     | 1       |             | Sockets review                     |
+| 1    | Tuesday, January 7    | Introduction                 | 1     | 1       |             | Socket Programming                 |
 +      +-----------------------+------------------------------+-------+---------+-------------+------------------------------------+
-|      | Thursday, January 10  | The Network Protocol Stack   | 1     | 1       |             | Concurrent Programming review (*)  |
+|      | Thursday, January 9   | The Network Protocol Stack   | 1     | 1       |             | Concurrent Programming review (*)  |
 +------+-----------------------+------------------------------+-------+---------+-------------+------------------------------------+
-| 2    | Monday, January 14    |                              |       |         | Project 1a  |                                    |
+| 2    | Monday, January 13    |                              |       |         | Project 1a  |                                    |
 +      +-----------------------+------------------------------+-------+---------+-------------+------------------------------------+
-|      | Tuesday, January 15   | Data Link Layer              | 2, 3  | 3       |             | Project 1b                         |
+|      | Tuesday, January 14   | Data Link Layer              | 2, 3  | 3       |             | Project 1b                         |
 +      +-----------------------+------------------------------+-------+---------+-------------+------------------------------------+
-|      | Thursday, January 17  | Network Layer                | 3     | 2, 5, 7 |             |                                    |
+|      | Thursday, January 16  | Network Layer                | 3     | 2, 5, 7 |             |                                    |
 +------+-----------------------+------------------------------+-------+---------+-------------+------------------------------------+
-| 3    | Monday, January 21    | MARTIN LUTHER KING DAY                                                                            |
+| 3    | Monday, January 20    | MARTIN LUTHER KING DAY                                                                            |
 +      +-----------------------+------------------------------+-------+---------+-------------+------------------------------------+
-|      | Tuesday, January 22   | Network Layer                | 3     | 2, 5, 7 | Project 1b  | Project 1c                         |
+|      | Tuesday, January 21   | Network Layer                | 3     | 2, 5, 7 | Project 1b  | Project 1c                         |
 +      +-----------------------+------------------------------+-------+---------+-------------+------------------------------------+
-|      | Thursday, January 24  | TCP                          | 5     | 12-15   |             |                                    |
+|      | Thursday, January 23  | TCP                          | 5     | 12-15   |             |                                    |
 +------+-----------------------+------------------------------+-------+---------+-------------+------------------------------------+
-| 4    | Monday, January 28    |                              |       |         | Project 1c  |                                    |
+| 4    | Monday, January 27    |                              |       |         | Project 1c  |                                    |
 +      +-----------------------+------------------------------+-------+---------+-------------+------------------------------------+
-|      | Tuesday, January 29   | TCP                          | 5     | 12-15   |             | Project 2a                         |
+|      | Tuesday, January 28   | TCP                          | 5     | 12-15   |             | Project 2a                         |
 +      +-----------------------+------------------------------+-------+---------+-------------+------------------------------------+
-|      | Thursday, January 31  | TCP                          | 5     | 12-15   |             |                                    |
+|      | Thursday, January 30  | TCP                          | 5     | 12-15   |             |                                    |
 +------+-----------------------+------------------------------+-------+---------+-------------+------------------------------------+
-| 5    | Tuesday, January 5    | Midterm                      |       |         |             | Project 2a Q&A                     |
+| 5    | Tuesday, February 4   | Midterm                      |       |         |             | Project 2a Q&A                     |
 +      +-----------------------+------------------------------+-------+---------+-------------+------------------------------------+
-|      | Thursday, February 7  | Congestion Control           | 6     | 11      |             |                                    |
+|      | Thursday, February 6  | Congestion Control           | 6     | 11      |             |                                    |
 +------+-----------------------+------------------------------+-------+---------+-------------+------------------------------------+
-| 6    | Tuesday, February 12  | DNS                          | 9.3.1 | 11      |             | Project 2b                         |
+| 6    | Tuesday, February 11  | DNS                          | 9.3.1 | 11      |             | Project 2b                         |
 +      +-----------------------+------------------------------+-------+---------+-------------+------------------------------------+
-|      | Thursday, February 14 | Wireless Networks            | 2.7   | 3.5     | Project 2a  |                                    |
+|      | Thursday, February 13 | Wireless Networks            | 2.7   | 3.5     | Project 2a  |                                    |
 +------+-----------------------+------------------------------+-------+---------+-------------+------------------------------------+
-| 7    | Tuesday, February 19  | Wireless Networks            | 2.7   | 3.5     |             | Project 2b Q&A                     |
+| 7    | Tuesday, February 18  | Wireless Networks            | 2.7   | 3.5     |             | Project 2b Q&A                     |
 +      +-----------------------+------------------------------+-------+---------+-------------+------------------------------------+
-|      | Thursday, February 21 | Routing Protocols/Algorithms | 3     | 3.4     |             |                                    |
+|      | Thursday, February 20 | Routing Protocols/Algorithms | 3     | 3.4     |             |                                    |
 +------+-----------------------+------------------------------+-------+---------+-------------+------------------------------------+
-| 8    | Tuesday, February 26  | Routing Protocols/Algorithms | 3     | 3.4     |             | Project 3                          |
+| 8    | Tuesday, February 25  | Routing Protocols/Algorithms | 3     | 3.4     |             | Project 3                          |
 +      +-----------------------+------------------------------+-------+---------+-------------+------------------------------------+
-|      | Thursday, February 28 | Internet-level routing       | 4, 6  | 5       | Project 2b  |                                    |
+|      | Thursday, February 27 | Internet-level routing       | 4, 6  | 5       | Project 2b  |                                    |
 +------+-----------------------+------------------------------+-------+---------+-------------+------------------------------------+
-| 9    | Tuesday, February 5   | Software-defined networks    |       |         |             | Project 3 Q&A                      |
+| 9    | Tuesday, March 3      | Software-defined networks    |       |         |             | Project 3 Q&A                      |
 +      +-----------------------+------------------------------+-------+---------+-------------+------------------------------------+
-|      | Thursday, March 7     | Network security             | 8     | 18      |             |                                    |
+|      | Thursday, March 5     | Network security             | 8     | 18      |             |                                    |
 +------+-----------------------+------------------------------+-------+---------+-------------+------------------------------------+
-| 10   | Tuesday, March 12     | Review                       |       |         |             | No discussion session              |
+| 10   | Tuesday, March 10     | Review                       |       |         |             | No discussion session              |
 +      +-----------------------+------------------------------+-------+---------+-------------+------------------------------------+
-|      | Wednesday, March 13   |                              |       |         | Project 3   |                                    |
+|      | Wednesday, March 11   |                              |       |         | Project 3   |                                    |
 +------+-----------------------+------------------------------+-------+---------+-------------+------------------------------------+
 
 CNASA: Computer Networks: A Systems Approach 
 
 TIV1: TCP/IP Illustrated, Volume 1
 
-(*) This is an extra discussion session on a non-standard day (time and room TBD). As such, this session is optional and all examples from that session will be posted online (the material covered can also be easily reviewed on your own). However, we encourage you to attend if possible, specially if you need a refresher on programming with threads in C.
+(*) This is an extra discussion session that will take place on Thursday, January 9th, from 5:30pm to 7pm in Crerar 390. Because it takes place on a non-standard day and time, this session is **optional** and all examples from that session will be posted online (the material covered can also be easily reviewed on your own). However, we encourage you to attend if possible, specially if you need a refresher on programming with threads in C.
 

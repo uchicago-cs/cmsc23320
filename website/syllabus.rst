@@ -1,13 +1,13 @@
 Syllabus
---------
+========
 
 Course description
-~~~~~~~~~~~~~~~~~~
+------------------
 
 .. include:: description.txt
 
 Course organization
-~~~~~~~~~~~~~~~~~~~
+-------------------
 
 The development of three programming projects accounts for the majority
 of the grade in this course. To successfully complete these projects,
@@ -65,7 +65,7 @@ has been a while since you took CMSC 15400), we *strongly* encourage
 you to attend this discussion session.
 
 Exams
------
+~~~~~
 
 There will be an in-class midterm half-way through the quarter,
 and a final exam will take place during Finals Week. Please
@@ -80,7 +80,7 @@ will be in line with the learning goals outlined at the beginning of
 this syllabus.
 
 Books
-~~~~~
+-----
 
 This course has two *suggested* texts:
 
@@ -96,7 +96,7 @@ class successfully without them. However, they can be a good complement
 to the lectures and projects.
 
 Grading
-~~~~~~~
+-------
 
 The final grade will be based on the following:
 
@@ -168,16 +168,54 @@ as well). However, if you use one extension with one partner, and then form a di
 with someone who has used two extensions already, then you will only be able to
 use two extensions as a pair.
 
+Regrades
+~~~~~~~~
+
+We sometimes make mistakes, and are happy to review any grading decision that you
+feel is unfair or unjustified. However, it is also your responsibility to make
+these requests in a timely manner. Requests for regrades must be submitted
+no later than **one week** after a graded piece of work is returned to you.
+After that time, we will not consider any requests for regrades,
+*regardless of whether the regrade request is reasonable and justified*.
+
 
 Policy on academic honesty
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 
 We take academic honesty **very** seriously in this class. Please make sure to 
 read our `Academic Honesty <academic_honesty.html>`__ page.
 
 
+Asking questions
+----------------
+
+The preferred form of support for this course is through *Piazza*
+(http://www.piazza.com/), an on-line discussion service which can be
+used to ask questions and share useful information with your classmates.
+Students will be enrolled in Piazza at the start of the quarter.
+
+All questions regarding assignments or material covered in class must be
+sent to Piazza, and not directly to the instructors or TAs, as this
+allows your classmates to join in the discussion and benefit from the
+replies to your question. If you send a message directly to the
+instructor or the TAs, you will get a gentle reminder that your question
+should be asked on Piazza.
+
+Please see our `Asking Questions <questions.html>`_ page for specific
+guidelines and policies related to asking questions on Piazza.
+
+Please note that all course announcements will be made through Piazza. It
+is your responsibility to check Piazza often to see if there are any
+announcements. Please note that you can configure your Piazza account to
+send you e-mail notifications every time there is a new post on Piazza.
+Just go to your Account Settings, then to Class Settings, click on "Edit
+Notifications" under CMSC 23320. We encourage you to select either the
+"Real Time" option (get a notification as soon as there are new posts)
+or the "Smart Digest" option (get a summary of all the posts sent over
+the last 1-6 hours – you can select the frequency).
+
 Diversity statement
-~~~~~~~~~~~~~~~~~~~
+-------------------
 
 The University of Chicago is committed to diversity and rigorous inquiry that
 arises from multiple perspectives. We concur with that commitment and also 
@@ -195,44 +233,16 @@ given serious consideration.
 If you have a preferred name different from what appears on the class roster, 
 or preferred gender pronouns you would like us to use, please let us know.
 
-Asking questions
-~~~~~~~~~~~~~~~~
+Disability statement
+--------------------
 
-The preferred form of support for this course is through *Piazza*
-(http://www.piazza.com/), an on-line discussion service which can be
-used to ask questions and share useful information with your classmates.
-Students will be enrolled in Piazza at the start of the quarter.
-
-All questions regarding assignments or material covered in class must be
-sent to Piazza, and not directly to the instructors or TAs, as this
-allows your classmates to join in the discussion and benefit from the
-replies to your question. If you send a message directly to the
-instructor or the TAs, you will get a gentle reminder that your question
-should be asked on Piazza.
-
-Piazza has a mechanism that allows you to ask a private question, which
-will be seen only by the instructors and teaching assistants. This
-mechanism should be used *only* for questions that require revealing
-part of your solution to a project.
-
-Piazza also allows students to post anonymously. *Anonymous posts will
-be ignored* (you will also get a gentle reminder asking you to not post
-anonymously). This is a majors-level course: you are expected to feel
-comfortable sharing your questions and thoughts with your classmates
-without hiding behind a veil of anonymity.
-
-Additionally, all course announcements will be made through Piazza. It
-is your responsibility to check Piazza often to see if there are any
-announcements. Please note that you can configure your Piazza account to
-send you e-mail notifications every time there is a new post on Piazza.
-Just go to your Account Settings, then to Class Settings, click on "Edit
-Notifications" under CMSC 23300. We encourage you to select either the
-"Real Time" option (get a notification as soon as there are new posts)
-or the "Smart Digest" option (get a summary of all the posts sent over
-the last 1-6 hours – you can select the frequency).
+If there are circumstances that make our learning environment and activities difficult, please let us
+know. We will maintain the confidentiality of any such discussions. If you need accommodations due to
+a disability you will also need to contact Student Disability Services at 773-702-6000,
+or disabilities@uchicago.edu
 
 Acknowledgements
-~~~~~~~~~~~~~~~~
+----------------
 
 This syllabus is based on previous CMSC 23300/33300 syllabi developed by
 Prof. Anne Rogers and Prof. Ian Foster from the University of Chicago.

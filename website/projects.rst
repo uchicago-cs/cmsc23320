@@ -8,7 +8,7 @@ Make sure you read the following before working on any of the projects:
 
 * **Supported software environments**: We can only provide support for work performed
   on a CS Linux machine or using a `CS Virtual Machine <https://howto.cs.uchicago.edu/vm:index>`_
-  (version 201819.2 or higher). If you use any other software environment, it is your
+  (version 201920.2 or higher). If you use any other software environment, it is your
   responsibility to test your work on a supported environment before submitting your code.
 
   Note: The CS Virtual Machine is **required** to complete Project 3 (this project uses
@@ -16,6 +16,13 @@ Make sure you read the following before working on any of the projects:
   provide this to you is through a virtual machine). Even if you don't plan on using the virtual
   machine for Projects 1 and 2, you may want to ensure (well ahead of Project 3) that
   you are able to install and use the virtual machine.
+
+  Please note that you will not be required to do all your coding inside the virtual machine in Project 3.
+  It will be possible for you to continue to develop your code on your own machine, and to use the virtual
+  machine just to run the network simulator. In fact, you can run the VM in
+  `headless mode <https://howto.cs.uchicago.edu/vm:headless>`_ so it basically
+  operates as a Linux server that you can SSH into (and share files with) from your own computer.
+
 * `Using Git <git.html>`_: If you are unfamiliar with Git, read this first.
 * `Registering for the projects <registering.html>`_: Before you start working on
   each project, there are some steps you need to take to register for each project.
@@ -35,16 +42,22 @@ The following are resources that you may find helpful when working on your proje
 * `Using Continuous Integration <ci.html>`_
 
 
-
-
 Project 1: chirc
 ~~~~~~~~~~~~~~~~
+
+.. admonition:: WARNING: Project 1 has not yet been updated for Winter 2020!
+
+   You can find here the links to the project specification, and other resources,
+   exactly as they were assigned in 2019. You may find them useful to get a sense
+   of what the project will involve, but **DO NOT** work on this project until
+   we tell you to do so. Please note that we expect Project 1 to undergo
+   some major changes relative to previous years.
 
 In this project, you will implement a simple Internet Relay Chat (IRC)
 server called chirc. This project has three goals:
 
-#. To provide a refresher of socket and concurrent programming covered
-   in CMSC 15400.
+#. To learn how to program with sockets, as well as some basic concurrent programming
+   (including refreshing some concepts covered in CMSC 15400)
 
 #. To implement a system that is (partially) compliant with an
    established network protocol specification.
@@ -59,6 +72,13 @@ Make sure you read the `Project 1 rubric <project1_rubric.html>`_ and the `Proje
 
 Project 2: chitcp
 ~~~~~~~~~~~~~~~~~
+
+.. admonition:: WARNING: Project 2 has not yet been updated for Winter 2020!
+
+   You can find here the links to the project specification, and other resources,
+   exactly as they were assigned in 2019. You may find them useful to get a sense
+   of what the project will involve, but **DO NOT** work on this project until
+   we tell you to do so, as the project specification may change.
 
 In this project you will be implementing the Transmission Control Protocol, as
 specified in `[RFC793] <http://tools.ietf.org/html/rfc793>`__. However, instead
@@ -83,6 +103,14 @@ Make sure you read the `Project 2 rubric <project2_rubric.html>`_ and the `Proje
 
 Project 3: chirouter
 ~~~~~~~~~~~~~~~~~~~~
+
+.. admonition:: WARNING: Project 3 has not yet been updated for Winter 2020!
+
+   You can find here the links to the project specification, and other resources,
+   exactly as they were assigned in 2019. You may find them useful to get a sense
+   of what the project will involve, but **DO NOT** work on this project until
+   we tell you to do so, as the project specification may change.
+
 
 In this project you will be implementing a simple IP router capable of routing IPv4 datagrams between multiple networks. This router will have a static routing table, so you will not have to deal with implementing a routing protocol like RIP or OSPF; instead, the project will focus on the routing of IP datagrams. While, at a high level, this just involves receiving IP datagrams and figuring out what interface they should be sent on, this requires building additional functionality before you can actually start routing IP datagrams.
 

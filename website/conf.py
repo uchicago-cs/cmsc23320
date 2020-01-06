@@ -54,8 +54,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'CMSC 23300 - Networks and Distributed Systems'
-copyright = u'2011-2018, The University of Chicago'
+project = 'CMSC 23320 - Foundations of Computer Networks'
+copyright = u'2011-2020, The University of Chicago'
 author = 'Borja Sotomayor'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -120,7 +120,7 @@ html_theme = 'bootstrap'
 html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
 html_theme_options = {
     # Navigation bar title. (Default: ``project`` value)
-    'navbar_title': "CMSC 23300 - Networks and Distributed Systems",
+    'navbar_title': "CMSC 23320 - Foundations of Computer Networks",
 
     # Tab name for entire site. (Default: "Site")
     'navbar_site_name': "Site",
@@ -191,7 +191,7 @@ html_theme_options = {
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
-html_title = "CMSC 23300 - Networks and Distributed Systems"
+html_title = "CMSC 23320 - Foundations of Computer Networks"
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 #html_short_title = None
