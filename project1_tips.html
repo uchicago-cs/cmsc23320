@@ -94,9 +94,11 @@ page.</li>
 files are in that directory. If the chirc files (<code class="docutils literal notranslate"><span class="pre">README</span></code>, <code class="docutils literal notranslate"><span class="pre">src/</span></code>, …) are in the top
 level of your repository, they will not be graded. Make sure you follow the exact instructions
 in <a class="reference external" href="initial_code.html">Uploading the initial code to your repository</a>.</li>
-<li>Don’t forget that we are providing you with a <a class="reference external" href="https://github.com/uchicago-cs/cmsc23320/blob/master/samples/chirc/project1a-trivial.c">solution</a>
-to Project 1a that will pass nearly half of the tests (but would get a zero in the design portion of
-the code).</li>
+<li>To help you get started, we are providing you with a <a class="reference external" href="https://github.com/uchicago-cs/cmsc23320/blob/master/samples/chirc/project1a-trivial.c">trivial solution</a>
+to Project 1a that will pass nearly half of the tests. While this can be a good starting point,
+please note that you will still have to make major modifications to that solution
+(in particular, your solution cannot manually create the socket; you must
+use <code class="docutils literal notranslate"><span class="pre">getaddrinfo</span></code> instead).</li>
 <li>When writing the socket code for your chirc server, make sure you take a look at the
 <a class="reference external" href="https://github.com/uchicago-cs/cmsc23320/tree/master/samples/sockets">socket samples</a> covered
 in the discussion section. They can provide a good starting point for writing a multi-threaded
@@ -127,8 +129,8 @@ implementations; we suggest you specifically
 use libraries like <a class="reference external" href="https://troydhanson.github.io/uthash/utlist.html">utlist</a>
 and <a class="reference external" href="https://troydhanson.github.io/uthash/">uthash</a>.</li>
 <li>Working with strings (specially parsing and tokenizing them) in C can be
-a pain. Using a library like <a class="reference external" href="https://github.com/antirez/sds">SDS</a> or
-<a class="reference external" href="http://bstring.sourceforge.net/">bstring</a> can ease that pain.</li>
+a pain. Using a library like <a class="reference external" href="https://github.com/antirez/sds">SDS</a>
+can ease that pain.</li>
 <li>As you read the project specification and the IRC specification
 itself, you’ll notice that the same patterns come up over and over.
 In a sense, your server is just a piece of software that transforms
@@ -191,7 +193,7 @@ unfortunately, a common attribute of many network specifications). If you’re u
 </div>
 <div class="section" id="general-socket-confusion">
 <h3>General socket confusion<a class="headerlink" href="#general-socket-confusion" title="Permalink to this headline">¶</a></h3>
-<p>For those of you who have not taken CMSC 15400 recently, or who took a version of CMSC 15400 that did not include a socket assignment, working with sockets in the first Networks project can prove challenging. We recommend you read <a class="reference external" href="http://beej.us/guide/bgnet/">Beej’s Guide to Network Programming</a> for a more thorough review of sockets.</p>
+<p>If you’re confused about how to use sockets, we recommend you read <a class="reference external" href="http://beej.us/guide/bgnet/">Beej’s Guide to Network Programming</a> for a more thorough review of sockets.</p>
 </div>
 </div>
 <div class="section" id="common-issues-in-projects-1b-and-1c">
