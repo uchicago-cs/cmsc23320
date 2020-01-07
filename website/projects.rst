@@ -45,13 +45,11 @@ The following are resources that you may find helpful when working on your proje
 Project 1: chirc
 ~~~~~~~~~~~~~~~~
 
-.. admonition:: WARNING: Project 1 has not yet been updated for Winter 2020!
+.. admonition:: WARNING: Parts 2 and 3 of the project have not been updates for Winter 2020!
 
-   You can find here the links to the project specification, and other resources,
-   exactly as they were assigned in 2019. You may find them useful to get a sense
-   of what the project will involve, but **DO NOT** work on this project until
-   we tell you to do so. Please note that we expect Project 1 to undergo
-   some major changes relative to previous years.
+   Project 1 is undergoing some major changes relative to previous years. Part 1 of
+   the project is ready to go, but do not start working on Parts 2 and 3 until we
+   tell you to.
 
 In this project, you will implement a simple Internet Relay Chat (IRC)
 server called chirc. This project has three goals:

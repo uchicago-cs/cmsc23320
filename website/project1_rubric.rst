@@ -19,8 +19,8 @@ Completeness
 
 The Completeness component of the grade will be determined by the result of running
 the tests and, more specifically, on the number of points obtained when
-running ``make grade`` (see `Using the automated tests <http://chi.cs.uchicago.edu/chirc/testing.html#using-the-automated-tests>`_
-in the chirc documentation and, specifically, the "Producing a grade report" section).
+running ``make assignment-X`` (see `Using the automated tests <http://chi.cs.uchicago.edu/chirc/testing.html#using-the-automated-tests>`_
+in the chirc documentation).
 
 Correctness
 ~~~~~~~~~~~

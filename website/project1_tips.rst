@@ -10,9 +10,11 @@ Before you get started
   files are in that directory. If the chirc files (``README``, ``src/``, ...) are in the top 
   level of your repository, they will not be graded. Make sure you follow the exact instructions 
   in `Uploading the initial code to your repository <initial_code.html>`_.
-- Don't forget that we are providing you with a `solution <https://github.com/uchicago-cs/cmsc23320/blob/master/samples/chirc/project1a-trivial.c>`_
-  to Project 1a that will pass nearly half of the tests (but would get a zero in the design portion of 
-  the code).
+- To help you get started, we are providing you with a `trivial solution <https://github.com/uchicago-cs/cmsc23320/blob/master/samples/chirc/project1a-trivial.c>`_
+  to Project 1a that will pass nearly half of the tests. While this can be a good starting point,
+  please note that you will still have to make major modifications to that solution
+  (in particular, your solution cannot manually create the socket; you must
+   use ``getaddrinfo`` instead).
 - When writing the socket code for your chirc server, make sure you take a look at the 
   `socket samples <https://github.com/uchicago-cs/cmsc23320/tree/master/samples/sockets>`_ covered
   in the discussion section. They can provide a good starting point for writing a multi-threaded
@@ -45,8 +47,8 @@ General Tips
    and `uthash <https://troydhanson.github.io/uthash/>`_.
    
 -  Working with strings (specially parsing and tokenizing them) in C can be
-   a pain. Using a library like `SDS <https://github.com/antirez/sds>`_ or
-   `bstring <http://bstring.sourceforge.net/>`_ can ease that pain.
+   a pain. Using a library like `SDS <https://github.com/antirez/sds>`_
+   can ease that pain.
 
 -  As you read the project specification and the IRC specification
    itself, you’ll notice that the same patterns come up over and over.
@@ -116,7 +118,7 @@ Don't forget to check the return value of the socket functions. Although this is
 General socket confusion
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-For those of you who have not taken CMSC 15400 recently, or who took a version of CMSC 15400 that did not include a socket assignment, working with sockets in the first Networks project can prove challenging. We recommend you read `Beej's Guide to Network Programming <http://beej.us/guide/bgnet/>`_ for a more thorough review of sockets.
+If you're confused about how to use sockets, we recommend you read `Beej's Guide to Network Programming <http://beej.us/guide/bgnet/>`_ for a more thorough review of sockets.
 
 
 Common Issues in Projects 1b and 1c

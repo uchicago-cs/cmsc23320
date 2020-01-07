@@ -1,6 +1,6 @@
 /*
  *
- *  CMSC 23300 / 33300 - Networks and Distributed Systems
+ *  CMSC 23320 - Foundations of Computer Networks
  *
  *  main() code for chirc project
  *
@@ -20,31 +20,42 @@
 int main(int argc, char *argv[])
 {
     int opt;
-    char *port = "6667", *passwd = NULL;
+    char *port = NULL, *passwd = NULL, *servername = NULL, *network_file = NULL;
     int verbosity = 0;
 
-    while ((opt = getopt(argc, argv, "p:o:vqh")) != -1)
+    while ((opt = getopt(argc, argv, "p:o:s:n:vqh")) != -1)
         switch (opt)
         {
-        case 'p':
-            port = strdup(optarg);
-            break;
-        case 'o':
-            passwd = strdup(optarg);
-            break;
-        case 'v':
-            verbosity++;
-            break;
-        case 'q':
-            verbosity = -1;
-            break;
-        case 'h':
-            fprintf(stderr, "Usage: chirc -o PASSWD [-p PORT] [(-q|-v|-vv)]\n");
-            exit(0);
-            break;
-        default:
-            fprintf(stderr, "ERROR: Unknown option -%c\n", opt);
-            exit(-1);
+            case 'p':
+                port = strdup(optarg);
+                break;
+            case 'o':
+                passwd = strdup(optarg);
+                break;
+            case 's':
+                servername = strdup(optarg);
+                break;
+            case 'n':
+                if (access(optarg, R_OK) == -1)
+                {
+                    printf("ERROR: No such file: %s\n", optarg);
+                    exit(-1);
+                }
+                network_file = strdup(optarg);
+                break;
+            case 'v':
+                verbosity++;
+                break;
+            case 'q':
+                verbosity = -1;
+                break;
+            case 'h':
+                printf("Usage: chirc -o OPER_PASSWD [-p PORT] [-s SERVERNAME] [-n NETWORK_FILE] [(-q|-v|-vv)]\n");
+                exit(0);
+                break;
+            default:
+                fprintf(stderr, "ERROR: Unknown option -%c\n", opt);
+                exit(-1);
         }
 
     if (!passwd)
@@ -53,25 +64,35 @@ int main(int argc, char *argv[])
         exit(-1);
     }
 
+    if (network_file && !servername)
+    {
+        fprintf(stderr, "ERROR: If specifying a network file, you must also specify a server name.\n");
+        exit(-1);
+    }
+
     /* Set logging level based on verbosity */
     switch(verbosity)
     {
-    case -1:
-        chirc_setloglevel(QUIET);
-        break;
-    case 0:
-        chirc_setloglevel(INFO);
-        break;
-    case 1:
-        chirc_setloglevel(DEBUG);
-        break;
-    case 2:
-        chirc_setloglevel(TRACE);
-        break;
-    default:
-        chirc_setloglevel(INFO);
-        break;
+        case -1:
+            chirc_setloglevel(QUIET);
+            break;
+        case 0:
+            chirc_setloglevel(INFO);
+            break;
+        case 1:
+            chirc_setloglevel(DEBUG);
+            break;
+        case 2:
+            chirc_setloglevel(TRACE);
+            break;
+        default:
+            chirc_setloglevel(TRACE);
+            break;
     }
+
+    /* IMPORTANT: Like the oneshot-single.c, we are creating the socket and sockaddr
+     * structures manually. Your solution _must_ use getaddrinfo instead. You can see
+     * examples of this in client.c and in server-pthreads.c */
 
     int server_socket;
     int client_socket;
