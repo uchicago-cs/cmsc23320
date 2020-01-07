@@ -1,6 +1,6 @@
 /* 
  *
- *  CMSC 23300 - Networks and Distributed Systems
+ *  CMSC 23320 - Foundations of Computer Networks
  *  
  *  A simple multi-threaded server
  *  
@@ -73,7 +73,7 @@ int main(int argc, char *argv[])
     hints.ai_flags = AI_PASSIVE; // Return my address, so I can bind() to it
 
     /* Note how we call getaddrinfo with the host parameter set to NULL */
-    if (getaddrinfo(NULL, "23300", &hints, &res) != 0)
+    if (getaddrinfo(NULL, "23320", &hints, &res) != 0)
     {
         perror("getaddrinfo() failed");
         pthread_exit(NULL);

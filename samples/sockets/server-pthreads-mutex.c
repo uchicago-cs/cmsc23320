@@ -1,6 +1,6 @@
 /* 
  *
- *  CMSC 23300 - Networks and Distributed Systems
+ *  CMSC 23320 - Foundations of Computer Networks
  *  
  *  A simple multi-threaded server that requires a mutex lock to avoid a race condition.
  *
@@ -78,7 +78,7 @@ int main(int argc, char *argv[])
     hints.ai_socktype = SOCK_STREAM;
     hints.ai_flags = AI_PASSIVE;
 
-    if (getaddrinfo(NULL, "23300", &hints, &res) != 0)
+    if (getaddrinfo(NULL, "23320", &hints, &res) != 0)
     {
         perror("getaddrinfo() failed");
         pthread_exit(NULL);

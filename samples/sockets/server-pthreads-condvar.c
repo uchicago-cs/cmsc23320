@@ -1,6 +1,6 @@
 /* 
  *
- *  CMSC 23300 - Networks and Distributed Systems
+ *  CMSC 23320 - Foundations of Computer Networks
  *  
  *  A simple multi-threaded server that uses a condition variable to signal an event from one thread to another.
  *  More specifically, when the server accepts a connection, it will create a thread, but will not accept any
@@ -99,7 +99,7 @@ int main(int argc, char *argv[])
     hints.ai_socktype = SOCK_STREAM;
     hints.ai_flags = AI_PASSIVE;
 
-    if (getaddrinfo(NULL, "23300", &hints, &res) != 0)
+    if (getaddrinfo(NULL, "23320", &hints, &res) != 0)
     {
         perror("getaddrinfo() failed");
         pthread_exit(NULL);
@@ -236,7 +236,7 @@ void *service_single_client(void *args)
     /* ADDED: The rest of the function is different from the mutex example.
      *
      * Note: this code also provides an example of an acceptable way of using goto statements
-     *       (see http://uchicago-cs.github.io/cmsc23300/style_guide.html#goto-statements)
+     *       (see http://uchicago-cs.github.io/cmsc23320/style_guide.html#goto-statements)
      */
 
     /* We send a message to the client. */

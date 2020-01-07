@@ -1,6 +1,6 @@
 /* 
  *
- *  CMSC 23300 - Networks and Distributed Systems
+ *  CMSC 23320 - Foundations of Computer Networks
  *  
  *  A very simple socket client. Reads at most 100 bytes from a socket and quits.
  *  

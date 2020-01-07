@@ -1,6 +1,6 @@
 /* 
  *
- *  CMSC 23300 - Networks and Distributed Systems
+ *  CMSC 23320 - Foundations of Computer Networks
  *  
  *  This is the simplest possible one-shot server
  *  
@@ -16,6 +16,16 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <netdb.h>
+
+/* !!! IMPORTANT !!!
+ *
+ * This example manually creates the socket and sockaddr
+ * structures simply as a way to highlight the internals
+ * of these data structures. When creating an actual
+ * server, you should use getaddrinfo (as shown in client.c) 
+ * to create the socket for the server.
+ *
+ */
 
 int main(int argc, char *argv[])
 {
@@ -61,13 +71,13 @@ int main(int argc, char *argv[])
  
     /* Set other fields. Note we need to convert the port to network order. */
     server_addr.sin_family = AF_INET;          // IPv4
-    server_addr.sin_port = htons(23300);       // TCP port number
+    server_addr.sin_port = htons(23320);       // TCP port number
     server_addr.sin_addr.s_addr = INADDR_ANY;  // Bind to any address
     
     /* Create the socket*/    
-    server_socket = socket(PF_INET,      // Family: IPv4
-                          SOCK_STREAM,   // Type: Full-duplex stream (reliable)
-                          IPPROTO_TCP);  // Protocol: TCP
+    server_socket = socket(PF_INET,       // Family: IPv4
+                           SOCK_STREAM,   // Type: Full-duplex stream (reliable)
+                           IPPROTO_TCP);  // Protocol: TCP
 
     /* Note: We could set the protocol to zero since PF_INET and SOCK_STREAM implies that TCP is
        going to be used. */
