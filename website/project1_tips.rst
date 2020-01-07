@@ -14,7 +14,7 @@ Before you get started
   to Project 1a that will pass nearly half of the tests. While this can be a good starting point,
   please note that you will still have to make major modifications to that solution
   (in particular, your solution cannot manually create the socket; you must
-   use ``getaddrinfo`` instead).
+  use ``getaddrinfo`` instead).
 - When writing the socket code for your chirc server, make sure you take a look at the 
   `socket samples <https://github.com/uchicago-cs/cmsc23320/tree/master/samples/sockets>`_ covered
   in the discussion section. They can provide a good starting point for writing a multi-threaded
