@@ -7,7 +7,7 @@
  *  The code is nearly identical to server-pthreads.c. Look for comments with the test
  *  "ADDED" to see what has been changed exactly.
  *
- *  To actually use the lock, you must compile with -DMUTEX
+ *  You can disable the mutex lock by passing "-x" as a command-line parameter.
  *  
  *  Written by: Borja Sotomayor
  *
@@ -16,6 +16,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
+#include <stdbool.h>
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -31,10 +32,15 @@
 /* ADDED: A "server context" struct that contains information that needs to be shared
  * amongst all the worker threads. It contains a number of connections, along with
  * a mutex to protect access to the number of connections.
+ *
+ * IMPORTANT: The "lock_enabled" field is just for demonstration purposes (to show
+ * what happens when the lock is disabled). Your own code should not use such a
+ * field!
  */
 struct server_ctx
 {
     unsigned int num_connections;
+    bool lock_enabled;
     pthread_mutex_t lock;
 };
 
@@ -54,6 +60,13 @@ int main(int argc, char *argv[])
     struct server_ctx *ctx = calloc(1, sizeof(struct server_ctx));
     ctx->num_connections = 0;
     pthread_mutex_init(&ctx->lock, NULL);
+
+    /* Check for "-x" command-line parameter. If present,
+     * we won't actually use the mutex lock*/
+    if(argc == 2 && strcmp(argv[1], "-x") == 0)
+        ctx->lock_enabled = false;
+    else
+        ctx->lock_enabled = true;
 
     sigset_t new;
     sigemptyset (&new);
@@ -170,9 +183,8 @@ void *service_single_client(void *args) {
     pthread_detach(pthread_self());
 
     /* ADDED: Protect access to num_connections with the lock */
-    #ifdef MUTEX
-    pthread_mutex_lock (&ctx->lock);
-    #endif
+    if(ctx->lock_enabled)
+        pthread_mutex_lock(&ctx->lock);
 
     /* The following two loops will result in num_connections
        being ultimately incremented by just one, but we do
@@ -185,9 +197,8 @@ void *service_single_client(void *args) {
     fprintf(stderr, "+ Number of connections is %d\n", ctx->num_connections);
 
     /* ADDED: Unlock the lock when we're done with it. */
-    #ifdef MUTEX
-    pthread_mutex_unlock (&ctx->lock);
-    #endif
+    if(ctx->lock_enabled)
+        pthread_mutex_unlock(&ctx->lock);
 
     while(1)
     {
@@ -205,17 +216,17 @@ void *service_single_client(void *args) {
     }
 
     /* ADDED: Same as the above loops, but decrementing num_connections by one */
-    #ifdef MUTEX
-    pthread_mutex_lock (&ctx->lock);
-    #endif
+    if(ctx->lock_enabled)
+        pthread_mutex_lock(&ctx->lock);
+
     for(i=0; i< NLOOPS; i++)
         ctx->num_connections--;
     for(i=0; i< NLOOPS-1; i++)
         ctx->num_connections++;
     fprintf(stderr, "- Number of connections is %d\n", ctx->num_connections);
-    #ifdef MUTEX
-    pthread_mutex_unlock (&ctx->lock);
-    #endif
+
+    if(ctx->lock_enabled)
+        pthread_mutex_unlock(&ctx->lock);
 
     close(socket);
     pthread_exit(NULL);

@@ -8,7 +8,7 @@
  *  the worker thread needs to signal when this happens. Optionally, we can specify a timeout for waiting
  *  for the connection to receive a HELLO command.
  *
- *  The code is very similar to server-pthreads-mutex.c. Look for comments with the test
+ *  The code is very similar to server-pthreads-mutex.c. Look for comments with the text
  *  "ADDED" to see what has been changed exactly.
  *  
  *  Written by: Borja Sotomayor

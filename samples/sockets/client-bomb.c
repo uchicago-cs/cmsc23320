@@ -23,9 +23,9 @@
 
 int main(int argc, char *argv[])
 {
-    int *sockets, nsockets;
+    int *sockets, nsockets = -1;
     struct addrinfo hints, *res, *p;
-    char *host, *port;
+    char *host = NULL, *port = NULL;
     int nbytes, opt, i;
 
     while ((opt = getopt(argc, argv, "h:p:n:")) != -1)
@@ -43,6 +43,12 @@ int main(int argc, char *argv[])
             default:
                 printf("Unknown option\n"); exit(1);
         }
+
+    if(host == NULL || port == NULL || nsockets == -1)
+    {
+        printf("USAGE: client -h HOST -p PORT -n NUM_CONNECTIONS\n");
+        exit(1);
+    }
 
     sockets = malloc(nsockets * sizeof(int));
 
