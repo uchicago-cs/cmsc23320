@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
 
 
     /* Host and port */
-    char *host, *port;
+    char *host = NULL, *port = NULL;
 
     /* Buffer to receive bytes from the socket */
     char buffer[100 + 1]; // +1 for '\0'
