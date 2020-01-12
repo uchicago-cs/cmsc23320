@@ -4,11 +4,13 @@
 #
 # Usage:
 # 
-#     grade-chirc.sh <team> [<commit>]
+#     grade-chirc.sh <team> <assignment> [<commit>]
 # 
 # First parameter is your team identifier
 #
-# Optional second parameter is the commit you want to build.
+# Second parameter is the chirc assignment number
+#
+# Optional third parameter is the commit you want to build.
 # (if none is specified, the head of the master branch will be built)
 
 set -o pipefail
@@ -19,7 +21,14 @@ then
 	exit 1
 fi
 
+if [ "X$2" == "X" ];
+then
+	echo "ERROR: Please specify an assignment number."
+	exit 1
+fi
+
 TEAM=$1
+AID=$2
 
 if ! chisubmit student team show $TEAM 2>&1 > /dev/null;
 then
@@ -46,9 +55,9 @@ fi
 
 cd $REPO_DIR/chirc
 
-if [ $# -eq 2 ];
+if [ $# -eq 3 ];
 then
-	CHECKOUT=$2
+	CHECKOUT=$3
 else
 	CHECKOUT=master
 fi
@@ -69,7 +78,7 @@ else
 fi
 
 echo -n "Checking for chirc files... "
-for CHIRC_FILE in $REPO_DIR/chirc/ $REPO_DIR/chirc/Makefile $REPO_DIR/chirc/src/;
+for CHIRC_FILE in $REPO_DIR/chirc/ $REPO_DIR/chirc/tests/ $REPO_DIR/chirc/src/;
 do
     if [ ! -e $CHIRC_FILE ];
     then
@@ -85,8 +94,11 @@ BUILD_LOG="/tmp/chirc-build-$USER-$$.log"
 touch $BUILD_LOG
 chmod 600 $BUILD_LOG
 
-make clean > $BUILD_LOG 2>&1
-make chirc >> $BUILD_LOG 2>&1
+mkdir build
+cd build
+cmake .. > $BUILD_LOG 2>&1
+make clean >> $BUILD_LOG 2>&1
+make >> $BUILD_LOG 2>&1
 if [ "$?" -ne "0" ]; 
 then
 	echo "ERROR: Your project did not build."
@@ -111,8 +123,8 @@ then
     exit 1
 fi
 
-python3 -m pytest $CHIRC_DIR/tests/ --chirc-exe=$REPO_DIR/chirc/chirc --chirc-loglevel=-1 --randomize-ports --json=$REPO_DIR/chirc/results.json
-python3 $CHIRC_DIR/tests/grade.py --report-file=$REPO_DIR/chirc/results.json
+python3 -m pytest $CHIRC_DIR/tests/ --chirc-rubric $CHIRC_DIR/tests/rubrics/assignment-${AID}.json
+python3 $CHIRC_DIR/tests/grade.py $CHIRC_DIR/tests/rubrics/assignment-${AID}.json
 
 rm -rf $CHIRC_DIR
 rm -rf $REPO_DIR
