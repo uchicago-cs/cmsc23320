@@ -229,7 +229,7 @@ already started grading your code.
 
 If you made a submission before the deadline and realize (before the deadline) that you 
 want to use an extension after all, then you need to cancel your submission. That way, 
-chisubmit will not flag it as ready for grading when the deadline passes. Simply run this comm
+chisubmit will not flag it as ready for grading when the deadline passes. Simply run this command::
 
     chisubmit student assignment cancel-submit p1a
 
