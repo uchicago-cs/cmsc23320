@@ -69,8 +69,8 @@ General Tips
    or `branch table <http://en.wikipedia.org/wiki/Branch_table>`_. You can find some 
    sample code `here <https://github.com/uchicago-cs/cmsc23320/tree/master/samples/dispatch_table>`_.
 
-Resolving IRC Ambiguities
--------------------------
+Resolving IRC Ambiguities (using a single server)
+-------------------------------------------------
 
 The IRC protocol is, in some cases, not as well-specified and clear as one would hope (this is,
 unfortunately, a common attribute of many network specifications). If you’re unclear about how your server is meant to behave in some cases (specially the more obscure corner cases of IRC, or the points where the IRC specification is ambiguous), you should take the following steps:
@@ -89,6 +89,77 @@ unfortunately, a common attribute of many network specifications). If you’re u
     
 Like a production IRC server, if you replicate the behaviour of our reference implementation, that's good enough for us.
 
+Resolving IRC Ambiguities (in IRC networks)
+-------------------------------------------
+
+In Project 1c, you will not be able to rely on the reference servers, as you would end up getting relay traffic from every other server that successfully connects to a reference server. Instead, we suggest you run a real IRC server to observe how it behaves when it connects to another IRC server. We suggest using `ngIRCd <https://ngircd.barton.de/>`__. Please note that you cannot use pre-built binaries because they will compress messages between servers, making it harder to sniff the traffic. Instead, download the sources for release 25 and build it like this::
+
+    ./configure --without-zlib --enable-strict-rfc --disable-ircplus
+    make
+
+The `ngircd` binary will be located in the `src/ngircd/` directory.
+
+We will be running two servers, so we need two separate configuration files. Take the `sample configuration file <https://github.com/ngircd/ngircd/blob/master/doc/sample-ngircd.conf.tmpl>`__ and set the following options::
+
+    [Global]
+        AdminEMail = admin@irc.server
+        MotdPhrase = "Hello world!"
+        Network = chircnet
+
+    [Options]
+        DNS = no
+        Ident = no
+        PAM = no
+
+    [Operator]
+        Name = IRCop
+        Password = thepassword
+
+
+Now, create two copies of this file (`server1.conf` and `server2.conf`). In the first one, set these options::
+
+    [Global]
+        Name = irc-1.example.net
+        Ports = 6667
+        Network = chircnet
+
+    [Server]
+        Name = irc-2.example.net
+        MyPassword = pass1
+        PeerPassword = pass2
+        Passive = yes
+
+And in the second one::
+
+    [Global]
+        Name = irc-2.example.net
+        Ports = 6668
+        Network = chircnet
+
+    [Server]
+        Name = irc-1.example.net
+        Host = 127.0.0.1
+        Port = 6667
+        MyPassword = pass2
+        PeerPassword = pass1
+        Passive = yes
+
+Note that the second server is the one that will be connecting to the first server.
+
+Now, run the servers on separate terminals like this::
+
+    ngircd -f server1.conf -n
+    ngircd -f server2.conf -n
+
+To capture the traffic between both servers, run Wireshark with the following display filter::
+
+    tcp.port in {6667 6668}
+
+Connect to the second server with telnet or with an IRC client. To make the second server connect to the first one, send this command::
+
+    CONNECT irc-1.example.net
+
+You can also connect to the first server via telnet and send the ``PASS`` and ``SERVER`` commands to observe the replies from the server.
 
 Common Issues in Project 1a
 ---------------------------

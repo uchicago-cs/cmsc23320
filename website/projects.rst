@@ -45,12 +45,6 @@ The following are resources that you may find helpful when working on your proje
 Project 1: chirc
 ~~~~~~~~~~~~~~~~
 
-.. admonition:: WARNING: Parts 2 and 3 of the project have not been updates for Winter 2020!
-
-   Project 1 is undergoing some major changes relative to previous years. Part 1 of
-   the project is ready to go, but do not start working on Parts 2 and 3 until we
-   tell you to.
-
 In this project, you will implement a simple Internet Relay Chat (IRC)
 server called chirc. This project has three goals:
 
@@ -64,7 +58,12 @@ server called chirc. This project has three goals:
    concepts before we move on to the lower-level concepts in this
    course.
 
-The project specification is available `here <http://chi.cs.uchicago.edu/chirc/>`_.
+The project specification is available `here <http://chi.cs.uchicago.edu/chirc/>`_. Please
+note that you will be implementing the following "assignments" from the chirc specification:
+
+- Project 1a: Assignment 1
+- Project 1b: Assignment 4
+- Project 1c: Assignment 5
 
 Make sure you read the `Project 1 rubric <project1_rubric.html>`_ and the `Project 1 tips <project1_tips.html>`_.
 
