@@ -70,12 +70,10 @@ Make sure you read the `Project 1 rubric <project1_rubric.html>`_ and the `Proje
 Project 2: chitcp
 ~~~~~~~~~~~~~~~~~
 
-.. admonition:: WARNING: Project 2 has not yet been updated for Winter 2020!
+.. admonition:: NOTE: Project 2b has not yet been updated for Winter 2020!
 
-   You can find here the links to the project specification, and other resources,
-   exactly as they were assigned in 2019. You may find them useful to get a sense
-   of what the project will involve, but **DO NOT** work on this project until
-   we tell you to do so, as the project specification may change.
+   That said, the only major change we expect is to add support for persist
+   timers to the project. The rest of the project should remain largely the same.
 
 In this project you will be implementing the Transmission Control Protocol, as
 specified in `[RFC793] <http://tools.ietf.org/html/rfc793>`__. However, instead
@@ -90,10 +88,6 @@ they do not implement the entire functionality provided by standard sockets
 (e.g., non-blocking sockets are not supported).
 
 The project specification is available `here <http://chi.cs.uchicago.edu/chitcp/>`__.
-
-.. admonition:: NOTE
-
-   You are not required to implement persist timers in Project 2b.
 
 Make sure you read the `Project 2 rubric <project2_rubric.html>`_ and the `Project 2 tips <project2_tips.html>`_.
 
