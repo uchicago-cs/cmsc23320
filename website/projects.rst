@@ -70,11 +70,6 @@ Make sure you read the `Project 1 rubric <project1_rubric.html>`_ and the `Proje
 Project 2: chitcp
 ~~~~~~~~~~~~~~~~~
 
-.. admonition:: NOTE: Project 2b has not yet been updated for Winter 2020!
-
-   That said, the only major change we expect is to add support for persist
-   timers to the project. The rest of the project should remain largely the same.
-
 In this project you will be implementing the Transmission Control Protocol, as
 specified in `[RFC793] <http://tools.ietf.org/html/rfc793>`__. However, instead
 of implementing it inside the operating system itself, you will be implementing
