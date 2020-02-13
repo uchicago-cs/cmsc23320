@@ -86,8 +86,9 @@ BUILD_LOG="/tmp/chitcp-build-$USER-$$.log"
 touch $BUILD_LOG
 chmod 600 $BUILD_LOG
 
-./autogen.sh > $BUILD_LOG 2>&1
-./configure >> $BUILD_LOG 2>&1
+mkdir build
+cd build
+cmake .. > $BUILD_LOG 2>&1
 make clean >> $BUILD_LOG 2>&1
 make >> $BUILD_LOG 2>&1
 if [ "$?" -ne "0" ]; 
@@ -102,7 +103,7 @@ fi
 echo "done."
 
 
-echo -n "Building tests... "
+echo -n "Running tests... "
 
 CHITCP_DIR=$(mktemp -d)
 
@@ -116,10 +117,10 @@ fi
 
 cp $CHITCP_DIR/tests/* $REPO_DIR/chitcp/tests/
 
-make tcp-tests > $BUILD_LOG 2>&1
+make test-tcp > $BUILD_LOG 2>&1
 if [ "$?" -ne "0" ]; 
 then
-	echo "ERROR: The tests did not build."
+    echo "ERROR: The tests did not build."
     echo "       Build log is in $BUILD_LOG"
     exit 1
 else
@@ -130,7 +131,7 @@ echo "done"
 
 echo "Running tests..."
 
-tests/test-tcp --verbose
+./test-tcp --verbose
 make grade
 
 rm -rf $CHITCP_DIR
