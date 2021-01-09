@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Using Git &#8212; CMSC 23320 - Foundations of Computer Networks</title>
+
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/chiweb.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Asking Questions" href="questions.html" />
+    <link rel="prev" title="Uploading the initial code to your repository" href="../projects/initial_code.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          CMSC 23320 - Foundations of Computer Networks</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+              
+            
+            
+            
+<li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Course Information <span class="caret"></span></a>
+    <ul class="dropdown-menu">
+        <li><a href="../syllabus.html">Syllabus</a></li>
+        <li><a href="../calendar.html">Calendar</a></li>
+        <li><a href="../academic_honesty.html">Academic Honesty</a></li>
+    </ul>
+</li>
+<li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects <span class="caret"></span></a>
+    <ul class="dropdown-menu">
+        <li><a href="../projects/started.html">Getting Started</a></li>
+        <li><a href="../projects/registering_submitting.html">Registering/Submitting</a></li>
+        <li><a href="../projects/specs.html">Project Specifications</a></li>
+    </ul>
+</li>
+<li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+    <ul class="dropdown-menu">
+        <li><a href="#">Using Git</a></li>
+        <li><a href="questions.html">Asking Questions</a></li>
+        <li><a href="https://uchicago-cs.github.io/dev-guide/" target="_blank">UChicago CS Developer's Guide <i class="fa fa-external-link"></i></a></li>
+        <li><a href="https://uchicago-cs.github.io/debugging-guide" target="_blank">The Debugging Guide <i class="fa fa-external-link"></i></a></li>
+        <li><a href="other.html">Other Resources</a></li>
+    </ul>
+</li>
+
+            
+          </ul>
+
+          
+
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <div class="section" id="using-git">
+<h1>Using Git<a class="headerlink" href="#using-git" title="Permalink to this headline">¶</a></h1>
+<p>In this class, you will be using Git to store and manage your project code. Most of you will have already used Git in previous courses, while some of you may have used only SVN. If you are new to Git, or simply need a refresher, we suggest you work through the <a class="reference external" href="https://uchicago-cs.github.io/cmsc22000/labs/lab1/">Git lab</a> from CMSC 22000, with the following differences:</p>
+<ul class="simple">
+<li><p>We will provide you with a GitHub Classroom invite URL on Ed Discussion. Your lab repository will appear as <code class="docutils literal notranslate"><span class="pre">uchicago-cmsc23320-2021/p0-GITHUB_USERNAME</span></code> on your GitHub account.</p></li>
+<li><p>For more details on how the invite URL works, we suggest you read through our <a class="reference external" href="registering_submitting.html">Project Registration and Submission</a> page, which explains how you will be signing up for the course projects using GitHub Classroom (please note that, for the optional Git Lab, you won’t be signing up in teams, and will instead get an individual repository)</p></li>
+<li><p>The lab includes a number of tasks that will require figuring out some Git commands on your own. Don’t skip these; they can be a really valuable exercise! You don’t, however, have to submit anything at the end of the lab (so, ignore all references to Gradescope).</p></li>
+<li><p>While the lab explains how to use HTTPS to clone and access your repository on GitHub, we recommend you eventually set up <a class="reference external" href="https://docs.github.com/en/free-pro-team&#64;latest/github/authenticating-to-github/connecting-to-github-with-ssh">SSH access</a> for your GitHub account.</p></li>
+</ul>
+<p>At a later time (probably once you’re done with Project 1a), you may also want to work through the <a class="reference external" href="https://uchicago-cs.github.io/cmsc22000/labs/advanced-git/">Advanced Git lab</a> from CMSC 22000.</p>
+<p>Once you have mastered branches and merging, you may want to read <a class="reference external" href="https://nvie.com/posts/a-successful-git-branching-model/">A successful Git branching model</a>.</p>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2011-2021, The University of Chicago.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.2.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

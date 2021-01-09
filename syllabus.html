@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/chiweb.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
@@ -49,18 +50,39 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="#">Syllabus</a></li>
-                <li><a href="calendar.html">Course Calendar</a></li>
-                <li><a href="resources.html">Additional Resources</a></li>
-                <li><a href="projects.html">Projects</a></li>
-            
             
               
               
             
             
             
-            
+<li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Course Information <span class="caret"></span></a>
+    <ul class="dropdown-menu">
+        <li><a href="#">Syllabus</a></li>
+        <li><a href="calendar.html">Calendar</a></li>
+        <li><a href="academic_honesty.html">Academic Honesty</a></li>
+    </ul>
+</li>
+<li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects <span class="caret"></span></a>
+    <ul class="dropdown-menu">
+        <li><a href="projects/started.html">Getting Started</a></li>
+        <li><a href="projects/registering_submitting.html">Registering/Submitting</a></li>
+        <li><a href="projects/specs.html">Project Specifications</a></li>
+    </ul>
+</li>
+<li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+    <ul class="dropdown-menu">
+        <li><a href="resources/git.html">Using Git</a></li>
+        <li><a href="resources/questions.html">Asking Questions</a></li>
+        <li><a href="https://uchicago-cs.github.io/dev-guide/" target="_blank">UChicago CS Developer's Guide <i class="fa fa-external-link"></i></a></li>
+        <li><a href="https://uchicago-cs.github.io/debugging-guide" target="_blank">The Debugging Guide <i class="fa fa-external-link"></i></a></li>
+        <li><a href="resources/other.html">Other Resources</a></li>
+    </ul>
+</li>
+
             
           </ul>
 
@@ -90,6 +112,7 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#asking-questions">Asking questions</a></li>
+<li><a class="reference internal" href="#commit-messages">Commit Messages</a></li>
 <li><a class="reference internal" href="#policies">Policies</a><ul>
 <li><a class="reference internal" href="#policy-on-academic-honesty">Policy on academic honesty</a></li>
 <li><a class="reference internal" href="#zoom-guidelines">Zoom guidelines</a></li>
@@ -291,12 +314,12 @@ have posted instructions on how to do so.</p>
 <div class="section" id="late-submissions">
 <h3>Late submissions<a class="headerlink" href="#late-submissions" title="Permalink to this headline">¶</a></h3>
 <p>You are allowed to make <strong>at most two</strong> late submissions on the projects, except Project 1a
-(no late submissions are allowed on Project 1a). Late submissions will be accepted up to 36
+(no late submissions are allowed on Project 1a). Late submissions will be accepted up to 72
 hours after the deadline.</p>
 <p><strong>No credit will be given</strong> for late submissions after you have used up your two allowed
 late submissions.</p>
-<p><strong>No credit will be given</strong> for <em>any</em> submission made 36 hours after the deadline.</p>
-<p>Please note that, while Gradescope does enforce the 36-hour limit on late submissions and will clearly flag
+<p><strong>No credit will be given</strong> for <em>any</em> submission made 72 hours after the deadline.</p>
+<p>Please note that, while Gradescope does enforce the 72-hour limit on late submissions and will clearly flag
 late submissions with a red “LATE” label, it does not enforce our specific limit
 of two late submissions. <strong>It is your responsibility to keep track of how many late submissions
 you have made so far, and to ensure you don’t make more than two late submissions.</strong></p>
@@ -371,6 +394,25 @@ guidelines and policies related to asking questions on Ed Discussion.</p>
 <p>Please note that all course announcements will be made through Ed Discussion. It
 is your responsibility to check Ed Discussion often to see if there are any
 announcements.</p>
+</div>
+<div class="section" id="commit-messages">
+<h2>Commit Messages<a class="headerlink" href="#commit-messages" title="Permalink to this headline">¶</a></h2>
+<p>Commit messages in your repository should be descriptive and to the point. For example:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Implemented</span> <span class="pre">JOIN</span> <span class="pre">command</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Fixed</span> <span class="pre">bug</span> <span class="pre">in</span> <span class="pre">handling</span> <span class="pre">of</span> <span class="pre">FIN</span> <span class="pre">when</span> <span class="pre">send</span> <span class="pre">buffer</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">empty</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Final</span> <span class="pre">style</span> <span class="pre">updates</span> <span class="pre">before</span> <span class="pre">submission</span></code></p></li>
+</ul>
+<p>Bear in mind that, in an actual project in industry, your commit messages will be seen by everyone
+involved in the project, and are an important part of your documentation (as the describe exactly
+how your code changed in each commit).</p>
+<p>That said, a long-standing tradition in this class has been to collect the best and funniest
+commit messages we see throughout the quarter, so we can share those (anonymized) messages with the rest of the class, to
+the point that many students will write intentionally funny messages to make it into that “best of”
+presentation (past presentations can be found <a class="reference external" href="https://www.slideshare.net/bsotomay">here</a>).</p>
+<p>If you do not want your commit messages included in this presentation, please let the instructor know
+(or, even better, simply take care to write commit messages that are descriptive and to the point, as
+shown above).</p>
 </div>
 <div class="section" id="policies">
 <h2>Policies<a class="headerlink" href="#policies" title="Permalink to this headline">¶</a></h2>

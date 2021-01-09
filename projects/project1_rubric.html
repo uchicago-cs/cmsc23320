@@ -7,27 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Project 1 Rubric &#8212; CMSC 23320 - Foundations of Computer Networks</title>
 
-    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/chiweb.css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/chiweb.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Project 2 Tips" href="project2_tips.html" />
     <link rel="prev" title="Project 1 Tips" href="project1_tips.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
-<script type="text/javascript" src="_static/js/jquery-1.11.0.min.js "></script>
-<script type="text/javascript" src="_static/js/jquery-fix.js "></script>
-<script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
-<script type="text/javascript" src="_static/bootstrap-sphinx.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
 
   </head><body>
 
@@ -41,7 +42,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="../index.html">
           CMSC 23320 - Foundations of Computer Networks</a>
         <span class="navbar-text navbar-version pull-left"><b></b></span>
       </div>
@@ -49,18 +50,39 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="syllabus.html">Syllabus</a></li>
-                <li><a href="calendar.html">Course Calendar</a></li>
-                <li><a href="resources.html">Additional Resources</a></li>
-                <li><a href="projects.html">Projects</a></li>
-            
             
               
               
             
             
             
-            
+<li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Course Information <span class="caret"></span></a>
+    <ul class="dropdown-menu">
+        <li><a href="../syllabus.html">Syllabus</a></li>
+        <li><a href="../calendar.html">Calendar</a></li>
+        <li><a href="../academic_honesty.html">Academic Honesty</a></li>
+    </ul>
+</li>
+<li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects <span class="caret"></span></a>
+    <ul class="dropdown-menu">
+        <li><a href="started.html">Getting Started</a></li>
+        <li><a href="registering_submitting.html">Registering/Submitting</a></li>
+        <li><a href="specs.html">Project Specifications</a></li>
+    </ul>
+</li>
+<li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+    <ul class="dropdown-menu">
+        <li><a href="../resources/git.html">Using Git</a></li>
+        <li><a href="../resources/questions.html">Asking Questions</a></li>
+        <li><a href="https://uchicago-cs.github.io/dev-guide/" target="_blank">UChicago CS Developer's Guide <i class="fa fa-external-link"></i></a></li>
+        <li><a href="https://uchicago-cs.github.io/debugging-guide" target="_blank">The Debugging Guide <i class="fa fa-external-link"></i></a></li>
+        <li><a href="../resources/other.html">Other Resources</a></li>
+    </ul>
+</li>
+
             
           </ul>
 
@@ -206,38 +228,6 @@ some of the above is acceptable. You will not be penalized in those cases.</p>
 </div>
 <div class="section" id="additional-penalties">
 <h2>Additional Penalties<a class="headerlink" href="#additional-penalties" title="Permalink to this headline">¶</a></h2>
-<p>We will also apply the following penalties:</p>
-<ul>
-<li><p><strong>Reinventing wheels that don’t need to be reinvented</strong>: In this class, we expect
-you to know how to use data structures like linked lists, hash tables, etc.
-(and how to choose the right data structure for a given task). However, this is a Networks class,
-not a Data Structures class, and you should <em>not</em> be spending any time implementing
-such data structures. Instead, you should use existing data structure libraries
-(our <a class="reference external" href="academic_honesty.html">Academic Honesty</a> page lists a few publicly-available
-libraries that you are welcome to use).</p>
-<p>If you implement your own linked list, hash table, etc. from scratch, we will apply
-a 15 point penalty. While you may think that implementing your own data structure
-is a worthwhile exercise, it invariably results in more work for the TAs and graders
-(as you will likely run into all sorts of issues and segfaults that could have been
-avoided by using a well-known and well-tested data structures library). Plus, it will
-be a much more worthwhile experience for you to understand how to incorporate an existing library
-into your own code.</p>
-</li>
-<li><p><strong>Submitting code that doesn’t build</strong>: If the graders are able to build your
-code with a few minor fixes (missing semicolons, parenthesis, etc.),
-we will apply a 15 point penalty. If your code
-requires substantial work to get it to build, you will receive a zero on
-the assignment.</p>
-<p><strong>So, make sure you verify that the version of the code you submitted builds correctly on a supported
-software environment</strong> (see the <a class="reference external" href="projects.html">Projects</a> page for more details on this)</p>
-</li>
-<li><p><strong>Grossly incorrect memory management</strong>: Up to 5 point penalty. You should make sure
-to free any memory you malloc, but we will usually not take points off unless you’ve
-been grossly negligent in your malloc’ing/freeing. You should also make sure to
-not “save” pointers to stack-allocated memory that is going to be deallocated.
-This can happen if you store a pointer to a functions’ local variable in a struct
-that is heap-allocated.</p></li>
-</ul>
 </div>
 </div>
 
