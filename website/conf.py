@@ -24,7 +24,9 @@ import sphinx_bootstrap_theme
 #sys.path.insert(0, os.path.abspath('.'))
 
 def setup(app):
-    app.add_stylesheet("chiweb.css")
+    app.add_css_file("chiweb.css")
+    app.add_css_file("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+
 
 # -- General configuration ------------------------------------------------
 
@@ -55,7 +57,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'CMSC 23320 - Foundations of Computer Networks'
-copyright = u'2011-2020, The University of Chicago'
+copyright = u'2011-2021, The University of Chicago'
 author = 'Borja Sotomayor'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -114,6 +116,28 @@ todo_include_todos = False
 
 # -- Options for HTML output ----------------------------------------------
 
+html_sidebars = {'*': None,
+                 'syllabus': ['localtoc.html']}
+
+html_context = {"web_navbar": [("Course Information", [
+                                    ("Syllabus", "syllabus", False),
+                                    ("Calendar", "calendar", False),
+                                    ("Academic Honesty", "academic_honesty", False),
+                                 ]),
+                                 ("Projects", [
+                                     ("Getting Started", "projects/started", False),
+                                     ("Registering/Submitting", "projects/registering_submitting", False),
+                                     ("Project Specifications", "projects/specs", False),
+                                 ]),
+                                 ("Resources", [
+                                     ("Using Git", "resources/git", False),
+                                     ("Asking Questions", "resources/questions", False),
+                                     ("UChicago CS Developer's Guide", "https://uchicago-cs.github.io/dev-guide/", True),
+                                     ("The Debugging Guide", "https://uchicago-cs.github.io/debugging-guide", True),
+                                     ("Other Resources", "resources/other", False),
+                                 ])
+                                 ]}
+
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 html_theme = 'bootstrap'
@@ -133,10 +157,6 @@ html_theme_options = {
     # Note the "1" or "True" value above as the third argument to indicate
     # an arbitrary url.
     'navbar_links': [
-        ("Syllabus", "syllabus"),
-        ("Course Calendar", "calendar"),
-        ("Additional Resources", "resources"),
-        ("Projects", "projects"),
     ],
 
     # Render the next and previous page links in navbar. (Default: true)

@@ -26,6 +26,4 @@ you click on a link in your browser to the moment you get the requested
 page back.
 
 CMSC 15400 and a working knowledge of the C programming language are
-strict prerequisites of this course. Students who have not taken CMSC
-15400 must speak with the instructor to verify that they meet the
-prerequisites for this course.
+strict prerequisites of this course.

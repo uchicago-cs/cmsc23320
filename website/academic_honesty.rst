@@ -10,36 +10,37 @@ it be work done by another student in the class or available publicly on
 the Internet. This class has a **ZERO TOLERANCE** policy on plagiarism. If 
 we determine you committed plagiarism, you will receive an F in the class 
 regardless of how small the offence was. You will also be referred to the 
-Dean of Students in the College for further adjudication. The College may 
-impose further penalties, up to and including suspension and expulsion.
+Dean of Students in the College for further adjudication.
 
 Please note that plagiarism is fairly easy for us to detect: we use a series 
 of automated tools that look for similarities between your code and other 
-students’ code (across all sections of the class), including code submitted 
+students’ code, including code submitted
 in previous offerings of this class. If you use someone else’s code, it is 
-very likely you will get caught and, to reiterate, you will then automatically 
-receive an F in the class.
+very likely you will get caught, even if you attempt to cover your tracks
+(please note that, while we use automated
+tools to do an initial analysis, all potential cases of plagiarism are
+verified by the course staff).
 
 Fortunately, avoiding plagiarism is very simple! For the most part, you 
 just need to follow these rules:
 
-* **DO NOT** ask another student in the class to show you or e-mail you 
-  their code. It doesn't matter how you want to use it: even if you just
+* **DO NOT ask another student in the class to show you or e-mail you
+  their code**. It doesn't matter how you want to use it: even if you just
   want to skim through their solution for inspiration, this is still
   plagiarism. Needless to say, you **MUST NOT** use someone else's code
   (with or without their permission) in your own solution.
-* Similarly, **DO NOT** show or share your code with another student in the class.
+* Similarly, **DO NOT show or share your code with another student in the class**.
   If someone in the class asks you to share your code with them, even if you're
   certain they won't use it and they just want to look at it to get "unstuck",
-  please point them to this part of the syllabus. *Take into account
+  please point them to this page. *Take into account
   that, if you willingly share your code with someone else, you are 
   not being a "Good Samaritan": you are an equally guilty
   party in a plagiarism offence, and will also receive an F.*
-* **DO NOT** post your code in publicly-accessible websites, like pastebin,
-  a public GitHub repository, GitHub gists, etc. While it can be a convenient 
+* **DO NOT post your code in publicly-accessible websites, like pastebin,
+  a public GitHub repository, GitHub gists, etc.** While it can be a convenient
   mechanism to share code with an instructor/TA or with a project partner, it 
   can also expose your code to other students in the class. You are provided
-  with a private repository on our GitLab server, and you should use that repository
+  with a private Git repository, and you should use that repository
   exclusively to share code with your project partner, or with the instructional
   staff.
 
@@ -48,6 +49,14 @@ just need to follow these rules:
   if another student in the class uses code that you posted on such a site (even
   if you did not intend for that code to be used by someone else), you will
   receive an F in the class.
+* Please note that the above two prohibitions also apply after the course is over!
+  You should **NEVER** share your code from this class with other people.
+  Not now. Not after the quarter is over. Not after you graduate. Never.
+
+  We make only one exception to this rule: if a prospective employer
+  asks to see samples of your code, you are welcome to send them your code
+  from this class, but must do so privately, not by posting your code in
+  a publicly-accessible location.
 * **DO NOT** use code you find on the Internet, except in the very limited
   cases described below.
 
@@ -70,7 +79,7 @@ to *discuss* aspects of an assignment with other students in the class,
 as long as you don't share or write code together. 
 
 Please note that this also includes "whiteboarding": discussing an assignment with
-other students by sketching out code on a whiteboard *may* cross the line into 
+other students by sketching out code on a (real or virtual) whiteboard *may* cross the line into
 academic dishonesty (*even when using pseudocode*). If you do sketch out code on
 a whiteboard, do not take pictures of the code or use the code verbatim in your
 own solution. You should instead focus on using the whiteboard discussion as
@@ -98,7 +107,7 @@ always err on the side of including a citation.
 Furthermore, the use of external libraries is generally allowed on all
 the projects, as long as they don't provide networks-related functionality 
 that you're expected to implement. If you want to be on the safe side,
-you can ask on Piazza whether a given library is ok to use. Please note
+you can ask us whether given library is ok to use. Please note
 that the following libraries are pre-approved, and you are welcome to use them
 in your projects (in fact, many students have used them in past years):
 

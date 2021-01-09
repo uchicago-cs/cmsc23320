@@ -1,5 +1,5 @@
-Additional Resources
---------------------
+Other Resources
+---------------
 
 This page contains pointers to additional resources and readings that complement what we see in the lectures.
 
@@ -26,7 +26,6 @@ IP
 
 * `IANA IPv4 Address Space Registry <http://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xhtml>`_: List of how each /8 network is allocated.
 * `Map of the Internet <http://xkcd.com/195/>`_: xkcd's map of the IPv4 address space as of 2006
-* `IPv4 map <http://icicle.dylex.net/~ipmap/>`_: A visualization of the IPv4 address space
 * `IPv4 Internet Map <http://caia.swin.edu.au/sting/ipmap/index.html>`_: Another visualization of the IPv4 address space
 
 IPv6
@@ -61,7 +60,7 @@ Network Neutrality
 ~~~~~~~~~~~~~~~~~~
 
 * `Paid Peering, Paid Prioritization, and the Nuance of the Net Neutrality Debate <https://www.benton.org/node/79432>`_
-* `What Everyone Gets Wrong in the Debate Over Net Neutrality <http://www.wired.com/2014/06/net_neutrality_missing/>`_
+* `What Everyone Gets Wrong in the Debate Over Net Neutrality <https://www.wired.com/2014/06/net-neutrality-missing/>`_
 * `Understanding the Level 3-Comcast spat (FAQ) <http://www.cnet.com/news/understanding-the-level-3-comcast-spat-faq/>`_
 * `Comcast and Netflix Reach Deal on Service <http://www.nytimes.com/2014/02/24/business/media/comcast-and-netflix-reach-a-streaming-agreement.html>`_
 * `Comcast vs. Netflix: Is this really about Net neutrality? <http://www.cnet.com/news/comcast-vs-netflix-is-this-really-about-net-neutrality/>`_

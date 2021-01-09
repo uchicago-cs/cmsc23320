@@ -2,12 +2,21 @@
     background-color: maroon;
 }
 
+
 a {
     color: #155F83;
 }
 
 a:hover {
     color: #20364E;
+}
+
+*[id]:before {
+    display: block;
+    content: " ";
+    margin-top: -75px;
+    height: 75px;
+    visibility: hidden;
 }
 
 navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
@@ -29,4 +38,10 @@ navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:fo
 
 .main-panels {
     padding-top: 15px;
+}
+
+.highlight-ipython .highlight pre {
+    background-color: #eeffcc;
+    color: #000000;
+    font-weight: normal;
 }

@@ -15,18 +15,6 @@ Course Staff
 
 `Borja Sotomayor <http://people.cs.uchicago.edu/~borja/>`_ (borja@cs.uchicago.edu)
 
-*Office*: Crerar 209
-
-*Office hours*: Tuesdays 5pm-6:30pm and Thursdays 2pm-3:30pm
-
-**TAs**
-
-Fırat Çiftçi, Dawson Whitehead
-
-Please do not contact the TAs directly; instead, post your questions on Piazza.
-
-*Office hours*: Will be announced on Piazza
-
 
 Course Description
 ~~~~~~~~~~~~~~~~~~
@@ -41,7 +29,12 @@ For more details, please see the `syllabus <syllabus.html>`_.
 
    syllabus.rst
    calendar.rst
-   resources.rst
-   projects.rst
+   projects/started.rst
+   projects/specs.rst
+   projects/registering_submitting.rst
+   projects/initial_code.rst
+   resources/git.rst
+   resources/questions.rst
+   resources/other.rst
 
 
