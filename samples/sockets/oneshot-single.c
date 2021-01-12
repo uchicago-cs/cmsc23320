@@ -30,8 +30,8 @@
 int main(int argc, char *argv[])
 {
     /* A socket is just a file descriptor, i.e., an int */
-    int server_socket;    // Used to listen for connections
-    int client_socket;    // Used to communicate with one specific client
+    int passive_socket;    // Used to listen for connections
+    int active_socket;    // Used to communicate with one specific client
 
     /* A sockaddr struct holds socket address information for lots of different types of sockets.
 
@@ -75,7 +75,7 @@ int main(int argc, char *argv[])
     server_addr.sin_addr.s_addr = INADDR_ANY;  // Bind to any address
     
     /* Create the socket*/    
-    server_socket = socket(PF_INET,       // Family: IPv4
+    passive_socket = socket(PF_INET,       // Family: IPv4
                            SOCK_STREAM,   // Type: Full-duplex stream (reliable)
                            IPPROTO_TCP);  // Protocol: TCP
 
@@ -88,7 +88,7 @@ int main(int argc, char *argv[])
        using sockaddr_storage, since we don't know a priori if we'll be using IPv4 or IPv6. */
 
     /* Make sure socket was created correctly */
-    if(server_socket == -1)
+    if(passive_socket == -1)
     {
         perror("Could not open socket");
         exit(-1);
@@ -99,18 +99,18 @@ int main(int argc, char *argv[])
        the connection must stay in the TIME_WAIT state to make sure the client received the
        acknowledgement that the connection has been terminated. During this time, this port
        is unavailable to other processes, unless we specify this option) */
-    if(setsockopt(server_socket, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof(int)) == -1)
+    if(setsockopt(passive_socket, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof(int)) == -1)
     {
         perror("Socket setsockopt() failed");
-        close(server_socket);
+        close(passive_socket);
         exit(-1);
     }
 
     /* Bind the socket to the address */
-    if(bind(server_socket, (struct sockaddr *) &server_addr, sizeof(server_addr)) == -1)
+    if(bind(passive_socket, (struct sockaddr *) &server_addr, sizeof(server_addr)) == -1)
     {
         perror("Socket bind() failed");
-        close(server_socket);
+        close(passive_socket);
         exit(-1);
     }
 
@@ -119,21 +119,22 @@ int main(int argc, char *argv[])
        Note that listen() doesn't block until incoming connections arrive. It just makes
        the OS aware that this process is willing to accept connections on this socket
        (which is bound to a specific IP and port) */
-    if(listen(server_socket, 5) == -1)
+    if(listen(passive_socket, 5) == -1)
     {
         perror("Socket listen() failed");
-        close(server_socket);
+        close(passive_socket);
         exit(-1);
     }
     
     fprintf(stderr, "Waiting for a connection... ");
 
     /* When an incoming connection arrives, accept it. The call to accept() blocks until
-       the incoming connection arrives */
-    if( (client_socket = accept(server_socket, (struct sockaddr *) &client_addr, &sin_size)) == -1)
+       the incoming connection arrives. When a connection is established, accept() returns
+       an active socket we can use to communicate with the client that just connected with us */
+    if((active_socket = accept(passive_socket, (struct sockaddr *) &client_addr, &sin_size)) == -1)
     {
         perror("Socket accept() failed");
-        close(server_socket);
+        close(passive_socket);
         exit(-1);
     }
 
@@ -146,15 +147,15 @@ int main(int argc, char *argv[])
        send() can send all of it in a single go. For larger messages, we would need to
        check if the number of bytes we send matches the number of bytes *actually* sent
        (and make more calls to send with the remainder of the message, if necessary)*/
-    if(send(client_socket, msg, strlen(msg), 0) <= 0)
+    if(send(active_socket, msg, strlen(msg), 0) <= 0)
     {
         perror("Socket send() failed");
-        close(server_socket);
-        close(client_socket);
+        close(passive_socket);
+        close(active_socket);
         exit(-1);
     }
 
-    close(client_socket);
+    close(active_socket);
     fprintf(stderr, "message sent!\n");
     
     /* Note that the above is a one-shot server. The program not only closes the connection
@@ -162,7 +163,7 @@ int main(int argc, char *argv[])
        If we want to support many consecutive connections, we would just need to place
        everything between the fprintf's in a while(1) { } loop */
 
-    close(server_socket);
+    close(passive_socket);
 
     return 0;
 }

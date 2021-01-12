@@ -20,7 +20,7 @@
 int main(int argc, char *argv[])
 {
     /* A socket is just a file descriptor, i.e., an int */
-    int client_socket;
+    int active_socket;
 
     /* The addrinfo struct is used both as a parameter to getaddrinfo (to provide "hints" on
        what type of address we're using), and as a way to return the addresses associated
@@ -112,7 +112,7 @@ int main(int argc, char *argv[])
            addresses */
 
         /* Try to open a socket */
-        if ((client_socket = socket(p->ai_family, p->ai_socktype, p->ai_protocol)) == -1)
+        if ((active_socket = socket(p->ai_family, p->ai_socktype, p->ai_protocol)) == -1)
         {
             perror("Could not open socket");
             continue;
@@ -121,9 +121,9 @@ int main(int argc, char *argv[])
         /* Try to connect.
            Note: Like many other socket functions, this function expects a sockaddr and
                  its length, both of which are conveniently provided in addrinfo */
-        if (connect(client_socket, p->ai_addr, p->ai_addrlen) == -1)
+        if (connect(active_socket, p->ai_addr, p->ai_addrlen) == -1)
         {
-            close(client_socket);
+            close(active_socket);
             perror("Could not connect to socket");
             continue;
         }
@@ -136,17 +136,17 @@ int main(int argc, char *argv[])
     freeaddrinfo(res);
 
     /* Read from the socket */
-    nbytes = recv(client_socket, buffer, sizeof(buffer) - 1, 0);
+    nbytes = recv(active_socket, buffer, sizeof(buffer) - 1, 0);
     if (nbytes == 0)
     {
         perror("Server closed the connection");
-        close(client_socket);
+        close(active_socket);
         exit(-1);
     }
     else if (nbytes == -1)
     {
         perror("Socket recv() failed");
-        close(client_socket);
+        close(active_socket);
         exit(-1);
     }
     else
@@ -160,7 +160,7 @@ int main(int argc, char *argv[])
     /* Note: The above assumes that the message will arrive in a single packet, which
        may not always be the case. */
 
-    close(client_socket);
+    close(active_socket);
 
     return 0;
 }
