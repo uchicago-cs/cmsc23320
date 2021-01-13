@@ -98,11 +98,10 @@
       
   <div class="section" id="project-1-rubric">
 <h1>Project 1 Rubric<a class="headerlink" href="#project-1-rubric" title="Permalink to this headline">¶</a></h1>
-<p>This project is worth 20% of your final grade, and is divided into three parts:</p>
+<p>This project is worth 15% of your final grade, and is divided into two parts:</p>
 <ul class="simple">
-<li><p>Project 1a (Assignment 1 in chirc). Worth 20% of the Project 1 grade.</p></li>
-<li><p>Project 1b (Assignment 2 in chirc). Worth 40% of the Project 1 grade.</p></li>
-<li><p>Project 1c (Assignment 3 in chirc). Worth 40% of the Project 1 grade.</p></li>
+<li><p>Project 1a (Assignment 1 in chirc). Worth 5% of your final grade.</p></li>
+<li><p>Project 1b (Assignment 4 in chirc). Worth 10% of your final grade.</p></li>
 </ul>
 <p>The grade for each project is divided into the following components:</p>
 <ul class="simple">
@@ -122,7 +121,7 @@ in the chirc documentation).</p>
 <h2>Correctness<a class="headerlink" href="#correctness" title="Permalink to this headline">¶</a></h2>
 <p>The Correctness component of the grade encompasses issues with your code that, while
 not explicitly captured by the tests, could lead to <em>incorrect</em> behaviour in your server.
-In projects 1b and 1c, we will mostly be looking at whether you are using locks
+In project 1b, we will mostly be looking at whether you are using locks
 correctly. In particular, your code must adequately protect any data that can
 be accessed concurrently by more than one thread. Using a Big Fat Lock (i.e.,
 using a single lock for your entire server) will result in an 8 point penalty.</p>
@@ -177,7 +176,7 @@ handle the reassembly of partitioned messages (and the data structures to suppor
 this).</p></li>
 <li><p><strong>Efficiency</strong> (4 points)</p></li>
 </ul>
-<p>In Projects 1b and 1c, we will be looking at the following:</p>
+<p>In Project 1b, we will be looking at the following:</p>
 <ul class="simple">
 <li><p><strong>Module/function decomposition</strong> (8 points). Please note that, in this part of
 the project, you <em>must</em> divide your server into multiple modules.</p></li>
@@ -187,23 +186,22 @@ and the list of channels (and their state).</p></li>
 <li><p><strong>Efficiency</strong> (4 points)</p></li>
 </ul>
 <p>Please note that we will discuss the module/function decomposition and
-the data structure design of Project 1b in the Week 2 discussion session,
-and for Project 1c in Week 3.</p>
+the data structure design of Project 1b on Week 2’s Tuesday lecture.</p>
 </div>
 <div class="section" id="style">
 <h2>Style<a class="headerlink" href="#style" title="Permalink to this headline">¶</a></h2>
 <p>The Style component of the grade will be determined by your adherence to
-our <a class="reference external" href="style_guide.html">Style Guide</a>. While you should strive to follow this guide as
+our <a class="reference external" href="https://uchicago-cs.github.io/dev-guide/style_guide_c.html">Style Guide</a>. While you should strive to follow this guide as
 closely as possible, there <em>are</em> certain aspects we will be paying more
 attention to. In all three parts of the project, the 20 points of the Style
 portion are divided as follows:</p>
 <ul class="simple">
 <li><p><strong>Documenting functions</strong> (8 points): Every function written by you must have
-a <a class="reference external" href="style_guide.html#function-comments">function comment</a> with a brief description
+a <a class="reference external" href="https://uchicago-cs.github.io/dev-guide/style_guide_c.html#function-comments">function comment</a> with a brief description
 of what the function does, and a description of the parameters and the
 return value.</p></li>
 <li><p><strong>Consistent indentation</strong> (2 points): Your code must follow one of the
-<a class="reference external" href="style_guide.html#function-comments">allowed indentation styles</a> consistently.
+<a class="reference external" href="https://uchicago-cs.github.io/dev-guide/style_guide_c.html#indentation">allowed indentation styles</a> consistently.
 The presence of even a single tab character in your code will result in 0 points
 here.</p></li>
 <li><p><strong>Clarity</strong> (6 points): Your code must be easy to read and understand. This
@@ -219,15 +217,52 @@ asymptotically approaches the one specified in our style guide.</p></li>
 </ul>
 <p>Additionally, the graders will apply the following penalties:</p>
 <ul class="simple">
-<li><p>Using <a class="reference external" href="style_guide.html#global-variables">global variables</a>: 10 point penalty</p></li>
-<li><p>Using <a class="reference external" href="style_guide.html#goto-statements">goto statements</a>: 5 point penalty</p></li>
-<li><p>Using <a class="reference external" href="style_guide.html#printing-logging-debug-messages">printf instead of chilog</a>: 5 point penalty</p></li>
+<li><p>Using <a class="reference external" href="https://uchicago-cs.github.io/dev-guide/style_guide_c.html#global-variables">global variables</a>: 10 point penalty</p></li>
+<li><p>Using <a class="reference external" href="https://uchicago-cs.github.io/dev-guide/style_guide_c.html#goto-statements">goto statements</a>: 5 point penalty</p></li>
 </ul>
 <p>Please note that the style guide does specify a few exceptions when using
 some of the above is acceptable. You will not be penalized in those cases.</p>
 </div>
 <div class="section" id="additional-penalties">
 <h2>Additional Penalties<a class="headerlink" href="#additional-penalties" title="Permalink to this headline">¶</a></h2>
+<p>We will also apply the following penalties:</p>
+<ul>
+<li><p><strong>Reinventing wheels that don’t need to be reinvented</strong>: In this class, we expect
+you to know how to use data structures like linked lists, hash tables, etc.
+(and how to choose the right data structure for a given task). However, this is a Networks class,
+not a Data Structures class, and you should <em>not</em> be spending any time implementing
+such data structures. Instead, you should use existing data structure libraries
+(our <a class="reference external" href="../academic_honesty.html">Academic Honesty</a> page lists a few publicly-available
+libraries that you are welcome to use).</p>
+<p>If you implement your own linked list, hash table, etc. from scratch, we will apply
+a 15 point penalty. While you may think that implementing your own data structure
+is a worthwhile exercise, it invariably results in more work for the TAs and graders
+(as you will likely run into all sorts of issues and segfaults that could have been
+avoided by using a well-known and well-tested data structures library). Plus, it will
+be a much more worthwhile experience for you to understand how to incorporate an existing library
+into your own code.</p>
+</li>
+<li><p><strong>Submitting code that doesn’t build</strong>: If the graders are able to build your
+code with a few minor fixes (missing semicolons, parenthesis, etc.),
+we will apply a 15 point penalty. If your code
+requires substantial work to get it to build, you will receive a zero on
+the assignment.</p>
+<p><strong>So, make sure you verify that the version of the code you submitted builds correctly on a supported
+software environment</strong> (see the <a class="reference external" href="../projects/started.html">Projects - Getting Started</a> page for more details on this)</p>
+</li>
+<li><p><strong>Using printf instead of chilog</strong>: All the projects in this class use a simple logging library called <code class="docutils literal notranslate"><span class="pre">chilog</span></code> that is documented in each of the project specifications. You must use the <code class="docutils literal notranslate"><span class="pre">chilog</span></code> functions <em>exclusively</em> for printing logging or debug messages. <strong>Do not use printf() directly in your code</strong>. Please note that the <code class="docutils literal notranslate"><span class="pre">chilog</span></code> functions provide essentially the same functionality as <code class="docutils literal notranslate"><span class="pre">printf</span></code>, so there is no situation where <code class="docutils literal notranslate"><span class="pre">printf</span></code> would be necessary instead of <code class="docutils literal notranslate"><span class="pre">chilog</span></code> (using <code class="docutils literal notranslate"><span class="pre">chilog</span></code> consistently also means you will not have to scrub <code class="docutils literal notranslate"><span class="pre">printf</span></code>’s from your code before submitting it).
+Using printf will result in a 5 point penalty in your code.</p>
+<p>Furthermore, all the messages at the <code class="docutils literal notranslate"><span class="pre">INFO</span></code>, <code class="docutils literal notranslate"><span class="pre">WARNING</span></code>, <code class="docutils literal notranslate"><span class="pre">ERROR</span></code>, and <code class="docutils literal notranslate"><span class="pre">CRITICAL</span></code> levels must be used only for their intended purposes (e.g., only use <code class="docutils literal notranslate"><span class="pre">ERROR</span></code> to print out actual errors in the execution of your program). You must use the <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code> level only to print informative debug messages that would be understood by any developer trying to debug your code. You may use the <code class="docutils literal notranslate"><span class="pre">TRACE</span></code> level to print <em>any</em> debug message (including those that would only be understood by you). However, if your code is riddled with <code class="docutils literal notranslate"><span class="pre">TRACE</span></code> logging statements (including commented out ones) to the point where it is hard to read the code itself, we may take points off for this. So, once a <code class="docutils literal notranslate"><span class="pre">TRACE</span></code> logging statement has served its purpose, we suggest you remove it (not just comment it out).</p>
+<p>You should assume that graders will run your code with logging at the <code class="docutils literal notranslate"><span class="pre">INFO</span></code> level, and will only use the <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code> level if they need to debug an issue with your code. We will never run your code with logging at the <code class="docutils literal notranslate"><span class="pre">TRACE</span></code> level.</p>
+<p>Please note that, in assignments where you are responsible for writing the <code class="docutils literal notranslate"><span class="pre">main</span></code> function, you may use <code class="docutils literal notranslate"><span class="pre">fprintf</span></code> to print to <em>standard error</em> if there is an error that prevents the program from starting (e.g., if a command-line parameter has not been provided, etc.)</p>
+</li>
+<li><p><strong>Grossly incorrect memory management</strong>: Up to 5 point penalty. You should make sure
+to free any memory you malloc, but we will usually not take points off unless you’ve
+been grossly negligent in your malloc’ing/freeing. You should also make sure to
+not “save” pointers to stack-allocated memory that is going to be deallocated.
+This can happen if you store a pointer to a functions’ local variable in a struct
+that is heap-allocated.</p></li>
+</ul>
 </div>
 </div>
 

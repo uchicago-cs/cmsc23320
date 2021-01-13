@@ -98,7 +98,64 @@
       
   <div class="section" id="uploading-the-initial-code-to-your-repository">
 <h1>Uploading the initial code to your repository<a class="headerlink" href="#uploading-the-initial-code-to-your-repository" title="Permalink to this headline">¶</a></h1>
-<p>We are working on updating these instructions for Winter 2021. Please check back soon!</p>
+<p>For each project, we provide some initial code that you must upload to your repository. We need you to upload this code in a very specific way, to make sure that our grading scripts can find your code, build it, and run tests on it.</p>
+<p>In this page we provide the exact commands you need to run to set up your repository. Some of them will look like dark magic but, at this point, you do not need to understand them.</p>
+<div class="section" id="preliminaries">
+<h2>Preliminaries<a class="headerlink" href="#preliminaries" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>If you are new to Git, make sure you’ve read the <a class="reference external" href="git.html">Using Git</a> page.</p></li>
+<li><p>Make sure you’ve set up <a class="reference external" href="https://docs.github.com/en/free-pro-team&#64;latest/github/authenticating-to-github/connecting-to-github-with-ssh">SSH access</a> on your GitHub account.</p></li>
+<li><p>Only one of the team members needs to initialize the repository. In other words, do <em>not</em> follow these instructions more than once. Once one of you has initialized the repository, the other team member will be able to simply create a local copy of the (initialized) Git repository that you are both sharing.</p></li>
+<li><p>For each repository, you will need to get the SSH URL of the repository. To get this URL, log into GitHub and navigate to your project repository (take into account that you will have a different repository per project). Then, click on the green “Code” button, and make sure the “SSH” tab is selected. Your repository URL should look something like this: <code class="docutils literal notranslate"><span class="pre">git&#64;github.com:uchicago-cmsc23320-2021/p1-jdoe-jrandom.git</span></code>. In the steps below, we will refer to this simply as <code class="docutils literal notranslate"><span class="pre">$REPO_URL</span></code>.</p></li>
+</ul>
+</div>
+<div class="section" id="project-1">
+<h2>Project 1<a class="headerlink" href="#project-1" title="Permalink to this headline">¶</a></h2>
+<p>To initialize your repository for project 1, create an empty directory and, inside the directory, run the following commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>git init
+git remote add origin $REPO_URL
+git remote add upstream https://github.com/uchicago-cs/chirc.git
+git pull upstream master
+git push -u origin master
+</pre></div>
+</div>
+<p>Remember to replace <code class="docutils literal notranslate"><span class="pre">$REPO_URL</span></code> with the SSH URL of your repository!</p>
+</div>
+<div class="section" id="project-2">
+<h2>Project 2<a class="headerlink" href="#project-2" title="Permalink to this headline">¶</a></h2>
+<p>To initialize your repository for project 2, create an empty directory. <em>Do not reuse the directory or repository from Project 1</em>. Inside the directory, run the following commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>git init
+git remote add origin $REPO_URL
+git remote add upstream https://github.com/uchicago-cs/chitcp.git
+git pull upstream master
+git push -u origin master
+</pre></div>
+</div>
+<p>Remember to replace <code class="docutils literal notranslate"><span class="pre">$REPO_URL</span></code> with the SSH URL of your repository!</p>
+</div>
+<div class="section" id="project-3">
+<h2>Project 3<a class="headerlink" href="#project-3" title="Permalink to this headline">¶</a></h2>
+<p>To initialize your repository for project 3, create an empty directory. <em>Do not reuse the directory or repository from Project 1 or 2</em>. Inside the directory, run the following commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>git init
+git remote add origin $REPO_URL
+git remote add upstream https://github.com/uchicago-cs/chirouter.git
+git pull upstream master
+git push -u origin master
+</pre></div>
+</div>
+<p>Remember to replace <code class="docutils literal notranslate"><span class="pre">$REPO_URL</span></code> with the SSH URL of your repository!</p>
+</div>
+<div class="section" id="common-commands">
+<h2>Common Commands<a class="headerlink" href="#common-commands" title="Permalink to this headline">¶</a></h2>
+<p>If you want to create other copies of the repository (e.g., if you are the team member who did <em>not</em> run the above commands to initialize the repository) just run the following <em>after</em> the repository has been initialized:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>git clone $REPO_URL
+</pre></div>
+</div>
+<p>If we make any changes to the upstream repository, and you want to merge them into your repository, you need to run the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">pull</span> <span class="n">upstream</span> <span class="n">master</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
