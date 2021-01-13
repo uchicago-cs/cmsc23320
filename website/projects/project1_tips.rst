@@ -4,12 +4,7 @@ Project 1 Tips
 Before you get started
 ----------------------
 
-- Make sure you've read all the pages listed under "General" in the main `Projects <projects.html>`_
-  page.
-- Double-check that your repository has a single ``chirc`` directory in it, and that the chirc 
-  files are in that directory. If the chirc files (``README``, ``src/``, ...) are in the top 
-  level of your repository, they will not be graded. Make sure you follow the exact instructions 
-  in `Uploading the initial code to your repository <initial_code.html>`_.
+- Make sure you've read through the `Projects - Getting Started <../projects/started.html>`__ page.
 - To help you get started, we are providing you with a `trivial solution <https://github.com/uchicago-cs/cmsc23320/blob/master/samples/chirc/project1a-trivial.c>`_
   to Project 1a that will pass nearly half of the tests. While this can be a good starting point,
   please note that you will still have to make major modifications to that solution
@@ -69,8 +64,8 @@ General Tips
    or `branch table <http://en.wikipedia.org/wiki/Branch_table>`_. You can find some 
    sample code `here <https://github.com/uchicago-cs/cmsc23320/tree/master/samples/dispatch_table>`_.
 
-Resolving IRC Ambiguities (using a single server)
--------------------------------------------------
+Resolving IRC Ambiguities
+-------------------------
 
 The IRC protocol is, in some cases, not as well-specified and clear as one would hope (this is,
 unfortunately, a common attribute of many network specifications). If you’re unclear about how your server is meant to behave in some cases (specially the more obscure corner cases of IRC, or the points where the IRC specification is ambiguous), you should take the following steps:
@@ -89,77 +84,78 @@ unfortunately, a common attribute of many network specifications). If you’re u
     
 Like a production IRC server, if you replicate the behaviour of our reference implementation, that's good enough for us.
 
-Resolving IRC Ambiguities (in IRC networks)
--------------------------------------------
+..
+    Resolving IRC Ambiguities (in IRC networks)
+    -------------------------------------------
 
-In Project 1c, you will not be able to rely on the reference servers, as you would end up getting relay traffic from every other server that successfully connects to a reference server. Instead, we suggest you run a real IRC server to observe how it behaves when it connects to another IRC server. We suggest using `ngIRCd <https://ngircd.barton.de/>`__. Please note that you cannot use pre-built binaries because they will compress messages between servers, making it harder to sniff the traffic. Instead, download the sources for release 25 and build it like this::
+    In Project 1c, you will not be able to rely on the reference servers, as you would end up getting relay traffic from every other server that successfully connects to a reference server. Instead, we suggest you run a real IRC server to observe how it behaves when it connects to another IRC server. We suggest using `ngIRCd <https://ngircd.barton.de/>`__. Please note that you cannot use pre-built binaries because they will compress messages between servers, making it harder to sniff the traffic. Instead, download the sources for release 25 and build it like this::
 
-    ./configure --without-zlib --enable-strict-rfc --disable-ircplus
-    make
+        ./configure --without-zlib --enable-strict-rfc --disable-ircplus
+        make
 
-The `ngircd` binary will be located in the `src/ngircd/` directory.
+    The `ngircd` binary will be located in the `src/ngircd/` directory.
 
-We will be running two servers, so we need two separate configuration files. Take the `sample configuration file <https://github.com/ngircd/ngircd/blob/master/doc/sample-ngircd.conf.tmpl>`__ and set the following options::
+    We will be running two servers, so we need two separate configuration files. Take the `sample configuration file <https://github.com/ngircd/ngircd/blob/master/doc/sample-ngircd.conf.tmpl>`__ and set the following options::
 
-    [Global]
-        AdminEMail = admin@irc.server
-        MotdPhrase = "Hello world!"
-        Network = chircnet
+        [Global]
+            AdminEMail = admin@irc.server
+            MotdPhrase = "Hello world!"
+            Network = chircnet
 
-    [Options]
-        DNS = no
-        Ident = no
-        PAM = no
+        [Options]
+            DNS = no
+            Ident = no
+            PAM = no
 
-    [Operator]
-        Name = IRCop
-        Password = thepassword
+        [Operator]
+            Name = IRCop
+            Password = thepassword
 
 
-Now, create two copies of this file (`server1.conf` and `server2.conf`). In the first one, set these options::
+    Now, create two copies of this file (`server1.conf` and `server2.conf`). In the first one, set these options::
 
-    [Global]
-        Name = irc-1.example.net
-        Ports = 6667
-        Network = chircnet
+        [Global]
+            Name = irc-1.example.net
+            Ports = 6667
+            Network = chircnet
 
-    [Server]
-        Name = irc-2.example.net
-        MyPassword = pass1
-        PeerPassword = pass2
-        Passive = yes
+        [Server]
+            Name = irc-2.example.net
+            MyPassword = pass1
+            PeerPassword = pass2
+            Passive = yes
 
-And in the second one::
+    And in the second one::
 
-    [Global]
-        Name = irc-2.example.net
-        Ports = 6668
-        Network = chircnet
+        [Global]
+            Name = irc-2.example.net
+            Ports = 6668
+            Network = chircnet
 
-    [Server]
-        Name = irc-1.example.net
-        Host = 127.0.0.1
-        Port = 6667
-        MyPassword = pass2
-        PeerPassword = pass1
-        Passive = yes
+        [Server]
+            Name = irc-1.example.net
+            Host = 127.0.0.1
+            Port = 6667
+            MyPassword = pass2
+            PeerPassword = pass1
+            Passive = yes
 
-Note that the second server is the one that will be connecting to the first server.
+    Note that the second server is the one that will be connecting to the first server.
 
-Now, run the servers on separate terminals like this::
+    Now, run the servers on separate terminals like this::
 
-    ngircd -f server1.conf -n
-    ngircd -f server2.conf -n
+        ngircd -f server1.conf -n
+        ngircd -f server2.conf -n
 
-To capture the traffic between both servers, run Wireshark with the following display filter::
+    To capture the traffic between both servers, run Wireshark with the following display filter::
 
-    tcp.port in {6667 6668}
+        tcp.port in {6667 6668}
 
-Connect to the second server with telnet or with an IRC client. To make the second server connect to the first one, send this command::
+    Connect to the second server with telnet or with an IRC client. To make the second server connect to the first one, send this command::
 
-    CONNECT irc-1.example.net
+        CONNECT irc-1.example.net
 
-You can also connect to the first server via telnet and send the ``PASS`` and ``SERVER`` commands to observe the replies from the server.
+    You can also connect to the first server via telnet and send the ``PASS`` and ``SERVER`` commands to observe the replies from the server.
 
 Common Issues in Project 1a
 ---------------------------
@@ -192,19 +188,19 @@ General socket confusion
 If you're confused about how to use sockets, we recommend you read `Beej's Guide to Network Programming <http://beej.us/guide/bgnet/>`_ for a more thorough review of sockets.
 
 
-Common Issues in Projects 1b and 1c
------------------------------------
+Common Issues in Project 1b
+---------------------------
 
 Poor code organization
 ~~~~~~~~~~~~~~~~~~~~~~
 
-In projects 1b and 1c, your server starts getting more complex. Do not cram all your code into
+In project 1b, your server starts getting more complex. Do not cram all your code into
 a single main.c file: you should think about separating your C code into multiple C files, each responsible for a specific part of the program.
 
 Inadequate locking
 ~~~~~~~~~~~~~~~~~~
 
-In projects 1b and 1c, you now have multiple clients connecting to your server, with one thread
+In project 1b, you now have multiple clients connecting to your server, with one thread
 per client. So remember: shared data structures have to be protected by locks, and this includes 
 any socket that multiple threads could write to. POSIX requires system calls to be thread-safe (i.e., the OS itself should guarantee that send() is done atomically). However, even though a call to send() can be thread-safe, you have to account for the fact that send() might not send all your data in one go. So, you still need to gain exclusive access to the socket until a full message has been sent; otherwise, you could see partial messages interleaved by multiple threads.
 

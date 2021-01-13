@@ -1,11 +1,10 @@
 Project 1 Rubric
 ----------------
 
-This project is worth 20% of your final grade, and is divided into three parts:
+This project is worth 15% of your final grade, and is divided into two parts:
 
-* Project 1a (Assignment 1 in chirc). Worth 20% of the Project 1 grade.
-* Project 1b (Assignment 2 in chirc). Worth 40% of the Project 1 grade.
-* Project 1c (Assignment 3 in chirc). Worth 40% of the Project 1 grade.
+* Project 1a (Assignment 1 in chirc). Worth 5% of your final grade.
+* Project 1b (Assignment 4 in chirc). Worth 10% of your final grade.
 
 The grade for each project is divided into the following components:
 
@@ -27,7 +26,7 @@ Correctness
 
 The Correctness component of the grade encompasses issues with your code that, while
 not explicitly captured by the tests, could lead to *incorrect* behaviour in your server.
-In projects 1b and 1c, we will mostly be looking at whether you are using locks
+In project 1b, we will mostly be looking at whether you are using locks
 correctly. In particular, your code must adequately protect any data that can
 be accessed concurrently by more than one thread. Using a Big Fat Lock (i.e.,
 using a single lock for your entire server) will result in an 8 point penalty.
@@ -84,7 +83,7 @@ In Project 1a, we will be looking at the following:
   this).
 * **Efficiency** (4 points)
 
-In Projects 1b and 1c, we will be looking at the following:
+In Project 1b, we will be looking at the following:
 
 * **Module/function decomposition** (8 points). Please note that, in this part of
   the project, you *must* divide your server into multiple modules.
@@ -94,25 +93,24 @@ In Projects 1b and 1c, we will be looking at the following:
 * **Efficiency** (4 points)
 
 Please note that we will discuss the module/function decomposition and 
-the data structure design of Project 1b in the Week 2 discussion session,
-and for Project 1c in Week 3.
+the data structure design of Project 1b on Week 2's Tuesday lecture.
 
 
 Style
 ~~~~~
 
 The Style component of the grade will be determined by your adherence to
-our `Style Guide <style_guide.html>`_. While you should strive to follow this guide as
+our `Style Guide <https://uchicago-cs.github.io/dev-guide/style_guide_c.html>`__. While you should strive to follow this guide as
 closely as possible, there *are* certain aspects we will be paying more
 attention to. In all three parts of the project, the 20 points of the Style 
 portion are divided as follows:
 
 - **Documenting functions** (8 points): Every function written by you must have
-  a `function comment <style_guide.html#function-comments>`_ with a brief description 
+  a `function comment <https://uchicago-cs.github.io/dev-guide/style_guide_c.html#function-comments>`__ with a brief description
   of what the function does, and a description of the parameters and the 
   return value.
 - **Consistent indentation** (2 points): Your code must follow one of the
-  `allowed indentation styles <style_guide.html#function-comments>`_ consistently.
+  `allowed indentation styles <https://uchicago-cs.github.io/dev-guide/style_guide_c.html#indentation>`__ consistently.
   The presence of even a single tab character in your code will result in 0 points
   here.
 - **Clarity** (6 points): Your code must be easy to read and understand. This
@@ -128,9 +126,8 @@ portion are divided as follows:
 
 Additionally, the graders will apply the following penalties:
 
-- Using `global variables <style_guide.html#global-variables>`_: 10 point penalty
-- Using `goto statements <style_guide.html#goto-statements>`_: 5 point penalty
-- Using `printf instead of chilog <style_guide.html#printing-logging-debug-messages>`_: 5 point penalty
+- Using `global variables <https://uchicago-cs.github.io/dev-guide/style_guide_c.html#global-variables>`__: 10 point penalty
+- Using `goto statements <https://uchicago-cs.github.io/dev-guide/style_guide_c.html#goto-statements>`__: 5 point penalty
 
 Please note that the style guide does specify a few exceptions when using
 some of the above is acceptable. You will not be penalized in those cases.

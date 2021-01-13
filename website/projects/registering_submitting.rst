@@ -10,7 +10,7 @@ To actually get your private repository, you will need an *invitation URL*, whic
 1. You will need to select your CNetID from a list. This will allow us to know what student is associated with each GitHub account. This step is only done for the very first invitation you accept.
 2. Next, you will need to create a new team, or join an existing team if your project partner has already created a team. Please make sure to coordinate with your project partner so you do not end up creating two separate teams.
 
-   Please note that, while GitHub will allow you to select an arbitrary team name, your team name **must** be your CNetIDs in alphabetical order and separated by a hyphen (e.g., ``jdoe-jrandom``).
+   Please note that, while GitHub will allow you to select an arbitrary team name, your team name **must** be the project number (``p1``, ``p2``, or ``p3``, followed by your CNetIDs in alphabetical order and separated by a hyphen (e.g., ``p1-jdoe-jrandom``).
 3. Finally, you must click "Accept this assignment" or your repository will not actually be created.
 4. Once the repository has been created you **must** follow our instructions for `adding the project's initial code <initial_code.html>`__ to the repository.
 

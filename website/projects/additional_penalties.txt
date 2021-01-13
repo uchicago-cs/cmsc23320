@@ -5,7 +5,7 @@ We will also apply the following penalties:
   (and how to choose the right data structure for a given task). However, this is a Networks class,
   not a Data Structures class, and you should *not* be spending any time implementing
   such data structures. Instead, you should use existing data structure libraries
-  (our `Academic Honesty <academic_honesty.html>`__ page lists a few publicly-available
+  (our `Academic Honesty <../academic_honesty.html>`__ page lists a few publicly-available
   libraries that you are welcome to use).
 
   If you implement your own linked list, hash table, etc. from scratch, we will apply
@@ -23,7 +23,16 @@ We will also apply the following penalties:
   the assignment.
 
   **So, make sure you verify that the version of the code you submitted builds correctly on a supported
-  software environment** (see the `Projects <projects.html>`_ page for more details on this)
+  software environment** (see the `Projects - Getting Started <../projects/started.html>`_ page for more details on this)
+
+* **Using printf instead of chilog**: All the projects in this class use a simple logging library called ``chilog`` that is documented in each of the project specifications. You must use the ``chilog`` functions *exclusively* for printing logging or debug messages. **Do not use printf() directly in your code**. Please note that the ``chilog`` functions provide essentially the same functionality as ``printf``, so there is no situation where ``printf`` would be necessary instead of ``chilog`` (using ``chilog`` consistently also means you will not have to scrub ``printf``'s from your code before submitting it).
+  Using printf will result in a 5 point penalty in your code.
+
+  Furthermore, all the messages at the ``INFO``, ``WARNING``, ``ERROR``, and ``CRITICAL`` levels must be used only for their intended purposes (e.g., only use ``ERROR`` to print out actual errors in the execution of your program). You must use the ``DEBUG`` level only to print informative debug messages that would be understood by any developer trying to debug your code. You may use the ``TRACE`` level to print *any* debug message (including those that would only be understood by you). However, if your code is riddled with ``TRACE`` logging statements (including commented out ones) to the point where it is hard to read the code itself, we may take points off for this. So, once a ``TRACE`` logging statement has served its purpose, we suggest you remove it (not just comment it out).
+
+  You should assume that graders will run your code with logging at the ``INFO`` level, and will only use the ``DEBUG`` level if they need to debug an issue with your code. We will never run your code with logging at the ``TRACE`` level.
+
+  Please note that, in assignments where you are responsible for writing the ``main`` function, you may use ``fprintf`` to print to *standard error* if there is an error that prevents the program from starting (e.g., if a command-line parameter has not been provided, etc.)
 
 * **Grossly incorrect memory management**: Up to 5 point penalty. You should make sure
   to free any memory you malloc, but we will usually not take points off unless you've

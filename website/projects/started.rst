@@ -14,6 +14,8 @@ Before working on the projects, you should read the `UChicago CS Developer Guide
 
 Make sure you understand how `project registration and submission <registering_submitting.html>`__ works.
 
+Make sure you follow our instructions for `adding a project's initial code <initial_code.html>`__ to a repository.
+
 The following resources may also be helpful when working on your projects:
 
 * `Using Git <../resources/git.html>`__: If you are new to Git, you can work through an optional lab to familiarize yourself with Git, as well as with GitHub Classroom (which we will use to manage the course repositories).
