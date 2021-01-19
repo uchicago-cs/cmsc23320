@@ -6,6 +6,22 @@
  *  
  *  Written by: Borja Sotomayor
  *
+ *  To compile:
+ *
+ *      gcc server-pthreads.c -o server-pthreads -lpthread
+ *
+ *  To run:
+ *
+ *      ./server-pthreads
+ *
+ *  The server will listen on port 23320. You can connect to
+ *  it from a telnet session like this:
+ *
+ *      telnet localhost 23320
+ *
+ *  Do this multiple time to observe how the server can support
+ *  multiple connections at the same time.
+ *
  */
 #include <stdio.h>
 #include <stdlib.h>

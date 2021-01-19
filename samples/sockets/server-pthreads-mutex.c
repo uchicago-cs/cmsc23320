@@ -7,10 +7,43 @@
  *  The code is nearly identical to server-pthreads.c. Look for comments with the test
  *  "ADDED" to see what has been changed exactly.
  *
- *  You can disable the mutex lock by passing "-x" as a command-line parameter.
- *  
  *  Written by: Borja Sotomayor
  *
+ *  To compile:
+ *
+ *      gcc server-pthreads-mutex.c -o server-pthreads-mutex -lpthread
+ *
+ *  To run:
+ *
+ *      ./server-pthreads-mutex
+ *
+ *  The server will listen on port 23320. You can connect to
+ *  it from a telnet session like this:
+ *
+ *      telnet localhost 23320
+ *
+ *  Do this multiple times and you will see the number of connections
+ *  increase and decrease as connections are opened/closed.
+ *
+ *  You can use the client-bomb client to bombard the server with
+ *  many connections at the same time:
+ *
+ *      ./client-bomb -h localhost -p 23320 -n 25
+ *
+ *  By default, the server uses a mutex to protect the shared
+ *  "num_connections" value, so you will see the number of connections
+ *  go from 1 to 25, and then back down to 0.
+ *
+ *  You can disable locking in the server by running it like this:
+ *
+ *      ./server-pthreads-mutex -x
+ *
+ *  If you run the client-bomb client again, the num_connections value
+ *  will have inconsistent values because of race conditions.
+ *
+ *  Note: You do not need to support this "-x" option in your own code!
+ *        It is available in this example just so you can observe the
+ *        effects of not using mutexes.
  */
 #include <stdio.h>
 #include <stdlib.h>
