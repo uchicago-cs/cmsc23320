@@ -28,10 +28,6 @@ Make sure you read the `Project 1 rubric <project1_rubric.html>`__ and the `Proj
 Project 2: chitcp
 ~~~~~~~~~~~~~~~~~
 
-.. note::
-
-   Project 2 has not yet been updated for Winter 2021. While you are welcome to look at last year's materials, you should not start working on them until we tell you that Project 2 is ready.
-
 In this project you will be implementing the Transmission Control Protocol, as
 specified in `[RFC793] <http://tools.ietf.org/html/rfc793>`__. However, instead
 of implementing it inside the operating system itself, you will be implementing

@@ -1,15 +1,7 @@
 Project 2 Tips
 ==============
 
-Before you get started
-----------------------
-
-- Make sure you've read all the pages listed under "General" in the main `Projects <projects.html>`_
-  page.
-- Double-check that your repository has a single ``chitcp`` directory in it, and that the chiTCP 
-  files are in that directory. If the chiTCP files (``README``, ``src/``, ...) are in the top 
-  level of your repository, they will not be graded. Make sure you follow the exact instructions 
-  in `Uploading the initial code to your repository <initial_code.html>`_.
+Before you get started, make sure you've read through the `Projects - Getting Started <../projects/started.html>`__ page.
 
 Interpreting RFC 793
 --------------------
@@ -111,13 +103,13 @@ to resolve.
 
 We encourage you to pick your battles, and to consider whether going down a debugging
 rabbit hole for several hours is a sensible use of your time for just a few testing points (for
-context, one test point in Project 2a accounts for 0.15% of your final grade, and one
-test point in Project 2b accounts for 0.1% of your final grade). That is time that
+context, one test point accounts for 0.15% of your final grade. That is time that
 could be spent on polishing up your code, documenting it, etc. which is likely to have a bigger
 impact on your grade for this project.
 
 That said, if you are in a situation where you consistently get a high score on the tests
-under a specific logging level, you are allowed to add a README file to your project, requesting
+under a specific logging level, you are allowed to mention this in the README file in the root of
+your repository, requesting
 that the graders run the tests under that logging level (you may *not* request that they run
 some tests under one logging level, and other tests under a different logging level). Please
 make sure to also include the output of ``make grade``, so the graders can ensure they're
@@ -127,7 +119,7 @@ observing the same scores you're seeing.
 Dealing with Zero Windows
 -------------------------
 
-In this project, you will not be implementing any of the mechanisms to deal with a host that is advertising a window
+Until you get to Project 2b, your code will have no way of dealing with a host that is advertising a window
 of zero bytes (a common way of dealing with this is by sending
 `probe segments <http://www.tcpipguide.com/free/t_TCPWindowManagementIssues-3.htm>`_). So, if a host does advertise
 a window with zero bytes, your TCP may get stuck. The tests are designed to avoid, as much as possible, this situation,

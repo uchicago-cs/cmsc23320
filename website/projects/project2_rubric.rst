@@ -1,17 +1,17 @@
 Project 2 Rubric
 ----------------
 
-This project is worth 25% of your final grade, and is divided into three parts:
+This project is worth 30% of your final grade, and is divided into two parts:
 
-* Project 2a (Assignment 1 in chiTCP). Worth 60% of the Project 2 grade.
-* Project 2b (Assignment 2 in chiTCP). Worth 40% of the Project 2 grade.
+* Project 2a (Assignment 1 in chiTCP). Worth 15% of your final grade.
+* Project 2b (Assignment 2 in chiTCP). Worth 15% of your final grade.
 
 The grade for each project is divided into the following components:
 
 - Completeness (50 points)
-- Correctness (10 points)
-- Design (20 points) 
-- Style (20 points)
+- Correctness (20 points)
+- Design (15 points)
+- Style (15 points)
 
 Completeness
 ~~~~~~~~~~~~
@@ -25,7 +25,7 @@ Correctness
 ~~~~~~~~~~~
 
 The Correctness component of the grade encompasses issues with your code that, while
-not explicitly captured by the tests, could lead to *incorrect* behaviour in your server.
+not explicitly captured by the tests, could lead to *incorrect* behaviour in your implementation of TCP.
 Unlike Project 1, there are many aspects of the implementation that are hard to
 check via the automated tests, so a perfect score on the tests is no guarantee
 that you'll also get a high score in this section.
@@ -80,7 +80,7 @@ later):
   
 In Project 2a, we will be looking at the following:
 
-* **Function decomposition** (15 points). We strongly encourage you to write a 
+* **Function decomposition** (10 points). We strongly encourage you to write a
   `packet arrival handler <project2_tips.html#writing-the-packet-arrival-handler>`_.
   While it is not strictly required, it should make your life much easier. Please
   note that the packet arrival handler will probably be a very long function; we will
@@ -93,54 +93,47 @@ In Project 2a, we will be looking at the following:
 
 In Project 2b, we will be looking at the following:
 
-* **Function decomposition** (8 points). In particular, the code for handling timeouts,
+* **Function decomposition** (5 points). In particular, the code for handling timeouts,
   retransmissions, and out-of-order delivery should be written in their own functions.
   A good design would be one where your p2a code only requires adding a few calls to
   these new functions, instead of a complete overhaul of your code.
-* **Data structure design** (8 points). We will specifically look at how you keep track
+* **Data structure design** (5 points). We will specifically look at how you keep track
   of retranmissions and out-of-order packets.
-* **Efficiency** (4 points)
+* **Efficiency** (5 points)
 
 
 Style
 ~~~~~
 
 The Style component of the grade will be determined by your adherence to
-our `Style Guide <style_guide.html>`_. While you should strive to follow this guide as
+our `Style Guide <https://uchicago-cs.github.io/dev-guide/style_guide_c.html>`__. While you should strive to follow this guide as
 closely as possible, there *are* certain aspects we will be paying more
-attention to. In all three parts of the project, the 20 points of the Style 
+attention to. In all three parts of the project, the 20 points of the Style
 portion are divided as follows:
 
-- **Documenting functions** (8 points): Every function written by you must have
-  a `function comment <style_guide.html#function-comments>`_ with a brief description 
-  of what the function does, and a description of the parameters and the 
+- **Documenting functions** (5 points): Every function written by you must have
+  a `function comment <https://uchicago-cs.github.io/dev-guide/style_guide_c.html#function-comments>`__ with a brief description
+  of what the function does, and a description of the parameters and the
   return value.
 - **Consistent indentation** (2 points): Your code must follow one of the
-  `allowed indentation styles <style_guide.html#function-comments>`_ consistently.
+  `allowed indentation styles <https://uchicago-cs.github.io/dev-guide/style_guide_c.html#indentation>`__ consistently.
   The presence of even a single tab character in your code will result in 0 points
   here.
-- **Clarity** (6 points): Your code must be easy to read and understand. This
+- **Clarity** (5 points): Your code must be easy to read and understand. This
   is a fairly subjective aspect, but common deductions for lack of clarity
   include using variables without descriptive names, writing convoluted code
   that would be easier to understand with more code comments, using magic
   numbers, etc.
-- **General adherence to the style guide** (4 points): The graders will not be
+- **General adherence to the style guide** (3 points): The graders will not be
   checking that you follow every minute aspect of our style guide, and occasional
   infractions are ok (and won't necessarily be penalized). What we're more
   concerned with is that your code, overall, has a *consistent* style that
   asymptotically approaches the one specified in our style guide.
 
-Please note that, as mentioned in the Design section, we will *not* deduct points
-if your packet arrival handler is a very long function (as long as you clearly 
-document how each part of the function corresponds to what is specified in pages 
-64-75 of RFC 793). We may still take points off if *other* functions you write are
-too long and difficult to follow.
-
 Additionally, the graders will apply the following penalties:
 
-- Using `global variables <style_guide.html#global-variables>`_: 10 point penalty
-- Using `goto statements <style_guide.html#goto-statements>`_: 5 point penalty
-- Using `printf instead of chilog <style_guide.html#printing-logging-debug-messages>`_: 5 point penalty
+- Using `global variables <https://uchicago-cs.github.io/dev-guide/style_guide_c.html#global-variables>`__: 10 point penalty
+- Using `goto statements <https://uchicago-cs.github.io/dev-guide/style_guide_c.html#goto-statements>`__: 5 point penalty
 
 Please note that the style guide does specify a few exceptions when using
 some of the above is acceptable. You will not be penalized in those cases.
