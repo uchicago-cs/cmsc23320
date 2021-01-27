@@ -99,17 +99,7 @@
       
   <div class="section" id="project-2-tips">
 <h1>Project 2 Tips<a class="headerlink" href="#project-2-tips" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="before-you-get-started">
-<h2>Before you get started<a class="headerlink" href="#before-you-get-started" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Make sure you’ve read all the pages listed under “General” in the main <a class="reference external" href="projects.html">Projects</a>
-page.</p></li>
-<li><p>Double-check that your repository has a single <code class="docutils literal notranslate"><span class="pre">chitcp</span></code> directory in it, and that the chiTCP
-files are in that directory. If the chiTCP files (<code class="docutils literal notranslate"><span class="pre">README</span></code>, <code class="docutils literal notranslate"><span class="pre">src/</span></code>, …) are in the top
-level of your repository, they will not be graded. Make sure you follow the exact instructions
-in <a class="reference external" href="initial_code.html">Uploading the initial code to your repository</a>.</p></li>
-</ul>
-</div>
+<p>Before you get started, make sure you’ve read through the <a class="reference external" href="../projects/started.html">Projects - Getting Started</a> page.</p>
 <div class="section" id="interpreting-rfc-793">
 <h2>Interpreting RFC 793<a class="headerlink" href="#interpreting-rfc-793" title="Permalink to this headline">¶</a></h2>
 <p>In this project, you will be implementing TCP, which is specified in <a class="reference external" href="http://tools.ietf.org/html/rfc793">RFC 793</a>.
@@ -198,12 +188,12 @@ under a specific ordering of events, and which typically require a very deep deb
 to resolve.</p>
 <p>We encourage you to pick your battles, and to consider whether going down a debugging
 rabbit hole for several hours is a sensible use of your time for just a few testing points (for
-context, one test point in Project 2a accounts for 0.15% of your final grade, and one
-test point in Project 2b accounts for 0.1% of your final grade). That is time that
+context, one test point accounts for 0.15% of your final grade. That is time that
 could be spent on polishing up your code, documenting it, etc. which is likely to have a bigger
 impact on your grade for this project.</p>
 <p>That said, if you are in a situation where you consistently get a high score on the tests
-under a specific logging level, you are allowed to add a README file to your project, requesting
+under a specific logging level, you are allowed to mention this in the README file in the root of
+your repository, requesting
 that the graders run the tests under that logging level (you may <em>not</em> request that they run
 some tests under one logging level, and other tests under a different logging level). Please
 make sure to also include the output of <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">grade</span></code>, so the graders can ensure they’re
@@ -211,7 +201,7 @@ observing the same scores you’re seeing.</p>
 </div>
 <div class="section" id="dealing-with-zero-windows">
 <h2>Dealing with Zero Windows<a class="headerlink" href="#dealing-with-zero-windows" title="Permalink to this headline">¶</a></h2>
-<p>In this project, you will not be implementing any of the mechanisms to deal with a host that is advertising a window
+<p>Until you get to Project 2b, your code will have no way of dealing with a host that is advertising a window
 of zero bytes (a common way of dealing with this is by sending
 <a class="reference external" href="http://www.tcpipguide.com/free/t_TCPWindowManagementIssues-3.htm">probe segments</a>). So, if a host does advertise
 a window with zero bytes, your TCP may get stuck. The tests are designed to avoid, as much as possible, this situation,
