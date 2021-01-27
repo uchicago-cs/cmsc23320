@@ -29,6 +29,7 @@ For more details, please see the `syllabus <syllabus.html>`_.
 
    syllabus.rst
    calendar.rst
+   code_of_conduct.rst
    projects/started.rst
    projects/specs.rst
    projects/registering_submitting.rst

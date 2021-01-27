@@ -123,6 +123,7 @@ html_context = {"web_navbar": [("Course Information", [
                                     ("Syllabus", "syllabus", False),
                                     ("Calendar", "calendar", False),
                                     ("Academic Honesty", "academic_honesty", False),
+                                    ("TA/Grader Code of Conduct", "code_of_conduct", False)
                                  ]),
                                  ("Projects", [
                                      ("Getting Started", "projects/started", False),
