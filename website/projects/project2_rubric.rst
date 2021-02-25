@@ -98,7 +98,7 @@ In Project 2b, we will be looking at the following:
   A good design would be one where your p2a code only requires adding a few calls to
   these new functions, instead of a complete overhaul of your code.
 * **Data structure design** (5 points). We will specifically look at how you keep track
-  of retranmissions and out-of-order packets.
+  of retransmissions and out-of-order packets.
 * **Efficiency** (5 points)
 
 
@@ -108,7 +108,7 @@ Style
 The Style component of the grade will be determined by your adherence to
 our `Style Guide <https://uchicago-cs.github.io/dev-guide/style_guide_c.html>`__. While you should strive to follow this guide as
 closely as possible, there *are* certain aspects we will be paying more
-attention to. In all three parts of the project, the 20 points of the Style
+attention to. In both parts of the project, the 15 points of the Style
 portion are divided as follows:
 
 - **Documenting functions** (5 points): Every function written by you must have
