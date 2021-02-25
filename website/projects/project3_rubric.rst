@@ -4,9 +4,9 @@ Project 3 Rubric
 This project is worth 15% of your final grade. The grade for the project is 
 divided into the following components:
 
-- Completeness/Correctness (60 points)
-- Design (20 points) 
-- Style (20 points)
+- Completeness/Correctness (70 points)
+- Design (15 points)
+- Style (15 points)
 
 Completeness/Correctness
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -29,16 +29,16 @@ page in the chirouter documentation. They will be looking specifically at the fo
   * Time Exceeded - 5 points
   * Port Unreachable - 3 points
 
-* IP Forwarding - 15 points
+* IP Forwarding - 20 points
 
-  * Basic Forwarding - 5 points
+  * Basic Forwarding - 10 points
   * Sending withheld frames - 5 points
   * Host Unreachable - 5 points
 
-* Multiple routers - 10 points
+* Multiple routers - 15 points
 
-  * Two Router topology: 7.5 points
-  * Three Router topology: 2.5 points
+  * Two Router topology: 10 points
+  * Three Router topology: 5 points
  
 While the graders will be basing their score largely on whether your implementation
 produces the expected results when running the commands listed on the chirouter
@@ -53,7 +53,7 @@ The Design component of the grade will be determined by "qualities, many of whic
 that don’t have to do with (and exist to some extent independently of) the correct operation of your code."
 (thanks to Adam Shaw for this concise phrasing). We will specifically be looking at the following:
 
-* **Function decomposition** (15 points): We will look at whether you divided your
+* **Function decomposition** (10 points): We will look at whether you divided your
   implementation into functions that make sense. This includes avoiding
   repeated/redundant code, ensuring that each function performs a well-defined
   task, and putting related functions in the same module (i.e., the same C file).
@@ -71,25 +71,25 @@ Style
 ~~~~~
 
 The Style component of the grade will be determined by your adherence to
-our `Style Guide <style_guide.html>`_. While you should strive to follow this guide as
+our `Style Guide <https://uchicago-cs.github.io/dev-guide/style_guide_c.html>`__.
+While you should strive to follow this guide as
 closely as possible, there *are* certain aspects we will be paying more
-attention to. In all three parts of the project, the 20 points of the Style 
-portion are divided as follows:
+attention to. The 20 Style points are are divided as follows:
 
-- **Documenting functions** (8 points): Every function written by you must have
-  a `function comment <style_guide.html#function-comments>`_ with a brief description 
+- **Documenting functions** (5 points): Every function written by you must have
+  a `function comment <https://uchicago-cs.github.io/dev-guide/style_guide_c.html#function-comments>`_ with a brief description
   of what the function does, and a description of the parameters and the 
   return value.
 - **Consistent indentation** (2 points): Your code must follow one of the
-  `allowed indentation styles <style_guide.html#function-comments>`_ consistently.
+  `allowed indentation styles <https://uchicago-cs.github.io/dev-guide/style_guide_c.html#indentation>`_ consistently.
   The presence of even a single tab character in your code will result in 0 points
   here.
-- **Clarity** (6 points): Your code must be easy to read and understand. This
+- **Clarity** (5 points): Your code must be easy to read and understand. This
   is a fairly subjective aspect, but common deductions for lack of clarity
   include using variables without descriptive names, writing convoluted code
   that would be easier to understand with more code comments, using magic
   numbers, etc.
-- **General adherence to the style guide** (4 points): The graders will not be
+- **General adherence to the style guide** (3 points): The graders will not be
   checking that you follow every minute aspect of our style guide, and occasional
   infractions are ok (and won't necessarily be penalized). What we're more
   concerned with is that your code, overall, has a *consistent* style that
@@ -97,9 +97,8 @@ portion are divided as follows:
 
 Additionally, the graders will apply the following penalties:
 
-- Using `global variables <style_guide.html#global-variables>`_: 10 point penalty
-- Using `goto statements <style_guide.html#goto-statements>`_: 5 point penalty
-- Using `printf instead of chilog <style_guide.html#printing-logging-debug-messages>`_: 5 point penalty
+- Using `global variables <https://uchicago-cs.github.io/dev-guide/style_guide_c.html#global-variables>`__: 10 point penalty
+- Using `goto statements <https://uchicago-cs.github.io/dev-guide/style_guide_c.html#goto-statements>`__: 5 point penalty
 
 Please note that the style guide does specify a few exceptions when using
 some of the above is acceptable. You will not be penalized in those cases.

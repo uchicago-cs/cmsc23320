@@ -1,15 +1,7 @@
 Project 3 Tips
 ==============
 
-Before you get started
-----------------------
-
-- Make sure you've read all the pages listed under "General" in the main `Projects <projects.html>`_
-  page.
-- Double-check that your repository has a single ``chirouter`` directory in it, and that the chirouter 
-  files are in that directory. If the chirouter files (``README.md``, ``src/``, ...) are in the top 
-  level of your repository, they will not be graded. Make sure you follow the exact instructions 
-  in `Uploading the initial code to your repository <initial_code.html>`_.
+Before you get started, make sure you've read through the `Projects - Getting Started <../projects/started.html>`__ page.
 
 Using the CS Virtual Machine
 ----------------------------
