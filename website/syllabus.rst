@@ -221,7 +221,8 @@ Acknowledgements
 This syllabus is based on previous CMSC 23300/33300 syllabi developed by
 Prof. Anne Rogers and Prof. Ian Foster from the University of Chicago.
 
-A number of policies
+A number of policies in this class are based on similar policies from
+CMSC 12100, authored by a variety of instructors throughout the years.
 
 
 .. toctree::

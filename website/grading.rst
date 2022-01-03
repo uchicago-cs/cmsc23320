@@ -174,3 +174,9 @@ no later than **one week** after a graded piece of work is returned to you.
 After that time, we will not consider any such requests,
 *regardless of whether the request is reasonable and justified*.
 
+Acknowledgements
+----------------
+
+This grading scheme is based on a similar scheme designed for the Autumn 2021
+offering of CMSC 12100, and written by Tim Black, Hannah Morgan, Anne Rogers,
+Borja Sotomayor, and Zhao Wang.
