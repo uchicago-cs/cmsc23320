@@ -41,6 +41,8 @@ extensions = [
     'sphinx.ext.ifconfig',
 ]
 
+mathjax_path = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
@@ -117,13 +119,14 @@ todo_include_todos = False
 # -- Options for HTML output ----------------------------------------------
 
 html_sidebars = {'*': None,
-                 'syllabus': ['localtoc.html']}
+                 'syllabus': ['localtoc.html'],
+                 'grading':  ['localtoc.html']}
 
 html_context = {"web_navbar": [("Course Information", [
                                     ("Syllabus", "syllabus", False),
                                     ("Calendar", "calendar", False),
                                     ("Academic Honesty", "academic_honesty", False),
-                                    ("TA/Grader Code of Conduct", "code_of_conduct", False)
+                                    ("Code of Conduct for Course Staff", "code-of-conduct", False),
                                  ]),
                                  ("Projects", [
                                      ("Getting Started", "projects/started", False),
