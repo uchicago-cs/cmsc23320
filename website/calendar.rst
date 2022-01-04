@@ -1,6 +1,10 @@
 Winter 2022 Course Calendar
 ---------------------------
 
+.. note::
+
+   This calendar is tentative and subject to change.
+
 Lectures take place in Ryerson 251 on Tuesdays and Thursdays from 12:30pm from 1:50pm CST (Note:
 lectures will take place over Zoom during the first two weeks of the quarter)
 
