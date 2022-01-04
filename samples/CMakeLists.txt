@@ -21,6 +21,9 @@ target_link_libraries(server-pthreads-mutex pthread)
 add_executable(server-pthreads-condvar sockets/server-pthreads-condvar.c)
 target_link_libraries(server-pthreads-condvar pthread)
 
+add_executable(thread-exit pthreads/thread-exit.c)
+target_link_libraries(thread-exit pthread)
+
 
 # Dispatch table examples
 add_executable(dispatch-int-one dispatch_table/dispatch-int-one.c dispatch_table/handlers.c)
