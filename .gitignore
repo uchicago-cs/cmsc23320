@@ -3,3 +3,7 @@
 *.pdf
 *.toc
 *~
+.idea
+build/
+cmake-build-*
+_build/
