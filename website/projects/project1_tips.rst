@@ -1,6 +1,10 @@
 Project 1 Tips
 ==============
 
+.. note::
+
+   Project 1 has not yet been updated for Winter 2022. While you are welcome to look at last year's materials, you should not start working on them until we tell you that Project 1 is ready.
+
 Before you get started
 ----------------------
 

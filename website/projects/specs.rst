@@ -4,6 +4,10 @@ Project Specifications
 Project 1: chirc
 ~~~~~~~~~~~~~~~~
 
+.. note::
+
+   Project 1 has not yet been updated for Winter 2022. While you are welcome to look at last year's materials, you should not start working on them until we tell you that Project 1 is ready.
+
 In this project, you will implement a simple Internet Relay Chat (IRC)
 server called chirc. This project has three goals:
 
@@ -28,6 +32,10 @@ Make sure you read the `Project 1 rubric <project1_rubric.html>`__ and the `Proj
 Project 2: chitcp
 ~~~~~~~~~~~~~~~~~
 
+.. note::
+
+   Project 2 has not yet been updated for Winter 2022. While you are welcome to look at last year's materials, you should not start working on them until we tell you that Project 2 is ready.
+
 In this project you will be implementing the Transmission Control Protocol, as
 specified in `[RFC793] <http://tools.ietf.org/html/rfc793>`__. However, instead
 of implementing it inside the operating system itself, you will be implementing
@@ -47,6 +55,10 @@ Make sure you read the `Project 2 rubric <project2_rubric.html>`__ and the `Proj
 
 Project 3: chirouter
 ~~~~~~~~~~~~~~~~~~~~
+
+.. note::
+
+   Project 3 has not yet been updated for Winter 2022. While you are welcome to look at last year's materials, you should not start working on them until we tell you that Project 3 is ready.
 
 In this project you will be implementing a simple IP router capable of routing IPv4 datagrams between multiple networks. This router will have a static routing table, so you will not have to deal with implementing a routing protocol like RIP or OSPF; instead, the project will focus on the routing of IP datagrams. While, at a high level, this just involves receiving IP datagrams and figuring out what interface they should be sent on, this requires building additional functionality before you can actually start routing IP datagrams.
 

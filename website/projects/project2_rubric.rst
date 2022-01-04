@@ -1,6 +1,12 @@
 Project 2 Rubric
 ----------------
 
+.. note::
+
+    Project 2 has not yet been updated for Winter 2022, and the rubric below refers to the old grading scheme
+    we used in this class. While you are welcome to read through this page, please bear in mind that the
+    grading scheme is being overhauled this year (see our `Grading <../grading.html>`__ page for more details.
+
 This project is worth 30% of your final grade, and is divided into two parts:
 
 * Project 2a (Assignment 1 in chiTCP). Worth 15% of your final grade.
