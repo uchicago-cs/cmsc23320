@@ -58,7 +58,7 @@ you should make the instructor aware of this.
 Lectures
 ~~~~~~~~
 
-The course meets twice a week for lectures over Zoom. In most weeks, one
+The course meets twice a week for lectures. In most weeks, one
 of the lectures will introduce material that will be expanded upon in
 pre-recorded lectures that are made available that week, and the other
 lecture will focus on the course projects.

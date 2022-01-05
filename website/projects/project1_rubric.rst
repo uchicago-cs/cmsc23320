@@ -5,7 +5,7 @@ Project 1 Rubric
 
     Project 1 has not yet been updated for Winter 2022, and the rubric below refers to the old grading scheme
     we used in this class. While you are welcome to read through this page, please bear in mind that the
-    grading scheme is being overhauled this year (see our `Grading <../grading.html>`__ page for more details.
+    grading scheme is being overhauled this year (see our `Grading <../grading.html>`__ page for more details).
 
 This project is worth 15% of your final grade, and is divided into two parts:
 
