@@ -21,8 +21,8 @@ do much better than you.
 So, this year, your work on the projects will receive one of four discrete scores:
 
 - **Excellent** (E): The work is either perfect, or has only very minor flaws.
-- **Satisfactory** (S): While the work has some room for improvement, the student has put in a good-faith effort to complete all the work and demonstrated sufficient mastery of the material. Only minor revisions would be needed for the work to be Exemplary.
-- **Needs Improvement** (N): The student has put in a good-faith effort to complete the work, but revealed a lack of mastery in the material that can be addressed via concrete feedback. The work could become Satisfactory or Exemplary with some major revisions.
+- **Satisfactory** (S): While the work has some room for improvement, the student has put in a good-faith effort to complete all the work and demonstrated sufficient mastery of the material. Only minor revisions would be needed for the work to be Excellent.
+- **Needs Improvement** (N): The student has put in a good-faith effort to complete the work, but revealed a lack of mastery in the material that can be addressed via concrete feedback. The work could become Satisfactory or Excellent with some major revisions.
 - **Ungradable** (U): The student did not make a good-faith effort to complete the work. This includes not submitting the work at all, but also situations like submitting only placeholder code, work that barely passes any tests, etc.
 
 This is often referred to as the ESNU scale. It is important that you avoid thinking of these scores in terms of how they map to an A, B, C, etc. (the manner in which we compute your final grade is described below). The ESNU scale is intended to help you understand your mastery of the material, so you can identify areas for improvement as the quarter progresses. Each project will include a more precise description of what is required for an E, S, N, or U.
