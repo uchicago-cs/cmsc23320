@@ -24,6 +24,3 @@ this course, students should understand *everything* that happens "under the hoo
 when (for example) a web page is requested, from the moment
 you click on a link in your browser to the moment you get the requested
 page back.
-
-CMSC 15400 and a working knowledge of the C programming language are
-strict prerequisites of this course.

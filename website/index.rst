@@ -1,12 +1,10 @@
 CMSC 23320 - Foundations of Computer Networks
 =============================================
 
-.. admonition:: What happened to CMSC 23300 Networks and Distributed Systems?
-
-   This class was offered for many years under a different code and name, *CMSC 23300 Networks and Distributed Systems*, despite
-   the fact that it only covered Networks topics (with Distributed Systems topics covered in *CMSC 23310 Advanced Distributed
-   Systems*). So, in 2020, we renamed CMSC 23300 to better reflect its contents and scope. However, other than the change in
-   code and name, CMSC 23320 covers the same topics and uses the same projects as CMSC 23300.
+In Winter 2022, this class is cross-listed as **MPCS 54233 Foundations of Computer Networks**.
+For simplicity, we will refer to the class as "CMSC 23320", but all the information on this
+website is equally applicable to MPCS 54233. There is no separate website for MPCS 54233 (nor
+are there any course materials that are specific only to MPCS 54233)
 
 Course Staff
 ~~~~~~~~~~~~
@@ -29,7 +27,6 @@ For more details, please see the `syllabus <syllabus.html>`_.
 
    syllabus.rst
    calendar.rst
-   code_of_conduct.rst
    projects/started.rst
    projects/specs.rst
    projects/registering_submitting.rst

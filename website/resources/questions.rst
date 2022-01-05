@@ -19,22 +19,23 @@ As you work through the CMSC 23320 coursework, many of you will probably have qu
 
   In particular, it will be much easier for us to help you if we are able to reproduce the exact issue you are encountering (i.e., when we run your code, we must be able to observe the exact same issue you're encountering). And to do so, we need as much information as possible from you:
 
-  * If your question relates to your code, make sure you push your code to the Git server before asking for help.
-  * Make sure you're running your code on a CS machine (either through the virtual desktop or via SSH). We will not be able to provide assistance if you are running your code on your personal machine, as this will make it harder for us to reproduce the exact issue you are encountering.
+  * If your question relates to your code, make sure you push your code to GitHub before asking for help.
+  * Make sure you're running your code on a CS machine (in CSIL, on a virtual desktop, or via SSH). We will not be able to provide assistance if you are running your code on your personal machine, as this will make it harder for us to reproduce the exact issue you are encountering.
   * Include a detailed description of the exact chain of events that lead to the issue you're encountering (Are you testing a specific function? If so, with what inputs? Does the issue come up when you run a test? Etc.).
   * If you encounter an error message (or any other unexpected output) when running a command or a specific test, please make sure you include the **full and unabridged** error message (or unexpected output). Summarizing the message (e.g., "The tests says it was expecting value 42, and I'm pretty sure that's what I'm returning") makes it harder for us to figure out what the issue is.
   * If something is "wrong", please describe in what way it seems wrong to you. For example, were you expecting a particular output but got a different one? Is a piece of code behaving in a way you were not expecting? Etc. It can be useful to tell us what you were expecting the code to do, and what you encountered instead.
 
 * What *not* to include in your question:
 
-  * **Never post your code on Ed Discussion**. As noted in our `Academic Honesty <academic_honesty.html>`__ policies, you should never share your code with other students, which means you should never post it on Ed Discussion. If you need us to look at your code, just push it to the Git server and we will look at it there. Please note that, if a test prints out a few lines of code as part of its output, that's ok.
+  * **Never post your code on Ed Discussion**. As noted in our `Academic Honesty <../academic-honesty.html>`__ policies, you should never share your code with other students, which means you should never post it on Ed Discussion. If you need us to look at your code, just push it to GitHub and we will look at it there. Please note that, if a test prints out a few lines of code as part of its output, that's ok.
 
   * **No screenshots**. Do not post screenshots of the output. Screenshots are not searchable, and may pose readability issues for some people. Instructors/TAs may also want to copy-paste that output somewhere else, which is not possible if you post a screenshot.
 
-    If you need to share some output with us, copy-paste from the terminal onto Ed Discussion, and use Ed Discussion's code formatting. To copy something on the terminal, just select it (the same way you would do in a word processor: click, and then drag until the end of the output) and press Control-Shift-C.
+    If you need to share some output with us, copy-paste from the terminal onto Ed Discussion, and use Ed Discussion's "code block" formatting. To copy something on the terminal, just select it (the same way you would do in a word processor: click, and then drag until the end of the output) and press Control-Shift-C.
 
 * **One question, one post**. Avoid posts that have multiple unrelated questions. Instead, write a separate post for each question. Please note that it is ok to ask multiple questions in one post if they all relate to the same issue.
 
+* **Comments vs Answers**. If you need to provide additional information on a question, or have a follow-up question, make sure to always use a "comment" (by clicking on "Comment" below your question). Only fill out the "answer" field if you have resolved the issue on your own, or if you are providing an actual answer to someone else's question.
 
 
 

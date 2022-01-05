@@ -1,10 +1,23 @@
 Syllabus
 ========
 
+.. admonition:: What happened to CMSC 23300 Networks and Distributed Systems?
+
+   This class was offered for many years under a different code and name, *CMSC 23300 Networks and Distributed Systems*, despite
+   the fact that it only covered Networks topics (with Distributed Systems topics covered in *CMSC 23310 Advanced Distributed
+   Systems*). So, in 2020, we renamed CMSC 23300 to better reflect its contents and scope. However, other than the change in
+   code and name, CMSC 23320 covers the same topics and uses the same projects as CMSC 23300.
+
 Course description
 ------------------
 
 .. include:: description.txt
+
+**Prerequisites**: This class assumes fluency in C programming, including low-level aspects of C such as bit-level
+operations. The specific course prerequisites are:
+
+- Undergraduate students: CMSC 15400 Introduction to Computer Systems
+- MPCS students: MPCS 51040 C Programming or 51100 Advanced Programming.
 
 Course organization
 -------------------
@@ -15,8 +28,10 @@ students must master fundamental concepts and skills in networking. The
 class meets two times a week for lectures that provide a conceptual
 scaffolding for the projects, but will also cover material that is not
 directly applied in the projects. Some lectures will also be dedicated to
-in-depth discussion of the projects. Besides the projects, students will also be evaluated with
-two midterms and a final exam. The course calendar, including the contents of
+in-depth discussion of the projects.
+
+Besides the projects, students will also be evaluated with
+two homeworks and a final exam. The course calendar, including the contents of
 each lecture and project deadlines, is shown in the `Course Calendar <calendar.html>`_ page.
 
 Projects
@@ -53,45 +68,35 @@ provide suggestions on how to approach the projects, (2) provide general
 feedback on submitted projects, and (3) provide a general forum to
 answer questions about the projects.
 
-Lecture Quizzes
-~~~~~~~~~~~~~~~
+Homeworks
+~~~~~~~~~
 
-The pre-recorded lectures will include very simple quizzes that should be trivial to
-pass if you pay attention to the videos. The goal of these
-quizzes is to reward students who watch the pre-recorded lectures in a timely manner,
-and who pay attention while watching the videos.
-
-To earn the points for a quiz, you must
-complete the quiz no later than one week after the lecture is posted. Furthermore, if
-your total score on the quizzes (for the entire quarter) is above 75%, you will
-get 100% of the points allocated to the lecture quizzes on your final grade.
-If your total score on the quizzes is below below 75%, you will be awarded a
-proportional amount of the points.
+Many of the lectures (both live and pre-recorded) will cover material that is
+not directly applied in the projects. Your mastery of this material will be
+tested via two homework assignments where you will have to answer questions that involve
+reasoning about the material covered in the lectures (e.g., exercises where
+you must apply the concepts covered in the lectures, as opposed to questions
+that ask you to repeat facts).
 
 Exams
 ~~~~~
 
-On weeks 4 and 8, as well as during finals week, you will complete online exams through Gradescope.
-While each exam will have a time limit ranging from 30 minutes to 2 hours, you will be able
-to start the exam at any point during a 24-hour period. Please
-see the `Course Calendar <calendar.html>`_ page for the exact dates (on an exam date,
-the exam will be available from 12:01am to 11:59pm CST of the listed day)
+During Finals week, we will hold a closed-book exam divided into three sections:
 
-Questions and exercises related to the projects will make up a
-substantial part of these exams. Students who have worked on the projects
-(which requires understanding the material presented in class) should be
-able to answer these questions with relative ease. However, the exams
-will also include questions that are not related to the projects, but
-will be in line with the learning goals outlined at the beginning of
-this syllabus.
+- "Trust but verify" questions about the projects. Most of these questions should
+  be trivial to answer for any student who has completed the projects.
+- Networks concepts: These questions will test basic mastery of network concepts,
+  and will be similar to questions found in the homework assignments.
+- Challenge questions: These questions will require a solid and deep understanding
+  of network concepts, including how different concepts relate to each other.
 
 Books
 -----
 
 This course has two *suggested* texts:
 
--  *Computer Networks: A Systems Approach*, 5th edition, Larry L.
-   Peterson and Bruce S. Davie, Morgan Kaufmann 2012.
+-  *Computer Networks: A Systems Approach*, 6th edition, Larry L.
+   Peterson and Bruce S. Davie, Morgan Kaufmann 2021.
 
 -  *TCP/IP Illustrated, Volume 1: The Protocols*, 2nd Edition, Kevin
    Fall and W. Richard Stevens, Addison-Wesley 2011.
@@ -100,140 +105,13 @@ These texts are *not* required, and most students are able to complete the
 class successfully without them. However, they can be a good complement
 to the lectures and projects.
 
+Please note that *Computer Networks: A Systems Approach* is freely available
+here: https://book.systemsapproach.org/
+
 Grading
 -------
 
-The final grade will be based on the following:
-
-+---------------------------------+-----+
-| Project 1a                      |  5% |
-+---------------------------------+-----+
-| Project 1b                      | 10% |
-+---------------------------------+-----+
-| Project 2a                      | 15% |
-+---------------------------------+-----+
-| Project 2b                      | 15% |
-+---------------------------------+-----+
-| Project 3                       | 15% |
-+---------------------------------+-----+
-| Midterm 1 (Week 4)              |  5% |
-+---------------------------------+-----+
-| Midterm 2 (Week 8)              | 10% |
-+---------------------------------+-----+
-| Final Exam                      | 20% |
-+---------------------------------+-----+
-| Lecture quizzes                 |  5% |
-+---------------------------------+-----+
-
-Grades are not curved in this class or, at least, not in the traditional
-sense. We use a standard set of grade boundaries:
-
--  95-100: A
--  90-95: A-
--  85-90: B+
--  80-85: B
--  75-80: B-
--  70-75: C+
--  < 70: Dealt on a case-by-case basis
-
-We curve only to the extent we might lower the boundaries for one or more letter
-grades, depending on the distribution of the raw scores. We will not raise the
-boundaries in response to the distribution.
-
-So, for example, if you have a total score of 82 in the course, you are guaranteed
-to get, at least, a B (but may potentially get a higher grade if the boundary for
-a B+ is lowered).
-
-If you want to take the course pass/fail, a “pass” requires a 60 in the
-course and an average of 50 points across the midterms and final exam (this
-is a weighted average using the weights specified above).
-Students who accrue more than 60 points, but have an average on the
-exams that is less than 50, will be dealt with on a case-by-case basis.
-
-Instructions on how to request to take the class pass/fail will be sent closer to
-the end of the quarter. Please do not send these requests until we
-have posted instructions on how to do so.
-
-Requests to withdraw must be sent to your College advisor, not to the instructor.
-
-
-Late submissions
-~~~~~~~~~~~~~~~~
-
-You are allowed to make **at most two** late submissions on the projects, except Project 1a
-(no late submissions are allowed on Project 1a). Late submissions will be accepted up to 72
-hours after the deadline.
-
-**No credit will be given** for late submissions after you have used up your two allowed
-late submissions.
-
-**No credit will be given** for *any* submission made 72 hours after the deadline.
-
-Please note that, while Gradescope does enforce the 72-hour limit on late submissions and will clearly flag
-late submissions with a red "LATE" label, it does not enforce our specific limit
-of two late submissions. **It is your responsibility to keep track of how many late submissions
-you have made so far, and to ensure you don't make more than two late submissions.**
-
-If extraordinary circumstances (illness,
-family emergency, etc.) prevent a student from meeting a deadline, we may
-grant additional extensions on a case-by-case basis. Whenever possible, the
-student must inform their instructor of these extraordinary circumstances
-*before* the deadline.
-
-Please note that having a heavy workload in a given
-week does not qualify as an extraordinary circumstance. The purpose of the
-two extensions is precisely to give you some flexibility in weeks when you
-are busier than usual.
-
-Finally, please note that you are allowed two late submissions per student.
-If you work in the same pair throughout the quarter, this effectively translates
-to having two late submissions for your pair. However, if you consume your
-two late submissions with one project partner, and then
-change to a different project partner (who still has late submissions remaining),
-you will *not* be able to submit late as a pair. You each must have late submissions
-remaining to be able to submit late as a pair.
-
-
-Regrades
-~~~~~~~~
-
-We sometimes make mistakes, and are happy to review any incorrect grading decision.
-
-However, please note that we will only consider regrade requests where a grader made an
-actual mistake (e.g., they took points off claiming you didn't do something,
-when you actually did do it and the grader maybe missed that when reading over
-your submission). We will not consider regrade requests that ask for point
-penalties to be reduced, or try to argue that we should not be taking points off
-for a given issue in your code.
-
-For example, suppose you receive a penalty that says
-"-2 points: Function X did not check that parameter Y is greater than zero".
-If function X in your code *did* perform this check, and the grader
-missed this fact (and erroneously applied that penalty), you can submit
-a regrade request asking us to review this decision. We ask that you keep
-these requests brief and to the point: no more than 1-2 paragraphs identifying
-the exact penalty and the reasons you believe it was applied erroneously, including
-references to specific parts of your code (e.g., "I did check the value of the
-parameter in line 107"). Focus on laying out the facts, and nothing else.
-
-On the other hand, let's say you received the "Function X did not check that
-parameter Y is greater than zero" penalty, and function X in your code did *not* perform this check. In this case, you cannot submit
-a regrade request arguing that this is not something for which we should deduct
-points, or that the point deduction should be lower. Please note that all penalties
-are explicitly approved by an instructor (graders have no discretion to come up with
-penalties on their own and, if they took points off for something, it is because they
-were directed to do so by an instructor).
-
-Please note that, while you may request a regrade for a specific issue,
-an instructor may do a full regrade of your submission if they feel there
-are other issues with the grading of your submission. This can result in you
-ending up with a lower score on the assignment.
-
-Finally, it is also your responsibility to make
-these requests in a timely manner. Requests for regrades must be submitted
-no later than **one week** after a graded piece of work is returned to you.
-After that time, we will not consider any requests for regrades,
-*regardless of whether the regrade request is reasonable and justified*.
+Please see the `Grading <grading.html>`__ page.
 
 
 Asking questions
@@ -252,7 +130,7 @@ replies to your question. If you send a message directly to the
 instructor or the TAs, you will get a gentle reminder that your question
 should be asked on Ed Discussion.
 
-Please see our `Asking Questions <questions.html>`_ page for specific
+Please see our `Asking Questions <resources/questions.html>`_ page for specific
 guidelines and policies related to asking questions on Ed Discussion.
 
 Please note that all course announcements will be made through Ed Discussion. It
@@ -286,20 +164,24 @@ shown above).
 Policies
 --------
 
-Policy on academic honesty
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Academic Honesty
+~~~~~~~~~~~~~~~~
 
 We take academic honesty **very** seriously in this class. Please make sure to
-read our `Academic Honesty <academic_honesty.html>`__ page.
+read our `Academic Honesty <academic-honesty.html>`__ page.
 
-Zoom guidelines
-~~~~~~~~~~~~~~~
 
-We will be using Zoom in this class. We expect your interactions via Zoom to be consistent with an in-person class experience. Respect the people you’re working with. Enter the Zoom meetings muted if possible (unfortunately, it will not be possible if you’re calling in), and unmute to speak. Raise your hand if you’d like to speak. [There’s a “Raise Hand” button on the participant page.] If your background is unusually noisy, use the chat channel instead of unmuting. We strongly encourage you to have your camera on during our Zoom sessions, but we'll understand if some of you prefer to keep your video off.
+Code of Conduct for Course Staff
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Note that you can set your name in your Zoom profile, so you don’t have to go with whatever was assigned. We encourage you to include your pronouns in your name (if so, please include them after your last name).
+This class has a `Code of Conduct for Course Staff <code-of-conduct.html>`__.
+We share this code of conduct with you (the students) so you know the
+expectations we have set for our staff and, while we expect and hope they
+will scrupulously follow this code of conduct, you should let us know if
+you witness or experience a code of conduct violation. This will allow us
+to continue to improve the student experience in this class, and to prevent
+any issues from reocurring.
 
-Our Zoom class meetings will be recorded and saved to the cloud to allow students in this class to review the discussion, and especially to allow students who can’t participate the opportunity to benefit from class. We will not make these recordings available to anyone but class participants, we will not make them available after the quarter, and students will not be allowed to save copies. However, we have no way to guarantee that students will follow this policy. If you have FERPA concerns, please mask yourself accordingly, e.g., by turning off video and using an alias.
 
 Diversity statement
 ~~~~~~~~~~~~~~~~~~~
@@ -332,59 +214,6 @@ requesting accommodations.
 Phone: (773) 702-6000
 Email: disabilities@uchicago.edu
 
-COVID-19 Policies
------------------
-
-UChicago Health Pact
-~~~~~~~~~~~~~~~~~~~~
-
-This class does not include any in-person components. Nonetheless, if you do come on campus
-at any point, all students are required to adhere to the guidelines in the UChicago Health
-Pact in order to promote a safe environment in the classroom.
-
-- Secure face coverings must be worn appropriately at all times while in University buildings
-- Maintain a distance of 6 feet from others
-- Do not attend an in-person class if you feel unwell or are experiencing COVID-19 related symptoms
-
-The complete text of the UChicago Health Pact along with additional information about
-COVID-19 protocols can be found `here <https://goforward.uchicago.edu/health-requirements/#healthpact>`__.
-
-Reporting COVID-19 Related Concerns
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Any concerns over inappropriate PPE usage, physical distancing, cleaning/disinfection, or
-other COVID-19 related public health concerns should be directed to `UCAIR <https://ehs-prd-01.uchicago.edu/ehsa-ucair/InjuryIllnessIndexUOFC-IT.html>`__.
-
-If there is an emergency, call 773-702-8181 or dial 123 on any campus phone.
-
-Reporting COVID-19 Exposure or a Confirmed Case
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If you were potentially exposed to COVID-19 or your COVID-19 test results come back
-positive, reach out immediately to C19HealthReport@uchicago.edu.
-
-Recording and Deletion Policies for Academic Year 2020-21
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The Recording and Deletion Policies for the current academic year can be found in the
-Student Manual under `Petitions, Audio & Video Recording on Campus <https://studentmanual.uchicago.edu/administrative-policies/additional-administrative-regulations/petitions-audio-video-recording-on-campus/>`__.
-
-- Do not record, share, or disseminate any course sessions, videos, transcripts, audio, or chats.
-- Do not share links for the course to those not currently enrolled.
-- Any Zoom cloud recordings will be automatically deleted 90 days after the completion of the recording.
-
-Attendance
-~~~~~~~~~~
-
-Absent any extraordinary circumstances, we expect students to attend all lectures. That said, we do not keep track of attendance in this class and no part of your final grade is computed based on your attendance to lectures.
-
-Students who have been exposed to or who are experiencing symptoms of COVID-19
-should contact `UChicago Student Wellness <https://wellness.uchicago.edu/>`__ immediately to be tested, and reach out to their
-area Dean of Students to request accommodations for classes until:
-
-- At least 10 days have passed since symptoms first appeared and;
-- At least 3 days (72 hours) have passed since recovery- defined as resolution of fever without the use of fever-reducing medications and improvement in respiratory symptoms (e.g., cough, shortness of breath).
-
 
 Acknowledgements
 ----------------
@@ -392,13 +221,15 @@ Acknowledgements
 This syllabus is based on previous CMSC 23300/33300 syllabi developed by
 Prof. Anne Rogers and Prof. Ian Foster from the University of Chicago.
 
-Thanks to Tim Black for suggesting the addition of a diversity
-statement in the syllabus (in a different class we co-taught)
+A number of policies in this class are based on similar policies from
+CMSC 12100, authored by a variety of instructors throughout the years.
 
 
 .. toctree::
    :maxdepth: 2
    :hidden:
 
-   academic_honesty.rst
+   grading.rst
+   academic-honesty.rst
+   code-of-conduct.rst
 

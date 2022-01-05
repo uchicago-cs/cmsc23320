@@ -62,6 +62,7 @@ void *hello_thread_func(void *args)
             printf("[HELLO THREAD] I woke up and it wasn't because of a timeout.\n");
         }
     }
+    pthread_mutex_unlock(&ctx->lock);
 
     printf("[HELLO THREAD] I'm done!\n");
 
@@ -94,10 +95,10 @@ int main(int argc, char *argv[])
     printf("[MAIN  THREAD] Press any key to tell the hello thread to exit.\n");
     getchar();
 
-    /* Switch ctx->active to false, and signal "hello thread"
+    /* Switch ctx->active to false, and signal "hello thread" */
     pthread_mutex_lock(&ctx->lock);
-    ctx->active = false;
     pthread_cond_signal(&ctx->cv);
+    ctx->active = false;
     pthread_mutex_unlock(&ctx->lock);
 
     /* Join the "hello thread" */

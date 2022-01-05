@@ -1,67 +1,73 @@
-Winter 2021 Course Calendar
+Winter 2022 Course Calendar
 ---------------------------
 
-Lectures take place over Zoom on Tuesdays and Thursdays from 1pm from 2:20pm CST.
+.. note::
+
+   This calendar is tentative and subject to change.
+
+Lectures take place in Ryerson 251 on Tuesdays and Thursdays from 12:30pm from 1:50pm CST (Note:
+lectures will take place over Zoom during the first two weeks of the quarter)
 
 Additional pre-recorded lectures will also be made available most weeks. When both the live
 lecture and pre-recorded lecture have the same topic, that means the live lecture will be
 used to introduce the topic, and additional pre-recorded lectures will be released after
 the live lecture.
 
-All project deadlines are at 8pm (Chicago local time) on the specified date.
+All deadlines are at 8pm (Chicago local time) on the specified date.
 
 +------+------------------------+----------------------------+----------------------------------+----------------+
-| Week | Date                   | Live Lectures              | Pre-recorded Lectures            | Coursework     |
+| Week | Date                   | Live Lectures              | Pre-recorded Lectures            | Coursework Due |
 +======+========================+============================+==================================+================+
-| 1    | Tuesday, January 12    | Introduction               | Sockets / Concurrent Programming |                |
+| 1    | Tuesday, January 11    | Introduction               | Sockets / Concurrent Programming |                |
 |      +------------------------+----------------------------+----------------------------------+----------------+
-|      | Thursday, January 14   | The Network Protocol Stack | Data Link and Network Layer      |                |
+|      | Thursday, January 13   | The Network Protocol Stack | Data Link and Network Layer      |                |
 +------+------------------------+----------------------------+----------------------------------+----------------+
-| 2    | Monday, January 18     | MARTIN LUTHER KING DAY                                                         |
+| 2    | Tuesday, January 18    | Project 1b                 |                                  |                |
 |      +------------------------+----------------------------+----------------------------------+----------------+
-|      | Tuesday, January 19    | Project 1b                 |                                  | Project 1a due |
+|      | Wednesday, January 19  |                            |                                  | Project 1a     |
 |      +------------------------+----------------------------+----------------------------------+----------------+
-|      | Thursday, January 21   | Data Link + Network Layer  |                                  |                |
+|      | Thursday, January 20   | Data Link + Network Layer  |                                  |                |
 +------+------------------------+----------------------------+----------------------------------+----------------+
-| 3    | Tuesday, January 26    | TCP (1)                    | TCP (1)                          |                |
+| 3    | Monday, January 24     | MARTIN LUTHER KING DAY                                                         |
 |      +------------------------+----------------------------+----------------------------------+----------------+
-|      | Wednesday, January 27  |                            |                                  | Project 1b due |
+|      | Tuesday, January 25    | TCP (1)                    | TCP (1)                          |                |
 |      +------------------------+----------------------------+----------------------------------+----------------+
-|      | Thursday, January 28   | Project 2a                 |                                  |                |
+|      | Thursday, January 27   | Project 2a                 |                                  |                |
+|      +------------------------+----------------------------+----------------------------------+----------------+
+|      | Friday, January 28     |                            |                                  | Project 1b     |
 +------+------------------------+----------------------------+----------------------------------+----------------+
-| 4    | Tuesday, February 2    | TCP (2)                    | TCP (2)                          |                |
+| 4    | Tuesday, February 1    | TCP (2)                    | TCP (2)                          |                |
 |      +------------------------+----------------------------+----------------------------------+----------------+
-|      | Wednesday, February 3  |                            |                                  | Midterm 1      |
+|      | Wednesday, February 2  |                            |                                  | Homework #1    |
 |      +------------------------+----------------------------+----------------------------------+----------------+
-|      | Thursday, February 4   | Project 2a                 |                                  |                |
+|      | Thursday, February 3   | Project 2a + TCP Q&A       |                                  |                |
 +------+------------------------+----------------------------+----------------------------------+----------------+
-| 5    | Tuesday, February 9    | Application Layer          | Application Layer                |                |
+| 5    | Tuesday, February 8    | Application Layer          | Application Layer                |                |
 |      +------------------------+----------------------------+----------------------------------+----------------+
-|      | Wednesday, February 10 |                            |                                  | Project 2a due |
+|      | Wednesday, February 9  |                            |                                  | Project 2a     |
 |      +------------------------+----------------------------+----------------------------------+----------------+
-|      | Thursday, February 11  | Project 2b                 |                                  |                |
+|      | Thursday, February 10  | Project 2b                 |                                  |                |
 +------+------------------------+----------------------------+----------------------------------+----------------+
-| 6    | Tuesday, February 16   | Wireless Networks          | Wireless Networks                |                |
+| 6    | Tuesday, February 15   | Wireless Networks          | Wireless Networks                |                |
 |      +------------------------+----------------------------+----------------------------------+----------------+
-|      | Thursday, February 18  | Project 2b Q&A             |                                  |                |
+|      | Thursday, February 17  | Project 2b Q&A             |                                  |                |
 +------+------------------------+----------------------------+----------------------------------+----------------+
-| 7    | Tuesday, February 23   | Routing Protocols          | Routing Protocols                |                |
+| 7    | Tuesday, February 22   | Routing Protocols          | Routing Protocols                |                |
 |      +------------------------+----------------------------+----------------------------------+----------------+
-|      | Wednesday, February 24 |                            |                                  | Project 2b due |
+|      | Wednesday, February 23 |                            |                                  | Project 2b     |
 |      +------------------------+----------------------------+----------------------------------+----------------+
-|      | Thursday, February 25  | Project 3                  |                                  |                |
+|      | Thursday, February 24  | Project 3                  |                                  |                |
 +------+------------------------+----------------------------+----------------------------------+----------------+
-| 8    | Tuesday, March 2       | Network Security           | Network Security                 |                |
+| 8    | Tuesday, March 1       | Network Security           | Network Security                 |                |
 |      +------------------------+----------------------------+----------------------------------+----------------+
-|      | Wednesday, March 3     |                            |                                  | Midterm 2      |
+|      | Wednesday, March 2     |                            |                                  | Homework #2    |
 |      +------------------------+----------------------------+----------------------------------+----------------+
-|      | Thursday, March 4      | Project 3 Q&A              |                                  |                |
+|      | Thursday, March 3      | Project 3 Q&A              |                                  |                |
 +------+------------------------+----------------------------+----------------------------------+----------------+
-| 9    | Tuesday, March 9       | Other Topics               | Other Topics                     |                |
+| 9    | Tuesday, March 8       | Other Topics               | Other Topics                     |                |
 |      +------------------------+----------------------------+----------------------------------+----------------+
-|      | Wednesday, March 10    |                            |                                  | Project 3 due  |
+|      | Wednesday, March 9     |                            |                                  | Project 3      |
 |      +------------------------+----------------------------+----------------------------------+----------------+
-|      | Thursday, March 11     | Review / Wrap-up           |                                  |                |
+|      | Thursday, March 10     | Review / Wrap-up           |                                  |                |
 +------+------------------------+----------------------------+----------------------------------+----------------+
-
 

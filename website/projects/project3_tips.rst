@@ -1,6 +1,11 @@
 Project 3 Tips
 ==============
 
+.. note::
+
+   Project 3 has not yet been updated for Winter 2022. While you are welcome to look at last year's materials, you should not start working on them until we tell you that Project 3 is ready.
+
+
 Before you get started, make sure you've read through the `Projects - Getting Started <../projects/started.html>`__ page.
 
 Using the CS Virtual Machine
