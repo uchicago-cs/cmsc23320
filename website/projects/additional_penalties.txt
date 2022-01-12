@@ -1,5 +1,3 @@
-We will also apply the following penalties:
-
 * **Reinventing wheels that don't need to be reinvented**: In this class, we expect
   you to know how to use data structures like linked lists, hash tables, etc.
   (and how to choose the right data structure for a given task). However, this is a Networks class,
@@ -8,34 +6,36 @@ We will also apply the following penalties:
   (our `Academic Honesty <../academic_honesty.html>`__ page lists a few publicly-available
   libraries that you are welcome to use).
 
-  If you implement your own linked list, hash table, etc. from scratch, we will apply
-  a 15 point penalty. While you may think that implementing your own data structure
+  Implementing your own linked list, hash table, etc. from scratch is considered
+  a major issue. While you may think that implementing your own data structure
   is a worthwhile exercise, it invariably results in more work for the TAs and graders
   (as you will likely run into all sorts of issues and segfaults that could have been
   avoided by using a well-known and well-tested data structures library). Plus, it will
   be a much more worthwhile experience for you to understand how to incorporate an existing library
   into your own code.
 
-* **Submitting code that doesn't build**: If the graders are able to build your
-  code with a few minor fixes (missing semicolons, parenthesis, etc.),
-  we will apply a 15 point penalty. If your code
-  requires substantial work to get it to build, you will receive a zero on
-  the assignment.
+* **Submitting code that doesn't build**: If you submit code that does not build
+  on Gradescope's autograder, but the graders can get it to build with some minor fixes
+  (missing semicolons, parenthesis, etc.),
+  this will just be treated as a major issue. However, if your code
+  requires substantial work to get it to build, you will receive a U score.
 
   **So, make sure you verify that the version of the code you submitted builds correctly on a supported
   software environment** (see the `Projects - Getting Started <../projects/started.html>`_ page for more details on this)
+  Additionally, it is your responsibility to check that the code you submitted to Gradescope
+  builds correctly. If it doesn't, but it builds correctly on your end, please let us
+  know so we can look into it.
 
 * **Using printf instead of chilog**: All the projects in this class use a simple logging library called ``chilog`` that is documented in each of the project specifications. You must use the ``chilog`` functions *exclusively* for printing logging or debug messages. **Do not use printf() directly in your code**. Please note that the ``chilog`` functions provide essentially the same functionality as ``printf``, so there is no situation where ``printf`` would be necessary instead of ``chilog`` (using ``chilog`` consistently also means you will not have to scrub ``printf``'s from your code before submitting it).
-  Using printf will result in a 5 point penalty in your code.
 
-  Furthermore, all the messages at the ``INFO``, ``WARNING``, ``ERROR``, and ``CRITICAL`` levels must be used only for their intended purposes (e.g., only use ``ERROR`` to print out actual errors in the execution of your program). You must use the ``DEBUG`` level only to print informative debug messages that would be understood by any developer trying to debug your code. You may use the ``TRACE`` level to print *any* debug message (including those that would only be understood by you). However, if your code is riddled with ``TRACE`` logging statements (including commented out ones) to the point where it is hard to read the code itself, we may take points off for this. So, once a ``TRACE`` logging statement has served its purpose, we suggest you remove it (not just comment it out).
+  Furthermore, all the messages at the ``INFO``, ``WARNING``, ``ERROR``, and ``CRITICAL`` levels must be used only for their intended purposes (e.g., only use ``ERROR`` to print out actual errors in the execution of your program). You must use the ``DEBUG`` level only to print informative debug messages that would be understood by any developer trying to debug your code. You may use the ``TRACE`` level to print *any* debug message (including those that would only be understood by you). However, if your code is riddled with ``TRACE`` logging statements (including commented out ones) to the point where it is hard to read the code itself, we may penalize you for this. So, once a ``TRACE`` logging statement has served its purpose, we suggest you remove it (not just comment it out).
 
   You should assume that graders will run your code with logging at the ``INFO`` level, and will only use the ``DEBUG`` level if they need to debug an issue with your code. We will never run your code with logging at the ``TRACE`` level.
 
   Please note that, in assignments where you are responsible for writing the ``main`` function, you may use ``fprintf`` to print to *standard error* if there is an error that prevents the program from starting (e.g., if a command-line parameter has not been provided, etc.)
 
-* **Grossly incorrect memory management**: Up to 5 point penalty. You should make sure
-  to free any memory you malloc, but we will usually not take points off unless you've
+* **Grossly incorrect memory management**: You should make sure
+  to free any memory you malloc, but we will usually not penalize you unless you've
   been grossly negligent in your malloc'ing/freeing. You should also make sure to
   not "save" pointers to stack-allocated memory that is going to be deallocated.
   This can happen if you store a pointer to a functions' local variable in a struct
