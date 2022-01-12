@@ -1,10 +1,6 @@
 Project 1 Tips
 ==============
 
-.. note::
-
-   Project 1 has not yet been updated for Winter 2022. While you are welcome to look at last year's materials, you should not start working on them until we tell you that Project 1 is ready.
-
 Before you get started
 ----------------------
 
@@ -16,7 +12,7 @@ Before you get started
   use ``getaddrinfo`` instead).
 - When writing the socket code for your chirc server, make sure you take a look at the 
   `socket samples <https://github.com/uchicago-cs/cmsc23320/tree/master/samples/sockets>`_ covered
-  in the discussion section. They can provide a good starting point for writing a multi-threaded
+  in the pre-recorded lecture on socket programming. They can provide a good starting point for writing a multi-threaded
   server in Project 1b.
 
 General Tips
@@ -28,19 +24,10 @@ General Tips
    will actually be implementing a fairly small subset of the IRC
    specification.
 
--  Similarly, take into account that the division of points is not
-   proportional to the amount of effort required to obtain those points.
-   The points are distributed in such a way that a reasonable amount of
-   work should produce a *good* implementation that will get you roughly
-   75% of the points (and will place you in the B range). If you want to
-   produce an *excellent* implementation (placing you in the A range),
-   you will have to go the extra mile to obtain the final 25% of the
-   points.
-
 -  Your implementation will require using data structures to store
    collections of users, channels, etc. Do not implement these
-   data structures from scratch! (in fact, we will take points
-   off if you do) You should use existing data structure
+   data structures from scratch! (in fact, you will be penalized if you do)
+   You should use existing data structure
    implementations; we suggest you specifically
    use libraries like `utlist <https://troydhanson.github.io/uthash/utlist.html>`_
    and `uthash <https://troydhanson.github.io/uthash/>`_.
@@ -60,8 +47,7 @@ General Tips
    of the server (e.g., “create a new channel”, “add a new user to this
    channel”, etc.), and (4) construct outgoing messages. Doing so can
    pay off handsomely later on, even if you spend the first few days
-   feeling like you’re not making any progress towards actually earning
-   points.
+   feeling like you’re not making any progress towards passing any tests.
    
 -  When processing multiple commands (starting in Project 1b), a data 
    structure that can come in handy is a `dispatch table <http://en.wikipedia.org/wiki/Dispatch_table>`_ 
@@ -184,7 +170,7 @@ For more details, please read the ``strtok`` man page, which explains ``strtok``
 Error handling in sockets
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Don't forget to check the return value of the socket functions. Although this is not something we will likely take point off for, it will indirectly make you lose points because your code is likely to behave strangely if you don't react appropriately to certain error conditions (e.g., a return code of 0 from recv means that the client has disconnected; in 1b and 1c, you will need to "log out" the user from the IRC server when that happens).
+Don't forget to check the return value of the socket functions: your code is likely to behave strangely if you don't react appropriately to certain error conditions (e.g., a return code of 0 from recv means that the client has disconnected; in Project 1b you will need to "log out" the user from the IRC server when that happens).
 
 General socket confusion
 ~~~~~~~~~~~~~~~~~~~~~~~~

@@ -1,146 +1,205 @@
 Project 1 Rubric
-----------------
+================
 
-.. note::
+The grading of this project follows a specifications grading approach. If you have not already
+done so, make sure to read our `Grading <../grading.html>`__ page for more details.
 
-    Project 1 has not yet been updated for Winter 2022, and the rubric below refers to the old grading scheme
-    we used in this class. While you are welcome to read through this page, please bear in mind that the
-    grading scheme is being overhauled this year (see our `Grading <../grading.html>`__ page for more details).
+You will receive two ESNU scores for this project:
 
-This project is worth 15% of your final grade, and is divided into two parts:
+- **Completeness score**: This score will be determined solely by the result of running
+  the automated tests, as these give a measure of how *complete* your implementation
+  is (i.e., how much of the assignment you implemented).
+- **Code Quality score**: This score is determined by a review of your code done by
+  the course staff, and is based on three aspects of your code:
 
-* Project 1a (Assignment 1 in chirc). Worth 5% of your final grade.
-* Project 1b (Assignment 4 in chirc). Worth 10% of your final grade.
+  - *Correctness*: This encompasses issues with your code
+    that, while not explicitly captured by the tests, could lead to
+    incorrect or inefficient behaviour in your code. This can include
+    small mistakes in your code, as well as larger issues that reveal
+    a lack of mastery in the material.
+  - *Design*: This encompasses
+    "qualities, many of which are intangible, that don't have to do with (and exist
+    to some extent independently of) the correct operation of your code." (thanks to
+    Adam Shaw for this concise phrasing).
+  - *Style*: This encompasses your adherence
+    to our `Style Guide <https://uchicago-cs.github.io/dev-guide/style_guide_c.html>`__.
 
-The grade for each project is divided into the following components:
+Submission Timeline
+-------------------
 
-- Completeness (50 points)
-- Correctness (10 points)
-- Design (20 points) 
-- Style (20 points)
+This project has two required submissions, and an optional resubmission.
+
+The required submissions are the following:
+
+- **Project 1a**, corresponding to Exercise 1 of the chirc project. This first submission
+  also serves as sort of warm-up exercise for all the projects, to ensure you familiarize
+  yourself with using a Git repo, running the automated tests, submitting through Gradescope,
+  etc.
+- **Project 1b**, corresponding to Exercise 4 of the chirc project (which builds upon Exercise 1)
+
+The deadlines for the required submissions can be found in the `Course Calendar <../calendar.html>`__.
+
+Your score on Project 1b will determine your ESNU scores on Project 1. This mean that you can also
+treat Project 1b as an opportunity to revise the work you submitted as part of Project 1a (you will
+get feedback on your Project 1a submission before Project 1b is due)
+
+Additionally, once you get your graded Project 1b back, you will have roughly one week to submit
+a revised version.
+
+Finally, please note that, to earn an E in Code Quality, you must have made an initial
+good-faith submission for both Project 1a and Project 1b (i.e., work that would score an N or above).
+So, for example, you could technically skip Project 1a entirely and only make a submission for
+Project 1b but, if you do so, your Code Quality score will be capped at an S.
 
 Completeness
-~~~~~~~~~~~~
+------------
 
-The Completeness component of the grade will be determined by the result of running
-the tests and, more specifically, on the number of points obtained when
-running ``make assignment-X`` (see `Using the automated tests <http://chi.cs.uchicago.edu/chirc/testing.html#using-the-automated-tests>`_
-in the chirc documentation).
+The Completeness component will be determined by running the following
+two commands, and adding up the scores reported by each::
+
+    make assignment-1
+    make assignment-4
+
+(see `Using the automated tests <http://chi.cs.uchicago.edu/chirc/testing.html#using-the-automated-tests>`_
+in the chirc documentation for more details on these commands)
+
+Your ESNU score will then be determined as follows:
+
++---------------------+----------------------+
+| Grade               | Points on tests      |
++=====================+======================+
+| Excellent           | at least 95          |
++---------------------+----------------------+
+| Satisfactory        | at least 75          |
++---------------------+----------------------+
+| Needs Improvement   | at least 25          |
++---------------------+----------------------+
+| Ungradable          | less than 25         |
++---------------------+----------------------+
+
+
+Code Quality
+------------
+
+When assessing your code quality, there are a number of things we will be paying
+close attention to, and which we describe in the sections below (including major
+issues, labelled "[Major Issue]" that you should be particularly mindful of).
+
+Please note that the items below refer to a complete Project 1
+implementation (i.e., Exercises 1 and 4 of the chirc project), so some of the items
+will not apply to the Project 1a submission (most notably, you are not expected to use
+threads or mutexes in that submission).
+
+In general, your ESNU score will be determined as follows:
+
+- **Excellent**: Your submission has none of the issues described below or, at most,
+  has only a few minor mistakes or small style issues that would be trivial to address.
+- **Satisfactory**: Your submission has a few of the issues described below (but no
+  major issues), and would only require minor changes to get to an E.
+- **Needs Improvement**: Your submission has several of the issues described below,
+  or at least one major issue. In general, major revisions would be required to
+  get up to an S or E.
+- **Ungradable**: Your submission does not constitute a good-faith effort to complete
+  the work. This includes not submitting any work at all, as well as submitting
+  only placeholder code (e.g., code that includes functions for all the required
+  IRC commands, but where the functions are empty or filled with "TODO"s, etc.)
+
+That said, while the issues listed below are the main things we care about in this project,
+it is not possible for us to give you an exhaustive list of every single thing that could
+affect your code quality score. If you get a comment pointing out an issue in your
+code that we did not list below, take it as an opportunity to improve your work
+(and remember that you'll have a chance to revise your work!)
 
 Correctness
 ~~~~~~~~~~~
 
-The Correctness component of the grade encompasses issues with your code that, while
-not explicitly captured by the tests, could lead to *incorrect* behaviour in your server.
-In project 1b, we will mostly be looking at whether you are using locks
-correctly. In particular, your code must adequately protect any data that can
-be accessed concurrently by more than one thread. Using a Big Fat Lock (i.e.,
-using a single lock for your entire server) will result in an 8 point penalty.
+When assessing the correctness of your code, we will be paying special attention
+to the following:
 
-However, in general, the graders may take points off for issues like the following:
-
-- Hardcoding reply values that happen to make the tests pass, but which would fail
-  under reasonable use cases (e.g., hardcoding the LUSERS values)
-- Segfaults that happen under reasonable use cases (i.e., the graders won't be
-  trying to make your code fail with bizarre corner cases)
-- Not implementing something that is clearly specified in the project, even if
+- **Not checking the return value of send()**: send is not guaranteed to send the entire buffer you provide, which you can only tell by looking at the return value (Beej's Guide for Socket Programming provides a `ready-to-use solution to this <https://beej.us/guide/bgnet/html/#sendall>`__, which you're welcome to use). Of course, send could also fail, and you need to check its return value for this too.
+- [Major Issue] **Not checking the return value of any socket function**.
+- **Not using getaddrinfo to create the server socket**. Please note that some of the socket examples we provide (most notably the first server example, ``oneshot-single.c``) manually create the ``sockaddr`` struct for the sake of highlighting what that struct looks like, but that is not the usual way to create a server socket. You can see an example of how to create a server socket with ``getaddrinfo`` in the `server-pthreads.c <https://github.com/uchicago-cs/cmsc23320/blob/master/samples/sockets/server-pthreads.c>`__ example.
+- **Not using safe string functions (strncpy vs strcpy)**: Most C string functions (strcpy, strcat, etc.) have an equivalent "safe" version (strncpy, strncat, etc.) where you can specify the maximum number of characters to copy/concatenate/etc. Use these instead to protect against accidental (or malicious) buffer overflows. Alternatively, consider using a string library like `sds <https://github.com/antirez/sds>`__
+- **Treating the return of recv() as a C-string**: recv() returns the raw bytes received through the network. In a protocol like IRC, this happens to be human-readable commands, but recv() won't return a C-string (i.e., an array of characters terminated by a NULL character). It is your responsibility to add that NULL terminator if you want to manipulate the bytes returned by recv() as a C-string.
+- **Hardcoding reply values that happen to make some tests pass**, but which would fail
+  under reasonable use cases. Take into account that the chirc specification does allow you to
+  hardcode certain replies as a stop-gap measure (e.g., hardcoding the LUSERS replies during
+  connection registration, so you can make progress on those tests before you properly implement
+  the LUSERS command). However, you must ultimately remove those
+  hardcoded replies with a more general implementation. Finally, for avoidance of doubt,
+  there are also a few spots where the specification allows you to unconditionally hardcode
+  certain values; those can be left hardcoded.
+- **Memory accesses that could lead to segfaults under reasonable use cases**. The graders won't be
+  trying to make your code fail with bizarre corner cases but, for example, if there is a very evident
+  buffer overrun in your code, that will need to be fixed.
+- **Not implementing something that is clearly specified in the project**, even if
   the tests don't test for it (e.g., implementing a command almost completely,
   but not implementing one of the replies).
+- [Major issue] **Not protecting access to shared data structures (list/hash of channels, users, etc.) with a mutex**
+- **Using mutexes to protect access to data structures, but doing so inconsistently** (e.g., locking the mutex only when writing to a data structure, and not when reading).
+- **Using mutexes to protect access to data structures, but not to socket accesses**. See `Inadequate locking <project1_tips.html#inadequate-locking>`__ in the Project 1 tips for more details.
+- [Major issue] **Using a Big Fat Lock** (i.e., using a single mutex lock for the entire server).
 
-Please note that this section of the rubric will not re-penalize you for a failure
-that is already captured by the tests. So, if your code fails to implement something
-we told you to implement, but that is already captured by the tests, we would not
-re-penalize you here.
 
 Design
 ~~~~~~
 
-The Design component of the grade will be determined by "qualities, many of which are intangible, 
-that don’t have to do with (and exist to some extent independently of) the correct operation of your code."
-(thanks to Adam Shaw for this concise phrasing). Across all three
-parts of the project, we will be looking at least at the following
-(the exact points for each of the parts of the project is specified
-later):
+When assessing the design of your code, we will be paying special attention
+to the following:
 
-* **Module/function decomposition**: We will look at whether you divided your
-  implementation into modules and functions that make sense. This includes avoiding
-  repeated/redundant code, ensuring that each function performs a well-defined
-  task, and putting related functions in the same module (i.e., the same C file).
-* **Data structure design**: We will look at whether you have designed (and/or used)
-  the right data structures to store your server's state.
-* **Efficiency**: We will look at whether your code is minimally efficient.
-  In other words, we are not looking for sublimely efficient code but, rather,
-  for the lack of grossly inefficient code. For example, we don't care whether
-  you store your list of channels in a linked list (:math:`O(n)` lookup times) or a
-  hash table (:math:`O(1)` lookup times), but we do care whether you iterate over a list
-  in :math:`O(n^2)` time when the same task can reasonably be accomplished in
-  :math:`O(n)` time (i.e., when the :math:`O(n)` is not particularly clever or relies
-  on some obscure algorithm).
-  
-In Project 1a, we will be looking at the following:
+* **How you reassemble incoming messages**: You should have some sort of array
+  for assembling the next message that will be processed, separate from the buffer
+  you pass to the ``recv()`` function (which cannot be a 1-byte array; using a 1-byte
+  array when calling ``recv()`` is considered a major issue).
+* **How you process IRC commands**: Ideally, you should use some sort of dispatch
+  table data structure (as described in the `Project 1 Tips <project1_tips.html>`__)
+  instead of a long sequence of "if command == JOIN then...", "if command == PRIVMSG then",
+  etc. blocks of code.
+* **How you store server data**. You should ideally use some sort of "server context"
+  structure, which we will discuss in the Project 1b lecture in Week 2.
+* **Module/function decomposition**. We will look at whether you divided your implementation
+  into modules and functions that make sense. This includes avoiding repeated/redundant code,
+  ensuring that each function performs a well-defined task, and putting related functions in the
+  same module (i.e., the same C file). Please note that there are two potential major issues
+  in this regard:
 
-* **Module/function decomposition** (8 points). Please note that, in this part of
-  the project, it is acceptable to have all your code in a single C file (so you
-  are not required to divide your implementation into multiple modules, but are
-  welcome to do so). You will get at most 5 points here if your entire implementation
-  is inside the main() function, without using any additional functions.
-* **Data structure design** (8 points). We will specifically be looking at how you
-  handle the reassembly of partitioned messages (and the data structures to support
-  this).
-* **Efficiency** (4 points)
-
-In Project 1b, we will be looking at the following:
-
-* **Module/function decomposition** (8 points). Please note that, in this part of
-  the project, you *must* divide your server into multiple modules.
-* **Data structure design** (8 points). We will specifically look at how you store
-  information about the server state, including the list of users (and their state)
-  and the list of channels (and their state).
-* **Efficiency** (4 points)
-
-Please note that we will discuss the module/function decomposition and 
-the data structure design of Project 1b on Week 2's Tuesday lecture.
-
+  * [Major Issue] **Putting all your code in a single main() function**
+  * [Major Issue (in Project 1b)] **Putting all your code in a single C file**. Please
+    note that this is ok in Project 1a.
 
 Style
 ~~~~~
 
-The Style component of the grade will be determined by your adherence to
-our `Style Guide <https://uchicago-cs.github.io/dev-guide/style_guide_c.html>`__. While you should strive to follow this guide as
-closely as possible, there *are* certain aspects we will be paying more
-attention to. In all three parts of the project, the 20 points of the Style 
-portion are divided as follows:
+We will be checking your general adherence to
+our `Style Guide <https://uchicago-cs.github.io/dev-guide/style_guide_c.html>`__
+and, while we will not be checking that you follow every minute aspect of our
+style guide, we do expect you to follow a *consistent* style that
+asymptotically approaches the one specified in our style guide.
+That said, there *are* certain aspects we will be paying more
+attention to:
 
-- **Documenting functions** (8 points): Every function written by you must have
+- **Documenting functions**: Every function written by you must have
   a `function comment <https://uchicago-cs.github.io/dev-guide/style_guide_c.html#function-comments>`__ with a brief description
   of what the function does, and a description of the parameters and the 
-  return value.
-- **Consistent indentation** (2 points): Your code must follow one of the
+  return value. Please note that not documenting your functions at all
+  (as opposed to doing so inconsistently or not following the style guide)
+  is considered a major issue.
+- **Consistent indentation**: Your code must follow one of the
   `allowed indentation styles <https://uchicago-cs.github.io/dev-guide/style_guide_c.html#indentation>`__ consistently.
-  The presence of even a single tab character in your code will result in 0 points
-  here.
-- **Clarity** (6 points): Your code must be easy to read and understand. This
-  is a fairly subjective aspect, but common deductions for lack of clarity
-  include using variables without descriptive names, writing convoluted code
-  that would be easier to understand with more code comments, using magic
-  numbers, etc.
-- **General adherence to the style guide** (4 points): The graders will not be
-  checking that you follow every minute aspect of our style guide, and occasional
-  infractions are ok (and won't necessarily be penalized). What we're more
-  concerned with is that your code, overall, has a *consistent* style that
-  asymptotically approaches the one specified in our style guide.
-
-Additionally, the graders will apply the following penalties:
-
-- Using `global variables <https://uchicago-cs.github.io/dev-guide/style_guide_c.html#global-variables>`__: 10 point penalty
-- Using `goto statements <https://uchicago-cs.github.io/dev-guide/style_guide_c.html#goto-statements>`__: 5 point penalty
-
-Please note that the style guide does specify a few exceptions when using
-some of the above is acceptable. You will not be penalized in those cases.
+- **Clarity**: Your code must be easy to read and understand. This
+  is a fairly subjective aspect, but remember that things like using
+  variable names without descriptive names or using magic numbers will
+  usually make your code harder to read.
+- [Major Issue] **Using global variables**, except when defining
+  compile-time constants.
+- [Major Issue] **Using goto statements**, except in the very limited cases
+  described in the style guide.
 
 
-Additional Penalties
-~~~~~~~~~~~~~~~~~~~~
+Other Code Quality Issues
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+There a couple of other issues that we care about across all projects:
 
 .. include:: additional_penalties.txt
 
