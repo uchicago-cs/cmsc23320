@@ -209,7 +209,6 @@ some of the above is acceptable. You will not be penalized in those cases.</p>
 </div>
 <div class="section" id="additional-penalties">
 <h2>Additional Penalties<a class="headerlink" href="#additional-penalties" title="Permalink to this headline">¶</a></h2>
-<p>We will also apply the following penalties:</p>
 <ul>
 <li><p><strong>Reinventing wheels that don’t need to be reinvented</strong>: In this class, we expect
 you to know how to use data structures like linked lists, hash tables, etc.
@@ -218,30 +217,32 @@ not a Data Structures class, and you should <em>not</em> be spending any time im
 such data structures. Instead, you should use existing data structure libraries
 (our <a class="reference external" href="../academic_honesty.html">Academic Honesty</a> page lists a few publicly-available
 libraries that you are welcome to use).</p>
-<p>If you implement your own linked list, hash table, etc. from scratch, we will apply
-a 15 point penalty. While you may think that implementing your own data structure
+<p>Implementing your own linked list, hash table, etc. from scratch is considered
+a major issue. While you may think that implementing your own data structure
 is a worthwhile exercise, it invariably results in more work for the TAs and graders
 (as you will likely run into all sorts of issues and segfaults that could have been
 avoided by using a well-known and well-tested data structures library). Plus, it will
 be a much more worthwhile experience for you to understand how to incorporate an existing library
 into your own code.</p>
 </li>
-<li><p><strong>Submitting code that doesn’t build</strong>: If the graders are able to build your
-code with a few minor fixes (missing semicolons, parenthesis, etc.),
-we will apply a 15 point penalty. If your code
-requires substantial work to get it to build, you will receive a zero on
-the assignment.</p>
+<li><p><strong>Submitting code that doesn’t build</strong>: If you submit code that does not build
+on Gradescope’s autograder, but the graders can get it to build with some minor fixes
+(missing semicolons, parenthesis, etc.),
+this will just be treated as a major issue. However, if your code
+requires substantial work to get it to build, you will receive a U score.</p>
 <p><strong>So, make sure you verify that the version of the code you submitted builds correctly on a supported
-software environment</strong> (see the <a class="reference external" href="../projects/started.html">Projects - Getting Started</a> page for more details on this)</p>
+software environment</strong> (see the <a class="reference external" href="../projects/started.html">Projects - Getting Started</a> page for more details on this)
+Additionally, it is your responsibility to check that the code you submitted to Gradescope
+builds correctly. If it doesn’t, but it builds correctly on your end, please let us
+know so we can look into it.</p>
 </li>
-<li><p><strong>Using printf instead of chilog</strong>: All the projects in this class use a simple logging library called <code class="docutils literal notranslate"><span class="pre">chilog</span></code> that is documented in each of the project specifications. You must use the <code class="docutils literal notranslate"><span class="pre">chilog</span></code> functions <em>exclusively</em> for printing logging or debug messages. <strong>Do not use printf() directly in your code</strong>. Please note that the <code class="docutils literal notranslate"><span class="pre">chilog</span></code> functions provide essentially the same functionality as <code class="docutils literal notranslate"><span class="pre">printf</span></code>, so there is no situation where <code class="docutils literal notranslate"><span class="pre">printf</span></code> would be necessary instead of <code class="docutils literal notranslate"><span class="pre">chilog</span></code> (using <code class="docutils literal notranslate"><span class="pre">chilog</span></code> consistently also means you will not have to scrub <code class="docutils literal notranslate"><span class="pre">printf</span></code>’s from your code before submitting it).
-Using printf will result in a 5 point penalty in your code.</p>
-<p>Furthermore, all the messages at the <code class="docutils literal notranslate"><span class="pre">INFO</span></code>, <code class="docutils literal notranslate"><span class="pre">WARNING</span></code>, <code class="docutils literal notranslate"><span class="pre">ERROR</span></code>, and <code class="docutils literal notranslate"><span class="pre">CRITICAL</span></code> levels must be used only for their intended purposes (e.g., only use <code class="docutils literal notranslate"><span class="pre">ERROR</span></code> to print out actual errors in the execution of your program). You must use the <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code> level only to print informative debug messages that would be understood by any developer trying to debug your code. You may use the <code class="docutils literal notranslate"><span class="pre">TRACE</span></code> level to print <em>any</em> debug message (including those that would only be understood by you). However, if your code is riddled with <code class="docutils literal notranslate"><span class="pre">TRACE</span></code> logging statements (including commented out ones) to the point where it is hard to read the code itself, we may take points off for this. So, once a <code class="docutils literal notranslate"><span class="pre">TRACE</span></code> logging statement has served its purpose, we suggest you remove it (not just comment it out).</p>
+<li><p><strong>Using printf instead of chilog</strong>: All the projects in this class use a simple logging library called <code class="docutils literal notranslate"><span class="pre">chilog</span></code> that is documented in each of the project specifications. You must use the <code class="docutils literal notranslate"><span class="pre">chilog</span></code> functions <em>exclusively</em> for printing logging or debug messages. <strong>Do not use printf() directly in your code</strong>. Please note that the <code class="docutils literal notranslate"><span class="pre">chilog</span></code> functions provide essentially the same functionality as <code class="docutils literal notranslate"><span class="pre">printf</span></code>, so there is no situation where <code class="docutils literal notranslate"><span class="pre">printf</span></code> would be necessary instead of <code class="docutils literal notranslate"><span class="pre">chilog</span></code> (using <code class="docutils literal notranslate"><span class="pre">chilog</span></code> consistently also means you will not have to scrub <code class="docutils literal notranslate"><span class="pre">printf</span></code>’s from your code before submitting it).</p>
+<p>Furthermore, all the messages at the <code class="docutils literal notranslate"><span class="pre">INFO</span></code>, <code class="docutils literal notranslate"><span class="pre">WARNING</span></code>, <code class="docutils literal notranslate"><span class="pre">ERROR</span></code>, and <code class="docutils literal notranslate"><span class="pre">CRITICAL</span></code> levels must be used only for their intended purposes (e.g., only use <code class="docutils literal notranslate"><span class="pre">ERROR</span></code> to print out actual errors in the execution of your program). You must use the <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code> level only to print informative debug messages that would be understood by any developer trying to debug your code. You may use the <code class="docutils literal notranslate"><span class="pre">TRACE</span></code> level to print <em>any</em> debug message (including those that would only be understood by you). However, if your code is riddled with <code class="docutils literal notranslate"><span class="pre">TRACE</span></code> logging statements (including commented out ones) to the point where it is hard to read the code itself, we may penalize you for this. So, once a <code class="docutils literal notranslate"><span class="pre">TRACE</span></code> logging statement has served its purpose, we suggest you remove it (not just comment it out).</p>
 <p>You should assume that graders will run your code with logging at the <code class="docutils literal notranslate"><span class="pre">INFO</span></code> level, and will only use the <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code> level if they need to debug an issue with your code. We will never run your code with logging at the <code class="docutils literal notranslate"><span class="pre">TRACE</span></code> level.</p>
 <p>Please note that, in assignments where you are responsible for writing the <code class="docutils literal notranslate"><span class="pre">main</span></code> function, you may use <code class="docutils literal notranslate"><span class="pre">fprintf</span></code> to print to <em>standard error</em> if there is an error that prevents the program from starting (e.g., if a command-line parameter has not been provided, etc.)</p>
 </li>
-<li><p><strong>Grossly incorrect memory management</strong>: Up to 5 point penalty. You should make sure
-to free any memory you malloc, but we will usually not take points off unless you’ve
+<li><p><strong>Grossly incorrect memory management</strong>: You should make sure
+to free any memory you malloc, but we will usually not penalize you unless you’ve
 been grossly negligent in your malloc’ing/freeing. You should also make sure to
 not “save” pointers to stack-allocated memory that is going to be deallocated.
 This can happen if you store a pointer to a functions’ local variable in a struct

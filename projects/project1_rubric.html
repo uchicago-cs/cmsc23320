@@ -15,7 +15,6 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Project 2 Tips" href="project2_tips.html" />
@@ -98,140 +97,206 @@
       
   <div class="section" id="project-1-rubric">
 <h1>Project 1 Rubric<a class="headerlink" href="#project-1-rubric" title="Permalink to this headline">¶</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Project 1 has not yet been updated for Winter 2022, and the rubric below refers to the old grading scheme
-we used in this class. While you are welcome to read through this page, please bear in mind that the
-grading scheme is being overhauled this year (see our <a class="reference external" href="../grading.html">Grading</a> page for more details).</p>
+<p>The grading of this project follows a specifications grading approach. If you have not already
+done so, make sure to read our <a class="reference external" href="../grading.html">Grading</a> page for more details.</p>
+<p>You will receive two ESNU scores for this project:</p>
+<ul class="simple">
+<li><p><strong>Completeness score</strong>: This score will be determined solely by the result of running
+the automated tests, as these give a measure of how <em>complete</em> your implementation
+is (i.e., how much of the assignment you implemented).</p></li>
+<li><p><strong>Code Quality score</strong>: This score is determined by a review of your code done by
+the course staff, and is based on three aspects of your code:</p>
+<ul>
+<li><p><em>Correctness</em>: This encompasses issues with your code
+that, while not explicitly captured by the tests, could lead to
+incorrect or inefficient behaviour in your code. This can include
+small mistakes in your code, as well as larger issues that reveal
+a lack of mastery in the material.</p></li>
+<li><p><em>Design</em>: This encompasses
+“qualities, many of which are intangible, that don’t have to do with (and exist
+to some extent independently of) the correct operation of your code.” (thanks to
+Adam Shaw for this concise phrasing).</p></li>
+<li><p><em>Style</em>: This encompasses your adherence
+to our <a class="reference external" href="https://uchicago-cs.github.io/dev-guide/style_guide_c.html">Style Guide</a>.</p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="submission-timeline">
+<h2>Submission Timeline<a class="headerlink" href="#submission-timeline" title="Permalink to this headline">¶</a></h2>
+<p>This project has two required submissions, and an optional resubmission.</p>
+<p>The required submissions are the following:</p>
+<ul class="simple">
+<li><p><strong>Project 1a</strong>, corresponding to Exercise 1 of the chirc project. This first submission
+also serves as sort of warm-up exercise for all the projects, to ensure you familiarize
+yourself with using a Git repo, running the automated tests, submitting through Gradescope,
+etc.</p></li>
+<li><p><strong>Project 1b</strong>, corresponding to Exercise 4 of the chirc project (which builds upon Exercise 1)</p></li>
+</ul>
+<p>The deadlines for the required submissions can be found in the <a class="reference external" href="../calendar.html">Course Calendar</a>.</p>
+<p>Your score on Project 1b will determine your ESNU scores on Project 1. This mean that you can also
+treat Project 1b as an opportunity to revise the work you submitted as part of Project 1a (you will
+get feedback on your Project 1a submission before Project 1b is due)</p>
+<p>Additionally, once you get your graded Project 1b back, you will have roughly one week to submit
+a revised version.</p>
+<p>Finally, please note that, to earn an E in Code Quality, you must have made an initial
+good-faith submission for both Project 1a and Project 1b (i.e., work that would score an N or above).
+So, for example, you could technically skip Project 1a entirely and only make a submission for
+Project 1b but, if you do so, your Code Quality score will be capped at an S.</p>
 </div>
-<p>This project is worth 15% of your final grade, and is divided into two parts:</p>
-<ul class="simple">
-<li><p>Project 1a (Assignment 1 in chirc). Worth 5% of your final grade.</p></li>
-<li><p>Project 1b (Assignment 4 in chirc). Worth 10% of your final grade.</p></li>
-</ul>
-<p>The grade for each project is divided into the following components:</p>
-<ul class="simple">
-<li><p>Completeness (50 points)</p></li>
-<li><p>Correctness (10 points)</p></li>
-<li><p>Design (20 points)</p></li>
-<li><p>Style (20 points)</p></li>
-</ul>
 <div class="section" id="completeness">
 <h2>Completeness<a class="headerlink" href="#completeness" title="Permalink to this headline">¶</a></h2>
-<p>The Completeness component of the grade will be determined by the result of running
-the tests and, more specifically, on the number of points obtained when
-running <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">assignment-X</span></code> (see <a class="reference external" href="http://chi.cs.uchicago.edu/chirc/testing.html#using-the-automated-tests">Using the automated tests</a>
-in the chirc documentation).</p>
+<p>The Completeness component will be determined by running the following
+two commands, and adding up the scores reported by each:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">assignment</span><span class="o">-</span><span class="mi">1</span>
+<span class="n">make</span> <span class="n">assignment</span><span class="o">-</span><span class="mi">4</span>
+</pre></div>
 </div>
-<div class="section" id="correctness">
-<h2>Correctness<a class="headerlink" href="#correctness" title="Permalink to this headline">¶</a></h2>
-<p>The Correctness component of the grade encompasses issues with your code that, while
-not explicitly captured by the tests, could lead to <em>incorrect</em> behaviour in your server.
-In project 1b, we will mostly be looking at whether you are using locks
-correctly. In particular, your code must adequately protect any data that can
-be accessed concurrently by more than one thread. Using a Big Fat Lock (i.e.,
-using a single lock for your entire server) will result in an 8 point penalty.</p>
-<p>However, in general, the graders may take points off for issues like the following:</p>
+<p>(see <a class="reference external" href="http://chi.cs.uchicago.edu/chirc/testing.html#using-the-automated-tests">Using the automated tests</a>
+in the chirc documentation for more details on these commands)</p>
+<p>Your ESNU score will then be determined as follows:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 49%" />
+<col style="width: 51%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Grade</p></th>
+<th class="head"><p>Points on tests</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Excellent</p></td>
+<td><p>at least 95</p></td>
+</tr>
+<tr class="row-odd"><td><p>Satisfactory</p></td>
+<td><p>at least 75</p></td>
+</tr>
+<tr class="row-even"><td><p>Needs Improvement</p></td>
+<td><p>at least 25</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ungradable</p></td>
+<td><p>less than 25</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="code-quality">
+<h2>Code Quality<a class="headerlink" href="#code-quality" title="Permalink to this headline">¶</a></h2>
+<p>When assessing your code quality, there are a number of things we will be paying
+close attention to, and which we describe in the sections below (including major
+issues, labelled “[Major Issue]” that you should be particularly mindful of).</p>
+<p>Please note that the items below refer to a complete Project 1
+implementation (i.e., Exercises 1 and 4 of the chirc project), so some of the items
+will not apply to the Project 1a submission (most notably, you are not expected to use
+threads or mutexes in that submission).</p>
+<p>In general, your ESNU score will be determined as follows:</p>
 <ul class="simple">
-<li><p>Hardcoding reply values that happen to make the tests pass, but which would fail
-under reasonable use cases (e.g., hardcoding the LUSERS values)</p></li>
-<li><p>Segfaults that happen under reasonable use cases (i.e., the graders won’t be
-trying to make your code fail with bizarre corner cases)</p></li>
-<li><p>Not implementing something that is clearly specified in the project, even if
+<li><p><strong>Excellent</strong>: Your submission has none of the issues described below or, at most,
+has only a few minor mistakes or small style issues that would be trivial to address.</p></li>
+<li><p><strong>Satisfactory</strong>: Your submission has a few of the issues described below (but no
+major issues), and would only require minor changes to get to an E.</p></li>
+<li><p><strong>Needs Improvement</strong>: Your submission has several of the issues described below,
+or at least one major issue. In general, major revisions would be required to
+get up to an S or E.</p></li>
+<li><p><strong>Ungradable</strong>: Your submission does not constitute a good-faith effort to complete
+the work. This includes not submitting any work at all, as well as submitting
+only placeholder code (e.g., code that includes functions for all the required
+IRC commands, but where the functions are empty or filled with “TODO”s, etc.)</p></li>
+</ul>
+<p>That said, while the issues listed below are the main things we care about in this project,
+it is not possible for us to give you an exhaustive list of every single thing that could
+affect your code quality score. If you get a comment pointing out an issue in your
+code that we did not list below, take it as an opportunity to improve your work
+(and remember that you’ll have a chance to revise your work!)</p>
+<div class="section" id="correctness">
+<h3>Correctness<a class="headerlink" href="#correctness" title="Permalink to this headline">¶</a></h3>
+<p>When assessing the correctness of your code, we will be paying special attention
+to the following:</p>
+<ul class="simple">
+<li><p><strong>Not checking the return value of send()</strong>: send is not guaranteed to send the entire buffer you provide, which you can only tell by looking at the return value (Beej’s Guide for Socket Programming provides a <a class="reference external" href="https://beej.us/guide/bgnet/html/#sendall">ready-to-use solution to this</a>, which you’re welcome to use). Of course, send could also fail, and you need to check its return value for this too.</p></li>
+<li><p>[Major Issue] <strong>Not checking the return value of any socket function</strong>.</p></li>
+<li><p><strong>Not using getaddrinfo to create the server socket</strong>. Please note that some of the socket examples we provide (most notably the first server example, <code class="docutils literal notranslate"><span class="pre">oneshot-single.c</span></code>) manually create the <code class="docutils literal notranslate"><span class="pre">sockaddr</span></code> struct for the sake of highlighting what that struct looks like, but that is not the usual way to create a server socket. You can see an example of how to create a server socket with <code class="docutils literal notranslate"><span class="pre">getaddrinfo</span></code> in the <a class="reference external" href="https://github.com/uchicago-cs/cmsc23320/blob/master/samples/sockets/server-pthreads.c">server-pthreads.c</a> example.</p></li>
+<li><p><strong>Not using safe string functions (strncpy vs strcpy)</strong>: Most C string functions (strcpy, strcat, etc.) have an equivalent “safe” version (strncpy, strncat, etc.) where you can specify the maximum number of characters to copy/concatenate/etc. Use these instead to protect against accidental (or malicious) buffer overflows. Alternatively, consider using a string library like <a class="reference external" href="https://github.com/antirez/sds">sds</a></p></li>
+<li><p><strong>Treating the return of recv() as a C-string</strong>: recv() returns the raw bytes received through the network. In a protocol like IRC, this happens to be human-readable commands, but recv() won’t return a C-string (i.e., an array of characters terminated by a NULL character). It is your responsibility to add that NULL terminator if you want to manipulate the bytes returned by recv() as a C-string.</p></li>
+<li><p><strong>Hardcoding reply values that happen to make some tests pass</strong>, but which would fail
+under reasonable use cases. Take into account that the chirc specification does allow you to
+hardcode certain replies as a stop-gap measure (e.g., hardcoding the LUSERS replies during
+connection registration, so you can make progress on those tests before you properly implement
+the LUSERS command). However, you must ultimately remove those
+hardcoded replies with a more general implementation. Finally, for avoidance of doubt,
+there are also a few spots where the specification allows you to unconditionally hardcode
+certain values; those can be left hardcoded.</p></li>
+<li><p><strong>Memory accesses that could lead to segfaults under reasonable use cases</strong>. The graders won’t be
+trying to make your code fail with bizarre corner cases but, for example, if there is a very evident
+buffer overrun in your code, that will need to be fixed.</p></li>
+<li><p><strong>Not implementing something that is clearly specified in the project</strong>, even if
 the tests don’t test for it (e.g., implementing a command almost completely,
 but not implementing one of the replies).</p></li>
+<li><p>[Major issue] <strong>Not protecting access to shared data structures (list/hash of channels, users, etc.) with a mutex</strong></p></li>
+<li><p><strong>Using mutexes to protect access to data structures, but doing so inconsistently</strong> (e.g., locking the mutex only when writing to a data structure, and not when reading).</p></li>
+<li><p><strong>Using mutexes to protect access to data structures, but not to socket accesses</strong>. See <a class="reference external" href="project1_tips.html#inadequate-locking">Inadequate locking</a> in the Project 1 tips for more details.</p></li>
+<li><p>[Major issue] <strong>Using a Big Fat Lock</strong> (i.e., using a single mutex lock for the entire server).</p></li>
 </ul>
-<p>Please note that this section of the rubric will not re-penalize you for a failure
-that is already captured by the tests. So, if your code fails to implement something
-we told you to implement, but that is already captured by the tests, we would not
-re-penalize you here.</p>
 </div>
 <div class="section" id="design">
-<h2>Design<a class="headerlink" href="#design" title="Permalink to this headline">¶</a></h2>
-<p>The Design component of the grade will be determined by “qualities, many of which are intangible,
-that don’t have to do with (and exist to some extent independently of) the correct operation of your code.”
-(thanks to Adam Shaw for this concise phrasing). Across all three
-parts of the project, we will be looking at least at the following
-(the exact points for each of the parts of the project is specified
-later):</p>
+<h3>Design<a class="headerlink" href="#design" title="Permalink to this headline">¶</a></h3>
+<p>When assessing the design of your code, we will be paying special attention
+to the following:</p>
 <ul class="simple">
-<li><p><strong>Module/function decomposition</strong>: We will look at whether you divided your
-implementation into modules and functions that make sense. This includes avoiding
-repeated/redundant code, ensuring that each function performs a well-defined
-task, and putting related functions in the same module (i.e., the same C file).</p></li>
-<li><p><strong>Data structure design</strong>: We will look at whether you have designed (and/or used)
-the right data structures to store your server’s state.</p></li>
-<li><p><strong>Efficiency</strong>: We will look at whether your code is minimally efficient.
-In other words, we are not looking for sublimely efficient code but, rather,
-for the lack of grossly inefficient code. For example, we don’t care whether
-you store your list of channels in a linked list (<span class="math notranslate nohighlight">\(O(n)\)</span> lookup times) or a
-hash table (<span class="math notranslate nohighlight">\(O(1)\)</span> lookup times), but we do care whether you iterate over a list
-in <span class="math notranslate nohighlight">\(O(n^2)\)</span> time when the same task can reasonably be accomplished in
-<span class="math notranslate nohighlight">\(O(n)\)</span> time (i.e., when the <span class="math notranslate nohighlight">\(O(n)\)</span> is not particularly clever or relies
-on some obscure algorithm).</p></li>
+<li><p><strong>How you reassemble incoming messages</strong>: You should have some sort of array
+for assembling the next message that will be processed, separate from the buffer
+you pass to the <code class="docutils literal notranslate"><span class="pre">recv()</span></code> function (which cannot be a 1-byte array; using a 1-byte
+array when calling <code class="docutils literal notranslate"><span class="pre">recv()</span></code> is considered a major issue).</p></li>
+<li><p><strong>How you process IRC commands</strong>: Ideally, you should use some sort of dispatch
+table data structure (as described in the <a class="reference external" href="project1_tips.html">Project 1 Tips</a>)
+instead of a long sequence of “if command == JOIN then…”, “if command == PRIVMSG then”,
+etc. blocks of code.</p></li>
+<li><p><strong>How you store server data</strong>. You should ideally use some sort of “server context”
+structure, which we will discuss in the Project 1b lecture in Week 2.</p></li>
+<li><p><strong>Module/function decomposition</strong>. We will look at whether you divided your implementation
+into modules and functions that make sense. This includes avoiding repeated/redundant code,
+ensuring that each function performs a well-defined task, and putting related functions in the
+same module (i.e., the same C file). Please note that there are two potential major issues
+in this regard:</p>
+<ul>
+<li><p>[Major Issue] <strong>Putting all your code in a single main() function</strong></p></li>
+<li><p>[Major Issue (in Project 1b)] <strong>Putting all your code in a single C file</strong>. Please
+note that this is ok in Project 1a.</p></li>
 </ul>
-<p>In Project 1a, we will be looking at the following:</p>
-<ul class="simple">
-<li><p><strong>Module/function decomposition</strong> (8 points). Please note that, in this part of
-the project, it is acceptable to have all your code in a single C file (so you
-are not required to divide your implementation into multiple modules, but are
-welcome to do so). You will get at most 5 points here if your entire implementation
-is inside the main() function, without using any additional functions.</p></li>
-<li><p><strong>Data structure design</strong> (8 points). We will specifically be looking at how you
-handle the reassembly of partitioned messages (and the data structures to support
-this).</p></li>
-<li><p><strong>Efficiency</strong> (4 points)</p></li>
+</li>
 </ul>
-<p>In Project 1b, we will be looking at the following:</p>
-<ul class="simple">
-<li><p><strong>Module/function decomposition</strong> (8 points). Please note that, in this part of
-the project, you <em>must</em> divide your server into multiple modules.</p></li>
-<li><p><strong>Data structure design</strong> (8 points). We will specifically look at how you store
-information about the server state, including the list of users (and their state)
-and the list of channels (and their state).</p></li>
-<li><p><strong>Efficiency</strong> (4 points)</p></li>
-</ul>
-<p>Please note that we will discuss the module/function decomposition and
-the data structure design of Project 1b on Week 2’s Tuesday lecture.</p>
 </div>
 <div class="section" id="style">
-<h2>Style<a class="headerlink" href="#style" title="Permalink to this headline">¶</a></h2>
-<p>The Style component of the grade will be determined by your adherence to
-our <a class="reference external" href="https://uchicago-cs.github.io/dev-guide/style_guide_c.html">Style Guide</a>. While you should strive to follow this guide as
-closely as possible, there <em>are</em> certain aspects we will be paying more
-attention to. In all three parts of the project, the 20 points of the Style
-portion are divided as follows:</p>
+<h3>Style<a class="headerlink" href="#style" title="Permalink to this headline">¶</a></h3>
+<p>We will be checking your general adherence to
+our <a class="reference external" href="https://uchicago-cs.github.io/dev-guide/style_guide_c.html">Style Guide</a>
+and, while we will not be checking that you follow every minute aspect of our
+style guide, we do expect you to follow a <em>consistent</em> style that
+asymptotically approaches the one specified in our style guide.
+That said, there <em>are</em> certain aspects we will be paying more
+attention to:</p>
 <ul class="simple">
-<li><p><strong>Documenting functions</strong> (8 points): Every function written by you must have
+<li><p><strong>Documenting functions</strong>: Every function written by you must have
 a <a class="reference external" href="https://uchicago-cs.github.io/dev-guide/style_guide_c.html#function-comments">function comment</a> with a brief description
 of what the function does, and a description of the parameters and the
-return value.</p></li>
-<li><p><strong>Consistent indentation</strong> (2 points): Your code must follow one of the
-<a class="reference external" href="https://uchicago-cs.github.io/dev-guide/style_guide_c.html#indentation">allowed indentation styles</a> consistently.
-The presence of even a single tab character in your code will result in 0 points
-here.</p></li>
-<li><p><strong>Clarity</strong> (6 points): Your code must be easy to read and understand. This
-is a fairly subjective aspect, but common deductions for lack of clarity
-include using variables without descriptive names, writing convoluted code
-that would be easier to understand with more code comments, using magic
-numbers, etc.</p></li>
-<li><p><strong>General adherence to the style guide</strong> (4 points): The graders will not be
-checking that you follow every minute aspect of our style guide, and occasional
-infractions are ok (and won’t necessarily be penalized). What we’re more
-concerned with is that your code, overall, has a <em>consistent</em> style that
-asymptotically approaches the one specified in our style guide.</p></li>
+return value. Please note that not documenting your functions at all
+(as opposed to doing so inconsistently or not following the style guide)
+is considered a major issue.</p></li>
+<li><p><strong>Consistent indentation</strong>: Your code must follow one of the
+<a class="reference external" href="https://uchicago-cs.github.io/dev-guide/style_guide_c.html#indentation">allowed indentation styles</a> consistently.</p></li>
+<li><p><strong>Clarity</strong>: Your code must be easy to read and understand. This
+is a fairly subjective aspect, but remember that things like using
+variable names without descriptive names or using magic numbers will
+usually make your code harder to read.</p></li>
+<li><p>[Major Issue] <strong>Using global variables</strong>, except when defining
+compile-time constants.</p></li>
+<li><p>[Major Issue] <strong>Using goto statements</strong>, except in the very limited cases
+described in the style guide.</p></li>
 </ul>
-<p>Additionally, the graders will apply the following penalties:</p>
-<ul class="simple">
-<li><p>Using <a class="reference external" href="https://uchicago-cs.github.io/dev-guide/style_guide_c.html#global-variables">global variables</a>: 10 point penalty</p></li>
-<li><p>Using <a class="reference external" href="https://uchicago-cs.github.io/dev-guide/style_guide_c.html#goto-statements">goto statements</a>: 5 point penalty</p></li>
-</ul>
-<p>Please note that the style guide does specify a few exceptions when using
-some of the above is acceptable. You will not be penalized in those cases.</p>
 </div>
-<div class="section" id="additional-penalties">
-<h2>Additional Penalties<a class="headerlink" href="#additional-penalties" title="Permalink to this headline">¶</a></h2>
-<p>We will also apply the following penalties:</p>
+<div class="section" id="other-code-quality-issues">
+<h3>Other Code Quality Issues<a class="headerlink" href="#other-code-quality-issues" title="Permalink to this headline">¶</a></h3>
+<p>There a couple of other issues that we care about across all projects:</p>
 <ul>
 <li><p><strong>Reinventing wheels that don’t need to be reinvented</strong>: In this class, we expect
 you to know how to use data structures like linked lists, hash tables, etc.
@@ -240,35 +305,38 @@ not a Data Structures class, and you should <em>not</em> be spending any time im
 such data structures. Instead, you should use existing data structure libraries
 (our <a class="reference external" href="../academic_honesty.html">Academic Honesty</a> page lists a few publicly-available
 libraries that you are welcome to use).</p>
-<p>If you implement your own linked list, hash table, etc. from scratch, we will apply
-a 15 point penalty. While you may think that implementing your own data structure
+<p>Implementing your own linked list, hash table, etc. from scratch is considered
+a major issue. While you may think that implementing your own data structure
 is a worthwhile exercise, it invariably results in more work for the TAs and graders
 (as you will likely run into all sorts of issues and segfaults that could have been
 avoided by using a well-known and well-tested data structures library). Plus, it will
 be a much more worthwhile experience for you to understand how to incorporate an existing library
 into your own code.</p>
 </li>
-<li><p><strong>Submitting code that doesn’t build</strong>: If the graders are able to build your
-code with a few minor fixes (missing semicolons, parenthesis, etc.),
-we will apply a 15 point penalty. If your code
-requires substantial work to get it to build, you will receive a zero on
-the assignment.</p>
+<li><p><strong>Submitting code that doesn’t build</strong>: If you submit code that does not build
+on Gradescope’s autograder, but the graders can get it to build with some minor fixes
+(missing semicolons, parenthesis, etc.),
+this will just be treated as a major issue. However, if your code
+requires substantial work to get it to build, you will receive a U score.</p>
 <p><strong>So, make sure you verify that the version of the code you submitted builds correctly on a supported
-software environment</strong> (see the <a class="reference external" href="../projects/started.html">Projects - Getting Started</a> page for more details on this)</p>
+software environment</strong> (see the <a class="reference external" href="../projects/started.html">Projects - Getting Started</a> page for more details on this)
+Additionally, it is your responsibility to check that the code you submitted to Gradescope
+builds correctly. If it doesn’t, but it builds correctly on your end, please let us
+know so we can look into it.</p>
 </li>
-<li><p><strong>Using printf instead of chilog</strong>: All the projects in this class use a simple logging library called <code class="docutils literal notranslate"><span class="pre">chilog</span></code> that is documented in each of the project specifications. You must use the <code class="docutils literal notranslate"><span class="pre">chilog</span></code> functions <em>exclusively</em> for printing logging or debug messages. <strong>Do not use printf() directly in your code</strong>. Please note that the <code class="docutils literal notranslate"><span class="pre">chilog</span></code> functions provide essentially the same functionality as <code class="docutils literal notranslate"><span class="pre">printf</span></code>, so there is no situation where <code class="docutils literal notranslate"><span class="pre">printf</span></code> would be necessary instead of <code class="docutils literal notranslate"><span class="pre">chilog</span></code> (using <code class="docutils literal notranslate"><span class="pre">chilog</span></code> consistently also means you will not have to scrub <code class="docutils literal notranslate"><span class="pre">printf</span></code>’s from your code before submitting it).
-Using printf will result in a 5 point penalty in your code.</p>
-<p>Furthermore, all the messages at the <code class="docutils literal notranslate"><span class="pre">INFO</span></code>, <code class="docutils literal notranslate"><span class="pre">WARNING</span></code>, <code class="docutils literal notranslate"><span class="pre">ERROR</span></code>, and <code class="docutils literal notranslate"><span class="pre">CRITICAL</span></code> levels must be used only for their intended purposes (e.g., only use <code class="docutils literal notranslate"><span class="pre">ERROR</span></code> to print out actual errors in the execution of your program). You must use the <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code> level only to print informative debug messages that would be understood by any developer trying to debug your code. You may use the <code class="docutils literal notranslate"><span class="pre">TRACE</span></code> level to print <em>any</em> debug message (including those that would only be understood by you). However, if your code is riddled with <code class="docutils literal notranslate"><span class="pre">TRACE</span></code> logging statements (including commented out ones) to the point where it is hard to read the code itself, we may take points off for this. So, once a <code class="docutils literal notranslate"><span class="pre">TRACE</span></code> logging statement has served its purpose, we suggest you remove it (not just comment it out).</p>
+<li><p><strong>Using printf instead of chilog</strong>: All the projects in this class use a simple logging library called <code class="docutils literal notranslate"><span class="pre">chilog</span></code> that is documented in each of the project specifications. You must use the <code class="docutils literal notranslate"><span class="pre">chilog</span></code> functions <em>exclusively</em> for printing logging or debug messages. <strong>Do not use printf() directly in your code</strong>. Please note that the <code class="docutils literal notranslate"><span class="pre">chilog</span></code> functions provide essentially the same functionality as <code class="docutils literal notranslate"><span class="pre">printf</span></code>, so there is no situation where <code class="docutils literal notranslate"><span class="pre">printf</span></code> would be necessary instead of <code class="docutils literal notranslate"><span class="pre">chilog</span></code> (using <code class="docutils literal notranslate"><span class="pre">chilog</span></code> consistently also means you will not have to scrub <code class="docutils literal notranslate"><span class="pre">printf</span></code>’s from your code before submitting it).</p>
+<p>Furthermore, all the messages at the <code class="docutils literal notranslate"><span class="pre">INFO</span></code>, <code class="docutils literal notranslate"><span class="pre">WARNING</span></code>, <code class="docutils literal notranslate"><span class="pre">ERROR</span></code>, and <code class="docutils literal notranslate"><span class="pre">CRITICAL</span></code> levels must be used only for their intended purposes (e.g., only use <code class="docutils literal notranslate"><span class="pre">ERROR</span></code> to print out actual errors in the execution of your program). You must use the <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code> level only to print informative debug messages that would be understood by any developer trying to debug your code. You may use the <code class="docutils literal notranslate"><span class="pre">TRACE</span></code> level to print <em>any</em> debug message (including those that would only be understood by you). However, if your code is riddled with <code class="docutils literal notranslate"><span class="pre">TRACE</span></code> logging statements (including commented out ones) to the point where it is hard to read the code itself, we may penalize you for this. So, once a <code class="docutils literal notranslate"><span class="pre">TRACE</span></code> logging statement has served its purpose, we suggest you remove it (not just comment it out).</p>
 <p>You should assume that graders will run your code with logging at the <code class="docutils literal notranslate"><span class="pre">INFO</span></code> level, and will only use the <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code> level if they need to debug an issue with your code. We will never run your code with logging at the <code class="docutils literal notranslate"><span class="pre">TRACE</span></code> level.</p>
 <p>Please note that, in assignments where you are responsible for writing the <code class="docutils literal notranslate"><span class="pre">main</span></code> function, you may use <code class="docutils literal notranslate"><span class="pre">fprintf</span></code> to print to <em>standard error</em> if there is an error that prevents the program from starting (e.g., if a command-line parameter has not been provided, etc.)</p>
 </li>
-<li><p><strong>Grossly incorrect memory management</strong>: Up to 5 point penalty. You should make sure
-to free any memory you malloc, but we will usually not take points off unless you’ve
+<li><p><strong>Grossly incorrect memory management</strong>: You should make sure
+to free any memory you malloc, but we will usually not penalize you unless you’ve
 been grossly negligent in your malloc’ing/freeing. You should also make sure to
 not “save” pointers to stack-allocated memory that is going to be deallocated.
 This can happen if you store a pointer to a functions’ local variable in a struct
 that is heap-allocated.</p></li>
 </ul>
+</div>
 </div>
 </div>
 

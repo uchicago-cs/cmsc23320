@@ -97,10 +97,6 @@
       
   <div class="section" id="project-1-tips">
 <h1>Project 1 Tips<a class="headerlink" href="#project-1-tips" title="Permalink to this headline">¶</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Project 1 has not yet been updated for Winter 2022. While you are welcome to look at last year’s materials, you should not start working on them until we tell you that Project 1 is ready.</p>
-</div>
 <div class="section" id="before-you-get-started">
 <h2>Before you get started<a class="headerlink" href="#before-you-get-started" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -112,7 +108,7 @@ please note that you will still have to make major modifications to that solutio
 use <code class="docutils literal notranslate"><span class="pre">getaddrinfo</span></code> instead).</p></li>
 <li><p>When writing the socket code for your chirc server, make sure you take a look at the
 <a class="reference external" href="https://github.com/uchicago-cs/cmsc23320/tree/master/samples/sockets">socket samples</a> covered
-in the discussion section. They can provide a good starting point for writing a multi-threaded
+in the pre-recorded lecture on socket programming. They can provide a good starting point for writing a multi-threaded
 server in Project 1b.</p></li>
 </ul>
 </div>
@@ -124,18 +120,10 @@ The main reason the specification is long is to carve out
 exactly what part of the IRC specification you have to focus on. You
 will actually be implementing a fairly small subset of the IRC
 specification.</p></li>
-<li><p>Similarly, take into account that the division of points is not
-proportional to the amount of effort required to obtain those points.
-The points are distributed in such a way that a reasonable amount of
-work should produce a <em>good</em> implementation that will get you roughly
-75% of the points (and will place you in the B range). If you want to
-produce an <em>excellent</em> implementation (placing you in the A range),
-you will have to go the extra mile to obtain the final 25% of the
-points.</p></li>
 <li><p>Your implementation will require using data structures to store
 collections of users, channels, etc. Do not implement these
-data structures from scratch! (in fact, we will take points
-off if you do) You should use existing data structure
+data structures from scratch! (in fact, you will be penalized if you do)
+You should use existing data structure
 implementations; we suggest you specifically
 use libraries like <a class="reference external" href="https://troydhanson.github.io/uthash/utlist.html">utlist</a>
 and <a class="reference external" href="https://troydhanson.github.io/uthash/">uthash</a>.</p></li>
@@ -153,8 +141,7 @@ messages, (2) add support for new messages, (3) manipulate the state
 of the server (e.g., “create a new channel”, “add a new user to this
 channel”, etc.), and (4) construct outgoing messages. Doing so can
 pay off handsomely later on, even if you spend the first few days
-feeling like you’re not making any progress towards actually earning
-points.</p></li>
+feeling like you’re not making any progress towards passing any tests.</p></li>
 <li><p>When processing multiple commands (starting in Project 1b), a data
 structure that can come in handy is a <a class="reference external" href="http://en.wikipedia.org/wiki/Dispatch_table">dispatch table</a>
 or <a class="reference external" href="http://en.wikipedia.org/wiki/Branch_table">branch table</a>. You can find some
@@ -199,7 +186,7 @@ unfortunately, a common attribute of many network specifications). If you’re u
 <p>For more details, please read the <code class="docutils literal notranslate"><span class="pre">strtok</span></code> man page, which explains <code class="docutils literal notranslate"><span class="pre">strtok</span></code>’s internal behavior in detail.</p>
 <div class="section" id="error-handling-in-sockets">
 <h3>Error handling in sockets<a class="headerlink" href="#error-handling-in-sockets" title="Permalink to this headline">¶</a></h3>
-<p>Don’t forget to check the return value of the socket functions. Although this is not something we will likely take point off for, it will indirectly make you lose points because your code is likely to behave strangely if you don’t react appropriately to certain error conditions (e.g., a return code of 0 from recv means that the client has disconnected; in 1b and 1c, you will need to “log out” the user from the IRC server when that happens).</p>
+<p>Don’t forget to check the return value of the socket functions: your code is likely to behave strangely if you don’t react appropriately to certain error conditions (e.g., a return code of 0 from recv means that the client has disconnected; in Project 1b you will need to “log out” the user from the IRC server when that happens).</p>
 </div>
 <div class="section" id="general-socket-confusion">
 <h3>General socket confusion<a class="headerlink" href="#general-socket-confusion" title="Permalink to this headline">¶</a></h3>
