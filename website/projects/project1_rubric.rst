@@ -54,11 +54,9 @@ Project 1b but, if you do so, your Code Quality score will be capped at an S.
 Completeness
 ------------
 
-The Completeness component will be determined by running the following
-two commands, and adding up the scores reported by each::
+The Completeness component will be determined by running the following command:
 
-    make assignment-1
-    make assignment-4
+    make assignment-1+4
 
 (see `Using the automated tests <http://chi.cs.uchicago.edu/chirc/testing.html#using-the-automated-tests>`_
 in the chirc documentation for more details on these commands)
