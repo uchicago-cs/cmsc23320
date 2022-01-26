@@ -131,11 +131,14 @@ html_context = {"web_navbar": [("Course Information", [
                                  ("Projects", [
                                      ("Getting Started", "projects/started", False),
                                      ("Registering/Submitting", "projects/registering_submitting", False),
-                                     ("Project Specifications", "projects/specs", False),
+                                     ("Project 1: chirc", "projects/project1", False),
+                                     ("Project 2: chiTCP", "projects/project2", False),
+                                     ("Project 3: chirouter", "projects/project3", False),
                                  ]),
                                  ("Resources", [
                                      ("Using Git", "resources/git", False),
                                      ("Asking Questions", "resources/questions", False),
+                                     ("Code Samples", "https://github.com/uchicago-cs/cmsc23320/tree/master/samples", True),
                                      ("UChicago CS Developer's Guide", "https://uchicago-cs.github.io/dev-guide/", True),
                                      ("The Debugging Guide", "https://uchicago-cs.github.io/debugging-guide", True),
                                      ("Other Resources", "resources/other", False),

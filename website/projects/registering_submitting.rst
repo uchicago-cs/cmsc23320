@@ -21,7 +21,7 @@ Project Submission
 
 Before submitting, make sure you've added, committed, and pushed all your code to GitHub. You will submit your code through `Gradescope <https://gradescope.com/>`__, which you can access through our Canvas site.
 
-When submitting through Gradescope, you will be given the option of manually uploading files, or of uploading a GitHub repository (we recommend the latter, as this ensures you are uploading exactly the files that are in your repository). If you upload your repository, make sure you select the appropriate repository, with "master" as the branch. Please note that you can submit as many times as you want before the deadline.
+When submitting through Gradescope, you will be asked to select a repository to submit. Make sure that you select the correct repository and branch. Please note that you can submit as many times as you want before the deadline.
 
 Once you submit your files, an "autograder" will run. This autograder should produce the same test results as when you run the code yourself; if it doesn't, please let us know so we can look into it.
 
