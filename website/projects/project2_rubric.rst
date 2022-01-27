@@ -117,7 +117,7 @@ General
 
 - **Not setting a correct value for SEG.WND**
 - **Not updating SND.WND when a packet arrives**
-- **Not locking the pending packet mutex before accessing the list of pending packets**ç
+- **Not locking the pending packet mutex before accessing the list of pending packets**
 - **Not freeing packets once you're done with them**
 
 
