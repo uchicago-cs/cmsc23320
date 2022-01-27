@@ -36,6 +36,23 @@ main structure of your packet arrival handler. As noted above, it is important t
 follow the RFC, not your high-level understanding of how TCP must work.
 
 
+Freeing packets
+---------------
+
+Take into account that:
+
+- You're responsible for freeing any packets you create (i.e., any memory you allocate for
+  a ``tcp_packet_t`` struct).
+- You're also responsible for freeing any packets you remove from the pending packets list.
+
+In both cases, besides freeing the pointer to the ``tcp_packet_t`` struct, you also need to call
+``chitcp_tcp_packet_free`` to free other memory associated with the memory (and you should do
+this before freeing the pointer to the tcp_packet_t struct).
+
+Also, take into account that ``chitcpd_send_tcp_packet`` records all the information necessary
+to send the packet. In other words, it is safe to free the packet after ``chitcpd_send_tcp_packet``
+returns (doing so will not interfere with the packet being correctly sent).
+
 Tests that sometimes pass, but sometimes don't
 ----------------------------------------------
 
@@ -276,3 +293,10 @@ Common Pitfalls
   point. So, you have to take into account that the send buffer may not become empty
   until *after* you've processed the ``APPLICATION_CLOSE`` event.
 
+* **Not checking the return value of pthread_cond_timed_wait**: ``pthread_cond_timed_wait``
+  will return ``EINVAL`` under certain circumstances that you can easily find yourself in.
+  The most common one is providing an invalid value for ``abstime``, usually by
+  setting the ``tv_nsec`` field to a value less than 0 or greater than 1,000,000,000.
+  So, make sure to, at the very least, ``chilog`` any time ``pthread_cond_timed_wait``
+  returns a value other than ``0`` or ``ETIMEDOUT``, as that may alert you to issues
+  with your code that can make your multitimer fail.

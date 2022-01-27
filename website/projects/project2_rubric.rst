@@ -117,7 +117,8 @@ General
 
 - **Not setting a correct value for SEG.WND**
 - **Not updating SND.WND when a packet arrives**
-- **Not locking the pending packet mutex before accessing the list of pending packets**
+- **Not locking the pending packet mutex before accessing the list of pending packets**ç
+- **Not freeing packets once you're done with them**
 
 
 [p2a] 3-way Handshake
