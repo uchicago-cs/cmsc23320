@@ -17,7 +17,7 @@
     <script src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Project 1 Tips" href="project1_tips.html" />
+    <link rel="next" title="Project Registration" href="registering_submitting.html" />
     <link rel="prev" title="Projects - Getting Started" href="started.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -68,7 +68,9 @@
     <ul class="dropdown-menu">
         <li><a href="started.html">Getting Started</a></li>
         <li><a href="registering_submitting.html">Registering/Submitting</a></li>
-        <li><a href="#">Project Specifications</a></li>
+        <li><a href="project1.html">Project 1: chirc</a></li>
+        <li><a href="project2.html">Project 2: chiTCP</a></li>
+        <li><a href="project3.html">Project 3: chirouter</a></li>
     </ul>
 </li>
 <li class="dropdown">
@@ -76,6 +78,7 @@
     <ul class="dropdown-menu">
         <li><a href="../resources/git.html">Using Git</a></li>
         <li><a href="../resources/questions.html">Asking Questions</a></li>
+        <li><a href="https://github.com/uchicago-cs/cmsc23320/tree/master/samples" target="_blank">Code Samples <i class="fa fa-external-link"></i></a></li>
         <li><a href="https://uchicago-cs.github.io/dev-guide/" target="_blank">UChicago CS Developer's Guide <i class="fa fa-external-link"></i></a></li>
         <li><a href="https://uchicago-cs.github.io/debugging-guide" target="_blank">The Debugging Guide <i class="fa fa-external-link"></i></a></li>
         <li><a href="../resources/other.html">Other Resources</a></li>
@@ -97,63 +100,13 @@
       
   <div class="section" id="project-specifications">
 <h1>Project Specifications<a class="headerlink" href="#project-specifications" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="project-1-chirc">
-<h2>Project 1: chirc<a class="headerlink" href="#project-1-chirc" title="Permalink to this headline">¶</a></h2>
-<p>In this project, you will implement a simple Internet Relay Chat (IRC)
-server called chirc. This project has three goals:</p>
-<ol class="arabic simple">
-<li><p>To learn how to program with sockets, as well as some basic concurrent programming
-(including refreshing some concepts covered in CMSC 15400)</p></li>
-<li><p>To implement a system that is (partially) compliant with an
-established network protocol specification.</p></li>
-<li><p>To allow you to become comfortable with high-level networking
-concepts before we move on to the lower-level concepts in this
-course.</p></li>
-</ol>
-<p>The project specification is available <a class="reference external" href="http://chi.cs.uchicago.edu/chirc/">here</a>. Please
-note that you will be implementing the following “assignments” from the chirc specification:</p>
+<p>The information in this page has moved to the following pages:</p>
 <ul class="simple">
-<li><p>Project 1a: Assignment 1</p></li>
-<li><p>Project 1b: Assignment 4</p></li>
+<li><p><a class="reference external" href="project1.html">Project 1</a></p></li>
+<li><p><a class="reference external" href="project2.html">Project 2</a></p></li>
+<li><p><a class="reference external" href="project3.html">Project 3</a></p></li>
 </ul>
-<p>Make sure you read the <a class="reference external" href="project1_rubric.html">Project 1 rubric</a> and the <a class="reference external" href="project1_tips.html">Project 1 tips</a>.</p>
-</div>
-<div class="section" id="project-2-chitcp">
-<h2>Project 2: chitcp<a class="headerlink" href="#project-2-chitcp" title="Permalink to this headline">¶</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Project 2 has not yet been updated for Winter 2022. While you are welcome to look at last year’s materials, you should not start working on them until we tell you that Project 2 is ready.</p>
-</div>
-<p>In this project you will be implementing the Transmission Control Protocol, as
-specified in <a class="reference external" href="http://tools.ietf.org/html/rfc793">[RFC793]</a>. However, instead
-of implementing it inside the operating system itself, you will be implementing
-it inside a system called chiTCP. This system allows you to write socket-based
-applications that rely on your TCP implementation instead of the one included
-in your operating system. To do this, chiTCP provides an alternate socket
-library, chisocket, that provides the same functions as the standard socket
-library (<code class="docutils literal notranslate"><span class="pre">connect</span></code>, <code class="docutils literal notranslate"><span class="pre">send</span></code>, <code class="docutils literal notranslate"><span class="pre">recv</span></code>, etc.). Although the chisocket
-functions have the same expected behaviour as the standard socket functions,
-they do not implement the entire functionality provided by standard sockets
-(e.g., non-blocking sockets are not supported).</p>
-<p>The project specification is available <a class="reference external" href="http://chi.cs.uchicago.edu/chitcp/">here</a>.</p>
-<p>Make sure you read the <a class="reference external" href="project2_rubric.html">Project 2 rubric</a> and the <a class="reference external" href="project2_tips.html">Project 2 tips</a>.</p>
-</div>
-<div class="section" id="project-3-chirouter">
-<h2>Project 3: chirouter<a class="headerlink" href="#project-3-chirouter" title="Permalink to this headline">¶</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Project 3 has not yet been updated for Winter 2022. While you are welcome to look at last year’s materials, you should not start working on them until we tell you that Project 3 is ready.</p>
-</div>
-<p>In this project you will be implementing a simple IP router capable of routing IPv4 datagrams between multiple networks. This router will have a static routing table, so you will not have to deal with implementing a routing protocol like RIP or OSPF; instead, the project will focus on the routing of IP datagrams. While, at a high level, this just involves receiving IP datagrams and figuring out what interface they should be sent on, this requires building additional functionality before you can actually start routing IP datagrams.</p>
-<p>The project specification is available <a class="reference external" href="http://chi.cs.uchicago.edu/chirouter/">here</a>.</p>
-<p>Make sure you read the <a class="reference external" href="project3_rubric.html">Project 3 rubric</a> and the <a class="reference external" href="project3_tips.html">Project 3 tips</a>.</p>
-<p>Take into account that this project requires using a network simulator that
-needs to be run with root privileges on a Linux machine. If you do not have
-access to such a machine, you can use the <a class="reference external" href="https://howto.cs.uchicago.edu/vm:index">CS Virtual Machine</a>
-(version 201920.2 or higher) to run the network simulator.</p>
-<div class="toctree-wrapper compound">
-</div>
-</div>
+<p>These pages are also linked from the Projects menu on the navigation bar.</p>
 </div>
 
 

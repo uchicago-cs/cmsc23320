@@ -17,7 +17,7 @@
     <script src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Project 2 Tips" href="project2_tips.html" />
+    <link rel="next" title="Project 2: chitcp" href="project2.html" />
     <link rel="prev" title="Project 1 Tips" href="project1_tips.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -68,7 +68,9 @@
     <ul class="dropdown-menu">
         <li><a href="started.html">Getting Started</a></li>
         <li><a href="registering_submitting.html">Registering/Submitting</a></li>
-        <li><a href="specs.html">Project Specifications</a></li>
+        <li><a href="project1.html">Project 1: chirc</a></li>
+        <li><a href="project2.html">Project 2: chiTCP</a></li>
+        <li><a href="project3.html">Project 3: chirouter</a></li>
     </ul>
 </li>
 <li class="dropdown">
@@ -76,6 +78,7 @@
     <ul class="dropdown-menu">
         <li><a href="../resources/git.html">Using Git</a></li>
         <li><a href="../resources/questions.html">Asking Questions</a></li>
+        <li><a href="https://github.com/uchicago-cs/cmsc23320/tree/master/samples" target="_blank">Code Samples <i class="fa fa-external-link"></i></a></li>
         <li><a href="https://uchicago-cs.github.io/dev-guide/" target="_blank">UChicago CS Developer's Guide <i class="fa fa-external-link"></i></a></li>
         <li><a href="https://uchicago-cs.github.io/debugging-guide" target="_blank">The Debugging Guide <i class="fa fa-external-link"></i></a></li>
         <li><a href="../resources/other.html">Other Resources</a></li>
@@ -93,7 +96,25 @@
 
 <div class="container">
   <div class="row">
-    <div class="body col-md-12 content" role="main">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Project 1 Rubric</a><ul>
+<li><a class="reference internal" href="#submission-timeline">Submission Timeline</a></li>
+<li><a class="reference internal" href="#completeness">Completeness</a></li>
+<li><a class="reference internal" href="#code-quality">Code Quality</a><ul>
+<li><a class="reference internal" href="#correctness">Correctness</a></li>
+<li><a class="reference internal" href="#design">Design</a></li>
+<li><a class="reference internal" href="#style">Style</a></li>
+<li><a class="reference internal" href="#other-code-quality-issues">Other Code Quality Issues</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
       
   <div class="section" id="project-1-rubric">
 <h1>Project 1 Rubric<a class="headerlink" href="#project-1-rubric" title="Permalink to this headline">¶</a></h1>
@@ -146,9 +167,9 @@ Project 1b but, if you do so, your Code Quality score will be capped at an S.</p
 <div class="section" id="completeness">
 <h2>Completeness<a class="headerlink" href="#completeness" title="Permalink to this headline">¶</a></h2>
 <p>The Completeness component will be determined by running the following command:</p>
-<blockquote>
-<div><p>make assignment-1+4</p>
-</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">assignment</span><span class="o">-</span><span class="mi">1</span><span class="o">+</span><span class="mi">4</span>
+</pre></div>
+</div>
 <p>(see <a class="reference external" href="http://chi.cs.uchicago.edu/chirc/testing.html#using-the-automated-tests">Using the automated tests</a>
 in the chirc documentation for more details on these commands)</p>
 <p>Your ESNU score will then be determined as follows:</p>
@@ -294,7 +315,7 @@ described in the style guide.</p></li>
 </div>
 <div class="section" id="other-code-quality-issues">
 <h3>Other Code Quality Issues<a class="headerlink" href="#other-code-quality-issues" title="Permalink to this headline">¶</a></h3>
-<p>There a couple of other issues that we care about across all projects:</p>
+<p>There are a couple of other issues that we care about across all projects:</p>
 <ul>
 <li><p><strong>Reinventing wheels that don’t need to be reinvented</strong>: In this class, we expect
 you to know how to use data structures like linked lists, hash tables, etc.

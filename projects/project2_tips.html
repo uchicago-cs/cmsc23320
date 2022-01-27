@@ -18,7 +18,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Project 2 Rubric" href="project2_rubric.html" />
-    <link rel="prev" title="Project 1 Rubric" href="project1_rubric.html" />
+    <link rel="prev" title="Project 2: chitcp" href="project2.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -68,7 +68,9 @@
     <ul class="dropdown-menu">
         <li><a href="started.html">Getting Started</a></li>
         <li><a href="registering_submitting.html">Registering/Submitting</a></li>
-        <li><a href="specs.html">Project Specifications</a></li>
+        <li><a href="project1.html">Project 1: chirc</a></li>
+        <li><a href="project2.html">Project 2: chiTCP</a></li>
+        <li><a href="project3.html">Project 3: chirouter</a></li>
     </ul>
 </li>
 <li class="dropdown">
@@ -76,6 +78,7 @@
     <ul class="dropdown-menu">
         <li><a href="../resources/git.html">Using Git</a></li>
         <li><a href="../resources/questions.html">Asking Questions</a></li>
+        <li><a href="https://github.com/uchicago-cs/cmsc23320/tree/master/samples" target="_blank">Code Samples <i class="fa fa-external-link"></i></a></li>
         <li><a href="https://uchicago-cs.github.io/dev-guide/" target="_blank">UChicago CS Developer's Guide <i class="fa fa-external-link"></i></a></li>
         <li><a href="https://uchicago-cs.github.io/debugging-guide" target="_blank">The Debugging Guide <i class="fa fa-external-link"></i></a></li>
         <li><a href="../resources/other.html">Other Resources</a></li>
@@ -97,17 +100,13 @@
       
   <div class="section" id="project-2-tips">
 <h1>Project 2 Tips<a class="headerlink" href="#project-2-tips" title="Permalink to this headline">¶</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Project 2 has not yet been updated for Winter 2022. While you are welcome to look at last year’s materials, you should not start working on them until we tell you that Project 2 is ready.</p>
-</div>
 <p>Before you get started, make sure you’ve read through the <a class="reference external" href="../projects/started.html">Projects - Getting Started</a> page.</p>
 <div class="section" id="interpreting-rfc-793">
 <h2>Interpreting RFC 793<a class="headerlink" href="#interpreting-rfc-793" title="Permalink to this headline">¶</a></h2>
 <p>In this project, you will be implementing TCP, which is specified in <a class="reference external" href="http://tools.ietf.org/html/rfc793">RFC 793</a>.
 Like many network protocols, certain aspects of the specification may be unclear. When you run into such an issue,
 you should first check <a class="reference external" href="http://tools.ietf.org/html/rfc1122">RFC 1122</a>: it provides corrections and clarifications
-on RFC 793. If you are still unclear on how to proceed, then ask on Piazza: we will provide an ex cathedra ruling
+on RFC 793. If you are still unclear on how to proceed, then ask on Ed Discussion: we will provide an ex cathedra ruling
 on how you should interpret the RFC.</p>
 <p>That said, there are parts of the RFC that <em>do</em> provide unambiguous formulas.
 Sometimes, students will tweak this formulas as they try to debug their code
@@ -128,6 +127,21 @@ a packet arrives. Pages 64-75 methodically describe how to process a packet. Alt
 parts of it do involve branching by state, you should not write a gigantic if-else as the
 main structure of your packet arrival handler. As noted above, it is important that you
 follow the RFC, not your high-level understanding of how TCP must work.</p>
+</div>
+<div class="section" id="freeing-packets">
+<h2>Freeing packets<a class="headerlink" href="#freeing-packets" title="Permalink to this headline">¶</a></h2>
+<p>Take into account that:</p>
+<ul class="simple">
+<li><p>You’re responsible for freeing any packets you create (i.e., any memory you allocate for
+a <code class="docutils literal notranslate"><span class="pre">tcp_packet_t</span></code> struct).</p></li>
+<li><p>You’re also responsible for freeing any packets you remove from the pending packets list.</p></li>
+</ul>
+<p>In both cases, besides freeing the pointer to the <code class="docutils literal notranslate"><span class="pre">tcp_packet_t</span></code> struct, you also need to call
+<code class="docutils literal notranslate"><span class="pre">chitcp_tcp_packet_free</span></code> to free other memory associated with the memory (and you should do
+this before freeing the pointer to the tcp_packet_t struct).</p>
+<p>Also, take into account that <code class="docutils literal notranslate"><span class="pre">chitcpd_send_tcp_packet</span></code> records all the information necessary
+to send the packet. In other words, it is safe to free the packet after <code class="docutils literal notranslate"><span class="pre">chitcpd_send_tcp_packet</span></code>
+returns (doing so will not interfere with the packet being correctly sent).</p>
 </div>
 <div class="section" id="tests-that-sometimes-pass-but-sometimes-don-t">
 <h2>Tests that sometimes pass, but sometimes don’t<a class="headerlink" href="#tests-that-sometimes-pass-but-sometimes-don-t" title="Permalink to this headline">¶</a></h2>
@@ -180,19 +194,20 @@ test where this issue manifests itself, and analyze why the test fails. Of cours
 be challenging because your code may pass with DEBUG logging, but not with INFO logging (which
 provides fewer clues on what could be wrong). This leads us to our next point…</p>
 </div>
-<div class="section" id="pick-your-battles-a-k-a-it-is-ok-to-not-pass-all-the-tests">
-<h2>Pick your battles (a.k.a.: “it is ok to not pass all the tests”)<a class="headerlink" href="#pick-your-battles-a-k-a-it-is-ok-to-not-pass-all-the-tests" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="pick-your-battles-a-k-a-it-is-ok-to-not-pass-100-of-the-tests">
+<h2>Pick your battles (a.k.a.: “it is ok to not pass 100% of the tests”)<a class="headerlink" href="#pick-your-battles-a-k-a-it-is-ok-to-not-pass-100-of-the-tests" title="Permalink to this headline">¶</a></h2>
 <p>Achieving a perfect implementation that can pass all the tests under every possible sequencing
 of events is very challenging. It is very likely that many of you will end up passing nearly
-all the tests, with a few stubborn tests that sometimes pass but sometimes don’t. More often than
+all the tests (and certainly enough to get an E score on Completeness), with a few stubborn
+tests that sometimes pass but sometimes don’t. More often than
 not, this is due to bugs that are very hard to track down, because they only manifest themselves
 under a specific ordering of events, and which typically require a very deep debugging session
 to resolve.</p>
 <p>We encourage you to pick your battles, and to consider whether going down a debugging
-rabbit hole for several hours is a sensible use of your time for just a few testing points (for
-context, one test point accounts for 0.15% of your final grade. That is time that
+rabbit hole for several hours is a sensible use of your time for just a few testing points,
+particularly given that you’ll have a chance to review your submission. That is time that
 could be spent on polishing up your code, documenting it, etc. which is likely to have a bigger
-impact on your grade for this project.</p>
+impact on your Code Quality score for this project.</p>
 <p>That said, if you are in a situation where you consistently get a high score on the tests
 under a specific logging level, you are allowed to mention this in the README file in the root of
 your repository, requesting
@@ -257,9 +272,8 @@ tests, that probably means your implementation is pretty solid.</p>
 <p>The RTT estimation tests do not contribute to your test grade (the one you get when running <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">grade</span></code>).
 The reason for this is that these tests are trivial to pass if you just estimate the RTT to be zero
 (ensuring your tests never time out). However, the graders will be running these tests and,
-if you are not doing any RTT estimation (or if they find issues with the RTT estimation) they
-will deduct points from the Correctness portion of the rubric (in fact, the rubric specifically
-calls this out as something we’ll be looking at in p2b)</p>
+if you are not doing any RTT estimation (or if they find issues with the RTT estimation) this
+will have an impact on your Code Quality score.</p>
 </div>
 <div class="section" id="common-pitfalls">
 <h2>Common Pitfalls<a class="headerlink" href="#common-pitfalls" title="Permalink to this headline">¶</a></h2>
@@ -346,6 +360,13 @@ to clear the buffer, because the receiver’s window may not allow you to do thi
 point. So, you have to take into account that the send buffer may not become empty
 until <em>after</em> you’ve processed the <code class="docutils literal notranslate"><span class="pre">APPLICATION_CLOSE</span></code> event.</p>
 </li>
+<li><p><strong>Not checking the return value of pthread_cond_timed_wait</strong>: <code class="docutils literal notranslate"><span class="pre">pthread_cond_timed_wait</span></code>
+will return <code class="docutils literal notranslate"><span class="pre">EINVAL</span></code> under certain circumstances that you can easily find yourself in.
+The most common one is providing an invalid value for <code class="docutils literal notranslate"><span class="pre">abstime</span></code>, usually by
+setting the <code class="docutils literal notranslate"><span class="pre">tv_nsec</span></code> field to a value less than 0 or greater than 1,000,000,000.
+So, make sure to, at the very least, <code class="docutils literal notranslate"><span class="pre">chilog</span></code> any time <code class="docutils literal notranslate"><span class="pre">pthread_cond_timed_wait</span></code>
+returns a value other than <code class="docutils literal notranslate"><span class="pre">0</span></code> or <code class="docutils literal notranslate"><span class="pre">ETIMEDOUT</span></code>, as that may alert you to issues
+with your code that can make your multitimer fail.</p></li>
 </ul>
 </div>
 </div>

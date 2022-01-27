@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Project Registration &#8212; CMSC 23320 - Foundations of Computer Networks</title>
+<title>Project 1: chirc &#8212; CMSC 23320 - Foundations of Computer Networks</title>
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
@@ -17,8 +17,8 @@
     <script src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Uploading the initial code to your repository" href="initial_code.html" />
-    <link rel="prev" title="Project Specifications" href="specs.html" />
+    <link rel="next" title="Project 1 Tips" href="project1_tips.html" />
+    <link rel="prev" title="Uploading the initial code to your repository" href="initial_code.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -67,8 +67,8 @@
     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects <span class="caret"></span></a>
     <ul class="dropdown-menu">
         <li><a href="started.html">Getting Started</a></li>
-        <li><a href="#">Registering/Submitting</a></li>
-        <li><a href="project1.html">Project 1: chirc</a></li>
+        <li><a href="registering_submitting.html">Registering/Submitting</a></li>
+        <li><a href="#">Project 1: chirc</a></li>
         <li><a href="project2.html">Project 2: chiTCP</a></li>
         <li><a href="project3.html">Project 3: chirouter</a></li>
     </ul>
@@ -98,26 +98,32 @@
   <div class="row">
     <div class="body col-md-12 content" role="main">
       
-  <div class="section" id="project-registration">
-<h1>Project Registration<a class="headerlink" href="#project-registration" title="Permalink to this headline">¶</a></h1>
-<p>For each project, a Git repository will be created for you and your project partner on <a class="reference external" href="https://github.com/">GitHub</a>, a web-based hosting service for Git repositories. However, before that repository can be created for you, you need to have a GitHub account. If you do not yet have one, you can get an account here: <a class="reference external" href="https://github.com/join">https://github.com/join</a>. Once you create your account, you may want to get the <a class="reference external" href="https://education.github.com/pack">Student Developer Pack</a>, which will give you access to a lot of other features (please note that having the Student Developer Pack is not necessary for this class; it’s just a nice benefit you get as a student)</p>
-<p>If you’re unfamiliar with Git, make sure to read our <a class="reference external" href="../resources/git.html">Using Git</a> page before proceeding further.</p>
-<p>To actually get your private repository, you will need an <em>invitation URL</em>, which we will provide through Ed Discussion when each project is released. When you click on an invitation URL, you will have to complete the following steps:</p>
-<ol class="arabic">
-<li><p>You will need to select your CNetID from a list. This will allow us to know what student is associated with each GitHub account. This step is only done for the very first invitation you accept.</p></li>
-<li><p>Next, you will need to create a new team, or join an existing team if your project partner has already created a team. Please make sure to coordinate with your project partner so you do not end up creating two separate teams.</p>
-<p>Please note that, while GitHub will allow you to select an arbitrary team name, your team name <strong>must</strong> be the project number (<code class="docutils literal notranslate"><span class="pre">p1</span></code>, <code class="docutils literal notranslate"><span class="pre">p2</span></code>, or <code class="docutils literal notranslate"><span class="pre">p3</span></code>, followed by your CNetIDs in alphabetical order and separated by a hyphen (e.g., <code class="docutils literal notranslate"><span class="pre">p1-jdoe-jrandom</span></code>).</p>
-</li>
-<li><p>Finally, you must click “Accept this assignment” or your repository will not actually be created.</p></li>
-<li><p>Once the repository has been created you <strong>must</strong> follow our instructions for <a class="reference external" href="initial_code.html">adding the project’s initial code</a> to the repository.</p></li>
+  <div class="section" id="project-1-chirc">
+<h1>Project 1: chirc<a class="headerlink" href="#project-1-chirc" title="Permalink to this headline">¶</a></h1>
+<p>In this project, you will implement a simple Internet Relay Chat (IRC)
+server called chirc. This project has three goals:</p>
+<ol class="arabic simple">
+<li><p>To learn how to program with sockets, as well as some basic concurrent programming
+(including refreshing some concepts covered in CMSC 15400)</p></li>
+<li><p>To implement a system that is (partially) compliant with an
+established network protocol specification.</p></li>
+<li><p>To allow you to become comfortable with high-level networking
+concepts before we move on to the lower-level concepts in this
+course.</p></li>
 </ol>
-<p>If you run into any issues, or need us to make any manual adjustments to your registration, please let us know via Ed Discussion.</p>
+<p>Please refer to the following documents to complete this project:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://chi.cs.uchicago.edu/chirc/">chirc specification</a></p>
+<ul>
+<li><p>Project 1a: <a class="reference external" href="http://chi.cs.uchicago.edu/chirc/assignment1.html">Assignment 1</a></p></li>
+<li><p>Project 1b: <a class="reference external" href="http://chi.cs.uchicago.edu/chirc/assignment4.html">Assignment 4</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="project1_rubric.html">Project 1 rubric</a></p></li>
+<li><p><a class="reference external" href="project1_tips.html">Project 1 tips</a></p></li>
+</ul>
+<div class="toctree-wrapper compound">
 </div>
-<div class="section" id="project-submission">
-<h1>Project Submission<a class="headerlink" href="#project-submission" title="Permalink to this headline">¶</a></h1>
-<p>Before submitting, make sure you’ve added, committed, and pushed all your code to GitHub. You will submit your code through <a class="reference external" href="https://gradescope.com/">Gradescope</a>, which you can access through our Canvas site.</p>
-<p>When submitting through Gradescope, you will be asked to select a repository to submit. Make sure that you select the correct repository and branch. Please note that you can submit as many times as you want before the deadline.</p>
-<p>Once you submit your files, an “autograder” will run. This autograder should produce the same test results as when you run the code yourself; if it doesn’t, please let us know so we can look into it.</p>
 </div>
 
 
