@@ -54,7 +54,7 @@ Project 1b but, if you do so, your Code Quality score will be capped at an S.
 Completeness
 ------------
 
-The Completeness component will be determined by running the following command:
+The Completeness component will be determined by running the following command::
 
     make assignment-1+4
 
@@ -197,7 +197,7 @@ attention to:
 Other Code Quality Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-There a couple of other issues that we care about across all projects:
+There are a couple of other issues that we care about across all projects:
 
 .. include:: additional_penalties.txt
 

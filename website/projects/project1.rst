@@ -16,8 +16,7 @@ server called chirc. This project has three goals:
 
 Please refer to the following documents to complete this project:
 
-- `chirc specification <http://chi.cs.uchicago.edu/chirc/>`__. Please
-  note that you will specifically be implementing the following "assignments" from the chirc specification:
+- `chirc specification <http://chi.cs.uchicago.edu/chirc/>`__
 
   - Project 1a: `Assignment 1 <http://chi.cs.uchicago.edu/chirc/assignment1.html>`__
   - Project 1b: `Assignment 4 <http://chi.cs.uchicago.edu/chirc/assignment4.html>`__
