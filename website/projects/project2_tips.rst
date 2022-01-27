@@ -1,11 +1,6 @@
 Project 2 Tips
 ==============
 
-.. note::
-
-   Project 2 has not yet been updated for Winter 2022. While you are welcome to look at last year's materials, you should not start working on them until we tell you that Project 2 is ready.
-
-
 Before you get started, make sure you've read through the `Projects - Getting Started <../projects/started.html>`__ page.
 
 Interpreting RFC 793
@@ -14,7 +9,7 @@ Interpreting RFC 793
 In this project, you will be implementing TCP, which is specified in `RFC 793 <http://tools.ietf.org/html/rfc793>`_.
 Like many network protocols, certain aspects of the specification may be unclear. When you run into such an issue,
 you should first check `RFC 1122 <http://tools.ietf.org/html/rfc1122>`_: it provides corrections and clarifications 
-on RFC 793. If you are still unclear on how to proceed, then ask on Piazza: we will provide an ex cathedra ruling 
+on RFC 793. If you are still unclear on how to proceed, then ask on Ed Discussion: we will provide an ex cathedra ruling
 on how you should interpret the RFC.
 
 That said, there are parts of the RFC that *do* provide unambiguous formulas.
@@ -96,21 +91,22 @@ be challenging because your code may pass with DEBUG logging, but not with INFO 
 provides fewer clues on what could be wrong). This leads us to our next point...
 
 
-Pick your battles (a.k.a.: "it is ok to not pass all the tests")
-----------------------------------------------------------------
+Pick your battles (a.k.a.: "it is ok to not pass 100% of the tests")
+--------------------------------------------------------------------
 
 Achieving a perfect implementation that can pass all the tests under every possible sequencing
 of events is very challenging. It is very likely that many of you will end up passing nearly
-all the tests, with a few stubborn tests that sometimes pass but sometimes don't. More often than
+all the tests (and certainly enough to get an E score on Completeness), with a few stubborn
+tests that sometimes pass but sometimes don't. More often than
 not, this is due to bugs that are very hard to track down, because they only manifest themselves
 under a specific ordering of events, and which typically require a very deep debugging session
 to resolve.
 
 We encourage you to pick your battles, and to consider whether going down a debugging
-rabbit hole for several hours is a sensible use of your time for just a few testing points (for
-context, one test point accounts for 0.15% of your final grade. That is time that
+rabbit hole for several hours is a sensible use of your time for just a few testing points,
+particularly given that you'll have a chance to review your submission. That is time that
 could be spent on polishing up your code, documenting it, etc. which is likely to have a bigger
-impact on your grade for this project.
+impact on your Code Quality score for this project.
 
 That said, if you are in a situation where you consistently get a high score on the tests
 under a specific logging level, you are allowed to mention this in the README file in the root of
@@ -185,9 +181,8 @@ The RTT tests
 The RTT estimation tests do not contribute to your test grade (the one you get when running ``make grade``).
 The reason for this is that these tests are trivial to pass if you just estimate the RTT to be zero
 (ensuring your tests never time out). However, the graders will be running these tests and,
-if you are not doing any RTT estimation (or if they find issues with the RTT estimation) they
-will deduct points from the Correctness portion of the rubric (in fact, the rubric specifically
-calls this out as something we'll be looking at in p2b)
+if you are not doing any RTT estimation (or if they find issues with the RTT estimation) this
+will have an impact on your Code Quality score.
 
 
 Common Pitfalls
