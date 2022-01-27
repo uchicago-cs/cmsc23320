@@ -1,11 +1,6 @@
 Project 2 Tips
 ==============
 
-.. note::
-
-   Project 2 has not yet been updated for Winter 2022. While you are welcome to look at last year's materials, you should not start working on them until we tell you that Project 2 is ready.
-
-
 Before you get started, make sure you've read through the `Projects - Getting Started <../projects/started.html>`__ page.
 
 Interpreting RFC 793
@@ -14,7 +9,7 @@ Interpreting RFC 793
 In this project, you will be implementing TCP, which is specified in `RFC 793 <http://tools.ietf.org/html/rfc793>`_.
 Like many network protocols, certain aspects of the specification may be unclear. When you run into such an issue,
 you should first check `RFC 1122 <http://tools.ietf.org/html/rfc1122>`_: it provides corrections and clarifications 
-on RFC 793. If you are still unclear on how to proceed, then ask on Piazza: we will provide an ex cathedra ruling 
+on RFC 793. If you are still unclear on how to proceed, then ask on Ed Discussion: we will provide an ex cathedra ruling
 on how you should interpret the RFC.
 
 That said, there are parts of the RFC that *do* provide unambiguous formulas.
@@ -40,6 +35,23 @@ parts of it do involve branching by state, you should not write a gigantic if-el
 main structure of your packet arrival handler. As noted above, it is important that you
 follow the RFC, not your high-level understanding of how TCP must work.
 
+
+Freeing packets
+---------------
+
+Take into account that:
+
+- You're responsible for freeing any packets you create (i.e., any memory you allocate for
+  a ``tcp_packet_t`` struct).
+- You're also responsible for freeing any packets you remove from the pending packets list.
+
+In both cases, besides freeing the pointer to the ``tcp_packet_t`` struct, you also need to call
+``chitcp_tcp_packet_free`` to free other memory associated with the memory (and you should do
+this before freeing the pointer to the tcp_packet_t struct).
+
+Also, take into account that ``chitcpd_send_tcp_packet`` records all the information necessary
+to send the packet. In other words, it is safe to free the packet after ``chitcpd_send_tcp_packet``
+returns (doing so will not interfere with the packet being correctly sent).
 
 Tests that sometimes pass, but sometimes don't
 ----------------------------------------------
@@ -96,21 +108,22 @@ be challenging because your code may pass with DEBUG logging, but not with INFO 
 provides fewer clues on what could be wrong). This leads us to our next point...
 
 
-Pick your battles (a.k.a.: "it is ok to not pass all the tests")
-----------------------------------------------------------------
+Pick your battles (a.k.a.: "it is ok to not pass 100% of the tests")
+--------------------------------------------------------------------
 
 Achieving a perfect implementation that can pass all the tests under every possible sequencing
 of events is very challenging. It is very likely that many of you will end up passing nearly
-all the tests, with a few stubborn tests that sometimes pass but sometimes don't. More often than
+all the tests (and certainly enough to get an E score on Completeness), with a few stubborn
+tests that sometimes pass but sometimes don't. More often than
 not, this is due to bugs that are very hard to track down, because they only manifest themselves
 under a specific ordering of events, and which typically require a very deep debugging session
 to resolve.
 
 We encourage you to pick your battles, and to consider whether going down a debugging
-rabbit hole for several hours is a sensible use of your time for just a few testing points (for
-context, one test point accounts for 0.15% of your final grade. That is time that
+rabbit hole for several hours is a sensible use of your time for just a few testing points,
+particularly given that you'll have a chance to review your submission. That is time that
 could be spent on polishing up your code, documenting it, etc. which is likely to have a bigger
-impact on your grade for this project.
+impact on your Code Quality score for this project.
 
 That said, if you are in a situation where you consistently get a high score on the tests
 under a specific logging level, you are allowed to mention this in the README file in the root of
@@ -185,9 +198,8 @@ The RTT tests
 The RTT estimation tests do not contribute to your test grade (the one you get when running ``make grade``).
 The reason for this is that these tests are trivial to pass if you just estimate the RTT to be zero
 (ensuring your tests never time out). However, the graders will be running these tests and,
-if you are not doing any RTT estimation (or if they find issues with the RTT estimation) they
-will deduct points from the Correctness portion of the rubric (in fact, the rubric specifically
-calls this out as something we'll be looking at in p2b)
+if you are not doing any RTT estimation (or if they find issues with the RTT estimation) this
+will have an impact on your Code Quality score.
 
 
 Common Pitfalls
@@ -281,3 +293,10 @@ Common Pitfalls
   point. So, you have to take into account that the send buffer may not become empty
   until *after* you've processed the ``APPLICATION_CLOSE`` event.
 
+* **Not checking the return value of pthread_cond_timed_wait**: ``pthread_cond_timed_wait``
+  will return ``EINVAL`` under certain circumstances that you can easily find yourself in.
+  The most common one is providing an invalid value for ``abstime``, usually by
+  setting the ``tv_nsec`` field to a value less than 0 or greater than 1,000,000,000.
+  So, make sure to, at the very least, ``chilog`` any time ``pthread_cond_timed_wait``
+  returns a value other than ``0`` or ``ETIMEDOUT``, as that may alert you to issues
+  with your code that can make your multitimer fail.
