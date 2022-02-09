@@ -43,13 +43,13 @@ Your score on Project 1b will determine your ESNU scores on Project 1. This mean
 treat Project 1b as an opportunity to revise the work you submitted as part of Project 1a (you will
 get feedback on your Project 1a submission before Project 1b is due)
 
-Additionally, once you get your graded Project 1b back, you will have roughly one week to submit
-a revised version.
-
-Finally, please note that, to earn an E in Code Quality, you must have made an initial
+Please note that, to earn an E in Code Quality, you must have made an initial
 good-faith submission for both Project 1a and Project 1b (i.e., work that would score an N or above).
 So, for example, you could technically skip Project 1a entirely and only make a submission for
 Project 1b but, if you do so, your Code Quality score will be capped at an S.
+
+Finally, please see the "Optional Resubmission" section at the end of this page for more details on what an
+optional resubmission involves.
 
 Completeness
 ------------
@@ -200,6 +200,73 @@ Other Code Quality Issues
 There are a couple of other issues that we care about across all projects:
 
 .. include:: additional_penalties.txt
+
+
+Optional Resubmission
+---------------------
+
+When you receive your graded Project 1b, you have two options:
+
+#. If you are satisfied with the scores you have received, no action is necessary on your end.
+   Your scores on Project 1b will be used to compute your `Base Grade <../grading.html#base-grade>`__.
+#. You may make an *optional* resubmission to address any feedback you received in Project 1b,
+   which may increase your scores in the project.
+   
+Note: You *cannot* make a resubmission if you got E's on both Completeness and Code Quality. If you
+are in this situation and want additional feedback on your grading, please ask on Ed.
+   
+If you decide to make a resubmission, you **MUST** edit the ``README`` file in the root of
+the repository to include the following information:
+
+- **Rubric items you have addressed**: Rubric items that appear selected on Gradescope (under "Manual Grading") 
+  represent issues that had an impact on your Code Quality score. To facilitate the work of the
+  graders, you must list each rubric item you have addressed, with the following information:
+  
+  - The rubric item description, exactly as it appears on Gradescope.
+  - 1-2 sentences explaining how you addressed the rubric item.
+  - If the work you did on the rubric item is limited to a few lines of code, specify the filename and line number(s),
+    If your work on this rubric item involved deeper changes to your code, you do not need to list every single line 
+    of code you changed, but you should try to give the graders a general sense of where you made the changes, including
+    a few examples if possible
+    (e.g., "I combed through the code to make sure I was using descriptive variable names; for example, I changed ``c`` to
+    ``channel`` in several functions", "I reorganized functions ``foo()``, ``bar()``, and ``baz()`` as requested", etc.)
+    
+- **Substantial new code added to your submission**: If you added substantial new code that was not present in your
+  original submission (e.g., if your original submission did not implement several commands, and you have now included
+  new code to implement those commands), you must specify the affected files, as well as the new functionality that
+  is added by the new code. For example, you could include something like this::
+  
+    New files: channel.c/channel.h
+    Modified files: ctx.h, handlers.c
+  
+    Channels: Added a channel hash table to ctx_t (in ctx.h) and a channel_t struct 
+              (in channel.h) to add support for channels.
+              
+    JOIN and PART: Implemented the handlers for these commands in handlers.c
+    
+    QUIT: Updated the QUIT handler to relay the QUIT to users on the same channel as the user.
+  
+- **Changes made to pass additional tests**: If you made changes to your code with the goal of passing more tests,
+  please specify your original test score, and the new test score. If your work only involved a few minor bug fixes,
+  please let us know you did this (but you do not need to specify the exact changes you made). On the other hand, 
+  if you skipped parts of Project 1b in your original submission, and have written entirely new code, please make 
+  sure you have specified this as part of the "substantial new code", and that you also specify that doing so
+  allowed you to pass additional tests.
+- **Other changes**: If you made other changes to your code, such as refactoring large parts of your code, make
+  sure to specify this too.
+
+You should consider the ``README`` file as important as the changes you are making to your code: resubmissions 
+that do not include the information requested above may not be graded at all.
+
+In general, if you are making a resubmission that only involved addressing rubric items, without adding substantial
+new code to your submission, there is a high likelihood that addressing all the rubric items will bump your Code
+Quality score to at least the next score.
+
+On the other hand, if you are making a resubmission that involves adding substantial new code, please bear in mind
+that the graders could identify issues in that new code that will impact your Code Quality score. That said,
+once you receive the resubmission grading, you will be given the option to revert back to your original Project 1b
+score if you prefer.
+
 
 
 
