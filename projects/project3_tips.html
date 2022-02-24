@@ -100,17 +100,15 @@
       
   <div class="section" id="project-3-tips">
 <h1>Project 3 Tips<a class="headerlink" href="#project-3-tips" title="Permalink to this headline">¶</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Project 3 has not yet been updated for Winter 2022. While you are welcome to look at last year’s materials, you should not start working on them until we tell you that Project 3 is ready.</p>
-</div>
 <p>Before you get started, make sure you’ve read through the <a class="reference external" href="../projects/started.html">Projects - Getting Started</a> page.</p>
 <div class="section" id="using-the-cs-virtual-machine">
 <h2>Using the CS Virtual Machine<a class="headerlink" href="#using-the-cs-virtual-machine" title="Permalink to this headline">¶</a></h2>
 <p>The mininet network simulator in Project 3 must be run with root privileges
 on a Linux machine. If you do not have access to such a machine, we recommend
-using the <a class="reference external" href="https://howto.cs.uchicago.edu/vm:index">CS Virtual Machine</a> (version 201920.2 or higher)
-to run mininet.</p>
+using the <a class="reference external" href="https://howto.cs.uchicago.edu/vm:index">CS Virtual Machine</a> (version 202122.2 or higher)
+to run mininet.  This virtual machine will only work on computers with Intel processors so, if you are running
+a newer Mac with an M1 processor, please see our Ed Discussion site for instructions
+on how to set up a virtual machine on your computer.</p>
 <p>Take into account that this doesn’t mean you have to do all your development work inside the virtual machine; you
 will be able to continue to use your usual development environment (your laptop,
 a CSIL machine, etc.). You will simply need to follow the instructions on
@@ -170,6 +168,12 @@ only to have your datagram silently rejected when it arrives at its destination.
 You can enable it like this:</p>
 <img alt="../_images/wireshark_checksum.png" class="align-center" src="../_images/wireshark_checksum.png" />
 </div>
+<div class="section" id="asking-questions">
+<h2>Asking questions<a class="headerlink" href="#asking-questions" title="Permalink to this headline">¶</a></h2>
+<p>Related to the above, if you need help with your code, please make sure to include
+a capture file in your question. While including relevant logs will also be helpful,
+a capture file will be much more useful in helping us diagnose the issue with your code.</p>
+</div>
 <div class="section" id="common-pitfalls">
 <h2>Common Pitfalls<a class="headerlink" href="#common-pitfalls" title="Permalink to this headline">¶</a></h2>
 <ul>
@@ -181,7 +185,7 @@ You can enable it like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cksum</span><span class="p">(</span><span class="n">hdr</span><span class="p">,</span> <span class="n">sizeof</span><span class="p">(</span><span class="n">hdr</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>This will compute a checksum over 4 or 8 bytes, because <code class="docutils literal notranslate"><span class="pre">hdr</span></code> is a pointer, and its size is 4 or 8 bytes. Make sure you pass the correct size to <code class="docutils literal notranslate"><span class="pre">cksum</span></code>. For an IP header, you would call <code class="docutils literal notranslate"><span class="pre">cksum</span></code> like this:</p>
+<p>This will compute a checksum over 8 bytes, because <code class="docutils literal notranslate"><span class="pre">hdr</span></code> is a pointer, and its size is 8 bytes. Make sure you pass the correct size to <code class="docutils literal notranslate"><span class="pre">cksum</span></code>. For an IP header, you would call <code class="docutils literal notranslate"><span class="pre">cksum</span></code> like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cksum</span><span class="p">(</span><span class="n">hdr</span><span class="p">,</span> <span class="n">sizeof</span><span class="p">(</span><span class="n">iphdr_t</span><span class="p">))</span>
 </pre></div>
 </div>
