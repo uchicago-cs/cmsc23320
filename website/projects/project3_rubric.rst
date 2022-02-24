@@ -1,120 +1,131 @@
 Project 3 Rubric
 ----------------
 
-.. note::
+The grading of this project follows a specifications grading approach. If you have not already
+done so, make sure to read our `Grading <../grading.html>`__ page for more details.
 
-    Project 3 has not yet been updated for Winter 2022, and the rubric below refers to the old grading scheme
-    we used in this class. While you are welcome to read through this page, please bear in mind that the
-    grading scheme is being overhauled this year (see our `Grading <../grading.html>`__ page for more details).
+You will receive two ESNU scores for this project:
 
-This project is worth 15% of your final grade. The grade for the project is 
-divided into the following components:
+- **Completeness score**: This score will be determined solely by the result of running
+  the automated tests, as these give a measure of how *complete* your implementation
+  is (i.e., how much of the assignment you implemented).
+- **Code Quality score**: This score is determined by a review of your code done by
+  the course staff, and is based on three aspects of your code:
 
-- Completeness/Correctness (70 points)
-- Design (15 points)
-- Style (15 points)
+  - *Correctness*: This encompasses issues with your code
+    that, while not explicitly captured by the tests, could lead to
+    incorrect or inefficient behaviour in your code. This can include
+    small mistakes in your code, as well as larger issues that reveal
+    a lack of mastery in the material.
+  - *Design*: This encompasses
+    "qualities, many of which are intangible, that don't have to do with (and exist
+    to some extent independently of) the correct operation of your code." (thanks to
+    Adam Shaw for this concise phrasing).
+  - *Style*: This encompasses your adherence
+    to our `Style Guide <https://uchicago-cs.github.io/dev-guide/style_guide_c.html>`__.
 
-Completeness/Correctness
-~~~~~~~~~~~~~~~~~~~~~~~~
+Submission Timeline
+-------------------
 
-This project does not have automated tests, but the graders will be running through the
-commands described in the `Testing your Implementation <http://chi.cs.uchicago.edu/chirouter/testing.html>`_
-page in the chirouter documentation. They will be looking specifically at the following:
+This project has one required submission, and an optional resubmission.
 
-* ARP - 20 points
+Unlike Projects 1 and 2, the resubmission can only be used to improve your Completeness score
+(i.e., the score on the automated tests). Since Project 3 is due by the end of the quarter,
+there is not enough to do a full resubmission-regrading cycle.
 
-  * Responding to ARP requests - 2 points
-  * Sending ARP requests - 3 points
-  * Processing ARP replies - 5 points
-  * Managing Pending ARP Requests - 10 points
+The deadline for the required submission can be found in the `Course Calendar <../calendar.html>`__.
+Once you have made the required submission, you may resubmit your work up until **Friday, March 18th at 5pm**
+to improve your score on the automated tests.
 
-* ICMP - 15 points
 
-  * Responding to Echo Requests - 5 points
-  * Host Unreachable - 2 points
-  * Time Exceeded - 5 points
-  * Port Unreachable - 3 points
+Completeness
+------------
 
-* IP Forwarding - 20 points
+The Completeness component will be determined by running the following commands::
 
-  * Basic Forwarding - 10 points
-  * Sending withheld frames - 5 points
-  * Host Unreachable - 5 points
+    make tests
+    make grade
 
-* Multiple routers - 15 points
+(see `Automated tests <http://chi.cs.uchicago.edu/chirouter/automated-tests.html>`__
+in the chirouter documentation for more details)
 
-  * Two Router topology: 10 points
-  * Three Router topology: 5 points
- 
-While the graders will be basing their score largely on whether your implementation
-produces the expected results when running the commands listed on the chirouter
-documentation, points may also be deducted for issues with your code that, while
-not explicitly captured by the commands, could lead to *incorrect* behaviour in your router.
+Your ESNU score will then be determined as follows:
 
++---------------------+----------------------+
+| Grade               | Points on tests      |
++=====================+======================+
+| Excellent           | at least 95          |
++---------------------+----------------------+
+| Satisfactory        | at least 60          |
++---------------------+----------------------+
+| Needs Improvement   | at least 20          |
++---------------------+----------------------+
+| Ungradable          | less than 20         |
++---------------------+----------------------+
+
+Code Quality
+------------
+
+When assessing your code quality, there are a number of things we will be paying
+close attention to, and which we describe in the sections below (including major
+issues, labelled "[Major Issue]" that you should be particularly mindful of).
+
+In general, your ESNU score will be determined as follows:
+
+- **Excellent**: Your submission has none of the issues described below or, at most,
+  has only a few minor mistakes or small style issues that would be trivial to address.
+- **Satisfactory**: Your submission has a few of the issues described below (but no
+  major issues), and would only require minor changes to get to an E.
+- **Needs Improvement**: Your submission has several of the issues described below,
+  or at least one major issue. In general, major revisions would be required to
+  get up to an S or E.
+- **Ungradable**: Your submission does not constitute a good-faith effort to complete
+  the work. This includes not submitting any work at all, as well as submitting
+  only placeholder code (e.g., code that includes functions for all the required
+  IRC commands, but where the functions are empty or filled with "TODO"s, etc.)
+
+That said, while the issues listed below are the main things we care about in this project,
+it is not possible for us to give you an exhaustive list of every single thing that could
+affect your code quality score. If you get a comment pointing out an issue in your
+code that we did not list below, take it as an opportunity to improve your work
+(and remember that you'll have a chance to revise your work!)
+
+Correctness
+-----------
+
+In this project, an incorrect implementation will almost always lead to some of the tests
+failing, so there are fewer things that we will be looking at when checking the correctness
+of your code. Nonetheless, we will be paying special attention to the following issues
+which would not be caught by the tests:
+
+- **Automatically sending an ARP reply for any ARP request, without checking that the requested IP address matches the router interface's IP address**. Because the destination MAC address of ARP requests is set to the broadcast address, you will receive ARP requests that may not be intended for the router. You need to check the IP address in the ARP request itself to determine whether to reply to the ARP request.
+- **Sending ARP replies with a broadcast destination address**. ARP replies should be sent only to the host that originally sent the ARP request.
+- **ICMP Port Unreachable: Checking for UDP or TCP payloads, but not both**
+- **Not checking the ARP cache before deciding whether to send an ARP request**. If there is already a cached entry for a given IP address, there is no need to send an ARP request.
+- [Major issue] **Not implementing IP forwarding at all, and instead forwarding all IP datagrams on all ports**
+- [Major issue] **Hardcoding any forwarding logic, instead of using the provided routing table**
+- **Writing IP forwarding, but processing the routing table incorrectly**
+- **Not locking/unlocking the ARP mutex when accessing the ARP cache or the list of pending ARP requests**. Note: our code already locks the ARP mutex before calling the ``chirouter_arp_process_pending_req`` function, and unlocks it after it returns. No locking is necessary inside that function.
+- **Managing Pending ARP Requests: Unconditionally creating new pending requests**. If there is already an entry for IP address *X* in the pending ARP request list, and the router receives a new IP datagram with destination *X*, that datagram should be added to the list of withheld frames in the existing pending request. You should not create an entirely new pending request.
+- **Removing pending requests from the pending ARP request list, instead of returning ARP_REQ_REMOVE**
+- **Removing pending requests from the pending ARP request list before the request has been sent 5 times**
+- **Not removing a pending ARP request when an ARP reply is received, or when it has been sent 5 times already**
+- **Unconditionally sending a Time Exceeded reply if a forwardeable IP datagram arrives with TTL=1**.  The correct approach is to first determine whether it is a Host Unreachable and, if it is not, then send a Time Exceeded (meaning that forwardeable datagrams with TTL=1 must linger in the withheld frames list so we can determine whether there is actually a host with that IP).
 
 Design
-~~~~~~
+------
 
-The Design component of the grade will be determined by "qualities, many of which are intangible, 
-that don’t have to do with (and exist to some extent independently of) the correct operation of your code."
-(thanks to Adam Shaw for this concise phrasing). We will specifically be looking at the following:
+When assessing the design of your code, we will be paying special attention
+to the following:
 
-* **Function decomposition** (10 points): We will look at whether you divided your
-  implementation into functions that make sense. This includes avoiding
-  repeated/redundant code, ensuring that each function performs a well-defined
-  task, and putting related functions in the same module (i.e., the same C file).
-* **Efficiency** (5 points): We will look at whether your code is minimally efficient.
-  In other words, we are not looking for sublimely efficient code but, rather,
-  for the lack of grossly inefficient code. In this project, you should not need
-  to add any additional data structures (lists, hash tables, etc.) to the existing code,
-  but we will care about how you use the provided data structures. For example, if
-  you iterate over a list in :math:`O(n^2)` time when the same task can reasonably be accomplished in
-  :math:`O(n)` time (i.e., when the :math:`O(n)` is not particularly clever or relies
-  on some obscure algorithm), we may deduct points for this.
+- [Major issue] **Putting all your code in chirouter_process_ethernet_frame without dividing it into multiple functions**.
+- **Writing a single massive "Process IP datagram" function, without dividing it into multiple functions.**
+- **Repeating ICMP message creation logic in multiple places in your code, instead of writing a general-purpose "create an ICMP message" function**
 
 
-Style
-~~~~~
+Other Code Quality Issues
+-------------------------
 
-The Style component of the grade will be determined by your adherence to
-our `Style Guide <https://uchicago-cs.github.io/dev-guide/style_guide_c.html>`__.
-While you should strive to follow this guide as
-closely as possible, there *are* certain aspects we will be paying more
-attention to. The 20 Style points are are divided as follows:
-
-- **Documenting functions** (5 points): Every function written by you must have
-  a `function comment <https://uchicago-cs.github.io/dev-guide/style_guide_c.html#function-comments>`_ with a brief description
-  of what the function does, and a description of the parameters and the 
-  return value.
-- **Consistent indentation** (2 points): Your code must follow one of the
-  `allowed indentation styles <https://uchicago-cs.github.io/dev-guide/style_guide_c.html#indentation>`_ consistently.
-  The presence of even a single tab character in your code will result in 0 points
-  here.
-- **Clarity** (5 points): Your code must be easy to read and understand. This
-  is a fairly subjective aspect, but common deductions for lack of clarity
-  include using variables without descriptive names, writing convoluted code
-  that would be easier to understand with more code comments, using magic
-  numbers, etc.
-- **General adherence to the style guide** (3 points): The graders will not be
-  checking that you follow every minute aspect of our style guide, and occasional
-  infractions are ok (and won't necessarily be penalized). What we're more
-  concerned with is that your code, overall, has a *consistent* style that
-  asymptotically approaches the one specified in our style guide.
-
-Additionally, the graders will apply the following penalties:
-
-- Using `global variables <https://uchicago-cs.github.io/dev-guide/style_guide_c.html#global-variables>`__: 10 point penalty
-- Using `goto statements <https://uchicago-cs.github.io/dev-guide/style_guide_c.html#goto-statements>`__: 5 point penalty
-
-Please note that the style guide does specify a few exceptions when using
-some of the above is acceptable. You will not be penalized in those cases.
-
-
-Additional Penalties
-~~~~~~~~~~~~~~~~~~~~
+There are a couple of other issues that we care about across all projects:
 
 .. include:: additional_penalties.txt
-
-
-
-

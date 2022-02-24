@@ -1,11 +1,6 @@
 Project 3 Tips
 ==============
 
-.. note::
-
-   Project 3 has not yet been updated for Winter 2022. While you are welcome to look at last year's materials, you should not start working on them until we tell you that Project 3 is ready.
-
-
 Before you get started, make sure you've read through the `Projects - Getting Started <../projects/started.html>`__ page.
 
 Using the CS Virtual Machine
@@ -13,8 +8,10 @@ Using the CS Virtual Machine
 
 The mininet network simulator in Project 3 must be run with root privileges
 on a Linux machine. If you do not have access to such a machine, we recommend
-using the `CS Virtual Machine <https://howto.cs.uchicago.edu/vm:index>`_ (version 201920.2 or higher)
-to run mininet. 
+using the `CS Virtual Machine <https://howto.cs.uchicago.edu/vm:index>`_ (version 202122.2 or higher)
+to run mininet.  This virtual machine will only work on computers with Intel processors so, if you are running
+a newer Mac with an M1 processor, please see our Ed Discussion site for instructions
+on how to set up a virtual machine on your computer.
 
 Take into account that this doesn't mean you have to do all your development work inside the virtual machine; you
 will be able to continue to use your usual development environment (your laptop,
@@ -89,6 +86,12 @@ You can enable it like this:
 .. image:: wireshark_checksum.png
    :align: center
 
+Asking questions
+----------------
+
+Related to the above, if you need help with your code, please make sure to include
+a capture file in your question. While including relevant logs will also be helpful,
+a capture file will be much more useful in helping us diagnose the issue with your code.
 
 Common Pitfalls
 ---------------
@@ -101,7 +104,7 @@ Common Pitfalls
 
       cksum(hdr, sizeof(hdr))
 
-  This will compute a checksum over 4 or 8 bytes, because ``hdr`` is a pointer, and its size is 4 or 8 bytes. Make sure you pass the correct size to ``cksum``. For an IP header, you would call ``cksum`` like this::
+  This will compute a checksum over 8 bytes, because ``hdr`` is a pointer, and its size is 8 bytes. Make sure you pass the correct size to ``cksum``. For an IP header, you would call ``cksum`` like this::
 
       cksum(hdr, sizeof(iphdr_t))
 
