@@ -5,7 +5,7 @@ In this project you will be implementing a simple IP router capable of routing I
 
 Please refer to the following documents to complete this project:
 
-- `chirouter specification <http://chi.cs.uchicago.edu/chitcp/>`__
+- `chirouter specification <http://chi.cs.uchicago.edu/chirouter/>`__
 - `Project 3 rubric <project3_rubric.html>`__
 - `Project 3 tips <project3_tips.html>`__
 
