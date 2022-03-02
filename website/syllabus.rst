@@ -78,17 +78,11 @@ reasoning about the material covered in the lectures (e.g., exercises where
 you must apply the concepts covered in the lectures, as opposed to questions
 that ask you to repeat facts).
 
-Exams
-~~~~~
+Exam
+~~~~
 
-During Finals week, we will hold a closed-book exam divided into three sections:
-
-- "Trust but verify" questions about the projects. Most of these questions should
-  be trivial to answer for any student who has completed the projects.
-- Networks concepts: These questions will test basic mastery of network concepts,
-  and will be similar to questions found in the homework assignments.
-- Challenge questions: These questions will require a solid and deep understanding
-  of network concepts, including how different concepts relate to each other.
+During Finals Week, we will hold a closed-book exam that will test students'
+knowledge of the material covered in the lectures, as well as the course projects.
 
 Books
 -----

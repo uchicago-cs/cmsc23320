@@ -127,12 +127,34 @@ Grade Level-up
 
 The final exam will be composed of 30 questions, graded on a SNU scale:
 
-- To earn a +1 grade level-up, you must earn at least 10 S scores.
-- To earn a +2 grade level-up, you must earn at least 22 S scores.
-- To earn a +3 grade level-up, you must earn at least 28 S scores.
+- To earn a +1 grade level-up, you must earn at least 15 S scores.
+- To earn a +2 grade level-up, you must earn at least 21 S scores.
+- To earn a +3 grade level-up, you must earn at least 27 S scores.
 
-**NOTE**: The number of questions on the exam and the above thresholds are subject to change (but we will
-share a final set of thresholds before the exam).
+The exam will be divided into three sections:
+
+- **"Trust but Verify"** [10 questions]. The intent of these questions is to 
+  verify that you actually worked on the course projects. They should be trivial or almost
+  trivial to answer for any student who has completed the projects.
+- **Networks Concepts** [14 questions]. These questions will test basic mastery 
+  of network concepts, and will be similar to questions found in the homework assignments.
+- **Challenge Questions** [6 questions]. These questions will require a solid and 
+  deep understanding of network concepts, including how different concepts relate to each other.
+
+Of all the topics covered throughout the quarter, some of the topics will be guaranteed
+to *not* appear in the Networks Concepts section, but *may* appear in the Challenge
+Questions section. The exact list of topics will be announced roughly a week before the exam.
+
+While there are many paths to reach each score threshold, we expect the most
+common paths to be the following
+
+- *+1 grade level up*: Students who have worked on the projects and have an adequate understanding
+  of the concepts covered in class. For example, you could reach this level by answering 8 of the 10
+  Trust but Verify questions, 7 of the 14 Networks Concepts questions, and none of the Challenge Questions. Alternatively, if you only did an adequate job on the projects (and possibly skipped some parts of them), but have a more solid understanding of network concepts, you could also reach this level by answering 4 of the 10 Trust but Verify questions, 11 of the 14 Networks Concepts questions, and none of the Challenge Questions.
+- *+2 grade level up*: Students who have worked on the projects and have a solid understanding of
+  most (but not necessarily all) of the concepts covered in the class. For example, you could reach this level by answering 9 of the 10 Trust but Verify Questions, 12 of the 14 Networks Concepts questions, and none of the Challenge Questions.
+- *+3 grade level up*: Students who have worked on the projects, and have a thorough understanding of practically all the concepts covered in the class. To reach this level, you must correctly answer nearly all the questions in each section, with a bit of flexibility to get up to three questions wrong in the entire exam.
+
 
 Pass/Fail Grading
 ~~~~~~~~~~~~~~~~~
