@@ -125,7 +125,8 @@ For the homeworks, the **S** column is the minimum number of Satisfactory scores
 Grade Level-up
 ~~~~~~~~~~~~~~
 
-The final exam will be composed of 30 questions, graded on a SNU scale:
+The final exam will be closed-book, closed-notes exam composed 
+of 30 questions, graded on a SNU scale:
 
 - To earn a +1 grade level-up, you must earn at least 15 S scores.
 - To earn a +2 grade level-up, you must earn at least 21 S scores.
