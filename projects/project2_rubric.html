@@ -117,6 +117,7 @@
 <li><a class="reference internal" href="#design">Design</a></li>
 <li><a class="reference internal" href="#style">Style</a></li>
 <li><a class="reference internal" href="#other-code-quality-issues">Other Code Quality Issues</a></li>
+<li><a class="reference internal" href="#optional-resubmission">Optional Resubmission</a></li>
 </ul>
 
         </div>
@@ -401,6 +402,63 @@ not “save” pointers to stack-allocated memory that is going to be deallocate
 This can happen if you store a pointer to a functions’ local variable in a struct
 that is heap-allocated.</p></li>
 </ul>
+</div>
+<div class="section" id="optional-resubmission">
+<h1>Optional Resubmission<a class="headerlink" href="#optional-resubmission" title="Permalink to this headline">¶</a></h1>
+<p>When you receive your graded Project 2b, you have two options:</p>
+<ol class="arabic simple">
+<li><p>If you are satisfied with the scores you have received, no action is necessary on your end.
+Your scores on Project 2b will be used to compute your <a class="reference external" href="../grading.html#base-grade">Base Grade</a>.</p></li>
+<li><p>You may make an <em>optional</em> resubmission to address any feedback you received in Project 2b,
+which may increase your scores in the project.</p></li>
+</ol>
+<p>Note: You <em>cannot</em> make a resubmission if you got E’s on both Completeness and Code Quality. If you
+are in this situation and want additional feedback on your grading, please ask on Ed.</p>
+<p>If you decide to make a resubmission, you <strong>MUST</strong> edit the <code class="docutils literal notranslate"><span class="pre">README</span></code> file in the root of
+the repository to include the following information:</p>
+<ul>
+<li><p><strong>Rubric items you have addressed</strong>: Rubric items that appear selected on Gradescope (under “Manual Grading”)
+represent issues that had an impact on your Code Quality score. To facilitate the work of the
+graders, you must list each rubric item you have addressed, with the following information:</p>
+<ul class="simple">
+<li><p>The rubric item description, exactly as it appears on Gradescope.</p></li>
+<li><p>1-2 sentences explaining how you addressed the rubric item.</p></li>
+<li><p>If the work you did on the rubric item is limited to a few lines of code, specify the filename and line number(s),
+If your work on this rubric item involved deeper changes to your code, you do not need to list every single line
+of code you changed, but you should try to give the graders a general sense of where you made the changes, including
+a few examples if possible
+(e.g., “I combed through the code to make sure I was using descriptive variable names; for example, I changed <code class="docutils literal notranslate"><span class="pre">c</span></code> to
+<code class="docutils literal notranslate"><span class="pre">channel</span></code> in several functions”, “I reorganized functions <code class="docutils literal notranslate"><span class="pre">foo()</span></code>, <code class="docutils literal notranslate"><span class="pre">bar()</span></code>, and <code class="docutils literal notranslate"><span class="pre">baz()</span></code> as requested”, etc.)</p></li>
+</ul>
+</li>
+<li><p><strong>Substantial new code added to your submission</strong>: If you added substantial new code that was not present in your
+original submission (e.g., if your original submission did not implement certain features, and you have now included
+new code to implement those features), you must specify the functions you added or modified in either tcp.c or multitimer.c. For example you could include something like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Modified</span> <span class="n">function</span><span class="p">:</span> <span class="n">handle_packet_arrival</span> <span class="p">(</span><span class="n">tcp</span><span class="o">.</span><span class="n">c</span><span class="p">)</span>
+<span class="n">New</span> <span class="n">functions</span><span class="p">:</span> <span class="n">add_to_out_of_order</span><span class="p">,</span> <span class="n">process_out_of_order</span> <span class="p">(</span><span class="n">tcp</span><span class="o">.</span><span class="n">c</span><span class="p">)</span>
+
+<span class="n">Our</span> <span class="n">original</span> <span class="n">submission</span> <span class="n">did</span> <span class="ow">not</span> <span class="n">implement</span> <span class="n">out</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">order</span> <span class="n">delivery</span><span class="p">,</span> <span class="n">but</span> <span class="n">we</span> <span class="n">implemented</span> <span class="n">it</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">above</span> <span class="n">functions</span><span class="o">.</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Changes made to pass additional tests</strong>: If you made changes to your code with the goal of passing more tests,
+please specify your original test score, and the new test score. If your work only involved a few minor bug fixes,
+please let us know you did this (but you do not need to specify the exact changes you made). On the other hand,
+if you skipped parts of Project 2b in your original submission, and have written entirely new code, please make
+sure you have specified this as part of the “substantial new code”, and that you also specify that doing so
+allowed you to pass additional tests.</p></li>
+<li><p><strong>Other changes</strong>: If you made other changes to your code, such as refactoring large parts of your code, make
+sure to specify this too.</p></li>
+</ul>
+<p>You should consider the <code class="docutils literal notranslate"><span class="pre">README</span></code> file as important as the changes you are making to your code: resubmissions
+that do not include the information requested above may not be graded at all.</p>
+<p>In general, if you are making a resubmission that only involved addressing rubric items, without adding substantial
+new code to your submission, there is a high likelihood that addressing all the rubric items will bump your Code
+Quality score to at least the next score.</p>
+<p>On the other hand, if you are making a resubmission that involves adding substantial new code, please bear in mind
+that the graders could identify issues in that new code that will impact your Code Quality score. That said,
+once you receive the resubmission grading, you will be given the option to revert back to your original Project 2b
+score if you prefer.</p>
 </div>
 
 
