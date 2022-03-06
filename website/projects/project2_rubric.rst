@@ -43,10 +43,13 @@ get feedback on your Project 2a submission before Project 2b is due)
 Additionally, once you get your graded Project 2b back, you will have roughly one week to submit
 a revised version.
 
-Finally, please note that, to earn an E in Code Quality, you must have made an initial
+Please note that, to earn an E in Code Quality, you must have made an initial
 good-faith submission for both Project 2a and Project 2b (i.e., work that would score an N or above).
 So, for example, you could technically skip Project 2a entirely and only make a submission for
 Project 2b but, if you do so, your Code Quality score will be capped at an S.
+
+Finally, please see the "Optional Resubmission" section at the end of this page for more details on what an
+optional resubmission involves.
 
 Completeness
 ------------
@@ -268,7 +271,8 @@ the repository to include the following information:
     Modified function: handle_packet_arrival (tcp.c)
     New functions: add_to_out_of_order, process_out_of_order (tcp.c)
 
-    Our original submission did not implement out-of-order delivery, but we implemented it in the above functions.
+    Our original submission did not implement out-of-order delivery,
+    but we implemented it in the above functions.
 
 - **Changes made to pass additional tests**: If you made changes to your code with the goal of passing more tests,
   please specify your original test score, and the new test score. If your work only involved a few minor bug fixes,
