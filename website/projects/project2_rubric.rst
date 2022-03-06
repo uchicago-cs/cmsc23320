@@ -232,6 +232,64 @@ There are a couple of other issues that we care about across all projects:
 
 .. include:: additional_penalties.txt
 
+Optional Resubmission
+---------------------
+
+When you receive your graded Project 2b, you have two options:
+
+#. If you are satisfied with the scores you have received, no action is necessary on your end.
+   Your scores on Project 2b will be used to compute your `Base Grade <../grading.html#base-grade>`__.
+#. You may make an *optional* resubmission to address any feedback you received in Project 2b,
+   which may increase your scores in the project.
+
+Note: You *cannot* make a resubmission if you got E's on both Completeness and Code Quality. If you
+are in this situation and want additional feedback on your grading, please ask on Ed.
+
+If you decide to make a resubmission, you **MUST** edit the ``README`` file in the root of
+the repository to include the following information:
+
+- **Rubric items you have addressed**: Rubric items that appear selected on Gradescope (under "Manual Grading")
+  represent issues that had an impact on your Code Quality score. To facilitate the work of the
+  graders, you must list each rubric item you have addressed, with the following information:
+
+  - The rubric item description, exactly as it appears on Gradescope.
+  - 1-2 sentences explaining how you addressed the rubric item.
+  - If the work you did on the rubric item is limited to a few lines of code, specify the filename and line number(s),
+    If your work on this rubric item involved deeper changes to your code, you do not need to list every single line
+    of code you changed, but you should try to give the graders a general sense of where you made the changes, including
+    a few examples if possible
+    (e.g., "I combed through the code to make sure I was using descriptive variable names; for example, I changed ``c`` to
+    ``channel`` in several functions", "I reorganized functions ``foo()``, ``bar()``, and ``baz()`` as requested", etc.)
+
+- **Substantial new code added to your submission**: If you added substantial new code that was not present in your
+  original submission (e.g., if your original submission did not implement certain features, and you have now included
+  new code to implement those features), you must specify the functions you added or modified in either tcp.c or multitimer.c. For example you could include something like this::
+
+    Modified function: handle_packet_arrival (tcp.c)
+    New functions: add_to_out_of_order, process_out_of_order (tcp.c)
+
+    Our original submission did not implement out-of-order delivery, but we implemented it in the above functions.
+
+- **Changes made to pass additional tests**: If you made changes to your code with the goal of passing more tests,
+  please specify your original test score, and the new test score. If your work only involved a few minor bug fixes,
+  please let us know you did this (but you do not need to specify the exact changes you made). On the other hand,
+  if you skipped parts of Project 2b in your original submission, and have written entirely new code, please make
+  sure you have specified this as part of the "substantial new code", and that you also specify that doing so
+  allowed you to pass additional tests.
+- **Other changes**: If you made other changes to your code, such as refactoring large parts of your code, make
+  sure to specify this too.
+
+You should consider the ``README`` file as important as the changes you are making to your code: resubmissions
+that do not include the information requested above may not be graded at all.
+
+In general, if you are making a resubmission that only involved addressing rubric items, without adding substantial
+new code to your submission, there is a high likelihood that addressing all the rubric items will bump your Code
+Quality score to at least the next score.
+
+On the other hand, if you are making a resubmission that involves adding substantial new code, please bear in mind
+that the graders could identify issues in that new code that will impact your Code Quality score. That said,
+once you receive the resubmission grading, you will be given the option to revert back to your original Project 2b
+score if you prefer.
 
 
 
