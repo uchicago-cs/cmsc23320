@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,6 +14,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -125,7 +126,14 @@
     <div class="body col-md-9 content" role="main">
       
   <div class="section" id="project-2-rubric">
-<h1>Project 2 Rubric<a class="headerlink" href="#project-2-rubric" title="Permalink to this headline">¶</a></h1>
+<h1>Project 2 Rubric<a class="headerlink" href="#project-2-rubric" title="Permalink to this heading">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Project 2 has not yet been updated for Autumn 2022. You are welcome to read
+through the project documentation, but bear in mind that some aspects of the
+project may change. Please do not start working on the project until instructed
+to do so in class.</p>
+</div>
 <p>The grading of this project follows a specifications grading approach. If you have not already
 done so, make sure to read our <a class="reference external" href="../grading.html">Grading</a> page for more details.</p>
 <p>You will receive two ESNU scores for this project:</p>
@@ -152,7 +160,7 @@ to our <a class="reference external" href="https://uchicago-cs.github.io/dev-gui
 </ul>
 </div>
 <div class="section" id="submission-timeline">
-<h1>Submission Timeline<a class="headerlink" href="#submission-timeline" title="Permalink to this headline">¶</a></h1>
+<h1>Submission Timeline<a class="headerlink" href="#submission-timeline" title="Permalink to this heading">¶</a></h1>
 <p>This project has two required submissions, and an optional resubmission.</p>
 <p>The required submissions are the following:</p>
 <ul class="simple">
@@ -173,7 +181,7 @@ Project 2b but, if you do so, your Code Quality score will be capped at an S.</p
 optional resubmission involves.</p>
 </div>
 <div class="section" id="completeness">
-<h1>Completeness<a class="headerlink" href="#completeness" title="Permalink to this headline">¶</a></h1>
+<h1>Completeness<a class="headerlink" href="#completeness" title="Permalink to this heading">¶</a></h1>
 <p>The Completeness component will be determined by running the following command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">grade</span>
 </pre></div>
@@ -210,7 +218,7 @@ in Assignments 1 and 2:</p>
 </table>
 </div>
 <div class="section" id="code-quality">
-<h1>Code Quality<a class="headerlink" href="#code-quality" title="Permalink to this headline">¶</a></h1>
+<h1>Code Quality<a class="headerlink" href="#code-quality" title="Permalink to this heading">¶</a></h1>
 <p>When assessing your code quality, there are a number of things we will be paying
 close attention to, and which we describe in the sections below (including major
 issues, labelled “[Major Issue]” that you should be particularly mindful of).</p>
@@ -238,11 +246,11 @@ code that we did not list below, take it as an opportunity to improve your work
 (and remember that you’ll have a chance to revise your work!)</p>
 </div>
 <div class="section" id="correctness">
-<h1>Correctness<a class="headerlink" href="#correctness" title="Permalink to this headline">¶</a></h1>
+<h1>Correctness<a class="headerlink" href="#correctness" title="Permalink to this heading">¶</a></h1>
 <p>When assessing the correctness of your code, we will be paying special attention
 to the following issues:</p>
 <div class="section" id="general">
-<h2>General<a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h2>
+<h2>General<a class="headerlink" href="#general" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><strong>Not setting a correct value for SEG.WND</strong></p></li>
 <li><p><strong>Not updating SND.WND when a packet arrives</strong></p></li>
@@ -251,7 +259,7 @@ to the following issues:</p>
 </ul>
 </div>
 <div class="section" id="p2a-3-way-handshake">
-<h2>[p2a] 3-way Handshake<a class="headerlink" href="#p2a-3-way-handshake" title="Permalink to this headline">¶</a></h2>
+<h2>[p2a] 3-way Handshake<a class="headerlink" href="#p2a-3-way-handshake" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><strong>Not acknowledging the final ACK in the 3-way handshake</strong>. Remember that acknowledgements are not acknowledged in TCP.</p></li>
 <li><p><strong>Not checking that the SYN was acknowledged before sending the ACK and changing state to ESTABLISHED</strong>.</p></li>
@@ -259,7 +267,7 @@ to the following issues:</p>
 </ul>
 </div>
 <div class="section" id="p2a-data-transfer">
-<h2>[p2a] Data Transfer<a class="headerlink" href="#p2a-data-transfer" title="Permalink to this headline">¶</a></h2>
+<h2>[p2a] Data Transfer<a class="headerlink" href="#p2a-data-transfer" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><strong>Not checking if the value of SEG.ACK and SEG.SEQ is correct</strong>. In some cases, no action needs to be taken when a value is incorrect, but we still recommend (but not require) that you chilog() any such cases.</p></li>
 <li><p><strong>Not setting the ACK flag and including a valid acknowledgement number in every packet after the 3-way handshake</strong>. Remember that, even if you haven’t received any new data, you still have to send a valid acknowledgement number in every segment.</p></li>
@@ -271,14 +279,14 @@ to the following issues:</p>
 </ul>
 </div>
 <div class="section" id="p2a-connection-teardown">
-<h2>[p2a] Connection teardown<a class="headerlink" href="#p2a-connection-teardown" title="Permalink to this headline">¶</a></h2>
+<h2>[p2a] Connection teardown<a class="headerlink" href="#p2a-connection-teardown" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><strong>Not handling the APPLICATION_CLOSE event in both ESTABLISHED and CLOSE_WAIT</strong>. In both cases, you should only send a FIN packet if there is no data left in the send buffer, but you should transition to FIN-WAIT-1 / LAST-ACK (respectively) right away.</p></li>
 <li><p><strong>Not delaying the FIN packet until all outstanding data has been sent and acknowledged</strong>.</p></li>
 </ul>
 </div>
 <div class="section" id="p2b-managing-the-retransmission-queue">
-<h2>[p2b] Managing the Retransmission Queue<a class="headerlink" href="#p2b-managing-the-retransmission-queue" title="Permalink to this headline">¶</a></h2>
+<h2>[p2b] Managing the Retransmission Queue<a class="headerlink" href="#p2b-managing-the-retransmission-queue" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><strong>Adding pure ACK packets (i.e., not SYN or FIN segments, nor segments with a payload) to the retransmission queue</strong>. ACK packets are not retransmitted.</p></li>
 <li><p><strong>Adding segments with a payload to the retransmission queue, but not adding SYN or FIN segments</strong></p></li>
@@ -287,7 +295,7 @@ to the following issues:</p>
 </ul>
 </div>
 <div class="section" id="p2b-managing-the-timer-thread">
-<h2>[p2b] Managing the Timer Thread<a class="headerlink" href="#p2b-managing-the-timer-thread" title="Permalink to this headline">¶</a></h2>
+<h2>[p2b] Managing the Timer Thread<a class="headerlink" href="#p2b-managing-the-timer-thread" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><strong>Unconditionally setting the timer every time a packet is sent</strong>. You should set the timer only if you are sending a packet with data (or a SYN or FIN) <em>and</em> the timer is not already active. If the timer is already active, then sending new data doesn’t affect the timer in any way.</p></li>
 <li><p><strong>Not cancelling the timer when all outstanding data has been acknowledged</strong></p></li>
@@ -296,14 +304,14 @@ to the following issues:</p>
 </ul>
 </div>
 <div class="section" id="p2b-handling-the-retransmission-timeout">
-<h2>[p2b] Handling the retransmission timeout<a class="headerlink" href="#p2b-handling-the-retransmission-timeout" title="Permalink to this headline">¶</a></h2>
+<h2>[p2b] Handling the retransmission timeout<a class="headerlink" href="#p2b-handling-the-retransmission-timeout" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><strong>Not doing Go-back-N</strong>. When a TIMEOUT event happens, you should be doing go-back-N: find the earliest unacknowledged segment in the retransmission queue, and retransmit that segment and all subsequent segments. It is not enough to only retransmit the first segment (without checking whether there are subsequent packets)</p></li>
 <li><p><strong>Not backing off the RTO each time a timeout happens</strong>.</p></li>
 </ul>
 </div>
 <div class="section" id="p2b-rtt-estimation">
-<h2>[p2b] RTT estimation<a class="headerlink" href="#p2b-rtt-estimation" title="Permalink to this headline">¶</a></h2>
+<h2>[p2b] RTT estimation<a class="headerlink" href="#p2b-rtt-estimation" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>[Major issue] <strong>Not doing any RTT estimation</strong>. The RTT estimation tests can’t check whether you implemented RTT estimation correctly (at most, they may alert you to failures that arise as a result of an incorrect RTT estimation), so the graders will be manually checking that you implemented RTT estimation correctly.</p></li>
 <li><p><strong>Doing RTT estimation, but making a minor mistake in computing the RTT</strong></p></li>
@@ -311,7 +319,7 @@ to the following issues:</p>
 </ul>
 </div>
 <div class="section" id="p2b-out-of-order">
-<h2>[p2b] Out-of-order<a class="headerlink" href="#p2b-out-of-order" title="Permalink to this headline">¶</a></h2>
+<h2>[p2b] Out-of-order<a class="headerlink" href="#p2b-out-of-order" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><strong>Not placing out-of-order segments in the out-of-order list</strong></p></li>
 <li><p><strong>Inserting duplicate segments in the out-of-order list</strong></p></li>
@@ -319,7 +327,7 @@ to the following issues:</p>
 </div>
 </div>
 <div class="section" id="design">
-<h1>Design<a class="headerlink" href="#design" title="Permalink to this headline">¶</a></h1>
+<h1>Design<a class="headerlink" href="#design" title="Permalink to this heading">¶</a></h1>
 <p>When assessing the design of your code, we will be paying special attention
 to the following:</p>
 <ul class="simple">
@@ -335,7 +343,7 @@ to the following:</p>
 </ul>
 </div>
 <div class="section" id="style">
-<h1>Style<a class="headerlink" href="#style" title="Permalink to this headline">¶</a></h1>
+<h1>Style<a class="headerlink" href="#style" title="Permalink to this heading">¶</a></h1>
 <p>We will be checking your general adherence to
 our <a class="reference external" href="https://uchicago-cs.github.io/dev-guide/style_guide_c.html">Style Guide</a>
 and, while we will not be checking that you follow every minute aspect of our
@@ -363,7 +371,7 @@ described in the style guide.</p></li>
 </ul>
 </div>
 <div class="section" id="other-code-quality-issues">
-<h1>Other Code Quality Issues<a class="headerlink" href="#other-code-quality-issues" title="Permalink to this headline">¶</a></h1>
+<h1>Other Code Quality Issues<a class="headerlink" href="#other-code-quality-issues" title="Permalink to this heading">¶</a></h1>
 <p>There are a couple of other issues that we care about across all projects:</p>
 <ul>
 <li><p><strong>Reinventing wheels that don’t need to be reinvented</strong>: In this class, we expect
@@ -406,7 +414,7 @@ that is heap-allocated.</p></li>
 </ul>
 </div>
 <div class="section" id="optional-resubmission">
-<h1>Optional Resubmission<a class="headerlink" href="#optional-resubmission" title="Permalink to this headline">¶</a></h1>
+<h1>Optional Resubmission<a class="headerlink" href="#optional-resubmission" title="Permalink to this heading">¶</a></h1>
 <p>When you receive your graded Project 2b, you have two options:</p>
 <ol class="arabic simple">
 <li><p>If you are satisfied with the scores you have received, no action is necessary on your end.
@@ -476,8 +484,8 @@ score if you prefer.</p>
       
     </p>
     <p>
-        &copy; Copyright 2011-2021, The University of Chicago.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.0.<br/>
+        &copy; Copyright 2011-2022, The University of Chicago.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br/>
     </p>
   </div>
 </footer>

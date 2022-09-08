@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,6 +14,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -99,10 +100,17 @@
     <div class="body col-md-12 content" role="main">
       
   <div class="section" id="project-3-tips">
-<h1>Project 3 Tips<a class="headerlink" href="#project-3-tips" title="Permalink to this headline">¶</a></h1>
+<h1>Project 3 Tips<a class="headerlink" href="#project-3-tips" title="Permalink to this heading">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Project 3 has not yet been updated for Autumn 2022. You are welcome to read
+through the project documentation, but bear in mind that some aspects of the
+project may change. Please do not start working on the project until instructed
+to do so in class.</p>
+</div>
 <p>Before you get started, make sure you’ve read through the <a class="reference external" href="../projects/started.html">Projects - Getting Started</a> page.</p>
 <div class="section" id="using-the-cs-virtual-machine">
-<h2>Using the CS Virtual Machine<a class="headerlink" href="#using-the-cs-virtual-machine" title="Permalink to this headline">¶</a></h2>
+<h2>Using the CS Virtual Machine<a class="headerlink" href="#using-the-cs-virtual-machine" title="Permalink to this heading">¶</a></h2>
 <p>The mininet network simulator in Project 3 must be run with root privileges
 on a Linux machine. If you do not have access to such a machine, we recommend
 using the <a class="reference external" href="https://howto.cs.uchicago.edu/vm:index">CS Virtual Machine</a> (version 202122.2 or higher)
@@ -121,7 +129,7 @@ to the host that is running the VM.</p>
 from being able to communicate.</p>
 </div>
 <div class="section" id="resetting-mininet">
-<h2>Resetting Mininet<a class="headerlink" href="#resetting-mininet" title="Permalink to this headline">¶</a></h2>
+<h2>Resetting Mininet<a class="headerlink" href="#resetting-mininet" title="Permalink to this heading">¶</a></h2>
 <p>If, at any point, Mininet starts behaving in an unexpected manner, specially if you see the following error message
 when running chirouter:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CRITIC</span> <span class="n">Error</span> <span class="k">while</span> <span class="n">processing</span> <span class="n">POX</span> <span class="n">message</span><span class="o">.</span>
@@ -135,7 +143,7 @@ when running chirouter:</p>
 <p>This will reset Mininet to a clean configuration. Next, try re-running the chirouter and mininet commands as usual.</p>
 </div>
 <div class="section" id="unexpected-udp-packets-on-port-67">
-<h2>Unexpected UDP packets on port 67<a class="headerlink" href="#unexpected-udp-packets-on-port-67" title="Permalink to this headline">¶</a></h2>
+<h2>Unexpected UDP packets on port 67<a class="headerlink" href="#unexpected-udp-packets-on-port-67" title="Permalink to this heading">¶</a></h2>
 <p>If you are running Mininet on your own machine (as opposed to inside a VM), certain traffic from your machine can leak
 into Mininet. Most notably, a Linux machine running Network Manager (as most Ubuntu distros do) will probably try to
 send DHCP requests (on UDP port 67) to the network interfaces created by Mininet, and these will show up in your logs.
@@ -143,7 +151,7 @@ You can safely ignore them, but you may want to consider using our provided VM, 
 environment on which to run Mininet.</p>
 </div>
 <div class="section" id="always-create-protocol-headers-from-scratch">
-<h2>Always create protocol headers from scratch<a class="headerlink" href="#always-create-protocol-headers-from-scratch" title="Permalink to this headline">¶</a></h2>
+<h2>Always create protocol headers from scratch<a class="headerlink" href="#always-create-protocol-headers-from-scratch" title="Permalink to this heading">¶</a></h2>
 <p>Whenever you are creating a protocol header, it is good practice to create it from scratch, instead of trying to reuse
 an existing header. For example, suppose you receive an IP datagram that will cause an ICMP reply to be sent. You may
 be tempted to take the IP header, make any necessary modifications in-place, and create a new payload. This is very
@@ -154,7 +162,7 @@ in every field of the header, than to try to reuse existing headers.</p>
 well-defined modifications.</p>
 </div>
 <div class="section" id="using-wireshark-to-analyze-the-capture-files">
-<h2>Using Wireshark to analyze the capture files<a class="headerlink" href="#using-wireshark-to-analyze-the-capture-files" title="Permalink to this headline">¶</a></h2>
+<h2>Using Wireshark to analyze the capture files<a class="headerlink" href="#using-wireshark-to-analyze-the-capture-files" title="Permalink to this heading">¶</a></h2>
 <p>Every time you test your router, you should generate a capture file (using the <code class="docutils literal notranslate"><span class="pre">-c</span></code> option to chirouter,
 not by doing a live capture) and then open it with Wireshark. If there are any issues in the Ethernet/IP/ICMP/ARP messages you are
 generating, Wireshark will likely highlight them for you, which will make it easier to catch these
@@ -169,13 +177,13 @@ You can enable it like this:</p>
 <img alt="../_images/wireshark_checksum.png" class="align-center" src="../_images/wireshark_checksum.png" />
 </div>
 <div class="section" id="asking-questions">
-<h2>Asking questions<a class="headerlink" href="#asking-questions" title="Permalink to this headline">¶</a></h2>
+<h2>Asking questions<a class="headerlink" href="#asking-questions" title="Permalink to this heading">¶</a></h2>
 <p>Related to the above, if you need help with your code, please make sure to include
 a capture file in your question. While including relevant logs will also be helpful,
 a capture file will be much more useful in helping us diagnose the issue with your code.</p>
 </div>
 <div class="section" id="common-pitfalls">
-<h2>Common Pitfalls<a class="headerlink" href="#common-pitfalls" title="Permalink to this headline">¶</a></h2>
+<h2>Common Pitfalls<a class="headerlink" href="#common-pitfalls" title="Permalink to this heading">¶</a></h2>
 <ul>
 <li><p><strong>Computing a checksum over a pointer instead of what the pointer points to</strong>: Suppose you have the following variable:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iphdr_t</span> <span class="o">*</span><span class="n">hdr</span><span class="p">;</span>
@@ -212,8 +220,8 @@ network order to host order)</p></li>
       
     </p>
     <p>
-        &copy; Copyright 2011-2021, The University of Chicago.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.0.<br/>
+        &copy; Copyright 2011-2022, The University of Chicago.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br/>
     </p>
   </div>
 </footer>

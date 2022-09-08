@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,6 +14,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -99,11 +100,11 @@
     <div class="body col-md-12 content" role="main">
       
   <div class="section" id="uploading-the-initial-code-to-your-repository">
-<h1>Uploading the initial code to your repository<a class="headerlink" href="#uploading-the-initial-code-to-your-repository" title="Permalink to this headline">¶</a></h1>
+<h1>Uploading the initial code to your repository<a class="headerlink" href="#uploading-the-initial-code-to-your-repository" title="Permalink to this heading">¶</a></h1>
 <p>For each project, we provide some initial code that you must upload to your repository. We need you to upload this code in a very specific way, to make sure that our grading scripts can find your code, build it, and run tests on it.</p>
 <p>In this page we provide the exact commands you need to run to set up your repository. Some of them will look like dark magic but, at this point, you do not need to understand them.</p>
 <div class="section" id="preliminaries">
-<h2>Preliminaries<a class="headerlink" href="#preliminaries" title="Permalink to this headline">¶</a></h2>
+<h2>Preliminaries<a class="headerlink" href="#preliminaries" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>If you are new to Git, make sure you’ve read the <a class="reference external" href="git.html">Using Git</a> page.</p></li>
 <li><p>Make sure you’ve set up <a class="reference external" href="https://docs.github.com/en/free-pro-team&#64;latest/github/authenticating-to-github/connecting-to-github-with-ssh">SSH access</a> on your GitHub account.</p></li>
@@ -112,7 +113,7 @@
 </ul>
 </div>
 <div class="section" id="project-1">
-<h2>Project 1<a class="headerlink" href="#project-1" title="Permalink to this headline">¶</a></h2>
+<h2>Project 1<a class="headerlink" href="#project-1" title="Permalink to this heading">¶</a></h2>
 <p>To initialize your repository for project 1, create an empty directory and, inside the directory, run the following commands:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>git init
 git remote add origin $REPO_URL
@@ -124,7 +125,7 @@ git push -u origin master
 <p>Remember to replace <code class="docutils literal notranslate"><span class="pre">$REPO_URL</span></code> with the SSH URL of your repository!</p>
 </div>
 <div class="section" id="project-2">
-<h2>Project 2<a class="headerlink" href="#project-2" title="Permalink to this headline">¶</a></h2>
+<h2>Project 2<a class="headerlink" href="#project-2" title="Permalink to this heading">¶</a></h2>
 <p>To initialize your repository for project 2, create an empty directory. <em>Do not reuse the directory or repository from Project 1</em>. Inside the directory, run the following commands:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>git init
 git remote add origin $REPO_URL
@@ -136,7 +137,7 @@ git push -u origin master
 <p>Remember to replace <code class="docutils literal notranslate"><span class="pre">$REPO_URL</span></code> with the SSH URL of your repository!</p>
 </div>
 <div class="section" id="project-3">
-<h2>Project 3<a class="headerlink" href="#project-3" title="Permalink to this headline">¶</a></h2>
+<h2>Project 3<a class="headerlink" href="#project-3" title="Permalink to this heading">¶</a></h2>
 <p>To initialize your repository for project 3, create an empty directory. <em>Do not reuse the directory or repository from Project 1 or 2</em>. Inside the directory, run the following commands:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>git init
 git remote add origin $REPO_URL
@@ -148,7 +149,7 @@ git push -u origin master
 <p>Remember to replace <code class="docutils literal notranslate"><span class="pre">$REPO_URL</span></code> with the SSH URL of your repository!</p>
 </div>
 <div class="section" id="common-commands">
-<h2>Common Commands<a class="headerlink" href="#common-commands" title="Permalink to this headline">¶</a></h2>
+<h2>Common Commands<a class="headerlink" href="#common-commands" title="Permalink to this heading">¶</a></h2>
 <p>If you want to create other copies of the repository (e.g., if you are the team member who did <em>not</em> run the above commands to initialize the repository) just run the following <em>after</em> the repository has been initialized:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>git clone $REPO_URL
 </pre></div>
@@ -172,8 +173,8 @@ git push -u origin master
       
     </p>
     <p>
-        &copy; Copyright 2011-2021, The University of Chicago.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.0.<br/>
+        &copy; Copyright 2011-2022, The University of Chicago.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br/>
     </p>
   </div>
 </footer>

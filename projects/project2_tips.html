@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,6 +14,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -99,10 +100,17 @@
     <div class="body col-md-12 content" role="main">
       
   <div class="section" id="project-2-tips">
-<h1>Project 2 Tips<a class="headerlink" href="#project-2-tips" title="Permalink to this headline">¶</a></h1>
+<h1>Project 2 Tips<a class="headerlink" href="#project-2-tips" title="Permalink to this heading">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Project 2 has not yet been updated for Autumn 2022. You are welcome to read
+through the project documentation, but bear in mind that some aspects of the
+project may change. Please do not start working on the project until instructed
+to do so in class.</p>
+</div>
 <p>Before you get started, make sure you’ve read through the <a class="reference external" href="../projects/started.html">Projects - Getting Started</a> page.</p>
 <div class="section" id="interpreting-rfc-793">
-<h2>Interpreting RFC 793<a class="headerlink" href="#interpreting-rfc-793" title="Permalink to this headline">¶</a></h2>
+<h2>Interpreting RFC 793<a class="headerlink" href="#interpreting-rfc-793" title="Permalink to this heading">¶</a></h2>
 <p>In this project, you will be implementing TCP, which is specified in <a class="reference external" href="http://tools.ietf.org/html/rfc793">RFC 793</a>.
 Like many network protocols, certain aspects of the specification may be unclear. When you run into such an issue,
 you should first check <a class="reference external" href="http://tools.ietf.org/html/rfc1122">RFC 1122</a>: it provides corrections and clarifications
@@ -118,7 +126,7 @@ behaviour of simple examples (like the 3-way handshake) may work for simple
 operations, but is not a good strategy for implementing all of TCP.</p>
 </div>
 <div class="section" id="writing-the-packet-arrival-handler">
-<h2>Writing the Packet Arrival Handler<a class="headerlink" href="#writing-the-packet-arrival-handler" title="Permalink to this headline">¶</a></h2>
+<h2>Writing the Packet Arrival Handler<a class="headerlink" href="#writing-the-packet-arrival-handler" title="Permalink to this heading">¶</a></h2>
 <p>Writing the “packet arrival handler” (i.e., how TCP reacts when a packet arrives) is actually
 pretty simple: you just have to translate pages 64-75 of the RFC into code. A common pitfall
 is to write this handler as a gigantic if-else statement (with each branch corresponding to a
@@ -129,7 +137,7 @@ main structure of your packet arrival handler. As noted above, it is important t
 follow the RFC, not your high-level understanding of how TCP must work.</p>
 </div>
 <div class="section" id="freeing-packets">
-<h2>Freeing packets<a class="headerlink" href="#freeing-packets" title="Permalink to this headline">¶</a></h2>
+<h2>Freeing packets<a class="headerlink" href="#freeing-packets" title="Permalink to this heading">¶</a></h2>
 <p>Take into account that:</p>
 <ul class="simple">
 <li><p>You’re responsible for freeing any packets you create (i.e., any memory you allocate for
@@ -144,7 +152,7 @@ to send the packet. In other words, it is safe to free the packet after <code cl
 returns (doing so will not interfere with the packet being correctly sent).</p>
 </div>
 <div class="section" id="tests-that-sometimes-pass-but-sometimes-don-t">
-<h2>Tests that sometimes pass, but sometimes don’t<a class="headerlink" href="#tests-that-sometimes-pass-but-sometimes-don-t" title="Permalink to this headline">¶</a></h2>
+<h2>Tests that sometimes pass, but sometimes don’t<a class="headerlink" href="#tests-that-sometimes-pass-but-sometimes-don-t" title="Permalink to this heading">¶</a></h2>
 <p>You may sometimes run a test multiple times, and find that the test passes some times,
 but not others. Frequently, you may find that your tests pass consistently when run
 at a particular log level, but some (but not all) of them fail when run at a different
@@ -195,7 +203,7 @@ be challenging because your code may pass with DEBUG logging, but not with INFO 
 provides fewer clues on what could be wrong). This leads us to our next point…</p>
 </div>
 <div class="section" id="pick-your-battles-a-k-a-it-is-ok-to-not-pass-100-of-the-tests">
-<h2>Pick your battles (a.k.a.: “it is ok to not pass 100% of the tests”)<a class="headerlink" href="#pick-your-battles-a-k-a-it-is-ok-to-not-pass-100-of-the-tests" title="Permalink to this headline">¶</a></h2>
+<h2>Pick your battles (a.k.a.: “it is ok to not pass 100% of the tests”)<a class="headerlink" href="#pick-your-battles-a-k-a-it-is-ok-to-not-pass-100-of-the-tests" title="Permalink to this heading">¶</a></h2>
 <p>Achieving a perfect implementation that can pass all the tests under every possible sequencing
 of events is very challenging. It is very likely that many of you will end up passing nearly
 all the tests (and certainly enough to get an E score on Completeness), with a few stubborn
@@ -217,7 +225,7 @@ make sure to also include the output of <code class="docutils literal notranslat
 observing the same scores you’re seeing.</p>
 </div>
 <div class="section" id="dealing-with-zero-windows">
-<h2>Dealing with Zero Windows<a class="headerlink" href="#dealing-with-zero-windows" title="Permalink to this headline">¶</a></h2>
+<h2>Dealing with Zero Windows<a class="headerlink" href="#dealing-with-zero-windows" title="Permalink to this heading">¶</a></h2>
 <p>Until you get to Project 2b, your code will have no way of dealing with a host that is advertising a window
 of zero bytes (a common way of dealing with this is by sending
 <a class="reference external" href="http://www.tcpipguide.com/free/t_TCPWindowManagementIssues-3.htm">probe segments</a>). So, if a host does advertise
@@ -236,7 +244,7 @@ by advertising a new window size. It may not be uncommon for the effective windo
 you need to check for is whether the <em>advertised window</em> ever becomes zero.</p>
 </div>
 <div class="section" id="origin-of-log-messages">
-<h2>Origin of log messages<a class="headerlink" href="#origin-of-log-messages" title="Permalink to this headline">¶</a></h2>
+<h2>Origin of log messages<a class="headerlink" href="#origin-of-log-messages" title="Permalink to this heading">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">tcp-socket-N</span></code> log messages originate in your TCP thread (where <code class="docutils literal notranslate"><span class="pre">N</span></code> is the socket number)</p>
 <p><code class="docutils literal notranslate"><span class="pre">socket-layer-N</span></code> log messages originate in the socket layer of the protocol stack (the one that
 handles send(), recv(), connect(), etc.). The socket layer is the one that calls your <code class="docutils literal notranslate"><span class="pre">tcp_data_init</span></code>
@@ -252,7 +260,7 @@ setting the name of the timer thread with this code (at the start of the timer t
 from the socket layer and when it’s coming from the timer thread.</p>
 </div>
 <div class="section" id="the-random-tests">
-<h2>The random tests<a class="headerlink" href="#the-random-tests" title="Permalink to this headline">¶</a></h2>
+<h2>The random tests<a class="headerlink" href="#the-random-tests" title="Permalink to this heading">¶</a></h2>
 <p>In the second part of the project, the random tests are <em>pretty difficult</em> to debug, because a
 lot ends up happening in them (much more than in any of the other tests). They should be the
 very last tests you try to pass, and you should not approach them until all the other tests
@@ -268,7 +276,7 @@ only one packet during the data transfer”, etc.). Basically, if you can pass a
 tests, that probably means your implementation is pretty solid.</p>
 </div>
 <div class="section" id="the-rtt-tests">
-<h2>The RTT tests<a class="headerlink" href="#the-rtt-tests" title="Permalink to this headline">¶</a></h2>
+<h2>The RTT tests<a class="headerlink" href="#the-rtt-tests" title="Permalink to this heading">¶</a></h2>
 <p>The RTT estimation tests do not contribute to your test grade (the one you get when running <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">grade</span></code>).
 The reason for this is that these tests are trivial to pass if you just estimate the RTT to be zero
 (ensuring your tests never time out). However, the graders will be running these tests and,
@@ -276,7 +284,7 @@ if you are not doing any RTT estimation (or if they find issues with the RTT est
 will have an impact on your Code Quality score.</p>
 </div>
 <div class="section" id="common-pitfalls">
-<h2>Common Pitfalls<a class="headerlink" href="#common-pitfalls" title="Permalink to this headline">¶</a></h2>
+<h2>Common Pitfalls<a class="headerlink" href="#common-pitfalls" title="Permalink to this heading">¶</a></h2>
 <ul>
 <li><p><strong>Calling tcp_data_init or tcp_data_free</strong>: You should never call <code class="docutils literal notranslate"><span class="pre">tcp_data_init</span></code> or <code class="docutils literal notranslate"><span class="pre">tcp_data_free</span></code>
 from your code. These functions are called by the socket layer (when a socket is created or destroyed),
@@ -383,8 +391,8 @@ with your code that can make your multitimer fail.</p></li>
       
     </p>
     <p>
-        &copy; Copyright 2011-2021, The University of Chicago.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.0.<br/>
+        &copy; Copyright 2011-2022, The University of Chicago.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br/>
     </p>
   </div>
 </footer>

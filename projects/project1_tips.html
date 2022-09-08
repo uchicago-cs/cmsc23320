@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,6 +14,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -99,9 +100,16 @@
     <div class="body col-md-12 content" role="main">
       
   <div class="section" id="project-1-tips">
-<h1>Project 1 Tips<a class="headerlink" href="#project-1-tips" title="Permalink to this headline">¶</a></h1>
+<h1>Project 1 Tips<a class="headerlink" href="#project-1-tips" title="Permalink to this heading">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Project 1 has not yet been updated for Autumn 2022. You are welcome to read
+through the project documentation, but bear in mind that some aspects of the
+project may change. Please do not start working on the project until instructed
+to do so in class.</p>
+</div>
 <div class="section" id="before-you-get-started">
-<h2>Before you get started<a class="headerlink" href="#before-you-get-started" title="Permalink to this headline">¶</a></h2>
+<h2>Before you get started<a class="headerlink" href="#before-you-get-started" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Make sure you’ve read through the <a class="reference external" href="../projects/started.html">Projects - Getting Started</a> page.</p></li>
 <li><p>To help you get started, we are providing you with a <a class="reference external" href="https://github.com/uchicago-cs/cmsc23320/blob/master/samples/chirc/project1a-trivial.c">trivial solution</a>
@@ -116,7 +124,7 @@ server in Project 1b.</p></li>
 </ul>
 </div>
 <div class="section" id="general-tips">
-<h2>General Tips<a class="headerlink" href="#general-tips" title="Permalink to this headline">¶</a></h2>
+<h2>General Tips<a class="headerlink" href="#general-tips" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><em>Don’t be intimidated by the length of the project specification</em>.
 The main reason the specification is long is to carve out
@@ -152,7 +160,7 @@ sample code <a class="reference external" href="https://github.com/uchicago-cs/c
 </ul>
 </div>
 <div class="section" id="resolving-irc-ambiguities">
-<h2>Resolving IRC Ambiguities<a class="headerlink" href="#resolving-irc-ambiguities" title="Permalink to this headline">¶</a></h2>
+<h2>Resolving IRC Ambiguities<a class="headerlink" href="#resolving-irc-ambiguities" title="Permalink to this heading">¶</a></h2>
 <p>The IRC protocol is, in some cases, not as well-specified and clear as one would hope (this is,
 unfortunately, a common attribute of many network specifications). If you’re unclear about how your server is meant to behave in some cases (specially the more obscure corner cases of IRC, or the points where the IRC specification is ambiguous), you should take the following steps:</p>
 <ol class="arabic">
@@ -172,10 +180,10 @@ unfortunately, a common attribute of many network specifications). If you’re u
 <p>Like a production IRC server, if you replicate the behaviour of our reference implementation, that’s good enough for us.</p>
 </div>
 <div class="section" id="common-issues-in-project-1a">
-<h2>Common Issues in Project 1a<a class="headerlink" href="#common-issues-in-project-1a" title="Permalink to this headline">¶</a></h2>
+<h2>Common Issues in Project 1a<a class="headerlink" href="#common-issues-in-project-1a" title="Permalink to this heading">¶</a></h2>
 </div>
 <div class="section" id="strtok">
-<h2><code class="docutils literal notranslate"><span class="pre">strtok</span></code><a class="headerlink" href="#strtok" title="Permalink to this headline">¶</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">strtok</span></code><a class="headerlink" href="#strtok" title="Permalink to this heading">¶</a></h2>
 <p>A common approach to tokenizing IRC commands is to use the standard <code class="docutils literal notranslate"><span class="pre">strtok</span></code> function. This is a good approach, but you should take into account that <code class="docutils literal notranslate"><span class="pre">strtok</span></code> is not thread-safe and will be the source of inexplicable bugs and race conditions once you start supporting multiple clients. You should use <code class="docutils literal notranslate"><span class="pre">strtok_r</span></code> instead (the reentrant version of <code class="docutils literal notranslate"><span class="pre">strtok</span></code>).</p>
 <p>Additionally, a common pitfall when using <code class="docutils literal notranslate"><span class="pre">strtok</span></code> is to (incorrectly) assume that <code class="docutils literal notranslate"><span class="pre">strtok</span></code> returns a fresh new string with each call. That is not the case. Given a string like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">USER</span> <span class="n">user</span> <span class="o">*</span> <span class="o">*</span> <span class="p">:</span><span class="n">User</span>\<span class="mi">0</span>
@@ -188,32 +196,32 @@ unfortunately, a common attribute of many network specifications). If you’re u
 <p>What strtok returns is pointers into that transformed string, not fresh new strings. That means that if you overwrite the original string (e.g., if you wipe out a buffer), the tokens will also be wiped out. Depending on how you’ve written your solution, you may need to <code class="docutils literal notranslate"><span class="pre">strdup</span></code> the tokens.</p>
 <p>For more details, please read the <code class="docutils literal notranslate"><span class="pre">strtok</span></code> man page, which explains <code class="docutils literal notranslate"><span class="pre">strtok</span></code>’s internal behavior in detail.</p>
 <div class="section" id="error-handling-in-sockets">
-<h3>Error handling in sockets<a class="headerlink" href="#error-handling-in-sockets" title="Permalink to this headline">¶</a></h3>
+<h3>Error handling in sockets<a class="headerlink" href="#error-handling-in-sockets" title="Permalink to this heading">¶</a></h3>
 <p>Don’t forget to check the return value of the socket functions: your code is likely to behave strangely if you don’t react appropriately to certain error conditions (e.g., a return code of 0 from recv means that the client has disconnected; in Project 1b you will need to “log out” the user from the IRC server when that happens).</p>
 </div>
 <div class="section" id="general-socket-confusion">
-<h3>General socket confusion<a class="headerlink" href="#general-socket-confusion" title="Permalink to this headline">¶</a></h3>
+<h3>General socket confusion<a class="headerlink" href="#general-socket-confusion" title="Permalink to this heading">¶</a></h3>
 <p>If you’re confused about how to use sockets, we recommend you read <a class="reference external" href="http://beej.us/guide/bgnet/">Beej’s Guide to Network Programming</a> for a more thorough review of sockets.</p>
 </div>
 </div>
 <div class="section" id="common-issues-in-project-1b">
-<h2>Common Issues in Project 1b<a class="headerlink" href="#common-issues-in-project-1b" title="Permalink to this headline">¶</a></h2>
+<h2>Common Issues in Project 1b<a class="headerlink" href="#common-issues-in-project-1b" title="Permalink to this heading">¶</a></h2>
 <div class="section" id="poor-code-organization">
-<h3>Poor code organization<a class="headerlink" href="#poor-code-organization" title="Permalink to this headline">¶</a></h3>
+<h3>Poor code organization<a class="headerlink" href="#poor-code-organization" title="Permalink to this heading">¶</a></h3>
 <p>In project 1b, your server starts getting more complex. Do not cram all your code into
 a single main.c file: you should think about separating your C code into multiple C files, each responsible for a specific part of the program.</p>
 </div>
 <div class="section" id="inadequate-locking">
-<h3>Inadequate locking<a class="headerlink" href="#inadequate-locking" title="Permalink to this headline">¶</a></h3>
+<h3>Inadequate locking<a class="headerlink" href="#inadequate-locking" title="Permalink to this heading">¶</a></h3>
 <p>In project 1b, you now have multiple clients connecting to your server, with one thread
 per client. So remember: shared data structures have to be protected by locks, and this includes
 any socket that multiple threads could write to. POSIX requires system calls to be thread-safe (i.e., the OS itself should guarantee that send() is done atomically). However, even though a call to send() can be thread-safe, you have to account for the fact that send() might not send all your data in one go. So, you still need to gain exclusive access to the socket until a full message has been sent; otherwise, you could see partial messages interleaved by multiple threads.</p>
 </div>
 </div>
 <div class="section" id="common-c-issues">
-<h2>Common C Issues<a class="headerlink" href="#common-c-issues" title="Permalink to this headline">¶</a></h2>
+<h2>Common C Issues<a class="headerlink" href="#common-c-issues" title="Permalink to this heading">¶</a></h2>
 <div class="section" id="bad-memory-management">
-<h3>Bad memory management<a class="headerlink" href="#bad-memory-management" title="Permalink to this headline">¶</a></h3>
+<h3>Bad memory management<a class="headerlink" href="#bad-memory-management" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Make sure that any block of code you malloc() is also free()’d.</p></li>
 <li><p>Don’t return pointers to stack-allocated variables (i.e., local function variables). Remember:
@@ -230,11 +238,11 @@ that if the original string is modified (or free()’d) it will affect the copy 
 </ul>
 </div>
 <div class="section" id="arbitrary-sizes">
-<h3>Arbitrary sizes<a class="headerlink" href="#arbitrary-sizes" title="Permalink to this headline">¶</a></h3>
+<h3>Arbitrary sizes<a class="headerlink" href="#arbitrary-sizes" title="Permalink to this heading">¶</a></h3>
 <p>Whenever the amount of needed memory is unknown, a common approach is to allocate an arbitrary amount of memory. This is fine, but you should be a little more methodical than just allocating several kilobytes of memory as an arbitrarily large amount. Whenever you allocate an arbitrary amount of memory, you should specify what your assumptions are (e.g., are you assuming that each line of the MOTD file won’t have more than X characters?) and, ideally, a note on what conditions would make your program crash given that arbitrary limit.</p>
 </div>
 <div class="section" id="strcat-vs-sprintf">
-<h3><code class="docutils literal notranslate"><span class="pre">strcat</span></code> vs <code class="docutils literal notranslate"><span class="pre">sprintf</span></code><a class="headerlink" href="#strcat-vs-sprintf" title="Permalink to this headline">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">strcat</span></code> vs <code class="docutils literal notranslate"><span class="pre">sprintf</span></code><a class="headerlink" href="#strcat-vs-sprintf" title="Permalink to this heading">¶</a></h3>
 <p>In some languages, creating a new string from multiple other substrings is as easy as doing this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
 <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;USER &quot;</span>
@@ -264,8 +272,8 @@ build more complex messages.</p>
       
     </p>
     <p>
-        &copy; Copyright 2011-2021, The University of Chicago.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.0.<br/>
+        &copy; Copyright 2011-2022, The University of Chicago.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br/>
     </p>
   </div>
 </footer>
