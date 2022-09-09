@@ -1,6 +1,13 @@
 Project 2: chitcp
 -----------------
 
+.. warning::
+
+   Project 2 has not yet been updated for Autumn 2022. You are welcome to read
+   through the project documentation, but bear in mind that some aspects of the
+   project may change. Please do not start working on the project until instructed
+   to do so in class.
+
 In this project you will be implementing the Transmission Control Protocol, as
 specified in `[RFC793] <http://tools.ietf.org/html/rfc793>`__. However, instead
 of implementing it inside the operating system itself, you will be implementing

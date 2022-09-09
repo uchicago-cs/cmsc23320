@@ -59,7 +59,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'CMSC 23320 - Foundations of Computer Networks'
-copyright = u'2011-2021, The University of Chicago'
+copyright = u'2011-2022, The University of Chicago'
 author = 'Borja Sotomayor'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -76,7 +76,7 @@ release = ''
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = None
+language = "en"
 
 # There are two options for replacing |today|: either, you set today to some
 # non-false value, then it is used:
@@ -137,10 +137,9 @@ html_context = {"web_navbar": [("Course Information", [
                                      ("Project 3: chirouter", "projects/project3", False),
                                  ]),
                                  ("Resources", [
-                                     ("Using Git", "resources/git", False),
-                                     ("Asking Questions", "resources/questions", False),
+                                     ("UChicago CS Student Resource Guide", "https://uchicago-cs.github.io/student-resource-guide/", True),
                                      ("Code Samples", "https://github.com/uchicago-cs/cmsc23320/tree/master/samples", True),
-                                     ("UChicago CS Developer's Guide", "https://uchicago-cs.github.io/dev-guide/", True),
+                                     ("Asking Questions", "resources/questions", False),
                                      ("The Debugging Guide", "https://uchicago-cs.github.io/debugging-guide", True),
                                      ("Other Resources", "resources/other", False),
                                  ])

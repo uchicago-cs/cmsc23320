@@ -1,12 +1,11 @@
-Winter 2022 Course Calendar
+Autumn 2022 Course Calendar
 ---------------------------
 
 .. note::
 
    This calendar is tentative and subject to change.
 
-Lectures take place in Ryerson 251 on Tuesdays and Thursdays from 12:30pm from 1:50pm CST (Note:
-lectures will take place over Zoom during the first two weeks of the quarter)
+Lectures take place in Ryerson 251 on Tuesdays and Thursdays from 12:30pm from 1:50pm CST.
 
 Additional pre-recorded lectures will also be made available most weeks. When both the live
 lecture and pre-recorded lecture have the same topic, that means the live lecture will be
@@ -20,57 +19,57 @@ All deadlines are at 8pm (Chicago local time) on the specified date.
 +------+------------------------+----------------------------+----------------------------------+-------+------------+----------------+
 | Week | Date                   | Live Lectures              | Pre-recorded Lectures            | CNASA | TIV1       | Coursework Due |
 +======+========================+============================+==================================+=======+============+================+
-| 1    | Tuesday, January 11    | Introduction               | Sockets / Concurrent Programming | 1     | 1          |                |
+| 1    | Tuesday, September 27  | Introduction               | Sockets / Concurrent Programming | 1     | 1          |                |
 |      +------------------------+----------------------------+----------------------------------+-------+------------+----------------+
-|      | Thursday, January 13   | The Network Protocol Stack | Data Link and Network Layer      | 1     | 1          |                |
+|      | Thursday, September 29 | The Network Protocol Stack | Data Link and Network Layer      | 1     | 1          |                |
 +------+------------------------+----------------------------+----------------------------------+-------+------------+----------------+
-| 2    | Tuesday, January 18    | Project 1b                 |                                  |       |            |                |
+| 2    | Tuesday, October 4     | Project 1b                 |                                  |       |            |                |
 |      +------------------------+----------------------------+----------------------------------+-------+------------+----------------+
-|      | Wednesday, January 19  |                            |                                  |       |            | `Project 1a`_  |
+|      | Wednesday, October 5   |                            |                                  |       |            | `Project 1a`_  |
 |      +------------------------+----------------------------+----------------------------------+-------+------------+----------------+
-|      | Thursday, January 20   | Data Link + Network Layer  |                                  | 2,3   | 2, 3, 5, 7 |                |
+|      | Thursday, October 6    | Data Link + Network Layer  |                                  | 2,3   | 2, 3, 5, 7 |                |
 +------+------------------------+----------------------------+----------------------------------+-------+------------+----------------+
-| 3    | Monday, January 24     | MARTIN LUTHER KING DAY                                                                              |
+| 3    | Tuesday, October 11    | TCP (1)                    | TCP (1)                          | 5     | 12-15      |                |
 |      +------------------------+----------------------------+----------------------------------+-------+------------+----------------+
-|      | Tuesday, January 25    | TCP (1)                    | TCP (1)                          | 5     | 12-15      |                |
+|      | Thursday, October 13   | Project 2a                 |                                  |       |            |                |
 |      +------------------------+----------------------------+----------------------------------+-------+------------+----------------+
-|      | Thursday, January 27   | Project 2a                 |                                  |       |            |                |
-|      +------------------------+----------------------------+----------------------------------+-------+------------+----------------+
-|      | Friday, January 28     |                            |                                  |       |            | `Project 1b`_  |
+|      | Friday, October 14     |                            |                                  |       |            | `Project 1b`_  |
 +------+------------------------+----------------------------+----------------------------------+-------+------------+----------------+
-| 4    | Tuesday, February 1    | TCP (2)                    | TCP (2)                          | 5 + 6 | 11-15      |                |
+| 4    | Tuesday, October 18    | TCP (2)                    | TCP (2)                          | 5 + 6 | 11-15      |                |
 |      +------------------------+----------------------------+----------------------------------+-------+------------+----------------+
-|      | Wednesday, February 2  |                            |                                  |       |            | Homework #1    |
+|      | Wednesday, October 19  |                            |                                  |       |            | Homework #1    |
 |      +------------------------+----------------------------+----------------------------------+-------+------------+----------------+
-|      | Thursday, February 3   | Project 2a + TCP Q&A       |                                  |       |            |                |
+|      | Thursday, October 20   | Project 2a + TCP Q&A       |                                  |       |            |                |
 +------+------------------------+----------------------------+----------------------------------+-------+------------+----------------+
-| 5    | Tuesday, February 8    | Application Layer          | Application Layer                | 9     | 11         |                |
+| 5    | Tuesday, October 25    | Application Layer          | Application Layer                | 9     | 11         |                |
 |      +------------------------+----------------------------+----------------------------------+-------+------------+----------------+
-|      | Wednesday, February 9  |                            |                                  |       |            | `Project 2a`_  |
+|      | Wednesday, October 26  |                            |                                  |       |            | `Project 2a`_  |
 |      +------------------------+----------------------------+----------------------------------+-------+------------+----------------+
-|      | Thursday, February 10  | Project 2b                 |                                  |       |            |                |
+|      | Thursday, October 27   | Project 2b                 |                                  |       |            |                |
 +------+------------------------+----------------------------+----------------------------------+-------+------------+----------------+
-| 6    | Tuesday, February 15   | Wireless Networks          | Wireless Networks                | 2.7   | 3.5        |                |
+| 6    | Tuesday, November 1    | Wireless Networks          | Wireless Networks                | 2.7   | 3.5        |                |
 |      +------------------------+----------------------------+----------------------------------+-------+------------+----------------+
-|      | Thursday, February 17  | Project 2b Q&A             |                                  |       |            |                |
+|      | Thursday, November 3   | Project 2b Q&A             |                                  |       |            |                |
 +------+------------------------+----------------------------+----------------------------------+-------+------------+----------------+
-| 7    | Tuesday, February 22   | Routing Protocols          | Routing Protocols                | 3 + 4 | 3.4 + 5    |                |
+| 7    | Tuesday, November 8    | Routing Protocols          | Routing Protocols                | 3 + 4 | 3.4 + 5    |                |
 |      +------------------------+----------------------------+----------------------------------+-------+------------+----------------+
-|      | Wednesday, February 23 |                            |                                  |       |            | `Project 2b`_  |
+|      | Wednesday, November 9  |                            |                                  |       |            | `Project 2b`_  |
 |      +------------------------+----------------------------+----------------------------------+-------+------------+----------------+
-|      | Thursday, February 24  | Project 3                  |                                  |       |            |                |
+|      | Thursday, November 10  | Project 3                  |                                  |       |            |                |
 +------+------------------------+----------------------------+----------------------------------+-------+------------+----------------+
-| 8    | Tuesday, March 1       | Network Security           | Network Security                 | 8     | 18         |                |
+| 8    | Tuesday, November 15   | Network Security           | Network Security                 | 8     | 18         |                |
 |      +------------------------+----------------------------+----------------------------------+-------+------------+----------------+
-|      | Wednesday, March 2     |                            |                                  |       |            | Homework #2    |
+|      | Wednesday, November 16 |                            |                                  |       |            | Homework #2    |
 |      +------------------------+----------------------------+----------------------------------+-------+------------+----------------+
-|      | Thursday, March 3      | Project 3 Q&A              |                                  |       |            |                |
+|      | Thursday, November 17  | Project 3 Q&A              |                                  |       |            |                |
 +------+------------------------+----------------------------+----------------------------------+-------+------------+----------------+
-| 9    | Tuesday, March 8       | Other Topics               | Other Topics                     |       |            |                |
+|      | November 21-25         | THANKSGIVING BREAK                                                                                  |
++------+------------------------+----------------------------+----------------------------------+-------+------------+----------------+
+| 9    | Tuesday, November 29   | Other Topics               | Other Topics                     |       |            |                |
 |      +------------------------+----------------------------+----------------------------------+-------+------------+----------------+
-|      | Wednesday, March 9     |                            |                                  |       |            | `Project 3`_   |
+|      | Wednesday, November 30 |                            |                                  |       |            | `Project 3`_   |
 |      +------------------------+----------------------------+----------------------------------+-------+------------+----------------+
-|      | Thursday, March 10     | Review / Wrap-up           |                                  |       |            |                |
+|      | Thursday, December 1   | Review / Wrap-up           |                                  |       |            |                |
 +------+------------------------+----------------------------+----------------------------------+-------+------------+----------------+
 
 .. _Project 1a: projects/project1.html

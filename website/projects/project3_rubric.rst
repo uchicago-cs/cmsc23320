@@ -1,6 +1,13 @@
 Project 3 Rubric
 ----------------
 
+.. warning::
+
+   Project 3 has not yet been updated for Autumn 2022. You are welcome to read
+   through the project documentation, but bear in mind that some aspects of the
+   project may change. Please do not start working on the project until instructed
+   to do so in class.
+
 The grading of this project follows a specifications grading approach. If you have not already
 done so, make sure to read our `Grading <../grading.html>`__ page for more details.
 

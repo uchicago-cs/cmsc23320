@@ -1,6 +1,13 @@
 Project 3: chirouter
 --------------------
 
+.. warning::
+
+   Project 3 has not yet been updated for Autumn 2022. You are welcome to read
+   through the project documentation, but bear in mind that some aspects of the
+   project may change. Please do not start working on the project until instructed
+   to do so in class.
+
 In this project you will be implementing a simple IP router capable of routing IPv4 datagrams between multiple networks. This router will have a static routing table, so you will not have to deal with implementing a routing protocol like RIP or OSPF; instead, the project will focus on the routing of IP datagrams. While, at a high level, this just involves receiving IP datagrams and figuring out what interface they should be sent on, this requires building additional functionality before you can actually start routing IP datagrams.
 
 Please refer to the following documents to complete this project:

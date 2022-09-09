@@ -3,7 +3,7 @@ Project Registration
 
 For each project, a Git repository will be created for you and your project partner on `GitHub <https://github.com/>`__, a web-based hosting service for Git repositories. However, before that repository can be created for you, you need to have a GitHub account. If you do not yet have one, you can get an account here: https://github.com/join. Once you create your account, you may want to get the `Student Developer Pack <https://education.github.com/pack>`__, which will give you access to a lot of other features (please note that having the Student Developer Pack is not necessary for this class; it's just a nice benefit you get as a student)
 
-If you're unfamiliar with Git, make sure to read our `Using Git <../resources/git.html>`__ page before proceeding further.
+If you're unfamiliar with Git, you should work through the `Git Basics Tutorial <https://uchicago-cs.github.io/student-resource-guide/tutorials/git-basics.html>`__ before proceeding further.
 
 To actually get your private repository, you will need an *invitation URL*, which we will provide through Ed Discussion when each project is released. When you click on an invitation URL, you will have to complete the following steps:
 

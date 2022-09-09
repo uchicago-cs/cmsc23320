@@ -8,10 +8,10 @@ In this page we provide the exact commands you need to run to set up your reposi
 Preliminaries
 ~~~~~~~~~~~~~
 
-* If you are new to Git, make sure you've read the `Using Git <git.html>`_ page.
+* If you're unfamiliar with Git, you should work through the `Git Basics Tutorial <https://uchicago-cs.github.io/student-resource-guide/tutorials/git-basics.html>`__ before proceeding further.
 * Make sure you've set up `SSH access <https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh>`__ on your GitHub account.
 * Only one of the team members needs to initialize the repository. In other words, do *not* follow these instructions more than once. Once one of you has initialized the repository, the other team member will be able to simply create a local copy of the (initialized) Git repository that you are both sharing.
-* For each repository, you will need to get the SSH URL of the repository. To get this URL, log into GitHub and navigate to your project repository (take into account that you will have a different repository per project). Then, click on the green "Code" button, and make sure the "SSH" tab is selected. Your repository URL should look something like this: ``git@github.com:uchicago-cmsc23320-2022/chirc-p1-jdoe-jrandom.git``. In the steps below, we will refer to this simply as ``$REPO_URL``.
+* For each repository, you will need to get the SSH URL of the repository. To get this URL, log into GitHub and navigate to your project repository (take into account that you will have a different repository per project). Then, click on the green "Code" button, and make sure the "SSH" tab is selected. Your repository URL should look something like this: ``git@github.com:uchicago-cmsc23320-2022-aut/chirc-p1-jdoe-jrandom.git``. In the steps below, we will refer to this simply as ``$REPO_URL``.
 
 
 Project 1
