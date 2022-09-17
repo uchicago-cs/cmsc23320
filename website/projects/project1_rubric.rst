@@ -29,7 +29,7 @@ You will receive two ESNU scores for this project:
     to some extent independently of) the correct operation of your code." (thanks to
     Adam Shaw for this concise phrasing).
   - *Style*: This encompasses your adherence
-    to our `Style Guide <https://uchicago-cs.github.io/dev-guide/style_guide_c.html>`__.
+    to our `Style Guide <https://uchicago-cs.github.io/student-resource-guide/style-guide/c.html>`__.
 
 Submission Timeline
 -------------------
@@ -176,7 +176,7 @@ Style
 ~~~~~
 
 We will be checking your general adherence to
-our `Style Guide <https://uchicago-cs.github.io/dev-guide/style_guide_c.html>`__
+our `Style Guide <https://uchicago-cs.github.io/student-resource-guide/style-guide/c.html>`__
 and, while we will not be checking that you follow every minute aspect of our
 style guide, we do expect you to follow a *consistent* style that
 asymptotically approaches the one specified in our style guide.
@@ -184,13 +184,13 @@ That said, there *are* certain aspects we will be paying more
 attention to:
 
 - **Documenting functions**: Every function written by you must have
-  a `function comment <https://uchicago-cs.github.io/dev-guide/style_guide_c.html#function-comments>`__ with a brief description
+  a `function comment <https://uchicago-cs.github.io/student-resource-guide/style-guide/c.html#function-comments>`__ with a brief description
   of what the function does, and a description of the parameters and the 
   return value. Please note that not documenting your functions at all
   (as opposed to doing so inconsistently or not following the style guide)
   is considered a major issue.
 - **Consistent indentation**: Your code must follow one of the
-  `allowed indentation styles <https://uchicago-cs.github.io/dev-guide/style_guide_c.html#indentation>`__ consistently.
+  `allowed indentation styles <https://uchicago-cs.github.io/student-resource-guide/style-guide/c.html#indentation>`__ consistently.
 - **Clarity**: Your code must be easy to read and understand. This
   is a fairly subjective aspect, but remember that things like using
   variable names without descriptive names or using magic numbers will

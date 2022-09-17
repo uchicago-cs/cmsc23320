@@ -15,11 +15,12 @@ Before working on the projects, we recommend you check out the `UChicago CS Stud
 
 - Project 3 involves using a network simulator that requires root access on a Linux machine. In the past, we have provided a `virtual machine <https://howto.cs.uchicago.edu/vm:index>`__ for Project 3 so you could run code with root privileges; this year, we are exploring a few alternate mechanisms that may not involve installing a full virtual machine but, in case we do still have to use the virtual machine, you may want to ensure (well ahead of Project 3) that you are able to install and use the CS virtual machine.
 
-- The `C style guide <https://uchicago-cs.github.io/student-resource-guide/style_guide/c.html>`__ in the Student Resource Guide is the normative style guide for this class.
+- The `C style guide <https://uchicago-cs.github.io/student-resource-guide/style-guide/c.html>`__ in the Student Resource Guide is the normative style guide for this class.
+
+- When asking questions on Ed Discussion, you must follow the guidelines in the `Asking Questions <https://uchicago-cs.github.io/student-resource-guide/getting-help/questions.html>`__ page in the Student Resource Guide.
 
 The following resources may also be helpful when working on your projects:
 
 * `Git Basics Tutorial <https://uchicago-cs.github.io/student-resource-guide/tutorials/git-basics.html>`__: If you are new to Git, you should work through this tutorial to familiarize yourself with Git.
 * `The Debugging Guide <https://uchicago-cs.github.io/debugging-guide/>`__: A guide with useful suggestions and pointers on how to debug your C code.
-* `Asking Questions <../resources/questions.html>`__: A guide to asking effective questions on Ed Discussion.
 

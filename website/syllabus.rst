@@ -124,8 +124,9 @@ replies to your question. If you send a message directly to the
 instructor or the TAs, you will get a gentle reminder that your question
 should be asked on Ed Discussion.
 
-Please see our `Asking Questions <resources/questions.html>`_ page for specific
-guidelines and policies related to asking questions on Ed Discussion.
+Please see the `Asking Questions <https://uchicago-cs.github.io/student-resource-guide/getting-help/questions.html>`__
+page in the `UChicago CS Student Resource Guide <https://uchicago-cs.github.io/student-resource-guide/>`__
+for guidelines and policies related to asking questions on Ed Discussion.
 
 Please note that all course announcements will be made through Ed Discussion. It
 is your responsibility to check Ed Discussion often to see if there are any

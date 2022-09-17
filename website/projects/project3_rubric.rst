@@ -29,7 +29,7 @@ You will receive two ESNU scores for this project:
     to some extent independently of) the correct operation of your code." (thanks to
     Adam Shaw for this concise phrasing).
   - *Style*: This encompasses your adherence
-    to our `Style Guide <https://uchicago-cs.github.io/dev-guide/style_guide_c.html>`__.
+    to our `Style Guide <https://uchicago-cs.github.io/student-resource-guide/style-guide/c.html>`__.
 
 Submission Timeline
 -------------------
