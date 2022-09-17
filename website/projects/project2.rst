@@ -30,6 +30,39 @@ Please refer to the following documents to complete this project:
 - `Project 2 rubric <project2_rubric.html>`__
 - `Project 2 tips <project2_tips.html>`__
 
+Initializing your Project 2 Repository
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Make sure that you have read the :ref:`Getting Started <project_started>` page
+as well as the the :ref:`Project Registration <project_registration>` instructions.
+
+**One-time setup instructions**
+
+Only one team member needs to run these commands. Create an empty directory and, inside that
+directory run the following commands. In the commands below, ``$REPO_URL`` refers to the
+SSH URL of your repository. To get this URL, log into GitHub and navigate to your
+project repository. Then, click on the green "Code" button, and make sure the
+"SSH" tab is selected. Your repository URL should look something like this:
+``git@github.com:uchicago-cmsc23320-2022-aut/chitcp-p2-jdoe-jrandom.git``
+
+::
+
+    git init
+    git remote add origin $REPO_URL
+    git remote add upstream https://github.com/uchicago-cs/chitcp.git
+    git pull upstream master
+    git push -u origin master
+
+
+**Cloning instructions**
+
+Once the repository has been set up, you can clone the repository in
+other locations as follows::
+
+    git clone $REPO_URL
+    git remote add upstream https://github.com/uchicago-cs/chitcp.git
+
+
 
 .. toctree::
    :maxdepth: 2

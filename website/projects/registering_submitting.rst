@@ -1,3 +1,5 @@
+.. _project_registration:
+
 Project Registration
 --------------------
 
@@ -12,7 +14,9 @@ To actually get your private repository, you will need an *invitation URL*, whic
 
    Please note that, while GitHub will allow you to select an arbitrary team name, your team name **must** be the project number (``p1``, ``p2``, or ``p3``, followed by your CNetIDs in alphabetical order and separated by a hyphen (e.g., ``p1-jdoe-jrandom``).
 3. Finally, you must click "Accept this assignment" or your repository will not actually be created.
-4. Once the repository has been created you **must** follow our instructions for `adding the project's initial code <initial_code.html>`__ to the repository.
+4. Once the repository has been created, **DO NOT** run the commands shown on GitHub to
+   initialize your repository. You must instead run the commands we provide to you (you
+   can find these in the pertinent project page on this website)
 
 If you run into any issues, or need us to make any manual adjustments to your registration, please let us know via Ed Discussion.
 
