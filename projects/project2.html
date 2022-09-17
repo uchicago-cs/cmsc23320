@@ -59,6 +59,7 @@
     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Course Information <span class="caret"></span></a>
     <ul class="dropdown-menu">
         <li><a href="../syllabus.html">Syllabus</a></li>
+        <li><a href="../grading.html">Grading</a></li>
         <li><a href="../calendar.html">Calendar</a></li>
         <li><a href="../academic-honesty.html">Academic Honesty</a></li>
         <li><a href="../code-of-conduct.html">Code of Conduct for Course Staff</a></li>
@@ -129,7 +130,33 @@ they do not implement the entire functionality provided by standard sockets
 <li><p><a class="reference external" href="project2_rubric.html">Project 2 rubric</a></p></li>
 <li><p><a class="reference external" href="project2_tips.html">Project 2 tips</a></p></li>
 </ul>
+<div class="section" id="initializing-your-project-2-repository">
+<h2>Initializing your Project 2 Repository<a class="headerlink" href="#initializing-your-project-2-repository" title="Permalink to this heading">¶</a></h2>
+<p>Make sure that you have read the <a class="reference internal" href="started.html#project-started"><span class="std std-ref">Getting Started</span></a> page
+as well as the the <a class="reference internal" href="registering_submitting.html#project-registration"><span class="std std-ref">Project Registration</span></a> instructions.</p>
+<p><strong>One-time setup instructions</strong></p>
+<p>Only one team member needs to run these commands. Create an empty directory and, inside that
+directory run the following commands. In the commands below, <code class="docutils literal notranslate"><span class="pre">$REPO_URL</span></code> refers to the
+SSH URL of your repository. To get this URL, log into GitHub and navigate to your
+project repository. Then, click on the green “Code” button, and make sure the
+“SSH” tab is selected. Your repository URL should look something like this:
+<code class="docutils literal notranslate"><span class="pre">git&#64;github.com:uchicago-cmsc23320-2022-aut/chitcp-p2-jdoe-jrandom.git</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>git init
+git remote add origin $REPO_URL
+git remote add upstream https://github.com/uchicago-cs/chitcp.git
+git pull upstream master
+git push -u origin master
+</pre></div>
+</div>
+<p><strong>Cloning instructions</strong></p>
+<p>Once the repository has been set up, you can clone the repository in
+other locations as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>git clone $REPO_URL
+git remote add upstream https://github.com/uchicago-cs/chitcp.git
+</pre></div>
+</div>
 <div class="toctree-wrapper compound">
+</div>
 </div>
 </div>
 
