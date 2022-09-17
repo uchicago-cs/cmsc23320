@@ -125,6 +125,7 @@ html_sidebars = {'*': None,
 
 html_context = {"web_navbar": [("Course Information", [
                                     ("Syllabus", "syllabus", False),
+                                    ("Grading", "grading", False),
                                     ("Calendar", "calendar", False),
                                     ("Academic Honesty", "academic-honesty", False),
                                     ("Code of Conduct for Course Staff", "code-of-conduct", False),
