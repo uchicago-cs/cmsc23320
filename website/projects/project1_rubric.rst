@@ -34,29 +34,23 @@ You will receive two ESNU scores for this project:
 Submission Timeline
 -------------------
 
-This project has two required submissions, and an optional resubmission.
+This project has two required submissions, and an optional resubmission:
 
-The required submissions are the following:
+.. include:: project1_timeline.txt
 
-- **Project 1a**, corresponding to Exercise 1 of the chirc project. This first submission
-  also serves as sort of warm-up exercise for all the projects, to ensure you familiarize
-  yourself with using a Git repo, running the automated tests, submitting through Gradescope,
-  etc.
-- **Project 1b**, corresponding to Exercise 4 of the chirc project (which builds upon Exercise 1)
+You will receive feedback on your Intermediate Submission before your Final Submission is due,
+which means you can also treat the Final Submission as a way to improve and resubmit the work
+you did in the Intermediate Submission.
 
-The deadlines for the required submissions can be found in the `Course Calendar <../calendar.html>`__.
-
-Your score on Project 1b will determine your ESNU scores on Project 1. This mean that you can also
-treat Project 1b as an opportunity to revise the work you submitted as part of Project 1a (you will
-get feedback on your Project 1a submission before Project 1b is due)
+The scores you receive on the Final Submission will be your Project 1 scores for the purposes
+of computing your grade in the class. That said, once your Final Submission is graded, you will have
+an opportunity to make an optional resubmission (please see the "Optional Resubmission" section
+at the end of this page for more details)
 
 Please note that, to earn an E in Code Quality, you must have made an initial
-good-faith submission for both Project 1a and Project 1b (i.e., work that would score an N or above).
-So, for example, you could technically skip Project 1a entirely and only make a submission for
-Project 1b but, if you do so, your Code Quality score will be capped at an S.
-
-Finally, please see the "Optional Resubmission" section at the end of this page for more details on what an
-optional resubmission involves.
+good-faith submission for both the Intermediate and Final submissions (i.e., work that would score an N or above).
+So, for example, you could technically skip the Intermediate Submission entirely and only make a
+Final Submission but, if you do so, your Code Quality score will be capped at an S.
 
 Completeness
 ------------
@@ -92,7 +86,7 @@ issues, labelled "[Major Issue]" that you should be particularly mindful of).
 
 Please note that the items below refer to a complete Project 1
 implementation (i.e., Exercises 1 and 4 of the chirc project), so some of the items
-will not apply to the Project 1a submission (most notably, you are not expected to use
+will not apply to the Intermediate Submission (most notably, you are not expected to use
 threads or mutexes in that submission).
 
 In general, your ESNU score will be determined as follows:
@@ -212,11 +206,11 @@ There are a couple of other issues that we care about across all projects:
 Optional Resubmission
 ---------------------
 
-When you receive your graded Project 1b, you have two options:
+When you receive your graded Project 1, you have two options:
 
 #. If you are satisfied with the scores you have received, no action is necessary on your end.
-   Your scores on Project 1b will be used to compute your `Base Grade <../grading.html#base-grade>`__.
-#. You may make an *optional* resubmission to address any feedback you received in Project 1b,
+   Your scores on Project 1 will be used to compute your `Base Grade <../grading.html#base-grade>`__.
+#. You may make an *optional* resubmission to address any feedback you received in Project 1,
    which may increase your scores in the project.
    
 Note: You *cannot* make a resubmission if you got E's on both Completeness and Code Quality. If you
@@ -237,6 +231,10 @@ the repository to include the following information:
     a few examples if possible
     (e.g., "I combed through the code to make sure I was using descriptive variable names; for example, I changed ``c`` to
     ``channel`` in several functions", "I reorganized functions ``foo()``, ``bar()``, and ``baz()`` as requested", etc.)
+
+- **Rubric items you have NOT addressed**: It is also important that you let us know what rubric items you
+  decided not to address, as this will expedite the work of the graders. For these rubric items, it is enough
+  to provide a list of the rubric item descriptions (exactly as they appear on Gradescope)
     
 - **Substantial new code added to your submission**: If you added substantial new code that was not present in your
   original submission (e.g., if your original submission did not implement several commands, and you have now included
@@ -262,8 +260,8 @@ the repository to include the following information:
 - **Other changes**: If you made other changes to your code, such as refactoring large parts of your code, make
   sure to specify this too.
 
-You should consider the ``README`` file as important as the changes you are making to your code: resubmissions 
-that do not include the information requested above may not be graded at all.
+You should consider the ``README`` file as important as the changes you are making to your code: **resubmissions
+that do not include the information requested above may not be graded at all**.
 
 In general, if you are making a resubmission that only involved addressing rubric items, without adding substantial
 new code to your submission, there is a high likelihood that addressing all the rubric items will bump your Code
@@ -271,7 +269,7 @@ Quality score to at least the next score.
 
 On the other hand, if you are making a resubmission that involves adding substantial new code, please bear in mind
 that the graders could identify issues in that new code that will impact your Code Quality score. That said,
-once you receive the resubmission grading, you will be given the option to revert back to your original Project 1b
+once you receive the resubmission grading, you will be given the option to revert back to your original Project 1
 score if you prefer.
 
 

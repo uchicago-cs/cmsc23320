@@ -23,13 +23,19 @@ server called chirc. This project has three goals:
 
 Please refer to the following documents to complete this project:
 
-- `chirc specification <http://chi.cs.uchicago.edu/chirc/>`__
-
-  - Project 1a: `Assignment 1 <http://chi.cs.uchicago.edu/chirc/assignment1.html>`__
-  - Project 1b: `Assignment 4 <http://chi.cs.uchicago.edu/chirc/assignment4.html>`__
-
+- `chirc specification <http://chi.cs.uchicago.edu/chirc/>`__: In this project,
+  you will be implementing Exercises 1 and 4 of chirc.
 - `Project 1 rubric <project1_rubric.html>`__
 - `Project 1 tips <project1_tips.html>`__
+
+Submission Timeline
+~~~~~~~~~~~~~~~~~~~
+
+This project has two required submissions, and an optional resubmission:
+
+.. include:: project1_timeline.txt
+
+Please see `Project 1 rubric <project1_rubric.html>`__ for more details on how each submission will be graded.
 
 Initializing your Project 1 Repository
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
