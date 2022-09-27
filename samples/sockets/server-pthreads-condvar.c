@@ -236,7 +236,7 @@ void *service_single_client(void *args)
     /* ADDED: The rest of the function is different from the mutex example.
      *
      * Note: this code also provides an example of an acceptable way of using goto statements
-     *       (see http://uchicago-cs.github.io/cmsc23320/style_guide.html#goto-statements)
+     *       (see https://uchicago-cs.github.io/student-resource-guide/style-guide/c.html#goto-statements)
      */
 
     /* We send a message to the client. */
