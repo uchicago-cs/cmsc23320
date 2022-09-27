@@ -1,13 +1,6 @@
 Project 1 Rubric
 ================
 
-.. warning::
-
-   Project 1 has not yet been updated for Autumn 2022. You are welcome to read
-   through the project documentation, but bear in mind that some aspects of the
-   project may change. Please do not start working on the project until instructed
-   to do so in class.
-
 The grading of this project follows a specifications grading approach. If you have not already
 done so, make sure to read our `Grading <../grading.html>`__ page for more details.
 
@@ -52,6 +45,9 @@ good-faith submission for both the Intermediate and Final submissions (i.e., wor
 So, for example, you could technically skip the Intermediate Submission entirely and only make a
 Final Submission but, if you do so, your Code Quality score will be capped at an S.
 
+Additionally, if you only submit chirc Assigmment 1 (with effectively no work on Assignment 4) as your Final Submission,
+you will receive a U in that submission.
+
 Completeness
 ------------
 
@@ -85,7 +81,7 @@ close attention to, and which we describe in the sections below (including major
 issues, labelled "[Major Issue]" that you should be particularly mindful of).
 
 Please note that the items below refer to a complete Project 1
-implementation (i.e., Exercises 1 and 4 of the chirc project), so some of the items
+implementation (i.e., Assignments 1 and 4 of the chirc project), so some of the items
 will not apply to the Intermediate Submission (most notably, you are not expected to use
 threads or mutexes in that submission).
 

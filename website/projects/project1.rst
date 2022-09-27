@@ -1,13 +1,6 @@
 Project 1: chirc
 ----------------
 
-.. warning::
-
-   Project 1 has not yet been updated for Autumn 2022. You are welcome to read
-   through the project documentation, but bear in mind that some aspects of the
-   project may change. Please do not start working on the project until instructed
-   to do so in class.
-
 In this project, you will implement a simple Internet Relay Chat (IRC)
 server called chirc. This project has three goals:
 
@@ -23,8 +16,11 @@ server called chirc. This project has three goals:
 
 Please refer to the following documents to complete this project:
 
+- Make sure you've read our :ref:`Getting Started <project_started>` page.
+- You can find instructions on how to register for the project (and how to
+  get your Git repo) in our :ref:`Project Registration <project_registration>` page.
 - `chirc specification <http://chi.cs.uchicago.edu/chirc/>`__: In this project,
-  you will be implementing Exercises 1 and 4 of chirc.
+  you will be implementing Assignments 1 and 4 of chirc.
 - `Project 1 rubric <project1_rubric.html>`__
 - `Project 1 tips <project1_tips.html>`__
 
@@ -41,7 +37,8 @@ Initializing your Project 1 Repository
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Make sure that you have read the :ref:`Getting Started <project_started>` page
-as well as the the :ref:`Project Registration <project_registration>` instructions.
+as well as the :ref:`Project Registration <project_registration>` instructions
+before following the instructions below.
 
 **One-time setup instructions**
 

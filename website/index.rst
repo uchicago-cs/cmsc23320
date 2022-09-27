@@ -30,7 +30,6 @@ For more details, please see the `syllabus <syllabus.html>`_.
    projects/started.rst
    projects/specs.rst
    projects/registering_submitting.rst
-   projects/initial_code.rst
    projects/project1.rst
    projects/project2.rst
    projects/project3.rst

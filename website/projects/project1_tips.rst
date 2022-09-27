@@ -1,26 +1,18 @@
 Project 1 Tips
 ==============
 
-.. warning::
-
-   Project 1 has not yet been updated for Autumn 2022. You are welcome to read
-   through the project documentation, but bear in mind that some aspects of the
-   project may change. Please do not start working on the project until instructed
-   to do so in class.
-
 Before you get started
 ----------------------
 
-- Make sure you've read through the `Projects - Getting Started <../projects/started.html>`__ page.
-- To help you get started, we are providing you with a `trivial solution <https://github.com/uchicago-cs/cmsc23320/blob/master/samples/chirc/project1a-trivial.c>`_
-  to Project 1a that will pass nearly half of the tests. While this can be a good starting point,
+- To help you get started, we are providing you with a `trivial solution <https://github.com/uchicago-cs/cmsc23320/blob/master/samples/chirc/project1-trivial.c>`_
+  to Assignment 1 of the chirc project that will pass nearly half of the tests. While this can be a good starting point,
   please note that you will still have to make major modifications to that solution
   (in particular, your solution cannot manually create the socket; you must
   use ``getaddrinfo`` instead).
 - When writing the socket code for your chirc server, make sure you take a look at the 
   `socket samples <https://github.com/uchicago-cs/cmsc23320/tree/master/samples/sockets>`_ covered
   in the pre-recorded lecture on socket programming. They can provide a good starting point for writing a multi-threaded
-  server in Project 1b.
+  server (note: you won't have to write a multi-threaded server for Assignment 1 of chirc)
 
 General Tips
 ------------
@@ -56,7 +48,7 @@ General Tips
    pay off handsomely later on, even if you spend the first few days
    feeling like you’re not making any progress towards passing any tests.
    
--  When processing multiple commands (starting in Project 1b), a data 
+-  When processing multiple commands (starting in Assigment 4), a data
    structure that can come in handy is a `dispatch table <http://en.wikipedia.org/wiki/Dispatch_table>`_ 
    or `branch table <http://en.wikipedia.org/wiki/Branch_table>`_. You can find some 
    sample code `here <https://github.com/uchicago-cs/cmsc23320/tree/master/samples/dispatch_table>`_.
@@ -69,16 +61,18 @@ unfortunately, a common attribute of many network specifications). If you’re u
 
 #. Check whether it makes any of our tests fail. If it doesn't, your interpretation of the IRC protocol is probably fine. This includes the lack of features: if you're not implementing some feature/command/reply/corner case/etc. and it isn't covered by our tests, then you probably don't need to implement it. The only exception is cases that are explicitly specified in the chirc specification (there are a few that are not covered by our tests).
 
-#. Take into account that there are literally hundreds of production IRC servers on the Internet that you can log into to test how they’ve interpreted the IRC specification. We suggest using Freenode servers, which you can log into simply by running::
+#. Take into account that there are literally hundreds of production IRC servers on the Internet that you can log into to test how they’ve interpreted the IRC specification. We suggest using `Libera.Chat <https://libera.chat/>`__ servers, which you can log into simply by running::
 
-    telnet irc.freenode.net 6667 
+    telnet irc.libera.chat 6667
 
    In general, if you replicate the behaviour of a production IRC server, that's good enough for us.
 
 #. You can also test the command on our reference implementation::
 
     telnet frost.cs.uchicago.edu 6666 
-    
+
+Note: if that server is unresponsive, we are also running reference implementations on ports 6661-6665.
+
 Like a production IRC server, if you replicate the behaviour of our reference implementation, that's good enough for us.
 
 ..
@@ -154,11 +148,11 @@ Like a production IRC server, if you replicate the behaviour of our reference im
 
     You can also connect to the first server via telnet and send the ``PASS`` and ``SERVER`` commands to observe the replies from the server.
 
-Common Issues in Project 1a
----------------------------
+Common Issues in chirc Assignment 1
+-----------------------------------
 
 ``strtok``
-----------
+~~~~~~~~~~
 
 A common approach to tokenizing IRC commands is to use the standard ``strtok`` function. This is a good approach, but you should take into account that ``strtok`` is not thread-safe and will be the source of inexplicable bugs and race conditions once you start supporting multiple clients. You should use ``strtok_r`` instead (the reentrant version of ``strtok``).
 
@@ -177,7 +171,7 @@ For more details, please read the ``strtok`` man page, which explains ``strtok``
 Error handling in sockets
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Don't forget to check the return value of the socket functions: your code is likely to behave strangely if you don't react appropriately to certain error conditions (e.g., a return code of 0 from recv means that the client has disconnected; in Project 1b you will need to "log out" the user from the IRC server when that happens).
+Don't forget to check the return value of the socket functions: your code is likely to behave strangely if you don't react appropriately to certain error conditions (e.g., a return code of 0 from recv means that the client has disconnected; in chirc Assignment 4 you will need to "log out" the user from the IRC server when that happens).
 
 General socket confusion
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -185,19 +179,19 @@ General socket confusion
 If you're confused about how to use sockets, we recommend you read `Beej's Guide to Network Programming <http://beej.us/guide/bgnet/>`_ for a more thorough review of sockets.
 
 
-Common Issues in Project 1b
----------------------------
+Common Issues in chirc Assignment 4
+-----------------------------------
 
 Poor code organization
 ~~~~~~~~~~~~~~~~~~~~~~
 
-In project 1b, your server starts getting more complex. Do not cram all your code into
+In chirc Assigmnent 4, your server starts getting more complex. Do not cram all your code into
 a single main.c file: you should think about separating your C code into multiple C files, each responsible for a specific part of the program.
 
 Inadequate locking
 ~~~~~~~~~~~~~~~~~~
 
-In project 1b, you now have multiple clients connecting to your server, with one thread
+In chirc Assigmnent 4, you now have multiple clients connecting to your server, with one thread
 per client. So remember: shared data structures have to be protected by locks, and this includes 
 any socket that multiple threads could write to. POSIX requires system calls to be thread-safe (i.e., the OS itself should guarantee that send() is done atomically). However, even though a call to send() can be thread-safe, you have to account for the fact that send() might not send all your data in one go. So, you still need to gain exclusive access to the socket until a full message has been sent; otherwise, you could see partial messages interleaved by multiple threads.
 
