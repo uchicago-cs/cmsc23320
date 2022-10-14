@@ -1,13 +1,6 @@
 Project 2: chitcp
 -----------------
 
-.. warning::
-
-   Project 2 has not yet been updated for Autumn 2022. You are welcome to read
-   through the project documentation, but bear in mind that some aspects of the
-   project may change. Please do not start working on the project until instructed
-   to do so in class.
-
 In this project you will be implementing the Transmission Control Protocol, as
 specified in `[RFC793] <http://tools.ietf.org/html/rfc793>`__. However, instead
 of implementing it inside the operating system itself, you will be implementing
@@ -22,13 +15,22 @@ they do not implement the entire functionality provided by standard sockets
 
 Please refer to the following documents to complete this project:
 
-- `chiTCP specification <http://chi.cs.uchicago.edu/chitcp/>`__
-
-  - Project 2a: `Assignment 1 <http://chi.cs.uchicago.edu/chitcp/assignment1.html>`__
-  - Project 2b: `Assignment 2 <http://chi.cs.uchicago.edu/chitcp/assignment2.html>`__
-
+- Make sure you've read our :ref:`Getting Started <project_started>` page.
+- You can find instructions on how to register for the project (and how to
+  get your Git repo) in our :ref:`Project Registration <project_registration>` page.
+- `chiTCP specification <http://chi.cs.uchicago.edu/chitcp/>`__: In this project,
+  you will be implementing Assignments 1 and 2 of chiTCP.
 - `Project 2 rubric <project2_rubric.html>`__
 - `Project 2 tips <project2_tips.html>`__
+
+Submission Timeline
+~~~~~~~~~~~~~~~~~~~
+
+This project has two required submissions, and an optional resubmission:
+
+.. include:: project2_timeline.txt
+
+Please see `Project 1 rubric <project1_rubric.html>`__ for more details on how each submission will be graded.
 
 Initializing your Project 2 Repository
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

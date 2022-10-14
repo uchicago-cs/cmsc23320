@@ -1,14 +1,43 @@
 Project 2 Tips
 ==============
 
-.. warning::
-
-   Project 2 has not yet been updated for Autumn 2022. You are welcome to read
-   through the project documentation, but bear in mind that some aspects of the
-   project may change. Please do not start working on the project until instructed
-   to do so in class.
-
 Before you get started, make sure you've read through the `Projects - Getting Started <../projects/started.html>`__ page.
+
+Suggested Order of Implementation
+---------------------------------
+
+At first glance, it may seem like Project 2 requires coming up with an effectively complete implementation of TCP before you can test your code. This is a common pitfall in Project 2, that often leads some teams to write huge amounts of code without doing any testing, to then find that nothing is working when they finally start testing their TCP implementation.
+
+So, as you move on to Project 2, we suggest you set the following intermediate goals in Assignment 1 of chiTCP:
+
+- **Pass the Connection Establishment tests**. You can do so by implement the handling of APPLICATION_CONNECT in the CLOSED state (Hint: remember we showed you some basic code for this in the Project 2 lecture), and just enough of the packet arrival handler to implement the three-way handshake (this means you can skip everything related to processing data, FIN segments, etc.). This will ensure you are comfortable with the basics of chiTCP moving forward.
+- **Pass some half-duplex tests with <= 536 bytes**. Write a function that processes the send buffer (and sends its contents) and flesh out enough of the packet arrival handler for you to pass some of the simpler tests. This will ensure the basic aspects of data transfer are working, as you do not yet need to worry about segmenting the send buffer (which means you can write your code under the assumption that everything in the send buffer gets sent in a single packet).
+- **Move on to half-duplex tests with > 536 bytes**. This will involve segmenting the send buffer correctly.
+- **Move on to the echo tests**. A lot of moving pieces have to be working correctly for data to transfer correctly in both directions.
+- **Finally, pass the connection termination tests.**
+
+Dividing up the work in Assignment 1 of chiTCP is a bit tricky, since most of your work will involve writing the packet arrival handler (which can't easily be broken down into pieces). We suggest you approach your collaboration on Project 2 as follows:
+
+- **Work together on the threeway handshake**. This will ensure you are both comfortable with the basics of chiTCP before moving on to more complex parts of the project.
+- **Be careful about dividing up the packet arrival handler**. You can break it up into sections, but you should agree on a general structure first, and will need to coordinate very carefully as you make progress on it.
+- **Avoid giving one person sole responsibility over a core aspect of the code**. For example, don't ask your project partner to write the function that processes the send buffer, and to report back in a few days. If that function doesn't work, it will have a major impact on the rest of your code. It is better to work together on these or, at least, have joint ownership over that code (and make sure it gets done as early as possible)
+- **In general, avoid a “there are N functions, let’s split them up” mentality**. A team member can also be responsible for debugging tests, polishing the code, writing documentation, etc.
+
+In Assignment 2 of chiTCP, we suggest you follow this implementation order:
+
+- Start by working together on the multitimer. You will not be able to implement retransmissions or the persist timer without it (you can implement out-of-order delivery without the multitimer, but it's still better if you focus on implementing a solid multitimer first)
+- Next, take into account that Retransmissions, the Persist Timer, and Out-of-Order can be implemented in parallel (for the most part, you can pass the tests for each task before you implement the others)
+
+  - That said, implementing retransmissions involves more work than the other two.
+  - It can make sense for the two of you to take joint ownership of retransmissions, and have one person work on the persist timer and the other on out-of-order delivery.
+
+- Approach the tests *incrementally*
+
+  - Make sure you're passing all the multitimer tests before you move on to retransmissions or the persist timer. Otherwise, if a retransmission/persist test fails, it will be hard to tell whether the error originates in your retransmission/persist code, or whether its a spurious error that originates in something incorrect in the multitimer.
+  - When you move on to retransmissions, there are several simple tests that involve dropping a single packet. Focus on those first, as they will be easier to debug.
+  - Then, move onto the connection establishment/termination drop tests.
+  - Finally, see if you can pass the tests with multiple drops.
+  - Note: You should only attempt to debug the “random” tests if every other test (including from Assignment 1) is working correctly.
 
 Interpreting RFC 793
 --------------------
@@ -29,6 +58,12 @@ interpretation of TCP (based on class notes and examples online). Replicating th
 behaviour of simple examples (like the 3-way handshake) may work for simple
 operations, but is not a good strategy for implementing all of TCP.
 
+Selecting Initial Sequence Numbers
+----------------------------------
+
+It is your responsibility to generate the initial sequence number (ISN) for a connection,
+but you are not required to implement the ISS/IRS selection exactly as specified in the RFC. It is enough
+to choose a random number and, for ease of debugging, you may want to choose a random number ending in ``00000`` so you can more easily debug the sequence numbers in your transmissions.
 
 Writing the Packet Arrival Handler
 ----------------------------------
@@ -144,7 +179,7 @@ observing the same scores you're seeing.
 Dealing with Zero Windows
 -------------------------
 
-Until you get to Project 2b, your code will have no way of dealing with a host that is advertising a window
+Until you get to Assignment 2, your code will have no way of dealing with a host that is advertising a window
 of zero bytes (a common way of dealing with this is by sending
 `probe segments <http://www.tcpipguide.com/free/t_TCPWindowManagementIssues-3.htm>`_). So, if a host does advertise
 a window with zero bytes, your TCP may get stuck. The tests are designed to avoid, as much as possible, this situation,

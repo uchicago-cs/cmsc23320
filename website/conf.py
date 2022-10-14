@@ -121,7 +121,9 @@ todo_include_todos = False
 html_sidebars = {'*': None,
                  'syllabus': ['localtoc.html'],
                  'grading':  ['localtoc.html'],
-                 'projects/*_rubric':  ['localtoc.html']}
+                 'projects/*_rubric':  ['localtoc.html'],
+                 'projects/*_tips':  ['localtoc.html']}
+
 
 html_context = {"web_navbar": [("Course Information", [
                                     ("Syllabus", "syllabus", False),

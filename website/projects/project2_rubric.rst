@@ -1,13 +1,6 @@
 Project 2 Rubric
 ----------------
 
-.. warning::
-
-   Project 2 has not yet been updated for Autumn 2022. You are welcome to read
-   through the project documentation, but bear in mind that some aspects of the
-   project may change. Please do not start working on the project until instructed
-   to do so in class.
-
 The grading of this project follows a specifications grading approach. If you have not already
 done so, make sure to read our `Grading <../grading.html>`__ page for more details.
 
@@ -34,29 +27,26 @@ You will receive two ESNU scores for this project:
 Submission Timeline
 -------------------
 
-This project has two required submissions, and an optional resubmission.
+This project has two required submissions, and an optional resubmission:
 
-The required submissions are the following:
+.. include:: project2_timeline.txt
 
-- **Project 2a**, corresponding to Exercise 1 of the chiTCP project.
-- **Project 2b**, corresponding to Exercise 2 of the chiTCP project (which builds upon Exercise 1)
+You will receive feedback on your Intermediate Submission before your Final Submission is due,
+which means you can also treat the Final Submission as a way to improve and resubmit the work
+you did in the Intermediate Submission.
 
-The deadlines for the required submissions can be found in the `Course Calendar <../calendar.html>`__.
-
-Your score on Project 2b will determine your ESNU scores on Project 2. This mean that you can also
-treat Project 2b as an opportunity to revise the work you submitted as part of Project 2a (you will
-get feedback on your Project 2a submission before Project 2b is due)
-
-Additionally, once you get your graded Project 2b back, you will have roughly one week to submit
-a revised version.
+The scores you receive on the Final Submission will be your Project 2 scores for the purposes
+of computing your grade in the class. That said, once your Final Submission is graded, you will have
+an opportunity to make an optional resubmission (please see the "Optional Resubmission" section
+at the end of this page for more details)
 
 Please note that, to earn an E in Code Quality, you must have made an initial
-good-faith submission for both Project 2a and Project 2b (i.e., work that would score an N or above).
-So, for example, you could technically skip Project 2a entirely and only make a submission for
-Project 2b but, if you do so, your Code Quality score will be capped at an S.
+good-faith submission for both the Intermediate and Final submissions (i.e., work that would score an N or above).
+So, for example, you could technically skip the Intermediate Submission entirely and only make a
+Final Submission but, if you do so, your Code Quality score will be capped at an S.
 
-Finally, please see the "Optional Resubmission" section at the end of this page for more details on what an
-optional resubmission involves.
+Additionally, if you only submit chiTCP Assigmment 1 (with effectively no work on Assignment 2) as your
+Final Submission, you will receive a U in that submission.
 
 Completeness
 ------------
@@ -92,9 +82,8 @@ When assessing your code quality, there are a number of things we will be paying
 close attention to, and which we describe in the sections below (including major
 issues, labelled "[Major Issue]" that you should be particularly mindful of).
 
-Please note that, while some of the items below indicate whether they apply to Project
-2a or 2b, take into account that we will still check for Project 2a issues in your 2b
-submission.
+Please note that, while some of the items below indicate whether they apply to Assigment 1 or 2,
+take into account that we will still check for Assignment 1 issues in your Final Submission.
 
 In general, your ESNU score will be determined as follows:
 
@@ -131,15 +120,15 @@ General
 - **Not freeing packets once you're done with them**
 
 
-[p2a] 3-way Handshake
-~~~~~~~~~~~~~~~~~~~~~
+[Assignment 1] 3-way Handshake
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - **Not acknowledging the final ACK in the 3-way handshake**. Remember that acknowledgements are not acknowledged in TCP.
 - **Not checking that the SYN was acknowledged before sending the ACK and changing state to ESTABLISHED**.
 - [Major issue] **Writing a 3-way handshake by rote that doesn't check the TCP header values, and assumes that the first three messages exchanged must be a SYN, SYN/ACK, and ACK**. For example, you could technically pass the three-way handshake tests by making TCP go into an ESTABLISHED state after receiving two packets (without checking whether the first one is a SYN packet, and whether the second one contains a valid ACK).
 
-[p2a] Data Transfer
-~~~~~~~~~~~~~~~~~~~
+[Assignment 1] Data Transfer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - **Not checking if the value of SEG.ACK and SEG.SEQ is correct**. In some cases, no action needs to be taken when a value is incorrect, but we still recommend (but not require) that you chilog() any such cases.
 - **Not setting the ACK flag and including a valid acknowledgement number in every packet after the 3-way handshake**. Remember that, even if you haven't received any new data, you still have to send a valid acknowledgement number in every segment.
@@ -149,42 +138,42 @@ General
 - [Major issue] **Not taking SND.WND into account when processing the send buffer**. You should make sure to never send more bytes than allowed by the effective window (remember this won't be just SND.WND, but is computed based on SND.WND).
 - **Not segmenting the data in the send buffer into MSS-sized packets (536 bytes), or segmenting it incorrectly**
 
-[p2a] Connection teardown
-~~~~~~~~~~~~~~~~~~~~~~~~~
+[Assignment 1] Connection teardown
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - **Not handling the APPLICATION_CLOSE event in both ESTABLISHED and CLOSE_WAIT**. In both cases, you should only send a FIN packet if there is no data left in the send buffer, but you should transition to FIN-WAIT-1 / LAST-ACK (respectively) right away.
 - **Not delaying the FIN packet until all outstanding data has been sent and acknowledged**.
 
-[p2b] Managing the Retransmission Queue
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[Assignment 2] Managing the Retransmission Queue
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - **Adding pure ACK packets (i.e., not SYN or FIN segments, nor segments with a payload) to the retransmission queue**. ACK packets are not retransmitted.
 - **Adding segments with a payload to the retransmission queue, but not adding SYN or FIN segments**
 - **Not removing acknowledged packets from the retransmission queue**. Take into account that multiple packets could be removed because of a cumulative ack. However, you should not automatically remove all the packets from the retransmission queue whenever you receive an ACK, because you could have packets 1-10 in the queue, and receive an acknowledgement only for 1-5.
 - **Locking the retransmission queue**. The retransmission queue is only ever accessed by the socket thread, so there is no possibility of concurrent access by multiple threads. So, it does not need to be protected by a mutex.
 
-[p2b] Managing the Timer Thread
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[Assignment 2] Managing the Timer Thread
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - **Unconditionally setting the timer every time a packet is sent**. You should set the timer only if you are sending a packet with data (or a SYN or FIN) *and* the timer is not already active. If the timer is already active, then sending new data doesn't affect the timer in any way.
 - **Not cancelling the timer when all outstanding data has been acknowledged**
 - **Unconditionally restarting the timer when any ACK is received**. The timer should only be restarted when the ACK acknowledges outstanding data.
 - **Not restarting the timer at all when an ACK (that acknowledges new data) is received**.
 
-[p2b] Handling the retransmission timeout
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[Assignment 2] Handling the retransmission timeout
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - **Not doing Go-back-N**. When a TIMEOUT event happens, you should be doing go-back-N: find the earliest unacknowledged segment in the retransmission queue, and retransmit that segment and all subsequent segments. It is not enough to only retransmit the first segment (without checking whether there are subsequent packets)
 - **Not backing off the RTO each time a timeout happens**.
 
-[p2b] RTT estimation
-~~~~~~~~~~~~~~~~~~~~
+[Assignment 2] RTT estimation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - [Major issue] **Not doing any RTT estimation**. The RTT estimation tests can't check whether you implemented RTT estimation correctly (at most, they may alert you to failures that arise as a result of an incorrect RTT estimation), so the graders will be manually checking that you implemented RTT estimation correctly.
 - **Doing RTT estimation, but making a minor mistake in computing the RTT**
 - **Doing RTT estimation, but not excluding retransmitted segments from the RTT estimation**
 
-[p2b] Out-of-order
-~~~~~~~~~~~~~~~~~~
+[Assignment 2] Out-of-order
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - **Not placing out-of-order segments in the out-of-order list**
 - **Inserting duplicate segments in the out-of-order list**
 
@@ -245,11 +234,11 @@ There are a couple of other issues that we care about across all projects:
 Optional Resubmission
 ---------------------
 
-When you receive your graded Project 2b, you have two options:
+When you receive your graded Project 2, you have two options:
 
 #. If you are satisfied with the scores you have received, no action is necessary on your end.
-   Your scores on Project 2b will be used to compute your `Base Grade <../grading.html#base-grade>`__.
-#. You may make an *optional* resubmission to address any feedback you received in Project 2b,
+   Your scores on Project 2 will be used to compute your `Base Grade <../grading.html#base-grade>`__.
+#. You may make an *optional* resubmission to address any feedback you received in Project 2,
    which may increase your scores in the project.
 
 Note: You *cannot* make a resubmission if you got E's on both Completeness and Code Quality. If you
@@ -271,6 +260,10 @@ the repository to include the following information:
     (e.g., "I combed through the code to make sure I was using descriptive variable names; for example, I changed ``c`` to
     ``channel`` in several functions", "I reorganized functions ``foo()``, ``bar()``, and ``baz()`` as requested", etc.)
 
+- **Rubric items you have NOT addressed**: It is also important that you let us know what rubric items you
+  decided not to address, as this will expedite the work of the graders. For these rubric items, it is enough
+  to provide a list of the rubric item descriptions (exactly as they appear on Gradescope)
+
 - **Substantial new code added to your submission**: If you added substantial new code that was not present in your
   original submission (e.g., if your original submission did not implement certain features, and you have now included
   new code to implement those features), you must specify the functions you added or modified in either tcp.c or multitimer.c. For example you could include something like this::
@@ -284,14 +277,14 @@ the repository to include the following information:
 - **Changes made to pass additional tests**: If you made changes to your code with the goal of passing more tests,
   please specify your original test score, and the new test score. If your work only involved a few minor bug fixes,
   please let us know you did this (but you do not need to specify the exact changes you made). On the other hand,
-  if you skipped parts of Project 2b in your original submission, and have written entirely new code, please make
+  if you skipped parts of Assignment 2 in your original submission, and have written entirely new code, please make
   sure you have specified this as part of the "substantial new code", and that you also specify that doing so
   allowed you to pass additional tests.
 - **Other changes**: If you made other changes to your code, such as refactoring large parts of your code, make
   sure to specify this too.
 
-You should consider the ``README`` file as important as the changes you are making to your code: resubmissions
-that do not include the information requested above may not be graded at all.
+You should consider the ``README`` file as important as the changes you are making to your code: **resubmissions
+that do not include the information requested above may not be graded at all**.
 
 In general, if you are making a resubmission that only involved addressing rubric items, without adding substantial
 new code to your submission, there is a high likelihood that addressing all the rubric items will bump your Code
@@ -299,7 +292,7 @@ Quality score to at least the next score.
 
 On the other hand, if you are making a resubmission that involves adding substantial new code, please bear in mind
 that the graders could identify issues in that new code that will impact your Code Quality score. That said,
-once you receive the resubmission grading, you will be given the option to revert back to your original Project 2b
+once you receive the resubmission grading, you will be given the option to revert back to your original Project 2
 score if you prefer.
 
 
