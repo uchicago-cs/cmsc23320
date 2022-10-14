@@ -97,18 +97,70 @@
 
 <div class="container">
   <div class="row">
-    <div class="body col-md-12 content" role="main">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Project 2 Tips</a><ul>
+<li><a class="reference internal" href="#suggested-order-of-implementation">Suggested Order of Implementation</a></li>
+<li><a class="reference internal" href="#interpreting-rfc-793">Interpreting RFC 793</a></li>
+<li><a class="reference internal" href="#selecting-initial-sequence-numbers">Selecting Initial Sequence Numbers</a></li>
+<li><a class="reference internal" href="#writing-the-packet-arrival-handler">Writing the Packet Arrival Handler</a></li>
+<li><a class="reference internal" href="#freeing-packets">Freeing packets</a></li>
+<li><a class="reference internal" href="#tests-that-sometimes-pass-but-sometimes-don-t">Tests that sometimes pass, but sometimes don’t</a></li>
+<li><a class="reference internal" href="#pick-your-battles-a-k-a-it-is-ok-to-not-pass-100-of-the-tests">Pick your battles (a.k.a.: “it is ok to not pass 100% of the tests”)</a></li>
+<li><a class="reference internal" href="#dealing-with-zero-windows">Dealing with Zero Windows</a></li>
+<li><a class="reference internal" href="#origin-of-log-messages">Origin of log messages</a></li>
+<li><a class="reference internal" href="#the-random-tests">The random tests</a></li>
+<li><a class="reference internal" href="#the-rtt-tests">The RTT tests</a></li>
+<li><a class="reference internal" href="#common-pitfalls">Common Pitfalls</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
       
   <div class="section" id="project-2-tips">
 <h1>Project 2 Tips<a class="headerlink" href="#project-2-tips" title="Permalink to this heading">¶</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Project 2 has not yet been updated for Autumn 2022. You are welcome to read
-through the project documentation, but bear in mind that some aspects of the
-project may change. Please do not start working on the project until instructed
-to do so in class.</p>
-</div>
 <p>Before you get started, make sure you’ve read through the <a class="reference external" href="../projects/started.html">Projects - Getting Started</a> page.</p>
+<div class="section" id="suggested-order-of-implementation">
+<h2>Suggested Order of Implementation<a class="headerlink" href="#suggested-order-of-implementation" title="Permalink to this heading">¶</a></h2>
+<p>At first glance, it may seem like Project 2 requires coming up with an effectively complete implementation of TCP before you can test your code. This is a common pitfall in Project 2, that often leads some teams to write huge amounts of code without doing any testing, to then find that nothing is working when they finally start testing their TCP implementation.</p>
+<p>So, as you move on to Project 2, we suggest you set the following intermediate goals in Assignment 1 of chiTCP:</p>
+<ul class="simple">
+<li><p><strong>Pass the Connection Establishment tests</strong>. You can do so by implement the handling of APPLICATION_CONNECT in the CLOSED state (Hint: remember we showed you some basic code for this in the Project 2a lecture), and just enough of the packet arrival handler to implement the three-way handshake (this means you can skip everything related to processing data, FIN segments, etc.). This will ensure you are comfortable with the basics of chiTCP moving forward.</p></li>
+<li><p><strong>Pass some half-duplex tests with &lt;= 536 bytes</strong>. Write a function that processes the send buffer (and sends its contents) and flesh out enough of the packet arrival handler for you to pass some of the simpler tests. This will ensure the basic aspects of data transfer are working, as you do not yet need to worry about segmenting the send buffer (which means you can write your code under the assumption that everything in the send buffer gets sent in a single packet).</p></li>
+<li><p><strong>Move on to half-duplex tests with &gt; 536 bytes</strong>. This will involve segmenting the send buffer correctly.</p></li>
+<li><p><strong>Move on to the echo tests</strong>. A lot of moving pieces have to be working correctly for data to transfer correctly in both directions.</p></li>
+<li><p><strong>Finally, pass the connection termination tests.</strong></p></li>
+</ul>
+<p>Dividing up the work in Assignment 1 of chiTCP is a bit tricky, since most of your work will involve writing the packet arrival handler (which can’t easily be broken down into pieces). We suggest you approach your collaboration on Project 2 as follows:</p>
+<ul class="simple">
+<li><p><strong>Work together on the threeway handshake</strong>. This will ensure you are both comfortable with the basics of chiTCP before moving on to more complex parts of the project.</p></li>
+<li><p><strong>Be careful about dividing up the packet arrival handler</strong>. You can break it up into sections, but you should agree on a general structure first, and will need to coordinate very carefully as you make progress on it.</p></li>
+<li><p><strong>Avoid giving one person sole responsibility over a core aspect of the code</strong>. For example, don’t ask your project partner to write the function that processes the send buffer, and to report back in a few days. If that function doesn’t work, it will have a major impact on the rest of your code. It is better to work together on these or, at least, have joint ownership over that code (and make sure it gets done as early as possible)</p></li>
+<li><p><strong>In general, avoid a “there are N functions, let’s split them up” mentality</strong>. A team member can also be responsible for debugging tests, polishing the code, writing documentation, etc.</p></li>
+</ul>
+<p>In Assignment 2 of chiTCP, we suggest you follow this implementation order:</p>
+<ul class="simple">
+<li><p>Start by working together on the multitimer. You will not be able to implement retransmissions or the persist timer without it (you can implement out-of-order delivery without the multitimer, but it’s still better if you focus on implementing a solid multitimer first)</p></li>
+<li><p>Next, take into account that Retransmissions, the Persist Timer, and Out-of-Order can be implemented in parallel (for the most part, you can pass the tests for each task before you implement the others)</p>
+<ul>
+<li><p>That said, implementing retransmissions involves more work than the other two.</p></li>
+<li><p>It can make sense for the two of you to take joint ownership of retransmissions, and have one person work on the persist timer and the other on out-of-order delivery.</p></li>
+</ul>
+</li>
+<li><p>Approach the tests <em>incrementally</em></p>
+<ul>
+<li><p>Make sure you’re passing all the multitimer tests before you move on to retransmissions or the persist timer. Otherwise, if a retransmission/persist test fails, it will be hard to tell whether the error originates in your retransmission/persist code, or whether its a spurious error that originates in something incorrect in the multitimer.</p></li>
+<li><p>When you move on to retransmissions, there are several simple tests that involve dropping a single packet. Focus on those first, as they will be easier to debug.</p></li>
+<li><p>Then, move onto the connection establishment/termination drop tests.</p></li>
+<li><p>Finally, see if you can pass the tests with multiple drops.</p></li>
+<li><p>Note: You should only attempt to debug the “random” tests if every other test (including from Project 2a) is working correctly.</p></li>
+</ul>
+</li>
+</ul>
+</div>
 <div class="section" id="interpreting-rfc-793">
 <h2>Interpreting RFC 793<a class="headerlink" href="#interpreting-rfc-793" title="Permalink to this heading">¶</a></h2>
 <p>In this project, you will be implementing TCP, which is specified in <a class="reference external" href="http://tools.ietf.org/html/rfc793">RFC 793</a>.
@@ -124,6 +176,12 @@ are trying to resolve, but will probably cause issues down the road.</p>
 interpretation of TCP (based on class notes and examples online). Replicating the
 behaviour of simple examples (like the 3-way handshake) may work for simple
 operations, but is not a good strategy for implementing all of TCP.</p>
+</div>
+<div class="section" id="selecting-initial-sequence-numbers">
+<h2>Selecting Initial Sequence Numbers<a class="headerlink" href="#selecting-initial-sequence-numbers" title="Permalink to this heading">¶</a></h2>
+<p>It is your responsibility to generate the initial sequence number (ISN) for a connection,
+but you are not required to implement the ISS/IRS selection exactly as specified in the RFC. It is enough
+to choose a random number and, for ease of debugging, you may want to choose a random number ending in <code class="docutils literal notranslate"><span class="pre">00000</span></code> so you can more easily debug the sequence numbers in your transmissions.</p>
 </div>
 <div class="section" id="writing-the-packet-arrival-handler">
 <h2>Writing the Packet Arrival Handler<a class="headerlink" href="#writing-the-packet-arrival-handler" title="Permalink to this heading">¶</a></h2>
