@@ -112,6 +112,7 @@
 <li><a class="reference internal" href="#assignment-2-managing-the-timer-thread">[Assignment 2] Managing the Timer Thread</a></li>
 <li><a class="reference internal" href="#assignment-2-handling-the-retransmission-timeout">[Assignment 2] Handling the retransmission timeout</a></li>
 <li><a class="reference internal" href="#assignment-2-rtt-estimation">[Assignment 2] RTT estimation</a></li>
+<li><a class="reference internal" href="#assignment-2-persist-timer">[Assignment 2] Persist timer</a></li>
 <li><a class="reference internal" href="#assignment-2-out-of-order">[Assignment 2] Out-of-order</a></li>
 </ul>
 </li>
@@ -275,6 +276,10 @@ to the following issues:</p>
 <li><p><strong>Not updating SND.WND when a packet arrives</strong></p></li>
 <li><p><strong>Not locking the pending packet mutex before accessing the list of pending packets</strong></p></li>
 <li><p><strong>Not freeing packets once you’re done with them</strong></p></li>
+<li><p><strong>Sending a packet that doesn’t conform to the RFC</strong> (even if it happens to pass the tests). This can include setting incorrect flags, such as setting the SYN flag after the three-way handshake is done.</p></li>
+<li><p><strong>Making a state transition inconsistent with the RFC</strong></p></li>
+<li><p><strong>Incorrect code for checking a condition specified in the RFC</strong>. For example, when comparing values, using <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> even when the RFC says to check for <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>. This rubric item also encompasses coding mistakes that result in a condition ultimately being checked incorrectly (e.g., writing something like <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span> <span class="pre">&lt;</span> <span class="pre">c</span></code> instead of <code class="docutils literal notranslate"><span class="pre">a&lt;b</span> <span class="pre">&amp;&amp;</span> <span class="pre">b&lt;c</span></code>).</p></li>
+<li><p><strong>Not locking the pending packets mutex before accessing the pending packets list.</strong></p></li>
 </ul>
 </div>
 <div class="section" id="assignment-1-3-way-handshake">
@@ -302,6 +307,7 @@ to the following issues:</p>
 <ul class="simple">
 <li><p><strong>Not handling the APPLICATION_CLOSE event in both ESTABLISHED and CLOSE_WAIT</strong>. In both cases, you should only send a FIN packet if there is no data left in the send buffer, but you should transition to FIN-WAIT-1 / LAST-ACK (respectively) right away.</p></li>
 <li><p><strong>Not delaying the FIN packet until all outstanding data has been sent and acknowledged</strong>.</p></li>
+<li><p><strong>Not handling the APPLICATION_RECEIVE event in FIN_WAIT_1 and FIN_WAIT_2</strong>. TCP can still receive data in those states, which means the application may still call <cite>recv</cite>.</p></li>
 </ul>
 </div>
 <div class="section" id="assignment-2-managing-the-retransmission-queue">
@@ -337,9 +343,17 @@ to the following issues:</p>
 <li><p><strong>Doing RTT estimation, but not excluding retransmitted segments from the RTT estimation</strong></p></li>
 </ul>
 </div>
+<div class="section" id="assignment-2-persist-timer">
+<h2>[Assignment 2] Persist timer<a class="headerlink" href="#assignment-2-persist-timer" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Did not actually implement the persist timer.</strong> (this rubric item is only applied if you are somehow passing all the persist timer tests, despite not implementing the persist timer)</p></li>
+<li><p><strong>Not updating SND.NXT when sending a probe segment.</strong></p></li>
+</ul>
+</div>
 <div class="section" id="assignment-2-out-of-order">
 <h2>[Assignment 2] Out-of-order<a class="headerlink" href="#assignment-2-out-of-order" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
+<li><p><strong>Did not actually implement out-of-order delivery.</strong> (this rubric item is only applied if you are somehow passing all out-of-order tests, despite not implementing out-of-order delivery)</p></li>
 <li><p><strong>Not placing out-of-order segments in the out-of-order list</strong></p></li>
 <li><p><strong>Inserting duplicate segments in the out-of-order list</strong></p></li>
 </ul>
@@ -351,6 +365,7 @@ to the following issues:</p>
 to the following:</p>
 <ul class="simple">
 <li><p>[Major issue] <strong>Not writing a packet arrival handler</strong>. You should structure your code so that you have a single <a class="reference external" href="project2_tips.html#writing-the-packet-arrival-handler">packet arrival handler</a> that gets called from any state where a packet arrives.</p></li>
+<li><p>[Major issue] <strong>Writing a packet arrival handler that does not follow the exact SEGMENT ARRIVES logic in the RFC.</strong> Most notably, you should not try to reverse-engineer the logic in <code class="docutils literal notranslate"><span class="pre">SEGMENT</span> <span class="pre">ARRIVES</span></code> to figure our the steps to follow based on the current TCP state (the RFC does indicate a number of steps that will depend on the TCP state, but you should check for the value of the TCP state when the RFC tells you to, instead of combing through the logic and trying to extract the steps that only apply to a given state).</p></li>
 <li><p><strong>Writing a packet arrival handler, but still having some of the packet arrival handler logic in the state handling functions</strong>. That said, we will allow some of the packet arrival handling logic to appear in the CLOSED, LISTEN, and SYN-SENT states (and the rest in a packer arrival handler), given that the RFC specifies a specific treatment for those three states, whereas the rest of the states are lumped together.</p></li>
 <li><p><strong>Not writing a function to process the send buffer</strong>. Based on the TCP variables, this function should decide whether to send any packets or not. This function should be called when handling APPLICATION_SEND, and whenever SND.UNA or SND.WND changes (since that may open up the window, allowing more data to be sent).</p></li>
 <li><p><strong>Destroying the multitimer thread each time a single timer expires</strong>. Your multitimer should have a single thread that should not be stopped/re-recreated at any point (it should just be stopped when calling mt_free, once we’re completely done using the multitimer). Most notably, you should not destroy the thread when a single timer expires (to then create a thread when setting the next timer)</p></li>
@@ -477,7 +492,7 @@ new code to implement those features), you must specify the functions you added 
 <li><p><strong>Changes made to pass additional tests</strong>: If you made changes to your code with the goal of passing more tests,
 please specify your original test score, and the new test score. If your work only involved a few minor bug fixes,
 please let us know you did this (but you do not need to specify the exact changes you made). On the other hand,
-if you skipped parts of Project 2b in your original submission, and have written entirely new code, please make
+if you skipped parts of Assignment 2 in your original submission, and have written entirely new code, please make
 sure you have specified this as part of the “substantial new code”, and that you also specify that doing so
 allowed you to pass additional tests.</p></li>
 <li><p><strong>Other changes</strong>: If you made other changes to your code, such as refactoring large parts of your code, make
@@ -490,7 +505,7 @@ new code to your submission, there is a high likelihood that addressing all the 
 Quality score to at least the next score.</p>
 <p>On the other hand, if you are making a resubmission that involves adding substantial new code, please bear in mind
 that the graders could identify issues in that new code that will impact your Code Quality score. That said,
-once you receive the resubmission grading, you will be given the option to revert back to your original Project 2b
+once you receive the resubmission grading, you will be given the option to revert back to your original Project 2
 score if you prefer.</p>
 </div>
 

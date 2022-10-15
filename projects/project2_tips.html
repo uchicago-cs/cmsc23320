@@ -128,7 +128,7 @@
 <p>At first glance, it may seem like Project 2 requires coming up with an effectively complete implementation of TCP before you can test your code. This is a common pitfall in Project 2, that often leads some teams to write huge amounts of code without doing any testing, to then find that nothing is working when they finally start testing their TCP implementation.</p>
 <p>So, as you move on to Project 2, we suggest you set the following intermediate goals in Assignment 1 of chiTCP:</p>
 <ul class="simple">
-<li><p><strong>Pass the Connection Establishment tests</strong>. You can do so by implement the handling of APPLICATION_CONNECT in the CLOSED state (Hint: remember we showed you some basic code for this in the Project 2a lecture), and just enough of the packet arrival handler to implement the three-way handshake (this means you can skip everything related to processing data, FIN segments, etc.). This will ensure you are comfortable with the basics of chiTCP moving forward.</p></li>
+<li><p><strong>Pass the Connection Establishment tests</strong>. You can do so by implement the handling of APPLICATION_CONNECT in the CLOSED state (Hint: remember we showed you some basic code for this in the Project 2 lecture), and just enough of the packet arrival handler to implement the three-way handshake (this means you can skip everything related to processing data, FIN segments, etc.). This will ensure you are comfortable with the basics of chiTCP moving forward.</p></li>
 <li><p><strong>Pass some half-duplex tests with &lt;= 536 bytes</strong>. Write a function that processes the send buffer (and sends its contents) and flesh out enough of the packet arrival handler for you to pass some of the simpler tests. This will ensure the basic aspects of data transfer are working, as you do not yet need to worry about segmenting the send buffer (which means you can write your code under the assumption that everything in the send buffer gets sent in a single packet).</p></li>
 <li><p><strong>Move on to half-duplex tests with &gt; 536 bytes</strong>. This will involve segmenting the send buffer correctly.</p></li>
 <li><p><strong>Move on to the echo tests</strong>. A lot of moving pieces have to be working correctly for data to transfer correctly in both directions.</p></li>
@@ -156,7 +156,7 @@
 <li><p>When you move on to retransmissions, there are several simple tests that involve dropping a single packet. Focus on those first, as they will be easier to debug.</p></li>
 <li><p>Then, move onto the connection establishment/termination drop tests.</p></li>
 <li><p>Finally, see if you can pass the tests with multiple drops.</p></li>
-<li><p>Note: You should only attempt to debug the “random” tests if every other test (including from Project 2a) is working correctly.</p></li>
+<li><p>Note: You should only attempt to debug the “random” tests if every other test (including from Assignment 1) is working correctly.</p></li>
 </ul>
 </li>
 </ul>
@@ -284,7 +284,7 @@ observing the same scores you’re seeing.</p>
 </div>
 <div class="section" id="dealing-with-zero-windows">
 <h2>Dealing with Zero Windows<a class="headerlink" href="#dealing-with-zero-windows" title="Permalink to this heading">¶</a></h2>
-<p>Until you get to Project 2b, your code will have no way of dealing with a host that is advertising a window
+<p>Until you get to Assignment 2, your code will have no way of dealing with a host that is advertising a window
 of zero bytes (a common way of dealing with this is by sending
 <a class="reference external" href="http://www.tcpipguide.com/free/t_TCPWindowManagementIssues-3.htm">probe segments</a>). So, if a host does advertise
 a window with zero bytes, your TCP may get stuck. The tests are designed to avoid, as much as possible, this situation,
