@@ -118,6 +118,10 @@ General
 - **Not updating SND.WND when a packet arrives**
 - **Not locking the pending packet mutex before accessing the list of pending packets**
 - **Not freeing packets once you're done with them**
+- **Sending a packet that doesn't conform to the RFC** (even if it happens to pass the tests). This can include setting incorrect flags, such as setting the SYN flag after the three-way handshake is done.
+- **Making a state transition inconsistent with the RFC**
+- **Incorrect code for checking a condition specified in the RFC**. For example, when comparing values, using ``<`` even when the RFC says to check for ``<=``. This rubric item also encompasses coding mistakes that result in a condition ultimately being checked incorrectly (e.g., writing something like ``a < b < c`` instead of ``a<b && b<c``).
+- **Not locking the pending packets mutex before accessing the pending packets list.**
 
 
 [Assignment 1] 3-way Handshake
@@ -143,6 +147,7 @@ General
 
 - **Not handling the APPLICATION_CLOSE event in both ESTABLISHED and CLOSE_WAIT**. In both cases, you should only send a FIN packet if there is no data left in the send buffer, but you should transition to FIN-WAIT-1 / LAST-ACK (respectively) right away.
 - **Not delaying the FIN packet until all outstanding data has been sent and acknowledged**.
+- **Not handling the APPLICATION_RECEIVE event in FIN_WAIT_1 and FIN_WAIT_2**. TCP can still receive data in those states, which means the application may still call `recv`.
 
 [Assignment 2] Managing the Retransmission Queue
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -172,8 +177,14 @@ General
 - **Doing RTT estimation, but making a minor mistake in computing the RTT**
 - **Doing RTT estimation, but not excluding retransmitted segments from the RTT estimation**
 
+[Assignment 2] Persist timer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- **Did not actually implement the persist timer.** (this rubric item is only applied if you are somehow passing all the persist timer tests, despite not implementing the persist timer)
+- **Not updating SND.NXT when sending a probe segment.**
+
 [Assignment 2] Out-of-order
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- **Did not actually implement out-of-order delivery.** (this rubric item is only applied if you are somehow passing all out-of-order tests, despite not implementing out-of-order delivery)
 - **Not placing out-of-order segments in the out-of-order list**
 - **Inserting duplicate segments in the out-of-order list**
 
@@ -185,6 +196,7 @@ When assessing the design of your code, we will be paying special attention
 to the following:
 
 - [Major issue] **Not writing a packet arrival handler**. You should structure your code so that you have a single `packet arrival handler <project2_tips.html#writing-the-packet-arrival-handler>`__ that gets called from any state where a packet arrives.
+- [Major issue] **Writing a packet arrival handler that does not follow the exact SEGMENT ARRIVES logic in the RFC.** Most notably, you should not try to reverse-engineer the logic in ``SEGMENT ARRIVES`` to figure our the steps to follow based on the current TCP state (the RFC does indicate a number of steps that will depend on the TCP state, but you should check for the value of the TCP state when the RFC tells you to, instead of combing through the logic and trying to extract the steps that only apply to a given state).
 - **Writing a packet arrival handler, but still having some of the packet arrival handler logic in the state handling functions**. That said, we will allow some of the packet arrival handling logic to appear in the CLOSED, LISTEN, and SYN-SENT states (and the rest in a packer arrival handler), given that the RFC specifies a specific treatment for those three states, whereas the rest of the states are lumped together.
 - **Not writing a function to process the send buffer**. Based on the TCP variables, this function should decide whether to send any packets or not. This function should be called when handling APPLICATION_SEND, and whenever SND.UNA or SND.WND changes (since that may open up the window, allowing more data to be sent).
 - **Destroying the multitimer thread each time a single timer expires**. Your multitimer should have a single thread that should not be stopped/re-recreated at any point (it should just be stopped when calling mt_free, once we're completely done using the multitimer). Most notably, you should not destroy the thread when a single timer expires (to then create a thread when setting the next timer)
