@@ -41,7 +41,7 @@ an opportunity to make an optional resubmission (please see the "Optional Resubm
 at the end of this page for more details)
 
 Please note that, to earn an E in Code Quality, you must have made an initial
-good-faith submission for both the Intermediate and Final submissions (i.e., work that would score an N or above).
+good-faith submission for both the Intermediate and Final submissions (i.e., work that would score at least one N or above).
 So, for example, you could technically skip the Intermediate Submission entirely and only make a
 Final Submission but, if you do so, your Code Quality score will be capped at an S.
 
