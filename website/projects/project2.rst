@@ -30,7 +30,7 @@ This project has two required submissions, and an optional resubmission:
 
 .. include:: project2_timeline.txt
 
-Please see `Project 1 rubric <project1_rubric.html>`__ for more details on how each submission will be graded.
+Please see `Project 2 rubric <project2_rubric.html>`__ for more details on how each submission will be graded.
 
 Initializing your Project 2 Repository
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
