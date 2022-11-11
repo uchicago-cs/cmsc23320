@@ -1,13 +1,6 @@
 Project 3 Rubric
 ----------------
 
-.. warning::
-
-   Project 3 has not yet been updated for Autumn 2022. You are welcome to read
-   through the project documentation, but bear in mind that some aspects of the
-   project may change. Please do not start working on the project until instructed
-   to do so in class.
-
 The grading of this project follows a specifications grading approach. If you have not already
 done so, make sure to read our `Grading <../grading.html>`__ page for more details.
 
@@ -34,15 +27,13 @@ You will receive two ESNU scores for this project:
 Submission Timeline
 -------------------
 
-This project has one required submission, and an optional resubmission.
+This project has one required submission, and an optional resubmission:
+
+.. include:: project3_timeline.txt
 
 Unlike Projects 1 and 2, the resubmission can only be used to improve your Completeness score
 (i.e., the score on the automated tests). Since Project 3 is due by the end of the quarter,
 there is not enough to do a full resubmission-regrading cycle.
-
-The deadline for the required submission can be found in the `Course Calendar <../calendar.html>`__.
-Once you have made the required submission, you may resubmit your work up until **Friday, March 18th at 5pm**
-to improve your score on the automated tests.
 
 
 Completeness

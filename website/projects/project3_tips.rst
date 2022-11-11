@@ -1,13 +1,6 @@
 Project 3 Tips
 ==============
 
-.. warning::
-
-   Project 3 has not yet been updated for Autumn 2022. You are welcome to read
-   through the project documentation, but bear in mind that some aspects of the
-   project may change. Please do not start working on the project until instructed
-   to do so in class.
-
 Before you get started, make sure you've read through the `Projects - Getting Started <../projects/started.html>`__ page.
 
 Using the CS Virtual Machine
