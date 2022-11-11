@@ -122,8 +122,8 @@ In this table, the project columns represent the following:
 
 For the homeworks, the **S** column is the minimum number of Satisfactory scores (remember that homeworks do not use the E score, and an S represents a question that has been answered correctly).
 
-Grade Level-up
-~~~~~~~~~~~~~~
+Exam (Grade Level-up)
+~~~~~~~~~~~~~~~~~~~~~
 
 The final exam will be closed-book, closed-notes exam composed 
 of 30 questions, graded on a SNU scale:
