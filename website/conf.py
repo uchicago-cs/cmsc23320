@@ -59,7 +59,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'CMSC 23320 - Foundations of Computer Networks'
-copyright = u'2011-2022, The University of Chicago'
+copyright = u'2011-2024, The University of Chicago'
 author = 'Borja Sotomayor'
 
 # The version info for the project you're documenting, acts as replacement for

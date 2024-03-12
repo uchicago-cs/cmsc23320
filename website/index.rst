@@ -1,11 +1,6 @@
 CMSC 23320 - Foundations of Computer Networks
 =============================================
 
-In Autumn 2022, this class is cross-listed as **MPCS 54233 Foundations of Computer Networks**.
-For simplicity, we will refer to the class as "CMSC 23320", but all the information on this
-website is equally applicable to MPCS 54233. There is no separate website for MPCS 54233 (nor
-are there any course materials that are specific only to MPCS 54233)
-
 Course Staff
 ~~~~~~~~~~~~
 

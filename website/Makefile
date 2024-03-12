@@ -68,6 +68,8 @@ cleanall:
 
 html:
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
+# Workaround for https://github.com/ryan-roemer/sphinx-bootstrap-theme/issues/227
+	@rm -f $(BUILDDIR)/html/_static/js/jquery-fix.js
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
