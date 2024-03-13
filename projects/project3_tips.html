@@ -1,21 +1,20 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
 <title>Project 3 Tips &#8212; CMSC 23320 - Foundations of Computer Networks</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/chiweb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=0bf093e7" />
+    <link rel="stylesheet" type="text/css" href="../_static/chiweb.css?v=4e80c602" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Project 3 Rubric" href="project3_rubric.html" />
@@ -24,10 +23,10 @@
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
-<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js "></script>
-<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
-<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js "></script>
-<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
 
   </head><body>
 
@@ -59,8 +58,8 @@
     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Course Information <span class="caret"></span></a>
     <ul class="dropdown-menu">
         <li><a href="../syllabus.html">Syllabus</a></li>
-        <li><a href="../grading.html">Grading</a></li>
         <li><a href="../calendar.html">Calendar</a></li>
+        <li><a href="../getting-help.html">Getting Help</a></li>
         <li><a href="../academic-honesty.html">Academic Honesty</a></li>
         <li><a href="../code-of-conduct.html">Code of Conduct for Course Staff</a></li>
     </ul>
@@ -80,7 +79,6 @@
     <ul class="dropdown-menu">
         <li><a href="https://uchicago-cs.github.io/student-resource-guide/" target="_blank">UChicago CS Student Resource Guide <i class="fa fa-external-link"></i></a></li>
         <li><a href="https://github.com/uchicago-cs/cmsc23320/tree/master/samples" target="_blank">Code Samples <i class="fa fa-external-link"></i></a></li>
-        <li><a href="../resources/questions.html">Asking Questions</a></li>
         <li><a href="https://uchicago-cs.github.io/debugging-guide" target="_blank">The Debugging Guide <i class="fa fa-external-link"></i></a></li>
         <li><a href="../resources/other.html">Other Resources</a></li>
     </ul>
@@ -115,11 +113,15 @@
       </div>
     <div class="body col-md-9 content" role="main">
       
-  <div class="section" id="project-3-tips">
-<h1>Project 3 Tips<a class="headerlink" href="#project-3-tips" title="Permalink to this heading">¶</a></h1>
+  <section id="project-3-tips">
+<h1>Project 3 Tips<a class="headerlink" href="#project-3-tips" title="Link to this heading">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This page has not yet been updated for Spring 2024.</p>
+</div>
 <p>Before you get started, make sure you’ve read through the <a class="reference external" href="../projects/started.html">Projects - Getting Started</a> page.</p>
-<div class="section" id="using-the-cs-virtual-machine">
-<h2>Using the CS Virtual Machine<a class="headerlink" href="#using-the-cs-virtual-machine" title="Permalink to this heading">¶</a></h2>
+<section id="using-the-cs-virtual-machine">
+<h2>Using the CS Virtual Machine<a class="headerlink" href="#using-the-cs-virtual-machine" title="Link to this heading">¶</a></h2>
 <p>The mininet network simulator in Project 3 must be run with root privileges
 on a Linux machine. If you do not have access to such a machine, we recommend
 using the <a class="reference external" href="https://howto.cs.uchicago.edu/vm:index">CS Virtual Machine</a> (version 202122.2 or higher)
@@ -136,9 +138,9 @@ to the host that is running the VM.</p>
 <p>Please note that, for this to work, the Network settings for your VM (in VirtualBox) must indicate that
 “Adapter 1” is attached to <strong>NAT</strong>. This is the default value but, if you change this value, it will likely prevent chirouter and mininet
 from being able to communicate.</p>
-</div>
-<div class="section" id="resetting-mininet">
-<h2>Resetting Mininet<a class="headerlink" href="#resetting-mininet" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="resetting-mininet">
+<h2>Resetting Mininet<a class="headerlink" href="#resetting-mininet" title="Link to this heading">¶</a></h2>
 <p>If, at any point, Mininet starts behaving in an unexpected manner, specially if you see the following error message
 when running chirouter:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CRITIC</span> <span class="n">Error</span> <span class="k">while</span> <span class="n">processing</span> <span class="n">POX</span> <span class="n">message</span><span class="o">.</span>
@@ -150,17 +152,17 @@ when running chirouter:</p>
 </pre></div>
 </div>
 <p>This will reset Mininet to a clean configuration. Next, try re-running the chirouter and mininet commands as usual.</p>
-</div>
-<div class="section" id="unexpected-udp-packets-on-port-67">
-<h2>Unexpected UDP packets on port 67<a class="headerlink" href="#unexpected-udp-packets-on-port-67" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="unexpected-udp-packets-on-port-67">
+<h2>Unexpected UDP packets on port 67<a class="headerlink" href="#unexpected-udp-packets-on-port-67" title="Link to this heading">¶</a></h2>
 <p>If you are running Mininet on your own machine (as opposed to inside a VM), certain traffic from your machine can leak
 into Mininet. Most notably, a Linux machine running Network Manager (as most Ubuntu distros do) will probably try to
 send DHCP requests (on UDP port 67) to the network interfaces created by Mininet, and these will show up in your logs.
 You can safely ignore them, but you may want to consider using our provided VM, which will provide a more controlled
 environment on which to run Mininet.</p>
-</div>
-<div class="section" id="always-create-protocol-headers-from-scratch">
-<h2>Always create protocol headers from scratch<a class="headerlink" href="#always-create-protocol-headers-from-scratch" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="always-create-protocol-headers-from-scratch">
+<h2>Always create protocol headers from scratch<a class="headerlink" href="#always-create-protocol-headers-from-scratch" title="Link to this heading">¶</a></h2>
 <p>Whenever you are creating a protocol header, it is good practice to create it from scratch, instead of trying to reuse
 an existing header. For example, suppose you receive an IP datagram that will cause an ICMP reply to be sent. You may
 be tempted to take the IP header, make any necessary modifications in-place, and create a new payload. This is very
@@ -169,9 +171,9 @@ that will create a new protocol header, forcing you to think about the exact val
 in every field of the header, than to try to reuse existing headers.</p>
 <p>Note: this does not apply to IP forwarding, where the existing IP header is kept largely intact, except for some
 well-defined modifications.</p>
-</div>
-<div class="section" id="using-wireshark-to-analyze-the-capture-files">
-<h2>Using Wireshark to analyze the capture files<a class="headerlink" href="#using-wireshark-to-analyze-the-capture-files" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="using-wireshark-to-analyze-the-capture-files">
+<h2>Using Wireshark to analyze the capture files<a class="headerlink" href="#using-wireshark-to-analyze-the-capture-files" title="Link to this heading">¶</a></h2>
 <p>Every time you test your router, you should generate a capture file (using the <code class="docutils literal notranslate"><span class="pre">-c</span></code> option to chirouter,
 not by doing a live capture) and then open it with Wireshark. If there are any issues in the Ethernet/IP/ICMP/ARP messages you are
 generating, Wireshark will likely highlight them for you, which will make it easier to catch these
@@ -184,15 +186,15 @@ only to have your datagram silently rejected when it arrives at its destination.
 <p>However, take into account that IPv4 checksum validation is disabled by default in Wireshark.
 You can enable it like this:</p>
 <img alt="../_images/wireshark_checksum.png" class="align-center" src="../_images/wireshark_checksum.png" />
-</div>
-<div class="section" id="asking-questions">
-<h2>Asking questions<a class="headerlink" href="#asking-questions" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="asking-questions">
+<h2>Asking questions<a class="headerlink" href="#asking-questions" title="Link to this heading">¶</a></h2>
 <p>Related to the above, if you need help with your code, please make sure to include
 a capture file in your question. While including relevant logs will also be helpful,
 a capture file will be much more useful in helping us diagnose the issue with your code.</p>
-</div>
-<div class="section" id="common-pitfalls">
-<h2>Common Pitfalls<a class="headerlink" href="#common-pitfalls" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="common-pitfalls">
+<h2>Common Pitfalls<a class="headerlink" href="#common-pitfalls" title="Link to this heading">¶</a></h2>
 <ul>
 <li><p><strong>Computing a checksum over a pointer instead of what the pointer points to</strong>: Suppose you have the following variable:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iphdr_t</span> <span class="o">*</span><span class="n">hdr</span><span class="p">;</span>
@@ -214,8 +216,8 @@ you must use functions like htons and htonl to convert from host order to networ
 network order to host order)</p></li>
 <li><p><strong>… except with checksums</strong>: The <code class="docutils literal notranslate"><span class="pre">cksum</span></code> function already produces a checksum in network order. There is no need to convert it from host order to network order.</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
     </div>
@@ -229,8 +231,8 @@ network order to host order)</p></li>
       
     </p>
     <p>
-        &copy; Copyright 2011-2022, The University of Chicago.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br/>
+        &copy; Copyright 2011-2024, The University of Chicago.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.2.6.<br/>
     </p>
   </div>
 </footer>

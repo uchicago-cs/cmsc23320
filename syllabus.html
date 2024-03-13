@@ -1,33 +1,32 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="./">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
 <title>Syllabus &#8212; CMSC 23320 - Foundations of Computer Networks</title>
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/bootstrap-sphinx.css" />
-    <link rel="stylesheet" type="text/css" href="_static/chiweb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-sphinx.css?v=0bf093e7" />
+    <link rel="stylesheet" type="text/css" href="_static/chiweb.css?v=4e80c602" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Grading" href="grading.html" />
+    <link rel="next" title="Academic Honesty" href="academic-honesty.html" />
     <link rel="prev" title="CMSC 23320 - Foundations of Computer Networks" href="index.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
-<script type="text/javascript" src="_static/js/jquery-1.12.4.min.js "></script>
-<script type="text/javascript" src="_static/js/jquery-fix.js "></script>
-<script type="text/javascript" src="_static/bootstrap-3.4.1/js/bootstrap.min.js "></script>
-<script type="text/javascript" src="_static/bootstrap-sphinx.js "></script>
+<script type="text/javascript" src="_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
 
   </head><body>
 
@@ -59,8 +58,8 @@
     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Course Information <span class="caret"></span></a>
     <ul class="dropdown-menu">
         <li><a href="#">Syllabus</a></li>
-        <li><a href="grading.html">Grading</a></li>
         <li><a href="calendar.html">Calendar</a></li>
+        <li><a href="getting-help.html">Getting Help</a></li>
         <li><a href="academic-honesty.html">Academic Honesty</a></li>
         <li><a href="code-of-conduct.html">Code of Conduct for Course Staff</a></li>
     </ul>
@@ -80,7 +79,6 @@
     <ul class="dropdown-menu">
         <li><a href="https://uchicago-cs.github.io/student-resource-guide/" target="_blank">UChicago CS Student Resource Guide <i class="fa fa-external-link"></i></a></li>
         <li><a href="https://github.com/uchicago-cs/cmsc23320/tree/master/samples" target="_blank">Code Samples <i class="fa fa-external-link"></i></a></li>
-        <li><a href="resources/questions.html">Asking Questions</a></li>
         <li><a href="https://uchicago-cs.github.io/debugging-guide" target="_blank">The Debugging Guide <i class="fa fa-external-link"></i></a></li>
         <li><a href="resources/other.html">Other Resources</a></li>
     </ul>
@@ -101,22 +99,30 @@
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
 <li><a class="reference internal" href="#">Syllabus</a><ul>
 <li><a class="reference internal" href="#course-description">Course description</a></li>
+<li><a class="reference internal" href="#communication">Communication</a></li>
 <li><a class="reference internal" href="#course-organization">Course organization</a><ul>
 <li><a class="reference internal" href="#projects">Projects</a></li>
+<li><a class="reference internal" href="#checkpoint-exams-and-final-exam">Checkpoint Exams (and Final Exam)</a></li>
 <li><a class="reference internal" href="#lectures">Lectures</a></li>
-<li><a class="reference internal" href="#homeworks">Homeworks</a></li>
-<li><a class="reference internal" href="#exam">Exam</a></li>
+<li><a class="reference internal" href="#discussion-sessions">Discussion Sessions</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#books">Books</a></li>
-<li><a class="reference internal" href="#grading">Grading</a></li>
-<li><a class="reference internal" href="#asking-questions">Asking questions</a></li>
+<li><a class="reference internal" href="#grading">Grading</a><ul>
+<li><a class="reference internal" href="#snu-scale">SNU Scale</a></li>
+<li><a class="reference internal" href="#bundles">Bundles</a></li>
+<li><a class="reference internal" href="#final-grade">Final Grade</a></li>
+<li><a class="reference internal" href="#resubmissions">Resubmissions</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#commit-messages">Commit Messages</a></li>
 <li><a class="reference internal" href="#policies">Policies</a><ul>
-<li><a class="reference internal" href="#academic-honesty">Academic Honesty</a></li>
+<li><a class="reference internal" href="#project-late-policy">Project Late Policy</a></li>
+<li><a class="reference internal" href="#missing-checkpoint-exams">Missing Checkpoint Exams</a></li>
+<li><a class="reference internal" href="#grade-disputes">Grade Disputes</a></li>
+<li><a class="reference internal" href="#policy-on-academic-honesty">Policy on Academic Honesty</a></li>
 <li><a class="reference internal" href="#code-of-conduct-for-course-staff">Code of Conduct for Course Staff</a></li>
-<li><a class="reference internal" href="#diversity-statement">Diversity statement</a></li>
-<li><a class="reference internal" href="#accessibility-statement">Accessibility statement</a></li>
+<li><a class="reference internal" href="#accessibility-statement">Accessibility Statement</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#acknowledgements">Acknowledgements</a></li>
@@ -128,8 +134,12 @@
       </div>
     <div class="body col-md-9 content" role="main">
       
-  <div class="section" id="syllabus">
-<h1>Syllabus<a class="headerlink" href="#syllabus" title="Permalink to this heading">¶</a></h1>
+  <section id="syllabus">
+<h1>Syllabus<a class="headerlink" href="#syllabus" title="Link to this heading">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This syllabus is tentative and subject to change.</p>
+</div>
 <div class="admonition-what-happened-to-cmsc-23300-networks-and-distributed-systems admonition">
 <p class="admonition-title">What happened to CMSC 23300 Networks and Distributed Systems?</p>
 <p>This class was offered for many years under a different code and name, <em>CMSC 23300 Networks and Distributed Systems</em>, despite
@@ -137,8 +147,8 @@ the fact that it only covered Networks topics (with Distributed Systems topics c
 Systems</em>). So, in 2020, we renamed CMSC 23300 to better reflect its contents and scope. However, other than the change in
 code and name, CMSC 23320 covers the same topics and uses the same projects as CMSC 23300.</p>
 </div>
-<div class="section" id="course-description">
-<h2>Course description<a class="headerlink" href="#course-description" title="Permalink to this heading">¶</a></h2>
+<section id="course-description">
+<h2>Course description<a class="headerlink" href="#course-description" title="Link to this heading">¶</a></h2>
 <p>This course focuses on the principles and techniques used in the
 development of networked and distributed software. Topics include
 programming with sockets; concurrent programming; data link layer
@@ -162,26 +172,43 @@ when (for example) a web page is requested, from the moment
 you click on a link in your browser to the moment you get the requested
 page back.</p>
 <p><strong>Prerequisites</strong>: This class assumes fluency in C programming, including low-level aspects of C such as bit-level
-operations. The specific course prerequisites are:</p>
+operations. Students must complete either CMSC 15400 Introduction to Computer Systems or CMSC 14400 Systems Programming II
+before taking this class.</p>
+</section>
+<section id="communication">
+<h2>Communication<a class="headerlink" href="#communication" title="Link to this heading">¶</a></h2>
+<p>There are a number of different ways we’ll be communicating about the class.</p>
 <ul class="simple">
-<li><p>Undergraduate students: CMSC 15400 Introduction to Computer Systems</p></li>
-<li><p>MPCS students: MPCS 51040 C Programming or 51100 Advanced Programming.</p></li>
+<li><p><strong>Course materials</strong> - Assignments and other course materials will be made available through this website.</p></li>
+<li><p><strong>Discussion and announcements</strong> - We will use Ed Discussion for course discussion and announcements. If you are
+registered for the class, you will be added to our Canvas site, and will be able to access our Ed Discussion
+site through Canvas.</p></li>
+<li><p><strong>Course work and feedback</strong> - We will use Gradescope to collect your homework and projects and to return feedback.
+You can access our Gradescope site through Canvas.</p></li>
+<li><p><strong>Office hours</strong> - Office hours are times when the course staff are available for you. Instructors and teaching
+assistants will have scheduled office hours in-person and/or online. While most students use this as an opportunity
+to ask about course work, you’re free to ask about or discuss things that are related directly or indirectly with
+the course or with computer science more generally.</p></li>
 </ul>
-</div>
-<div class="section" id="course-organization">
-<h2>Course organization<a class="headerlink" href="#course-organization" title="Permalink to this heading">¶</a></h2>
+<p>Please see the <a class="reference external" href="getting-help.html">Getting Help</a> page for more information on getting help using Ed Discussion and through office hours</p>
+</section>
+<section id="course-organization">
+<h2>Course organization<a class="headerlink" href="#course-organization" title="Link to this heading">¶</a></h2>
 <p>The development of three programming projects accounts for the majority
-of the grade in this course. To successfully complete these projects,
+of the work in this course. To successfully complete these projects,
 students must master fundamental concepts and skills in networking. The
 class meets two times a week for lectures that provide a conceptual
 scaffolding for the projects, but will also cover material that is not
 directly applied in the projects. Some lectures will also be dedicated to
 in-depth discussion of the projects.</p>
-<p>Besides the projects, students will also be evaluated with
-two homeworks and a final exam. The course calendar, including the contents of
+<p>Besides the projects, students must demonstrate mastery of the material covered
+in lectures and in the projects via a series of short <em>checkpoint exams</em> that take place
+throughout the quarter. If a student does not pass a checkpoint exam, they will
+have a chance to make up for it at the final exam.</p>
+<p>The course calendar, including the contents of
 each lecture and project deadlines, is shown in the <a class="reference external" href="calendar.html">Course Calendar</a> page.</p>
-<div class="section" id="projects">
-<h3>Projects<a class="headerlink" href="#projects" title="Permalink to this heading">¶</a></h3>
+<section id="projects">
+<h3>Projects<a class="headerlink" href="#projects" title="Link to this heading">¶</a></h3>
 <p>Throughout the quarter, students will develop three projects:</p>
 <ol class="arabic simple">
 <li><p><strong>chirc</strong>: Implementing an Internet Relay Protocol (IRC)
@@ -196,9 +223,31 @@ second week of the quarter.</p>
 <p>Groups can be changed from one project to another. If your partner drops out of
 the course or you feel they are not contributing to the group’s effort,
 you should make the instructor aware of this.</p>
-</div>
-<div class="section" id="lectures">
-<h3>Lectures<a class="headerlink" href="#lectures" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="checkpoint-exams-and-final-exam">
+<h3>Checkpoint Exams (and Final Exam)<a class="headerlink" href="#checkpoint-exams-and-final-exam" title="Link to this heading">¶</a></h3>
+<p>There will be ten checkpoint exams throughout the quarter, each with a duration between
+10 and 20 minutes. Each exam will be graded on a pass/fail basis:</p>
+<ul class="simple">
+<li><p>If you pass a checkpoint exam, you have demonstrated mastery of the topic covered in
+that exam, and will be exempted from that topic in the final exam.</p></li>
+<li><p>If you do not pass a checkpoint exam, you will get feedback on the exam, and will have
+another chance to demonstrate your mastery of that topic at the final exam.</p></li>
+</ul>
+<p>In other words, the final exam serves <strong>only</strong> to provide a second chance to pass a
+checkpoint exam you did not pass earlier in the quarter. This means that, if you
+pass all the checkpoint exams, you can skip the final exam. It also means you
+could skip all the checkpoint exams, and only take the final exam.</p>
+<p>To get the most out of the checkpoint exams, you should treat them like <strong>practice exams</strong>.
+While some mild preparation is fine, you should not study heavily for them, and should
+use them as a way to <strong>checkpoint</strong> your knowledge of the material (and as an opportunity
+to get feedback on your level of mastery). If you happen to already master the material,
+there is a reward involved (you won’t be “re-tested” on that material at the final),
+but always remember that, if you don’t pass a checkpoint exam, you will have another chance
+to pass it at the final exam.</p>
+</section>
+<section id="lectures">
+<h3>Lectures<a class="headerlink" href="#lectures" title="Link to this heading">¶</a></h3>
 <p>The course meets twice a week for lectures. In most weeks, one
 of the lectures will introduce material that will be expanded upon in
 pre-recorded lectures that are made available that week, and the other
@@ -207,63 +256,271 @@ lecture will focus on the course projects.</p>
 provide suggestions on how to approach the projects, (2) provide general
 feedback on submitted projects, and (3) provide a general forum to
 answer questions about the projects.</p>
-</div>
-<div class="section" id="homeworks">
-<h3>Homeworks<a class="headerlink" href="#homeworks" title="Permalink to this heading">¶</a></h3>
-<p>Many of the lectures (both live and pre-recorded) will cover material that is
-not directly applied in the projects. Your mastery of this material will be
-tested via two homework assignments where you will have to answer questions that involve
-reasoning about the material covered in the lectures (e.g., exercises where
-you must apply the concepts covered in the lectures, as opposed to questions
-that ask you to repeat facts).</p>
-</div>
-<div class="section" id="exam">
-<h3>Exam<a class="headerlink" href="#exam" title="Permalink to this heading">¶</a></h3>
-<p>During Finals Week, we will hold a closed-book exam that will test students’
-knowledge of the material covered in the lectures, as well as the course projects.</p>
-</div>
-</div>
-<div class="section" id="books">
-<h2>Books<a class="headerlink" href="#books" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="discussion-sessions">
+<h3>Discussion Sessions<a class="headerlink" href="#discussion-sessions" title="Link to this heading">¶</a></h3>
+<p>The discussion sessions on Week 1 and 2 will be used to cover
+socket programming and thread programming, which will be required
+for Project 1.</p>
+<p>The rest of the discussion sessions will be used to hold checkpoint exams, immediately
+followed by a discussion of the solutions to that checkpoint exam.</p>
+</section>
+</section>
+<section id="books">
+<h2>Books<a class="headerlink" href="#books" title="Link to this heading">¶</a></h2>
 <p>This course has two <em>suggested</em> texts:</p>
 <ul class="simple">
 <li><p><em>Computer Networks: A Systems Approach</em>, 6th edition, Larry L.
-Peterson and Bruce S. Davie, Morgan Kaufmann 2021.</p></li>
+Peterson and Bruce S. Davie, Morgan Kaufmann 2021. Please note
+this book is freely available at: <a class="reference external" href="https://book.systemsapproach.org/">https://book.systemsapproach.org/</a></p></li>
 <li><p><em>TCP/IP Illustrated, Volume 1: The Protocols</em>, 2nd Edition, Kevin
 Fall and W. Richard Stevens, Addison-Wesley 2011.</p></li>
 </ul>
 <p>These texts are <em>not</em> required, and most students are able to complete the
 class successfully without them. However, they can be a good complement
-to the lectures and projects.</p>
-<p>Please note that <em>Computer Networks: A Systems Approach</em> is freely available
-here: <a class="reference external" href="https://book.systemsapproach.org/">https://book.systemsapproach.org/</a></p>
+to the lectures and projects. To that end, here are the chapters from
+each book that relate to the topics covered in class:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Topics</p></th>
+<th class="head"><p>CNASA</p></th>
+<th class="head"><p>TIV1</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>The Network Protocol Stack</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Link + Network Layer</p></td>
+<td><p>2,3</p></td>
+<td><p>2, 3, 5, 7</p></td>
+</tr>
+<tr class="row-even"><td><p>TCP</p></td>
+<td><p>5 + 6</p></td>
+<td><p>11-15</p></td>
+</tr>
+<tr class="row-odd"><td><p>Application Layer</p></td>
+<td><p>9</p></td>
+<td><p>11</p></td>
+</tr>
+<tr class="row-even"><td><p>Wireless Networks</p></td>
+<td><p>2.7</p></td>
+<td><p>3.5</p></td>
+</tr>
+<tr class="row-odd"><td><p>Routing Protocols</p></td>
+<td><p>3 + 4</p></td>
+<td><p>3.4 + 5</p></td>
+</tr>
+<tr class="row-even"><td><p>Network Security</p></td>
+<td><p>8</p></td>
+<td><p>18</p></td>
+</tr>
+</tbody>
+</table>
+<p>(CNASA: Computer Networks: A Systems Approach; TIV1: TCP/IP Illustrated, Volume 1)</p>
+</section>
+<section id="grading">
+<h2>Grading<a class="headerlink" href="#grading" title="Link to this heading">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This course uses a <em>specifications grading</em> approach. If you have gone through the
+CS 140s sequence, you are likely already familiar with what this entails. If you
+are unfamiliar with specifications grading, please take a look at <a class="reference download internal" download="" href="_downloads/60281d06ad32398574ed6735ff43ed20/specifications_grading.pdf"><code class="xref download docutils literal notranslate"><span class="pre">these</span> <span class="pre">slides</span></code></a>.
+The slides are from a faculty-facing presentation on specifications grading, but
+you should still find them useful to get a sense of the general aspects of
+specifications grading.</p>
 </div>
-<div class="section" id="grading">
-<h2>Grading<a class="headerlink" href="#grading" title="Permalink to this heading">¶</a></h2>
-<p>Please see the <a class="reference external" href="grading.html">Grading</a> page.</p>
-</div>
-<div class="section" id="asking-questions">
-<h2>Asking questions<a class="headerlink" href="#asking-questions" title="Permalink to this heading">¶</a></h2>
-<p>The preferred form of support for this course is through <a class="reference external" href="https://edstem.org/">Ed Discussion</a>
-, an on-line discussion service which can be
-used to ask questions and share useful information with your classmates.
-Students will be added to an Ed Discussion site at the start of the quarter,
-and you will be able to access it through Canvas.</p>
-<p>All questions regarding assignments or material covered in class must be
-sent to Ed Discussion, and not directly to the instructors or TAs, as this
-allows your classmates to join in the discussion and benefit from the
-replies to your question. If you send a message directly to the
-instructor or the TAs, you will get a gentle reminder that your question
-should be asked on Ed Discussion.</p>
-<p>Please see the <a class="reference external" href="https://uchicago-cs.github.io/student-resource-guide/getting-help/questions.html">Asking Questions</a>
-page in the <a class="reference external" href="https://uchicago-cs.github.io/student-resource-guide/">UChicago CS Student Resource Guide</a>
-for guidelines and policies related to asking questions on Ed Discussion.</p>
-<p>Please note that all course announcements will be made through Ed Discussion. It
-is your responsibility to check Ed Discussion often to see if there are any
-announcements.</p>
-</div>
-<div class="section" id="commit-messages">
-<h2>Commit Messages<a class="headerlink" href="#commit-messages" title="Permalink to this heading">¶</a></h2>
+<section id="snu-scale">
+<h3>SNU Scale<a class="headerlink" href="#snu-scale" title="Link to this heading">¶</a></h3>
+<p>All work in this course will be evaluated using a S/N/U scale:</p>
+<ul class="simple">
+<li><p><strong>Satisfactory</strong> (S): The student demonstrates sufficient mastery of the material.</p></li>
+<li><p><strong>Needs Improvement</strong> (N): The student has put in a good-faith effort to complete the work, but revealed a lack of mastery in the material that can be addressed via concrete feedback. The work could become Satisfactory with revisions.</p></li>
+<li><p><strong>Unsatisfactory</strong> (U): The student did not submit any work, or did not complete a sufficient portion of the work (e.g., completed less than half the work that was assigned).</p></li>
+</ul>
+<p>Specific assignments/exams will provide concrete guidance on what is required to achieve each score.</p>
+</section>
+<section id="bundles">
+<h3>Bundles<a class="headerlink" href="#bundles" title="Link to this heading">¶</a></h3>
+<p>There are a total of 20 SNU scores in this class:</p>
+<ul class="simple">
+<li><p><strong>Projects</strong>: There are five project submissions (1A, 1B, 2A, 2B, and 3), and each contributes two SNU
+scores: one for Completeness and one for Code Quality.</p></li>
+<li><p><strong>Checkpoint Exams</strong>: There are ten checkpoint exams, each contributing one SNU score.</p></li>
+</ul>
+<p>These scores are distributed into 10 bundles:</p>
+<ol class="arabic simple">
+<li><dl class="simple">
+<dt><strong>Basic Network Programming</strong></dt><dd><ul class="simple">
+<li><p>Project 1A (Completeness)</p></li>
+<li><p>Project 1A (Code Quality)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Advanced Network Programming</strong></dt><dd><ul class="simple">
+<li><p>Project 1B (Completeness)</p></li>
+<li><p>Project 1B (Code Quality)</p></li>
+<li><p>Checkpoint Exam: Project 1</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Basic TCP</strong></dt><dd><ul class="simple">
+<li><p>Checkpoint Exam: TCP</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Intermediate TCP</strong></dt><dd><ul class="simple">
+<li><p>Project 2A (Completeness)</p></li>
+<li><p>Project 2A (Code Quality)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Advanced TCP</strong></dt><dd><ul class="simple">
+<li><p>Project 2B (Completeness)</p></li>
+<li><p>Project 2B (Code Quality)</p></li>
+<li><p>Checkpoint Exam: Project 2</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Basic Data Link / Network Layer</strong></dt><dd><ul class="simple">
+<li><p>Checkpoint Exam: Data Link and Network Layers</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Intermediate Data Link / Network Layer</strong></dt><dd><ul class="simple">
+<li><p>Project 3 (Completeness)</p></li>
+<li><p>Project 3 (Code Quality)</p></li>
+<li><p>Checkpoint Exam: Project 3</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Advanced Data Link / Network Layer</strong></dt><dd><ul class="simple">
+<li><p>Checkpoint Exam: Wireless Networks</p></li>
+<li><p>Checkpoint Exam: Routing Protocols</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Other Topics</strong></dt><dd><ul class="simple">
+<li><p>Checkpoint Exam: Application Layer</p></li>
+<li><p>Checkpoint Exam: Network Security</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p><strong>Mastery of Networks</strong></p>
+<ul class="simple">
+<li><p>Checkpoint Exam: Challenge Questions</p></li>
+</ul>
+</li>
+</ol>
+<p>For each bundle, there are three possible outcomes:</p>
+<ul class="simple">
+<li><p><strong>Completed</strong>: You earned an S on every component of the bundle.</p></li>
+<li><p><strong>Attempted</strong>: You did not earn an S on every component of the bundle,
+but earned at least an N on every component of the bundle.</p></li>
+<li><p><strong>Not Completed</strong>: You do not meet either of the conditions above.</p></li>
+</ul>
+</section>
+<section id="final-grade">
+<h3>Final Grade<a class="headerlink" href="#final-grade" title="Link to this heading">¶</a></h3>
+<p>Your final grade will be based on the number of bundles you complete and attempt:</p>
+<table class="table-bordered docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head" rowspan="2"><p>Grade</p></th>
+<th class="head" colspan="2"><p>Bundles</p></th>
+<th class="head" rowspan="2"><p>Additional Constraints</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>Attempted</p></th>
+<th class="head"><p>Completed</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>A</p></td>
+<td rowspan="2"><p>10</p></td>
+<td><p>9</p></td>
+<td rowspan="4"><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>A-</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-odd"><td><p>B+</p></td>
+<td rowspan="3"><p>8</p></td>
+<td><p>8</p></td>
+</tr>
+<tr class="row-even"><td><p>B</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-odd"><td><p>B-</p></td>
+<td><p>6</p></td>
+<td rowspan="4"><ul class="simple">
+<li><p>Must complete at least two bundles with a project component.</p></li>
+<li><p>Must complete either the “All Together” bundle, or two exam-only bundles.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>C+</p></td>
+<td rowspan="3"><p>6</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-odd"><td><p>C</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-even"><td><p>C-</p></td>
+<td><p>4</p></td>
+</tr>
+</tbody>
+</table>
+<p>Your grade is meant to reflect the level of mastery you have achieved in the class:</p>
+<ul class="simple">
+<li><p>A-level: Mastery of all/most of the topics covered in the class</p></li>
+<li><p>B-level: Solid understanding of many core network concepts and their application.</p></li>
+<li><p>C-level: Baseline understanding of core network concepts and their application.</p></li>
+</ul>
+<p>Grades for students whose results fall outside the scope of the table will be handled on a case-by-case basis.</p>
+<p>Students who are taking the course solely as a college elective and not for use towards their major or minor
+may take the class Pass/Fail. To earn a P, a student must earn at least a C- in the class.
+We will explain how to request the Pass/Fail option close to the end of the quarter.</p>
+</section>
+<section id="resubmissions">
+<h3>Resubmissions<a class="headerlink" href="#resubmissions" title="Link to this heading">¶</a></h3>
+<p>After a project has been graded and returned to you, you will be allowed to resubmit your
+work to address any feedback we have given you, and to improve your score on that work.</p>
+<p>Project resubmissions in this class will follow these guidelines:</p>
+<ul class="simple">
+<li><p>Resubmissions for Project 1 will open after Project 1B is graded. i.e., there won’t be two
+separate resubmissions for Projects 1A and 1B. You will have roughly one week to make your
+resubmission after Project 1B is returned to you.</p></li>
+<li><p>Same as above, but for Project 2.</p></li>
+<li><p>Project 3 is due on the last week of classes, which means there will not be enough time
+for us to grade it <em>and</em> allow resubmissions before grades are due. You will, however, be
+allowed to make resubmissions to improve your score on the Completeness score (i.e., the automated tests).</p></li>
+</ul>
+<p>Individual projects will include specific instructions and a concrete timeline for resubmissions
+in that project.</p>
+<p>Checkpoint Exams are effectively “resubmitted” at the Final Exam.
+For avoidance of doubt, the Final Exam will not involve the exact same questions as the Checkpoint Exams
+(but will generally test the same concepts/skills).</p>
+</section>
+</section>
+<section id="commit-messages">
+<h2>Commit Messages<a class="headerlink" href="#commit-messages" title="Link to this heading">¶</a></h2>
 <p>Commit messages in your repository should be descriptive and to the point. For example:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Implemented</span> <span class="pre">JOIN</span> <span class="pre">command</span></code></p></li>
@@ -280,62 +537,112 @@ presentation (past presentations can be found <a class="reference external" href
 <p>If you do not want your commit messages included in this presentation, please let the instructor know
 (or, even better, simply take care to write commit messages that are descriptive and to the point, as
 shown above).</p>
-</div>
-<div class="section" id="policies">
-<h2>Policies<a class="headerlink" href="#policies" title="Permalink to this heading">¶</a></h2>
-<div class="section" id="academic-honesty">
-<h3>Academic Honesty<a class="headerlink" href="#academic-honesty" title="Permalink to this heading">¶</a></h3>
-<p>We take academic honesty <strong>very</strong> seriously in this class. Please make sure to
-read our <a class="reference external" href="academic-honesty.html">Academic Honesty</a> page.</p>
-</div>
-<div class="section" id="code-of-conduct-for-course-staff">
-<h3>Code of Conduct for Course Staff<a class="headerlink" href="#code-of-conduct-for-course-staff" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="policies">
+<h2>Policies<a class="headerlink" href="#policies" title="Link to this heading">¶</a></h2>
+<section id="project-late-policy">
+<h3>Project Late Policy<a class="headerlink" href="#project-late-policy" title="Link to this heading">¶</a></h3>
+<p>Late submissions will not be accepted in this class, except under extraordinary circumstances. Please bear in mind that the grading scheme is set up to absorb a reasonable amount of subpar work, and also allows you to resubmit almost all the work in this class.</p>
+<p>To get the most out of this class, you should not treat the initial deadline for
+a project as the date by which you must submit a perfectly polished version of your work (although
+you should still aim to do so!) In other words, it is ok to submit a less-than-ideal piece of work by the
+deadline, as you will have an opportunity to revise it later on.</p>
+<p>That said, to be clear: <strong>if you encounter some sort of emergency (medical, family, etc.) please reach out to us as soon as you are able to do so</strong>. We are more than happy to find ways to provide additional flexibility in these situations. Ideally, you should notify us of these circumstances before the work is due so we can discuss options with you.</p>
+<p>In other words, our late submission policy applies to <em>ordinary</em> circumstances: if you are having a busy week, if your RSO has an event that overlaps with a deadline, etc., then you should rely on the resubmission policy to give you some extra flexibility. Instead of trying to argue for a few extra days to work on an assignment, you should just submit the work you have completed by the deadline, so you can get feedback on that work and use that feedback to improve your work.</p>
+</section>
+<section id="missing-checkpoint-exams">
+<h3>Missing Checkpoint Exams<a class="headerlink" href="#missing-checkpoint-exams" title="Link to this heading">¶</a></h3>
+<p>While we understand that some students may have legitimate reasons to miss a checkpoint exam
+(illness, travel to academic events, etc.), it is unfortunately not logistically feasible
+for us to schedule make-up exams for every checkpoint exam.</p>
+<p>As such, except for approved SDS accommodations, <strong>you can only take a checkpoint exam at its
+scheduled time</strong>. If you are unable to take the exam at that time, the mechanism to make up
+for that missing exam is to complete the corresponding portion of the final exam. Additionally,
+we will share the exam questions (and solutions) with the class after each exam is graded,
+so you will still be able to use those to prepare for the final exam.</p>
+<p>Please remember that these checkpoint exams are effectively optional: if you do not pass
+a checkpoint exam (or are unable to take it), you get a “do-over” at the final exam.</p>
+<p>To be clear, we will be more flexible at the final exam if someone has a legitimate reason
+for not being able to take the final exam at the time scheduled by the Registrar.</p>
+</section>
+<section id="grade-disputes">
+<h3>Grade Disputes<a class="headerlink" href="#grade-disputes" title="Link to this heading">¶</a></h3>
+<p>Except in very specific cases (described below), you cannot dispute
+the score assigned to you on a piece of work. The score you receive on
+a piece of work is meant to convey feedback on your level of mastery,
+and you should take it as an opportunity to understand the areas of
+improvement in your work. You are more than welcome to ask us for
+concrete advice on how to improve your work; we are always more
+than happy to have those kind of conversations with students,
+including going over your code. On the other hand, we will not
+entertain requests to change your score just because you feel your
+work deserved a higher score.</p>
+<p>There is one exception to this: if a grader made a factual mistake in
+your grading. Please note that this only includes cases where a grader
+makes an erroneous statement about your code in their feedback. It
+does not include cases where you simply disagree with whether
+something deserves to be flagged as incorrect.</p>
+<p>For example, suppose you receive a piece of feedback that says
+“Incorrect: Function X did not check that parameter Y is greater than
+zero”. If function X in your code did perform this check, and the
+grader missed this fact (and erroneously gave you that feedback), you
+can ask us to review this decision. Please note that, even if the
+feedback is amended, it may not affect your actual SNU score.</p>
+<p>We ask that you keep these requests brief and to the point: no more
+than a few sentences identifying the exact statement that the grader
+made and the reasons you believe the statement was mistaken, including
+references to specific parts of your code (e.g., “I did check the
+value of the parameter in line 107”). Focus on laying out the facts,
+and nothing else.</p>
+<p>Finally, it is also your responsibility to make these requests in a
+timely manner. Requests to review grading mistakes must be submitted
+no later than one week after a graded piece of work is returned to
+you. After that time, we will not consider any such requests,
+regardless of whether the request is reasonable and justified.</p>
+</section>
+<section id="policy-on-academic-honesty">
+<h3>Policy on Academic Honesty<a class="headerlink" href="#policy-on-academic-honesty" title="Link to this heading">¶</a></h3>
+<p>We take academic honesty very seriously in this class. The
+University of Chicago has a <a class="reference external" href="http://college.uchicago.edu/advising/academic-integrity-student-conduct">formal policy on academic honesty</a>
+that you are expected to adhere to.</p>
+<p>Our <a class="reference external" href="academic-honesty.html">Academic Honesty</a> page provides specific policies
+for this course.  Please make sure to read it! Please also pay
+special attention to the <a class="reference external" href="academic-honesty.html#policy-on-generative-ai">Policy on Generative AI</a>.</p>
+</section>
+<section id="code-of-conduct-for-course-staff">
+<h3>Code of Conduct for Course Staff<a class="headerlink" href="#code-of-conduct-for-course-staff" title="Link to this heading">¶</a></h3>
 <p>This class has a <a class="reference external" href="code-of-conduct.html">Code of Conduct for Course Staff</a>.
 We share this code of conduct with you (the students) so you know the
 expectations we have set for our staff and, while we expect and hope they
 will scrupulously follow this code of conduct, you should let us know if
 you witness or experience a code of conduct violation. This will allow us
 to continue to improve the student experience in this class, and to prevent
-any issues from reocurring.</p>
-</div>
-<div class="section" id="diversity-statement">
-<h3>Diversity statement<a class="headerlink" href="#diversity-statement" title="Permalink to this heading">¶</a></h3>
-<p>The University of Chicago is committed to diversity and rigorous inquiry that arises from multiple
-perspectives. We concur with that commitment and also believe that we have the highest quality
-interactions and can creatively solve more problems when we recognize and share our diversity. We thus
-expect to maintain a productive learning environment based upon open communication, mutual respect,
-and non-discrimination. We view the diversity that students bring to this class as a resource, strength and
-benefit. It is our intent to present materials and activities that are respectful of diversity: gender,
-sexuality, disability, socioeconomic status, ethnicity, race, religious background, and immigration status.
-Any suggestions as to how to further such a positive and open environment in the class will be
-appreciated and given serious consideration.</p>
-<p>If you have a preferred name different from what appears on the class roster, or preferred gender pronouns
-you would like us to use, please let us know.</p>
-</div>
-<div class="section" id="accessibility-statement">
-<h3>Accessibility statement<a class="headerlink" href="#accessibility-statement" title="Permalink to this heading">¶</a></h3>
+any issues from reoccurring.</p>
+</section>
+<section id="accessibility-statement">
+<h3>Accessibility Statement<a class="headerlink" href="#accessibility-statement" title="Link to this heading">¶</a></h3>
 <p>The University of Chicago is committed to ensuring equitable access to our academic
 programs and services. Students with disabilities who have been approved for the use of
 academic accommodations by <a class="reference external" href="https://disabilities.uchicago.edu/">Student Disability Services</a> (SDS) and need a reasonable
 accommodation(s) to participate fully in this course should follow the procedures
 established by SDS for using accommodations. Timely notifications are required in order to
-ensure that your accommodations can be implemented. Please meet with me to discuss
-your access needs in this class after you have completed the SDS procedures for
-requesting accommodations.</p>
-<p>Phone: (773) 702-6000
-Email: <a class="reference external" href="mailto:disabilities&#37;&#52;&#48;uchicago&#46;edu">disabilities<span>&#64;</span>uchicago<span>&#46;</span>edu</a></p>
-</div>
-</div>
-<div class="section" id="acknowledgements">
-<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this heading">¶</a></h2>
+ensure that your accommodations can be implemented.</p>
+<ul class="simple">
+<li><p>Phone: (773) 702-6000</p></li>
+<li><p>Email: <a class="reference external" href="mailto:disabilities&#37;&#52;&#48;uchicago&#46;edu">disabilities<span>&#64;</span>uchicago<span>&#46;</span>edu</a></p></li>
+</ul>
+</section>
+</section>
+<section id="acknowledgements">
+<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Link to this heading">¶</a></h2>
 <p>This syllabus is based on previous CMSC 23300/33300 syllabi developed by
 Prof. Anne Rogers and Prof. Ian Foster from the University of Chicago.</p>
 <p>A number of policies in this class are based on similar policies from
-CMSC 12100, authored by a variety of instructors throughout the years.</p>
+CMSC 12100 and CMSC 14200, authored by a variety of instructors throughout the years.</p>
 <div class="toctree-wrapper compound">
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
     </div>
@@ -349,8 +656,8 @@ CMSC 12100, authored by a variety of instructors throughout the years.</p>
       
     </p>
     <p>
-        &copy; Copyright 2011-2022, The University of Chicago.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br/>
+        &copy; Copyright 2011-2024, The University of Chicago.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.2.6.<br/>
     </p>
   </div>
 </footer>
