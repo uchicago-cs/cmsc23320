@@ -3,7 +3,7 @@ Code of Conduct for Course Staff
 
 Course staff in this class are required to abide by the code of conduct shown below. We've written this code of conduct not because we expect bad behavior from our staff, but because we believe a clear code of conduct is an important piece in creating inclusive spaces, particularly in CS. We share this code of conduct with you (the students) so you know the expectations we have set for our staff and, while we expect and hope they will scrupulously follow this code of conduct, you should let us know if you witness or experience a code of conduct violation. This will allow us to continue to improve the student experience in this class, and to prevent any issues from reoccurring.
 
-Please report any code of conduct violations to Ravi Chugh, via e-mail (rchugh@cs.uchicago.edu). If you would prefer to speak with someone who is not affiliated with this class, please contact Borja Sotomayor (borja@cs.uchicago.edu). All reports will be treated confidentially, and your identity will not be shared with any of the involved parties.
+Please report any code of conduct violations to Borja Sotomayor, via e-mail (borja@cs.uchicago.edu). If you would prefer to speak with someone who is not affiliated with this class, please contact Ravi Chugh (rchugh@cs.uchicago.edu). All reports will be treated confidentially, and your identity will not be shared with any of the involved parties.
 
     As an instructor, teaching assistant (TA), or grader, your work will have a direct impact on our students’ learning experience. While you will have certain duties that are specific to the class you are involved in, there are more overarching principles that we expect you to adhere to as a member of this course's staff.
 
