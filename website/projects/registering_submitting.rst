@@ -1,5 +1,9 @@
 .. _project_registration:
 
+.. warning::
+
+   This page has not yet been updated for Spring 2024.
+
 Project Registration
 --------------------
 

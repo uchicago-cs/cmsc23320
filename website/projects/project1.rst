@@ -1,6 +1,11 @@
 Project 1: chirc
 ----------------
 
+.. warning::
+
+   This page has not yet been updated for Spring 2024. Please note that we
+   expect to make some fairly major changes to Project 1 in Spring 2024.
+
 In this project, you will implement a simple Internet Relay Chat (IRC)
 server called chirc. This project has three goals:
 

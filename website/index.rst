@@ -22,13 +22,13 @@ For more details, please see the `syllabus <syllabus.html>`_.
 
    syllabus.rst
    calendar.rst
+   getting-help.rst
    projects/started.rst
    projects/specs.rst
    projects/registering_submitting.rst
    projects/project1.rst
    projects/project2.rst
    projects/project3.rst
-   resources/questions.rst
    resources/other.rst
 
 

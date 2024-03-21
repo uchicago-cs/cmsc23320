@@ -1,6 +1,10 @@
 Syllabus
 ========
 
+.. warning::
+
+   This syllabus is tentative and subject to change.
+
 .. admonition:: What happened to CMSC 23300 Networks and Distributed Systems?
 
    This class was offered for many years under a different code and name, *CMSC 23300 Networks and Distributed Systems*, despite
@@ -16,6 +20,28 @@ Course description
 **Prerequisites**: This class assumes fluency in C programming, including low-level aspects of C such as bit-level
 operations. Students must complete either CMSC 15400 Introduction to Computer Systems or CMSC 14400 Systems Programming II
 before taking this class.
+
+
+Communication
+-------------
+
+There are a number of different ways we'll be communicating about the class.
+
+- **Course materials** - Assignments and other course materials will be made available through this website.
+
+- **Discussion and announcements** - We will use Ed Discussion for course discussion and announcements. If you are
+  registered for the class, you will be added to our Canvas site, and will be able to access our Ed Discussion
+  site through Canvas.
+
+- **Course work and feedback** - We will use Gradescope to collect your homework and projects and to return feedback.
+  You can access our Gradescope site through Canvas.
+
+- **Office hours** - Office hours are times when the course staff are available for you. Instructors and teaching
+  assistants will have scheduled office hours in-person and/or online. While most students use this as an opportunity
+  to ask about course work, you're free to ask about or discuss things that are related directly or indirectly with
+  the course or with computer science more generally.
+
+Please see the `Getting Help <getting-help.html>`__ page for more information on getting help using Ed Discussion and through office hours
 
 
 Course organization
@@ -71,11 +97,12 @@ There will be ten checkpoint exams throughout the quarter, each with a duration 
 
 In other words, the final exam serves **only** to provide a second chance to pass a
 checkpoint exam you did not pass earlier in the quarter. This means that, if you
-pass all the checkpoint exams, you will not have to take the final exam.
+pass all the checkpoint exams, you can skip the final exam. It also means you
+could skip all the checkpoint exams, and only take the final exam.
 
 To get the most out of the checkpoint exams, you should treat them like **practice exams**.
-While some mild preparation is fine, you should not stress out about them, and should
-use them as a way to **checkpoint** your knowledge of the material (and an opportunity
+While some mild preparation is fine, you should not study heavily for them, and should
+use them as a way to **checkpoint** your knowledge of the material (and as an opportunity
 to get feedback on your level of mastery). If you happen to already master the material,
 there is a reward involved (you won't be "re-tested" on that material at the final),
 but always remember that, if you don't pass a checkpoint exam, you will have another chance
@@ -97,9 +124,12 @@ answer questions about the projects.
 Discussion Sessions
 ~~~~~~~~~~~~~~~~~~~
 
-Most discussion sessions will be used to hold checkpoint exams, but a
-few discussion sessions will also be allocated to cover material relevant
-to the projects.
+The discussion sessions on Week 1 and 2 will be used to cover
+socket programming and thread programming, which will be required
+for Project 1.
+
+The rest of the discussion sessions will be used to hold checkpoint exams, immediately
+followed by a discussion of the solutions to that checkpoint exam.
 
 
 Books
@@ -108,17 +138,37 @@ Books
 This course has two *suggested* texts:
 
 -  *Computer Networks: A Systems Approach*, 6th edition, Larry L.
-   Peterson and Bruce S. Davie, Morgan Kaufmann 2021.
+   Peterson and Bruce S. Davie, Morgan Kaufmann 2021. Please note
+   this book is freely available at: https://book.systemsapproach.org/
 
 -  *TCP/IP Illustrated, Volume 1: The Protocols*, 2nd Edition, Kevin
    Fall and W. Richard Stevens, Addison-Wesley 2011.
 
 These texts are *not* required, and most students are able to complete the
 class successfully without them. However, they can be a good complement
-to the lectures and projects.
+to the lectures and projects. To that end, here are the chapters from
+each book that relate to the topics covered in class:
 
-Please note that *Computer Networks: A Systems Approach* is freely available
-here: https://book.systemsapproach.org/
++----------------------------+-------+------------+
+| Topics                     | CNASA | TIV1       |
++============================+=======+============+
+| The Network Protocol Stack | 1     | 1          |
++----------------------------+-------+------------+
+| Data Link + Network Layer  | 2,3   | 2, 3, 5, 7 |
++----------------------------+-------+------------+
+| TCP                        | 5 + 6 | 11-15      |
++----------------------------+-------+------------+
+| Application Layer          | 9     | 11         |
++----------------------------+-------+------------+
+| Wireless Networks          | 2.7   | 3.5        |
++----------------------------+-------+------------+
+| Routing Protocols          | 3 + 4 | 3.4 + 5    |
++----------------------------+-------+------------+
+| Network Security           | 8     | 18         |
++----------------------------+-------+------------+
+
+(CNASA: Computer Networks: A Systems Approach; TIV1: TCP/IP Illustrated, Volume 1)
+
 
 Grading
 -------
@@ -127,8 +177,10 @@ Grading
 
     This course uses a *specifications grading* approach. If you have gone through the
     CS 140s sequence, you are likely already familiar with what this entails. If you
-    are unfamiliar with specifications grading, please read through our `Specifications Grading <specs_grading.html>`__
-    page. The rest of this syllabus assumes familiarity with specifications grading.
+    are unfamiliar with specifications grading, please take a look at :download:`these slides <specifications_grading.pdf>`.
+    The slides are from a faculty-facing presentation on specifications grading, but
+    you should still find them useful to get a sense of the general aspects of
+    specifications grading.
 
 SNU Scale
 ~~~~~~~~~
@@ -162,32 +214,32 @@ These scores are distributed into 10 bundles:
     - Checkpoint Exam: Project 1
 
 3. **Basic TCP**
+    - Checkpoint Exam: TCP
+
+4. **Intermediate TCP**
     - Project 2A (Completeness)
     - Project 2A (Code Quality)
 
-4. **Intermediate TCP**
+5. **Advanced TCP**
     - Project 2B (Completeness)
     - Project 2B (Code Quality)
     - Checkpoint Exam: Project 2
 
-5. **Advanced TCP**
-    - Checkpoint Exam: TCP
-
 6. **Basic Data Link / Network Layer**
-    - Checkpoint Exam: Data Link Layer
-    - Checkpoint Exam: Network Layer
+    - Checkpoint Exam: Data Link and Network Layers
 
-7. **Advanced Data Link / Network Layer**
+7. **Intermediate Data Link / Network Layer**
     - Project 3 (Completeness)
     - Project 3 (Code Quality)
-    - Exam: Project 3
+    - Checkpoint Exam: Project 3
 
-8. **DNS**
-    - Checkpoint Exam: DNS
+8. **Advanced Data Link / Network Layer**
+    - Checkpoint Exam: Wireless Networks
+    - Checkpoint Exam: Routing Protocols
 
 9. **Other Topics**
-    - Checkpoint Exam: Wireless Networks
-    - Checkpoint Exam: Other Topics
+    - Checkpoint Exam: Application Layer
+    - Checkpoint Exam: Network Security
 
 10. **Mastery of Networks**
 
@@ -221,7 +273,7 @@ Your final grade will be based on the number of bundles you complete and attempt
 +-------+           +-----------+                                                                             |
 | B     |           | 7         |                                                                             |
 +-------+           +-----------+-----------------------------------------------------------------------------+
-| B-    |           | 6         | - Must complete at least two bundles with a project components.             |
+| B-    |           | 6         | - Must complete at least two bundles with a project component.              |
 +-------+-----------+-----------+ - Must complete either the “All Together” bundle, or two exam-only bundles. |
 | C+    | 6         | 6         |                                                                             |
 +-------+           +-----------+                                                                             |
@@ -236,13 +288,16 @@ Your grade is meant to reflect the level of mastery you have achieved in the cla
 - B-level: Solid understanding of many core network concepts and their application.
 - C-level: Baseline understanding of core network concepts and their application.
 
-The grade for students whose performance does not fit into any of the rows in the above table will
-be determined on a case-by-case basis.
+Grades for students whose results fall outside the scope of the table will be handled on a case-by-case basis.
+
+Students who are taking the course solely as a college elective and not for use towards their major or minor
+may take the class Pass/Fail. To earn a P, a student must earn at least a C- in the class.
+We will explain how to request the Pass/Fail option close to the end of the quarter.
 
 Resubmissions
 ~~~~~~~~~~~~~
 
-After a piece of work has been graded and returned to you, you will be allowed to resubmit your
+After a project has been graded and returned to you, you will be allowed to resubmit your
 work to address any feedback we have given you, and to improve your score on that work.
 
 Project resubmissions in this class will follow these guidelines:
@@ -261,31 +316,6 @@ in that project.
 Checkpoint Exams are effectively "resubmitted" at the Final Exam.
 For avoidance of doubt, the Final Exam will not involve the exact same questions as the Checkpoint Exams
 (but will generally test the same concepts/skills).
-
-
-Asking questions
-----------------
-
-The preferred form of support for this course is through `Ed Discussion <https://edstem.org/>`__
-, an on-line discussion service which can be
-used to ask questions and share useful information with your classmates.
-Students will be added to an Ed Discussion site at the start of the quarter,
-and you will be able to access it through Canvas.
-
-All questions regarding assignments or material covered in class must be
-sent to Ed Discussion, and not directly to the instructors or TAs, as this
-allows your classmates to join in the discussion and benefit from the
-replies to your question. If you send a message directly to the
-instructor or the TAs, you will get a gentle reminder that your question
-should be asked on Ed Discussion.
-
-Please see the `Asking Questions <https://uchicago-cs.github.io/student-resource-guide/getting-help/questions.html>`__
-page in the `UChicago CS Student Resource Guide <https://uchicago-cs.github.io/student-resource-guide/>`__
-for guidelines and policies related to asking questions on Ed Discussion.
-
-Please note that all course announcements will be made through Ed Discussion. It
-is your responsibility to check Ed Discussion often to see if there are any
-announcements.
 
 
 Commit Messages
@@ -396,18 +426,9 @@ University of Chicago has a `formal policy on academic honesty
 <http://college.uchicago.edu/advising/academic-integrity-student-conduct>`_
 that you are expected to adhere to.
 
-Our `Academic Honesty <honesty.html>`__ page provides specific policies
+Our `Academic Honesty <academic-honesty.html>`__ page provides specific policies
 for this course.  Please make sure to read it! Please also pay
-special attention to the `Policy on Generative AI <honesty.html#policy-on-generative-ai>`__.
-
-Please note: if you are found in violation of our `academic honesty
-policy <honesty.html>`__, either through sharing or through copying,
-the effect on your grade will be severe. At minimum, your final course
-grade will drop one full step (letter). At maximum, you will receive
-an F in the course.  Furthermore, please note that the instructors are
-required to report all infractions to the College. If you violate our
-academic honesty policy, you may be subject to further penalty or
-disciplinary action by the College.
+special attention to the `Policy on Generative AI <academic-honesty.html#policy-on-generative-ai>`__.
 
 Code of Conduct for Course Staff
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -429,9 +450,7 @@ programs and services. Students with disabilities who have been approved for the
 academic accommodations by `Student Disability Services <https://disabilities.uchicago.edu/>`__ (SDS) and need a reasonable
 accommodation(s) to participate fully in this course should follow the procedures
 established by SDS for using accommodations. Timely notifications are required in order to
-ensure that your accommodations can be implemented. Please contact Víctor Almaraz Argueta, the Course Coordinator, to discuss
-your access needs in this class after you have completed the SDS procedures for
-requesting accommodations.
+ensure that your accommodations can be implemented.
 
 - Phone: (773) 702-6000
 - Email: disabilities@uchicago.edu
@@ -450,7 +469,6 @@ CMSC 12100 and CMSC 14200, authored by a variety of instructors throughout the y
    :maxdepth: 2
    :hidden:
 
-   grading.rst
    academic-honesty.rst
    code-of-conduct.rst
 

@@ -1,6 +1,10 @@
 Project 3 Rubric
 ----------------
 
+.. warning::
+
+   This page has not yet been updated for Spring 2024.
+
 The grading of this project follows a specifications grading approach. If you have not already
 done so, make sure to read our `Grading <../grading.html>`__ page for more details.
 

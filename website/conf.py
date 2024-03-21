@@ -120,15 +120,15 @@ todo_include_todos = False
 
 html_sidebars = {'*': None,
                  'syllabus': ['localtoc.html'],
-                 'grading':  ['localtoc.html'],
+                 'getting-help':  ['localtoc.html'],
                  'projects/*_rubric':  ['localtoc.html'],
                  'projects/*_tips':  ['localtoc.html']}
 
 
 html_context = {"web_navbar": [("Course Information", [
                                     ("Syllabus", "syllabus", False),
-                                    ("Grading", "grading", False),
                                     ("Calendar", "calendar", False),
+                                    ("Getting Help", "getting-help", False),
                                     ("Academic Honesty", "academic-honesty", False),
                                     ("Code of Conduct for Course Staff", "code-of-conduct", False),
                                  ]),
@@ -142,7 +142,6 @@ html_context = {"web_navbar": [("Course Information", [
                                  ("Resources", [
                                      ("UChicago CS Student Resource Guide", "https://uchicago-cs.github.io/student-resource-guide/", True),
                                      ("Code Samples", "https://github.com/uchicago-cs/cmsc23320/tree/master/samples", True),
-                                     ("Asking Questions", "resources/questions", False),
                                      ("The Debugging Guide", "https://uchicago-cs.github.io/debugging-guide", True),
                                      ("Other Resources", "resources/other", False),
                                  ])

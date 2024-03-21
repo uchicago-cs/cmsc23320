@@ -3,6 +3,10 @@
 Projects - Getting Started
 --------------------------
 
+.. warning::
+
+   This page has not yet been updated for Spring 2024.
+
 Before working on the projects, we recommend you check out the `UChicago CS Student Resource Guide <https://uchicago-cs.github.io/student-resource-guide/>`__. In particular, please note the following:
 
 - You must use a `CS Software Environment <https://uchicago-cs.github.io/student-resource-guide/environment/environment.html>`__ in this class. We may not be able to provide support if you develop and run your code in a different environment. The Student Resource Guide describes several ways of accessing a CS Software Environment (including remote options).
