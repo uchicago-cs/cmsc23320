@@ -7,7 +7,7 @@ Spring 2024 Course Calendar
 
 Lectures take place in Ryerson 251 on Tuesdays and Thursdays from 12:30pm from 1:50pm CDT.
 
-Discussion sessions take place in Harper 140 on Thursdays from 3:30pm to 5:50pm CDT.
+Discussion sessions take place in Harper 140 on Thursdays from 3:30pm to 4:50pm CDT.
 
 Additional pre-recorded lectures will also be made available most weeks. When both the live
 lecture and pre-recorded lecture have the same topic, that means the live lecture will be
