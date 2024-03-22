@@ -9,7 +9,11 @@ Before working on the projects, we recommend you check out the `UChicago CS Stud
   If you are using a Windows system, you must specifically use WSL (Windows Subsystem for Linux).
   We will not be able to provide support if your use Windows PowerShell.
 
-- That said, bear in mind that our code has only been tests on a `CS Software Environment <https://uchicago-cs.github.io/student-resource-guide/environment/environment.html>`__. If you would prefer to use such an environment, the Student Resource Guide describes several ways of accessing a CS Software Environment (including remote options).
+  Please note that, if you are running on the CS Linux servers, you do not need to install any
+  of the software required by the course projects (e.g., CMake, pytest, etc.). It is already
+  installed on those servers.
+
+- Bear in mind that our code has only been tested on a `CS Software Environment <https://uchicago-cs.github.io/student-resource-guide/environment/environment.html>`__. If you would prefer to use such an environment, the Student Resource Guide describes several ways of accessing a CS Software Environment (including remote options).
 
   You can also run your development environment of choice on your personal computer, and connect to a CS machine only to compile, run, and test your code. This is particularly easy to set up using `Visual Studio Code <https://code.visualstudio.com/>`__. The Student Resource Guide includes instructions on how to set up Visual Studio Code, and how to set it up to SSH into a CS environment.
 
