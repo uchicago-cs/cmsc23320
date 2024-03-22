@@ -2,9 +2,12 @@
   you to know how to use data structures like linked lists, hash tables, etc.
   (and how to choose the right data structure for a given task). However, this is a Networks class,
   not a Data Structures class, and you should *not* be spending any time implementing
-  such data structures. Instead, you should use existing data structure libraries
-  (our `Academic Honesty <../academic_honesty.html>`__ page lists a few publicly-available
-  libraries that you are welcome to use).
+  such data structures. The projects largely use the following data structure
+  implementations:
+
+  - `utlist <https://troydhanson.github.io/uthash/utlist.html>`_: A linked list library
+  - `uthash <https://troydhanson.github.io/uthash/>`_: A hash table for C structures
+  - `SDS <https://github.com/antirez/sds>`_: Simple Dynamic Strings
 
   Implementing your own linked list, hash table, etc. from scratch is considered
   a major issue. While you may think that implementing your own data structure

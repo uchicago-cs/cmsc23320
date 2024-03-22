@@ -1,62 +1,63 @@
 Project 1 Tips
 ==============
 
-.. warning::
-
-   This page has not yet been updated for Spring 2024. Please note that we
-   expect to make some fairly major changes to Project 1 in Spring 2024.
-
 Before you get started
 ----------------------
 
-- To help you get started, we are providing you with a `trivial solution <https://github.com/uchicago-cs/cmsc23320/blob/master/samples/chirc/project1-trivial.c>`_
-  to Assignment 1 of the chirc project that will pass nearly half of the tests. While this can be a good starting point,
-  please note that you will still have to make major modifications to that solution
-  (in particular, your solution cannot manually create the socket; you must
-  use ``getaddrinfo`` instead).
-- When writing the socket code for your chirc server, make sure you take a look at the 
-  `socket samples <https://github.com/uchicago-cs/cmsc23320/tree/master/samples/sockets>`_ covered
-  in the pre-recorded lecture on socket programming. They can provide a good starting point for writing a multi-threaded
-  server (note: you won't have to write a multi-threaded server for Assignment 1 of chirc)
+When writing the socket code for your chirc server, make sure you take a look at the
+`socket samples <https://github.com/uchicago-cs/cmsc23320/tree/master/samples/sockets>`_ covered
+in the lecture on socket programming. They can provide a good starting point for writing a multi-threaded
+server (note: you won't have to write a multi-threaded server for Assignment 1 of chirc)
 
-General Tips
-------------
+Make sure you also read through the chirc project documentation, but
+*don’t be intimidated by the length of the project specification*.
+The main reason the specification is long is to carve out
+exactly what part of the IRC specification you have to focus on. You
+will actually be implementing a fairly small subset of the IRC
+specification.
 
--  *Don’t be intimidated by the length of the project specification*.
-   The main reason the specification is long is to carve out
-   exactly what part of the IRC specification you have to focus on. You
-   will actually be implementing a fairly small subset of the IRC
-   specification.
+You should also take a moment to look through the provided starter
+code. We suggest starting at the ``main.c`` file, and then gaining
+some familiarity with the data structures specified in ``chirc.h``.
+We suggest focusing on the server context (``chirc_ctx_t``), the
+connections (``chirc_connection_t``), the users (``chirc_user_t``) and the messages
+(``chirc_message_t``) since those will be the most relevant at the
+start of the project. You should also look at the functions provided
+for those data structures (in ``ctx.h``, ``connection.h``, ``user.h``, and ``message.h``).
 
--  Your implementation will require using data structures to store
-   collections of users, channels, etc. Do not implement these
-   data structures from scratch! (in fact, you will be penalized if you do)
-   You should use existing data structure
-   implementations; we suggest you specifically
-   use libraries like `utlist <https://troydhanson.github.io/uthash/utlist.html>`_
-   and `uthash <https://troydhanson.github.io/uthash/>`_.
+Next, the chirc server uses the following libraries:
+
+- The `uthash <https://troydhanson.github.io/uthash/>`__ library
+  for hash tables. The chirc code is written to abstract away most uses of that library
+  (e.g., to add a new connection to the server context, you would use
+  the ``chirc_ctx_add_connection`` function instead of manipulating
+  the hash table yourself).
    
--  Working with strings (specially parsing and tokenizing them) in C can be
-   a pain. Using a library like `SDS <https://github.com/antirez/sds>`_
-   can ease that pain.
+- The `SDS <https://github.com/antirez/sds>`__  library to manipulate strings.
+  SDS strings can be manipulated (i.e., C string functions will
+  work with SDS strings), but the SDS library provides functions
+  that makes certain tasks easier. That said, you should not need
+  to do much string manipulation, since most of that is handled
+  by the provided code.
 
--  As you read the project specification and the IRC specification
-   itself, you’ll notice that the same patterns come up over and over.
-   In a sense, your server is just a piece of software that transforms
-   IRC messages into other IRC messages (altering the state of the
-   server in the process). So, before you start tackling individual
-   tests, we suggest you read through the whole document and design your
-   server in such a way that it is easy for you to (1) parse incoming
-   messages, (2) add support for new messages, (3) manipulate the state
-   of the server (e.g., “create a new channel”, “add a new user to this
-   channel”, etc.), and (4) construct outgoing messages. Doing so can
-   pay off handsomely later on, even if you spend the first few days
-   feeling like you’re not making any progress towards passing any tests.
-   
--  When processing multiple commands (starting in Assigment 4), a data
-   structure that can come in handy is a `dispatch table <http://en.wikipedia.org/wiki/Dispatch_table>`_ 
-   or `branch table <http://en.wikipedia.org/wiki/Branch_table>`_. You can find some 
-   sample code `here <https://github.com/uchicago-cs/cmsc23320/tree/master/samples/dispatch_table>`_.
+Project 1 Warm-up
+-----------------
+
+For the warm-up exercise, we suggest you do the following:
+
+- Update ``chirc_run`` in ``main.c`` to create a passive socket and listen for new connections.
+- When a connection is accepted, initialize a ``chirc_connection_t`` struct. This includes creating
+  a ``chirc_user_t`` struct to place in the ``peer.user`` field of the ``chirc_connection_t`` struct.
+- When a message arrives through the connection, use the functions in ``message.h`` to parse the message.
+- Once a ``NICK`` and ``USER`` message have arrived, send a ``001`` reply (once again using functions in ``message.h`` to create the reply).
+
+While you can implement all this inside ``chirc_run``, it will also pay off to do the following:
+
+- Implement the ``chirc_connection_send_message`` function in ``connection.c``. This function
+  will provide an abstraction over "sending a message through a connection".ç
+- Start looking at the ``handlers.c`` module. Once you have a basic implementation
+  in ``chirc_run``, you should look into implementing a ``NICK`` and ``USER`` handler
+  in the ``handlers.c`` module.
 
 Resolving IRC Ambiguities
 -------------------------
@@ -156,23 +157,6 @@ Like a production IRC server, if you replicate the behaviour of our reference im
 Common Issues in chirc Assignment 1
 -----------------------------------
 
-``strtok``
-~~~~~~~~~~
-
-A common approach to tokenizing IRC commands is to use the standard ``strtok`` function. This is a good approach, but you should take into account that ``strtok`` is not thread-safe and will be the source of inexplicable bugs and race conditions once you start supporting multiple clients. You should use ``strtok_r`` instead (the reentrant version of ``strtok``).
-
-Additionally, a common pitfall when using ``strtok`` is to (incorrectly) assume that ``strtok`` returns a fresh new string with each call. That is not the case. Given a string like this::
-
-    USER user * * :User\0
-    
-Successive calls to strtok will transform the string in place into this::
-
-    USER\0user\0*\0*\0:User\0
-    
-What strtok returns is pointers into that transformed string, not fresh new strings. That means that if you overwrite the original string (e.g., if you wipe out a buffer), the tokens will also be wiped out. Depending on how you've written your solution, you may need to ``strdup`` the tokens.
-
-For more details, please read the ``strtok`` man page, which explains ``strtok``'s internal behavior in detail.
-
 Error handling in sockets
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -187,19 +171,12 @@ If you're confused about how to use sockets, we recommend you read `Beej's Guide
 Common Issues in chirc Assignment 4
 -----------------------------------
 
-Poor code organization
-~~~~~~~~~~~~~~~~~~~~~~
-
-In chirc Assigmnent 4, your server starts getting more complex. Do not cram all your code into
-a single main.c file: you should think about separating your C code into multiple C files, each responsible for a specific part of the program.
-
 Inadequate locking
 ~~~~~~~~~~~~~~~~~~
 
 In chirc Assigmnent 4, you now have multiple clients connecting to your server, with one thread
 per client. So remember: shared data structures have to be protected by locks, and this includes 
 any socket that multiple threads could write to. POSIX requires system calls to be thread-safe (i.e., the OS itself should guarantee that send() is done atomically). However, even though a call to send() can be thread-safe, you have to account for the fact that send() might not send all your data in one go. So, you still need to gain exclusive access to the socket until a full message has been sent; otherwise, you could see partial messages interleaved by multiple threads.
-
 
 Common C Issues
 ---------------
@@ -228,20 +205,3 @@ Arbitrary sizes
 
 Whenever the amount of needed memory is unknown, a common approach is to allocate an arbitrary amount of memory. This is fine, but you should be a little more methodical than just allocating several kilobytes of memory as an arbitrarily large amount. Whenever you allocate an arbitrary amount of memory, you should specify what your assumptions are (e.g., are you assuming that each line of the MOTD file won't have more than X characters?) and, ideally, a note on what conditions would make your program crash given that arbitrary limit.
 
-``strcat`` vs ``sprintf``
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-In some languages, creating a new string from multiple other substrings is as easy as doing this::
-
-    s = ""
-    s += "USER "
-    s += username
-    s += " * * "
-    s += ":" + user_fullname
-
-Some students tend to translate this pattern directly into C by using the ``strcat`` function
-(creating messages and replies by making successive calls to strcat, starting from an empty string).
-Resist the urge to do this: this is very hard to read, and will not scale well once you have to
-build more complex messages.
-
-Consider using ``sprintf`` instead to create messages and replies.

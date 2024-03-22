@@ -1,15 +1,12 @@
 Project 1 Rubric
 ================
 
-.. warning::
-
-   This page has not yet been updated for Spring 2024. Please note that we
-   expect to make some fairly major changes to Project 1 in Spring 2024.
-
 The grading of this project follows a specifications grading approach. If you have not already
-done so, make sure to read our `Grading <../grading.html>`__ page for more details.
+done so, make sure to read our `Grading <../syllabus.html#grading>`__ section of
+the syllabus for more details.
 
-You will receive two ESNU scores for this project:
+This project has two submissions: Project 1A and Project 1B. You will receive two SNU scores
+for each submission:
 
 - **Completeness score**: This score will be determined solely by the result of running
   the automated tests, as these give a measure of how *complete* your implementation
@@ -29,52 +26,55 @@ You will receive two ESNU scores for this project:
   - *Style*: This encompasses your adherence
     to our `Style Guide <https://uchicago-cs.github.io/student-resource-guide/style-guide/c.html>`__.
 
+This project also has a "Warm-up" submission. This submission does not contribute
+to your final grade but, if you complete it, you will be more likely to get an S in Project 1A.
+To complete the "Warm-up" submission, you must score at least 90/100 points on the autograder
+for that submission.
+
 Submission Timeline
 -------------------
 
-This project has two required submissions, and an optional resubmission:
+The exact timeline of submissions will be the following:
 
 .. include:: project1_timeline.txt
 
-You will receive feedback on your Intermediate Submission before your Final Submission is due,
-which means you can also treat the Final Submission as a way to improve and resubmit the work
-you did in the Intermediate Submission.
+You will receive some early feedback from the Project 1 Warm-up before Project 1A is due.
 
-The scores you receive on the Final Submission will be your Project 1 scores for the purposes
-of computing your grade in the class. That said, once your Final Submission is graded, you will have
-an opportunity to make an optional resubmission (please see the "Optional Resubmission" section
-at the end of this page for more details)
-
-Please note that, to earn an E in Code Quality, you must have made an initial
-good-faith submission for both the Intermediate and Final submissions (i.e., work that would score at least one N or above).
-So, for example, you could technically skip the Intermediate Submission entirely and only make a
-Final Submission but, if you do so, your Code Quality score will be capped at an S.
-
-Additionally, if you only submit chirc Assigmment 1 (with effectively no work on Assignment 4) as your Final Submission,
-you will receive a U in that submission.
+Project 1A will likely not be graded until after Project 1B is due. Once Project 1B is graded,
+you will have an opportunity to make a resubmission for Project 1A and/or 1B (and, at that point,
+you will have feedback for both Project 1A and 1B). We will
+post more details about the resubmission process at a later time.
 
 Completeness
 ------------
 
-The Completeness component will be determined by running the following command::
+The Completeness components will be determined by running the following commands:
+
+- Project 1 Warm-up::
+
+    make assignment-1
+
+- Project 1A::
 
     make assignment-1+4
+
+- Project 1B::
+
+    make assignment-5
 
 (see `Using the automated tests <http://chi.cs.uchicago.edu/chirc/testing.html#using-the-automated-tests>`_
 in the chirc documentation for more details on these commands)
 
-Your ESNU score will then be determined as follows:
+Your SNU score will then be determined as follows:
 
 +---------------------+----------------------+
 | Grade               | Points on tests      |
 +=====================+======================+
-| Excellent           | at least 95          |
+| Satisfactory        | at least 90          |
 +---------------------+----------------------+
-| Satisfactory        | at least 75          |
+| Needs Improvement   | at least 60          |
 +---------------------+----------------------+
-| Needs Improvement   | at least 25          |
-+---------------------+----------------------+
-| Ungradable          | less than 25         |
+| Unsatisfactory      | less than 60         |
 +---------------------+----------------------+
 
 
@@ -90,16 +90,14 @@ implementation (i.e., Assignments 1 and 4 of the chirc project), so some of the 
 will not apply to the Intermediate Submission (most notably, you are not expected to use
 threads or mutexes in that submission).
 
-In general, your ESNU score will be determined as follows:
+In general, your SNU score will be determined as follows:
 
-- **Excellent**: Your submission has none of the issues described below or, at most,
-  has only a few minor mistakes or small style issues that would be trivial to address.
 - **Satisfactory**: Your submission has a few of the issues described below (but no
-  major issues), and would only require minor changes to get to an E.
+  major issues).
 - **Needs Improvement**: Your submission has several of the issues described below,
-  or at least one major issue. In general, major revisions would be required to
-  get up to an S or E.
-- **Ungradable**: Your submission does not constitute a good-faith effort to complete
+  or at least one major issue. In general, major revisions are typically required to
+  get up to an S.
+- **Unsatisfactory**: Your submission does not constitute a good-faith effort to complete
   the work. This includes not submitting any work at all, as well as submitting
   only placeholder code (e.g., code that includes functions for all the required
   IRC commands, but where the functions are empty or filled with "TODO"s, etc.)
@@ -115,6 +113,8 @@ Correctness
 
 When assessing the correctness of your code, we will be paying special attention
 to the following:
+
+**All Submissions (including Warm-up)**
 
 - **Not checking the return value of send()**: send is not guaranteed to send the entire buffer you provide, which you can only tell by looking at the return value (Beej's Guide for Socket Programming provides a `ready-to-use solution to this <https://beej.us/guide/bgnet/html/#sendall>`__, which you're welcome to use). Of course, send could also fail, and you need to check its return value for this too.
 - [Major Issue] **Not checking the return value of any socket function**.
@@ -135,11 +135,17 @@ to the following:
 - **Not implementing something that is clearly specified in the project**, even if
   the tests don't test for it (e.g., implementing a command almost completely,
   but not implementing one of the replies).
+
+**Project 1A and 1B**
+
 - [Major issue] **Not protecting access to shared data structures (list/hash of channels, users, etc.) with a mutex**
 - **Using mutexes to protect access to data structures, but doing so inconsistently** (e.g., locking the mutex only when writing to a data structure, and not when reading).
 - **Using mutexes to protect access to data structures, but not to socket accesses**. See `Inadequate locking <project1_tips.html#inadequate-locking>`__ in the Project 1 tips for more details.
 - [Major issue] **Using a Big Fat Lock** (i.e., using a single mutex lock for the entire server).
 
+.. warning::
+
+   We may update the Project 1A and 1B rubrics further before those projects are assigned.
 
 Design
 ~~~~~~
@@ -147,25 +153,24 @@ Design
 When assessing the design of your code, we will be paying special attention
 to the following:
 
+**All Submissions (including Warm-up)**
+
 * **How you reassemble incoming messages**: You should have some sort of array
   for assembling the next message that will be processed, separate from the buffer
   you pass to the ``recv()`` function (which cannot be a 1-byte array; using a 1-byte
   array when calling ``recv()`` is considered a major issue).
-* **How you process IRC commands**: Ideally, you should use some sort of dispatch
-  table data structure (as described in the `Project 1 Tips <project1_tips.html>`__)
-  instead of a long sequence of "if command == JOIN then...", "if command == PRIVMSG then",
-  etc. blocks of code.
-* **How you store server data**. You should ideally use some sort of "server context"
-  structure, which we will discuss in the Project 1b lecture in Week 2.
-* **Module/function decomposition**. We will look at whether you divided your implementation
-  into modules and functions that make sense. This includes avoiding repeated/redundant code,
-  ensuring that each function performs a well-defined task, and putting related functions in the
-  same module (i.e., the same C file). Please note that there are two potential major issues
-  in this regard:
 
-  * [Major Issue] **Putting all your code in a single main() function**
-  * [Major Issue (in Project 1b)] **Putting all your code in a single C file**. Please
-    note that this is ok in Project 1a.
+**Project 1A and 1B**
+
+* **How you parse IRC commands**: You should use the provided ``message.c`` module,
+  instead of rolling out your own parsing code.
+* **How you process IRC commands**: You should use the provided ``handlers.c`` module,
+  instead of reinventing a message dispatching mechanism.
+* **Implementing modules or structs that are already provided to you**: Make sure you
+  don't reinvent the wheel: we provide a lot of scaffolding code, and you should make
+  sure to use the data structures and functions provided to you.
+* [Major issue] **Putting all your code inside the chirc_run function**: This is fine
+  for the Project 1 Warm-up, but not once you move on to Project 1A
 
 Style
 ~~~~~
@@ -184,6 +189,10 @@ attention to:
   return value. Please note that not documenting your functions at all
   (as opposed to doing so inconsistently or not following the style guide)
   is considered a major issue.
+
+  Note: The chirc code uses `Doxygen-style function comments <https://www.doxygen.nl/manual/docblocks.html>`__.
+  These are different from the ones in the style guide, but we will also accept
+  them if you want to follow that style instead.
 - **Consistent indentation**: Your code must follow one of the
   `allowed indentation styles <https://uchicago-cs.github.io/student-resource-guide/style-guide/c.html#indentation>`__ consistently.
 - **Clarity**: Your code must be easy to read and understand. This
@@ -203,75 +212,75 @@ There are a couple of other issues that we care about across all projects:
 
 .. include:: additional_penalties.txt
 
+..
+    Optional Resubmission
+    ---------------------
 
-Optional Resubmission
----------------------
+    When you receive your graded Project 1, you have two options:
 
-When you receive your graded Project 1, you have two options:
+    #. If you are satisfied with the scores you have received, no action is necessary on your end.
+       Your scores on Project 1 will be used to compute your `Base Grade <../grading.html#base-grade>`__.
+    #. You may make an *optional* resubmission to address any feedback you received in Project 1,
+       which may increase your scores in the project.
 
-#. If you are satisfied with the scores you have received, no action is necessary on your end.
-   Your scores on Project 1 will be used to compute your `Base Grade <../grading.html#base-grade>`__.
-#. You may make an *optional* resubmission to address any feedback you received in Project 1,
-   which may increase your scores in the project.
-   
-Note: You *cannot* make a resubmission if you got E's on both Completeness and Code Quality. If you
-are in this situation and want additional feedback on your grading, please ask on Ed.
-   
-If you decide to make a resubmission, you **MUST** edit the ``README`` file in the root of
-the repository to include the following information:
+    Note: You *cannot* make a resubmission if you got E's on both Completeness and Code Quality. If you
+    are in this situation and want additional feedback on your grading, please ask on Ed.
 
-- **Rubric items you have addressed**: Rubric items that appear selected on Gradescope (under "Manual Grading") 
-  represent issues that had an impact on your Code Quality score. To facilitate the work of the
-  graders, you must list each rubric item you have addressed, with the following information:
-  
-  - The rubric item description, exactly as it appears on Gradescope.
-  - 1-2 sentences explaining how you addressed the rubric item.
-  - If the work you did on the rubric item is limited to a few lines of code, specify the filename and line number(s),
-    If your work on this rubric item involved deeper changes to your code, you do not need to list every single line 
-    of code you changed, but you should try to give the graders a general sense of where you made the changes, including
-    a few examples if possible
-    (e.g., "I combed through the code to make sure I was using descriptive variable names; for example, I changed ``c`` to
-    ``channel`` in several functions", "I reorganized functions ``foo()``, ``bar()``, and ``baz()`` as requested", etc.)
+    If you decide to make a resubmission, you **MUST** edit the ``README`` file in the root of
+    the repository to include the following information:
 
-- **Rubric items you have NOT addressed**: It is also important that you let us know what rubric items you
-  decided not to address, as this will expedite the work of the graders. For these rubric items, it is enough
-  to provide a list of the rubric item descriptions (exactly as they appear on Gradescope)
-    
-- **Substantial new code added to your submission**: If you added substantial new code that was not present in your
-  original submission (e.g., if your original submission did not implement several commands, and you have now included
-  new code to implement those commands), you must specify the affected files, as well as the new functionality that
-  is added by the new code. For example, you could include something like this::
-  
-    New files: channel.c/channel.h
-    Modified files: ctx.h, handlers.c
-  
-    Channels: Added a channel hash table to ctx_t (in ctx.h) and a channel_t struct 
-              (in channel.h) to add support for channels.
-              
-    JOIN and PART: Implemented the handlers for these commands in handlers.c
-    
-    QUIT: Updated the QUIT handler to relay the QUIT to users on the same channel as the user.
-  
-- **Changes made to pass additional tests**: If you made changes to your code with the goal of passing more tests,
-  please specify your original test score, and the new test score. If your work only involved a few minor bug fixes,
-  please let us know you did this (but you do not need to specify the exact changes you made). On the other hand, 
-  if you skipped parts of Project 1b in your original submission, and have written entirely new code, please make 
-  sure you have specified this as part of the "substantial new code", and that you also specify that doing so
-  allowed you to pass additional tests.
-- **Other changes**: If you made other changes to your code, such as refactoring large parts of your code, make
-  sure to specify this too.
+    - **Rubric items you have addressed**: Rubric items that appear selected on Gradescope (under "Manual Grading")
+      represent issues that had an impact on your Code Quality score. To facilitate the work of the
+      graders, you must list each rubric item you have addressed, with the following information:
 
-You should consider the ``README`` file as important as the changes you are making to your code: **resubmissions
-that do not include the information requested above may not be graded at all**.
+      - The rubric item description, exactly as it appears on Gradescope.
+      - 1-2 sentences explaining how you addressed the rubric item.
+      - If the work you did on the rubric item is limited to a few lines of code, specify the filename and line number(s),
+        If your work on this rubric item involved deeper changes to your code, you do not need to list every single line
+        of code you changed, but you should try to give the graders a general sense of where you made the changes, including
+        a few examples if possible
+        (e.g., "I combed through the code to make sure I was using descriptive variable names; for example, I changed ``c`` to
+        ``channel`` in several functions", "I reorganized functions ``foo()``, ``bar()``, and ``baz()`` as requested", etc.)
 
-In general, if you are making a resubmission that only involved addressing rubric items, without adding substantial
-new code to your submission, there is a high likelihood that addressing all the rubric items will bump your Code
-Quality score to at least the next score.
+    - **Rubric items you have NOT addressed**: It is also important that you let us know what rubric items you
+      decided not to address, as this will expedite the work of the graders. For these rubric items, it is enough
+      to provide a list of the rubric item descriptions (exactly as they appear on Gradescope)
 
-On the other hand, if you are making a resubmission that involves adding substantial new code, please bear in mind
-that the graders could identify issues in that new code that will impact your Code Quality score. That said,
-once you receive the resubmission grading, you will be given the option to revert back to your original Project 1
-score if you prefer.
+    - **Substantial new code added to your submission**: If you added substantial new code that was not present in your
+      original submission (e.g., if your original submission did not implement several commands, and you have now included
+      new code to implement those commands), you must specify the affected files, as well as the new functionality that
+      is added by the new code. For example, you could include something like this::
+
+        New files: channel.c/channel.h
+        Modified files: ctx.h, handlers.c
+
+        Channels: Added a channel hash table to ctx_t (in ctx.h) and a channel_t struct
+                  (in channel.h) to add support for channels.
+
+        JOIN and PART: Implemented the handlers for these commands in handlers.c
+
+        QUIT: Updated the QUIT handler to relay the QUIT to users on the same channel as the user.
+
+    - **Changes made to pass additional tests**: If you made changes to your code with the goal of passing more tests,
+      please specify your original test score, and the new test score. If your work only involved a few minor bug fixes,
+      please let us know you did this (but you do not need to specify the exact changes you made). On the other hand,
+      if you skipped parts of Project 1b in your original submission, and have written entirely new code, please make
+      sure you have specified this as part of the "substantial new code", and that you also specify that doing so
+      allowed you to pass additional tests.
+    - **Other changes**: If you made other changes to your code, such as refactoring large parts of your code, make
+      sure to specify this too.
+
+    You should consider the ``README`` file as important as the changes you are making to your code: **resubmissions
+    that do not include the information requested above may not be graded at all**.
+
+    In general, if you are making a resubmission that only involved addressing rubric items, without adding substantial
+    new code to your submission, there is a high likelihood that addressing all the rubric items will bump your Code
+    Quality score to at least the next score.
+
+    On the other hand, if you are making a resubmission that involves adding substantial new code, please bear in mind
+    that the graders could identify issues in that new code that will impact your Code Quality score. That said,
+    once you receive the resubmission grading, you will be given the option to revert back to your original Project 1
+    score if you prefer.
 
 
 

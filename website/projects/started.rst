@@ -3,13 +3,13 @@
 Projects - Getting Started
 --------------------------
 
-.. warning::
-
-   This page has not yet been updated for Spring 2024.
-
 Before working on the projects, we recommend you check out the `UChicago CS Student Resource Guide <https://uchicago-cs.github.io/student-resource-guide/>`__. In particular, please note the following:
 
-- You must use a `CS Software Environment <https://uchicago-cs.github.io/student-resource-guide/environment/environment.html>`__ in this class. We may not be able to provide support if you develop and run your code in a different environment. The Student Resource Guide describes several ways of accessing a CS Software Environment (including remote options).
+- You should be able to compile and run the code for this class on Windows, MacOS, and Linux.
+  If you are using a Windows system, you must specifically use WSL (Windows Subsystem for Linux).
+  We will not be able to provide support if your use Windows PowerShell.
+
+- That said, bear in mind that our code has only been tests on a `CS Software Environment <https://uchicago-cs.github.io/student-resource-guide/environment/environment.html>`__. If you would prefer to use such an environment, the Student Resource Guide describes several ways of accessing a CS Software Environment (including remote options).
 
   You can also run your development environment of choice on your personal computer, and connect to a CS machine only to compile, run, and test your code. This is particularly easy to set up using `Visual Studio Code <https://code.visualstudio.com/>`__. The Student Resource Guide includes instructions on how to set up Visual Studio Code, and how to set it up to SSH into a CS environment.
 
@@ -24,7 +24,6 @@ Before working on the projects, we recommend you check out the `UChicago CS Stud
 
 - The `C style guide <https://uchicago-cs.github.io/student-resource-guide/style-guide/c.html>`__ in the Student Resource Guide is the normative style guide for this class.
 
-- When asking questions on Ed Discussion, you must follow the guidelines in the `Asking Questions <https://uchicago-cs.github.io/student-resource-guide/getting-help/questions.html>`__ page in the Student Resource Guide.
+- When asking questions on Ed Discussion, you must follow the guidelines in the `Asking Questions <../getting-help.html#asking-questions>`__ section of our `Getting Help <../getting-help.html>`__ page.
 
 - `The Debugging Guide <https://uchicago-cs.github.io/debugging-guide/>`__, linked from the guide, contains useful suggestions and pointers on how to debug your C code.
-

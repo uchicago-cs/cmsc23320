@@ -74,7 +74,6 @@ in your projects (in fact, many students have used them in past years):
 - `utlist <https://troydhanson.github.io/uthash/utlist.html>`_: A linked list library
 - `uthash <https://troydhanson.github.io/uthash/>`_: A hash table for C structures
 - `SDS <https://github.com/antirez/sds>`_: Simple Dynamic Strings
-- `bstring <http://bstring.sourceforge.net/>`_: The Better String Library
 
 
 Policy on Generative AI
