@@ -99,23 +99,20 @@
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
 <li><a class="reference internal" href="#">Project 1 Tips</a><ul>
 <li><a class="reference internal" href="#before-you-get-started">Before you get started</a></li>
-<li><a class="reference internal" href="#general-tips">General Tips</a></li>
+<li><a class="reference internal" href="#project-1-warm-up">Project 1 Warm-up</a></li>
 <li><a class="reference internal" href="#resolving-irc-ambiguities">Resolving IRC Ambiguities</a></li>
 <li><a class="reference internal" href="#common-issues-in-chirc-assignment-1">Common Issues in chirc Assignment 1</a><ul>
-<li><a class="reference internal" href="#strtok"><code class="docutils literal notranslate"><span class="pre">strtok</span></code></a></li>
 <li><a class="reference internal" href="#error-handling-in-sockets">Error handling in sockets</a></li>
 <li><a class="reference internal" href="#general-socket-confusion">General socket confusion</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#common-issues-in-chirc-assignment-4">Common Issues in chirc Assignment 4</a><ul>
-<li><a class="reference internal" href="#poor-code-organization">Poor code organization</a></li>
 <li><a class="reference internal" href="#inadequate-locking">Inadequate locking</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#common-c-issues">Common C Issues</a><ul>
 <li><a class="reference internal" href="#bad-memory-management">Bad memory management</a></li>
 <li><a class="reference internal" href="#arbitrary-sizes">Arbitrary sizes</a></li>
-<li><a class="reference internal" href="#strcat-vs-sprintf"><code class="docutils literal notranslate"><span class="pre">strcat</span></code> vs <code class="docutils literal notranslate"><span class="pre">sprintf</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -128,59 +125,58 @@
       
   <section id="project-1-tips">
 <h1>Project 1 Tips<a class="headerlink" href="#project-1-tips" title="Link to this heading">¶</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has not yet been updated for Spring 2024. Please note that we
-expect to make some fairly major changes to Project 1 in Spring 2024.</p>
-</div>
 <section id="before-you-get-started">
 <h2>Before you get started<a class="headerlink" href="#before-you-get-started" title="Link to this heading">¶</a></h2>
-<ul class="simple">
-<li><p>To help you get started, we are providing you with a <a class="reference external" href="https://github.com/uchicago-cs/cmsc23320/blob/master/samples/chirc/project1-trivial.c">trivial solution</a>
-to Assignment 1 of the chirc project that will pass nearly half of the tests. While this can be a good starting point,
-please note that you will still have to make major modifications to that solution
-(in particular, your solution cannot manually create the socket; you must
-use <code class="docutils literal notranslate"><span class="pre">getaddrinfo</span></code> instead).</p></li>
-<li><p>When writing the socket code for your chirc server, make sure you take a look at the
+<p>When writing the socket code for your chirc server, make sure you take a look at the
 <a class="reference external" href="https://github.com/uchicago-cs/cmsc23320/tree/master/samples/sockets">socket samples</a> covered
-in the pre-recorded lecture on socket programming. They can provide a good starting point for writing a multi-threaded
-server (note: you won’t have to write a multi-threaded server for Assignment 1 of chirc)</p></li>
-</ul>
-</section>
-<section id="general-tips">
-<h2>General Tips<a class="headerlink" href="#general-tips" title="Link to this heading">¶</a></h2>
-<ul class="simple">
-<li><p><em>Don’t be intimidated by the length of the project specification</em>.
+in the lecture on socket programming. They can provide a good starting point for writing a multi-threaded
+server (note: you won’t have to write a multi-threaded server for Assignment 1 of chirc)</p>
+<p>Make sure you also read through the chirc project documentation, but
+<em>don’t be intimidated by the length of the project specification</em>.
 The main reason the specification is long is to carve out
 exactly what part of the IRC specification you have to focus on. You
 will actually be implementing a fairly small subset of the IRC
-specification.</p></li>
-<li><p>Your implementation will require using data structures to store
-collections of users, channels, etc. Do not implement these
-data structures from scratch! (in fact, you will be penalized if you do)
-You should use existing data structure
-implementations; we suggest you specifically
-use libraries like <a class="reference external" href="https://troydhanson.github.io/uthash/utlist.html">utlist</a>
-and <a class="reference external" href="https://troydhanson.github.io/uthash/">uthash</a>.</p></li>
-<li><p>Working with strings (specially parsing and tokenizing them) in C can be
-a pain. Using a library like <a class="reference external" href="https://github.com/antirez/sds">SDS</a>
-can ease that pain.</p></li>
-<li><p>As you read the project specification and the IRC specification
-itself, you’ll notice that the same patterns come up over and over.
-In a sense, your server is just a piece of software that transforms
-IRC messages into other IRC messages (altering the state of the
-server in the process). So, before you start tackling individual
-tests, we suggest you read through the whole document and design your
-server in such a way that it is easy for you to (1) parse incoming
-messages, (2) add support for new messages, (3) manipulate the state
-of the server (e.g., “create a new channel”, “add a new user to this
-channel”, etc.), and (4) construct outgoing messages. Doing so can
-pay off handsomely later on, even if you spend the first few days
-feeling like you’re not making any progress towards passing any tests.</p></li>
-<li><p>When processing multiple commands (starting in Assigment 4), a data
-structure that can come in handy is a <a class="reference external" href="http://en.wikipedia.org/wiki/Dispatch_table">dispatch table</a>
-or <a class="reference external" href="http://en.wikipedia.org/wiki/Branch_table">branch table</a>. You can find some
-sample code <a class="reference external" href="https://github.com/uchicago-cs/cmsc23320/tree/master/samples/dispatch_table">here</a>.</p></li>
+specification.</p>
+<p>You should also take a moment to look through the provided starter
+code. We suggest starting at the <code class="docutils literal notranslate"><span class="pre">main.c</span></code> file, and then gaining
+some familiarity with the data structures specified in <code class="docutils literal notranslate"><span class="pre">chirc.h</span></code>.
+We suggest focusing on the server context (<code class="docutils literal notranslate"><span class="pre">chirc_ctx_t</span></code>), the
+connections (<code class="docutils literal notranslate"><span class="pre">chirc_connection_t</span></code>), the users (<code class="docutils literal notranslate"><span class="pre">chirc_user_t</span></code>) and the messages
+(<code class="docutils literal notranslate"><span class="pre">chirc_message_t</span></code>) since those will be the most relevant at the
+start of the project. You should also look at the functions provided
+for those data structures (in <code class="docutils literal notranslate"><span class="pre">ctx.h</span></code>, <code class="docutils literal notranslate"><span class="pre">connection.h</span></code>, <code class="docutils literal notranslate"><span class="pre">user.h</span></code>, and <code class="docutils literal notranslate"><span class="pre">message.h</span></code>).</p>
+<p>Next, the chirc server uses the following libraries:</p>
+<ul class="simple">
+<li><p>The <a class="reference external" href="https://troydhanson.github.io/uthash/">uthash</a> library
+for hash tables. The chirc code is written to abstract away most uses of that library
+(e.g., to add a new connection to the server context, you would use
+the <code class="docutils literal notranslate"><span class="pre">chirc_ctx_add_connection</span></code> function instead of manipulating
+the hash table yourself).</p></li>
+<li><p>The <a class="reference external" href="https://github.com/antirez/sds">SDS</a>  library to manipulate strings.
+SDS strings can be manipulated (i.e., C string functions will
+work with SDS strings), but the SDS library provides functions
+that makes certain tasks easier. That said, you should not need
+to do much string manipulation, since most of that is handled
+by the provided code.</p></li>
+</ul>
+</section>
+<section id="project-1-warm-up">
+<h2>Project 1 Warm-up<a class="headerlink" href="#project-1-warm-up" title="Link to this heading">¶</a></h2>
+<p>For the warm-up exercise, we suggest you do the following:</p>
+<ul class="simple">
+<li><p>Update <code class="docutils literal notranslate"><span class="pre">chirc_run</span></code> in <code class="docutils literal notranslate"><span class="pre">main.c</span></code> to create a passive socket and listen for new connections.</p></li>
+<li><p>When a connection is accepted, initialize a <code class="docutils literal notranslate"><span class="pre">chirc_connection_t</span></code> struct. This includes creating
+a <code class="docutils literal notranslate"><span class="pre">chirc_user_t</span></code> struct to place in the <code class="docutils literal notranslate"><span class="pre">peer.user</span></code> field of the <code class="docutils literal notranslate"><span class="pre">chirc_connection_t</span></code> struct.</p></li>
+<li><p>When a message arrives through the connection, use the functions in <code class="docutils literal notranslate"><span class="pre">message.h</span></code> to parse the message.</p></li>
+<li><p>Once a <code class="docutils literal notranslate"><span class="pre">NICK</span></code> and <code class="docutils literal notranslate"><span class="pre">USER</span></code> message have arrived, send a <code class="docutils literal notranslate"><span class="pre">001</span></code> reply (once again using functions in <code class="docutils literal notranslate"><span class="pre">message.h</span></code> to create the reply).</p></li>
+</ul>
+<p>While you can implement all this inside <code class="docutils literal notranslate"><span class="pre">chirc_run</span></code>, it will also pay off to do the following:</p>
+<ul class="simple">
+<li><p>Implement the <code class="docutils literal notranslate"><span class="pre">chirc_connection_send_message</span></code> function in <code class="docutils literal notranslate"><span class="pre">connection.c</span></code>. This function
+will provide an abstraction over “sending a message through a connection”.ç</p></li>
+<li><p>Start looking at the <code class="docutils literal notranslate"><span class="pre">handlers.c</span></code> module. Once you have a basic implementation
+in <code class="docutils literal notranslate"><span class="pre">chirc_run</span></code>, you should look into implementing a <code class="docutils literal notranslate"><span class="pre">NICK</span></code> and <code class="docutils literal notranslate"><span class="pre">USER</span></code> handler
+in the <code class="docutils literal notranslate"><span class="pre">handlers.c</span></code> module.</p></li>
 </ul>
 </section>
 <section id="resolving-irc-ambiguities">
@@ -206,20 +202,6 @@ unfortunately, a common attribute of many network specifications). If you’re u
 </section>
 <section id="common-issues-in-chirc-assignment-1">
 <h2>Common Issues in chirc Assignment 1<a class="headerlink" href="#common-issues-in-chirc-assignment-1" title="Link to this heading">¶</a></h2>
-<section id="strtok">
-<h3><code class="docutils literal notranslate"><span class="pre">strtok</span></code><a class="headerlink" href="#strtok" title="Link to this heading">¶</a></h3>
-<p>A common approach to tokenizing IRC commands is to use the standard <code class="docutils literal notranslate"><span class="pre">strtok</span></code> function. This is a good approach, but you should take into account that <code class="docutils literal notranslate"><span class="pre">strtok</span></code> is not thread-safe and will be the source of inexplicable bugs and race conditions once you start supporting multiple clients. You should use <code class="docutils literal notranslate"><span class="pre">strtok_r</span></code> instead (the reentrant version of <code class="docutils literal notranslate"><span class="pre">strtok</span></code>).</p>
-<p>Additionally, a common pitfall when using <code class="docutils literal notranslate"><span class="pre">strtok</span></code> is to (incorrectly) assume that <code class="docutils literal notranslate"><span class="pre">strtok</span></code> returns a fresh new string with each call. That is not the case. Given a string like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">USER</span> <span class="n">user</span> <span class="o">*</span> <span class="o">*</span> <span class="p">:</span><span class="n">User</span>\<span class="mi">0</span>
-</pre></div>
-</div>
-<p>Successive calls to strtok will transform the string in place into this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">USER</span>\<span class="mi">0</span><span class="n">user</span>\<span class="mi">0</span><span class="o">*</span>\<span class="mi">0</span><span class="o">*</span>\<span class="mi">0</span><span class="p">:</span><span class="n">User</span>\<span class="mi">0</span>
-</pre></div>
-</div>
-<p>What strtok returns is pointers into that transformed string, not fresh new strings. That means that if you overwrite the original string (e.g., if you wipe out a buffer), the tokens will also be wiped out. Depending on how you’ve written your solution, you may need to <code class="docutils literal notranslate"><span class="pre">strdup</span></code> the tokens.</p>
-<p>For more details, please read the <code class="docutils literal notranslate"><span class="pre">strtok</span></code> man page, which explains <code class="docutils literal notranslate"><span class="pre">strtok</span></code>’s internal behavior in detail.</p>
-</section>
 <section id="error-handling-in-sockets">
 <h3>Error handling in sockets<a class="headerlink" href="#error-handling-in-sockets" title="Link to this heading">¶</a></h3>
 <p>Don’t forget to check the return value of the socket functions: your code is likely to behave strangely if you don’t react appropriately to certain error conditions (e.g., a return code of 0 from recv means that the client has disconnected; in chirc Assignment 4 you will need to “log out” the user from the IRC server when that happens).</p>
@@ -231,11 +213,6 @@ unfortunately, a common attribute of many network specifications). If you’re u
 </section>
 <section id="common-issues-in-chirc-assignment-4">
 <h2>Common Issues in chirc Assignment 4<a class="headerlink" href="#common-issues-in-chirc-assignment-4" title="Link to this heading">¶</a></h2>
-<section id="poor-code-organization">
-<h3>Poor code organization<a class="headerlink" href="#poor-code-organization" title="Link to this heading">¶</a></h3>
-<p>In chirc Assigmnent 4, your server starts getting more complex. Do not cram all your code into
-a single main.c file: you should think about separating your C code into multiple C files, each responsible for a specific part of the program.</p>
-</section>
 <section id="inadequate-locking">
 <h3>Inadequate locking<a class="headerlink" href="#inadequate-locking" title="Link to this heading">¶</a></h3>
 <p>In chirc Assigmnent 4, you now have multiple clients connecting to your server, with one thread
@@ -265,22 +242,6 @@ that if the original string is modified (or free()’d) it will affect the copy 
 <section id="arbitrary-sizes">
 <h3>Arbitrary sizes<a class="headerlink" href="#arbitrary-sizes" title="Link to this heading">¶</a></h3>
 <p>Whenever the amount of needed memory is unknown, a common approach is to allocate an arbitrary amount of memory. This is fine, but you should be a little more methodical than just allocating several kilobytes of memory as an arbitrarily large amount. Whenever you allocate an arbitrary amount of memory, you should specify what your assumptions are (e.g., are you assuming that each line of the MOTD file won’t have more than X characters?) and, ideally, a note on what conditions would make your program crash given that arbitrary limit.</p>
-</section>
-<section id="strcat-vs-sprintf">
-<h3><code class="docutils literal notranslate"><span class="pre">strcat</span></code> vs <code class="docutils literal notranslate"><span class="pre">sprintf</span></code><a class="headerlink" href="#strcat-vs-sprintf" title="Link to this heading">¶</a></h3>
-<p>In some languages, creating a new string from multiple other substrings is as easy as doing this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-<span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;USER &quot;</span>
-<span class="n">s</span> <span class="o">+=</span> <span class="n">username</span>
-<span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot; * * &quot;</span>
-<span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;:&quot;</span> <span class="o">+</span> <span class="n">user_fullname</span>
-</pre></div>
-</div>
-<p>Some students tend to translate this pattern directly into C by using the <code class="docutils literal notranslate"><span class="pre">strcat</span></code> function
-(creating messages and replies by making successive calls to strcat, starting from an empty string).
-Resist the urge to do this: this is very hard to read, and will not scale well once you have to
-build more complex messages.</p>
-<p>Consider using <code class="docutils literal notranslate"><span class="pre">sprintf</span></code> instead to create messages and replies.</p>
 </section>
 </section>
 </section>

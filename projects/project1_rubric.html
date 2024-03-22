@@ -107,7 +107,6 @@
 <li><a class="reference internal" href="#other-code-quality-issues">Other Code Quality Issues</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#optional-resubmission">Optional Resubmission</a></li>
 </ul>
 </li>
 </ul>
@@ -118,14 +117,11 @@
       
   <section id="project-1-rubric">
 <h1>Project 1 Rubric<a class="headerlink" href="#project-1-rubric" title="Link to this heading">¶</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has not yet been updated for Spring 2024. Please note that we
-expect to make some fairly major changes to Project 1 in Spring 2024.</p>
-</div>
 <p>The grading of this project follows a specifications grading approach. If you have not already
-done so, make sure to read our <a class="reference external" href="../grading.html">Grading</a> page for more details.</p>
-<p>You will receive two ESNU scores for this project:</p>
+done so, make sure to read our <a class="reference external" href="../syllabus.html#grading">Grading</a> section of
+the syllabus for more details.</p>
+<p>This project has two submissions: Project 1A and Project 1B. You will receive two SNU scores
+for each submission:</p>
 <ul class="simple">
 <li><p><strong>Completeness score</strong>: This score will be determined solely by the result of running
 the automated tests, as these give a measure of how <em>complete</em> your implementation
@@ -147,9 +143,13 @@ to our <a class="reference external" href="https://uchicago-cs.github.io/student
 </ul>
 </li>
 </ul>
+<p>This project also has a “Warm-up” submission. This submission does not contribute
+to your final grade but, if you complete it, you will be more likely to get an S in Project 1A.
+To complete the “Warm-up” submission, you must score at least 90/100 points on the autograder
+for that submission.</p>
 <section id="submission-timeline">
 <h2>Submission Timeline<a class="headerlink" href="#submission-timeline" title="Link to this heading">¶</a></h2>
-<p>This project has two required submissions, and an optional resubmission:</p>
+<p>The exact timeline of submissions will be the following:</p>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Submission</p></th>
@@ -158,47 +158,61 @@ to our <a class="reference external" href="https://uchicago-cs.github.io/student
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Intermediate Submission</p></td>
+<tr class="row-even"><td><p>Project Warmup</p></td>
 <td><p><a class="reference external" href="http://chi.cs.uchicago.edu/chirc/assignment1.html">Assignment 1</a> of <a class="reference external" href="http://chi.cs.uchicago.edu/chirc/">chirc</a></p></td>
-<td><p><strong>Wednesday, October 5, 8pm</strong></p></td>
+<td><p><strong>Wednesday, March 27, 8pm</strong></p></td>
 </tr>
-<tr class="row-odd"><td><p>Final Submission</p></td>
+<tr class="row-odd"><td><p>Project 1A</p></td>
 <td><div class="line-block">
 <div class="line"><a class="reference external" href="http://chi.cs.uchicago.edu/chirc/assignment4.html">Assignment 4</a> of <a class="reference external" href="http://chi.cs.uchicago.edu/chirc/">chirc</a></div>
 <div class="line">(Note: Assignment 4 builds on Assignment 1)</div>
 </div>
 </td>
-<td><p><strong>Friday, October 14, 8pm</strong></p></td>
+<td><p><strong>Wednesday, April 3, 8pm</strong></p></td>
 </tr>
-<tr class="row-even"><td><p>Resubmission (Optional)</p></td>
+<tr class="row-even"><td><p>Project 1B</p></td>
+<td><div class="line-block">
+<div class="line"><a class="reference external" href="http://chi.cs.uchicago.edu/chirc/assignment5.html">Assignment 5</a> of <a class="reference external" href="http://chi.cs.uchicago.edu/chirc/">chirc</a></div>
+<div class="line">(Note: Assignment 5 builds on Assignment 4)</div>
+</div>
+</td>
+<td><p><strong>Wednesday, April 10, 8pm</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Resubmission (Optional)</p></td>
 <td><p>Address feedback received in Project 1</p></td>
-<td><p>One week after Project 1 is graded</p></td>
+<td><p>One week after Project 1B is graded</p></td>
 </tr>
 </tbody>
 </table>
-<p>You will receive feedback on your Intermediate Submission before your Final Submission is due,
-which means you can also treat the Final Submission as a way to improve and resubmit the work
-you did in the Intermediate Submission.</p>
-<p>The scores you receive on the Final Submission will be your Project 1 scores for the purposes
-of computing your grade in the class. That said, once your Final Submission is graded, you will have
-an opportunity to make an optional resubmission (please see the “Optional Resubmission” section
-at the end of this page for more details)</p>
-<p>Please note that, to earn an E in Code Quality, you must have made an initial
-good-faith submission for both the Intermediate and Final submissions (i.e., work that would score at least one N or above).
-So, for example, you could technically skip the Intermediate Submission entirely and only make a
-Final Submission but, if you do so, your Code Quality score will be capped at an S.</p>
-<p>Additionally, if you only submit chirc Assigmment 1 (with effectively no work on Assignment 4) as your Final Submission,
-you will receive a U in that submission.</p>
+<p>You will receive some early feedback from the Project 1 Warm-up before Project 1A is due.</p>
+<p>Project 1A will likely not be graded until after Project 1B is due. Once Project 1B is graded,
+you will have an opportunity to make a resubmission for Project 1A and/or 1B (and, at that point,
+you will have feedback for both Project 1A and 1B). We will
+post more details about the resubmission process at a later time.</p>
 </section>
 <section id="completeness">
 <h2>Completeness<a class="headerlink" href="#completeness" title="Link to this heading">¶</a></h2>
-<p>The Completeness component will be determined by running the following command:</p>
+<p>The Completeness components will be determined by running the following commands:</p>
+<ul>
+<li><p>Project 1 Warm-up:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">assignment</span><span class="o">-</span><span class="mi">1</span>
+</pre></div>
+</div>
+</li>
+<li><p>Project 1A:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">assignment</span><span class="o">-</span><span class="mi">1</span><span class="o">+</span><span class="mi">4</span>
 </pre></div>
 </div>
+</li>
+<li><p>Project 1B:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">assignment</span><span class="o">-</span><span class="mi">5</span>
+</pre></div>
+</div>
+</li>
+</ul>
 <p>(see <a class="reference external" href="http://chi.cs.uchicago.edu/chirc/testing.html#using-the-automated-tests">Using the automated tests</a>
 in the chirc documentation for more details on these commands)</p>
-<p>Your ESNU score will then be determined as follows:</p>
+<p>Your SNU score will then be determined as follows:</p>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Grade</p></th>
@@ -206,17 +220,14 @@ in the chirc documentation for more details on these commands)</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Excellent</p></td>
-<td><p>at least 95</p></td>
+<tr class="row-even"><td><p>Satisfactory</p></td>
+<td><p>at least 90</p></td>
 </tr>
-<tr class="row-odd"><td><p>Satisfactory</p></td>
-<td><p>at least 75</p></td>
+<tr class="row-odd"><td><p>Needs Improvement</p></td>
+<td><p>at least 60</p></td>
 </tr>
-<tr class="row-even"><td><p>Needs Improvement</p></td>
-<td><p>at least 25</p></td>
-</tr>
-<tr class="row-odd"><td><p>Ungradable</p></td>
-<td><p>less than 25</p></td>
+<tr class="row-even"><td><p>Unsatisfactory</p></td>
+<td><p>less than 60</p></td>
 </tr>
 </tbody>
 </table>
@@ -230,15 +241,13 @@ issues, labelled “[Major Issue]” that you should be particularly mindful of)
 implementation (i.e., Assignments 1 and 4 of the chirc project), so some of the items
 will not apply to the Intermediate Submission (most notably, you are not expected to use
 threads or mutexes in that submission).</p>
-<p>In general, your ESNU score will be determined as follows:</p>
+<p>In general, your SNU score will be determined as follows:</p>
 <ul class="simple">
-<li><p><strong>Excellent</strong>: Your submission has none of the issues described below or, at most,
-has only a few minor mistakes or small style issues that would be trivial to address.</p></li>
 <li><p><strong>Satisfactory</strong>: Your submission has a few of the issues described below (but no
-major issues), and would only require minor changes to get to an E.</p></li>
+major issues).</p></li>
 <li><p><strong>Needs Improvement</strong>: Your submission has several of the issues described below,
-or at least one major issue. In general, major revisions would be required to
-get up to an S or E.</p></li>
+or at least one major issue. In general, major revisions are typically required to
+get up to an S.</p></li>
 <li><p><strong>Ungradable</strong>: Your submission does not constitute a good-faith effort to complete
 the work. This includes not submitting any work at all, as well as submitting
 only placeholder code (e.g., code that includes functions for all the required
@@ -253,6 +262,7 @@ code that we did not list below, take it as an opportunity to improve your work
 <h3>Correctness<a class="headerlink" href="#correctness" title="Link to this heading">¶</a></h3>
 <p>When assessing the correctness of your code, we will be paying special attention
 to the following:</p>
+<p><strong>All Submissions (including Warm-up)</strong></p>
 <ul class="simple">
 <li><p><strong>Not checking the return value of send()</strong>: send is not guaranteed to send the entire buffer you provide, which you can only tell by looking at the return value (Beej’s Guide for Socket Programming provides a <a class="reference external" href="https://beej.us/guide/bgnet/html/#sendall">ready-to-use solution to this</a>, which you’re welcome to use). Of course, send could also fail, and you need to check its return value for this too.</p></li>
 <li><p>[Major Issue] <strong>Not checking the return value of any socket function</strong>.</p></li>
@@ -273,38 +283,41 @@ buffer overrun in your code, that will need to be fixed.</p></li>
 <li><p><strong>Not implementing something that is clearly specified in the project</strong>, even if
 the tests don’t test for it (e.g., implementing a command almost completely,
 but not implementing one of the replies).</p></li>
+</ul>
+<p><strong>Project 1A and 1B</strong></p>
+<ul class="simple">
 <li><p>[Major issue] <strong>Not protecting access to shared data structures (list/hash of channels, users, etc.) with a mutex</strong></p></li>
 <li><p><strong>Using mutexes to protect access to data structures, but doing so inconsistently</strong> (e.g., locking the mutex only when writing to a data structure, and not when reading).</p></li>
 <li><p><strong>Using mutexes to protect access to data structures, but not to socket accesses</strong>. See <a class="reference external" href="project1_tips.html#inadequate-locking">Inadequate locking</a> in the Project 1 tips for more details.</p></li>
 <li><p>[Major issue] <strong>Using a Big Fat Lock</strong> (i.e., using a single mutex lock for the entire server).</p></li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>We may update the Project 1A and 1B rubrics further before those projects are assigned.</p>
+</div>
 </section>
 <section id="design">
 <h3>Design<a class="headerlink" href="#design" title="Link to this heading">¶</a></h3>
 <p>When assessing the design of your code, we will be paying special attention
 to the following:</p>
+<p><strong>All Submissions (including Warm-up)</strong></p>
 <ul class="simple">
 <li><p><strong>How you reassemble incoming messages</strong>: You should have some sort of array
 for assembling the next message that will be processed, separate from the buffer
 you pass to the <code class="docutils literal notranslate"><span class="pre">recv()</span></code> function (which cannot be a 1-byte array; using a 1-byte
 array when calling <code class="docutils literal notranslate"><span class="pre">recv()</span></code> is considered a major issue).</p></li>
-<li><p><strong>How you process IRC commands</strong>: Ideally, you should use some sort of dispatch
-table data structure (as described in the <a class="reference external" href="project1_tips.html">Project 1 Tips</a>)
-instead of a long sequence of “if command == JOIN then…”, “if command == PRIVMSG then”,
-etc. blocks of code.</p></li>
-<li><p><strong>How you store server data</strong>. You should ideally use some sort of “server context”
-structure, which we will discuss in the Project 1b lecture in Week 2.</p></li>
-<li><p><strong>Module/function decomposition</strong>. We will look at whether you divided your implementation
-into modules and functions that make sense. This includes avoiding repeated/redundant code,
-ensuring that each function performs a well-defined task, and putting related functions in the
-same module (i.e., the same C file). Please note that there are two potential major issues
-in this regard:</p>
-<ul>
-<li><p>[Major Issue] <strong>Putting all your code in a single main() function</strong></p></li>
-<li><p>[Major Issue (in Project 1b)] <strong>Putting all your code in a single C file</strong>. Please
-note that this is ok in Project 1a.</p></li>
 </ul>
-</li>
+<p><strong>Project 1A and 1B</strong></p>
+<ul class="simple">
+<li><p><strong>How you parse IRC commands</strong>: You should use the provided <code class="docutils literal notranslate"><span class="pre">message.c</span></code> module,
+instead of rolling out your own parsing code.</p></li>
+<li><p><strong>How you process IRC commands</strong>: You should use the provided <code class="docutils literal notranslate"><span class="pre">handlers.c</span></code> module,
+instead of reinventing a message dispatching mechanism.</p></li>
+<li><p><strong>Implementing modules or structs that are already provided to you</strong>: Make sure you
+don’t reinvent the wheel: we provide a lot of scaffolding code, and you should make
+sure to use the data structures and functions provided to you.</p></li>
+<li><p>[Major issue] <strong>Putting all your code inside the chirc_run function</strong>: This is fine
+for the Project 1 Warm-up, but not once you move on to Project 1A</p></li>
 </ul>
 </section>
 <section id="style">
@@ -316,13 +329,17 @@ style guide, we do expect you to follow a <em>consistent</em> style that
 asymptotically approaches the one specified in our style guide.
 That said, there <em>are</em> certain aspects we will be paying more
 attention to:</p>
-<ul class="simple">
+<ul>
 <li><p><strong>Documenting functions</strong>: Every function written by you must have
 a <a class="reference external" href="https://uchicago-cs.github.io/student-resource-guide/style-guide/c.html#function-comments">function comment</a> with a brief description
 of what the function does, and a description of the parameters and the
 return value. Please note that not documenting your functions at all
 (as opposed to doing so inconsistently or not following the style guide)
-is considered a major issue.</p></li>
+is considered a major issue.</p>
+<p>Note: The chirc code uses <a class="reference external" href="https://www.doxygen.nl/manual/docblocks.html">Doxygen-style function comments</a>.
+These are different from the ones in the style guide, but we will also accept
+them if you want to follow that style instead.</p>
+</li>
 <li><p><strong>Consistent indentation</strong>: Your code must follow one of the
 <a class="reference external" href="https://uchicago-cs.github.io/student-resource-guide/style-guide/c.html#indentation">allowed indentation styles</a> consistently.</p></li>
 <li><p><strong>Clarity</strong>: Your code must be easy to read and understand. This
@@ -343,9 +360,13 @@ described in the style guide.</p></li>
 you to know how to use data structures like linked lists, hash tables, etc.
 (and how to choose the right data structure for a given task). However, this is a Networks class,
 not a Data Structures class, and you should <em>not</em> be spending any time implementing
-such data structures. Instead, you should use existing data structure libraries
-(our <a class="reference external" href="../academic_honesty.html">Academic Honesty</a> page lists a few publicly-available
-libraries that you are welcome to use).</p>
+such data structures. The projects largely use the following data structure
+implementations:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://troydhanson.github.io/uthash/utlist.html">utlist</a>: A linked list library</p></li>
+<li><p><a class="reference external" href="https://troydhanson.github.io/uthash/">uthash</a>: A hash table for C structures</p></li>
+<li><p><a class="reference external" href="https://github.com/antirez/sds">SDS</a>: Simple Dynamic Strings</p></li>
+</ul>
 <p>Implementing your own linked list, hash table, etc. from scratch is considered
 a major issue. While you may think that implementing your own data structure
 is a worthwhile exercise, it invariably results in more work for the TAs and graders
@@ -378,72 +399,6 @@ This can happen if you store a pointer to a functions’ local variable in a str
 that is heap-allocated.</p></li>
 </ul>
 </section>
-</section>
-<section id="optional-resubmission">
-<h2>Optional Resubmission<a class="headerlink" href="#optional-resubmission" title="Link to this heading">¶</a></h2>
-<p>When you receive your graded Project 1, you have two options:</p>
-<ol class="arabic simple">
-<li><p>If you are satisfied with the scores you have received, no action is necessary on your end.
-Your scores on Project 1 will be used to compute your <a class="reference external" href="../grading.html#base-grade">Base Grade</a>.</p></li>
-<li><p>You may make an <em>optional</em> resubmission to address any feedback you received in Project 1,
-which may increase your scores in the project.</p></li>
-</ol>
-<p>Note: You <em>cannot</em> make a resubmission if you got E’s on both Completeness and Code Quality. If you
-are in this situation and want additional feedback on your grading, please ask on Ed.</p>
-<p>If you decide to make a resubmission, you <strong>MUST</strong> edit the <code class="docutils literal notranslate"><span class="pre">README</span></code> file in the root of
-the repository to include the following information:</p>
-<ul>
-<li><p><strong>Rubric items you have addressed</strong>: Rubric items that appear selected on Gradescope (under “Manual Grading”)
-represent issues that had an impact on your Code Quality score. To facilitate the work of the
-graders, you must list each rubric item you have addressed, with the following information:</p>
-<ul class="simple">
-<li><p>The rubric item description, exactly as it appears on Gradescope.</p></li>
-<li><p>1-2 sentences explaining how you addressed the rubric item.</p></li>
-<li><p>If the work you did on the rubric item is limited to a few lines of code, specify the filename and line number(s),
-If your work on this rubric item involved deeper changes to your code, you do not need to list every single line
-of code you changed, but you should try to give the graders a general sense of where you made the changes, including
-a few examples if possible
-(e.g., “I combed through the code to make sure I was using descriptive variable names; for example, I changed <code class="docutils literal notranslate"><span class="pre">c</span></code> to
-<code class="docutils literal notranslate"><span class="pre">channel</span></code> in several functions”, “I reorganized functions <code class="docutils literal notranslate"><span class="pre">foo()</span></code>, <code class="docutils literal notranslate"><span class="pre">bar()</span></code>, and <code class="docutils literal notranslate"><span class="pre">baz()</span></code> as requested”, etc.)</p></li>
-</ul>
-</li>
-<li><p><strong>Rubric items you have NOT addressed</strong>: It is also important that you let us know what rubric items you
-decided not to address, as this will expedite the work of the graders. For these rubric items, it is enough
-to provide a list of the rubric item descriptions (exactly as they appear on Gradescope)</p></li>
-<li><p><strong>Substantial new code added to your submission</strong>: If you added substantial new code that was not present in your
-original submission (e.g., if your original submission did not implement several commands, and you have now included
-new code to implement those commands), you must specify the affected files, as well as the new functionality that
-is added by the new code. For example, you could include something like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">New</span> <span class="n">files</span><span class="p">:</span> <span class="n">channel</span><span class="o">.</span><span class="n">c</span><span class="o">/</span><span class="n">channel</span><span class="o">.</span><span class="n">h</span>
-<span class="n">Modified</span> <span class="n">files</span><span class="p">:</span> <span class="n">ctx</span><span class="o">.</span><span class="n">h</span><span class="p">,</span> <span class="n">handlers</span><span class="o">.</span><span class="n">c</span>
-
-<span class="n">Channels</span><span class="p">:</span> <span class="n">Added</span> <span class="n">a</span> <span class="n">channel</span> <span class="nb">hash</span> <span class="n">table</span> <span class="n">to</span> <span class="n">ctx_t</span> <span class="p">(</span><span class="ow">in</span> <span class="n">ctx</span><span class="o">.</span><span class="n">h</span><span class="p">)</span> <span class="ow">and</span> <span class="n">a</span> <span class="n">channel_t</span> <span class="n">struct</span>
-          <span class="p">(</span><span class="ow">in</span> <span class="n">channel</span><span class="o">.</span><span class="n">h</span><span class="p">)</span> <span class="n">to</span> <span class="n">add</span> <span class="n">support</span> <span class="k">for</span> <span class="n">channels</span><span class="o">.</span>
-
-<span class="n">JOIN</span> <span class="ow">and</span> <span class="n">PART</span><span class="p">:</span> <span class="n">Implemented</span> <span class="n">the</span> <span class="n">handlers</span> <span class="k">for</span> <span class="n">these</span> <span class="n">commands</span> <span class="ow">in</span> <span class="n">handlers</span><span class="o">.</span><span class="n">c</span>
-
-<span class="n">QUIT</span><span class="p">:</span> <span class="n">Updated</span> <span class="n">the</span> <span class="n">QUIT</span> <span class="n">handler</span> <span class="n">to</span> <span class="n">relay</span> <span class="n">the</span> <span class="n">QUIT</span> <span class="n">to</span> <span class="n">users</span> <span class="n">on</span> <span class="n">the</span> <span class="n">same</span> <span class="n">channel</span> <span class="k">as</span> <span class="n">the</span> <span class="n">user</span><span class="o">.</span>
-</pre></div>
-</div>
-</li>
-<li><p><strong>Changes made to pass additional tests</strong>: If you made changes to your code with the goal of passing more tests,
-please specify your original test score, and the new test score. If your work only involved a few minor bug fixes,
-please let us know you did this (but you do not need to specify the exact changes you made). On the other hand,
-if you skipped parts of Project 1b in your original submission, and have written entirely new code, please make
-sure you have specified this as part of the “substantial new code”, and that you also specify that doing so
-allowed you to pass additional tests.</p></li>
-<li><p><strong>Other changes</strong>: If you made other changes to your code, such as refactoring large parts of your code, make
-sure to specify this too.</p></li>
-</ul>
-<p>You should consider the <code class="docutils literal notranslate"><span class="pre">README</span></code> file as important as the changes you are making to your code: <strong>resubmissions
-that do not include the information requested above may not be graded at all</strong>.</p>
-<p>In general, if you are making a resubmission that only involved addressing rubric items, without adding substantial
-new code to your submission, there is a high likelihood that addressing all the rubric items will bump your Code
-Quality score to at least the next score.</p>
-<p>On the other hand, if you are making a resubmission that involves adding substantial new code, please bear in mind
-that the graders could identify issues in that new code that will impact your Code Quality score. That said,
-once you receive the resubmission grading, you will be given the option to revert back to your original Project 1
-score if you prefer.</p>
 </section>
 </section>
 
