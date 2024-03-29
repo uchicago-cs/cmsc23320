@@ -8,7 +8,7 @@
 
 <title>Project 1 Tips &#8212; CMSC 23320 - Foundations of Computer Networks</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=0bf093e7" />
     <link rel="stylesheet" type="text/css" href="../_static/chiweb.css?v=4e80c602" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -218,6 +218,7 @@ unfortunately, a common attribute of many network specifications). If you’re u
 <p>In chirc Assigmnent 4, you now have multiple clients connecting to your server, with one thread
 per client. So remember: shared data structures have to be protected by locks, and this includes
 any socket that multiple threads could write to. POSIX requires system calls to be thread-safe (i.e., the OS itself should guarantee that send() is done atomically). However, even though a call to send() can be thread-safe, you have to account for the fact that send() might not send all your data in one go. So, you still need to gain exclusive access to the socket until a full message has been sent; otherwise, you could see partial messages interleaved by multiple threads.</p>
+<p>Beej’s Guide actually provides a handy <a class="reference external" href="https://beej.us/guide/bgnet/html/#sendall">sendall</a> function that you can use to ensure that send() sends all the data you want it to send. You would still need to update this <cite>sendall</cite> function to lock/unlock the socket’s lock.</p>
 </section>
 </section>
 <section id="common-c-issues">
