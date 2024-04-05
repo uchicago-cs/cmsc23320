@@ -143,10 +143,6 @@ to the following:
 - **Using mutexes to protect access to data structures, but not to socket accesses**. See `Inadequate locking <project1_tips.html#inadequate-locking>`__ in the Project 1 tips for more details.
 - [Major issue] **Using a Big Fat Lock** (i.e., using a single mutex lock for the entire server).
 
-.. warning::
-
-   We may update the Project 1A and 1B rubrics further before those projects are assigned.
-
 Design
 ~~~~~~
 
@@ -171,6 +167,13 @@ to the following:
   sure to use the data structures and functions provided to you.
 * [Major issue] **Putting all your code inside the chirc_run function**: This is fine
   for the Project 1 Warm-up, but not once you move on to Project 1A
+
+**Project 1B only**
+
+* [Major issue] Using two separate thread functions to handle connections
+  (one for users and another for servers), instead of having a general-purpose
+  thread function that handles commands that arrive on a connection
+  (regardless of whether it's a user or server connection).
 
 Style
 ~~~~~
