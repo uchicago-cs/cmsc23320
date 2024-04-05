@@ -8,7 +8,7 @@
 
 <title>Project 1 Rubric &#8212; CMSC 23320 - Foundations of Computer Networks</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=0bf093e7" />
     <link rel="stylesheet" type="text/css" href="../_static/chiweb.css?v=4e80c602" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -286,15 +286,11 @@ but not implementing one of the replies).</p></li>
 </ul>
 <p><strong>Project 1A and 1B</strong></p>
 <ul class="simple">
-<li><p>[Major issue] <strong>Not protecting access to shared data structures (channels hash table, users hash table, etc.) with a mutex</strong></p></li>
+<li><p>[Major issue] <strong>Not protecting access to shared data structures (list/hash of channels, users, etc.) with a mutex</strong></p></li>
 <li><p><strong>Using mutexes to protect access to data structures, but doing so inconsistently</strong> (e.g., locking the mutex only when writing to a data structure, and not when reading).</p></li>
 <li><p><strong>Using mutexes to protect access to data structures, but not to socket accesses</strong>. See <a class="reference external" href="project1_tips.html#inadequate-locking">Inadequate locking</a> in the Project 1 tips for more details.</p></li>
 <li><p>[Major issue] <strong>Using a Big Fat Lock</strong> (i.e., using a single mutex lock for the entire server).</p></li>
 </ul>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>We may update the Project 1B rubric further before that project is assigned.</p>
-</div>
 </section>
 <section id="design">
 <h3>Design<a class="headerlink" href="#design" title="Link to this heading">¶</a></h3>
@@ -316,13 +312,15 @@ instead of reinventing a message dispatching mechanism.</p></li>
 <li><p><strong>Implementing modules or structs that are already provided to you</strong>: Make sure you
 don’t reinvent the wheel: we provide a lot of scaffolding code, and you should make
 sure to use the data structures and functions provided to you.</p></li>
-<li><p><strong>Not implementing the chirc_connection_send_message function</strong></p></li>
-<li><p><strong>Implementing the chirc_connection_send_message function, but using it inconsistently</strong>
-e.g., making direct calls to send() from elsewhere in your code. Your code should be
-written in such a way that <cite>chirc_connection_send_message</cite> is the only function
-in your entire code to call the <cite>send</cite> function (or some sort of <cite>sendall</cite> helper function)</p></li>
 <li><p>[Major issue] <strong>Putting all your code inside the chirc_run function</strong>: This is fine
 for the Project 1 Warm-up, but not once you move on to Project 1A</p></li>
+</ul>
+<p><strong>Project 1B only</strong></p>
+<ul class="simple">
+<li><p>[Major issue] Using two separate thread functions to handle connections
+(one for users and another for servers), instead of having a general-purpose
+thread function that handles commands that arrive on a connection
+(regardless of whether it’s a user or server connection).</p></li>
 </ul>
 </section>
 <section id="style">
