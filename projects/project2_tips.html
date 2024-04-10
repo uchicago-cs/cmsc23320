@@ -8,7 +8,7 @@
 
 <title>Project 2 Tips &#8212; CMSC 23320 - Foundations of Computer Networks</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=0bf093e7" />
     <link rel="stylesheet" type="text/css" href="../_static/chiweb.css?v=4e80c602" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -120,10 +120,6 @@
       
   <section id="project-2-tips">
 <h1>Project 2 Tips<a class="headerlink" href="#project-2-tips" title="Link to this heading">¶</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has not yet been updated for Spring 2024.</p>
-</div>
 <p>Before you get started, make sure you’ve read through the <a class="reference external" href="../projects/started.html">Projects - Getting Started</a> page.</p>
 <section id="suggested-order-of-implementation">
 <h2>Suggested Order of Implementation<a class="headerlink" href="#suggested-order-of-implementation" title="Link to this heading">¶</a></h2>
@@ -187,8 +183,8 @@ to choose a random number and, for ease of debugging, you may want to choose a r
 </section>
 <section id="writing-the-packet-arrival-handler">
 <h2>Writing the Packet Arrival Handler<a class="headerlink" href="#writing-the-packet-arrival-handler" title="Link to this heading">¶</a></h2>
-<p>Writing the “packet arrival handler” (i.e., how TCP reacts when a packet arrives) is actually
-pretty simple: you just have to translate pages 64-75 of the RFC into code. A common pitfall
+<p>Writing the “packet arrival handler” (i.e., how TCP reacts when a packet arrives) is, in a sense,
+somewhat straightforward: you just have to “translate” pages 64-75 of the RFC into code. A common pitfall
 is to write this handler as a gigantic if-else statement (with each branch corresponding to a
 TCP state) where you implement your interpretation of what should happen in each state when
 a packet arrives. Pages 64-75 methodically describe how to process a packet. Although some
@@ -266,7 +262,7 @@ provides fewer clues on what could be wrong). This leads us to our next point…
 <h2>Pick your battles (a.k.a.: “it is ok to not pass 100% of the tests”)<a class="headerlink" href="#pick-your-battles-a-k-a-it-is-ok-to-not-pass-100-of-the-tests" title="Link to this heading">¶</a></h2>
 <p>Achieving a perfect implementation that can pass all the tests under every possible sequencing
 of events is very challenging. It is very likely that many of you will end up passing nearly
-all the tests (and certainly enough to get an E score on Completeness), with a few stubborn
+all the tests (and certainly enough to get a Satisfactory score on Completeness), with a few stubborn
 tests that sometimes pass but sometimes don’t. More often than
 not, this is due to bugs that are very hard to track down, because they only manifest themselves
 under a specific ordering of events, and which typically require a very deep debugging session
