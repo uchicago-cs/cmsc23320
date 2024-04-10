@@ -8,7 +8,7 @@
 
 <title>Project 2: chitcp &#8212; CMSC 23320 - Foundations of Computer Networks</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=0bf093e7" />
     <link rel="stylesheet" type="text/css" href="../_static/chiweb.css?v=4e80c602" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -99,10 +99,6 @@
       
   <section id="project-2-chitcp">
 <h1>Project 2: chitcp<a class="headerlink" href="#project-2-chitcp" title="Link to this heading">¶</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has not yet been updated for Spring 2024.</p>
-</div>
 <p>In this project you will be implementing the Transmission Control Protocol, as
 specified in <a class="reference external" href="http://tools.ietf.org/html/rfc793">[RFC793]</a>. However, instead
 of implementing it inside the operating system itself, you will be implementing
@@ -135,21 +131,21 @@ you will be implementing Assignments 1 and 2 of chiTCP.</p></li>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Intermediate Submission</p></td>
+<tr class="row-even"><td><p>Project 2A</p></td>
 <td><p><a class="reference external" href="http://chi.cs.uchicago.edu/chitcp/assignment1.html">Assignment 1</a> of <a class="reference external" href="http://chi.cs.uchicago.edu/chitcp/">chiTCP</a></p></td>
-<td><p><strong>Wednesday, October 26, 8pm</strong></p></td>
+<td><p><strong>Wednesday, April 24, 8pm</strong></p></td>
 </tr>
-<tr class="row-odd"><td><p>Final Submission</p></td>
+<tr class="row-odd"><td><p>Project 2B</p></td>
 <td><div class="line-block">
 <div class="line"><a class="reference external" href="http://chi.cs.uchicago.edu/chitcp/assignment2.html">Assignment 2</a> of <a class="reference external" href="http://chi.cs.uchicago.edu/chitcp/">chiTCP</a></div>
 <div class="line">(Note: Assignment 2 builds on Assignment 1)</div>
 </div>
 </td>
-<td><p><strong>Wednesday, November 9, 8pm</strong></p></td>
+<td><p><strong>Wednesday, May 1, 8pm</strong></p></td>
 </tr>
 <tr class="row-even"><td><p>Resubmission (Optional)</p></td>
 <td><p>Address feedback received in Project 2</p></td>
-<td><p>One week after Project 2 is graded</p></td>
+<td><p>One week after Project 2B is graded</p></td>
 </tr>
 </tbody>
 </table>
@@ -163,14 +159,15 @@ as well as the the <a class="reference internal" href="registering_submitting.ht
 <p>Only one team member needs to run these commands. Create an empty directory and, inside that
 directory run the following commands. In the commands below, <code class="docutils literal notranslate"><span class="pre">$REPO_URL</span></code> refers to the
 SSH URL of your repository. To get this URL, log into GitHub and navigate to your
-project repository. Then, click on the green “Code” button, and make sure the
-“SSH” tab is selected. Your repository URL should look something like this:
-<code class="docutils literal notranslate"><span class="pre">git&#64;github.com:uchicago-cmsc23320-2022-aut/chitcp-p2-jdoe-jrandom.git</span></code></p>
+project repository. Then, under “Quick setup — if you’ve done this kind of thing before”,
+make sure the “SSH” button is selected, and copy the URL that appears next to it.
+It should look something like this: <code class="docutils literal notranslate"><span class="pre">git&#64;github.com:uchicago-cmsc23320-spr-24/chirc-jdoe-jrandom.git</span></code></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>git init
 git remote add origin $REPO_URL
 git remote add upstream https://github.com/uchicago-cs/chitcp.git
-git pull upstream master
-git push -u origin master
+git pull upstream main
+git branch -M main
+git push -u origin main
 </pre></div>
 </div>
 <p><strong>Cloning instructions</strong></p>
