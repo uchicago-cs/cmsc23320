@@ -85,11 +85,6 @@ When assessing your code quality, there are a number of things we will be paying
 close attention to, and which we describe in the sections below (including major
 issues, labelled "[Major Issue]" that you should be particularly mindful of).
 
-Please note that the items below refer to a complete Project 1
-implementation (i.e., Assignments 1 and 4 of the chirc project), so some of the items
-will not apply to the Intermediate Submission (most notably, you are not expected to use
-threads or mutexes in that submission).
-
 In general, your SNU score will be determined as follows:
 
 - **Satisfactory**: Your submission has a few of the issues described below (but no
