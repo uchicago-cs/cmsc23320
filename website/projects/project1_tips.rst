@@ -178,6 +178,8 @@ In chirc Assigmnent 4, you now have multiple clients connecting to your server, 
 per client. So remember: shared data structures have to be protected by locks, and this includes 
 any socket that multiple threads could write to. POSIX requires system calls to be thread-safe (i.e., the OS itself should guarantee that send() is done atomically). However, even though a call to send() can be thread-safe, you have to account for the fact that send() might not send all your data in one go. So, you still need to gain exclusive access to the socket until a full message has been sent; otherwise, you could see partial messages interleaved by multiple threads.
 
+Beej's Guide actually provides a handy `sendall <https://beej.us/guide/bgnet/html/#sendall>`__ function that you can use to ensure that send() sends all the data you want it to send. You would still need to update this `sendall` function to lock/unlock the socket's lock.
+
 Common C Issues
 ---------------
 

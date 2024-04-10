@@ -138,7 +138,7 @@ to the following:
 
 **Project 1A and 1B**
 
-- [Major issue] **Not protecting access to shared data structures (list/hash of channels, users, etc.) with a mutex**
+- [Major issue] **Not protecting access to shared data structures (channels hash table, users hash table, etc.) with a mutex**
 - **Using mutexes to protect access to data structures, but doing so inconsistently** (e.g., locking the mutex only when writing to a data structure, and not when reading).
 - **Using mutexes to protect access to data structures, but not to socket accesses**. See `Inadequate locking <project1_tips.html#inadequate-locking>`__ in the Project 1 tips for more details.
 - [Major issue] **Using a Big Fat Lock** (i.e., using a single mutex lock for the entire server).
@@ -165,6 +165,11 @@ to the following:
 * **Implementing modules or structs that are already provided to you**: Make sure you
   don't reinvent the wheel: we provide a lot of scaffolding code, and you should make
   sure to use the data structures and functions provided to you.
+* **Not implementing the chirc_connection_send_message function**
+* **Implementing the chirc_connection_send_message function, but using it inconsistently**
+  e.g., making direct calls to send() from elsewhere in your code. Your code should be
+  written in such a way that `chirc_connection_send_message` is the only function
+  in your entire code to call the `send` function (or some sort of `sendall` helper function)
 * [Major issue] **Putting all your code inside the chirc_run function**: This is fine
   for the Project 1 Warm-up, but not once you move on to Project 1A
 
