@@ -1,10 +1,6 @@
 Project 2 Tips
 ==============
 
-.. warning::
-
-   This page has not yet been updated for Spring 2024.
-
 Before you get started, make sure you've read through the `Projects - Getting Started <../projects/started.html>`__ page.
 
 Suggested Order of Implementation
@@ -72,8 +68,8 @@ to choose a random number and, for ease of debugging, you may want to choose a r
 Writing the Packet Arrival Handler
 ----------------------------------
 
-Writing the "packet arrival handler" (i.e., how TCP reacts when a packet arrives) is actually
-pretty simple: you just have to translate pages 64-75 of the RFC into code. A common pitfall
+Writing the "packet arrival handler" (i.e., how TCP reacts when a packet arrives) is, in a sense,
+somewhat straightforward: you just have to "translate" pages 64-75 of the RFC into code. A common pitfall
 is to write this handler as a gigantic if-else statement (with each branch corresponding to a
 TCP state) where you implement your interpretation of what should happen in each state when
 a packet arrives. Pages 64-75 methodically describe how to process a packet. Although some
@@ -159,7 +155,7 @@ Pick your battles (a.k.a.: "it is ok to not pass 100% of the tests")
 
 Achieving a perfect implementation that can pass all the tests under every possible sequencing
 of events is very challenging. It is very likely that many of you will end up passing nearly
-all the tests (and certainly enough to get an E score on Completeness), with a few stubborn
+all the tests (and certainly enough to get a Satisfactory score on Completeness), with a few stubborn
 tests that sometimes pass but sometimes don't. More often than
 not, this is due to bugs that are very hard to track down, because they only manifest themselves
 under a specific ordering of events, and which typically require a very deep debugging session

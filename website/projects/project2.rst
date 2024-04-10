@@ -1,10 +1,6 @@
 Project 2: chitcp
 -----------------
 
-.. warning::
-
-   This page has not yet been updated for Spring 2024.
-
 In this project you will be implementing the Transmission Control Protocol, as
 specified in `[RFC793] <http://tools.ietf.org/html/rfc793>`__. However, instead
 of implementing it inside the operating system itself, you will be implementing
@@ -47,17 +43,18 @@ as well as the the :ref:`Project Registration <project_registration>` instructio
 Only one team member needs to run these commands. Create an empty directory and, inside that
 directory run the following commands. In the commands below, ``$REPO_URL`` refers to the
 SSH URL of your repository. To get this URL, log into GitHub and navigate to your
-project repository. Then, click on the green "Code" button, and make sure the
-"SSH" tab is selected. Your repository URL should look something like this:
-``git@github.com:uchicago-cmsc23320-2022-aut/chitcp-p2-jdoe-jrandom.git``
+project repository. Then, under "Quick setup — if you’ve done this kind of thing before",
+make sure the "SSH" button is selected, and copy the URL that appears next to it.
+It should look something like this: ``git@github.com:uchicago-cmsc23320-spr-24/chirc-jdoe-jrandom.git``
 
 ::
 
     git init
     git remote add origin $REPO_URL
     git remote add upstream https://github.com/uchicago-cs/chitcp.git
-    git pull upstream master
-    git push -u origin master
+    git pull upstream main
+    git branch -M main
+    git push -u origin main
 
 
 **Cloning instructions**
