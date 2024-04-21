@@ -257,13 +257,13 @@ the repository with the following sections:
 
   Bear in mind that the Project 1A rubric items are a subset of the Project 1B rubric items. This means that...
 
-   - If your initial Project 1B submission already addressed a rubric item from Project 1A (and the rubric
-     item was no longer selected in your graded Project 1B), it is enough to say "This rubric item was addressed
-     in Project 1B"
-   - If you scored an N in Code Quality in Project 1A, but then scored an S in Code Quality
-     in Project 1B, you do not need to explain how you addressed each individual rubric item.
-     Instead, please include the following text in this section: "We earned an S in Code Quality
-     in Project 1B"
+  - If your initial Project 1B submission already addressed a rubric item from Project 1A (and the rubric
+    item was no longer selected in your graded Project 1B), it is enough to say "This rubric item was addressed
+    in Project 1B"
+  - If you scored an N in Code Quality in Project 1A, but then scored an S in Code Quality
+    in Project 1B, you do not need to explain how you addressed each individual rubric item.
+    Instead, please include the following text in this section: "We earned an S in Code Quality
+    in Project 1B"
 
 - **Rubric items you have NOT addressed**: It is also important that you let us know what rubric items you
   decided not to address, as this will expedite the work of the graders. For these rubric items, it is enough
