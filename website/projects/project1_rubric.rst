@@ -243,7 +243,7 @@ If you decide to make a resubmission, you **MUST** add a ``RESUBMISSION.md`` fil
 in the root of your repository using the following template: (the exact sections
 are explained below)
 
-.. code-block: markdown
+.. code-block:: markdown
 
     Project 1 Resubmission
     ======================
