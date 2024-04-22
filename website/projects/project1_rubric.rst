@@ -285,7 +285,8 @@ information in a given section, please do not remove the section. Instead, just 
   original submission, and didn't want to work further on it), please make sure to note this here.
 
 - **Resubmission for...**: Indicate what submission(s) should be regraded based on this code
-  (see the "Submission" section below for more details).
+  (see the "Submission" section below for more details). To check the checkboxes, replace ``[ ]``
+  with ``[X]``
 
 - **Rubric items you have addressed**: Rubric items that appear selected on Gradescope (under "Manual Grading")
   represent issues that had an impact on your Code Quality score. To facilitate the work of the
