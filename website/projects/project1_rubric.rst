@@ -239,8 +239,53 @@ You should consider this documentation as important as the changes you are makin
 to your code: **resubmissions that do not include the information requested below
 WILL NOT BE GRADED**.
 
-If you decide to make a resubmission, you **MUST** add a ``RESUBMISSION.md`` file in the root of
-the repository with the following sections:
+If you decide to make a resubmission, you **MUST** add a ``RESUBMISSION.md`` file
+in the root of your repository using the following template: (the exact sections
+are explained below)
+
+.. code-block: markdown
+
+    Project 1 Resubmission
+    ======================
+
+    Team members:
+    - TEAM MEMBER 1 (CNETID1)
+    - TEAM MEMBER 2 (CNETID2)
+
+    Resubmission for:
+    [ ] Project 1A
+    [ ] Project 1B
+
+    Rubric items you have addressed
+    -------------------------------
+    <COMPLETE THIS SECTION>
+
+    Rubric items you have NOT addressed
+    -----------------------------------
+    <COMPLETE THIS SECTION>
+
+    Substantial new code added to your submission
+    ---------------------------------------------
+    <COMPLETE THIS SECTION>
+
+    Changes made to pass additional tests
+    -------------------------------------
+    <COMPLETE THIS SECTION>
+
+    Other changes
+    -------------
+    <COMPLETE THIS SECTION>
+
+Below you can find more details on each of the sections. If you are not providing any
+information in a given section, please do not remove the section. Instead, just write
+``N/A`` below it.
+
+- **Team members**: Ordinarily, this would be the same two team members who made the original submission.
+  However, if you worked individually on the resubmission (because your teammate was happy with the
+  original submission, and didn't want to work further on it), please make sure to note this here.
+
+- **Resubmission for...**: Indicate what submission(s) should be regraded based on this code
+  (see the "Submission" section below for more details).
 
 - **Rubric items you have addressed**: Rubric items that appear selected on Gradescope (under "Manual Grading")
   represent issues that had an impact on your Code Quality score. To facilitate the work of the
