@@ -113,7 +113,7 @@ General
 [Project 2A] 3-way Handshake
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- **Not acknowledging the final ACK in the 3-way handshake**. Remember that acknowledgements are not acknowledged in TCP.
+- **Acknowledging the final ACK in the 3-way handshake**. Remember that acknowledgements are not acknowledged in TCP.
 - **Not checking that the SYN was acknowledged before sending the ACK and changing state to ESTABLISHED**.
 - **3-way Handshake: Setting the ISS to a constant value, instead of using a random number.**
 - [Major issue] **Writing a 3-way handshake by rote that doesn't check the TCP header values, and assumes that the first three messages exchanged must be a SYN, SYN/ACK, and ACK**. For example, you could technically pass the three-way handshake tests by making TCP go into an ESTABLISHED state after receiving two packets (without checking whether the first one is a SYN packet, and whether the second one contains a valid ACK).
