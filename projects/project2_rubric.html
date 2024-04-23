@@ -260,7 +260,7 @@ to the following issues:</p>
 <section id="project-2a-3-way-handshake">
 <h2>[Project 2A] 3-way Handshake<a class="headerlink" href="#project-2a-3-way-handshake" title="Link to this heading">¶</a></h2>
 <ul class="simple">
-<li><p><strong>Not acknowledging the final ACK in the 3-way handshake</strong>. Remember that acknowledgements are not acknowledged in TCP.</p></li>
+<li><p><strong>Acknowledging the final ACK in the 3-way handshake</strong>. Remember that acknowledgements are not acknowledged in TCP.</p></li>
 <li><p><strong>Not checking that the SYN was acknowledged before sending the ACK and changing state to ESTABLISHED</strong>.</p></li>
 <li><p><strong>3-way Handshake: Setting the ISS to a constant value, instead of using a random number.</strong></p></li>
 <li><p>[Major issue] <strong>Writing a 3-way handshake by rote that doesn’t check the TCP header values, and assumes that the first three messages exchanged must be a SYN, SYN/ACK, and ACK</strong>. For example, you could technically pass the three-way handshake tests by making TCP go into an ESTABLISHED state after receiving two packets (without checking whether the first one is a SYN packet, and whether the second one contains a valid ACK).</p></li>
