@@ -1,10 +1,6 @@
 Project 3: chirouter
 --------------------
 
-.. warning::
-
-   This page has not yet been updated for Spring 2024.
-
 In this project you will be implementing a simple IP router capable of routing IPv4 datagrams between multiple networks. This router will have a static routing table, so you will not have to deal with implementing a routing protocol like RIP or OSPF; instead, the project will focus on the routing of IP datagrams. While, at a high level, this just involves receiving IP datagrams and figuring out what interface they should be sent on, this requires building additional functionality before you can actually start routing IP datagrams.
 
 Please refer to the following documents to complete this project:
@@ -14,17 +10,14 @@ Please refer to the following documents to complete this project:
 - `Project 3 tips <project3_tips.html>`__
 
 Take into account that this project requires using a network simulator that
-needs to be run with root privileges on a Linux machine. If you do not have
-access to such a machine, you can use the `CS Virtual Machine <https://howto.cs.uchicago.edu/vm:index>`__
-(version 202122.2 or higher) to run the network simulator. This virtual
-machine will only work on computers with Intel processors so, if you are running
-a newer Mac with an M1 processor, please see our Ed Discussion site for instructions
-on how to set up a virtual machine on your computer.
+needs to be run with root privileges on a Linux machine. For students using
+Windows or Mac, we provide a Docker container that you can use to run
+the network simulator on your computer ()
 
 Submission Timeline
 ~~~~~~~~~~~~~~~~~~~
 
-This project has two required submissions, and an optional resubmission:
+This project has one required submission, and an optional resubmission:
 
 .. include:: project3_timeline.txt
 
@@ -41,9 +34,9 @@ as well as the the :ref:`Project Registration <project_registration>` instructio
 Only one team member needs to run these commands. Create an empty directory and, inside that
 directory run the following commands. In the commands below, ``$REPO_URL`` refers to the
 SSH URL of your repository. To get this URL, log into GitHub and navigate to your
-project repository. Then, click on the green "Code" button, and make sure the
-"SSH" tab is selected. Your repository URL should look something like this:
-``git@github.com:uchicago-cmsc23320-2022-aut/chirouter-p3-jdoe-jrandom.git``
+project repository. Then, under "Quick setup — if you’ve done this kind of thing before",
+make sure the "SSH" button is selected, and copy the URL that appears next to it.
+It should look something like this: ``git@github.com:uchicago-cmsc23320-spr-24/chirouter-jdoe-jrandom.git``
 
 ::
 

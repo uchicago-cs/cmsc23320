@@ -1,14 +1,11 @@
 Project 3 Rubric
 ----------------
 
-.. warning::
-
-   This page has not yet been updated for Spring 2024.
-
 The grading of this project follows a specifications grading approach. If you have not already
-done so, make sure to read our `Grading <../grading.html>`__ page for more details.
+done so, make sure to read our `Grading <../syllabus.html#grading>`__ section of
+the syllabus for more details.
 
-You will receive two ESNU scores for this project:
+You will receive two SNU scores for this project:
 
 - **Completeness score**: This score will be determined solely by the result of running
   the automated tests, as these give a measure of how *complete* your implementation
@@ -31,7 +28,7 @@ You will receive two ESNU scores for this project:
 Submission Timeline
 -------------------
 
-This project has one required submission, and an optional resubmission:
+The exact timeline of submissions will be the following:
 
 .. include:: project3_timeline.txt
 
@@ -51,18 +48,23 @@ The Completeness component will be determined by running the following commands:
 (see `Automated tests <http://chi.cs.uchicago.edu/chirouter/automated-tests.html>`__
 in the chirouter documentation for more details)
 
-Your ESNU score will then be determined as follows:
+**NOTE**: In Project 3, you will be relying on manual testing to a greater extent
+than in Projects 1 and 2. The automated tests provide a convenient way to run all
+the tests and get a test score but, in general, if your code works when testing it
+manually, and fails the corresponding automated test, you should consider the test
+to have passed (you should make a note in the README file so the graders are aware
+of this)
+
+Your SNU score will then be determined as follows:
 
 +---------------------+----------------------+
 | Grade               | Points on tests      |
 +=====================+======================+
-| Excellent           | at least 95          |
+| Satisfactory        | at least 90          |
 +---------------------+----------------------+
-| Satisfactory        | at least 60          |
+| Needs Improvement   | at least 60          |
 +---------------------+----------------------+
-| Needs Improvement   | at least 20          |
-+---------------------+----------------------+
-| Ungradable          | less than 20         |
+| Unsatisfactory      | less than 60         |
 +---------------------+----------------------+
 
 Code Quality
@@ -72,16 +74,14 @@ When assessing your code quality, there are a number of things we will be paying
 close attention to, and which we describe in the sections below (including major
 issues, labelled "[Major Issue]" that you should be particularly mindful of).
 
-In general, your ESNU score will be determined as follows:
+In general, your SNU score will be determined as follows:
 
-- **Excellent**: Your submission has none of the issues described below or, at most,
-  has only a few minor mistakes or small style issues that would be trivial to address.
 - **Satisfactory**: Your submission has a few of the issues described below (but no
-  major issues), and would only require minor changes to get to an E.
+  major issues).
 - **Needs Improvement**: Your submission has several of the issues described below,
-  or at least one major issue. In general, major revisions would be required to
-  get up to an S or E.
-- **Ungradable**: Your submission does not constitute a good-faith effort to complete
+  or at least one major issue. In general, major revisions are typically required to
+  get up to an S.
+- **Unsatisfactory**: Your submission does not constitute a good-faith effort to complete
   the work. This includes not submitting any work at all, as well as submitting
   only placeholder code (e.g., code that includes functions for all the required
   IRC commands, but where the functions are empty or filled with "TODO"s, etc.)
