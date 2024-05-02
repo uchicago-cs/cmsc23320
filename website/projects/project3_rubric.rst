@@ -36,6 +36,23 @@ Unlike Projects 1 and 2, the resubmission can only be used to improve your Compl
 (i.e., the score on the automated tests). Since Project 3 is due by the end of the quarter,
 there is not enough to do a full resubmission-regrading cycle.
 
+**NOTE**: To make a resubmission, you must make a "good-faith" submission by the project
+deadline. A good-faith submission is any submission where it is clear you have put it
+a substantial amount of effort to complete the project. Please note that we will consider
+any submission that scores an N in completeness to meet the bar for a good-faith submission.
+
+This means that, if you want to make a resubmission, you cannot skip the initial
+submission, or submit an effectively empty submission. The reason for this is that
+such a submission could score an S in Code Quality purely because most of the rubric
+items are moot (because there is little/no code to grade). Your resubmission could
+then score an S in Completeness, but then have major Code Quality issues.
+
+In practical terms, this means the following:
+
+- If you are scoring an N on the tests in your initial submission, you have nothing to
+  worry about. You can make a resubmission to raise your test score to an S.to
+- If you skip the initial submission, or score a U in the tests, we reserve the right
+  to regrade your code for Code Quality in the resubmission.
 
 Completeness
 ------------
