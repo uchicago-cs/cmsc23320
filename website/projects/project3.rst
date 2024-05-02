@@ -43,8 +43,8 @@ It should look something like this: ``git@github.com:uchicago-cmsc23320-spr-24/c
     git init
     git remote add origin $REPO_URL
     git remote add upstream https://github.com/uchicago-cs/chirouter.git
-    git pull upstream master
-    git push -u origin master
+    git pull upstream main
+    git push -u origin main
 
 
 **Cloning instructions**
