@@ -37,7 +37,7 @@ Unlike Projects 1 and 2, the resubmission can only be used to improve your Compl
 there is not enough to do a full resubmission-regrading cycle.
 
 **NOTE**: To make a resubmission, you must make a "good-faith" submission by the project
-deadline. A good-faith submission is any submission where it is clear you have put it
+deadline. A good-faith submission is any submission where it is clear you have put in
 a substantial amount of effort to complete the project. Please note that we will consider
 any submission that scores an N in Completeness to meet the bar for a good-faith submission.
 
