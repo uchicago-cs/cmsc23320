@@ -103,6 +103,7 @@
 <li><a class="reference internal" href="#code-quality">Code Quality</a></li>
 <li><a class="reference internal" href="#correctness">Correctness</a></li>
 <li><a class="reference internal" href="#design">Design</a></li>
+<li><a class="reference internal" href="#style">Style</a></li>
 <li><a class="reference internal" href="#other-code-quality-issues">Other Code Quality Issues</a></li>
 </ul>
 
@@ -165,7 +166,7 @@ there is not enough to do a full resubmission-regrading cycle.</p>
 <p><strong>NOTE</strong>: To make a resubmission, you must make a “good-faith” submission by the project
 deadline. A good-faith submission is any submission where it is clear you have put it
 a substantial amount of effort to complete the project. Please note that we will consider
-any submission that scores an N in completeness to meet the bar for a good-faith submission.</p>
+any submission that scores an N in Completeness to meet the bar for a good-faith submission.</p>
 <p>This means that, if you want to make a resubmission, you cannot skip the initial
 submission, or submit an effectively empty submission. The reason for this is that
 such a submission could score an S in Code Quality purely because most of the rubric
@@ -174,7 +175,7 @@ then score an S in Completeness, but then have major Code Quality issues.</p>
 <p>In practical terms, this means the following:</p>
 <ul class="simple">
 <li><p>If you are scoring an N on the tests in your initial submission, you have nothing to
-worry about. You can make a resubmission to raise your test score to an S.to</p></li>
+worry about. You can make a resubmission to raise your test score to an S.</p></li>
 <li><p>If you skip the initial submission, or score a U in the tests, we reserve the right
 to regrade your code for Code Quality in the resubmission.</p></li>
 </ul>
@@ -267,6 +268,34 @@ to the following:</p>
 <li><p>[Major issue] <strong>Putting all your code in chirouter_process_ethernet_frame without dividing it into multiple functions</strong>.</p></li>
 <li><p><strong>Writing a single massive “Process IP datagram” function, without dividing it into multiple functions.</strong></p></li>
 <li><p><strong>Repeating ICMP message creation logic in multiple places in your code, instead of writing a general-purpose “create an ICMP message” function</strong></p></li>
+</ul>
+</section>
+<section id="style">
+<h1>Style<a class="headerlink" href="#style" title="Link to this heading">¶</a></h1>
+<p>We will be checking your general adherence to
+our <a class="reference external" href="https://uchicago-cs.github.io/student-resource-guide/style-guide/c.html">Style Guide</a>
+and, while we will not be checking that you follow every minute aspect of our
+style guide, we do expect you to follow a <em>consistent</em> style that
+asymptotically approaches the one specified in our style guide.
+That said, there <em>are</em> certain aspects we will be paying more
+attention to:</p>
+<ul class="simple">
+<li><p><strong>Documenting functions</strong>: Every function written by you must have
+a <a class="reference external" href="https://uchicago-cs.github.io/student-resource-guide/style-guide/c.html#function-comments">function comment</a> with a brief description
+of what the function does, and a description of the parameters and the
+return value. Please note that not documenting your functions at all
+(as opposed to doing so inconsistently or not following the style guide)
+is considered a major issue.</p></li>
+<li><p><strong>Consistent indentation</strong>: Your code must follow one of the
+<a class="reference external" href="https://uchicago-cs.github.io/student-resource-guide/style-guide/c.html#indentation">allowed indentation styles</a> consistently.</p></li>
+<li><p><strong>Clarity</strong>: Your code must be easy to read and understand. This
+is a fairly subjective aspect, but remember that things like using
+variable names without descriptive names or using magic numbers will
+usually make your code harder to read.</p></li>
+<li><p>[Major Issue] <strong>Using global variables</strong>, except when defining
+compile-time constants.</p></li>
+<li><p>[Major Issue] <strong>Using goto statements</strong>, except in the very limited cases
+described in the style guide.</p></li>
 </ul>
 </section>
 <section id="other-code-quality-issues">
