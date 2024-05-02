@@ -112,13 +112,10 @@
       
   <section id="project-3-rubric">
 <h1>Project 3 Rubric<a class="headerlink" href="#project-3-rubric" title="Link to this heading">¶</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has not yet been updated for Spring 2024.</p>
-</div>
 <p>The grading of this project follows a specifications grading approach. If you have not already
-done so, make sure to read our <a class="reference external" href="../grading.html">Grading</a> page for more details.</p>
-<p>You will receive two ESNU scores for this project:</p>
+done so, make sure to read our <a class="reference external" href="../syllabus.html#grading">Grading</a> section of
+the syllabus for more details.</p>
+<p>You will receive two SNU scores for this project:</p>
 <ul class="simple">
 <li><p><strong>Completeness score</strong>: This score will be determined solely by the result of running
 the automated tests, as these give a measure of how <em>complete</em> your implementation
@@ -143,7 +140,7 @@ to our <a class="reference external" href="https://uchicago-cs.github.io/student
 </section>
 <section id="submission-timeline">
 <h1>Submission Timeline<a class="headerlink" href="#submission-timeline" title="Link to this heading">¶</a></h1>
-<p>This project has one required submission, and an optional resubmission:</p>
+<p>The exact timeline of submissions will be the following:</p>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Submission</p></th>
@@ -152,19 +149,35 @@ to our <a class="reference external" href="https://uchicago-cs.github.io/student
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Final Submission</p></td>
+<tr class="row-even"><td><p>Project 3</p></td>
 <td><p><a class="reference external" href="http://chi.cs.uchicago.edu/chirouter/">chirouter</a>  (entire project)</p></td>
-<td><p><strong>Wednesday, November 30, 8pm</strong></p></td>
+<td><p><strong>Wednesday, May 15th, 8pm</strong></p></td>
 </tr>
 <tr class="row-odd"><td><p>Resubmission (Optional)</p></td>
 <td><p>You may submit a revised version to improve your Completeness score <em>only</em></p></td>
-<td><p><strong>Friday, December 9th, 8pm</strong></p></td>
+<td><p><strong>Friday, May 24th, 8pm</strong></p></td>
 </tr>
 </tbody>
 </table>
 <p>Unlike Projects 1 and 2, the resubmission can only be used to improve your Completeness score
 (i.e., the score on the automated tests). Since Project 3 is due by the end of the quarter,
 there is not enough to do a full resubmission-regrading cycle.</p>
+<p><strong>NOTE</strong>: To make a resubmission, you must make a “good-faith” submission by the project
+deadline. A good-faith submission is any submission where it is clear you have put it
+a substantial amount of effort to complete the project. Please note that we will consider
+any submission that scores an N in completeness to meet the bar for a good-faith submission.</p>
+<p>This means that, if you want to make a resubmission, you cannot skip the initial
+submission, or submit an effectively empty submission. The reason for this is that
+such a submission could score an S in Code Quality purely because most of the rubric
+items are moot (because there is little/no code to grade). Your resubmission could
+then score an S in Completeness, but then have major Code Quality issues.</p>
+<p>In practical terms, this means the following:</p>
+<ul class="simple">
+<li><p>If you are scoring an N on the tests in your initial submission, you have nothing to
+worry about. You can make a resubmission to raise your test score to an S.to</p></li>
+<li><p>If you skip the initial submission, or score a U in the tests, we reserve the right
+to regrade your code for Code Quality in the resubmission.</p></li>
+</ul>
 </section>
 <section id="completeness">
 <h1>Completeness<a class="headerlink" href="#completeness" title="Link to this heading">¶</a></h1>
@@ -175,7 +188,13 @@ there is not enough to do a full resubmission-regrading cycle.</p>
 </div>
 <p>(see <a class="reference external" href="http://chi.cs.uchicago.edu/chirouter/automated-tests.html">Automated tests</a>
 in the chirouter documentation for more details)</p>
-<p>Your ESNU score will then be determined as follows:</p>
+<p><strong>NOTE</strong>: In Project 3, you will be relying on manual testing to a greater extent
+than in Projects 1 and 2. The automated tests provide a convenient way to run all
+the tests and get a test score but, in general, if your code works when testing it
+manually, and fails the corresponding automated test, you should consider the test
+to have passed (you should make a note in the README file so the graders are aware
+of this)</p>
+<p>Your SNU score will then be determined as follows:</p>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Grade</p></th>
@@ -183,17 +202,14 @@ in the chirouter documentation for more details)</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Excellent</p></td>
-<td><p>at least 95</p></td>
+<tr class="row-even"><td><p>Satisfactory</p></td>
+<td><p>at least 90</p></td>
 </tr>
-<tr class="row-odd"><td><p>Satisfactory</p></td>
+<tr class="row-odd"><td><p>Needs Improvement</p></td>
 <td><p>at least 60</p></td>
 </tr>
-<tr class="row-even"><td><p>Needs Improvement</p></td>
-<td><p>at least 20</p></td>
-</tr>
-<tr class="row-odd"><td><p>Ungradable</p></td>
-<td><p>less than 20</p></td>
+<tr class="row-even"><td><p>Unsatisfactory</p></td>
+<td><p>less than 60</p></td>
 </tr>
 </tbody>
 </table>
@@ -203,16 +219,14 @@ in the chirouter documentation for more details)</p>
 <p>When assessing your code quality, there are a number of things we will be paying
 close attention to, and which we describe in the sections below (including major
 issues, labelled “[Major Issue]” that you should be particularly mindful of).</p>
-<p>In general, your ESNU score will be determined as follows:</p>
+<p>In general, your SNU score will be determined as follows:</p>
 <ul class="simple">
-<li><p><strong>Excellent</strong>: Your submission has none of the issues described below or, at most,
-has only a few minor mistakes or small style issues that would be trivial to address.</p></li>
 <li><p><strong>Satisfactory</strong>: Your submission has a few of the issues described below (but no
-major issues), and would only require minor changes to get to an E.</p></li>
+major issues).</p></li>
 <li><p><strong>Needs Improvement</strong>: Your submission has several of the issues described below,
-or at least one major issue. In general, major revisions would be required to
-get up to an S or E.</p></li>
-<li><p><strong>Ungradable</strong>: Your submission does not constitute a good-faith effort to complete
+or at least one major issue. In general, major revisions are typically required to
+get up to an S.</p></li>
+<li><p><strong>Unsatisfactory</strong>: Your submission does not constitute a good-faith effort to complete
 the work. This includes not submitting any work at all, as well as submitting
 only placeholder code (e.g., code that includes functions for all the required
 IRC commands, but where the functions are empty or filled with “TODO”s, etc.)</p></li>

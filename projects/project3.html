@@ -99,10 +99,6 @@
       
   <section id="project-3-chirouter">
 <h1>Project 3: chirouter<a class="headerlink" href="#project-3-chirouter" title="Link to this heading">¶</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has not yet been updated for Spring 2024.</p>
-</div>
 <p>In this project you will be implementing a simple IP router capable of routing IPv4 datagrams between multiple networks. This router will have a static routing table, so you will not have to deal with implementing a routing protocol like RIP or OSPF; instead, the project will focus on the routing of IP datagrams. While, at a high level, this just involves receiving IP datagrams and figuring out what interface they should be sent on, this requires building additional functionality before you can actually start routing IP datagrams.</p>
 <p>Please refer to the following documents to complete this project:</p>
 <ul class="simple">
@@ -111,15 +107,12 @@
 <li><p><a class="reference external" href="project3_tips.html">Project 3 tips</a></p></li>
 </ul>
 <p>Take into account that this project requires using a network simulator that
-needs to be run with root privileges on a Linux machine. If you do not have
-access to such a machine, you can use the <a class="reference external" href="https://howto.cs.uchicago.edu/vm:index">CS Virtual Machine</a>
-(version 202122.2 or higher) to run the network simulator. This virtual
-machine will only work on computers with Intel processors so, if you are running
-a newer Mac with an M1 processor, please see our Ed Discussion site for instructions
-on how to set up a virtual machine on your computer.</p>
+needs to be run with root privileges on a Linux machine. For students using
+Windows or Mac, we provide a Docker container that you can use to run
+the network simulator on your computer ()</p>
 <section id="submission-timeline">
 <h2>Submission Timeline<a class="headerlink" href="#submission-timeline" title="Link to this heading">¶</a></h2>
-<p>This project has two required submissions, and an optional resubmission:</p>
+<p>This project has one required submission, and an optional resubmission:</p>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Submission</p></th>
@@ -128,13 +121,13 @@ on how to set up a virtual machine on your computer.</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Final Submission</p></td>
+<tr class="row-even"><td><p>Project 3</p></td>
 <td><p><a class="reference external" href="http://chi.cs.uchicago.edu/chirouter/">chirouter</a>  (entire project)</p></td>
-<td><p><strong>Wednesday, November 30, 8pm</strong></p></td>
+<td><p><strong>Wednesday, May 15th, 8pm</strong></p></td>
 </tr>
 <tr class="row-odd"><td><p>Resubmission (Optional)</p></td>
 <td><p>You may submit a revised version to improve your Completeness score <em>only</em></p></td>
-<td><p><strong>Friday, December 9th, 8pm</strong></p></td>
+<td><p><strong>Friday, May 24th, 8pm</strong></p></td>
 </tr>
 </tbody>
 </table>
@@ -148,9 +141,9 @@ as well as the the <a class="reference internal" href="registering_submitting.ht
 <p>Only one team member needs to run these commands. Create an empty directory and, inside that
 directory run the following commands. In the commands below, <code class="docutils literal notranslate"><span class="pre">$REPO_URL</span></code> refers to the
 SSH URL of your repository. To get this URL, log into GitHub and navigate to your
-project repository. Then, click on the green “Code” button, and make sure the
-“SSH” tab is selected. Your repository URL should look something like this:
-<code class="docutils literal notranslate"><span class="pre">git&#64;github.com:uchicago-cmsc23320-2022-aut/chirouter-p3-jdoe-jrandom.git</span></code></p>
+project repository. Then, under “Quick setup — if you’ve done this kind of thing before”,
+make sure the “SSH” button is selected, and copy the URL that appears next to it.
+It should look something like this: <code class="docutils literal notranslate"><span class="pre">git&#64;github.com:uchicago-cmsc23320-spr-24/chirouter-jdoe-jrandom.git</span></code></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>git init
 git remote add origin $REPO_URL
 git remote add upstream https://github.com/uchicago-cs/chirouter.git
