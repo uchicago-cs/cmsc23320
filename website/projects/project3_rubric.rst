@@ -39,7 +39,7 @@ there is not enough to do a full resubmission-regrading cycle.
 **NOTE**: To make a resubmission, you must make a "good-faith" submission by the project
 deadline. A good-faith submission is any submission where it is clear you have put it
 a substantial amount of effort to complete the project. Please note that we will consider
-any submission that scores an N in completeness to meet the bar for a good-faith submission.
+any submission that scores an N in Completeness to meet the bar for a good-faith submission.
 
 This means that, if you want to make a resubmission, you cannot skip the initial
 submission, or submit an effectively empty submission. The reason for this is that
@@ -50,7 +50,7 @@ then score an S in Completeness, but then have major Code Quality issues.
 In practical terms, this means the following:
 
 - If you are scoring an N on the tests in your initial submission, you have nothing to
-  worry about. You can make a resubmission to raise your test score to an S.to
+  worry about. You can make a resubmission to raise your test score to an S.
 - If you skip the initial submission, or score a U in the tests, we reserve the right
   to regrade your code for Code Quality in the resubmission.
 
@@ -141,6 +141,33 @@ to the following:
 - **Writing a single massive "Process IP datagram" function, without dividing it into multiple functions.**
 - **Repeating ICMP message creation logic in multiple places in your code, instead of writing a general-purpose "create an ICMP message" function**
 
+Style
+-----
+
+We will be checking your general adherence to
+our `Style Guide <https://uchicago-cs.github.io/student-resource-guide/style-guide/c.html>`__
+and, while we will not be checking that you follow every minute aspect of our
+style guide, we do expect you to follow a *consistent* style that
+asymptotically approaches the one specified in our style guide.
+That said, there *are* certain aspects we will be paying more
+attention to:
+
+- **Documenting functions**: Every function written by you must have
+  a `function comment <https://uchicago-cs.github.io/student-resource-guide/style-guide/c.html#function-comments>`__ with a brief description
+  of what the function does, and a description of the parameters and the
+  return value. Please note that not documenting your functions at all
+  (as opposed to doing so inconsistently or not following the style guide)
+  is considered a major issue.
+- **Consistent indentation**: Your code must follow one of the
+  `allowed indentation styles <https://uchicago-cs.github.io/student-resource-guide/style-guide/c.html#indentation>`__ consistently.
+- **Clarity**: Your code must be easy to read and understand. This
+  is a fairly subjective aspect, but remember that things like using
+  variable names without descriptive names or using magic numbers will
+  usually make your code harder to read.
+- [Major Issue] **Using global variables**, except when defining
+  compile-time constants.
+- [Major Issue] **Using goto statements**, except in the very limited cases
+  described in the style guide.
 
 Other Code Quality Issues
 -------------------------
