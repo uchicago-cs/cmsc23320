@@ -126,7 +126,7 @@ which would not be caught by the tests:
 - **Writing IP forwarding, but processing the routing table incorrectly**
 - **Not locking/unlocking the ARP mutex when accessing the ARP cache or the list of pending ARP requests**. Note: our code already locks the ARP mutex before calling the ``chirouter_arp_process_pending_req`` function, and unlocks it after it returns. No locking is necessary inside that function.
 - **Managing Pending ARP Requests: Unconditionally creating new pending requests**. If there is already an entry for IP address *X* in the pending ARP request list, and the router receives a new IP datagram with destination *X*, that datagram should be added to the list of withheld frames in the existing pending request. You should not create an entirely new pending request.
-- **Removing pending requests from the pending ARP request list, instead of returning ARP_REQ_REMOVE**
+- **Removing pending requests from the pending ARP request list in** ``chirouter_arp_process_pending_req`` **, instead of returning ARP_REQ_REMOVE**
 - **Removing pending requests from the pending ARP request list before the request has been sent 5 times**
 - **Not removing a pending ARP request when an ARP reply is received, or when it has been sent 5 times already**
 - **Unconditionally sending a Time Exceeded reply if a forwardeable IP datagram arrives with TTL=1**.  The correct approach is to first determine whether it is a Host Unreachable and, if it is not, then send a Time Exceeded (meaning that forwardeable datagrams with TTL=1 must linger in the withheld frames list so we can determine whether there is actually a host with that IP).
