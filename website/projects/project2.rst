@@ -1,6 +1,9 @@
 Project 2: chitcp
 -----------------
 
+.. warning::
+   This page has not yet been updated for Autumn 2024.
+
 In this project you will be implementing the Transmission Control Protocol, as
 specified in `[RFC793] <http://tools.ietf.org/html/rfc793>`__. However, instead
 of implementing it inside the operating system itself, you will be implementing

@@ -1,6 +1,9 @@
 Project 1 Tips
 ==============
 
+.. warning::
+   This page has not yet been updated for Autumn 2024.
+
 Before you get started
 ----------------------
 
