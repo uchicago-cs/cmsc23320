@@ -16,8 +16,9 @@ In this course, students will learn how to…
 -  ...design and combine network protocols that form the foundation of the
    Internet.
 
--  ...develop software collaboratively through the use of version control
-   tools, code reviews, and project management.
+-  ...develop complex software starting from an existing codebase, working
+   collaboratively with other developers, and using industry-standard tools,
+   including generative AI.
 
 In a nutshell, students will learn how the Internet works. By the end of
 this course, students should understand *everything* that happens "under the hood"
