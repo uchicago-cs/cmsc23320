@@ -4,11 +4,11 @@
 <html lang="en" data-content_root="./">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <title>Syllabus &#8212; CMSC 23320 - Foundations of Computer Networks</title>
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/bootstrap-sphinx.css?v=0bf093e7" />
     <link rel="stylesheet" type="text/css" href="_static/chiweb.css?v=4e80c602" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -60,7 +60,7 @@
         <li><a href="#">Syllabus</a></li>
         <li><a href="calendar.html">Calendar</a></li>
         <li><a href="getting-help.html">Getting Help</a></li>
-        <li><a href="academic-honesty.html">Academic Honesty</a></li>
+        <li><a href="academic-integrity.html">Academic Integrity</a></li>
         <li><a href="code-of-conduct.html">Code of Conduct for Course Staff</a></li>
     </ul>
 </li>
@@ -120,7 +120,7 @@
 <li><a class="reference internal" href="#project-late-policy">Project Late Policy</a></li>
 <li><a class="reference internal" href="#missing-checkpoint-exams">Missing Checkpoint Exams</a></li>
 <li><a class="reference internal" href="#grade-disputes">Grade Disputes</a></li>
-<li><a class="reference internal" href="#policy-on-academic-honesty">Policy on Academic Honesty</a></li>
+<li><a class="reference internal" href="#academic-integrity">Academic Integrity</a></li>
 <li><a class="reference internal" href="#code-of-conduct-for-course-staff">Code of Conduct for Course Staff</a></li>
 <li><a class="reference internal" href="#accessibility-statement">Accessibility Statement</a></li>
 </ul>
@@ -140,13 +140,6 @@
 <p class="admonition-title">Warning</p>
 <p>This syllabus is tentative and subject to change.</p>
 </div>
-<div class="admonition-what-happened-to-cmsc-23300-networks-and-distributed-systems admonition">
-<p class="admonition-title">What happened to CMSC 23300 Networks and Distributed Systems?</p>
-<p>This class was offered for many years under a different code and name, <em>CMSC 23300 Networks and Distributed Systems</em>, despite
-the fact that it only covered Networks topics (with Distributed Systems topics covered in <em>CMSC 23310 Advanced Distributed
-Systems</em>). So, in 2020, we renamed CMSC 23300 to better reflect its contents and scope. However, other than the change in
-code and name, CMSC 23320 covers the same topics and uses the same projects as CMSC 23300.</p>
-</div>
 <section id="course-description">
 <h2>Course description<a class="headerlink" href="#course-description" title="Link to this heading">¶</a></h2>
 <p>This course focuses on the principles and techniques used in the
@@ -163,8 +156,9 @@ protocols and techniques.</p>
 translate them into code.</p></li>
 <li><p>…design and combine network protocols that form the foundation of the
 Internet.</p></li>
-<li><p>…develop software collaboratively through the use of version control
-tools, code reviews, and project management.</p></li>
+<li><p>…develop complex software starting from an existing codebase, working
+collaboratively with other developers, and using industry-standard tools,
+including generative AI.</p></li>
 </ul>
 <p>In a nutshell, students will learn how the Internet works. By the end of
 this course, students should understand <em>everything</em> that happens “under the hood”
@@ -227,24 +221,28 @@ you should make the instructor aware of this.</p>
 <section id="checkpoint-exams-and-final-exam">
 <h3>Checkpoint Exams (and Final Exam)<a class="headerlink" href="#checkpoint-exams-and-final-exam" title="Link to this heading">¶</a></h3>
 <p>There will be ten checkpoint exams throughout the quarter, each with a duration between
-10 and 20 minutes. Each exam will be graded on a pass/fail basis:</p>
+10 and 20 minutes. Each exam will be graded on a S/N/U scale:</p>
 <ul class="simple">
-<li><p>If you pass a checkpoint exam, you have demonstrated mastery of the topic covered in
+<li><p><strong>Satisfactory (S)</strong>: You have demonstrated mastery of the topic covered in
 that exam, and will be exempted from that topic in the final exam.</p></li>
-<li><p>If you do not pass a checkpoint exam, you will get feedback on the exam, and will have
-another chance to demonstrate your mastery of that topic at the final exam.</p></li>
+<li><p><strong>Needs Improvement (N)</strong> and <strong>Unsatisfactory (U)</strong>: You have not demonstrated
+sufficient mastery in the topic, but you will have
+another chance to demonstrate your mastery of that topic at the final exam.
+A “Needs Improvement” indicates that you did demostrate some mastery of the
+topic and, as explained below, it may contribute towards earning certain
+grades in the class.</p></li>
 </ul>
-<p>In other words, the final exam serves <strong>only</strong> to provide a second chance to pass a
-checkpoint exam you did not pass earlier in the quarter. This means that, if you
-pass all the checkpoint exams, you can skip the final exam. It also means you
+<p>In other words, the final exam serves <strong>only</strong> to provide a second chance to
+improve your score on the checkpoint exams. This means that, if you earn an S on
+all the checkpoint exams, you can skip the final exam. It also means you
 could skip all the checkpoint exams, and only take the final exam.</p>
 <p>To get the most out of the checkpoint exams, you should treat them like <strong>practice exams</strong>.
 While some mild preparation is fine, you should not study heavily for them, and should
 use them as a way to <strong>checkpoint</strong> your knowledge of the material (and as an opportunity
 to get feedback on your level of mastery). If you happen to already master the material,
 there is a reward involved (you won’t be “re-tested” on that material at the final),
-but always remember that, if you don’t pass a checkpoint exam, you will have another chance
-to pass it at the final exam.</p>
+but always remember that, if you earn an N or U on a checkpoint exam, you will have another chance
+to improve your score at the final exam.</p>
 </section>
 <section id="lectures">
 <h3>Lectures<a class="headerlink" href="#lectures" title="Link to this heading">¶</a></h3>
@@ -432,23 +430,23 @@ scores: one for Completeness and one for Code Quality.</p></li>
 </ol>
 <p>For each bundle, there are three possible outcomes:</p>
 <ul class="simple">
-<li><p><strong>Completed</strong>: You earned an S on every component of the bundle.</p></li>
-<li><p><strong>Attempted</strong>: You did not earn an S on every component of the bundle,
+<li><p><strong>Satisfactory</strong>: You earned an S on every component of the bundle.</p></li>
+<li><p><strong>Needs Improvement</strong>: You did not earn an S on every component of the bundle,
 but earned at least an N on every component of the bundle.</p></li>
-<li><p><strong>Not Completed</strong>: You do not meet either of the conditions above.</p></li>
+<li><p><strong>Unsatisfactory</strong>: You do not meet either of the conditions above.</p></li>
 </ul>
 </section>
 <section id="final-grade">
 <h3>Final Grade<a class="headerlink" href="#final-grade" title="Link to this heading">¶</a></h3>
-<p>Your final grade will be based on the number of bundles you complete and attempt:</p>
+<p>Your final grade will be based on the number of N and S scores you earn on the bundles:</p>
 <table class="table-bordered docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head" rowspan="2"><p>Grade</p></th>
 <th class="head" colspan="2"><p>Bundles</p></th>
 <th class="head" rowspan="2"><p>Additional Constraints</p></th>
 </tr>
-<tr class="row-even"><th class="head"><p>Attempted</p></th>
-<th class="head"><p>Completed</p></th>
+<tr class="row-even"><th class="head"><p># S or N</p></th>
+<th class="head"><p># S</p></th>
 </tr>
 </thead>
 <tbody>
@@ -470,8 +468,9 @@ but earned at least an N on every component of the bundle.</p></li>
 <tr class="row-odd"><td><p>B-</p></td>
 <td><p>6</p></td>
 <td rowspan="4"><ul class="simple">
-<li><p>Must complete at least two bundles with a project component.</p></li>
-<li><p>Must complete either the “All Together” bundle, or two exam-only bundles.</p></li>
+<li><p>Must earn an S in at least two bundles with a project component.</p></li>
+<li><p>Must earn an S in either the “All Together” bundle, or
+on two exam-only bundles.</p></li>
 </ul>
 </td>
 </tr>
@@ -600,14 +599,20 @@ no later than one week after a graded piece of work is returned to
 you. After that time, we will not consider any such requests,
 regardless of whether the request is reasonable and justified.</p>
 </section>
-<section id="policy-on-academic-honesty">
-<h3>Policy on Academic Honesty<a class="headerlink" href="#policy-on-academic-honesty" title="Link to this heading">¶</a></h3>
-<p>We take academic honesty very seriously in this class. The
-University of Chicago has a <a class="reference external" href="http://college.uchicago.edu/advising/academic-integrity-student-conduct">formal policy on academic honesty</a>
-that you are expected to adhere to.</p>
-<p>Our <a class="reference external" href="academic-honesty.html">Academic Honesty</a> page provides specific policies
-for this course.  Please make sure to read it! Please also pay
-special attention to the <a class="reference external" href="academic-honesty.html#policy-on-generative-ai">Policy on Generative AI</a>.</p>
+<section id="academic-integrity">
+<h3>Academic Integrity<a class="headerlink" href="#academic-integrity" title="Link to this heading">¶</a></h3>
+<p>This class has a permissive policy on student collaboration and on
+the use of Generative AI, but there are still a number of things
+that will not be allowed in the class, and which could lead
+to an academic integrity case against you.</p>
+<p>Our <a class="reference external" href="academic-integrity.html">Academic Integrity</a> page specifies
+these policies in detail, including specific examples of allowed forms
+of collaboration and allowed uses of Generative AI, as well as explanations
+on why we also need to place some limits on them.
+It is your responsibility familiarize yourself with these policies;
+if you are ever unsure of whether you are doing something that
+may run afoul of these policies, please don’t hesitate to ask
+us for clarification.</p>
 </section>
 <section id="code-of-conduct-for-course-staff">
 <h3>Code of Conduct for Course Staff<a class="headerlink" href="#code-of-conduct-for-course-staff" title="Link to this heading">¶</a></h3>
