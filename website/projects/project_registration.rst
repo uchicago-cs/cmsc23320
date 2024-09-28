@@ -1,7 +1,7 @@
 .. _project_registration:
 
-Project Registration
---------------------
+Initial Project Registration
+----------------------------
 
 For each project, a Git repository will be created for you and your project partner on `GitHub <https://github.com/>`__, a web-based hosting service for Git repositories. However, before that repository can be created for you, you need to have a GitHub account. If you do not yet have one, you can get an account here: https://github.com/join. Once you create your account, you may want to get the `Student Developer Pack <https://education.github.com/pack>`__, which will give you access to a lot of other features (please note that having the Student Developer Pack is not necessary for this class; it's just a nice benefit you get as a student)
 
@@ -19,12 +19,3 @@ To actually get your private repository, you will need an *invitation URL*, whic
    can find these in the pertinent project page on this website)
 
 If you run into any issues, or need us to make any manual adjustments to your registration, please let us know via Ed Discussion.
-
-Project Submission
-------------------
-
-Before submitting, make sure you've added, committed, and pushed all your code to GitHub. You will submit your code through `Gradescope <https://gradescope.com/>`__, which you can access through our Canvas site.
-
-When submitting through Gradescope, you will be asked to select a repository to submit. Make sure that you select the correct repository and branch. Please note that you can submit as many times as you want before the deadline.
-
-Once you submit your files, an "autograder" will run. This autograder should produce the same test results as when you run the code yourself; if it doesn't, please let us know so we can look into it.

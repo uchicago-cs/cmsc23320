@@ -1,12 +1,12 @@
 +-------------------------+-------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
 | Submission              | Requirements                                                                                                            | Due Date                                                   |
 +=========================+=========================================================================================================================+============================================================+
-| Project Warmup          | `Assignment 1 <http://chi.cs.uchicago.edu/chirc/assignment1.html>`__ of `chirc <http://chi.cs.uchicago.edu/chirc/>`__   | **Wednesday, March 27, 8pm**                               |
+| Project Warmup          | `Assignment 1 <http://chi.cs.uchicago.edu/chirc/assignment1.html>`__ of `chirc <http://chi.cs.uchicago.edu/chirc/>`__   | **Thursday, October 10, 8pm**                              |
 +-------------------------+-------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
-| Project 1A              | | `Assignment 4 <http://chi.cs.uchicago.edu/chirc/assignment4.html>`__ of `chirc <http://chi.cs.uchicago.edu/chirc/>`__ | **Wednesday, April 3, 8pm**                                |
+| Project 1A              | | `Assignment 4 <http://chi.cs.uchicago.edu/chirc/assignment4.html>`__ of `chirc <http://chi.cs.uchicago.edu/chirc/>`__ | **Thursday, October 17, 8pm**                              |
 |                         | | (Note: Assignment 4 builds on Assignment 1)                                                                           |                                                            |
 +-------------------------+-------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
-| Project 1B              | | `Assignment 5 <http://chi.cs.uchicago.edu/chirc/assignment5.html>`__ of `chirc <http://chi.cs.uchicago.edu/chirc/>`__ | **Wednesday, April 10, 8pm**                               |
+| Project 1B              | | `Assignment 5 <http://chi.cs.uchicago.edu/chirc/assignment5.html>`__ of `chirc <http://chi.cs.uchicago.edu/chirc/>`__ | **Thursday, October 21, 8pm**                              |
 |                         | | (Note: Assignment 5 builds on Assignment 4)                                                                           |                                                            |
 +-------------------------+-------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
 | Resubmission (Optional) | Address feedback received in Project 1                                                                                  | One week after Project 1B is graded                        |
