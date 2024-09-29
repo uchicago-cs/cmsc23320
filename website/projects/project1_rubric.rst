@@ -268,7 +268,7 @@ information in a given section, please do not remove the section. Instead, just 
   reports a different score (in these cases, we will run the tests manually to verify we
   can get the same score you are getting)
 
-- **New files**: If you added any new files C files to the repository, please list them here.
+- **New files**: If you added any new C files to the repository, please list them here.
 
 - **New functions (in existing files)**: If you added new functions to any of the files
   we provided to you, or if you modified any existing function, please list them here.
