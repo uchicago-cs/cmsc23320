@@ -271,7 +271,7 @@ Your final grade will be based on the number of N and S scores you earn on the b
 | B     |           | 7         |                                                                             |
 +-------+           +-----------+-----------------------------------------------------------------------------+
 | B-    |           | 6         | - Must earn an S in at least two bundles with a project component.          |
-+-------+-----------+-----------+ - Must earn an S in either the “All Together” bundle, or                    |
++-------+-----------+-----------+ - Must earn an S in either the “Mastery of Networks” bundle, or             |
 | C+    | 6         | 6         |   on two exam-only bundles.                                                 |
 +-------+           +-----------+                                                                             |
 | C     |           | 5         |                                                                             |
