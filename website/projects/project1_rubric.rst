@@ -256,6 +256,9 @@ The ``DOCUMENTATION.md`` file **must** follow the template below
     ---------------
     <COMPLETE THIS SECTION>
 
+    Citations
+    ---------
+    <COMPLETE THIS SECTION>
 
 Below you can find more details on each of the sections. If you are not providing any
 information in a given section, please do not remove the section. Instead, just write
@@ -283,6 +286,17 @@ information in a given section, please do not remove the section. Instead, just 
 - **Known omissions**: If you intentionally skipped any part of the project, or intentionally
   did not address any rubric items, please list them here. If we can provide any feedback that
   would help you address these rubric items, please let us know here as well.
+
+- **Citations**: Citations for use of Generative AI or external resources should be included,
+  when possible, as code comments above any code where you relied on external sources. However,
+  if you consulted a source that had a more broad impact on your work (and not on specific
+  pieces of code), you can include the citation here.   Additionally, if you had any high-level
+  discussions about the project with other students in the class, please list their names here.
+
+  Note: If the Generative AI platform you're using does not allow you to easily generate a
+  shareable link, please include a copy of the conversation(s) at the bottom of the
+  ``DOCUMENTATION.md`` file.
+
 
 Other Code Quality Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~
