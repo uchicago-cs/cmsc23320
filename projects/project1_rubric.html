@@ -68,7 +68,6 @@
     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects <span class="caret"></span></a>
     <ul class="dropdown-menu">
         <li><a href="started.html">Getting Started</a></li>
-        <li><a href="registering_submitting.html">Registering/Submitting</a></li>
         <li><a href="project1.html">Project 1: chirc</a></li>
         <li><a href="project2.html">Project 2: chiTCP</a></li>
         <li><a href="project3.html">Project 3: chirouter</a></li>
@@ -104,12 +103,8 @@
 <li><a class="reference internal" href="#correctness">Correctness</a></li>
 <li><a class="reference internal" href="#design">Design</a></li>
 <li><a class="reference internal" href="#style">Style</a></li>
+<li><a class="reference internal" href="#documentation">Documentation</a></li>
 <li><a class="reference internal" href="#other-code-quality-issues">Other Code Quality Issues</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#resubmission">Resubmission</a><ul>
-<li><a class="reference internal" href="#submitting">Submitting</a></li>
-<li><a class="reference internal" href="#resubmission-grading">Resubmission Grading</a></li>
 </ul>
 </li>
 </ul>
@@ -122,10 +117,6 @@
       
   <section id="project-1-rubric">
 <h1>Project 1 Rubric<a class="headerlink" href="#project-1-rubric" title="Link to this heading">¶</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has not yet been updated for Autumn 2024.</p>
-</div>
 <p>The grading of this project follows a specifications grading approach. If you have not already
 done so, make sure to read our <a class="reference external" href="../syllabus.html#grading">Grading</a> section of
 the syllabus for more details.</p>
@@ -136,7 +127,7 @@ for each submission:</p>
 the automated tests, as these give a measure of how <em>complete</em> your implementation
 is (i.e., how much of the assignment you implemented).</p></li>
 <li><p><strong>Code Quality score</strong>: This score is determined by a review of your code done by
-the course staff, and is based on three aspects of your code:</p>
+the course staff, and is based on four aspects of your code:</p>
 <ul>
 <li><p><em>Correctness</em>: This encompasses issues with your code
 that, while not explicitly captured by the tests, could lead to
@@ -149,10 +140,12 @@ to some extent independently of) the correct operation of your code.” (thanks 
 Adam Shaw for this concise phrasing).</p></li>
 <li><p><em>Style</em>: This encompasses your adherence
 to our <a class="reference external" href="https://uchicago-cs.github.io/student-resource-guide/style-guide/c.html">Style Guide</a>.</p></li>
+<li><p><em>Documentation</em>: You will be required to submit certain documentation on
+your code (the exact documentation is described below)</p></li>
 </ul>
 </li>
 </ul>
-<p>This project also has a “Warm-up” submission. This submission does not contribute
+<p>This project also has a “Warm-up” submission. This submission does not directly contribute
 to your final grade but, if you complete it, you will be more likely to get an S in Project 1A.
 To complete the “Warm-up” submission, you must score at least 90/100 points on the autograder
 for that submission.</p>
@@ -169,7 +162,7 @@ for that submission.</p>
 <tbody>
 <tr class="row-even"><td><p>Project Warmup</p></td>
 <td><p><a class="reference external" href="http://chi.cs.uchicago.edu/chirc/assignment1.html">Assignment 1</a> of <a class="reference external" href="http://chi.cs.uchicago.edu/chirc/">chirc</a></p></td>
-<td><p><strong>Wednesday, March 27, 8pm</strong></p></td>
+<td><p><strong>Thursday, October 10, 8pm</strong></p></td>
 </tr>
 <tr class="row-odd"><td><p>Project 1A</p></td>
 <td><div class="line-block">
@@ -177,7 +170,7 @@ for that submission.</p>
 <div class="line">(Note: Assignment 4 builds on Assignment 1)</div>
 </div>
 </td>
-<td><p><strong>Wednesday, April 3, 8pm</strong></p></td>
+<td><p><strong>Thursday, October 17, 8pm</strong></p></td>
 </tr>
 <tr class="row-even"><td><p>Project 1B</p></td>
 <td><div class="line-block">
@@ -185,7 +178,7 @@ for that submission.</p>
 <div class="line">(Note: Assignment 5 builds on Assignment 4)</div>
 </div>
 </td>
-<td><p><strong>Wednesday, April 10, 8pm</strong></p></td>
+<td><p><strong>Thursday, October 21, 8pm</strong></p></td>
 </tr>
 <tr class="row-odd"><td><p>Resubmission (Optional)</p></td>
 <td><p>Address feedback received in Project 1</p></td>
@@ -209,12 +202,12 @@ post more details about the resubmission process at a later time.</p>
 </div>
 </li>
 <li><p>Project 1A:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">assignment</span><span class="o">-</span><span class="mi">1</span><span class="o">+</span><span class="mi">4</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">assignment</span><span class="o">-</span><span class="mi">4</span>
 </pre></div>
 </div>
 </li>
 <li><p>Project 1B:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">assignment</span><span class="o">-</span><span class="mi">5</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">assignment</span><span class="o">-</span><span class="mi">4</span><span class="o">+</span><span class="mi">5</span>
 </pre></div>
 </div>
 </li>
@@ -225,21 +218,27 @@ in the chirc documentation for more details on these commands)</p>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Grade</p></th>
-<th class="head"><p>Points on tests</p></th>
+<th class="head"><p>Project 1A</p></th>
+<th class="head"><p>Project 1B</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Satisfactory</p></td>
 <td><p>at least 90</p></td>
+<td><p>at least 180</p></td>
 </tr>
 <tr class="row-odd"><td><p>Needs Improvement</p></td>
 <td><p>at least 60</p></td>
+<td><p>at least 120</p></td>
 </tr>
 <tr class="row-even"><td><p>Unsatisfactory</p></td>
 <td><p>less than 60</p></td>
+<td><p>less than 120</p></td>
 </tr>
 </tbody>
 </table>
+<p>Note that the completeness score for Project 1B is based on the tests for both Assignment 4 <em>and</em>
+Assignment 5 of chirc (and is scored out of 200 possible points)</p>
 </section>
 <section id="code-quality">
 <h2>Code Quality<a class="headerlink" href="#code-quality" title="Link to this heading">¶</a></h2>
@@ -320,8 +319,8 @@ sure to use the data structures and functions provided to you.</p></li>
 <li><p><strong>Not implementing the chirc_connection_send_message function</strong></p></li>
 <li><p><strong>Implementing the chirc_connection_send_message function, but using it inconsistently</strong>
 e.g., making direct calls to send() from elsewhere in your code. Your code should be
-written in such a way that <cite>chirc_connection_send_message</cite> is the only function
-in your entire code to call the <cite>send</cite> function (or some sort of <cite>sendall</cite> helper function)</p></li>
+written in such a way that <code class="docutils literal notranslate"><span class="pre">chirc_connection_send_message</span></code> is the only function
+in your entire code to call the <code class="docutils literal notranslate"><span class="pre">send</span></code> function (or some sort of <code class="docutils literal notranslate"><span class="pre">sendall</span></code> helper function)</p></li>
 <li><p>[Major issue] <strong>Putting all your code inside the chirc_run function</strong>: This is fine
 for the Project 1 Warm-up, but not once you move on to Project 1A</p></li>
 </ul>
@@ -363,6 +362,80 @@ usually make your code harder to read.</p></li>
 compile-time constants.</p></li>
 <li><p>[Major Issue] <strong>Using goto statements</strong>, except in the very limited cases
 described in the style guide.</p></li>
+</ul>
+</section>
+<section id="documentation">
+<h3>Documentation<a class="headerlink" href="#documentation" title="Link to this heading">¶</a></h3>
+<p>Your submission must include a <code class="docutils literal notranslate"><span class="pre">DOCUMENTATION.md</span></code> file in the root of your repository
+with some specific documentation about the code you have written. If you do not
+include this file, Gradescope will reject your submission entirely. If you do
+include it, but the file does not provide the information we request below, this will
+be treated as a major issue in your submission.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">DOCUMENTATION.md</span></code> file <strong>must</strong> follow the template below
+(the exact sections are explained further below):</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gh">Project 1</span>
+<span class="gh">=========</span>
+
+Team members:
+<span class="k">-</span><span class="w"> </span>TEAM MEMBER 1 (CNETID1)
+<span class="k">-</span><span class="w"> </span>TEAM MEMBER 2 (CNETID2)
+
+Test score: XXX / YYY
+
+<span class="gu">New files</span>
+<span class="gu">---------</span>
+<span class="k">-</span><span class="w"> </span>file1.c
+<span class="k">-</span><span class="w"> </span>file2.c
+<span class="k">-</span><span class="w"> </span>file3.c
+
+<span class="gu">New/modified functions (in existing files)</span>
+<span class="gu">---------------------------------</span>
+<span class="k">-</span><span class="w"> </span>function1() in message.c
+<span class="k">-</span><span class="w"> </span>function2() in channel.c
+
+<span class="gu">Other code details / requests for feedback</span>
+<span class="gu">------------------------------------------</span>
+&lt;COMPLETE THIS SECTION&gt;
+
+<span class="gu">Known omissions</span>
+<span class="gu">---------------</span>
+&lt;COMPLETE THIS SECTION&gt;
+
+<span class="gu">Citations</span>
+<span class="gu">---------</span>
+&lt;COMPLETE THIS SECTION&gt;
+</pre></div>
+</div>
+<p>Below you can find more details on each of the sections. If you are not providing any
+information in a given section, please do not remove the section. Instead, just write
+<code class="docutils literal notranslate"><span class="pre">N/A</span></code> below it.</p>
+<ul>
+<li><p><strong>Team members</strong>: Include the names and CNetIDs of both team members.</p></li>
+<li><p><strong>Test score</strong>: Please include the test score you are seeing when running the tests
+on your computer. This will allow us to look into situations where the Gradescope autograder
+reports a different score (in these cases, we will run the tests manually to verify we
+can get the same score you are getting)</p></li>
+<li><p><strong>New files</strong>: If you added any new C files to the repository, please list them here.</p></li>
+<li><p><strong>New functions (in existing files)</strong>: If you added new functions to any of the files
+we provided to you, or if you modified any existing function, please list them here.
+Note: this does <strong>not</strong> include the handler functions you will be adding in the <code class="docutils literal notranslate"><span class="pre">handlers.c</span></code>
+file. You do not need to list those functions.</p></li>
+<li><p><strong>Other code details / requests for feedback</strong>: Use this section to provide any other
+information that may be relevant to the graders as they read through your code.
+If you would like us to provide feedback on any specific aspect of your work,
+you can also let us know in this section.</p></li>
+<li><p><strong>Known omissions</strong>: If you intentionally skipped any part of the project, or intentionally
+did not address any rubric items, please list them here. If we can provide any feedback that
+would help you address these rubric items, please let us know here as well.</p></li>
+<li><p><strong>Citations</strong>: Citations for use of Generative AI or external resources should be included,
+when possible, as code comments above any code where you relied on external sources. However,
+if you consulted a source that had a more broad impact on your work (and not on specific
+pieces of code), you can include the citation here.   Additionally, if you had any high-level
+discussions about the project with other students in the class, please list their names here.</p>
+<p>Note: If the Generative AI platform you’re using does not allow you to easily generate a
+shareable link, please include a copy of the conversation(s) at the bottom of the
+<code class="docutils literal notranslate"><span class="pre">DOCUMENTATION.md</span></code> file.</p>
+</li>
 </ul>
 </section>
 <section id="other-code-quality-issues">
@@ -411,145 +484,6 @@ not “save” pointers to stack-allocated memory that is going to be deallocate
 This can happen if you store a pointer to a functions’ local variable in a struct
 that is heap-allocated.</p></li>
 </ul>
-</section>
-</section>
-<section id="resubmission">
-<h2>Resubmission<a class="headerlink" href="#resubmission" title="Link to this heading">¶</a></h2>
-<p>When you receive your graded Project 1B, you can make a resubmission to address
-any feedback you received in Projects 1A and/or 1B. This may increase your scores
-in those projects.</p>
-<p>Note: You <em>cannot</em> make a resubmission if you got S’s on both Completeness and Code Quality. If you
-are in this situation and want additional feedback on your grading, please ask on Ed.</p>
-<p>While the project is divided into two parts (1A and 1B), remember that Project 1B
-builds on Project 1A, As such, you should think about your
-resubmission as a final cumulative submission that addresses any remaining issues
-in your Project 1A and/or 1B submissions (i.e., you should not think in terms
-of making two separate resubmissions, one for 1A and another for 1B, with different
-code for each submission).</p>
-<p>Making a resubmission involves not just addressing the feedback we gave you, but
-also preparing some documentation explaining the changes you made to your code.
-You should consider this documentation as important as the changes you are making
-to your code: <strong>resubmissions that do not include the information requested below
-WILL NOT BE GRADED</strong>.</p>
-<p>If you decide to make a resubmission, you <strong>MUST</strong> add a <code class="docutils literal notranslate"><span class="pre">RESUBMISSION.md</span></code> file
-in the root of your repository using the following template: (the exact sections
-are explained below)</p>
-<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gh">Project 1 Resubmission</span>
-<span class="gh">======================</span>
-
-Team members:
-<span class="k">-</span><span class="w"> </span>TEAM MEMBER 1 (CNETID1)
-<span class="k">-</span><span class="w"> </span>TEAM MEMBER 2 (CNETID2)
-
-Resubmission for:
-[ ] Project 1A
-[ ] Project 1B
-
-<span class="gu">Rubric items you have addressed</span>
-<span class="gu">-------------------------------</span>
-&lt;COMPLETE THIS SECTION&gt;
-
-<span class="gu">Rubric items you have NOT addressed</span>
-<span class="gu">-----------------------------------</span>
-&lt;COMPLETE THIS SECTION&gt;
-
-<span class="gu">Substantial new code added to your submission</span>
-<span class="gu">---------------------------------------------</span>
-&lt;COMPLETE THIS SECTION&gt;
-
-<span class="gu">Changes made to pass additional tests</span>
-<span class="gu">-------------------------------------</span>
-&lt;COMPLETE THIS SECTION&gt;
-
-<span class="gu">Other changes</span>
-<span class="gu">-------------</span>
-&lt;COMPLETE THIS SECTION&gt;
-</pre></div>
-</div>
-<p>Below you can find more details on each of the sections. If you are not providing any
-information in a given section, please do not remove the section. Instead, just write
-<code class="docutils literal notranslate"><span class="pre">N/A</span></code> below it.</p>
-<ul>
-<li><p><strong>Team members</strong>: Ordinarily, this would be the same two team members who made the original submission.
-However, if you worked individually on the resubmission (because your teammate was happy with the
-original submission, and didn’t want to work further on it), please make sure to note this here.</p></li>
-<li><p><strong>Resubmission for…</strong>: Indicate what submission(s) should be regraded based on this code
-(see the “Submission” section below for more details). To check the checkboxes, replace <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code>
-with <code class="docutils literal notranslate"><span class="pre">[X]</span></code></p></li>
-<li><p><strong>Rubric items you have addressed</strong>: Rubric items that appear selected on Gradescope (under “Manual Grading”)
-represent issues that had an impact on your Code Quality score. To facilitate the work of the
-graders, you must list each rubric item you have addressed, with the following information:</p>
-<ul class="simple">
-<li><p>The rubric item description, exactly as it appears on Gradescope.</p></li>
-<li><p>1-2 sentences explaining how you addressed the rubric item.</p></li>
-<li><p>If the work you did on the rubric item is limited to a few lines of code, specify the filename and line number(s),
-If your work on this rubric item involved deeper changes to your code, you do not need to list every single line
-of code you changed, but you should try to give the graders a general sense of where you made the changes, including
-a few examples if possible
-(e.g., “I combed through the code to make sure I was using descriptive variable names; for example, I changed <code class="docutils literal notranslate"><span class="pre">c</span></code> to
-<code class="docutils literal notranslate"><span class="pre">channel</span></code> in several functions”, “I reorganized functions <code class="docutils literal notranslate"><span class="pre">foo()</span></code>, <code class="docutils literal notranslate"><span class="pre">bar()</span></code>, and <code class="docutils literal notranslate"><span class="pre">baz()</span></code> as requested”, etc.)</p></li>
-</ul>
-<p>Bear in mind that the Project 1A rubric items are a subset of the Project 1B rubric items. This means that…</p>
-<ul class="simple">
-<li><p>If your initial Project 1B submission already addressed a rubric item from Project 1A (and the rubric
-item was no longer selected in your graded Project 1B), it is enough to say “This rubric item was addressed
-in Project 1B”</p></li>
-<li><p>If you scored an N in Code Quality in Project 1A, but then scored an S in Code Quality
-in Project 1B, you do not need to explain how you addressed each individual rubric item.
-Instead, please include the following text in this section: “We earned an S in Code Quality
-in Project 1B”</p></li>
-</ul>
-</li>
-<li><p><strong>Rubric items you have NOT addressed</strong>: It is also important that you let us know what rubric items you
-decided not to address, as this will expedite the work of the graders. For these rubric items, it is enough
-to provide a list of the rubric item descriptions (exactly as they appear on Gradescope)</p></li>
-<li><p><strong>Substantial new code added to your submission</strong>: If you added substantial new code that was not present in your
-original submission (e.g., if your original submission did not implement several commands, and you have now included
-new code to implement those commands), you must specify the affected files, as well as the new functionality that
-is added by the new code. For example, you could include something like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Modified</span> <span class="n">files</span><span class="p">:</span> <span class="n">ctx</span><span class="o">.</span><span class="n">h</span><span class="p">,</span> <span class="n">handlers</span><span class="o">.</span><span class="n">c</span>
-
-<span class="n">Locks</span><span class="p">:</span> <span class="n">Added</span> <span class="n">locks</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="ow">and</span> <span class="n">Z</span> <span class="ow">in</span> <span class="n">chirc_ctx_t</span>
-
-<span class="n">JOIN</span> <span class="ow">and</span> <span class="n">PART</span><span class="p">:</span> <span class="n">Implemented</span> <span class="n">the</span> <span class="n">handlers</span> <span class="k">for</span> <span class="n">these</span> <span class="n">commands</span> <span class="ow">in</span> <span class="n">handlers</span><span class="o">.</span><span class="n">c</span>
-
-<span class="n">QUIT</span><span class="p">:</span> <span class="n">Updated</span> <span class="n">the</span> <span class="n">QUIT</span> <span class="n">handler</span> <span class="n">to</span> <span class="n">relay</span> <span class="n">the</span> <span class="n">QUIT</span> <span class="n">to</span> <span class="n">users</span> <span class="n">on</span> <span class="n">the</span> <span class="n">same</span> <span class="n">channel</span> <span class="k">as</span> <span class="n">the</span> <span class="n">user</span><span class="o">.</span>
-</pre></div>
-</div>
-</li>
-<li><p><strong>Changes made to pass additional tests</strong>: If you made changes to your code with the goal of passing more tests,
-please specify your original test score, and the new test score. If your work only involved a few minor bug fixes,
-please let us know you did this (but you do not need to specify the exact changes you made). On the other hand,
-if you skipped parts of Project 1B in your original submission, and have written entirely new code, please make
-sure you have specified this as part of the “substantial new code”, and that you also specify that doing so
-allowed you to pass additional tests.</p></li>
-<li><p><strong>Other changes</strong>: If you made other changes to your code, such as refactoring large parts of your code, make
-sure to specify this too.</p></li>
-</ul>
-<p>Once again, if you do not include a <code class="docutils literal notranslate"><span class="pre">RESUBMISSION.md</span></code> file with the above information,
-your resubmission <strong>will not be graded</strong>.</p>
-<section id="submitting">
-<h3>Submitting<a class="headerlink" href="#submitting" title="Link to this heading">¶</a></h3>
-<p>For technical reasons, there will be two separate resubmission assignments on Gradescope: “Project 1A (resubmission)”
-and “Project 1B (resubmission)”:</p>
-<ul class="simple">
-<li><p>If you want to improve your score in both Project 1A and 1B, <strong>you must submit the same code
-to both assignments</strong>. We will only review the code in the 1B submission, but will use the 1A
-resubmission assignment to convey your updated scores for Project 1A.</p></li>
-<li><p>If you only need to improve your score in one (but not both) of the assignments, submit
-your code <em>only</em> in the corresponding resubmission assignment. e.g., if you are happy with
-your Project 1A score, but want to improve your Project 1B score, then you only need to
-make a submission to the “Project 1B (resubmission)” assignment on Gradescope.</p></li>
-</ul>
-</section>
-<section id="resubmission-grading">
-<h3>Resubmission Grading<a class="headerlink" href="#resubmission-grading" title="Link to this heading">¶</a></h3>
-<p>In general, if you are making a resubmission that only involved addressing rubric items, without adding substantial
-new code to your submission, there is a very high likelihood that addressing all the rubric items will bump your Code
-Quality score to an S. You may leave up to two non-major rubric items unaddressed.</p>
-<p>On the other hand, if you are making a resubmission that involves adding substantial new code, please bear in mind
-that the graders could identify issues in that new code that will impact your Code Quality score. Please
-make sure to carefully review the <a class="reference external" href="project1_rubric.html">Project 1 Rubric</a> so you know what the graders will be looking at.</p>
 </section>
 </section>
 </section>

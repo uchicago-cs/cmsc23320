@@ -68,7 +68,6 @@
     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects <span class="caret"></span></a>
     <ul class="dropdown-menu">
         <li><a href="started.html">Getting Started</a></li>
-        <li><a href="registering_submitting.html">Registering/Submitting</a></li>
         <li><a href="project1.html">Project 1: chirc</a></li>
         <li><a href="project2.html">Project 2: chiTCP</a></li>
         <li><a href="project3.html">Project 3: chirouter</a></li>
@@ -125,10 +124,6 @@
       
   <section id="project-1-tips">
 <h1>Project 1 Tips<a class="headerlink" href="#project-1-tips" title="Link to this heading">¶</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has not yet been updated for Autumn 2024.</p>
-</div>
 <section id="before-you-get-started">
 <h2>Before you get started<a class="headerlink" href="#before-you-get-started" title="Link to this heading">¶</a></h2>
 <p>When writing the socket code for your chirc server, make sure you take a look at the
@@ -157,7 +152,7 @@ for hash tables. The chirc code is written to abstract away most uses of that li
 the <code class="docutils literal notranslate"><span class="pre">chirc_ctx_add_connection</span></code> function instead of manipulating
 the hash table yourself).</p></li>
 <li><p>The <a class="reference external" href="https://github.com/antirez/sds">SDS</a>  library to manipulate strings.
-SDS strings can be manipulated (i.e., C string functions will
+SDS strings can be manipulated just like C strings (i.e., C string functions will
 work with SDS strings), but the SDS library provides functions
 that makes certain tasks easier. That said, you should not need
 to do much string manipulation, since most of that is handled
@@ -177,7 +172,7 @@ a <code class="docutils literal notranslate"><span class="pre">chirc_user_t</spa
 <p>While you can implement all this inside <code class="docutils literal notranslate"><span class="pre">chirc_run</span></code>, it will also pay off to do the following:</p>
 <ul class="simple">
 <li><p>Implement the <code class="docutils literal notranslate"><span class="pre">chirc_connection_send_message</span></code> function in <code class="docutils literal notranslate"><span class="pre">connection.c</span></code>. This function
-will provide an abstraction over “sending a message through a connection”.ç</p></li>
+will provide an abstraction over “sending a message through a connection”.</p></li>
 <li><p>Start looking at the <code class="docutils literal notranslate"><span class="pre">handlers.c</span></code> module. Once you have a basic implementation
 in <code class="docutils literal notranslate"><span class="pre">chirc_run</span></code>, you should look into implementing a <code class="docutils literal notranslate"><span class="pre">NICK</span></code> and <code class="docutils literal notranslate"><span class="pre">USER</span></code> handler
 in the <code class="docutils literal notranslate"><span class="pre">handlers.c</span></code> module.</p></li>
