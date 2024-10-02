@@ -1,10 +1,6 @@
 Syllabus
 ========
 
-.. warning::
-
-   This syllabus is tentative and subject to change.
-
 Course description
 ------------------
 

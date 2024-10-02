@@ -1,10 +1,6 @@
 Autumn 2024 Course Calendar
 ---------------------------
 
-.. warning::
-
-   This calendar is tentative and subject to change.
-
 Lectures take place in Ryerson 251 on Tuesdays and Thursdays from 12:30pm from 1:50pm.
 
 Discussion sessions take place in Stuart 105 on Wednesdays from 3:30pm to 4:50pm.
