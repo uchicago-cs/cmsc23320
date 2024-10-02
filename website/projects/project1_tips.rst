@@ -34,7 +34,7 @@ Next, the chirc server uses the following libraries:
   the hash table yourself).
    
 - The `SDS <https://github.com/antirez/sds>`__  library to manipulate strings.
-  SDS strings can be manipulated (i.e., C string functions will
+  SDS strings can be manipulated just like C strings (i.e., C string functions will
   work with SDS strings), but the SDS library provides functions
   that makes certain tasks easier. That said, you should not need
   to do much string manipulation, since most of that is handled
@@ -54,7 +54,7 @@ For the warm-up exercise, we suggest you do the following:
 While you can implement all this inside ``chirc_run``, it will also pay off to do the following:
 
 - Implement the ``chirc_connection_send_message`` function in ``connection.c``. This function
-  will provide an abstraction over "sending a message through a connection".ç
+  will provide an abstraction over "sending a message through a connection".
 - Start looking at the ``handlers.c`` module. Once you have a basic implementation
   in ``chirc_run``, you should look into implementing a ``NICK`` and ``USER`` handler
   in the ``handlers.c`` module.

@@ -167,8 +167,8 @@ to the following:
 * **Not implementing the chirc_connection_send_message function**
 * **Implementing the chirc_connection_send_message function, but using it inconsistently**
   e.g., making direct calls to send() from elsewhere in your code. Your code should be
-  written in such a way that `chirc_connection_send_message` is the only function
-  in your entire code to call the `send` function (or some sort of `sendall` helper function)
+  written in such a way that ``chirc_connection_send_message`` is the only function
+  in your entire code to call the ``send`` function (or some sort of ``sendall`` helper function)
 * [Major issue] **Putting all your code inside the chirc_run function**: This is fine
   for the Project 1 Warm-up, but not once you move on to Project 1A
 
