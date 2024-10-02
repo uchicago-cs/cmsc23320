@@ -134,7 +134,6 @@ html_context = {"web_navbar": [("Course Information", [
                                  ]),
                                  ("Projects", [
                                      ("Getting Started", "projects/started", False),
-                                     ("Registering/Submitting", "projects/registering_submitting", False),
                                      ("Project 1: chirc", "projects/project1", False),
                                      ("Project 2: chiTCP", "projects/project2", False),
                                      ("Project 3: chirouter", "projects/project3", False),

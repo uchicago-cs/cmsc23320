@@ -17,8 +17,8 @@ server called chirc. This project has three goals:
 Please refer to the following documents to complete this project:
 
 - Make sure you've read our :ref:`Getting Started <project_started>` page.
-- You can find instructions on how to register for the project (and how to
-  get your Git repo) in our :ref:`Project Registration <project_registration>` page.
+  That page also includes instructions on how to register for the project (and how to
+  get your Git repo)
 - `chirc specification <http://chi.cs.uchicago.edu/chirc/>`__: In this project,
   you will be implementing Assignments 1, 4, and 5 of chirc.
 - `Project 1 rubric <project1_rubric.html>`__
@@ -37,7 +37,6 @@ Initializing your Project 1 Repository
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Make sure that you have read the :ref:`Getting Started <project_started>` page
-as well as the :ref:`Project Registration <project_registration>` instructions
 before following the instructions below.
 
 **One-time setup instructions**
@@ -79,7 +78,7 @@ submit as many times as you want before the deadline.
 
 In this project, Gradescope will *only* fetch the following files from your repository:
 
-- All ``.c`` and ``.h`` files inside the `src/` directory (including any subdirectories you may
+- All ``.c`` and ``.h`` files inside the ``src/`` directory (including any subdirectories you may
   have added in that directory)
 - The ``CMakeLists.txt`` file in the root of your repository
 - The ``DOCUMENTATION.md`` file in the root of your repository
