@@ -25,7 +25,6 @@ For more details, please see the `syllabus <syllabus.html>`_.
    getting-help.rst
    projects/started.rst
    projects/specs.rst
-   projects/project_registration.rst
    projects/project1.rst
    projects/project2.rst
    projects/project3.rst
