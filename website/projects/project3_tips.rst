@@ -1,6 +1,9 @@
 Project 3 Tips
 ==============
 
+.. warning::
+   This page has not yet been updated for Autumn 2024.
+
 Before you get started, make sure you've read through the `Projects - Getting Started <../projects/started.html>`__ page.
 
 Resetting Mininet

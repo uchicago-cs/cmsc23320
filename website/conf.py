@@ -49,7 +49,7 @@ templates_path = ['_templates']
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 # source_suffix = ['.rst', '.md']
-source_suffix = '.rst'
+source_suffix = {'.rst': 'restructuredtext'}
 
 # The encoding of source files.
 #source_encoding = 'utf-8-sig'
@@ -129,12 +129,11 @@ html_context = {"web_navbar": [("Course Information", [
                                     ("Syllabus", "syllabus", False),
                                     ("Calendar", "calendar", False),
                                     ("Getting Help", "getting-help", False),
-                                    ("Academic Honesty", "academic-honesty", False),
+                                    ("Academic Integrity", "academic-integrity", False),
                                     ("Code of Conduct for Course Staff", "code-of-conduct", False),
                                  ]),
                                  ("Projects", [
                                      ("Getting Started", "projects/started", False),
-                                     ("Registering/Submitting", "projects/registering_submitting", False),
                                      ("Project 1: chirc", "projects/project1", False),
                                      ("Project 2: chiTCP", "projects/project2", False),
                                      ("Project 3: chirouter", "projects/project3", False),

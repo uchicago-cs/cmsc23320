@@ -1,17 +1,6 @@
 Syllabus
 ========
 
-.. warning::
-
-   This syllabus is tentative and subject to change.
-
-.. admonition:: What happened to CMSC 23300 Networks and Distributed Systems?
-
-   This class was offered for many years under a different code and name, *CMSC 23300 Networks and Distributed Systems*, despite
-   the fact that it only covered Networks topics (with Distributed Systems topics covered in *CMSC 23310 Advanced Distributed
-   Systems*). So, in 2020, we renamed CMSC 23300 to better reflect its contents and scope. However, other than the change in
-   code and name, CMSC 23320 covers the same topics and uses the same projects as CMSC 23300.
-
 Course description
 ------------------
 
@@ -88,16 +77,20 @@ Checkpoint Exams (and Final Exam)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 There will be ten checkpoint exams throughout the quarter, each with a duration between
-10 and 20 minutes. Each exam will be graded on a pass/fail basis:
+10 and 20 minutes. Each exam will be graded on a S/N/U scale:
 
-- If you pass a checkpoint exam, you have demonstrated mastery of the topic covered in
+- **Satisfactory (S)**: You have demonstrated mastery of the topic covered in
   that exam, and will be exempted from that topic in the final exam.
-- If you do not pass a checkpoint exam, you will get feedback on the exam, and will have
+- **Needs Improvement (N)** and **Unsatisfactory (U)**: You have not demonstrated
+  sufficient mastery in the topic, but you will have
   another chance to demonstrate your mastery of that topic at the final exam.
+  A "Needs Improvement" indicates that you did demostrate some mastery of the
+  topic and, as explained below, it may contribute towards earning certain
+  grades in the class.
 
-In other words, the final exam serves **only** to provide a second chance to pass a
-checkpoint exam you did not pass earlier in the quarter. This means that, if you
-pass all the checkpoint exams, you can skip the final exam. It also means you
+In other words, the final exam serves **only** to provide a second chance to
+improve your score on the checkpoint exams. This means that, if you earn an S on
+all the checkpoint exams, you can skip the final exam. It also means you
 could skip all the checkpoint exams, and only take the final exam.
 
 To get the most out of the checkpoint exams, you should treat them like **practice exams**.
@@ -105,8 +98,8 @@ While some mild preparation is fine, you should not study heavily for them, and 
 use them as a way to **checkpoint** your knowledge of the material (and as an opportunity
 to get feedback on your level of mastery). If you happen to already master the material,
 there is a reward involved (you won't be "re-tested" on that material at the final),
-but always remember that, if you don't pass a checkpoint exam, you will have another chance
-to pass it at the final exam.
+but always remember that, if you earn an N or U on a checkpoint exam, you will have another chance
+to improve your score at the final exam.
 
 Lectures
 ~~~~~~~~
@@ -248,22 +241,22 @@ These scores are distributed into 10 bundles:
 
 For each bundle, there are three possible outcomes:
 
-- **Completed**: You earned an S on every component of the bundle.
-- **Attempted**: You did not earn an S on every component of the bundle,
+- **Satisfactory**: You earned an S on every component of the bundle.
+- **Needs Improvement**: You did not earn an S on every component of the bundle,
   but earned at least an N on every component of the bundle.
-- **Not Completed**: You do not meet either of the conditions above.
+- **Unsatisfactory**: You do not meet either of the conditions above.
 
 Final Grade
 ~~~~~~~~~~~
 
-Your final grade will be based on the number of bundles you complete and attempt:
+Your final grade will be based on the number of N and S scores you earn on the bundles:
 
 .. cssclass:: table-bordered
 
 +-------+-----------------------+-----------------------------------------------------------------------------+
 |       | Bundles               |                                                                             |
 | Grade +-----------+-----------+ Additional Constraints                                                      |
-|       | Attempted | Completed |                                                                             |
+|       | # S or N  | # S       |                                                                             |
 +=======+===========+===========+=============================================================================+
 | A     | 10        | 9         | None                                                                        |
 +-------+           +-----------+                                                                             |
@@ -273,9 +266,9 @@ Your final grade will be based on the number of bundles you complete and attempt
 +-------+           +-----------+                                                                             |
 | B     |           | 7         |                                                                             |
 +-------+           +-----------+-----------------------------------------------------------------------------+
-| B-    |           | 6         | - Must complete at least two bundles with a project component.              |
-+-------+-----------+-----------+ - Must complete either the “All Together” bundle, or two exam-only bundles. |
-| C+    | 6         | 6         |                                                                             |
+| B-    |           | 6         | - Must earn an S in at least two bundles with a project component.          |
++-------+-----------+-----------+ - Must earn an S in either the “Mastery of Networks” bundle, or             |
+| C+    | 6         | 6         |   on two exam-only bundles.                                                 |
 +-------+           +-----------+                                                                             |
 | C     |           | 5         |                                                                             |
 +-------+           +-----------+                                                                             |
@@ -418,17 +411,22 @@ you. After that time, we will not consider any such requests,
 regardless of whether the request is reasonable and justified.
 
 
-Policy on Academic Honesty
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Academic Integrity
+~~~~~~~~~~~~~~~~~~
 
-We take academic honesty very seriously in this class. The
-University of Chicago has a `formal policy on academic honesty
-<http://college.uchicago.edu/advising/academic-integrity-student-conduct>`_
-that you are expected to adhere to.
+This class has a permissive policy on student collaboration and on
+the use of Generative AI, but there are still a number of things
+that will not be allowed in the class, and which could lead
+to an academic integrity case against you.
 
-Our `Academic Honesty <academic-honesty.html>`__ page provides specific policies
-for this course.  Please make sure to read it! Please also pay
-special attention to the `Policy on Generative AI <academic-honesty.html#policy-on-generative-ai>`__.
+Our `Academic Integrity <academic-integrity.html>`__ page specifies
+these policies in detail, including specific examples of allowed forms
+of collaboration and allowed uses of Generative AI, as well as explanations
+on why we also need to place some limits on them.
+It is your responsibility familiarize yourself with these policies;
+if you are ever unsure of whether you are doing something that
+may run afoul of these policies, please don't hesitate to ask
+us for clarification.
 
 Code of Conduct for Course Staff
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -470,5 +468,6 @@ CMSC 12100 and CMSC 14200, authored by a variety of instructors throughout the y
    :hidden:
 
    academic-honesty.rst
+   academic-integrity.rst
    code-of-conduct.rst
 

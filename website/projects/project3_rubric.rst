@@ -1,6 +1,9 @@
 Project 3 Rubric
 ----------------
 
+.. warning::
+   This page has not yet been updated for Autumn 2024.
+
 The grading of this project follows a specifications grading approach. If you have not already
 done so, make sure to read our `Grading <../syllabus.html#grading>`__ section of
 the syllabus for more details.
