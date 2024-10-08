@@ -46,7 +46,7 @@ directory run the following commands. In the commands below, ``$REPO_URL`` refer
 SSH URL of your repository. To get this URL, log into GitHub and navigate to your
 project repository. Then, under "Quick setup — if you’ve done this kind of thing before",
 make sure the "SSH" button is selected, and copy the URL that appears next to it.
-It should look something like this: ``git@github.com:uchicago-cmsc23320-aut-24/chirc-jdoe-jrandom.git``
+It should look something like this: ``git@github.com:uchicago-cmsc23320-aut-24/chirc-p1-jdoe-jrandom.git``
 
 ::
 
