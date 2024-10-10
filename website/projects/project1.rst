@@ -76,6 +76,8 @@ When submitting through Gradescope, you will be asked to select a repository to 
 Make sure that you select the correct repository and branch. Please note that you can
 submit as many times as you want before the deadline.
 
+Please note that you must make a **single submission per pair of students** (do not make two submissions, one per student). When making your submission, you will be allowed to add "team members" to your submission. Make sure you add your project partner in your submission.
+
 In this project, Gradescope will *only* fetch the following files from your repository:
 
 - All ``.c`` and ``.h`` files inside the ``src/`` directory (including any subdirectories you may
