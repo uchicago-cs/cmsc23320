@@ -250,7 +250,7 @@ Common Pitfalls
     Take into account that, even if you don't explicitly manipulate the port fields of the TCP header,
     you will destroy that information if you zero out a TCP header *after* calling ``chitcpd_tcp_packet_create``.
     If you do this, you will likely get the following error in the chitcpd logs: ``"No socket listening on port 0"``
-  * *Reporting errors back to the application layer*: RFC 793 specifies, at various points, that certain errors should
+  * *Reporting errors back to the application layer*: RFC 9293 specifies, at various points, that certain errors should
     be returned to the application layer. For example, under the ``SEND Call`` specification (corresponding to chiTCP's
     ``APPLICATION_SEND`` event), the RFC specifies the following::
 

@@ -79,7 +79,7 @@ other students in the class:
 
 -  *“I am unclear on how IRC servers relay commands to other IRC
    servers. Can we walk through an example together?”*
--  *“Can I ask you some questions about RFC 793? I’m having trouble
+-  *“Can I ask you some questions about RFC 9293? I’m having trouble
    parsing this section in particular.”*
 -  *“I’m having trouble wrapping my head around the tcp_data struct
    provided to us in Project 2. Can I ask you some questions about it?”*
