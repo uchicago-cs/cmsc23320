@@ -1,9 +1,6 @@
 Project 2: chitcp
 -----------------
 
-.. warning::
-   This page has not yet been updated for Autumn 2024.
-
 In this project you will be implementing the Transmission Control Protocol, as
 specified in `[RFC793] <http://tools.ietf.org/html/rfc793>`__. However, instead
 of implementing it inside the operating system itself, you will be implementing
@@ -19,8 +16,8 @@ they do not implement the entire functionality provided by standard sockets
 Please refer to the following documents to complete this project:
 
 - Make sure you've read our :ref:`Getting Started <project_started>` page.
-- You can find instructions on how to register for the project (and how to
-  get your Git repo) in our :ref:`Project Registration <project_registration>` page.
+  That page also includes instructions on how to register for the project (and how to
+  get your Git repo)
 - `chiTCP specification <http://chi.cs.uchicago.edu/chitcp/>`__: In this project,
   you will be implementing Assignments 1 and 2 of chiTCP.
 - `Project 2 rubric <project2_rubric.html>`__
@@ -29,7 +26,7 @@ Please refer to the following documents to complete this project:
 Submission Timeline
 ~~~~~~~~~~~~~~~~~~~
 
-This project has two required submissions, and an optional resubmission:
+This project has the following submissions:
 
 .. include:: project2_timeline.txt
 
@@ -39,7 +36,7 @@ Initializing your Project 2 Repository
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Make sure that you have read the :ref:`Getting Started <project_started>` page
-as well as the the :ref:`Project Registration <project_registration>` instructions.
+before following the instructions below.
 
 **One-time setup instructions**
 
@@ -48,7 +45,7 @@ directory run the following commands. In the commands below, ``$REPO_URL`` refer
 SSH URL of your repository. To get this URL, log into GitHub and navigate to your
 project repository. Then, under "Quick setup — if you’ve done this kind of thing before",
 make sure the "SSH" button is selected, and copy the URL that appears next to it.
-It should look something like this: ``git@github.com:uchicago-cmsc23320-spr-24/chitcp-jdoe-jrandom.git``
+It should look something like this: ``git@github.com:uchicago-cmsc23320-aut-24/chitcp-p2-jdoe-jrandom.git``
 
 ::
 
@@ -68,7 +65,28 @@ other locations as follows::
     git clone $REPO_URL
     git remote add upstream https://github.com/uchicago-cs/chitcp.git
 
+Submission
+~~~~~~~~~~
 
+Before submitting, make sure you've added, committed, and pushed all
+your code to GitHub. You will submit your code through `Gradescope <https://gradescope.com/>`__,
+which you can access through our Canvas site.
+
+When submitting through Gradescope, you will be asked to select a repository to submit.
+Make sure that you select the correct repository and branch. Please note that you can
+submit as many times as you want before the deadline.
+
+Please note that you must make a **single submission per pair of students** (do not make two submissions, one per student). When making your submission, you will be allowed to add "team members" to your submission. Make sure you add your project partner in your submission.
+
+In this project, Gradescope will *only* fetch the following files from your repository:
+
+- ``/src/chitcpd/tcp.h``
+- ``/src/chitcpd/tcp.c``
+- ``/src/libchitcp/multitimer.c`` (Project 2B only)
+- ``/include/chitcp/multitimer.h`` (Project 2B only)
+- The ``DOCUMENTATION.md`` file in the root of your repository
+
+Once you submit your files, an "autograder" will run. This autograder should produce the same test results as when you run the code yourself; if it doesn't, please let us know so we can look into it.
 
 .. toctree::
    :maxdepth: 2

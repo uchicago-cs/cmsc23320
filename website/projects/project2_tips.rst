@@ -1,9 +1,6 @@
 Project 2 Tips
 ==============
 
-.. warning::
-   This page has not yet been updated for Autumn 2024.
-
 Before you get started, make sure you've read through the `Projects - Getting Started <../projects/started.html>`__ page.
 
 Suggested Order of Implementation
@@ -42,22 +39,21 @@ In Assignment 2 of chiTCP, we suggest you follow this implementation order:
   - Finally, see if you can pass the tests with multiple drops.
   - Note: You should only attempt to debug the “random” tests if every other test (including from Assignment 1) is working correctly.
 
-Interpreting RFC 793
---------------------
+Interpreting RFC 9293
+---------------------
 
-In this project, you will be implementing TCP, which is specified in `RFC 793 <http://tools.ietf.org/html/rfc793>`_.
-Like many network protocols, certain aspects of the specification may be unclear. When you run into such an issue,
-you should first check `RFC 1122 <http://tools.ietf.org/html/rfc1122>`_: it provides corrections and clarifications 
-on RFC 793. If you are still unclear on how to proceed, then ask on Ed Discussion: we will provide an ex cathedra ruling
-on how you should interpret the RFC.
+In this project, you will be implementing TCP, which is specified in `RFC 9293 <http://tools.ietf.org/html/rfc9293>`__. This is a modern version of the original specification of TCP in RFC 793,
+fixing multiple errata and ambiguities that have been identified over the years. As such,
+this RFC tends to be pretty clear regarding the expected behaviour of RFC. That said,
+if you encounter any part of the RFC that you are unsure how to interpret, then ask on Ed Discussion: we will provide an ex cathedra ruling on how you should interpret the RFC.
 
 That said, there are parts of the RFC that *do* provide unambiguous formulas.
 Sometimes, students will tweak this formulas as they try to debug their code
 (e.g., using <= instead of <). This may make your code work for the issue you
 are trying to resolve, but will probably cause issues down the road.
 
-Finally, it is important that you implement TCP as specified in the RFC, not your
-interpretation of TCP (based on class notes and examples online). Replicating the
+Finally, it is important that you implement TCP exactly as specified in the RFC,
+and not based on your interpretation of TCP (based on class notes and examples online). Replicating the
 behaviour of simple examples (like the 3-way handshake) may work for simple
 operations, but is not a good strategy for implementing all of TCP.
 
@@ -67,19 +63,6 @@ Selecting Initial Sequence Numbers
 It is your responsibility to generate the initial sequence number (ISN) for a connection,
 but you are not required to implement the ISS/IRS selection exactly as specified in the RFC. It is enough
 to choose a random number and, for ease of debugging, you may want to choose a random number ending in ``00000`` so you can more easily debug the sequence numbers in your transmissions.
-
-Writing the Packet Arrival Handler
-----------------------------------
-
-Writing the "packet arrival handler" (i.e., how TCP reacts when a packet arrives) is, in a sense,
-somewhat straightforward: you just have to "translate" pages 64-75 of the RFC into code. A common pitfall
-is to write this handler as a gigantic if-else statement (with each branch corresponding to a
-TCP state) where you implement your interpretation of what should happen in each state when
-a packet arrives. Pages 64-75 methodically describe how to process a packet. Although some
-parts of it do involve branching by state, you should not write a gigantic if-else as the
-main structure of your packet arrival handler. As noted above, it is important that you
-follow the RFC, not your high-level understanding of how TCP must work.
-
 
 Freeing packets
 ---------------
@@ -308,7 +291,7 @@ Common Pitfalls
   4KB and doesn't send more data until it receives a first ACK. If you send (for example) 32KB all at
   once, then you're ignoring the windows size.
 
-* **Sending only one packet when segmentizing**: Whenever you process the send buffer, you should always
+* **Sending only one packet when segmenting**: Whenever you process the send buffer, you should always
   send as many packets as possible without exceeding the receiver's advertised window. A common pitfall
   is to correctly identify that the send buffer contains more than one MSS of data, but then sending
   only that first MSS, instead of sending as many packets allowed by SND.WND.
