@@ -302,156 +302,172 @@ There are a couple of other issues that we care about across all projects:
 
 .. include:: additional_penalties.txt
 
+Resubmission
+------------
 
-..
-    Resubmission
-    ------------
+When you receive your graded Project 1B, you can make a resubmission to address
+any feedback you received in Projects 1A and/or 1B. This may increase your scores
+in those projects.
 
-    When you receive your graded Project 1B, you can make a resubmission to address
-    any feedback you received in Projects 1A and/or 1B. This may increase your scores
-    in those projects.
+While the project is divided into two parts (1A and 1B), remember that Project 1B
+builds on Project 1A, As such, you should think about your
+resubmission as a final cumulative submission that addresses any remaining issues
+in your Project 1B submission (i.e., you should not think in terms
+of making two separate resubmissions, one for 1A and another for 1B, with different
+code for each submission).
 
-    Note: You *cannot* make a resubmission if you got S's on both Completeness and Code Quality. If you
-    are in this situation and want additional feedback on your grading, please ask on Ed.
+.. note::
 
-    While the project is divided into two parts (1A and 1B), remember that Project 1B
-    builds on Project 1A, As such, you should think about your
-    resubmission as a final cumulative submission that addresses any remaining issues
-    in your Project 1A and/or 1B submissions (i.e., you should not think in terms
-    of making two separate resubmissions, one for 1A and another for 1B, with different
-    code for each submission).
+    If you scored two S's in your initial submission for Project 1B, but not in your initial Project 1A
+    submission, you do not need to make any further changes to your Project 1B
+    code to bump your 1A scores up to two S's. However, we do still need you
+    to make an (abbreviated) resubmission. If you are in this situation, please
+    skip to "Project 1B Submissions with two S's" below.
 
-    Making a resubmission involves not just addressing the feedback we gave you, but
-    also preparing some documentation explaining the changes you made to your code.
-    You should consider this documentation as important as the changes you are making
-    to your code: **resubmissions that do not include the information requested below
-    WILL NOT BE GRADED**.
+Required Documentation
+~~~~~~~~~~~~~~~~~~~~~~
 
-    If you decide to make a resubmission, you **MUST** add a ``RESUBMISSION.md`` file
-    in the root of your repository using the following template: (the exact sections
-    are explained below)
+Making a resubmission involves not just addressing the feedback we gave you, but
+also preparing some documentation explaining the changes you made to your code.
+You should consider this documentation as important as the changes you are making
+to your code: **resubmissions that do not include the information requested below
+WILL NOT BE GRADED**.
 
-    .. code-block:: markdown
+If you decide to make a resubmission, you **MUST** add a ``RESUBMISSION.md`` file
+in the root of your repository using the following template: (the exact sections
+are explained below)
 
-        Project 1 Resubmission
-        ======================
+.. code-block:: markdown
 
-        Team members:
-        - TEAM MEMBER 1 (CNETID1)
-        - TEAM MEMBER 2 (CNETID2)
+    Project 1 Resubmission
+    ======================
 
-        Resubmission for:
-        [ ] Project 1A
-        [ ] Project 1B
+    Team members:
+    - TEAM MEMBER 1 (CNETID1)
+    - TEAM MEMBER 2 (CNETID2)
 
-        Rubric items you have addressed
-        -------------------------------
-        <COMPLETE THIS SECTION>
+    Rubric items you have addressed
+    -------------------------------
+    <COMPLETE THIS SECTION>
 
-        Rubric items you have NOT addressed
-        -----------------------------------
-        <COMPLETE THIS SECTION>
+    Rubric items you have NOT addressed
+    -----------------------------------
+    <COMPLETE THIS SECTION>
 
-        Substantial new code added to your submission
-        ---------------------------------------------
-        <COMPLETE THIS SECTION>
+    Substantial new code added to your submission
+    ---------------------------------------------
+    <COMPLETE THIS SECTION>
 
-        Changes made to pass additional tests
-        -------------------------------------
-        <COMPLETE THIS SECTION>
+    Changes made to pass additional tests
+    -------------------------------------
+    <COMPLETE THIS SECTION>
 
-        Other changes
-        -------------
-        <COMPLETE THIS SECTION>
+    Other changes
+    -------------
+    <COMPLETE THIS SECTION>
 
-    Below you can find more details on each of the sections. If you are not providing any
-    information in a given section, please do not remove the section. Instead, just write
-    ``N/A`` below it.
+Below you can find more details on each of the sections. If you are not providing any
+information in a given section, please do not remove the section. Instead, just write
+``N/A`` below it.
 
-    - **Team members**: Ordinarily, this would be the same two team members who made the original submission.
-      However, if you worked individually on the resubmission (because your teammate was happy with the
-      original submission, and didn't want to work further on it), please make sure to note this here.
+- **Team members**: Ordinarily, this would be the same two team members who made the original submission.
+  However, if you worked individually on the resubmission (because your teammate was happy with the
+  original submission, and didn't want to work further on it), please make sure to note this here.
 
-    - **Resubmission for...**: Indicate what submission(s) should be regraded based on this code
-      (see the "Submission" section below for more details). To check the checkboxes, replace ``[ ]``
-      with ``[X]``
+- **Rubric items you have addressed**: Rubric items that appear selected on Gradescope (under "Manual Grading")
+  represent issues that had an impact on your Code Quality score. To facilitate the work of the
+  graders, you must list each rubric item you have addressed, with the following information:
 
-    - **Rubric items you have addressed**: Rubric items that appear selected on Gradescope (under "Manual Grading")
-      represent issues that had an impact on your Code Quality score. To facilitate the work of the
-      graders, you must list each rubric item you have addressed, with the following information:
+  - The rubric item description, exactly as it appears on Gradescope.
+  - 1-2 sentences explaining how you addressed the rubric item.
+  - If the work you did on the rubric item is limited to a few lines of code, specify the filename and line number(s),
+    If your work on this rubric item involved deeper changes to your code, you do not need to list every single line
+    of code you changed, but you should try to give the graders a general sense of where you made the changes, including
+    a few examples if possible
+    (e.g., "I combed through the code to make sure I was using descriptive variable names; for example, I changed ``c`` to
+    ``channel`` in several functions", "I reorganized functions ``foo()``, ``bar()``, and ``baz()`` as requested", etc.)
 
-      - The rubric item description, exactly as it appears on Gradescope.
-      - 1-2 sentences explaining how you addressed the rubric item.
-      - If the work you did on the rubric item is limited to a few lines of code, specify the filename and line number(s),
-        If your work on this rubric item involved deeper changes to your code, you do not need to list every single line
-        of code you changed, but you should try to give the graders a general sense of where you made the changes, including
-        a few examples if possible
-        (e.g., "I combed through the code to make sure I was using descriptive variable names; for example, I changed ``c`` to
-        ``channel`` in several functions", "I reorganized functions ``foo()``, ``bar()``, and ``baz()`` as requested", etc.)
+  Bear in mind that the Project 1A rubric items are a subset of the Project 1B rubric items. This means that...
 
-      Bear in mind that the Project 1A rubric items are a subset of the Project 1B rubric items. This means that...
+  - If your initial Project 1B submission already addressed a rubric item from Project 1A (and the rubric
+    item was no longer selected in your graded Project 1B), it is enough to say "This rubric item was addressed
+    in Project 1B"
+  - If you scored an N in Code Quality in Project 1A, but then scored an S in Code Quality
+    in Project 1B, you do not need to explain how you addressed each individual rubric item.
+    Instead, please include the following text in this section: "We earned an S in Code Quality
+    in Project 1B"
 
-      - If your initial Project 1B submission already addressed a rubric item from Project 1A (and the rubric
-        item was no longer selected in your graded Project 1B), it is enough to say "This rubric item was addressed
-        in Project 1B"
-      - If you scored an N in Code Quality in Project 1A, but then scored an S in Code Quality
-        in Project 1B, you do not need to explain how you addressed each individual rubric item.
-        Instead, please include the following text in this section: "We earned an S in Code Quality
-        in Project 1B"
+- **Rubric items you have NOT addressed**: It is also important that you let us know what rubric items you
+  decided not to address, as this will expedite the work of the graders. For these rubric items, it is enough
+  to provide a list of the rubric item descriptions (exactly as they appear on Gradescope)
 
-    - **Rubric items you have NOT addressed**: It is also important that you let us know what rubric items you
-      decided not to address, as this will expedite the work of the graders. For these rubric items, it is enough
-      to provide a list of the rubric item descriptions (exactly as they appear on Gradescope)
+- **Substantial new code added to your submission**: If you added substantial new code that was not present in your
+  original submission (e.g., if your original submission did not implement several commands, and you have now included
+  new code to implement those commands), you must specify the affected files, as well as the new functionality that
+  is added by the new code. For example, you could include something like this::
 
-    - **Substantial new code added to your submission**: If you added substantial new code that was not present in your
-      original submission (e.g., if your original submission did not implement several commands, and you have now included
-      new code to implement those commands), you must specify the affected files, as well as the new functionality that
-      is added by the new code. For example, you could include something like this::
+    Modified files: ctx.h, handlers.c
 
-        Modified files: ctx.h, handlers.c
+    Locks: Added locks X, Y, and Z in chirc_ctx_t
 
-        Locks: Added locks X, Y, and Z in chirc_ctx_t
+    JOIN and PART: Implemented the handlers for these commands in handlers.c
 
-        JOIN and PART: Implemented the handlers for these commands in handlers.c
+    QUIT: Updated the QUIT handler to relay the QUIT to users on the same channel as the user.
 
-        QUIT: Updated the QUIT handler to relay the QUIT to users on the same channel as the user.
+- **Changes made to pass additional tests**: If you made changes to your code with the goal of passing more tests,
+  please specify your original test score, and the new test score. If your work only involved a few minor bug fixes,
+  please let us know you did this (but you do not need to specify the exact changes you made). On the other hand,
+  if you skipped parts of Project 1B in your original submission, and have written entirely new code, please make
+  sure you have specified this as part of the "substantial new code", and that you also specify that doing so
+  allowed you to pass additional tests.
+- **Other changes**: If you made other changes to your code, such as refactoring large parts of your code, make
+  sure to specify this too.
 
-    - **Changes made to pass additional tests**: If you made changes to your code with the goal of passing more tests,
-      please specify your original test score, and the new test score. If your work only involved a few minor bug fixes,
-      please let us know you did this (but you do not need to specify the exact changes you made). On the other hand,
-      if you skipped parts of Project 1B in your original submission, and have written entirely new code, please make
-      sure you have specified this as part of the "substantial new code", and that you also specify that doing so
-      allowed you to pass additional tests.
-    - **Other changes**: If you made other changes to your code, such as refactoring large parts of your code, make
-      sure to specify this too.
+Once again, if you do not include a ``RESUBMISSION.md`` file with the above information,
+your resubmission **will not be graded**.
 
-    Once again, if you do not include a ``RESUBMISSION.md`` file with the above information,
-    your resubmission **will not be graded**.
+Project 1B Submissions with two S's
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    Submitting
-    ~~~~~~~~~~
+If you scored two S's in your initial submission for Project 1B, but not in your
+original Project 1A submission, you do not need to submit all the documentation
+requested above. However, we do still need you to make a resubmission so we know
+you want us to revise your Project 1A submission.
 
-    For technical reasons, there will be two separate resubmission assignments on Gradescope: "Project 1A (resubmission)"
-    and "Project 1B (resubmission)":
+In this resubmission, you do not need to make any changes to your Project 1B
+code, and can simply resubmit the exact same code your submitted in our original
+Project 1B submission. All you need to do is add a ``RESUBMISSION.md`` file
+with the following contents::
 
-    - If you want to improve your score in both Project 1A and 1B, **you must submit the same code
-      to both assignments**. We will only review the code in the 1B submission, but will use the 1A
-      resubmission assignment to convey your updated scores for Project 1A.
-    - If you only need to improve your score in one (but not both) of the assignments, submit
-      your code *only* in the corresponding resubmission assignment. e.g., if you are happy with
-      your Project 1A score, but want to improve your Project 1B score, then you only need to
-      make a submission to the "Project 1B (resubmission)" assignment on Gradescope.
+    Project 1 Resubmission
+    ======================
 
-    Resubmission Grading
-    ~~~~~~~~~~~~~~~~~~~~
+    Team members:
+    - TEAM MEMBER 1 (CNETID1)
+    - TEAM MEMBER 2 (CNETID2)
 
-    In general, if you are making a resubmission that only involved addressing rubric items, without adding substantial
-    new code to your submission, there is a very high likelihood that addressing all the rubric items will bump your Code
-    Quality score to an S. You may leave up to two non-major rubric items unaddressed.
+    We earned two S's in Project 1B, but not Project 1A.
 
-    On the other hand, if you are making a resubmission that involves adding substantial new code, please bear in mind
-    that the graders could identify issues in that new code that will impact your Code Quality score. Please
-    make sure to carefully review the `Project 1 Rubric <project1_rubric.html>`__ so you know what the graders will be looking at.
+Note: If you already earned two S's in both Project 1A and 1B, do not make a resubmission
+(it will be ignored). If you have questions about any of the feedback you received,
+please post a question on Ed.
+
+Submitting
+~~~~~~~~~~
+
+You will submit your code through the "Project 1 (Resubmission)" assignment on Gradescope.
+Other than that, you should follow the same submission instructions as in the original submissions.
+
+Resubmission Grading
+~~~~~~~~~~~~~~~~~~~~
+
+In general, if you are making a resubmission that only involved addressing rubric items, without adding substantial
+new code to your submission, there is a very high likelihood that addressing all the rubric items will bump your Code
+Quality score to an S. You may leave up to two non-major rubric items unaddressed.
+
+On the other hand, if you are making a resubmission that involves adding substantial new code, please bear in mind
+that the graders could identify issues in that new code that will impact your Code Quality score. Please
+make sure to carefully review the `Project 1 Rubric <project1_rubric.html>`__ so you know what the graders will be looking at.
 
 
 
