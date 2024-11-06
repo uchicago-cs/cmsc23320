@@ -241,39 +241,48 @@ These scores are distributed into 10 bundles:
 
 For each bundle, there are three possible outcomes:
 
-- **Satisfactory**: You earned an S on every component of the bundle.
-- **Needs Improvement**: You did not earn an S on every component of the bundle,
+- **Complete**: You earned an S on every component of the bundle.
+- **Partially Complete** ("Partial"): You did not earn an S on every component of the bundle,
   but earned at least an N on every component of the bundle.
-- **Unsatisfactory**: You do not meet either of the conditions above.
+- **Incomplete**: You do not meet either of the conditions above.
 
 Final Grade
 ~~~~~~~~~~~
 
-Your final grade will be based on the number of N and S scores you earn on the bundles:
+Your final grade will be based on the number of bundles you complete (and/or partially complete),
+based on the table below.
+See above for a definition of "Complete" and "Partial" (most notably, there is a specific bar
+for a bundle to be considered "partially complete").
 
 .. cssclass:: table-bordered
 
-+-------+-----------------------+-----------------------------------------------------------------------------+
-|       | Bundles               |                                                                             |
-| Grade +-----------+-----------+ Additional Constraints                                                      |
-|       | # S or N  | # S       |                                                                             |
-+=======+===========+===========+=============================================================================+
-| A     | 10        | 9         | None                                                                        |
-+-------+           +-----------+                                                                             |
-| A-    |           | 7         |                                                                             |
-+-------+-----------+-----------+                                                                             |
-| B+    | 8         | 8         |                                                                             |
-+-------+           +-----------+                                                                             |
-| B     |           | 7         |                                                                             |
-+-------+           +-----------+-----------------------------------------------------------------------------+
-| B-    |           | 6         | - Must earn an S in at least two bundles with a project component.          |
-+-------+-----------+-----------+ - Must earn an S in either the “Mastery of Networks” bundle, or             |
-| C+    | 6         | 6         |   on two exam-only bundles.                                                 |
-+-------+           +-----------+                                                                             |
-| C     |           | 5         |                                                                             |
-+-------+           +-----------+                                                                             |
-| C-    |           | 4         |                                                                             |
-+-------+-----------+-----------+-----------------------------------------------------------------------------+
++-------+---------------------------------+---------------------------------------------------------------------------------------+
+| Grade | Bundles                         | Additional Constraints                                                                |
+|       +--------------------+------------+                                                                                       |
+|       | | # Partial +      | # Complete |                                                                                       |
+|       | | Complete         |            |                                                                                       |
++=======+====================+============+=======================================================================================+
+| A     | 10                 | 9          | None                                                                                  |
++-------+                    +------------+                                                                                       |
+| A-    |                    | 7          |                                                                                       |
++-------+--------------------+------------+                                                                                       |
+| B+    | 8                  | 8          |                                                                                       |
++-------+                    +------------+                                                                                       |
+| B     |                    | 7          |                                                                                       |
++-------+                    +------------+---------------------------------------------------------------------------------------+
+| B-    |                    | 6          | - Must complete at least two bundles with a project component.                        |
++-------+--------------------+------------+ - Must complete either the “Mastery of Networks” bundle, or on two exam-only bundles. |
+| C+    | 6                  | 6          |                                                                                       |
++-------+                    +------------+                                                                                       |
+| C     |                    | 5          |                                                                                       |
++-------+                    +------------+                                                                                       |
+| C-    |                    | 4          |                                                                                       |
++-------+--------------------+------------+---------------------------------------------------------------------------------------+
+
+Please note that, to earn a given grade, you must meet all the conditions listed on a given row.
+For example, to earn an A- you must complete at least 7 bundles, with the rest of the bundles
+being, at least, partially complete. So, if you completed 8 bundles, and partially completed 2
+(for a total of 10), you would earn an A-.
 
 Your grade is meant to reflect the level of mastery you have achieved in the class:
 
