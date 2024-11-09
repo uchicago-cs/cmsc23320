@@ -1,9 +1,6 @@
 Project 3 Rubric
 ----------------
 
-.. warning::
-   This page has not yet been updated for Autumn 2024.
-
 The grading of this project follows a specifications grading approach. If you have not already
 done so, make sure to read our `Grading <../syllabus.html#grading>`__ section of
 the syllabus for more details.
@@ -27,6 +24,9 @@ You will receive two SNU scores for this project:
     Adam Shaw for this concise phrasing).
   - *Style*: This encompasses your adherence
     to our `Style Guide <https://uchicago-cs.github.io/student-resource-guide/style-guide/c.html>`__.
+  - *Documentation*: You will be required to submit certain documentation on
+    your code (the exact documentation is described below)
+
 
 Submission Timeline
 -------------------
@@ -41,8 +41,9 @@ there is not enough to do a full resubmission-regrading cycle.
 
 **NOTE**: To make a resubmission, you must make a "good-faith" submission by the project
 deadline. A good-faith submission is any submission where it is clear you have put in
-a substantial amount of effort to complete the project. Please note that we will consider
-any submission that scores an N in Completeness to meet the bar for a good-faith submission.
+a substantial amount of effort to complete the project. Please note that scoring an N
+in Completeness is a sufficient (but not necessary) requirement for a submission to
+be considered a good-faith submission.
 
 This means that, if you want to make a resubmission, you cannot skip the initial
 submission, or submit an effectively empty submission. The reason for this is that
@@ -60,19 +61,13 @@ In practical terms, this means the following:
 Completeness
 ------------
 
-The Completeness component will be determined by running the following commands::
-
-    make tests
-    make grade
-
-(see `Automated tests <http://chi.cs.uchicago.edu/chirouter/automated-tests.html>`__
-in the chirouter documentation for more details)
+The Completeness component will be determined by running the chirouter `automated tests <http://chi.cs.uchicago.edu/chirouter/automated-tests.html>`__.
 
 **NOTE**: In Project 3, you will be relying on manual testing to a greater extent
 than in Projects 1 and 2. The automated tests provide a convenient way to run all
 the tests and get a test score but, in general, if your code works when testing it
 manually, and fails the corresponding automated test, you should consider the test
-to have passed (you should make a note in the README file so the graders are aware
+to have passed (you should make a note in the ``DOCUMENTATION.md`` file so the graders are aware
 of this)
 
 Your SNU score will then be determined as follows:
@@ -171,6 +166,79 @@ attention to:
   compile-time constants.
 - [Major Issue] **Using goto statements**, except in the very limited cases
   described in the style guide.
+
+Documentation
+~~~~~~~~~~~~~
+
+Your submission must include a ``DOCUMENTATION.md`` file in the root of your repository
+with some specific documentation about the code you have written. If you do not
+include this file, Gradescope will reject your submission entirely. If you do
+include it, but the file does not provide the information we request below, this will
+be treated as a major issue in your submission.
+
+The ``DOCUMENTATION.md`` file **must** follow the template below
+(the exact sections are explained further below):
+
+.. code-block:: markdown
+
+    Project 2
+    =========
+
+    Team members:
+    - TEAM MEMBER 1 (CNETID1)
+    - TEAM MEMBER 2 (CNETID2)
+
+    Test score: XXX / YYY
+
+    Additional functions
+    --------------------
+    - function1() in utils.c
+    - function2() in arp.c
+
+    Other code details / requests for feedback
+    ------------------------------------------
+    <COMPLETE THIS SECTION>
+
+    Known omissions
+    ---------------
+    <COMPLETE THIS SECTION>
+
+    Citations
+    ---------
+    <COMPLETE THIS SECTION>
+
+Below you can find more details on each of the sections. If you are not providing any
+information in a given section, please do not remove the section. Instead, just write
+``N/A`` below it.
+
+- **Team members**: Include the names and CNetIDs of both team members.
+
+- **Test score**: Please include the test score you are seeing when running the tests
+  on your computer. This will allow us to ensure that, when we run the tests, we are
+  getting the same score.
+
+- **Additional functions**: If you added new functions to ``arp.c`` or ``utils.c``,
+  please list them here. You *do not* need to list every function you add to ``router.c``
+
+- **Other code details / requests for feedback**: Use this section to provide any other
+  information that may be relevant to the graders as they read through your code.
+  If you would like us to provide feedback on any specific aspect of your work,
+  you can also let us know in this section.
+
+- **Known omissions**: If you intentionally skipped any part of the project, or intentionally
+  did not address any rubric items, please list them here. If we can provide any feedback that
+  would help you address these rubric items, please let us know here as well.
+
+- **Citations**: Citations for use of Generative AI or external resources should be included,
+  when possible, as code comments above any code where you relied on external sources. However,
+  if you consulted a source that had a more broad impact on your work (and not on specific
+  pieces of code), you can include the citation here.   Additionally, if you had any high-level
+  discussions about the project with other students in the class, please list their names here.
+
+  Note: If the Generative AI platform you're using does not allow you to easily generate a
+  shareable link, please include a copy of the conversation(s) at the bottom of the
+  ``DOCUMENTATION.md`` file.
+
 
 Other Code Quality Issues
 -------------------------
