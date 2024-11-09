@@ -102,7 +102,10 @@
 <li><a class="reference internal" href="#code-quality">Code Quality</a></li>
 <li><a class="reference internal" href="#correctness">Correctness</a></li>
 <li><a class="reference internal" href="#design">Design</a></li>
-<li><a class="reference internal" href="#style">Style</a></li>
+<li><a class="reference internal" href="#style">Style</a><ul>
+<li><a class="reference internal" href="#documentation">Documentation</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#other-code-quality-issues">Other Code Quality Issues</a></li>
 </ul>
 
@@ -112,10 +115,6 @@
       
   <section id="project-3-rubric">
 <h1>Project 3 Rubric<a class="headerlink" href="#project-3-rubric" title="Link to this heading">¶</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has not yet been updated for Autumn 2024.</p>
-</div>
 <p>The grading of this project follows a specifications grading approach. If you have not already
 done so, make sure to read our <a class="reference external" href="../syllabus.html#grading">Grading</a> section of
 the syllabus for more details.</p>
@@ -138,6 +137,8 @@ to some extent independently of) the correct operation of your code.” (thanks 
 Adam Shaw for this concise phrasing).</p></li>
 <li><p><em>Style</em>: This encompasses your adherence
 to our <a class="reference external" href="https://uchicago-cs.github.io/student-resource-guide/style-guide/c.html">Style Guide</a>.</p></li>
+<li><p><em>Documentation</em>: You will be required to submit certain documentation on
+your code (the exact documentation is described below)</p></li>
 </ul>
 </li>
 </ul>
@@ -155,11 +156,11 @@ to our <a class="reference external" href="https://uchicago-cs.github.io/student
 <tbody>
 <tr class="row-even"><td><p>Project 3</p></td>
 <td><p><a class="reference external" href="http://chi.cs.uchicago.edu/chirouter/">chirouter</a>  (entire project)</p></td>
-<td><p><strong>Wednesday, May 15th, 8pm</strong></p></td>
+<td><p><strong>Thursday, December 5th, 8pm</strong></p></td>
 </tr>
 <tr class="row-odd"><td><p>Resubmission (Optional)</p></td>
 <td><p>You may submit a revised version to improve your Completeness score <em>only</em></p></td>
-<td><p><strong>Friday, May 24th, 8pm</strong></p></td>
+<td><p><strong>Friday, December 13th, 8pm</strong></p></td>
 </tr>
 </tbody>
 </table>
@@ -168,8 +169,9 @@ to our <a class="reference external" href="https://uchicago-cs.github.io/student
 there is not enough to do a full resubmission-regrading cycle.</p>
 <p><strong>NOTE</strong>: To make a resubmission, you must make a “good-faith” submission by the project
 deadline. A good-faith submission is any submission where it is clear you have put in
-a substantial amount of effort to complete the project. Please note that we will consider
-any submission that scores an N in Completeness to meet the bar for a good-faith submission.</p>
+a substantial amount of effort to complete the project. Please note that scoring an N
+in Completeness is a sufficient (but not necessary) requirement for a submission to
+be considered a good-faith submission.</p>
 <p>This means that, if you want to make a resubmission, you cannot skip the initial
 submission, or submit an effectively empty submission. The reason for this is that
 such a submission could score an S in Code Quality purely because most of the rubric
@@ -185,18 +187,12 @@ to regrade your code for Code Quality in the resubmission.</p></li>
 </section>
 <section id="completeness">
 <h1>Completeness<a class="headerlink" href="#completeness" title="Link to this heading">¶</a></h1>
-<p>The Completeness component will be determined by running the following commands:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">tests</span>
-<span class="n">make</span> <span class="n">grade</span>
-</pre></div>
-</div>
-<p>(see <a class="reference external" href="http://chi.cs.uchicago.edu/chirouter/automated-tests.html">Automated tests</a>
-in the chirouter documentation for more details)</p>
+<p>The Completeness component will be determined by running the chirouter <a class="reference external" href="http://chi.cs.uchicago.edu/chirouter/automated-tests.html">automated tests</a>.</p>
 <p><strong>NOTE</strong>: In Project 3, you will be relying on manual testing to a greater extent
 than in Projects 1 and 2. The automated tests provide a convenient way to run all
 the tests and get a test score but, in general, if your code works when testing it
 manually, and fails the corresponding automated test, you should consider the test
-to have passed (you should make a note in the README file so the graders are aware
+to have passed (you should make a note in the <code class="docutils literal notranslate"><span class="pre">DOCUMENTATION.md</span></code> file so the graders are aware
 of this)</p>
 <p>Your SNU score will then be determined as follows:</p>
 <table class="docutils align-default">
@@ -300,6 +296,70 @@ compile-time constants.</p></li>
 <li><p>[Major Issue] <strong>Using goto statements</strong>, except in the very limited cases
 described in the style guide.</p></li>
 </ul>
+<section id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Link to this heading">¶</a></h2>
+<p>Your submission must include a <code class="docutils literal notranslate"><span class="pre">DOCUMENTATION.md</span></code> file in the root of your repository
+with some specific documentation about the code you have written. If you do not
+include this file, Gradescope will reject your submission entirely. If you do
+include it, but the file does not provide the information we request below, this will
+be treated as a major issue in your submission.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">DOCUMENTATION.md</span></code> file <strong>must</strong> follow the template below
+(the exact sections are explained further below):</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gh">Project 2</span>
+<span class="gh">=========</span>
+
+Team members:
+<span class="k">-</span><span class="w"> </span>TEAM MEMBER 1 (CNETID1)
+<span class="k">-</span><span class="w"> </span>TEAM MEMBER 2 (CNETID2)
+
+Test score: XXX / YYY
+
+<span class="gu">Additional functions</span>
+<span class="gu">--------------------</span>
+<span class="k">-</span><span class="w"> </span>function1() in utils.c
+<span class="k">-</span><span class="w"> </span>function2() in arp.c
+
+<span class="gu">Other code details / requests for feedback</span>
+<span class="gu">------------------------------------------</span>
+&lt;COMPLETE THIS SECTION&gt;
+
+<span class="gu">Known omissions</span>
+<span class="gu">---------------</span>
+&lt;COMPLETE THIS SECTION&gt;
+
+<span class="gu">Citations</span>
+<span class="gu">---------</span>
+&lt;COMPLETE THIS SECTION&gt;
+</pre></div>
+</div>
+<p>Below you can find more details on each of the sections. If you are not providing any
+information in a given section, please do not remove the section. Instead, just write
+<code class="docutils literal notranslate"><span class="pre">N/A</span></code> below it.</p>
+<ul>
+<li><p><strong>Team members</strong>: Include the names and CNetIDs of both team members.</p></li>
+<li><p><strong>Test score</strong>: Please include the test score you are seeing when running the tests
+on your computer. This will allow us to ensure that, when we run the tests, we are
+getting the same score.</p></li>
+<li><p><strong>Additional functions</strong>: If you added new functions to <code class="docutils literal notranslate"><span class="pre">arp.c</span></code> or <code class="docutils literal notranslate"><span class="pre">utils.c</span></code>,
+please list them here. You <em>do not</em> need to list every function you add to <code class="docutils literal notranslate"><span class="pre">router.c</span></code></p></li>
+<li><p><strong>Other code details / requests for feedback</strong>: Use this section to provide any other
+information that may be relevant to the graders as they read through your code.
+If you would like us to provide feedback on any specific aspect of your work,
+you can also let us know in this section.</p></li>
+<li><p><strong>Known omissions</strong>: If you intentionally skipped any part of the project, or intentionally
+did not address any rubric items, please list them here. If we can provide any feedback that
+would help you address these rubric items, please let us know here as well.</p></li>
+<li><p><strong>Citations</strong>: Citations for use of Generative AI or external resources should be included,
+when possible, as code comments above any code where you relied on external sources. However,
+if you consulted a source that had a more broad impact on your work (and not on specific
+pieces of code), you can include the citation here.   Additionally, if you had any high-level
+discussions about the project with other students in the class, please list their names here.</p>
+<p>Note: If the Generative AI platform you’re using does not allow you to easily generate a
+shareable link, please include a copy of the conversation(s) at the bottom of the
+<code class="docutils literal notranslate"><span class="pre">DOCUMENTATION.md</span></code> file.</p>
+</li>
+</ul>
+</section>
 </section>
 <section id="other-code-quality-issues">
 <h1>Other Code Quality Issues<a class="headerlink" href="#other-code-quality-issues" title="Link to this heading">¶</a></h1>

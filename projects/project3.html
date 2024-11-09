@@ -98,10 +98,6 @@
       
   <section id="project-3-chirouter">
 <h1>Project 3: chirouter<a class="headerlink" href="#project-3-chirouter" title="Link to this heading">¶</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has not yet been updated for Autumn 2024.</p>
-</div>
 <p>In this project you will be implementing a simple IP router capable of routing IPv4 datagrams between multiple networks. This router will have a static routing table, so you will not have to deal with implementing a routing protocol like RIP or OSPF; instead, the project will focus on the routing of IP datagrams. While, at a high level, this just involves receiving IP datagrams and figuring out what interface they should be sent on, this requires building additional functionality before you can actually start routing IP datagrams.</p>
 <p>Please refer to the following documents to complete this project:</p>
 <ul class="simple">
@@ -112,7 +108,7 @@
 <p>Take into account that this project requires using a network simulator that
 needs to be run with root privileges on a Linux machine. For students using
 Windows or Mac, we provide a Docker container that you can use to run
-the network simulator on your computer ()</p>
+the network simulator on your computer.</p>
 <section id="submission-timeline">
 <h2>Submission Timeline<a class="headerlink" href="#submission-timeline" title="Link to this heading">¶</a></h2>
 <p>This project has one required submission, and an optional resubmission:</p>
@@ -126,27 +122,27 @@ the network simulator on your computer ()</p>
 <tbody>
 <tr class="row-even"><td><p>Project 3</p></td>
 <td><p><a class="reference external" href="http://chi.cs.uchicago.edu/chirouter/">chirouter</a>  (entire project)</p></td>
-<td><p><strong>Wednesday, May 15th, 8pm</strong></p></td>
+<td><p><strong>Thursday, December 5th, 8pm</strong></p></td>
 </tr>
 <tr class="row-odd"><td><p>Resubmission (Optional)</p></td>
 <td><p>You may submit a revised version to improve your Completeness score <em>only</em></p></td>
-<td><p><strong>Friday, May 24th, 8pm</strong></p></td>
+<td><p><strong>Friday, December 13th, 8pm</strong></p></td>
 </tr>
 </tbody>
 </table>
-<p>Please see <a class="reference external" href="project3_rubric.html">Project 3 rubric</a> for more details on how each submission will be graded.</p>
+<p>Please see <a class="reference external" href="project3_rubric.html">Project 3 rubric</a> for more details on how your submission will be graded.</p>
 </section>
 <section id="initializing-your-project-3-repository">
 <h2>Initializing your Project 3 Repository<a class="headerlink" href="#initializing-your-project-3-repository" title="Link to this heading">¶</a></h2>
 <p>Make sure that you have read the <a class="reference internal" href="started.html#project-started"><span class="std std-ref">Getting Started</span></a> page
-as well as the the <a class="reference internal" href="started.html#project-registration"><span class="std std-ref">Project Registration</span></a> instructions.</p>
+before following the instructions below.</p>
 <p><strong>One-time setup instructions</strong></p>
 <p>Only one team member needs to run these commands. Create an empty directory and, inside that
 directory run the following commands. In the commands below, <code class="docutils literal notranslate"><span class="pre">$REPO_URL</span></code> refers to the
 SSH URL of your repository. To get this URL, log into GitHub and navigate to your
 project repository. Then, under “Quick setup — if you’ve done this kind of thing before”,
 make sure the “SSH” button is selected, and copy the URL that appears next to it.
-It should look something like this: <code class="docutils literal notranslate"><span class="pre">git&#64;github.com:uchicago-cmsc23320-spr-24/chirouter-jdoe-jrandom.git</span></code></p>
+It should look something like this: <code class="docutils literal notranslate"><span class="pre">git&#64;github.com:uchicago-cmsc23320-aut-24/chirc-p1-jdoe-jrandom.git</span></code></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>git init
 git remote add origin $REPO_URL
 git remote add upstream https://github.com/uchicago-cs/chirouter.git
@@ -161,6 +157,25 @@ other locations as follows:</p>
 git remote add upstream https://github.com/uchicago-cs/chirouter.git
 </pre></div>
 </div>
+</section>
+<section id="submission">
+<h2>Submission<a class="headerlink" href="#submission" title="Link to this heading">¶</a></h2>
+<p>Before submitting, make sure you’ve added, committed, and pushed all
+your code to GitHub. You will submit your code through <a class="reference external" href="https://gradescope.com/">Gradescope</a>,
+which you can access through our Canvas site.</p>
+<p>When submitting through Gradescope, you will be asked to select a repository to submit.
+Make sure that you select the correct repository and branch. Please note that you can
+submit as many times as you want before the deadline.</p>
+<p>Please note that you must make a <strong>single submission per pair of students</strong> (do not make two submissions, one per student). When making your submission, you will be allowed to add “team members” to your submission. Make sure you add your project partner in your submission.</p>
+<p>In this project, Gradescope will <em>only</em> fetch the following files from your repository:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">src/c/router.c</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">src/c/arp.c</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">src/c/utils.c</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">src/c/utils.h</span></code></p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">DOCUMENTATION.md</span></code> file in the root of your repository</p></li>
+</ul>
+<p>Once you submit your files, an “autograder” will run. Unlike Projects 1 and 2, the autograder will not run any automated tests, because the chirouter tests require running a Docker container with elevated privileges, which is not possible on Gradescope’s autograding infrastructure. Instead, the tests will be run manually by the graders (the autograder will just build your code to ensure it builds).</p>
 <div class="toctree-wrapper compound">
 </div>
 </section>

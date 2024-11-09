@@ -112,23 +112,18 @@
       
   <section id="project-3-tips">
 <h1>Project 3 Tips<a class="headerlink" href="#project-3-tips" title="Link to this heading">¶</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has not yet been updated for Autumn 2024.</p>
-</div>
 <p>Before you get started, make sure you’ve read through the <a class="reference external" href="../projects/started.html">Projects - Getting Started</a> page.</p>
 <section id="resetting-mininet">
 <h2>Resetting Mininet<a class="headerlink" href="#resetting-mininet" title="Link to this heading">¶</a></h2>
-<p>If, at any point, Mininet starts behaving in an unexpected manner, specially if you see the following error message
-when running chirouter:</p>
+<p>If you are running the automated tests, and start getting errors like these inside the Docker container:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ne">Exception</span><span class="p">:</span> <span class="n">Error</span> <span class="n">creating</span> <span class="n">interface</span> <span class="n">pair</span> <span class="p">(</span><span class="n">r1</span><span class="o">-</span><span class="n">eth1</span><span class="p">,</span><span class="n">s1001</span><span class="o">-</span><span class="n">eth1</span><span class="p">):</span> <span class="n">RTNETLINK</span> <span class="n">answers</span><span class="p">:</span> <span class="n">File</span> <span class="n">exists</span>
 </pre></div>
 </div>
-<p>Try stopping chirouter and mininet, and then running this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">mn</span> <span class="o">-</span><span class="n">c</span>
+<p>Try running this inside the Docker container:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mn</span> <span class="o">-</span><span class="n">c</span>
 </pre></div>
 </div>
-<p>This will reset Mininet to a clean configuration. Next, try re-running the chirouter and mininet commands as usual.</p>
+<p>This will reset Mininet to a clean configuration. Next, try re-running the chirouter and test commands as usual.</p>
 </section>
 <section id="always-create-protocol-headers-from-scratch">
 <h2>Always create protocol headers from scratch<a class="headerlink" href="#always-create-protocol-headers-from-scratch" title="Link to this heading">¶</a></h2>
