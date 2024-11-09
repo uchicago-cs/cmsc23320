@@ -1,24 +1,20 @@
 Project 3 Tips
 ==============
 
-.. warning::
-   This page has not yet been updated for Autumn 2024.
-
 Before you get started, make sure you've read through the `Projects - Getting Started <../projects/started.html>`__ page.
 
 Resetting Mininet
 -----------------
 
-If, at any point, Mininet starts behaving in an unexpected manner, specially if you see the following error message
-when running chirouter::
+If you are running the automated tests, and start getting errors like these inside the Docker container::
 
     Exception: Error creating interface pair (r1-eth1,s1001-eth1): RTNETLINK answers: File exists
 
-Try stopping chirouter and mininet, and then running this::
+Try running this inside the Docker container::
 
-    sudo mn -c
+    mn -c
 
-This will reset Mininet to a clean configuration. Next, try re-running the chirouter and mininet commands as usual.
+This will reset Mininet to a clean configuration. Next, try re-running the chirouter and test commands as usual.
 
 
 Always create protocol headers from scratch
