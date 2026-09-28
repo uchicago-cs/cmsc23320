@@ -7,8 +7,6 @@ find_package(Threads REQUIRED)
 
 add_compile_options(-Wall -Wextra)
 
-include_directories(samples/dispatch_table)
-
 # Sockets/pthread samples
 add_executable(client sockets/client.c)
 

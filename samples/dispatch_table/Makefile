@@ -1,4 +1,4 @@
-CFLAGS=-std=gnu99 -w
+CFLAGS=-std=gnu17 -Wall -Wextra
 
 all: di1 di2 ds1 ds2
 

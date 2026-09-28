@@ -7,18 +7,18 @@ typedef int (*handler_function)(int a, int b, int *x);
 
 struct handler_entry
 {
-    char *name;
+    const char *name;
     handler_function func;
 };
 
-struct handler_entry handlers[] = {
+static const struct handler_entry handlers[] = {
                                      {"ADD", handle_ADD}, 
                                      {"SUB", handle_SUB}, 
                                      {"MLT", handle_MLT}, 
                                      {"DIV", handle_DIV}, 
                                   };
 
-int num_handlers = sizeof(handlers) / sizeof(struct handler_entry);
+static const int num_handlers = sizeof(handlers) / sizeof(handlers[0]);
 
 int main(int argc, char **argv)
 {
@@ -36,10 +36,15 @@ int main(int argc, char **argv)
     b = atoi(argv[3]);   
 
     for(i=0; i<num_handlers; i++)
-        if (!strcmp(handlers[i].name, code))
+        if (strcmp(handlers[i].name, code) == 0)
         {
             rc = handlers[i].func(a, b, &x);
-            printf("Result: %i (rc = %i)\n", x, rc);
+
+            /* x is only set if the handler succeeded, so we must check rc before using it */
+            if (rc == 0)
+                printf("Result: %i\n", x);
+            else
+                fprintf(stderr, "Handler returned error code %i\n", rc);
             break;
         }
 

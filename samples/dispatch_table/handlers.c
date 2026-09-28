@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "handlers.h"
 
 int handle_ADD(int a, int b, int *x)
 {

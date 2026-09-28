@@ -16,3 +16,10 @@ samples/sockets/server-pthreads
 samples/sockets/server-pthreads-mutex
 samples/sockets/server-pthreads-condvar
 samples/pthreads/thread-exit
+
+# Dispatch table sample binaries
+samples/dispatch_table/dispatch-int-one
+samples/dispatch_table/dispatch-int-two
+samples/dispatch_table/dispatch-str-one
+samples/dispatch_table/dispatch-str-two
+samples/dispatch_table/handlers.o

@@ -4,14 +4,14 @@
 
 typedef int (*handler_function)(int, int, int*);
 
-handler_function handlers[] = { 
+static const handler_function handlers[] = { 
                                  handle_ADD, 
                                  handle_SUB, 
                                  handle_MLT,
                                  handle_DIV 
                               };
 
-int num_handlers = sizeof(handlers) / sizeof(handler_function);
+static const int num_handlers = sizeof(handlers) / sizeof(handlers[0]);
 
 int main(int argc, char **argv)
 {
@@ -35,7 +35,11 @@ int main(int argc, char **argv)
 
     rc = handlers[code](a, b, &x);
 
-    printf("Result: %i (rc = %i)\n", x, rc);
+    /* x is only set if the handler succeeded, so we must check rc before using it */
+    if (rc == 0)
+        printf("Result: %i\n", x);
+    else
+        fprintf(stderr, "Handler returned error code %i\n", rc);
 
     return 0;
 }

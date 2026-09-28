@@ -36,7 +36,11 @@ int main(int argc, char **argv)
             break;            
     }
 
-    printf("Result: %i (rc = %i)\n", x, rc);
+    /* x is only set if the handler succeeded, so we must check rc before using it */
+    if (rc == 0)
+        printf("Result: %i\n", x);
+    else
+        fprintf(stderr, "Handler returned error code %i\n", rc);
 
     return 0;
 }
