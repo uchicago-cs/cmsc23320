@@ -1,7 +1,7 @@
 +-------------------------+-------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
 | Submission              | Requirements                                                                                                            | Due Date                                                   |
 +=========================+=========================================================================================================================+============================================================+
-| Project Warmup          | `Assignment 1 <http://chi.cs.uchicago.edu/chirc/assignment1.html>`__ of `chirc <http://chi.cs.uchicago.edu/chirc/>`__   | **Thursday, October 8, 8pm**                              |
+| Project Warmup          | `Assignment 1 <http://chi.cs.uchicago.edu/chirc/assignment1.html>`__ of `chirc <http://chi.cs.uchicago.edu/chirc/>`__   | **Thursday, October 8, 8pm**                               |
 +-------------------------+-------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
 | Project 1A              | | `Assignment 4 <http://chi.cs.uchicago.edu/chirc/assignment4.html>`__ of `chirc <http://chi.cs.uchicago.edu/chirc/>`__ | **Thursday, October 15, 8pm**                              |
 |                         | | (Note: Assignment 4 builds on Assignment 1)                                                                           |                                                            |
