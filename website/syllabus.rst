@@ -1,13 +1,17 @@
 Syllabus
 ========
 
+.. warning::
+
+   This syllabus is tentative and subject to change.
+
 Course description
 ------------------
 
 .. include:: description.txt
 
 **Prerequisites**: This class assumes fluency in C programming, including low-level aspects of C such as bit-level
-operations. Students must complete either CMSC 15400 Introduction to Computer Systems or CMSC 14400 Systems Programming II
+operations. Students must complete either CMSC 14400 Systems Programming II or CMSC 15400 Introduction to Computer Systems
 before taking this class.
 
 
@@ -16,11 +20,11 @@ Communication
 
 There are a number of different ways we'll be communicating about the class.
 
-- **Course materials** - Assignments and other course materials will be made available through this website.
+- **Course materials** - Lecture notes will be published on our Ed Discussion site. If you are registered for the
+  class, you will be added to our Canvas site, and will be able to access our Ed Discussion site through Canvas.
+  Please note that project specifications are published on this website, but will be linked from our Canvas site.
 
-- **Discussion and announcements** - We will use Ed Discussion for course discussion and announcements. If you are
-  registered for the class, you will be added to our Canvas site, and will be able to access our Ed Discussion
-  site through Canvas.
+- **Discussion and announcements** - We will use Ed Discussion for course discussion and announcements.
 
 - **Course work and feedback** - We will use Gradescope to collect your homework and projects and to return feedback.
   You can access our Gradescope site through Canvas.
@@ -84,7 +88,7 @@ There will be ten checkpoint exams throughout the quarter, each with a duration 
 - **Needs Improvement (N)** and **Unsatisfactory (U)**: You have not demonstrated
   sufficient mastery in the topic, but you will have
   another chance to demonstrate your mastery of that topic at the final exam.
-  A "Needs Improvement" indicates that you did demostrate some mastery of the
+  A "Needs Improvement" indicates that you did demonstrate some mastery of the
   topic and, as explained below, it may contribute towards earning certain
   grades in the class.
 
@@ -189,6 +193,12 @@ Specific assignments/exams will provide concrete guidance on what is required to
 Bundles
 ~~~~~~~
 
+.. warning::
+
+   We are revising the composition of the bundles for Autumn 2026, to reflect that
+   the projects will now involve code reviews. While the topics of the bundles
+   will remain largely the same, the way the projects are scored will likely change.
+
 There are a total of 20 SNU scores in this class:
 
 - **Projects**: There are five project submissions (1A, 1B, 2A, 2B, and 3), and each contributes two SNU
@@ -235,7 +245,6 @@ These scores are distributed into 10 bundles:
     - Checkpoint Exam: Network Security
 
 10. **Mastery of Networks**
-
     - Checkpoint Exam: Challenge Questions
 
 

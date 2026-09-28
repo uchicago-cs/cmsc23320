@@ -3,6 +3,9 @@
 Projects - Getting Started
 --------------------------
 
+.. warning::
+   This page has not yet been updated for Autumn 2026.
+
 Before working on the projects, we recommend you check out the `UChicago CS Student Resource Guide <https://uchicago-cs.github.io/student-resource-guide/>`__. In particular, please note the following:
 
 - You should be able to compile and run the code for this class on Windows, MacOS, and Linux.
