@@ -8,7 +8,7 @@
  *
  *  To compile:
  *
- *      gcc server-pthreads.c -o server-pthreads -lpthread
+ *      gcc server-pthreads.c -o server-pthreads -pthread
  *
  *  To run:
  *
@@ -46,17 +46,14 @@ struct worker_args
 /* Forward declaration. See below for details. */
 void *service_single_client(void *args);
 
-int main(int argc, char *argv[])
+int main(void)
 {
     /* If a client closes a connection, this will generally produce a SIGPIPE
        signal that will kill the process. We want to ignore this signal, so
        send() just returns -1 when this happens. */
-    sigset_t new;
-    sigemptyset (&new);
-    sigaddset(&new, SIGPIPE);
-    if (pthread_sigmask(SIG_BLOCK, &new, NULL) != 0) 
+    if (signal(SIGPIPE, SIG_IGN) == SIG_ERR)
     {
-        perror("Unable to mask SIGPIPE");
+        perror("Unable to ignore SIGPIPE");
         exit(-1);
     }
 
@@ -65,8 +62,9 @@ int main(int argc, char *argv[])
        The socket code is similar to oneshot-single.c, except that we will
        use getaddrinfo() to get the sockaddr (instead of creating it manually)
        and we will use sockaddr_storage when accepting a client connection
-       (instead of using sockaddr_in, which assumes that the incoming connection
-       is coming from an IPv4 host).
+       (instead of using sockaddr_in). sockaddr_storage is large enough to hold
+       any type of address, so this is good practice even though this server
+       only accepts IPv4 connections.
 
        Additionally, this function will spawn a new thread for each new client
        connection.
@@ -78,21 +76,22 @@ int main(int argc, char *argv[])
     int client_socket;
     pthread_t worker_thread;
     struct addrinfo hints, *res, *p;
-    struct sockaddr_storage *client_addr;
-    socklen_t sin_size = sizeof(struct sockaddr_storage);
+    struct sockaddr_storage client_addr;
+    socklen_t sin_size;
     struct worker_args *wa;
     int yes = 1;
+    int rc;
 
     memset(&hints, 0, sizeof hints);
-    hints.ai_family = AF_UNSPEC;
+    hints.ai_family = AF_INET;
     hints.ai_socktype = SOCK_STREAM;
     hints.ai_flags = AI_PASSIVE; // Return my address, so I can bind() to it
 
     /* Note how we call getaddrinfo with the host parameter set to NULL */
-    if (getaddrinfo(NULL, "23320", &hints, &res) != 0)
+    if ((rc = getaddrinfo(NULL, "23320", &hints, &res)) != 0)
     {
-        perror("getaddrinfo() failed");
-        pthread_exit(NULL);
+        fprintf(stderr, "getaddrinfo() failed: %s\n", gai_strerror(rc));
+        return EXIT_FAILURE;
     }
 
     for(p = res;p != NULL; p = p->ai_next)
@@ -132,18 +131,20 @@ int main(int argc, char *argv[])
     if (p == NULL)
     {
         fprintf(stderr, "Could not find a socket to bind to.\n");
-        pthread_exit(NULL);
+        return EXIT_FAILURE;
     }
 
     /* Loop and wait for connections */
     while (1)
     {
-        /* Call accept(). At this point, we will block until a client establishes a connection. */
-        client_addr = calloc(1, sin_size);
-        if ((client_socket = accept(server_socket, (struct sockaddr *) client_addr, &sin_size)) == -1)
+        /* Call accept(). At this point, we will block until a client establishes a connection.
+           Note that accept() uses sin_size both as an input (the size of client_addr) and as
+           an output (the size of the address it actually stored), so we need to reset it
+           before every call to accept() */
+        sin_size = sizeof(client_addr);
+        if ((client_socket = accept(server_socket, (struct sockaddr *) &client_addr, &sin_size)) == -1)
         {
             /* If this particular connection fails, no need to kill the entire thread. */
-            free(client_addr);
             perror("Could not accept() connection");
             continue;
         }
@@ -172,12 +173,17 @@ int main(int argc, char *argv[])
              (even if there is only one parameter). In this case, this is done with the worker_args struct.
         */
         wa = calloc(1, sizeof(struct worker_args));
+        if (wa == NULL)
+        {
+            perror("Could not allocate memory for worker thread");
+            close(client_socket);
+            continue;
+        }
         wa->socket = client_socket;
 
         if (pthread_create(&worker_thread, NULL, service_single_client, wa) != 0)
         {
             perror("Could not create a worker thread");
-            free(client_addr);
             free(wa);
             close(client_socket);
             close(server_socket);
@@ -217,7 +223,7 @@ void *service_single_client(void *args) {
 
     while(1)
     {
-        sprintf(tosend,"%d -- Hello, socket!\n", (int) time(NULL));
+        snprintf(tosend, sizeof(tosend), "%d -- Hello, socket!\n", (int) time(NULL));
 
         nbytes = send(socket, tosend, strlen(tosend), 0);
 
@@ -231,6 +237,7 @@ void *service_single_client(void *args) {
         else if (nbytes == -1)
         {
             perror("Unexpected error in send()");
+            close(socket);
             free(wa);
             pthread_exit(NULL);
         }

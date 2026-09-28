@@ -19,6 +19,7 @@
 #include <stdbool.h>
 #include <errno.h>
 #include <pthread.h>
+#include <time.h>
 
 /* Context object to share information
  * between the two threads */
@@ -72,13 +73,18 @@ void *hello_thread_func(void *args)
 }
 
 
-int main(int argc, char *argv[])
+int main(void)
 {
     pthread_t hello_thread;
     ctx_t *ctx;
 
     /* Allocate an initialize the context object */
     ctx = calloc(1, sizeof(ctx_t));
+    if (ctx == NULL)
+    {
+        perror("Could not allocate context object");
+        return EXIT_FAILURE;
+    }
     ctx->active = true;
     pthread_mutex_init(&ctx->lock, NULL);
     pthread_cond_init(&ctx->cv, NULL);
@@ -91,8 +97,8 @@ int main(int argc, char *argv[])
         return EXIT_FAILURE;
     }
 
-    /* Wait for user to press a key */
-    printf("[MAIN  THREAD] Press any key to tell the hello thread to exit.\n");
+    /* Wait for user to press Enter */
+    printf("[MAIN  THREAD] Press Enter to tell the hello thread to exit.\n");
     getchar();
 
     /* Switch ctx->active to false, and signal "hello thread" */

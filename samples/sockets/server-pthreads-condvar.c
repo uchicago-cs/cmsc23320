@@ -29,10 +29,10 @@
 #include <errno.h>
 #include <time.h>
 
-/* ADDED: The server context now contains an enum variable that indicates
- * the state of the latest worker thread. We also add a condition variable
- * (and corresponding mutex) to signal the main thread when the
- * state of the latest worker thread changes.
+/* ADDED: Each worker thread now has a state (stored in its worker_args struct)
+ * that indicates whether it has received a HELLO command. The server context
+ * contains a condition variable (and corresponding mutex) that the worker
+ * threads use to signal the main thread when their state changes.
  */
 
 enum worker_thread_state
@@ -44,23 +44,29 @@ enum worker_thread_state
 
 struct server_ctx
 {
-    enum worker_thread_state latest_thread_state;
     pthread_mutex_t lock;
     pthread_cond_t cv_hello_rcvd;
 };
 
+/* ADDED: The worker_args struct is now accessed by both the main thread and the
+ * worker thread (protected by ctx->lock). Since the main thread may stop waiting
+ * on the worker thread (if a timeout is used), we can't free this struct as soon
+ * as the main thread is done with it: the worker thread may still need it.
+ * So, we keep track of whether the main thread is still waiting on the worker
+ * thread, and whichever thread is the last one to use the struct frees it.
+ */
 struct worker_args
 {
     int socket;
     struct server_ctx *ctx;
+    enum worker_thread_state state;  /* State of this worker thread */
+    bool main_waiting;               /* Is the main thread still waiting on this worker thread? */
 };
 
 void *service_single_client(void *args);
 
 int main(int argc, char *argv[])
 {
-    pthread_t server_thread, printer_thread;
-
     /* ADDED: If there is a command-line parameter, we interpret it as a timeout
      * in seconds to use when waiting for a thread to complete its startup */
     long int timeout = 0;
@@ -71,17 +77,19 @@ int main(int argc, char *argv[])
             timeout = 0;
     }
 
-    sigset_t new;
-    sigemptyset (&new);
-    sigaddset(&new, SIGPIPE);
-    if (pthread_sigmask(SIG_BLOCK, &new, NULL) != 0) 
+    if (signal(SIGPIPE, SIG_IGN) == SIG_ERR)
     {
-        perror("Unable to mask SIGPIPE");
+        perror("Unable to ignore SIGPIPE");
         exit(-1);
     }
 
     /* ADDED: Initializing a condition variable and its lock */
     struct server_ctx *ctx = calloc(1, sizeof(struct server_ctx));
+    if (ctx == NULL)
+    {
+        perror("Could not allocate server context");
+        return EXIT_FAILURE;
+    }
     pthread_mutex_init(&ctx->lock, NULL);
     pthread_cond_init(&ctx->cv_hello_rcvd, NULL);
 
@@ -89,20 +97,21 @@ int main(int argc, char *argv[])
     int client_socket;
     pthread_t worker_thread;
     struct addrinfo hints, *res, *p;
-    struct sockaddr_storage *client_addr;
-    socklen_t sin_size = sizeof(struct sockaddr_storage);
+    struct sockaddr_storage client_addr;
+    socklen_t sin_size;
     struct worker_args *wa;
     int yes = 1;
+    int rc;
 
     memset(&hints, 0, sizeof hints);
-    hints.ai_family = AF_UNSPEC;
+    hints.ai_family = AF_INET;
     hints.ai_socktype = SOCK_STREAM;
     hints.ai_flags = AI_PASSIVE;
 
-    if (getaddrinfo(NULL, "23320", &hints, &res) != 0)
+    if ((rc = getaddrinfo(NULL, "23320", &hints, &res)) != 0)
     {
-        perror("getaddrinfo() failed");
-        pthread_exit(NULL);
+        fprintf(stderr, "getaddrinfo() failed: %s\n", gai_strerror(rc));
+        return EXIT_FAILURE;
     }
 
     for(p = res;p != NULL; p = p->ai_next)
@@ -142,38 +151,50 @@ int main(int argc, char *argv[])
     if (p == NULL)
     {
         fprintf(stderr, "Could not find a socket to bind to.\n");
-        pthread_exit(NULL);
+        return EXIT_FAILURE;
     }
 
     while (1)
     {
-        client_addr = calloc(1, sin_size);
-        if ((client_socket = accept(server_socket, (struct sockaddr *) client_addr, &sin_size)) == -1)
+        sin_size = sizeof(client_addr);
+        if ((client_socket = accept(server_socket, (struct sockaddr *) &client_addr, &sin_size)) == -1)
         {
-            free(client_addr);
             perror("Could not accept() connection");
             continue;
         }
 
         wa = calloc(1, sizeof(struct worker_args));
+        if (wa == NULL)
+        {
+            perror("Could not allocate memory for worker thread");
+            close(client_socket);
+            continue;
+        }
         wa->socket = client_socket;
         wa->ctx = ctx;
+        wa->state = STARTING;
+        wa->main_waiting = true;
 
         pthread_mutex_lock(&ctx->lock);
-        ctx->latest_thread_state = STARTING;
         if (pthread_create(&worker_thread, NULL, service_single_client, wa) != 0)
         {
             perror("Could not create a worker thread");
-            free(client_addr);
             free(wa);
             close(client_socket);
             close(server_socket);
-            pthread_exit(NULL);
+            return EXIT_FAILURE;
         }
 
-        /* ADDED: we use the condition variable to wait until ctx->latest_thread_state is not starting */
+        /* ADDED: If a timeout was specified, we compute the deadline (pthread_cond_timedwait
+         * expects an absolute time, not a duration) *before* we start waiting. If we computed
+         * it inside the loop, every spurious wakeup would restart the timeout from scratch. */
+        struct timespec ts;
+        clock_gettime(CLOCK_REALTIME, &ts);
+        ts.tv_sec += timeout;
+
+        /* ADDED: we use the condition variable to wait until wa->state is not starting */
         printf("main(): Waiting for thread to finish starting %d.\n", client_socket);
-        while(ctx->latest_thread_state == STARTING)
+        while(wa->state == STARTING)
         {
             if(timeout == 0)
             {
@@ -183,10 +204,6 @@ int main(int argc, char *argv[])
             else
             {
                 /* If a timeout was specified, we use pthread_cond_timedwait */
-                int rc;
-                struct timespec ts;
-                clock_gettime(CLOCK_REALTIME, &ts);
-                ts.tv_sec += timeout;
                 rc = pthread_cond_timedwait(&ctx->cv_hello_rcvd, &ctx->lock, &ts);
                 if (rc == ETIMEDOUT)
                 {
@@ -196,14 +213,21 @@ int main(int argc, char *argv[])
             }
         }
 
-        if(ctx->latest_thread_state == HELLO_RCVD)
+        if(wa->state == HELLO_RCVD)
         {
             printf("main(): Thread for socket %d reports receiving HELLO.\n", client_socket);
         }
-        else if(ctx->latest_thread_state == ERROR)
+        else if(wa->state == ERROR)
         {
             printf("main(): Thread for socket %d did not start up correctly.\n", client_socket);
         }
+
+        /* ADDED: The main thread is done with wa. If the worker thread has already
+         * reported its state, it is done with wa too, so we free it. Otherwise (because
+         * we timed out), the worker thread will free it when it reports its state. */
+        wa->main_waiting = false;
+        if(wa->state != STARTING)
+            free(wa);
         pthread_mutex_unlock(&ctx->lock);
     }
 
@@ -212,7 +236,7 @@ int main(int argc, char *argv[])
     pthread_cond_destroy(&ctx->cv_hello_rcvd);
     free(ctx);
 
-    pthread_exit(NULL);
+    return EXIT_SUCCESS;
 }
 
 
@@ -220,10 +244,11 @@ void *service_single_client(void *args)
 {
     struct worker_args *wa;
     struct server_ctx *ctx;
-    int socket, nbytes, i;
+    int socket, nbytes;
     char *msg;
     char buffer[100];
     bool error = false;
+    bool wrong_cmd = true;
 
     wa = (struct worker_args*) args;
     socket = wa->socket;
@@ -249,7 +274,6 @@ void *service_single_client(void *args)
     }
 
     /* Client needs to send back a HELLO */
-    bool wrong_cmd = true;
     nbytes = recv(socket, buffer, sizeof(buffer), 0);
     if (nbytes <= 0)
     {
@@ -289,25 +313,37 @@ void *service_single_client(void *args)
     }
 
 out:
-    /* Change the value of ctx->latest_thread_state and signal the condition variable */
+    /* Change the value of wa->state and signal the condition variable */
     pthread_mutex_lock(&ctx->lock);
     if (error)
     {
         printf("(%d) service_single_client(): Socket error.\n", socket);
-        ctx->latest_thread_state = ERROR;
+        wa->state = ERROR;
     }
     else if (wrong_cmd)
     {
         printf("(%d) service_single_client(): Wrong command received.\n", socket);
-        ctx->latest_thread_state = ERROR;
+        wa->state = ERROR;
     }
     else
     {
         printf("(%d) service_single_client(): HELLO received.\n", socket);
-        ctx->latest_thread_state = HELLO_RCVD;
+        wa->state = HELLO_RCVD;
     }
 
-    pthread_cond_signal(&ctx->cv_hello_rcvd);
+    if (wa->main_waiting)
+    {
+        /* The main thread will free wa once it wakes up, so we must not
+         * access wa after we release the lock */
+        pthread_cond_signal(&ctx->cv_hello_rcvd);
+    }
+    else
+    {
+        /* The main thread timed out waiting for this thread, and has moved
+         * on to other connections. Nobody is waiting for our signal, and we are
+         * the last thread using wa, so we free it. */
+        free(wa);
+    }
     pthread_mutex_unlock(&ctx->lock);
 
     /* If there was an error or we received the wrong command, we close the connection

@@ -1,7 +1,11 @@
 cmake_minimum_required(VERSION 3.5)
 project(cmsc23300 C)
 
-set(CMAKE_C_STANDARD 11)
+set(CMAKE_C_STANDARD 17)
+
+find_package(Threads REQUIRED)
+
+add_compile_options(-Wall -Wextra)
 
 include_directories(samples/dispatch_table)
 
@@ -13,16 +17,16 @@ add_executable(client-bomb sockets/client-bomb.c)
 add_executable(oneshot-single sockets/oneshot-single.c)
 
 add_executable(server-pthreads sockets/server-pthreads.c)
-target_link_libraries(server-pthreads pthread)
+target_link_libraries(server-pthreads Threads::Threads)
 
 add_executable(server-pthreads-mutex sockets/server-pthreads-mutex.c)
-target_link_libraries(server-pthreads-mutex pthread)
+target_link_libraries(server-pthreads-mutex Threads::Threads)
 
 add_executable(server-pthreads-condvar sockets/server-pthreads-condvar.c)
-target_link_libraries(server-pthreads-condvar pthread)
+target_link_libraries(server-pthreads-condvar Threads::Threads)
 
 add_executable(thread-exit pthreads/thread-exit.c)
-target_link_libraries(thread-exit pthread)
+target_link_libraries(thread-exit Threads::Threads)
 
 
 # Dispatch table examples

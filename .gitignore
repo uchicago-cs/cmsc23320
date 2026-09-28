@@ -7,3 +7,12 @@
 build/
 cmake-build-*
 _build/
+
+# Sample binaries
+samples/sockets/client
+samples/sockets/client-bomb
+samples/sockets/oneshot-single
+samples/sockets/server-pthreads
+samples/sockets/server-pthreads-mutex
+samples/sockets/server-pthreads-condvar
+samples/pthreads/thread-exit

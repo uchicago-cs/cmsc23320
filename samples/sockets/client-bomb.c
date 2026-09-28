@@ -26,16 +26,16 @@ int main(int argc, char *argv[])
     int *sockets, nsockets = -1;
     struct addrinfo hints, *res, *p;
     char *host = NULL, *port = NULL;
-    int nbytes, opt, i;
+    int opt, i, rc;
 
     while ((opt = getopt(argc, argv, "h:p:n:")) != -1)
         switch (opt)
         {
             case 'h':
-                host = strdup(optarg);
+                host = optarg;
                 break;
             case 'p':
-                port = strdup(optarg);
+                port = optarg;
                 break;
             case 'n':
                 nsockets = atoi(optarg);
@@ -44,21 +44,26 @@ int main(int argc, char *argv[])
                 printf("Unknown option\n"); exit(1);
         }
 
-    if(host == NULL || port == NULL || nsockets == -1)
+    if(host == NULL || port == NULL || nsockets < 1)
     {
         printf("USAGE: client -h HOST -p PORT -n NUM_CONNECTIONS\n");
         exit(1);
     }
 
     sockets = malloc(nsockets * sizeof(int));
+    if (sockets == NULL)
+    {
+        perror("Could not allocate memory for sockets");
+        exit(-1);
+    }
 
     memset(&hints, 0, sizeof(hints));
     hints.ai_family = AF_UNSPEC;
     hints.ai_socktype = SOCK_STREAM;
 
-    if (getaddrinfo(host, port, &hints, &res) != 0)
+    if ((rc = getaddrinfo(host, port, &hints, &res)) != 0)
     {
-        perror("getaddrinfo() failed");
+        fprintf(stderr, "getaddrinfo() failed: %s\n", gai_strerror(rc));
         exit(-1);
     }
 
@@ -82,7 +87,7 @@ int main(int argc, char *argv[])
     
     if (p == NULL)
     {
-            fprintf(stderr, "Could not find a socket to connect to.\n");
+        fprintf(stderr, "Could not find a socket to connect to.\n");
         exit(-1);
     }
 
@@ -90,14 +95,25 @@ int main(int argc, char *argv[])
     printf("Bombing with %d\n", nsockets);
     for(i=1; i<nsockets; i++)
     {
-        sockets[i] = socket(p->ai_family, p->ai_socktype, p->ai_protocol);
-        connect(sockets[i], p->ai_addr, p->ai_addrlen);
+        if ((sockets[i] = socket(p->ai_family, p->ai_socktype, p->ai_protocol)) == -1)
+        {
+            perror("Could not open socket");
+            continue;
+        }
+
+        if (connect(sockets[i], p->ai_addr, p->ai_addrlen) == -1)
+        {
+            perror("Could not connect to socket");
+            close(sockets[i]);
+            sockets[i] = -1;
+        }
     }
     sleep(2);
 
     for(i=0; i<nsockets; i++)
     {
-        close(sockets[i]);
+        if (sockets[i] != -1)
+            close(sockets[i]);
     }
     printf("Done\n");
 

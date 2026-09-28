@@ -27,7 +27,7 @@
  *
  */
 
-int main(int argc, char *argv[])
+int main(void)
 {
     /* A socket is just a file descriptor, i.e., an int */
     int passive_socket;    // Used to listen for connections
@@ -75,11 +75,11 @@ int main(int argc, char *argv[])
     server_addr.sin_addr.s_addr = INADDR_ANY;  // Bind to any address
     
     /* Create the socket*/    
-    passive_socket = socket(PF_INET,       // Family: IPv4
+    passive_socket = socket(AF_INET,       // Family: IPv4
                            SOCK_STREAM,   // Type: Full-duplex stream (reliable)
                            IPPROTO_TCP);  // Protocol: TCP
 
-    /* Note: We could set the protocol to zero since PF_INET and SOCK_STREAM implies that TCP is
+    /* Note: We could set the protocol to zero since AF_INET and SOCK_STREAM implies that TCP is
        going to be used. */
 
     /* Note 2: We've created the sockaddr_in struct manually to better show its contents,

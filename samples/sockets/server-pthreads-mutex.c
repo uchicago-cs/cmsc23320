@@ -11,7 +11,7 @@
  *
  *  To compile:
  *
- *      gcc server-pthreads-mutex.c -o server-pthreads-mutex -lpthread
+ *      gcc server-pthreads-mutex.c -o server-pthreads-mutex -pthread
  *
  *  To run:
  *
@@ -69,10 +69,15 @@
  * IMPORTANT: The "lock_enabled" field is just for demonstration purposes (to show
  * what happens when the lock is disabled). Your own code should not use such a
  * field!
+ *
+ * Similarly, num_connections is declared as volatile only to prevent the compiler
+ * from optimizing away the loops in service_single_client() (which would hide the
+ * race condition). volatile does not make a variable thread-safe (the mutex does),
+ * and your own code should not need it.
  */
 struct server_ctx
 {
-    unsigned int num_connections;
+    volatile unsigned int num_connections;
     bool lock_enabled;
     pthread_mutex_t lock;
 };
@@ -91,6 +96,11 @@ int main(int argc, char *argv[])
     /* ADDED: Malloc the server context and initialize its values,
      * which includes initializing the mutex.*/
     struct server_ctx *ctx = calloc(1, sizeof(struct server_ctx));
+    if (ctx == NULL)
+    {
+        perror("Could not allocate server context");
+        return EXIT_FAILURE;
+    }
     ctx->num_connections = 0;
     pthread_mutex_init(&ctx->lock, NULL);
 
@@ -101,12 +111,9 @@ int main(int argc, char *argv[])
     else
         ctx->lock_enabled = true;
 
-    sigset_t new;
-    sigemptyset (&new);
-    sigaddset(&new, SIGPIPE);
-    if (pthread_sigmask(SIG_BLOCK, &new, NULL) != 0) 
+    if (signal(SIGPIPE, SIG_IGN) == SIG_ERR)
     {
-        perror("Unable to mask SIGPIPE");
+        perror("Unable to ignore SIGPIPE");
         exit(-1);
     }
 
@@ -114,20 +121,21 @@ int main(int argc, char *argv[])
     int client_socket;
     pthread_t worker_thread;
     struct addrinfo hints, *res, *p;
-    struct sockaddr_storage *client_addr;
-    socklen_t sin_size = sizeof(struct sockaddr_storage);
+    struct sockaddr_storage client_addr;
+    socklen_t sin_size;
     struct worker_args *wa;
     int yes = 1;
+    int rc;
 
     memset(&hints, 0, sizeof hints);
-    hints.ai_family = AF_UNSPEC;
+    hints.ai_family = AF_INET;
     hints.ai_socktype = SOCK_STREAM;
     hints.ai_flags = AI_PASSIVE;
 
-    if (getaddrinfo(NULL, "23320", &hints, &res) != 0)
+    if ((rc = getaddrinfo(NULL, "23320", &hints, &res)) != 0)
     {
-        perror("getaddrinfo() failed");
-        pthread_exit(NULL);
+        fprintf(stderr, "getaddrinfo() failed: %s\n", gai_strerror(rc));
+        return EXIT_FAILURE;
     }
 
     for(p = res;p != NULL; p = p->ai_next)
@@ -167,27 +175,31 @@ int main(int argc, char *argv[])
     if (p == NULL)
     {
         fprintf(stderr, "Could not find a socket to bind to.\n");
-        pthread_exit(NULL);
+        return EXIT_FAILURE;
     }
 
     while (1)
     {
-        client_addr = calloc(1, sin_size);
-        if ((client_socket = accept(server_socket, (struct sockaddr *) client_addr, &sin_size)) == -1)
+        sin_size = sizeof(client_addr);
+        if ((client_socket = accept(server_socket, (struct sockaddr *) &client_addr, &sin_size)) == -1)
         {
-            free(client_addr);
             perror("Could not accept() connection");
             continue;
         }
 
         wa = calloc(1, sizeof(struct worker_args));
+        if (wa == NULL)
+        {
+            perror("Could not allocate memory for worker thread");
+            close(client_socket);
+            continue;
+        }
         wa->socket = client_socket;
         wa->ctx = ctx;
 
         if (pthread_create(&worker_thread, NULL, service_single_client, wa) != 0)
         {
             perror("Could not create a worker thread");
-            free(client_addr);
             free(wa);
             close(client_socket);
             close(server_socket);

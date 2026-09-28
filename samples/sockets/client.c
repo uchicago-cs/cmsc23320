@@ -60,15 +60,18 @@ int main(int argc, char *argv[])
     /* Used by getopt */
     int opt;
 
+    /* Return value of getaddrinfo() */
+    int rc;
+
     /* Use getopt to fetch the host and port */
     while ((opt = getopt(argc, argv, "h:p:")) != -1)
         switch (opt)
         {
             case 'h':
-                host = strdup(optarg);
+                host = optarg;
                 break;
             case 'p':
-                port = strdup(optarg);
+                port = optarg;
                 break;
             default:
                 printf("Unknown option\n"); exit(1);
@@ -96,9 +99,12 @@ int main(int argc, char *argv[])
     hints.ai_socktype = SOCK_STREAM;
 
     /* Call getaddrinfo with the host and port specified in the command line */
-    if (getaddrinfo(host, port, &hints, &res) != 0)
+    if ((rc = getaddrinfo(host, port, &hints, &res)) != 0)
     {
-        perror("getaddrinfo() failed");
+        /* getaddrinfo() doesn't set errno, so we can't use perror().
+           Instead, it returns an error code that we can convert to
+           a string with gai_strerror() */
+        fprintf(stderr, "getaddrinfo() failed: %s\n", gai_strerror(rc));
         exit(-1);
     }
 
@@ -135,11 +141,18 @@ int main(int argc, char *argv[])
     /* We don't need the linked list anymore. Free it. */
     freeaddrinfo(res);
 
+    /* If we reached the end of the list, we couldn't connect to any of the addresses */
+    if (p == NULL)
+    {
+        fprintf(stderr, "Could not connect to %s:%s\n", host, port);
+        exit(-1);
+    }
+
     /* Read from the socket */
     nbytes = recv(active_socket, buffer, sizeof(buffer) - 1, 0);
     if (nbytes == 0)
     {
-        perror("Server closed the connection");
+        fprintf(stderr, "Server closed the connection\n");
         close(active_socket);
         exit(-1);
     }
