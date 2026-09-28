@@ -1,3 +1,5 @@
+:html_theme.sidebar_secondary.remove:
+
 CMSC 23320 - Foundations of Computer Networks
 =============================================
 

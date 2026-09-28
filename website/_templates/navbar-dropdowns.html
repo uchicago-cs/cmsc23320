@@ -1,0 +1,25 @@
+{# Header navbar with dropdown menus, built from the web_navbar entry in html_context (see conf.py) #}
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    {%- for entry in web_navbar %}
+    {%- if entry[1] is iterable and entry[1] is not string %}
+    <li class="nav-item dropdown">
+      <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="web-navbar-{{ loop.index }}">
+        {{ entry[0] }}
+      </button>
+      <ul id="web-navbar-{{ loop.index }}" class="dropdown-menu">
+        {%- for subentry in entry[1] %}
+        {%- if subentry[2] %}
+        <li><a class="nav-link dropdown-item nav-external" href="{{ subentry[1] }}" target="_blank">{{ subentry[0] }}</a></li>
+        {%- else %}
+        <li class="{{ 'current active' if pagename == subentry[1] }}"><a class="nav-link dropdown-item nav-internal" href="{{ pathto(subentry[1]) }}">{{ subentry[0] }}</a></li>
+        {%- endif %}
+        {%- endfor %}
+      </ul>
+    </li>
+    {%- else %}
+    <li class="nav-item {{ 'current active' if pagename == entry[1] }}"><a class="nav-link nav-internal" href="{{ pathto(entry[1]) }}">{{ entry[0] }}</a></li>
+    {%- endif %}
+    {%- endfor %}
+  </ul>
+</nav>
