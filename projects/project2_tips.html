@@ -1,126 +1,377 @@
 
 <!DOCTYPE html>
 
-<html lang="en" data-content_root="../">
+
+<html lang="en" data-content_root="../" >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <title>Project 2 Tips &#8212; CMSC 23320 - Foundations of Computer Networks</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=0bf093e7" />
-    <link rel="stylesheet" type="text/css" href="../_static/chiweb.css?v=4e80c602" />
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/chiweb.css?v=543cc32b" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../_static/documentation_options.js?v=a38f3fb2"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'projects/project2_tips';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Project 2 Rubric" href="project2_rubric.html" />
     <link rel="prev" title="Project 2: chitcp" href="project2.html" />
-<meta charset='utf-8'>
-<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
-<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
-<meta name="apple-mobile-web-app-capable" content="yes">
-<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
-<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
-<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
 
-  </head><body>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
 
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
 
-  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="../index.html">
-          CMSC 23320 - Foundations of Computer Networks</a>
-        <span class="navbar-text navbar-version pull-left"><b></b></span>
-      </div>
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
 
-        <div class="collapse navbar-collapse nav-collapse">
-          <ul class="nav navbar-nav">
-            
-            
-              
-              
-            
-            
-            
-<li class="dropdown">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Course Information <span class="caret"></span></a>
-    <ul class="dropdown-menu">
-        <li><a href="../syllabus.html">Syllabus</a></li>
-        <li><a href="../calendar.html">Calendar</a></li>
-        <li><a href="../getting-help.html">Getting Help</a></li>
-        <li><a href="../academic-integrity.html">Academic Integrity</a></li>
-        <li><a href="../code-of-conduct.html">Code of Conduct for Course Staff</a></li>
-    </ul>
-</li>
-<li class="dropdown">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects <span class="caret"></span></a>
-    <ul class="dropdown-menu">
-        <li><a href="started.html">Getting Started</a></li>
-        <li><a href="project1.html">Project 1: chirc</a></li>
-        <li><a href="project2.html">Project 2: chiTCP</a></li>
-        <li><a href="project3.html">Project 3: chirouter</a></li>
-    </ul>
-</li>
-<li class="dropdown">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
-    <ul class="dropdown-menu">
-        <li><a href="https://uchicago-cs.github.io/student-resource-guide/" target="_blank">UChicago CS Student Resource Guide <i class="fa fa-external-link"></i></a></li>
-        <li><a href="https://github.com/uchicago-cs/cmsc23320/tree/master/samples" target="_blank">Code Samples <i class="fa fa-external-link"></i></a></li>
-        <li><a href="https://uchicago-cs.github.io/debugging-guide" target="_blank">The Debugging Guide <i class="fa fa-external-link"></i></a></li>
-        <li><a href="../resources/other.html">Other Resources</a></li>
-    </ul>
-</li>
+  
+    
+  
 
-            
-          </ul>
-
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">CMSC 23320</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    <li class="nav-item dropdown">
+      <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="web-navbar-1">
+        Course Information
+      </button>
+      <ul id="web-navbar-1" class="dropdown-menu">
+        <li class=""><a class="nav-link dropdown-item nav-internal" href="../syllabus.html">Syllabus</a></li>
+        <li class=""><a class="nav-link dropdown-item nav-internal" href="../calendar.html">Calendar</a></li>
+        <li class=""><a class="nav-link dropdown-item nav-internal" href="../getting-help.html">Getting Help</a></li>
+        <li class=""><a class="nav-link dropdown-item nav-internal" href="../academic-integrity.html">Academic Integrity</a></li>
+        <li class=""><a class="nav-link dropdown-item nav-internal" href="../code-of-conduct.html">Code of Conduct for Course Staff</a></li>
+      </ul>
+    </li>
+    <li class="nav-item dropdown">
+      <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="web-navbar-2">
+        Projects
+      </button>
+      <ul id="web-navbar-2" class="dropdown-menu">
+        <li class=""><a class="nav-link dropdown-item nav-internal" href="started.html">Getting Started</a></li>
+        <li class=""><a class="nav-link dropdown-item nav-internal" href="project1.html">Project 1: chirc</a></li>
+        <li class=""><a class="nav-link dropdown-item nav-internal" href="project2.html">Project 2: chiTCP</a></li>
+        <li class=""><a class="nav-link dropdown-item nav-internal" href="project3.html">Project 3: chirouter</a></li>
+      </ul>
+    </li>
+    <li class="nav-item dropdown">
+      <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="web-navbar-3">
+        Resources
+      </button>
+      <ul id="web-navbar-3" class="dropdown-menu">
+        <li><a class="nav-link dropdown-item nav-external" href="https://uchicago-cs.github.io/student-resource-guide/" target="_blank">UChicago CS Student Resource Guide</a></li>
+        <li><a class="nav-link dropdown-item nav-external" href="https://github.com/uchicago-cs/cmsc23320/tree/main/samples" target="_blank">Code Samples</a></li>
+        <li><a class="nav-link dropdown-item nav-external" href="https://uchicago-cs.github.io/debugging-guide" target="_blank">The Debugging Guide</a></li>
+        <li class=""><a class="nav-link dropdown-item nav-internal" href="../resources/other.html">Other Resources</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
           
 
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
         </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
     </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    <li class="nav-item dropdown">
+      <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="web-navbar-1">
+        Course Information
+      </button>
+      <ul id="web-navbar-1" class="dropdown-menu">
+        <li class=""><a class="nav-link dropdown-item nav-internal" href="../syllabus.html">Syllabus</a></li>
+        <li class=""><a class="nav-link dropdown-item nav-internal" href="../calendar.html">Calendar</a></li>
+        <li class=""><a class="nav-link dropdown-item nav-internal" href="../getting-help.html">Getting Help</a></li>
+        <li class=""><a class="nav-link dropdown-item nav-internal" href="../academic-integrity.html">Academic Integrity</a></li>
+        <li class=""><a class="nav-link dropdown-item nav-internal" href="../code-of-conduct.html">Code of Conduct for Course Staff</a></li>
+      </ul>
+    </li>
+    <li class="nav-item dropdown">
+      <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="web-navbar-2">
+        Projects
+      </button>
+      <ul id="web-navbar-2" class="dropdown-menu">
+        <li class=""><a class="nav-link dropdown-item nav-internal" href="started.html">Getting Started</a></li>
+        <li class=""><a class="nav-link dropdown-item nav-internal" href="project1.html">Project 1: chirc</a></li>
+        <li class=""><a class="nav-link dropdown-item nav-internal" href="project2.html">Project 2: chiTCP</a></li>
+        <li class=""><a class="nav-link dropdown-item nav-internal" href="project3.html">Project 3: chirouter</a></li>
+      </ul>
+    </li>
+    <li class="nav-item dropdown">
+      <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="web-navbar-3">
+        Resources
+      </button>
+      <ul id="web-navbar-3" class="dropdown-menu">
+        <li><a class="nav-link dropdown-item nav-external" href="https://uchicago-cs.github.io/student-resource-guide/" target="_blank">UChicago CS Student Resource Guide</a></li>
+        <li><a class="nav-link dropdown-item nav-external" href="https://github.com/uchicago-cs/cmsc23320/tree/main/samples" target="_blank">Code Samples</a></li>
+        <li><a class="nav-link dropdown-item nav-external" href="https://uchicago-cs.github.io/debugging-guide" target="_blank">The Debugging Guide</a></li>
+        <li class=""><a class="nav-link dropdown-item nav-internal" href="../resources/other.html">Other Resources</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
 
-<div class="container">
-  <div class="row">
-      <div class="col-md-3">
-        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
-<li><a class="reference internal" href="#">Project 2 Tips</a><ul>
-<li><a class="reference internal" href="#suggested-order-of-implementation">Suggested Order of Implementation</a></li>
-<li><a class="reference internal" href="#interpreting-rfc-9293">Interpreting RFC 9293</a></li>
-<li><a class="reference internal" href="#selecting-initial-sequence-numbers">Selecting Initial Sequence Numbers</a></li>
-<li><a class="reference internal" href="#freeing-packets">Freeing packets</a></li>
-<li><a class="reference internal" href="#tests-that-sometimes-pass-but-sometimes-don-t">Tests that sometimes pass, but sometimes don’t</a></li>
-<li><a class="reference internal" href="#pick-your-battles-a-k-a-it-is-ok-to-not-pass-100-of-the-tests">Pick your battles (a.k.a.: “it is ok to not pass 100% of the tests”)</a></li>
-<li><a class="reference internal" href="#dealing-with-zero-windows">Dealing with Zero Windows</a></li>
-<li><a class="reference internal" href="#origin-of-log-messages">Origin of log messages</a></li>
-<li><a class="reference internal" href="#the-random-tests">The random tests</a></li>
-<li><a class="reference internal" href="#the-rtt-tests">The RTT tests</a></li>
-<li><a class="reference internal" href="#common-pitfalls">Common Pitfalls</a></li>
-</ul>
-</li>
-</ul>
 
-        </div>
       </div>
-    <div class="body col-md-9 content" role="main">
       
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="project2.html" class="nav-link">Project 2: chitcp</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Project 2 Tips</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section id="project-2-tips">
-<h1>Project 2 Tips<a class="headerlink" href="#project-2-tips" title="Link to this heading">¶</a></h1>
+<h1>Project 2 Tips<a class="headerlink" href="#project-2-tips" title="Link to this heading">#</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This page has not yet been updated for Autumn 2026.</p>
+</div>
 <p>Before you get started, make sure you’ve read through the <a class="reference external" href="../projects/started.html">Projects - Getting Started</a> page.</p>
 <section id="suggested-order-of-implementation">
-<h2>Suggested Order of Implementation<a class="headerlink" href="#suggested-order-of-implementation" title="Link to this heading">¶</a></h2>
+<h2>Suggested Order of Implementation<a class="headerlink" href="#suggested-order-of-implementation" title="Link to this heading">#</a></h2>
 <p>At first glance, it may seem like Project 2 requires coming up with an effectively complete implementation of TCP before you can test your code. This is a common pitfall in Project 2, that often leads some teams to write huge amounts of code without doing any testing, to then find that nothing is working when they finally start testing their TCP implementation.</p>
 <p>So, as you move on to Project 2, we suggest you set the following intermediate goals in Assignment 1 of chiTCP:</p>
 <ul class="simple">
@@ -158,7 +409,7 @@
 </ul>
 </section>
 <section id="interpreting-rfc-9293">
-<h2>Interpreting RFC 9293<a class="headerlink" href="#interpreting-rfc-9293" title="Link to this heading">¶</a></h2>
+<h2>Interpreting RFC 9293<a class="headerlink" href="#interpreting-rfc-9293" title="Link to this heading">#</a></h2>
 <p>In this project, you will be implementing TCP, which is specified in <a class="reference external" href="http://tools.ietf.org/html/rfc9293">RFC 9293</a>. This is a modern version of the original specification of TCP in RFC 793,
 fixing multiple errata and ambiguities that have been identified over the years. As such,
 this RFC tends to be pretty clear regarding the expected behaviour of RFC. That said,
@@ -173,13 +424,13 @@ behaviour of simple examples (like the 3-way handshake) may work for simple
 operations, but is not a good strategy for implementing all of TCP.</p>
 </section>
 <section id="selecting-initial-sequence-numbers">
-<h2>Selecting Initial Sequence Numbers<a class="headerlink" href="#selecting-initial-sequence-numbers" title="Link to this heading">¶</a></h2>
+<h2>Selecting Initial Sequence Numbers<a class="headerlink" href="#selecting-initial-sequence-numbers" title="Link to this heading">#</a></h2>
 <p>It is your responsibility to generate the initial sequence number (ISN) for a connection,
 but you are not required to implement the ISS/IRS selection exactly as specified in the RFC. It is enough
 to choose a random number and, for ease of debugging, you may want to choose a random number ending in <code class="docutils literal notranslate"><span class="pre">00000</span></code> so you can more easily debug the sequence numbers in your transmissions.</p>
 </section>
 <section id="freeing-packets">
-<h2>Freeing packets<a class="headerlink" href="#freeing-packets" title="Link to this heading">¶</a></h2>
+<h2>Freeing packets<a class="headerlink" href="#freeing-packets" title="Link to this heading">#</a></h2>
 <p>Take into account that:</p>
 <ul class="simple">
 <li><p>You’re responsible for freeing any packets you create (i.e., any memory you allocate for
@@ -194,7 +445,7 @@ to send the packet. In other words, it is safe to free the packet after <code cl
 returns (doing so will not interfere with the packet being correctly sent).</p>
 </section>
 <section id="tests-that-sometimes-pass-but-sometimes-don-t">
-<h2>Tests that sometimes pass, but sometimes don’t<a class="headerlink" href="#tests-that-sometimes-pass-but-sometimes-don-t" title="Link to this heading">¶</a></h2>
+<h2>Tests that sometimes pass, but sometimes don’t<a class="headerlink" href="#tests-that-sometimes-pass-but-sometimes-don-t" title="Link to this heading">#</a></h2>
 <p>You may sometimes run a test multiple times, and find that the test passes some times,
 but not others. Frequently, you may find that your tests pass consistently when run
 at a particular log level, but some (but not all) of them fail when run at a different
@@ -245,7 +496,7 @@ be challenging because your code may pass with DEBUG logging, but not with INFO 
 provides fewer clues on what could be wrong). This leads us to our next point…</p>
 </section>
 <section id="pick-your-battles-a-k-a-it-is-ok-to-not-pass-100-of-the-tests">
-<h2>Pick your battles (a.k.a.: “it is ok to not pass 100% of the tests”)<a class="headerlink" href="#pick-your-battles-a-k-a-it-is-ok-to-not-pass-100-of-the-tests" title="Link to this heading">¶</a></h2>
+<h2>Pick your battles (a.k.a.: “it is ok to not pass 100% of the tests”)<a class="headerlink" href="#pick-your-battles-a-k-a-it-is-ok-to-not-pass-100-of-the-tests" title="Link to this heading">#</a></h2>
 <p>Achieving a perfect implementation that can pass all the tests under every possible sequencing
 of events is very challenging. It is very likely that many of you will end up passing nearly
 all the tests (and certainly enough to get a Satisfactory score on Completeness), with a few stubborn
@@ -267,7 +518,7 @@ make sure to also include the output of <code class="docutils literal notranslat
 observing the same scores you’re seeing.</p>
 </section>
 <section id="dealing-with-zero-windows">
-<h2>Dealing with Zero Windows<a class="headerlink" href="#dealing-with-zero-windows" title="Link to this heading">¶</a></h2>
+<h2>Dealing with Zero Windows<a class="headerlink" href="#dealing-with-zero-windows" title="Link to this heading">#</a></h2>
 <p>Until you get to Assignment 2, your code will have no way of dealing with a host that is advertising a window
 of zero bytes (a common way of dealing with this is by sending
 <a class="reference external" href="http://www.tcpipguide.com/free/t_TCPWindowManagementIssues-3.htm">probe segments</a>). So, if a host does advertise
@@ -275,7 +526,7 @@ a window with zero bytes, your TCP may get stuck. The tests are designed to avoi
 but it may still arise (and will do so sporadically, since it requires a specific sequence of events to happen). We
 suggest you add something like this wherever you update the <code class="docutils literal notranslate"><span class="pre">SND_WND</span></code> variable:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="n">tcp_data</span><span class="o">-&gt;</span><span class="n">SND_WND</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
-    <span class="n">chilog</span><span class="p">(</span><span class="n">CRITICAL</span><span class="p">,</span> <span class="s2">&quot;Zero window received. TCP may become stuck.&quot;</span><span class="p">);</span>
+    <span class="n">chilog</span><span class="p">(</span><span class="n">CRITICAL</span><span class="p">,</span> <span class="s2">"Zero window received. TCP may become stuck."</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>If you run a test, and it sporadically times out because of this (but works most of the times), you should not worry
@@ -286,7 +537,7 @@ by advertising a new window size. It may not be uncommon for the effective windo
 you need to check for is whether the <em>advertised window</em> ever becomes zero.</p>
 </section>
 <section id="origin-of-log-messages">
-<h2>Origin of log messages<a class="headerlink" href="#origin-of-log-messages" title="Link to this heading">¶</a></h2>
+<h2>Origin of log messages<a class="headerlink" href="#origin-of-log-messages" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">tcp-socket-N</span></code> log messages originate in your TCP thread (where <code class="docutils literal notranslate"><span class="pre">N</span></code> is the socket number)</p>
 <p><code class="docutils literal notranslate"><span class="pre">socket-layer-N</span></code> log messages originate in the socket layer of the protocol stack (the one that
 handles send(), recv(), connect(), etc.). The socket layer is the one that calls your <code class="docutils literal notranslate"><span class="pre">tcp_data_init</span></code>
@@ -294,7 +545,7 @@ function so, in the second part of the project, your timer thread will inherit t
 you specifically set a new name for the timer thread. To make your logs clearer, you can do so by
 setting the name of the timer thread with this code (at the start of the timer thread function):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">char</span> <span class="n">thread_name</span><span class="p">[</span><span class="mi">17</span><span class="p">];</span>
-<span class="n">snprintf</span> <span class="p">(</span><span class="n">thread_name</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="s2">&quot;timer-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">ptr_to_fd</span><span class="p">(</span><span class="n">si</span><span class="p">,</span> <span class="n">entry</span><span class="p">));</span>
+<span class="n">snprintf</span> <span class="p">(</span><span class="n">thread_name</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="s2">"timer-</span><span class="si">%d</span><span class="s2">"</span><span class="p">,</span> <span class="n">ptr_to_fd</span><span class="p">(</span><span class="n">si</span><span class="p">,</span> <span class="n">entry</span><span class="p">));</span>
 <span class="n">pthread_setname_np</span><span class="p">(</span><span class="n">pthread_self</span><span class="p">(),</span> <span class="n">thread_name</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -302,7 +553,7 @@ setting the name of the timer thread with this code (at the start of the timer t
 from the socket layer and when it’s coming from the timer thread.</p>
 </section>
 <section id="the-random-tests">
-<h2>The random tests<a class="headerlink" href="#the-random-tests" title="Link to this heading">¶</a></h2>
+<h2>The random tests<a class="headerlink" href="#the-random-tests" title="Link to this heading">#</a></h2>
 <p>In the second part of the project, the random tests are <em>pretty difficult</em> to debug, because a
 lot ends up happening in them (much more than in any of the other tests). They should be the
 very last tests you try to pass, and you should not approach them until all the other tests
@@ -318,7 +569,7 @@ only one packet during the data transfer”, etc.). Basically, if you can pass a
 tests, that probably means your implementation is pretty solid.</p>
 </section>
 <section id="the-rtt-tests">
-<h2>The RTT tests<a class="headerlink" href="#the-rtt-tests" title="Link to this heading">¶</a></h2>
+<h2>The RTT tests<a class="headerlink" href="#the-rtt-tests" title="Link to this heading">#</a></h2>
 <p>The RTT estimation tests do not contribute to your test grade (the one you get when running <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">grade</span></code>).
 The reason for this is that these tests are trivial to pass if you just estimate the RTT to be zero
 (ensuring your tests never time out). However, the graders will be running these tests and,
@@ -326,7 +577,7 @@ if you are not doing any RTT estimation (or if they find issues with the RTT est
 will have an impact on your Code Quality score.</p>
 </section>
 <section id="common-pitfalls">
-<h2>Common Pitfalls<a class="headerlink" href="#common-pitfalls" title="Link to this heading">¶</a></h2>
+<h2>Common Pitfalls<a class="headerlink" href="#common-pitfalls" title="Link to this heading">#</a></h2>
 <ul>
 <li><p><strong>Calling tcp_data_init or tcp_data_free</strong>: You should never call <code class="docutils literal notranslate"><span class="pre">tcp_data_init</span></code> or <code class="docutils literal notranslate"><span class="pre">tcp_data_free</span></code>
 from your code. These functions are called by the socket layer (when a socket is created or destroyed),
@@ -353,7 +604,7 @@ be returned to the application layer. For example, under the <code class="docuti
 <span class="n">LAST</span><span class="o">-</span><span class="n">ACK</span> <span class="n">STATE</span>
 <span class="n">TIME</span><span class="o">-</span><span class="n">WAIT</span> <span class="n">STATE</span>
 
-  <span class="n">Return</span> <span class="s2">&quot;error:  connection closing&quot;</span> <span class="ow">and</span> <span class="n">do</span> <span class="ow">not</span> <span class="n">service</span> <span class="n">request</span><span class="o">.</span>
+  <span class="n">Return</span> <span class="s2">"error:  connection closing"</span> <span class="ow">and</span> <span class="n">do</span> <span class="ow">not</span> <span class="n">service</span> <span class="n">request</span><span class="o">.</span>
 </pre></div>
 </div>
 <p>This does not mean that your handling of <code class="docutils literal notranslate"><span class="pre">APPLICATION_SEND</span></code> in those states should implement some error-handling
@@ -422,21 +673,96 @@ with your code that can make your multitimer fail.</p></li>
 </section>
 
 
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#suggested-order-of-implementation">Suggested Order of Implementation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpreting-rfc-9293">Interpreting RFC 9293</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-initial-sequence-numbers">Selecting Initial Sequence Numbers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#freeing-packets">Freeing packets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tests-that-sometimes-pass-but-sometimes-don-t">Tests that sometimes pass, but sometimes don’t</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pick-your-battles-a-k-a-it-is-ok-to-not-pass-100-of-the-tests">Pick your battles (a.k.a.: “it is ok to not pass 100% of the tests”)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dealing-with-zero-windows">Dealing with Zero Windows</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#origin-of-log-messages">Origin of log messages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-random-tests">The random tests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-rtt-tests">The RTT tests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-pitfalls">Common Pitfalls</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
     </div>
-      
   </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2011-2026, University of Chicago.
+      <br/>
+    
+  </p>
 </div>
-<footer class="footer">
-  <div class="container">
-    <p class="pull-right">
-      <a href="#">Back to top</a>
       
-    </p>
-    <p>
-        &copy; Copyright 2011-2024, The University of Chicago.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.2.6.<br/>
-    </p>
-  </div>
-</footer>
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.22.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
   </body>
 </html>

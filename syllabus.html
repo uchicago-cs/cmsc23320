@@ -1,142 +1,373 @@
 
 <!DOCTYPE html>
 
-<html lang="en" data-content_root="./">
+
+<html lang="en" data-content_root="./" >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <title>Syllabus &#8212; CMSC 23320 - Foundations of Computer Networks</title>
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/bootstrap-sphinx.css?v=0bf093e7" />
-    <link rel="stylesheet" type="text/css" href="_static/chiweb.css?v=4e80c602" />
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <script src="_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/css/chiweb.css?v=543cc32b" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="_static/documentation_options.js?v=a38f3fb2"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'syllabus';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Academic Honesty" href="academic-honesty.html" />
     <link rel="prev" title="CMSC 23320 - Foundations of Computer Networks" href="index.html" />
-<meta charset='utf-8'>
-<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
-<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
-<meta name="apple-mobile-web-app-capable" content="yes">
-<script type="text/javascript" src="_static/js/jquery-1.12.4.min.js"></script>
-<script type="text/javascript" src="_static/js/jquery-fix.js"></script>
-<script type="text/javascript" src="_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
 
-  </head><body>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
 
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
 
-  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="index.html">
-          CMSC 23320 - Foundations of Computer Networks</a>
-        <span class="navbar-text navbar-version pull-left"><b></b></span>
-      </div>
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
 
-        <div class="collapse navbar-collapse nav-collapse">
-          <ul class="nav navbar-nav">
-            
-            
-              
-              
-            
-            
-            
-<li class="dropdown">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Course Information <span class="caret"></span></a>
-    <ul class="dropdown-menu">
-        <li><a href="#">Syllabus</a></li>
-        <li><a href="calendar.html">Calendar</a></li>
-        <li><a href="getting-help.html">Getting Help</a></li>
-        <li><a href="academic-integrity.html">Academic Integrity</a></li>
-        <li><a href="code-of-conduct.html">Code of Conduct for Course Staff</a></li>
-    </ul>
-</li>
-<li class="dropdown">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects <span class="caret"></span></a>
-    <ul class="dropdown-menu">
-        <li><a href="projects/started.html">Getting Started</a></li>
-        <li><a href="projects/project1.html">Project 1: chirc</a></li>
-        <li><a href="projects/project2.html">Project 2: chiTCP</a></li>
-        <li><a href="projects/project3.html">Project 3: chirouter</a></li>
-    </ul>
-</li>
-<li class="dropdown">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
-    <ul class="dropdown-menu">
-        <li><a href="https://uchicago-cs.github.io/student-resource-guide/" target="_blank">UChicago CS Student Resource Guide <i class="fa fa-external-link"></i></a></li>
-        <li><a href="https://github.com/uchicago-cs/cmsc23320/tree/master/samples" target="_blank">Code Samples <i class="fa fa-external-link"></i></a></li>
-        <li><a href="https://uchicago-cs.github.io/debugging-guide" target="_blank">The Debugging Guide <i class="fa fa-external-link"></i></a></li>
-        <li><a href="resources/other.html">Other Resources</a></li>
-    </ul>
-</li>
+  
+    
+  
 
-            
-          </ul>
-
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">CMSC 23320</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    <li class="nav-item dropdown">
+      <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="web-navbar-1">
+        Course Information
+      </button>
+      <ul id="web-navbar-1" class="dropdown-menu">
+        <li class="current active"><a class="nav-link dropdown-item nav-internal" href="#">Syllabus</a></li>
+        <li class=""><a class="nav-link dropdown-item nav-internal" href="calendar.html">Calendar</a></li>
+        <li class=""><a class="nav-link dropdown-item nav-internal" href="getting-help.html">Getting Help</a></li>
+        <li class=""><a class="nav-link dropdown-item nav-internal" href="academic-integrity.html">Academic Integrity</a></li>
+        <li class=""><a class="nav-link dropdown-item nav-internal" href="code-of-conduct.html">Code of Conduct for Course Staff</a></li>
+      </ul>
+    </li>
+    <li class="nav-item dropdown">
+      <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="web-navbar-2">
+        Projects
+      </button>
+      <ul id="web-navbar-2" class="dropdown-menu">
+        <li class=""><a class="nav-link dropdown-item nav-internal" href="projects/started.html">Getting Started</a></li>
+        <li class=""><a class="nav-link dropdown-item nav-internal" href="projects/project1.html">Project 1: chirc</a></li>
+        <li class=""><a class="nav-link dropdown-item nav-internal" href="projects/project2.html">Project 2: chiTCP</a></li>
+        <li class=""><a class="nav-link dropdown-item nav-internal" href="projects/project3.html">Project 3: chirouter</a></li>
+      </ul>
+    </li>
+    <li class="nav-item dropdown">
+      <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="web-navbar-3">
+        Resources
+      </button>
+      <ul id="web-navbar-3" class="dropdown-menu">
+        <li><a class="nav-link dropdown-item nav-external" href="https://uchicago-cs.github.io/student-resource-guide/" target="_blank">UChicago CS Student Resource Guide</a></li>
+        <li><a class="nav-link dropdown-item nav-external" href="https://github.com/uchicago-cs/cmsc23320/tree/main/samples" target="_blank">Code Samples</a></li>
+        <li><a class="nav-link dropdown-item nav-external" href="https://uchicago-cs.github.io/debugging-guide" target="_blank">The Debugging Guide</a></li>
+        <li class=""><a class="nav-link dropdown-item nav-internal" href="resources/other.html">Other Resources</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
           
 
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
         </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
     </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    <li class="nav-item dropdown">
+      <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="web-navbar-1">
+        Course Information
+      </button>
+      <ul id="web-navbar-1" class="dropdown-menu">
+        <li class="current active"><a class="nav-link dropdown-item nav-internal" href="#">Syllabus</a></li>
+        <li class=""><a class="nav-link dropdown-item nav-internal" href="calendar.html">Calendar</a></li>
+        <li class=""><a class="nav-link dropdown-item nav-internal" href="getting-help.html">Getting Help</a></li>
+        <li class=""><a class="nav-link dropdown-item nav-internal" href="academic-integrity.html">Academic Integrity</a></li>
+        <li class=""><a class="nav-link dropdown-item nav-internal" href="code-of-conduct.html">Code of Conduct for Course Staff</a></li>
+      </ul>
+    </li>
+    <li class="nav-item dropdown">
+      <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="web-navbar-2">
+        Projects
+      </button>
+      <ul id="web-navbar-2" class="dropdown-menu">
+        <li class=""><a class="nav-link dropdown-item nav-internal" href="projects/started.html">Getting Started</a></li>
+        <li class=""><a class="nav-link dropdown-item nav-internal" href="projects/project1.html">Project 1: chirc</a></li>
+        <li class=""><a class="nav-link dropdown-item nav-internal" href="projects/project2.html">Project 2: chiTCP</a></li>
+        <li class=""><a class="nav-link dropdown-item nav-internal" href="projects/project3.html">Project 3: chirouter</a></li>
+      </ul>
+    </li>
+    <li class="nav-item dropdown">
+      <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="web-navbar-3">
+        Resources
+      </button>
+      <ul id="web-navbar-3" class="dropdown-menu">
+        <li><a class="nav-link dropdown-item nav-external" href="https://uchicago-cs.github.io/student-resource-guide/" target="_blank">UChicago CS Student Resource Guide</a></li>
+        <li><a class="nav-link dropdown-item nav-external" href="https://github.com/uchicago-cs/cmsc23320/tree/main/samples" target="_blank">Code Samples</a></li>
+        <li><a class="nav-link dropdown-item nav-external" href="https://uchicago-cs.github.io/debugging-guide" target="_blank">The Debugging Guide</a></li>
+        <li class=""><a class="nav-link dropdown-item nav-internal" href="resources/other.html">Other Resources</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
 
-<div class="container">
-  <div class="row">
-      <div class="col-md-3">
-        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
-<li><a class="reference internal" href="#">Syllabus</a><ul>
-<li><a class="reference internal" href="#course-description">Course description</a></li>
-<li><a class="reference internal" href="#communication">Communication</a></li>
-<li><a class="reference internal" href="#course-organization">Course organization</a><ul>
-<li><a class="reference internal" href="#projects">Projects</a></li>
-<li><a class="reference internal" href="#checkpoint-exams-and-final-exam">Checkpoint Exams (and Final Exam)</a></li>
-<li><a class="reference internal" href="#lectures">Lectures</a></li>
-<li><a class="reference internal" href="#discussion-sessions">Discussion Sessions</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#books">Books</a></li>
-<li><a class="reference internal" href="#grading">Grading</a><ul>
-<li><a class="reference internal" href="#snu-scale">SNU Scale</a></li>
-<li><a class="reference internal" href="#bundles">Bundles</a></li>
-<li><a class="reference internal" href="#final-grade">Final Grade</a></li>
-<li><a class="reference internal" href="#resubmissions">Resubmissions</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#commit-messages">Commit Messages</a></li>
-<li><a class="reference internal" href="#policies">Policies</a><ul>
-<li><a class="reference internal" href="#project-late-policy">Project Late Policy</a></li>
-<li><a class="reference internal" href="#missing-checkpoint-exams">Missing Checkpoint Exams</a></li>
-<li><a class="reference internal" href="#grade-disputes">Grade Disputes</a></li>
-<li><a class="reference internal" href="#academic-integrity">Academic Integrity</a></li>
-<li><a class="reference internal" href="#code-of-conduct-for-course-staff">Code of Conduct for Course Staff</a></li>
-<li><a class="reference internal" href="#accessibility-statement">Accessibility Statement</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#acknowledgements">Acknowledgements</a></li>
-</ul>
-</li>
-</ul>
 
-        </div>
       </div>
-    <div class="body col-md-9 content" role="main">
       
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Syllabus</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section id="syllabus">
-<h1>Syllabus<a class="headerlink" href="#syllabus" title="Link to this heading">¶</a></h1>
+<h1>Syllabus<a class="headerlink" href="#syllabus" title="Link to this heading">#</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This syllabus is tentative and subject to change.</p>
+</div>
 <section id="course-description">
-<h2>Course description<a class="headerlink" href="#course-description" title="Link to this heading">¶</a></h2>
+<h2>Course description<a class="headerlink" href="#course-description" title="Link to this heading">#</a></h2>
 <p>This course focuses on the principles and techniques used in the
 development of networked and distributed software. Topics include
 programming with sockets; concurrent programming; data link layer
@@ -153,7 +384,7 @@ translate them into code.</p></li>
 Internet.</p></li>
 <li><p>…develop complex software starting from an existing codebase, working
 collaboratively with other developers, and using industry-standard tools,
-including generative AI.</p></li>
+including AI tools.</p></li>
 </ul>
 <p>In a nutshell, students will learn how the Internet works. By the end of
 this course, students should understand <em>everything</em> that happens “under the hood”
@@ -161,18 +392,18 @@ when (for example) a web page is requested, from the moment
 you click on a link in your browser to the moment you get the requested
 page back.</p>
 <p><strong>Prerequisites</strong>: This class assumes fluency in C programming, including low-level aspects of C such as bit-level
-operations. Students must complete either CMSC 15400 Introduction to Computer Systems or CMSC 14400 Systems Programming II
+operations. Students must complete either CMSC 14400 Systems Programming II or CMSC 15400 Introduction to Computer Systems
 before taking this class.</p>
 </section>
 <section id="communication">
-<h2>Communication<a class="headerlink" href="#communication" title="Link to this heading">¶</a></h2>
+<h2>Communication<a class="headerlink" href="#communication" title="Link to this heading">#</a></h2>
 <p>There are a number of different ways we’ll be communicating about the class.</p>
 <ul class="simple">
-<li><p><strong>Course materials</strong> - Assignments and other course materials will be made available through this website.</p></li>
-<li><p><strong>Discussion and announcements</strong> - We will use Ed Discussion for course discussion and announcements. If you are
-registered for the class, you will be added to our Canvas site, and will be able to access our Ed Discussion
-site through Canvas.</p></li>
-<li><p><strong>Course work and feedback</strong> - We will use Gradescope to collect your homework and projects and to return feedback.
+<li><p><strong>Course materials</strong> - Lecture notes will be published on our Ed Discussion site. If you are registered for the
+class, you will be added to our Canvas site, and will be able to access our Ed Discussion site through Canvas.
+Please note that project specifications are published on this website, but will be linked from our Canvas site.</p></li>
+<li><p><strong>Discussion and announcements</strong> - We will use Ed Discussion for course discussion and announcements.</p></li>
+<li><p><strong>Course work and feedback</strong> - We will use Gradescope to collect your projects and to return feedback.
 You can access our Gradescope site through Canvas.</p></li>
 <li><p><strong>Office hours</strong> - Office hours are times when the course staff are available for you. Instructors and teaching
 assistants will have scheduled office hours in-person and/or online. While most students use this as an opportunity
@@ -182,7 +413,7 @@ the course or with computer science more generally.</p></li>
 <p>Please see the <a class="reference external" href="getting-help.html">Getting Help</a> page for more information on getting help using Ed Discussion and through office hours</p>
 </section>
 <section id="course-organization">
-<h2>Course organization<a class="headerlink" href="#course-organization" title="Link to this heading">¶</a></h2>
+<h2>Course organization<a class="headerlink" href="#course-organization" title="Link to this heading">#</a></h2>
 <p>The development of three programming projects accounts for the majority
 of the work in this course. To successfully complete these projects,
 students must master fundamental concepts and skills in networking. The
@@ -197,10 +428,10 @@ have a chance to make up for it at the final exam.</p>
 <p>The course calendar, including the contents of
 each lecture and project deadlines, is shown in the <a class="reference external" href="calendar.html">Course Calendar</a> page.</p>
 <section id="projects">
-<h3>Projects<a class="headerlink" href="#projects" title="Link to this heading">¶</a></h3>
+<h3>Projects<a class="headerlink" href="#projects" title="Link to this heading">#</a></h3>
 <p>Throughout the quarter, students will develop three projects:</p>
 <ol class="arabic simple">
-<li><p><strong>chirc</strong>: Implementing an Internet Relay Protocol (IRC)
+<li><p><strong>chirc</strong>: Implementing an Internet Relay Chat (IRC)
 server (partially compliant with RFC 2810, 2811, 2812, and 2813)
 using POSIX sockets and pthreads.</p></li>
 <li><p><strong>chiTCP</strong>: Implementing the Transmission Control Protocol.</p></li>
@@ -214,7 +445,7 @@ the course or you feel they are not contributing to the group’s effort,
 you should make the instructor aware of this.</p>
 </section>
 <section id="checkpoint-exams-and-final-exam">
-<h3>Checkpoint Exams (and Final Exam)<a class="headerlink" href="#checkpoint-exams-and-final-exam" title="Link to this heading">¶</a></h3>
+<h3>Checkpoint Exams (and Final Exam)<a class="headerlink" href="#checkpoint-exams-and-final-exam" title="Link to this heading">#</a></h3>
 <p>There will be ten checkpoint exams throughout the quarter, each with a duration between
 10 and 20 minutes. Each exam will be graded on a S/N/U scale:</p>
 <ul class="simple">
@@ -223,7 +454,7 @@ that exam, and will be exempted from that topic in the final exam.</p></li>
 <li><p><strong>Needs Improvement (N)</strong> and <strong>Unsatisfactory (U)</strong>: You have not demonstrated
 sufficient mastery in the topic, but you will have
 another chance to demonstrate your mastery of that topic at the final exam.
-A “Needs Improvement” indicates that you did demostrate some mastery of the
+A “Needs Improvement” indicates that you did demonstrate some mastery of the
 topic and, as explained below, it may contribute towards earning certain
 grades in the class.</p></li>
 </ul>
@@ -240,10 +471,10 @@ but always remember that, if you earn an N or U on a checkpoint exam, you will h
 to improve your score at the final exam.</p>
 </section>
 <section id="lectures">
-<h3>Lectures<a class="headerlink" href="#lectures" title="Link to this heading">¶</a></h3>
+<h3>Lectures<a class="headerlink" href="#lectures" title="Link to this heading">#</a></h3>
 <p>The course meets twice a week for lectures. In most weeks, one
 of the lectures will introduce material that will be expanded upon in
-pre-recorded lectures that are made available that week, and the other
+lecture notes that are made available later in the week, and the other
 lecture will focus on the course projects.</p>
 <p>In the project-focused lectures, we will (1)
 provide suggestions on how to approach the projects, (2) provide general
@@ -251,7 +482,7 @@ feedback on submitted projects, and (3) provide a general forum to
 answer questions about the projects.</p>
 </section>
 <section id="discussion-sessions">
-<h3>Discussion Sessions<a class="headerlink" href="#discussion-sessions" title="Link to this heading">¶</a></h3>
+<h3>Discussion Sessions<a class="headerlink" href="#discussion-sessions" title="Link to this heading">#</a></h3>
 <p>The discussion sessions on Week 1 and 2 will be used to cover
 socket programming and thread programming, which will be required
 for Project 1.</p>
@@ -260,7 +491,7 @@ followed by a discussion of the solutions to that checkpoint exam.</p>
 </section>
 </section>
 <section id="books">
-<h2>Books<a class="headerlink" href="#books" title="Link to this heading">¶</a></h2>
+<h2>Books<a class="headerlink" href="#books" title="Link to this heading">#</a></h2>
 <p>This course has two <em>suggested</em> texts:</p>
 <ul class="simple">
 <li><p><em>Computer Networks: A Systems Approach</em>, 6th edition, Larry L.
@@ -273,7 +504,7 @@ Fall and W. Richard Stevens, Addison-Wesley 2011.</p></li>
 class successfully without them. However, they can be a good complement
 to the lectures and projects. To that end, here are the chapters from
 each book that relate to the topics covered in class:</p>
-<table class="docutils align-default">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Topics</p></th>
 <th class="head"><p>CNASA</p></th>
@@ -311,10 +542,11 @@ each book that relate to the topics covered in class:</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>(CNASA: Computer Networks: A Systems Approach; TIV1: TCP/IP Illustrated, Volume 1)</p>
 </section>
 <section id="grading">
-<h2>Grading<a class="headerlink" href="#grading" title="Link to this heading">¶</a></h2>
+<h2>Grading<a class="headerlink" href="#grading" title="Link to this heading">#</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This course uses a <em>specifications grading</em> approach. If you have gone through the
@@ -325,7 +557,7 @@ you should still find them useful to get a sense of the general aspects of
 specifications grading.</p>
 </div>
 <section id="snu-scale">
-<h3>SNU Scale<a class="headerlink" href="#snu-scale" title="Link to this heading">¶</a></h3>
+<h3>SNU Scale<a class="headerlink" href="#snu-scale" title="Link to this heading">#</a></h3>
 <p>All work in this course will be evaluated using a S/N/U scale:</p>
 <ul class="simple">
 <li><p><strong>Satisfactory</strong> (S): The student demonstrates sufficient mastery of the material.</p></li>
@@ -335,7 +567,13 @@ specifications grading.</p>
 <p>Specific assignments/exams will provide concrete guidance on what is required to achieve each score.</p>
 </section>
 <section id="bundles">
-<h3>Bundles<a class="headerlink" href="#bundles" title="Link to this heading">¶</a></h3>
+<h3>Bundles<a class="headerlink" href="#bundles" title="Link to this heading">#</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>We are revising the composition of the bundles for Autumn 2026, to reflect that
+the projects will now involve code reviews. While the topics of the bundles
+will remain largely the same, the way the projects are scored will likely change.</p>
+</div>
 <p>There are a total of 20 SNU scores in this class:</p>
 <ul class="simple">
 <li><p><strong>Projects</strong>: There are five project submissions (1A, 1B, 2A, 2B, and 3), and each contributes two SNU
@@ -417,11 +655,8 @@ scores: one for Completeness and one for Code Quality.</p></li>
 </dd>
 </dl>
 </li>
-<li><p><strong>Mastery of Networks</strong></p>
-<ul class="simple">
-<li><p>Checkpoint Exam: Challenge Questions</p></li>
-</ul>
-</li>
+<li><p><strong>Mastery of Networks</strong>
+- Checkpoint Exam: Challenge Questions</p></li>
 </ol>
 <p>For each bundle, there are three possible outcomes:</p>
 <ul class="simple">
@@ -432,12 +667,12 @@ but earned at least an N on every component of the bundle.</p></li>
 </ul>
 </section>
 <section id="final-grade">
-<h3>Final Grade<a class="headerlink" href="#final-grade" title="Link to this heading">¶</a></h3>
+<h3>Final Grade<a class="headerlink" href="#final-grade" title="Link to this heading">#</a></h3>
 <p>Your final grade will be based on the number of bundles you complete (and/or partially complete),
 based on the table below.
 See above for a definition of “Complete” and “Partial” (most notably, there is a specific bar
 for a bundle to be considered “partially complete”).</p>
-<table class="table-bordered docutils align-default">
+<div class="pst-scrollable-table-container"><table class="table-bordered table">
 <thead>
 <tr class="row-odd"><th class="head" rowspan="2"><p>Grade</p></th>
 <th class="head" colspan="2"><p>Bundles</p></th>
@@ -487,6 +722,7 @@ for a bundle to be considered “partially complete”).</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>Please note that, to earn a given grade, you must meet all the conditions listed on a given row.
 For example, to earn an A- you must complete at least 7 bundles, with the rest of the bundles
 being, at least, partially complete. So, if you completed 8 bundles, and partially completed 2
@@ -503,7 +739,7 @@ may take the class Pass/Fail. To earn a P, a student must earn at least a C- in 
 We will explain how to request the Pass/Fail option close to the end of the quarter.</p>
 </section>
 <section id="resubmissions">
-<h3>Resubmissions<a class="headerlink" href="#resubmissions" title="Link to this heading">¶</a></h3>
+<h3>Resubmissions<a class="headerlink" href="#resubmissions" title="Link to this heading">#</a></h3>
 <p>After a project has been graded and returned to you, you will be allowed to resubmit your
 work to address any feedback we have given you, and to improve your score on that work.</p>
 <p>Project resubmissions in this class will follow these guidelines:</p>
@@ -524,7 +760,7 @@ For avoidance of doubt, the Final Exam will not involve the exact same questions
 </section>
 </section>
 <section id="commit-messages">
-<h2>Commit Messages<a class="headerlink" href="#commit-messages" title="Link to this heading">¶</a></h2>
+<h2>Commit Messages<a class="headerlink" href="#commit-messages" title="Link to this heading">#</a></h2>
 <p>Commit messages in your repository should be descriptive and to the point. For example:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Implemented</span> <span class="pre">JOIN</span> <span class="pre">command</span></code></p></li>
@@ -532,7 +768,7 @@ For avoidance of doubt, the Final Exam will not involve the exact same questions
 <li><p><code class="docutils literal notranslate"><span class="pre">Final</span> <span class="pre">style</span> <span class="pre">updates</span> <span class="pre">before</span> <span class="pre">submission</span></code></p></li>
 </ul>
 <p>Bear in mind that, in an actual project in industry, your commit messages will be seen by everyone
-involved in the project, and are an important part of your documentation (as the describe exactly
+involved in the project, and are an important part of your documentation (as they describe exactly
 how your code changed in each commit).</p>
 <p>That said, a long-standing tradition in this class has been to collect the best and funniest
 commit messages we see throughout the quarter, so we can share those (anonymized) messages with the rest of the class, to
@@ -543,9 +779,9 @@ presentation (past presentations can be found <a class="reference external" href
 shown above).</p>
 </section>
 <section id="policies">
-<h2>Policies<a class="headerlink" href="#policies" title="Link to this heading">¶</a></h2>
+<h2>Policies<a class="headerlink" href="#policies" title="Link to this heading">#</a></h2>
 <section id="project-late-policy">
-<h3>Project Late Policy<a class="headerlink" href="#project-late-policy" title="Link to this heading">¶</a></h3>
+<h3>Project Late Policy<a class="headerlink" href="#project-late-policy" title="Link to this heading">#</a></h3>
 <p>Late submissions will not be accepted in this class, except under extraordinary circumstances. Please bear in mind that the grading scheme is set up to absorb a reasonable amount of subpar work, and also allows you to resubmit almost all the work in this class.</p>
 <p>To get the most out of this class, you should not treat the initial deadline for
 a project as the date by which you must submit a perfectly polished version of your work (although
@@ -555,7 +791,7 @@ deadline, as you will have an opportunity to revise it later on.</p>
 <p>In other words, our late submission policy applies to <em>ordinary</em> circumstances: if you are having a busy week, if your RSO has an event that overlaps with a deadline, etc., then you should rely on the resubmission policy to give you some extra flexibility. Instead of trying to argue for a few extra days to work on an assignment, you should just submit the work you have completed by the deadline, so you can get feedback on that work and use that feedback to improve your work.</p>
 </section>
 <section id="missing-checkpoint-exams">
-<h3>Missing Checkpoint Exams<a class="headerlink" href="#missing-checkpoint-exams" title="Link to this heading">¶</a></h3>
+<h3>Missing Checkpoint Exams<a class="headerlink" href="#missing-checkpoint-exams" title="Link to this heading">#</a></h3>
 <p>While we understand that some students may have legitimate reasons to miss a checkpoint exam
 (illness, travel to academic events, etc.), it is unfortunately not logistically feasible
 for us to schedule make-up exams for every checkpoint exam.</p>
@@ -570,7 +806,7 @@ a checkpoint exam (or are unable to take it), you get a “do-over” at the fin
 for not being able to take the final exam at the time scheduled by the Registrar.</p>
 </section>
 <section id="grade-disputes">
-<h3>Grade Disputes<a class="headerlink" href="#grade-disputes" title="Link to this heading">¶</a></h3>
+<h3>Grade Disputes<a class="headerlink" href="#grade-disputes" title="Link to this heading">#</a></h3>
 <p>Except in very specific cases (described below), you cannot dispute
 the score assigned to you on a piece of work. The score you receive on
 a piece of work is meant to convey feedback on your level of mastery,
@@ -605,14 +841,14 @@ you. After that time, we will not consider any such requests,
 regardless of whether the request is reasonable and justified.</p>
 </section>
 <section id="academic-integrity">
-<h3>Academic Integrity<a class="headerlink" href="#academic-integrity" title="Link to this heading">¶</a></h3>
+<h3>Academic Integrity<a class="headerlink" href="#academic-integrity" title="Link to this heading">#</a></h3>
 <p>This class has a permissive policy on student collaboration and on
-the use of Generative AI, but there are still a number of things
+the use of AI tools, but there are still a number of things
 that will not be allowed in the class, and which could lead
 to an academic integrity case against you.</p>
 <p>Our <a class="reference external" href="academic-integrity.html">Academic Integrity</a> page specifies
 these policies in detail, including specific examples of allowed forms
-of collaboration and allowed uses of Generative AI, as well as explanations
+of collaboration and allowed uses of AI tools, as well as explanations
 on why we also need to place some limits on them.
 It is your responsibility familiarize yourself with these policies;
 if you are ever unsure of whether you are doing something that
@@ -620,7 +856,7 @@ may run afoul of these policies, please don’t hesitate to ask
 us for clarification.</p>
 </section>
 <section id="code-of-conduct-for-course-staff">
-<h3>Code of Conduct for Course Staff<a class="headerlink" href="#code-of-conduct-for-course-staff" title="Link to this heading">¶</a></h3>
+<h3>Code of Conduct for Course Staff<a class="headerlink" href="#code-of-conduct-for-course-staff" title="Link to this heading">#</a></h3>
 <p>This class has a <a class="reference external" href="code-of-conduct.html">Code of Conduct for Course Staff</a>.
 We share this code of conduct with you (the students) so you know the
 expectations we have set for our staff and, while we expect and hope they
@@ -630,7 +866,7 @@ to continue to improve the student experience in this class, and to prevent
 any issues from reoccurring.</p>
 </section>
 <section id="accessibility-statement">
-<h3>Accessibility Statement<a class="headerlink" href="#accessibility-statement" title="Link to this heading">¶</a></h3>
+<h3>Accessibility Statement<a class="headerlink" href="#accessibility-statement" title="Link to this heading">#</a></h3>
 <p>The University of Chicago is committed to ensuring equitable access to our academic
 programs and services. Students with disabilities who have been approved for the use of
 academic accommodations by <a class="reference external" href="https://disabilities.uchicago.edu/">Student Disability Services</a> (SDS) and need a reasonable
@@ -644,7 +880,7 @@ ensure that your accommodations can be implemented.</p>
 </section>
 </section>
 <section id="acknowledgements">
-<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Link to this heading">¶</a></h2>
+<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Link to this heading">#</a></h2>
 <p>This syllabus is based on previous CMSC 23300/33300 syllabi developed by
 Prof. Anne Rogers and Prof. Ian Foster from the University of Chicago.</p>
 <p>A number of policies in this class are based on similar policies from
@@ -655,21 +891,113 @@ CMSC 12100 and CMSC 14200, authored by a variety of instructors throughout the y
 </section>
 
 
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-description">Course description</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#communication">Communication</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-organization">Course organization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#projects">Projects</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checkpoint-exams-and-final-exam">Checkpoint Exams (and Final Exam)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lectures">Lectures</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-sessions">Discussion Sessions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#books">Books</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grading">Grading</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#snu-scale">SNU Scale</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bundles">Bundles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-grade">Final Grade</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resubmissions">Resubmissions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-messages">Commit Messages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#policies">Policies</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#project-late-policy">Project Late Policy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#missing-checkpoint-exams">Missing Checkpoint Exams</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grade-disputes">Grade Disputes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#academic-integrity">Academic Integrity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-of-conduct-for-course-staff">Code of Conduct for Course Staff</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessibility-statement">Accessibility Statement</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgements">Acknowledgements</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
     </div>
-      
   </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2011-2026, University of Chicago.
+      <br/>
+    
+  </p>
 </div>
-<footer class="footer">
-  <div class="container">
-    <p class="pull-right">
-      <a href="#">Back to top</a>
       
-    </p>
-    <p>
-        &copy; Copyright 2011-2024, The University of Chicago.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.2.6.<br/>
-    </p>
-  </div>
-</footer>
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.22.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
   </body>
 </html>

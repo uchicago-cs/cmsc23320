@@ -1,0 +1,31 @@
+html[data-theme="light"] .bd-header {
+    background-color: maroon !important;
+}
+
+html[data-theme="light"] .bd-header .nav-link,
+html[data-theme="light"] .bd-header .dropdown-toggle {
+    color: #ffffff !important;
+}
+
+html[data-theme="light"] .bd-header .dropdown-menu .nav-link {
+    color: var(--pst-color-text-base) !important;
+}
+
+html[data-theme="light"] .bd-header .title {
+    color: #ffffff !important;
+}
+
+.bd-header ul.navbar-nav > li.nav-item.dropdown > .dropdown-toggle:hover {
+    box-shadow: none;
+}
+
+/* Tables with the table-bordered class have merged cells, so they need borders
+   around every cell (and no zebra striping) to be readable */
+table.table-bordered th,
+table.table-bordered td {
+    border: 1px solid color-mix(in srgb, var(--pst-color-text-base) 40%, transparent) !important;
+}
+
+table.table-bordered tbody tr {
+    background-color: transparent !important;
+}
