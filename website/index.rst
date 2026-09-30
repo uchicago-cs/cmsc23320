@@ -8,7 +8,7 @@ Course Staff
 
 **Instructor**
 
-`Borja Sotomayor <http://people.cs.uchicago.edu/~borja/>`_ (borja@cs.uchicago.edu)
+`Borja Sotomayor <http://people.cs.uchicago.edu/~borja/>`_ (borja@uchicago.edu)
 
 
 Course Description

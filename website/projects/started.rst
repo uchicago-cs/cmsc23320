@@ -4,7 +4,9 @@ Projects - Getting Started
 --------------------------
 
 .. warning::
-   This page has not yet been updated for Autumn 2026.
+   This page has not yet been updated for Autumn 2026. While you're welcome to familiarize
+   yourself with the resources on this page, bear in mind that we will be using a departmental
+   GitLab server instead of GitHub.
 
 Before working on the projects, we recommend you check out the `UChicago CS Student Resource Guide <https://uchicago-cs.github.io/student-resource-guide/>`__. In particular, please note the following:
 

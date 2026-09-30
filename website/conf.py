@@ -62,7 +62,7 @@ html_context = {"web_navbar": [("Course Information", [
                                  ]),
                                  ("Resources", [
                                      ("UChicago CS Student Resource Guide", "https://uchicago-cs.github.io/student-resource-guide/", True),
-                                     ("Code Samples", "https://github.com/uchicago-cs/cmsc23320/tree/master/samples", True),
+                                     ("Code Samples", "https://github.com/uchicago-cs/cmsc23320/tree/main/samples", True),
                                      ("The Debugging Guide", "https://uchicago-cs.github.io/debugging-guide", True),
                                      ("Other Resources", "resources/other", False),
                                  ])

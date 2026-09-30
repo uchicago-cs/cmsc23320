@@ -26,17 +26,14 @@ IP
 
 * `IANA IPv4 Address Space Registry <http://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xhtml>`_: List of how each /8 network is allocated.
 * `Map of the Internet <http://xkcd.com/195/>`_: xkcd's map of the IPv4 address space as of 2006
-* `IPv4 Internet Map <http://caia.swin.edu.au/sting/ipmap/index.html>`_: Another visualization of the IPv4 address space
 
 IPv6
 ~~~~
 
 * `IANA Internet Protocol Version 6 Address Space <http://www.iana.org/assignments/ipv6-address-space/ipv6-address-space.xhtml>`_
 * `IANA IPv6 Global Unicast Address Assignments <http://www.iana.org/assignments/ipv6-unicast-address-assignments/ipv6-unicast-address-assignments.xhtml>`_
-* `IPv6 Test <http://ipv6-test.com/>`_: Tests IPv6 connectivity from the machine accessing this page.
+* `Test your IPv6 connectivity <https://test-ipv6.com/>`_: Tests IPv6 connectivity from the machine accessing this page.
 * `IP6to4 tunnel <http://www.wtfm.org/ip6to4>`_: Script for creating a 6to4 tunnel.
-* `Preparing for IPv6-only mobile networks: Why and How <https://blogs.akamai.com/2016/06/preparing-for-ipv6-only-mobile-networks-why-and-how.html>`_
-
 
 Internet-level Routing
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -54,17 +51,6 @@ DNS
 
 * `Root Hints File <http://www.internic.net/domain/named.root>`_: The list of root DNS servers
 * `Root Zone File <http://www.internic.net/domain/root.zone>`_: The DNS root zone file (with all the records for the TLDs)
-
-
-Network Neutrality
-~~~~~~~~~~~~~~~~~~
-
-* `Paid Peering, Paid Prioritization, and the Nuance of the Net Neutrality Debate <https://www.benton.org/node/79432>`_
-* `What Everyone Gets Wrong in the Debate Over Net Neutrality <https://www.wired.com/2014/06/net-neutrality-missing/>`_
-* `Understanding the Level 3-Comcast spat (FAQ) <http://www.cnet.com/news/understanding-the-level-3-comcast-spat-faq/>`_
-* `Comcast and Netflix Reach Deal on Service <http://www.nytimes.com/2014/02/24/business/media/comcast-and-netflix-reach-a-streaming-agreement.html>`_
-* `Comcast vs. Netflix: Is this really about Net neutrality? <http://www.cnet.com/news/comcast-vs-netflix-is-this-really-about-net-neutrality/>`_
-* `13 things you need to know about the FCC's Net neutrality regulation <https://www.cnet.com/news/13-things-you-need-to-know-about-the-fccs-net-neutrality-regulation/>`_
 
 Network Security
 ----------------

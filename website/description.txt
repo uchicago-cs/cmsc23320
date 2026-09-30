@@ -18,7 +18,7 @@ In this course, students will learn how to…
 
 -  ...develop complex software starting from an existing codebase, working
    collaboratively with other developers, and using industry-standard tools,
-   including generative AI.
+   including AI tools.
 
 In a nutshell, students will learn how the Internet works. By the end of
 this course, students should understand *everything* that happens "under the hood"

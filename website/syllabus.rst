@@ -26,7 +26,7 @@ There are a number of different ways we'll be communicating about the class.
 
 - **Discussion and announcements** - We will use Ed Discussion for course discussion and announcements.
 
-- **Course work and feedback** - We will use Gradescope to collect your homework and projects and to return feedback.
+- **Course work and feedback** - We will use Gradescope to collect your projects and to return feedback.
   You can access our Gradescope site through Canvas.
 
 - **Office hours** - Office hours are times when the course staff are available for you. Instructors and teaching
@@ -61,7 +61,7 @@ Projects
 
 Throughout the quarter, students will develop three projects:
 
-#. **chirc**: Implementing an Internet Relay Protocol (IRC)
+#. **chirc**: Implementing an Internet Relay Chat (IRC)
    server (partially compliant with RFC 2810, 2811, 2812, and 2813)
    using POSIX sockets and pthreads.
 
@@ -110,7 +110,7 @@ Lectures
 
 The course meets twice a week for lectures. In most weeks, one
 of the lectures will introduce material that will be expanded upon in
-pre-recorded lectures that are made available that week, and the other
+lecture notes that are made available later in the week, and the other
 lecture will focus on the course projects.
 
 In the project-focused lectures, we will (1)
@@ -339,7 +339,7 @@ Commit messages in your repository should be descriptive and to the point. For e
 - ``Final style updates before submission``
 
 Bear in mind that, in an actual project in industry, your commit messages will be seen by everyone
-involved in the project, and are an important part of your documentation (as the describe exactly
+involved in the project, and are an important part of your documentation (as they describe exactly
 how your code changed in each commit).
 
 That said, a long-standing tradition in this class has been to collect the best and funniest
@@ -433,13 +433,13 @@ Academic Integrity
 ~~~~~~~~~~~~~~~~~~
 
 This class has a permissive policy on student collaboration and on
-the use of Generative AI, but there are still a number of things
+the use of AI tools, but there are still a number of things
 that will not be allowed in the class, and which could lead
 to an academic integrity case against you.
 
 Our `Academic Integrity <academic-integrity.html>`__ page specifies
 these policies in detail, including specific examples of allowed forms
-of collaboration and allowed uses of Generative AI, as well as explanations
+of collaboration and allowed uses of AI tools, as well as explanations
 on why we also need to place some limits on them.
 It is your responsibility familiarize yourself with these policies;
 if you are ever unsure of whether you are doing something that

@@ -54,7 +54,7 @@ Before you post a question:
 * **Search before asking**. Before posting a question on Ed, check whether it has already been answered in a previous post. We realize the volume of posts can be overwhelming, but you should start by using Ed's search functionality to see if it brings up any relevant posts. For example, suppose you are failing a specific test in one of the projects; you could search just for that test's name to see if any other students have encountered that same error (and, if you're lucky, an instructor/TA will have already answered it).
 * **Make sure to always check the "pinned" posts**. We will often "pin" a post titled "Must-read posts for [assignment name]" with links to  posts that address common issues and questions on that assignment. You can find the pinned posts at the top of the left sidebar, under "Pinned".  Make sure you check those posts first.
 * **Make sure you ask an actual question**. You need to tell us about a specific issue you're encountering, and why you're stuck on it  (e.g., you are not getting the expected result, the tests are failing in a way you do not understand, etc.). Writing a post that says  "I can't get Task 4 to work, I've pushed my code. Please look at it." is not a question!  Please note that we're happy to help you work through a task you're having trouble with and may ultimately suggest that you come to office hours for this but, on Ed, you have to make sure you’re asking a specific question.
-* **Push your code** If your question relates to your code, make sure you add, commit, and push your code to GitHub before asking for help.
+* **Push your code** If your question relates to your code, make sure you add, commit, and push your code to Git before asking for help.
 
 Should I use a public or private question?
 
@@ -74,7 +74,7 @@ What to include in your question:
 
 What *not* to include in your question:
 
-* **Never post your code in Ed**. As noted in our `Academic Honesty <academic-honesty.html>`__ policies, you should never share your code with other students, which means you should never post it on Ed. If you need us to look at your code, just push it to GitHub and we will look at it there. Please note that, if a test prints out a few lines of code as part of its output, that is ok.
+* **Never post your code in Ed**. As noted in our `Academic Honesty <academic-honesty.html>`__ policies, you should never share your code with other students, which means you should never post it on Ed. If you need us to look at your code, just push it to Git and we will look at it there. Please note that, if a test prints out a few lines of code as part of its output, that is ok.
 
 * **No screenshots**. Do not post screenshots of the output. Screenshots are not searchable, and may pose readability issues for some people. Instructors/TAs may also want to copy-paste that output somewhere else, which is not possible if you post a screenshot.
 

@@ -15,7 +15,7 @@ More specifically, our goal is for you to learn how to:
    Internet.
 -  ...develop complex software starting from an existing codebase, working
    collaboratively with other developers, and using industry-standard
-   tools, including generative AI.
+   tools, including AI tools.
 
 We trust that you are excited to learn all this and, to that end, we
 have designed coursework and policies that will support your learning.
@@ -40,7 +40,7 @@ completely from scratch.
 While there are many activities in this class that will contribute to
 your learning, there are actions you could take that hinder your
 learning, or even actively harm it. For example, if you ask a classmate
-(other than your project partner) or a Generative AI system to write the
+(other than your project partner) or an AI tool to write the
 code that implements some part of the IRC standard in Project 1, you are
 depriving yourself of the opportunity to develop that skill for
 yourself. You are short-circuiting your learning in this class, and you
@@ -93,104 +93,58 @@ have these kinds of high-level discussions with a classmate, you must
 list their name(s) in the documentation we ask you to submit with each
 project.
 
-Acceptable Uses of Generative AI
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Acceptable Uses of AI Tools
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Generative AI (GenAI) tools are becoming an increasingly common part of
-a software developer’s toolkit, but you should remember that they are
-ultimately just *productivity tools*. They are meant to facilitate and
-speed up your work, not replace it entirely.
+AI coding tools have become a powerful addition to a software developer’s
+toolkit, and they are undeniably useful in speeding up the production
+of software. As such, you will be allowed to use AI tools in this class,
+with certain limits (see *What Is Not Allowed* further below).
 
-When talking with developers in industry, we have consistently heard
-that these tools are most useful for routine or boilerplate tasks, where
-they can significantly speed up work. Even then, developers stress the
-importance of carefully reviewing the generated code to catch bugs or
-issues that could arise later. A common caveat is that over-reliance on
-these tools often results in errors creeping into a codebase, because
-developers become too complacent with the GenAI’s output. Thus, many
-developers avoid using generative AI for large or complex tasks, where
-it’s beneficial for them to think through each line of code.
+In particular, the course projects are designed to help you practice working with network
+protocols, and will also help you understand many of the concepts we
+cover in class at a much deeper level, as you'll have to understand
+them well enough to implement them in code.
 
-In this class, you are assumed to have four quarters worth of
-programming experience (141 through 144), including two quarters of C
-Programming. We assume your programming foundations are pretty solid,
-and that you have reached a point where certain aspects of programming
-start to feel routine and mechanical. We will allow you to use
-Generative AI to deal with these kinds of tasks, but not with more
-complex tasks, particularly those that are directly related to computer
-networks.
+An over-reliance on AI tools can rob you of the opportunity to meaningfully
+engage with those concepts and skills. This, in turn, will likely
+result in a poor performance on the Checkpoint Exams.
 
-More specifically, you are allowed to use GenAI tools in the following ways:
+In general, you should only use code generation tools (like Claude Code)
+in a **highly directed** way. This means that you should read through our
+code yourself, come up with the overall design and structure of your code,
+and only then use AI tools to generate specific functions or blocks of code.
+You must always read any generated code, and ensure you understand what it
+does.
 
--  You can use autocomplete tools like Github Copilot to complete
-   individual lines of code, as long as you understand exactly what that
-   line of code is producing. You should exercise caution when
-   repeatedly using this functionality (i.e., generating several lines
-   one after the other)
--  You can use prompt-based tools to generate the code for small utility
-   functions, or small self-contained blocks of code that are unrelated
-   to networking.
--  You can take a piece of code we’ve provided to you, and ask a GenAI
-   questions about that code.
--  You can provide a piece of code you’ve written to a prompt-based
-   tool, and ask for feedback or for help with refactoring or
-   documenting that code.
--  When interpreting a network protocol, you can use prompt-based tools
-   to ask for clarifications on that protocol, or to resolve ambiguities
-   in the protocol specification, as long as you do not ask the GenAI to
-   produce code related to that protocol.
--  While the projects do not require you to write unit tests of your
-   own, you are welcome to use GenAI tools to generate tests for any
-   code you write.
+When using AI tools to debug your code, always make sure that you take
+the time to understand what was wrong with your code, instead of just
+uncritically accepting an AI's suggested fix.
 
-You are also broadly allowed to use GenAI tools for reference purposes,
-such as asking GenAI to explain how to perform certain tasks in C (e.g.,
+You are also welcome to use AI tools to ask questions about the code
+we provide, and about the network protocols you have to implement, particularly
+when resolving ambiguities in the protocol specification. To be clear,
+this refers just to understanding the protocol itself, not to writing
+code related to the protocol (we expand on this in *What Is Not Allowed*
+below).
+
+You are also broadly allowed to use AI tools for reference purposes,
+such as asking AI to explain how to perform certain tasks in C (e.g.,
 “Is there a function in C to split a string based on a separator?”), or
 to explain a concept from class in more detail (e.g., “Can you give me
 an overview of the latest research in TCP Congestion Control?”).
 
-**Important caveats about Generative AI**
+Careful: Even when following the above guidelines, bear in
+mind that you could end up with ostensibly correct code that
+nonetheless contradicts the instructions/guidance we provide
+in this class. It is important that you always look at
+an AI's output with a critical eye, and that
+you remember that the content we provide in the class always takes
+precedence.
 
--  Don’t forget that GenAI systems **have no sense of what is true or
-   not**, and will sometimes produce plausible-looking code that contains
-   errors, or which may cause issues in the context of the codebase that
-   code is being used in. **Always double-check any code produced by
-   GenAI**, and make sure that you understand what it does exactly.
--  Even when producing correct code, that code could contradict
-   instructions/guidance we provide in this class. It is important that
-   you always look at answers from GenAI with a critical eye, and that
-   you remember that the content we provide in the class always takes
-   precedence.
--  If a function or block of code was generated with GenAI, you must
-   include a citation in the form of a code comment (e.g., “The
-   following X lines of code were generated using GitHub Copilot”).
-   Please note that you do not need to provide citations for
-   autocompleting individual lines of code, only blocks of code.
--  If any part of your work benefitted from a conversation with a
-   prompt-based tool, please provide a link to that conversation (you
-   will be able to do so in the documentation we ask for in the
-   projects). To facilitate this task (so you don’t have to generate
-   multiple links), we encourage you to use a single conversation for
-   all questions related to each project in the class (instead of
-   starting new conversations for each question)
-   The process for sharing these conversations will vary from one
-   platform to another:
-
-   -  **ChatGPT**: You will need to create a `shared
-      link <https://help.openai.com/en/articles/7925741-chatgpt-shared-links-faq>`__
-   -  **Gemini**: Follow their instructions to `share a
-      chat <https://support.google.com/gemini/answer/13743730?hl=en&co=GENIE.Platform%3DDesktop>`__
-   -  **PhoenixAI**: PhoenixAI does not appear to currently support
-      ChatGPT’s shared links functionality. You can instead copy-paste
-      the conversation(s) into your project documentation (in the
-      Citations section)
-   -  **GitHub Copilot** (chatting from an IDE like VSCode): There does
-      not appear to be a way to generate a shareable link for these kind
-      of chats (like above, you should copy-paste such conversations
-      into your project documentation)
-   -  **Other systems**: Check whether individual chats have some sort
-      of “Share” button that will generate a shareable link. Otherwise,
-      copy-paste the conversation into the project documentation.
+**Citing use of AI**: If you do use AI tools, we will ask you
+to describe at a high level how you used these tools. The projects
+will provide more details on how to provide this information.
 
 Acceptable Uses of Other External Resources
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -231,10 +185,10 @@ there are other libraries you would like to use, please ask us first. We
 will generally be fine with any library that does not provide
 networks-related functionality that you’re expected to implement.
 
-What is Not Allowed
+What Is Not Allowed
 -------------------
 
-While certain forms of collaboration and uses of Generative AI and
+While certain forms of collaboration and uses of AI tools and
 external resources can supplement your learning, an over-reliance on
 them can be detrimental to your learning, because they prevent you from
 practicing and building the skills you should be taking away from this
@@ -249,17 +203,24 @@ As such, we have to draw some lines in the sand:
    project partner). Please note that this prohibition extends beyond
    the end of this class (i.e., you also cannot share your code with a
    student taking a future offering of this class)
--  Do not use Generative AI systems to generate any code related to
+-  Do not use AI tools to generate any code related to
    sockets or threads, as it is important that you get practice using
    these tools.
--  Do not use Generative AI to generate code that implements any portion
-   of a network protocol, like IRC, TCP, etc. It is important that you
-   think through the details of that protocol yourself, so you can
-   better understand what is involved in taking a protocol specification
-   and translating it into code.
--  Exercise caution when using Generative AI to generate anything larger
-   than a utility function (with the exception of generating unit tests
-   for your code).
+-  Do not use AI tools to work out what your code needs to do to implement
+   a network protocol (IRC, TCP, etc.). Interpreting a protocol specification,
+   and deciding how your code will handle it, is one of the core skills you
+   are expected to practice in this class. You can use AI tools to help turn
+   your own design into code, but a good rule of thumb is that you should
+   be able to explain why the specification requires each part of that code.
+   Additionally, each project may identify certain core parts of the protocol
+   that you must implement entirely by yourself, without AI-generated code.
+-  When confronted with an automated test failure, do not ask an AI
+   tool to "fix my code so this test passes". Instead, try to understand
+   why the test is failing, and then give the AI tool a specification
+   of the fix you'd like to apply. **Careful**: Some AI tools will do
+   this automatically (they will notice a test is failing, and will
+   immediately try to remedy it). If so, make sure to instruct the
+   AI to not do this.
 
 Additionally, you must **not post your code in publicly-accessible
 websites**, e.g., pastebin, a public GitHub repository, GitHub gists,
@@ -268,7 +229,7 @@ affect the learning of future students, who could stumble upon your code
 and may end up relying too heavily on it. Not just that, in the worst
 case, you could be embroiled in a plagiarism case.
 
-Don’t forget that you are provided with a private repository on GitHub,
+Don’t forget that you are provided with a private Git repository,
 and you should use that repository exclusively to do your work in this
 class. We understand that you may want to share your work with
 prospective employers after this class is over; you are welcome to do
