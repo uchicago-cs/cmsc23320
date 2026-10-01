@@ -1,14 +1,11 @@
 Project 1 Tips
 ==============
 
-.. warning::
-   This page has not yet been updated for Autumn 2026.
-
 Before you get started
 ----------------------
 
 When writing the socket code for your chirc server, make sure you take a look at the
-`socket samples <https://github.com/uchicago-cs/cmsc23320/tree/master/samples/sockets>`_ covered
+`socket samples <https://github.com/uchicago-cs/cmsc23320/tree/main/samples/sockets>`_ covered
 in the lecture on socket programming. They can provide a good starting point for writing a multi-threaded
 server (note: you won't have to write a multi-threaded server for Assignment 1 of chirc)
 
@@ -78,9 +75,9 @@ unfortunately, a common attribute of many network specifications). If you’re u
 
 #. You can also test the command on our reference implementation::
 
-    telnet frost.cs.uchicago.edu 6666 
+    telnet chirc.cs.uchicago.edu 6661
 
-Note: if that server is unresponsive, we are also running reference implementations on ports 6661-6665.
+Note: if that server is unresponsive, we are also running reference implementations on ports 6662-6666.
 
 Like a production IRC server, if you replicate the behaviour of our reference implementation, that's good enough for us.
 

@@ -23,11 +23,8 @@
   this will just be treated as a major issue. However, if your code
   requires substantial work to get it to build, you will receive a U score.
 
-  **So, make sure you verify that the version of the code you submitted builds correctly on a supported
-  software environment** (see the `Projects - Getting Started <../projects/started.html>`_ page for more details on this)
-  Additionally, it is your responsibility to check that the code you submitted to Gradescope
-  builds correctly. If it doesn't, but it builds correctly on your end, please let us
-  know so we can look into it.
+  That said, please let us know if your code builds correctly on your end, but not on Gradescope,
+  so we can take a closer look at this discrepancy.
 
 * **Using printf instead of chilog**: All the projects in this class use a simple logging library called ``chilog`` that is documented in each of the project specifications. You must use the ``chilog`` functions *exclusively* for printing logging or debug messages. **Do not use printf() directly in your code**. Please note that the ``chilog`` functions provide essentially the same functionality as ``printf``, so there is no situation where ``printf`` would be necessary instead of ``chilog`` (using ``chilog`` consistently also means you will not have to scrub ``printf``'s from your code before submitting it).
 

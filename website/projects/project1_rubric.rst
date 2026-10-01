@@ -2,7 +2,14 @@ Project 1 Rubric
 ================
 
 .. warning::
-   This page has not yet been updated for Autumn 2026.
+
+   In Autumn 2026, we will be adding code reviews as a required component of the projects.
+   In these code reviews, you will receive feedback on your project work in-person
+   (where you must also be able to answer questions about your code). We are still working
+   out the details of this, so the rubric below does not yet reflect how these code reviews
+   will factor into the timeline and scoring of the projects.
+
+   We expect this information to be available during the 2nd week of the quarter.
 
 The grading of this project follows a specifications grading approach. If you have not already
 done so, make sure to read our `Grading <../syllabus.html#grading>`__ section of
@@ -120,7 +127,7 @@ to the following:
 
 - **Not checking the return value of send()**: send is not guaranteed to send the entire buffer you provide, which you can only tell by looking at the return value (Beej's Guide for Socket Programming provides a `ready-to-use solution to this <https://beej.us/guide/bgnet/html/#sendall>`__, which you're welcome to use). Of course, send could also fail, and you need to check its return value for this too.
 - [Major Issue] **Not checking the return value of any socket function**.
-- **Not using getaddrinfo to create the server socket**. Please note that some of the socket examples we provide (most notably the first server example, ``oneshot-single.c``) manually create the ``sockaddr`` struct for the sake of highlighting what that struct looks like, but that is not the usual way to create a server socket. You can see an example of how to create a server socket with ``getaddrinfo`` in the `server-pthreads.c <https://github.com/uchicago-cs/cmsc23320/blob/master/samples/sockets/server-pthreads.c>`__ example.
+- **Not using getaddrinfo to create the server socket**. Please note that some of the socket examples we provide (most notably the first server example, ``oneshot-single.c``) manually create the ``sockaddr`` struct for the sake of highlighting what that struct looks like, but that is not the usual way to create a server socket. You can see an example of how to create a server socket with ``getaddrinfo`` in the `server-pthreads.c <https://github.com/uchicago-cs/cmsc23320/blob/main/samples/sockets/server-pthreads.c>`__ example.
 - **Not using safe string functions (strncpy vs strcpy)**: Most C string functions (strcpy, strcat, etc.) have an equivalent "safe" version (strncpy, strncat, etc.) where you can specify the maximum number of characters to copy/concatenate/etc. Use these instead to protect against accidental (or malicious) buffer overflows. Alternatively, consider using a string library like `sds <https://github.com/antirez/sds>`__
 - **Treating the return of recv() as a C-string**: recv() returns the raw bytes received through the network. In a protocol like IRC, this happens to be human-readable commands, but recv() won't return a C-string (i.e., an array of characters terminated by a NULL character). It is your responsibility to add that NULL terminator if you want to manipulate the bytes returned by recv() as a C-string.
 - **Hardcoding reply values that happen to make some tests pass**, but which would fail
@@ -217,7 +224,7 @@ attention to:
 Documentation
 ~~~~~~~~~~~~~
 
-Your submission must include a ``DOCUMENTATION.md`` file in the root of your repository
+Your submission must include a ``DOCUMENTATION.md`` file in the ``chirc/`` directory of your repository
 with some specific documentation about the code you have written. If you do not
 include this file, Gradescope will reject your submission entirely. If you do
 include it, but the file does not provide the information we request below, this will
@@ -244,7 +251,7 @@ The ``DOCUMENTATION.md`` file **must** follow the template below
     - file3.c
 
     New/modified functions (in existing files)
-    ---------------------------------
+    ------------------------------------------
     - function1() in message.c
     - function2() in channel.c
 
@@ -273,7 +280,7 @@ information in a given section, please do not remove the section. Instead, just 
 
 - **New files**: If you added any new C files to the repository, please list them here.
 
-- **New functions (in existing files)**: If you added new functions to any of the files
+- **New/modified functions (in existing files)**: If you added new functions to any of the files
   we provided to you, or if you modified any existing function, please list them here.
   Note: this does **not** include the handler functions you will be adding in the ``handlers.c``
   file. You do not need to list those functions.
@@ -287,16 +294,9 @@ information in a given section, please do not remove the section. Instead, just 
   did not address any rubric items, please list them here. If we can provide any feedback that
   would help you address these rubric items, please let us know here as well.
 
-- **Citations**: Citations for use of Generative AI or external resources should be included,
-  when possible, as code comments above any code where you relied on external sources. However,
-  if you consulted a source that had a more broad impact on your work (and not on specific
-  pieces of code), you can include the citation here.   Additionally, if you had any high-level
-  discussions about the project with other students in the class, please list their names here.
-
-  Note: If the Generative AI platform you're using does not allow you to easily generate a
-  shareable link, please include a copy of the conversation(s) at the bottom of the
-  ``DOCUMENTATION.md`` file.
-
+- **Citations**: If you used AI tools, describe at a high level how you used these tools.
+  Additionally, if you had any high-level discussions about the project with other students
+  in the class, please list their names here.
 
 Other Code Quality Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -313,7 +313,7 @@ any feedback you received in Projects 1A and/or 1B. This may increase your score
 in those projects.
 
 While the project is divided into two parts (1A and 1B), remember that Project 1B
-builds on Project 1A, As such, you should think about your
+builds on Project 1A. As such, you should think about your
 resubmission as a final cumulative submission that addresses any remaining issues
 in your Project 1B submission (i.e., you should not think in terms
 of making two separate resubmissions, one for 1A and another for 1B, with different
@@ -337,7 +337,7 @@ to your code: **resubmissions that do not include the information requested belo
 WILL NOT BE GRADED**.
 
 If you decide to make a resubmission, you **MUST** add a ``RESUBMISSION.md`` file
-in the root of your repository using the following template: (the exact sections
+in the ``chirc/`` directory of your repository using the following template: (the exact sections
 are explained below)
 
 .. code-block:: markdown
@@ -438,7 +438,7 @@ requested above. However, we do still need you to make a resubmission so we know
 you want us to revise your Project 1A submission.
 
 In this resubmission, you do not need to make any changes to your Project 1B
-code, and can simply resubmit the exact same code your submitted in our original
+code, and can simply resubmit the exact same code you submitted in our original
 Project 1B submission. All you need to do is add a ``RESUBMISSION.md`` file
 with the following contents::
 
