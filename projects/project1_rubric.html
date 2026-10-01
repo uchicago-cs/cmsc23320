@@ -367,7 +367,12 @@
 <h1>Project 1 Rubric<a class="headerlink" href="#project-1-rubric" title="Link to this heading">#</a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This page has not yet been updated for Autumn 2026.</p>
+<p>In Autumn 2026, we will be adding code reviews as a required component of the projects.
+In these code reviews, you will receive feedback on your project work in-person
+(where you must also be able to answer questions about your code). We are still working
+out the details of this, so the rubric below does not yet reflect how these code reviews
+will factor into the timeline and scoring of the projects.</p>
+<p>We expect this information to be available during the 2nd week of the quarter.</p>
 </div>
 <p>The grading of this project follows a specifications grading approach. If you have not already
 done so, make sure to read our <a class="reference external" href="../syllabus.html#grading">Grading</a> section of
@@ -524,7 +529,7 @@ to the following:</p>
 <ul class="simple">
 <li><p><strong>Not checking the return value of send()</strong>: send is not guaranteed to send the entire buffer you provide, which you can only tell by looking at the return value (Beej’s Guide for Socket Programming provides a <a class="reference external" href="https://beej.us/guide/bgnet/html/#sendall">ready-to-use solution to this</a>, which you’re welcome to use). Of course, send could also fail, and you need to check its return value for this too.</p></li>
 <li><p>[Major Issue] <strong>Not checking the return value of any socket function</strong>.</p></li>
-<li><p><strong>Not using getaddrinfo to create the server socket</strong>. Please note that some of the socket examples we provide (most notably the first server example, <code class="docutils literal notranslate"><span class="pre">oneshot-single.c</span></code>) manually create the <code class="docutils literal notranslate"><span class="pre">sockaddr</span></code> struct for the sake of highlighting what that struct looks like, but that is not the usual way to create a server socket. You can see an example of how to create a server socket with <code class="docutils literal notranslate"><span class="pre">getaddrinfo</span></code> in the <a class="reference external" href="https://github.com/uchicago-cs/cmsc23320/blob/master/samples/sockets/server-pthreads.c">server-pthreads.c</a> example.</p></li>
+<li><p><strong>Not using getaddrinfo to create the server socket</strong>. Please note that some of the socket examples we provide (most notably the first server example, <code class="docutils literal notranslate"><span class="pre">oneshot-single.c</span></code>) manually create the <code class="docutils literal notranslate"><span class="pre">sockaddr</span></code> struct for the sake of highlighting what that struct looks like, but that is not the usual way to create a server socket. You can see an example of how to create a server socket with <code class="docutils literal notranslate"><span class="pre">getaddrinfo</span></code> in the <a class="reference external" href="https://github.com/uchicago-cs/cmsc23320/blob/main/samples/sockets/server-pthreads.c">server-pthreads.c</a> example.</p></li>
 <li><p><strong>Not using safe string functions (strncpy vs strcpy)</strong>: Most C string functions (strcpy, strcat, etc.) have an equivalent “safe” version (strncpy, strncat, etc.) where you can specify the maximum number of characters to copy/concatenate/etc. Use these instead to protect against accidental (or malicious) buffer overflows. Alternatively, consider using a string library like <a class="reference external" href="https://github.com/antirez/sds">sds</a></p></li>
 <li><p><strong>Treating the return of recv() as a C-string</strong>: recv() returns the raw bytes received through the network. In a protocol like IRC, this happens to be human-readable commands, but recv() won’t return a C-string (i.e., an array of characters terminated by a NULL character). It is your responsibility to add that NULL terminator if you want to manipulate the bytes returned by recv() as a C-string.</p></li>
 <li><p><strong>Hardcoding reply values that happen to make some tests pass</strong>, but which would fail
@@ -620,7 +625,7 @@ described in the style guide.</p></li>
 </section>
 <section id="documentation">
 <h3>Documentation<a class="headerlink" href="#documentation" title="Link to this heading">#</a></h3>
-<p>Your submission must include a <code class="docutils literal notranslate"><span class="pre">DOCUMENTATION.md</span></code> file in the root of your repository
+<p>Your submission must include a <code class="docutils literal notranslate"><span class="pre">DOCUMENTATION.md</span></code> file in the <code class="docutils literal notranslate"><span class="pre">chirc/</span></code> directory of your repository
 with some specific documentation about the code you have written. If you do not
 include this file, Gradescope will reject your submission entirely. If you do
 include it, but the file does not provide the information we request below, this will
@@ -643,7 +648,7 @@ Test score: XXX / YYY
 <span class="k">-</span><span class="w"> </span>file3.c
 
 <span class="gu">New/modified functions (in existing files)</span>
-<span class="gu">---------------------------------</span>
+<span class="gu">------------------------------------------</span>
 <span class="k">-</span><span class="w"> </span>function1() in message.c
 <span class="k">-</span><span class="w"> </span>function2() in channel.c
 
@@ -663,14 +668,14 @@ Test score: XXX / YYY
 <p>Below you can find more details on each of the sections. If you are not providing any
 information in a given section, please do not remove the section. Instead, just write
 <code class="docutils literal notranslate"><span class="pre">N/A</span></code> below it.</p>
-<ul>
+<ul class="simple">
 <li><p><strong>Team members</strong>: Include the names and CNetIDs of both team members.</p></li>
 <li><p><strong>Test score</strong>: Please include the test score you are seeing when running the tests
 on your computer. This will allow us to look into situations where the Gradescope autograder
 reports a different score (in these cases, we will run the tests manually to verify we
 can get the same score you are getting)</p></li>
 <li><p><strong>New files</strong>: If you added any new C files to the repository, please list them here.</p></li>
-<li><p><strong>New functions (in existing files)</strong>: If you added new functions to any of the files
+<li><p><strong>New/modified functions (in existing files)</strong>: If you added new functions to any of the files
 we provided to you, or if you modified any existing function, please list them here.
 Note: this does <strong>not</strong> include the handler functions you will be adding in the <code class="docutils literal notranslate"><span class="pre">handlers.c</span></code>
 file. You do not need to list those functions.</p></li>
@@ -681,15 +686,9 @@ you can also let us know in this section.</p></li>
 <li><p><strong>Known omissions</strong>: If you intentionally skipped any part of the project, or intentionally
 did not address any rubric items, please list them here. If we can provide any feedback that
 would help you address these rubric items, please let us know here as well.</p></li>
-<li><p><strong>Citations</strong>: Citations for use of Generative AI or external resources should be included,
-when possible, as code comments above any code where you relied on external sources. However,
-if you consulted a source that had a more broad impact on your work (and not on specific
-pieces of code), you can include the citation here.   Additionally, if you had any high-level
-discussions about the project with other students in the class, please list their names here.</p>
-<p>Note: If the Generative AI platform you’re using does not allow you to easily generate a
-shareable link, please include a copy of the conversation(s) at the bottom of the
-<code class="docutils literal notranslate"><span class="pre">DOCUMENTATION.md</span></code> file.</p>
-</li>
+<li><p><strong>Citations</strong>: If you used AI tools, describe at a high level how you used these tools.
+Additionally, if you had any high-level discussions about the project with other students
+in the class, please list their names here.</p></li>
 </ul>
 </section>
 <section id="other-code-quality-issues">
@@ -720,11 +719,8 @@ on Gradescope’s autograder, but the graders can get it to build with some mino
 (missing semicolons, parenthesis, etc.),
 this will just be treated as a major issue. However, if your code
 requires substantial work to get it to build, you will receive a U score.</p>
-<p><strong>So, make sure you verify that the version of the code you submitted builds correctly on a supported
-software environment</strong> (see the <a class="reference external" href="../projects/started.html">Projects - Getting Started</a> page for more details on this)
-Additionally, it is your responsibility to check that the code you submitted to Gradescope
-builds correctly. If it doesn’t, but it builds correctly on your end, please let us
-know so we can look into it.</p>
+<p>That said, please let us know if your code builds correctly on your end, but not on Gradescope,
+so we can take a closer look at this discrepancy.</p>
 </li>
 <li><p><strong>Using printf instead of chilog</strong>: All the projects in this class use a simple logging library called <code class="docutils literal notranslate"><span class="pre">chilog</span></code> that is documented in each of the project specifications. You must use the <code class="docutils literal notranslate"><span class="pre">chilog</span></code> functions <em>exclusively</em> for printing logging or debug messages. <strong>Do not use printf() directly in your code</strong>. Please note that the <code class="docutils literal notranslate"><span class="pre">chilog</span></code> functions provide essentially the same functionality as <code class="docutils literal notranslate"><span class="pre">printf</span></code>, so there is no situation where <code class="docutils literal notranslate"><span class="pre">printf</span></code> would be necessary instead of <code class="docutils literal notranslate"><span class="pre">chilog</span></code> (using <code class="docutils literal notranslate"><span class="pre">chilog</span></code> consistently also means you will not have to scrub <code class="docutils literal notranslate"><span class="pre">printf</span></code>’s from your code before submitting it).</p>
 <p>Furthermore, all the messages at the <code class="docutils literal notranslate"><span class="pre">INFO</span></code>, <code class="docutils literal notranslate"><span class="pre">WARNING</span></code>, <code class="docutils literal notranslate"><span class="pre">ERROR</span></code>, and <code class="docutils literal notranslate"><span class="pre">CRITICAL</span></code> levels must be used only for their intended purposes (e.g., only use <code class="docutils literal notranslate"><span class="pre">ERROR</span></code> to print out actual errors in the execution of your program). You must use the <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code> level only to print informative debug messages that would be understood by any developer trying to debug your code. You may use the <code class="docutils literal notranslate"><span class="pre">TRACE</span></code> level to print <em>any</em> debug message (including those that would only be understood by you). However, if your code is riddled with <code class="docutils literal notranslate"><span class="pre">TRACE</span></code> logging statements (including commented out ones) to the point where it is hard to read the code itself, we may penalize you for this. So, once a <code class="docutils literal notranslate"><span class="pre">TRACE</span></code> logging statement has served its purpose, we suggest you remove it (not just comment it out).</p>
@@ -746,7 +742,7 @@ that is heap-allocated.</p></li>
 any feedback you received in Projects 1A and/or 1B. This may increase your scores
 in those projects.</p>
 <p>While the project is divided into two parts (1A and 1B), remember that Project 1B
-builds on Project 1A, As such, you should think about your
+builds on Project 1A. As such, you should think about your
 resubmission as a final cumulative submission that addresses any remaining issues
 in your Project 1B submission (i.e., you should not think in terms
 of making two separate resubmissions, one for 1A and another for 1B, with different
@@ -767,7 +763,7 @@ You should consider this documentation as important as the changes you are makin
 to your code: <strong>resubmissions that do not include the information requested below
 WILL NOT BE GRADED</strong>.</p>
 <p>If you decide to make a resubmission, you <strong>MUST</strong> add a <code class="docutils literal notranslate"><span class="pre">RESUBMISSION.md</span></code> file
-in the root of your repository using the following template: (the exact sections
+in the <code class="docutils literal notranslate"><span class="pre">chirc/</span></code> directory of your repository using the following template: (the exact sections
 are explained below)</p>
 <div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gh">Project 1 Resubmission</span>
 <span class="gh">======================</span>
@@ -864,7 +860,7 @@ original Project 1A submission, you do not need to submit all the documentation
 requested above. However, we do still need you to make a resubmission so we know
 you want us to revise your Project 1A submission.</p>
 <p>In this resubmission, you do not need to make any changes to your Project 1B
-code, and can simply resubmit the exact same code your submitted in our original
+code, and can simply resubmit the exact same code you submitted in our original
 Project 1B submission. All you need to do is add a <code class="docutils literal notranslate"><span class="pre">RESUBMISSION.md</span></code> file
 with the following contents:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Project</span> <span class="mi">1</span> <span class="n">Resubmission</span>

@@ -362,10 +362,6 @@
                   
   <section id="project-1-chirc">
 <h1>Project 1: chirc<a class="headerlink" href="#project-1-chirc" title="Link to this heading">#</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has not yet been updated for Autumn 2026.</p>
-</div>
 <p>In this project, you will implement a simple Internet Relay Chat (IRC)
 server called chirc. This project has three goals:</p>
 <ol class="arabic simple">
@@ -380,8 +376,7 @@ course.</p></li>
 <p>Please refer to the following documents to complete this project:</p>
 <ul class="simple">
 <li><p>Make sure you’ve read our <a class="reference internal" href="started.html#project-started"><span class="std std-ref">Getting Started</span></a> page.
-That page also includes instructions on how to register for the project (and how to
-get your Git repo)</p></li>
+That page also includes instructions on how to request your team repo.</p></li>
 <li><p><a class="reference external" href="http://chi.cs.uchicago.edu/chirc/">chirc specification</a>: In this project,
 you will be implementing Assignments 1, 4, and 5 of chirc.</p></li>
 <li><p><a class="reference external" href="project1_rubric.html">Project 1 rubric</a></p></li>
@@ -427,22 +422,25 @@ you will be implementing Assignments 1, 4, and 5 of chirc.</p></li>
 </div>
 <p>Please see <a class="reference external" href="project1_rubric.html">Project 1 rubric</a> for more details on how each submission will be graded.</p>
 </section>
-<section id="initializing-your-project-1-repository">
-<h2>Initializing your Project 1 Repository<a class="headerlink" href="#initializing-your-project-1-repository" title="Link to this heading">#</a></h2>
+<section id="initializing-your-team-repository-for-project-1">
+<h2>Initializing your Team Repository for Project 1<a class="headerlink" href="#initializing-your-team-repository-for-project-1" title="Link to this heading">#</a></h2>
 <p>Make sure that you have read the <a class="reference internal" href="started.html#project-started"><span class="std std-ref">Getting Started</span></a> page
 before following the instructions below.</p>
 <p><strong>One-time setup instructions</strong></p>
 <p>Only one team member needs to run these commands. Create an empty directory and, inside that
-directory run the following commands. In the commands below, <code class="docutils literal notranslate"><span class="pre">$REPO_URL</span></code> refers to the
-SSH URL of your repository. To get this URL, log into GitHub and navigate to your
-project repository. Then, under “Quick setup — if you’ve done this kind of thing before”,
-make sure the “SSH” button is selected, and copy the URL that appears next to it.
-It should look something like this: <code class="docutils literal notranslate"><span class="pre">git&#64;github.com:uchicago-cmsc23320-aut-24/chirc-p1-jdoe-jrandom.git</span></code></p>
+directory run the following commands.</p>
+<p>In the commands below, <code class="docutils literal notranslate"><span class="pre">$REPO_URL</span></code> refers to the
+SSH URL of your repository. To get this URL, log into the <a class="reference external" href="https://gitlab.cs.uchicago.edu/">CS GitLab server</a>
+and navigate to your project repository (you can also find a direct link from the
+<a class="reference external" href="https://course-repos.cs.uchicago.edu">CS Course Repositories</a> website).
+Then, click on the “Code” button and copy the URL that appears under “Clone with SSH”.
+It should look something like this: <code class="docutils literal notranslate"><span class="pre">git&#64;gitlab.cs.uchicago.edu:courses/aut-26/cmsc23320/cnetid1-cnetid2.git</span></code></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>git init
-git remote add origin $REPO_URL
-git remote add upstream https://github.com/uchicago-cs/chirc.git
-git pull upstream main
+git commit --allow-empty -m "Initial commit"
 git branch -M main
+git remote add -f origin $REPO_URL
+git remote add -f chirc-upstream https://github.com/uchicago-cs/chirc.git
+git subtree add --prefix chirc chirc-upstream main --squash
 git push -u origin main
 </pre></div>
 </div>
@@ -450,25 +448,31 @@ git push -u origin main
 <p>Once the repository has been set up, you can clone the repository in
 other locations as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>git clone $REPO_URL
-git remote add upstream https://github.com/uchicago-cs/chirc.git
+git remote add chirc-upstream https://github.com/uchicago-cs/chirc.git
+</pre></div>
+</div>
+<p><strong>Pulling changes to the upstream code</strong></p>
+<p>If we make any changes to the upstream repository, and you want to merge them into your repository, you need to run the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">subtree</span> <span class="n">pull</span> <span class="o">--</span><span class="n">prefix</span> <span class="n">chirc</span> <span class="n">chirc</span><span class="o">-</span><span class="n">upstream</span> <span class="n">main</span> <span class="o">--</span><span class="n">squash</span>
 </pre></div>
 </div>
 </section>
 <section id="submission">
 <h2>Submission<a class="headerlink" href="#submission" title="Link to this heading">#</a></h2>
 <p>Before submitting, make sure you’ve added, committed, and pushed all
-your code to GitHub. You will submit your code through <a class="reference external" href="https://gradescope.com/">Gradescope</a>,
+your code to Git. You will submit your code through <a class="reference external" href="https://gradescope.com/">Gradescope</a>,
 which you can access through our Canvas site.</p>
 <p>When submitting through Gradescope, you will be asked to select a repository to submit.
 Make sure that you select the correct repository and branch. Please note that you can
 submit as many times as you want before the deadline.</p>
 <p>Please note that you must make a <strong>single submission per pair of students</strong> (do not make two submissions, one per student). When making your submission, you will be allowed to add “team members” to your submission. Make sure you add your project partner in your submission.</p>
-<p>In this project, Gradescope will <em>only</em> fetch the following files from your repository:</p>
+<p>In this project, Gradescope will <em>only</em> fetch the following files from the <code class="docutils literal notranslate"><span class="pre">chirc/</span></code> directory in your repository:</p>
 <ul class="simple">
 <li><p>All <code class="docutils literal notranslate"><span class="pre">.c</span></code> and <code class="docutils literal notranslate"><span class="pre">.h</span></code> files inside the <code class="docutils literal notranslate"><span class="pre">src/</span></code> directory (including any subdirectories you may
 have added in that directory)</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> file in the root of your repository</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">DOCUMENTATION.md</span></code> file in the root of your repository</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> file</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">DOCUMENTATION.md</span></code> file</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">RESUBMISSION.md</span></code> file (when making a resubmission)</p></li>
 </ul>
 <p>Once you submit your files, an “autograder” will run. This autograder should produce the same test results as when you run the code yourself; if it doesn’t, please let us know so we can look into it.</p>
 <div class="toctree-wrapper compound">
@@ -500,7 +504,7 @@ have added in that directory)</p></li>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission-timeline">Submission Timeline</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initializing-your-project-1-repository">Initializing your Project 1 Repository</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initializing-your-team-repository-for-project-1">Initializing your Team Repository for Project 1</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission">Submission</a></li>
 </ul>
   </nav></div>

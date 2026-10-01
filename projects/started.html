@@ -362,54 +362,38 @@
                   
   <section id="projects-getting-started">
 <span id="project-started"></span><h1>Projects - Getting Started<a class="headerlink" href="#projects-getting-started" title="Link to this heading">#</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has not yet been updated for Autumn 2026. While you’re welcome to familiarize
-yourself with the resources on this page, bear in mind that we will be using a departmental
-GitLab server instead of GitHub.</p>
-</div>
 <p>Before working on the projects, we recommend you check out the <a class="reference external" href="https://uchicago-cs.github.io/student-resource-guide/">UChicago CS Student Resource Guide</a>. In particular, please note the following:</p>
 <ul>
 <li><p>You should be able to compile and run the code for this class on Windows, MacOS, and Linux.
 If you are using a Windows system, you must specifically use WSL (Windows Subsystem for Linux).
-We will not be able to provide support if your use Windows PowerShell.</p>
+We will not be able to provide support if you use Windows PowerShell.</p>
 <p>If you are using a Windows or Mac system, you may need to install additional software required
 by the projects, such as CMake, pytest, etc.  Please note that, if you are running on the CS Linux servers,
 you do not need to install any of this software; it is already installed on those servers.</p>
 </li>
-<li><p>Bear in mind that our code has been tested primarily on a <a class="reference external" href="https://uchicago-cs.github.io/student-resource-guide/environment/environment.html">CS Software Environment</a>. If you would prefer to use such an environment, the Student Resource Guide describes several ways of accessing a CS Software Environment (including remote options).</p>
-<p>You can also run your development environment of choice on your personal computer, and connect to a CS machine only to compile, run, and test your code. This is particularly easy to set up using <a class="reference external" href="https://code.visualstudio.com/">Visual Studio Code</a>. The Student Resource Guide includes instructions on how to set up Visual Studio Code, and how to set it up to SSH into a CS environment.</p>
-</li>
 <li><p>If you are new to Git, you should work through the <a class="reference external" href="https://uchicago-cs.github.io/student-resource-guide/tutorials/git-intro.html">Git Tutorial</a> to familiarize yourself with Git.</p></li>
-<li><p>You will need to set up SSH access to your GitHub repositories. If you worked through
-the <a class="reference external" href="https://uchicago-cs.github.io/student-resource-guide/tutorials/git-intro.html">Git Tutorial</a> tutorial, then you will have already done this. If not, you can find instructions
-at the start of the tutorial, but you can also refer to Github’s
-documentation on <a class="reference external" href="https://docs.github.com/en/free-pro-team&#64;latest/github/authenticating-to-github/connecting-to-github-with-ssh">Connecting to GitHub with SSH</a></p></li>
+<li><p>You will need to set up SSH access on the CS department’s <a class="reference external" href="https://gitlab.cs.uchicago.edu/">GitLab server</a>. You can find instructions on how to do this on GitLab’s <a class="reference external" href="https://docs.gitlab.com/user/ssh/">Add an SSH key to your GitLab account</a>.</p></li>
 <li><p>The <a class="reference external" href="https://uchicago-cs.github.io/student-resource-guide/style-guide/c.html">C style guide</a> in the Student Resource Guide is the normative style guide for this class.</p></li>
 <li><p>When asking questions on Ed Discussion, you must follow the guidelines in the <a class="reference external" href="../getting-help.html#asking-questions">Asking Questions</a> section of our <a class="reference external" href="../getting-help.html">Getting Help</a> page.</p></li>
 <li><p><a class="reference external" href="https://uchicago-cs.github.io/debugging-guide/">The Debugging Guide</a>, linked from the guide, contains useful suggestions and pointers on how to debug your C code.</p></li>
 </ul>
 </section>
-<section id="initial-project-registration">
-<span id="project-registration"></span><h1>Initial Project Registration<a class="headerlink" href="#initial-project-registration" title="Link to this heading">#</a></h1>
-<p>For each project, a Git repository will be created for you and your project partner on <a class="reference external" href="https://github.com/">GitHub</a>, a web-based hosting service for Git repositories. However, before that repository can be created for you, you need to have a GitHub account. If you do not yet have one, you can get an account here: <a class="github reference external" href="https://github.com/join">join</a>. Once you create your account, you may want to get the <a class="reference external" href="https://education.github.com/pack">Student Developer Pack</a>, which will give you access to a lot of other features (please note that having the Student Developer Pack is not necessary for this class; it’s just a nice benefit you get as a student)</p>
-<p>If you’re unfamiliar with Git, you should work through the <a class="reference external" href="https://uchicago-cs.github.io/student-resource-guide/tutorials/git-intro.html">Git Tutorial</a> before proceeding further.</p>
-<p>To actually get your private repository, you will need an <em>invitation URL</em>, which we will provide through Canvas when each project is released. When you click on an invitation URL, you will have to complete the following steps:</p>
-<ol class="arabic">
-<li><p>You will need to select your CNetID from a list. This will allow us to know what student is associated with each GitHub account. This step is only done for the very first invitation you accept.</p></li>
-<li><p>Next, you will need to create a new team, or join an existing team if your project partner has already created a team. Please make sure to coordinate with your project partner so you do not end up creating two separate teams.</p>
-<p><strong>Team name on GitHub Classroom</strong>: Please note that, while GitHub will allow you to select an arbitrary team name, your team name must follow these rules:</p>
-<ul class="simple">
-<li><p>It must start with <code class="docutils literal notranslate"><span class="pre">p1-</span></code>, <code class="docutils literal notranslate"><span class="pre">p2-</span></code>, or <code class="docutils literal notranslate"><span class="pre">p3-</span></code> depending on what project you’re registering for.</p></li>
-<li><p>This must be followed by your CNetIDs separated by a hyphen (e.g., <code class="docutils literal notranslate"><span class="pre">jdoe-jrandom</span></code>).</p></li>
-</ul>
-<p>For example, your team could look something like this: <code class="docutils literal notranslate"><span class="pre">p1-jdoe-jrandom</span></code></p>
-</li>
-<li><p>Finally, you must click “Accept this assignment” or your repository will not actually be created.</p></li>
-<li><p>Once the repository has been created, <strong>DO NOT</strong> run the commands shown on GitHub to
-initialize your repository. You must instead run the commands we provide to you (you
-can find these in the pertinent project page on this website)</p></li>
+<section id="requesting-a-team-repo">
+<span id="project-registration"></span><h1>Requesting a Team Repo<a class="headerlink" href="#requesting-a-team-repo" title="Link to this heading">#</a></h1>
+<p>Once you have formed a team, you will need to request a team repo on the <a class="reference external" href="https://course-repos.cs.uchicago.edu">CS Course Repositories</a> website. One of the team members will first have to do this:</p>
+<ol class="arabic simple">
+<li><p>Log into <a class="reference external" href="https://course-repos.cs.uchicago.edu/">https://course-repos.cs.uchicago.edu/</a></p></li>
+<li><p>You should see CMSC 23320 under “My Courses”</p></li>
+<li><p>Click on “Form a team”</p></li>
+<li><p>You will be asked to provide the CNetID of your team partner</p></li>
 </ol>
+<p>Then, the other team member must do the following:</p>
+<ol class="arabic simple">
+<li><p>Log into <a class="reference external" href="https://course-repos.cs.uchicago.edu/">https://course-repos.cs.uchicago.edu/</a></p></li>
+<li><p>You should see CMSC 23320 under “My Courses”</p></li>
+<li><p>You will be asked to confirm whether you want to form a team with your team partner. Click on “Confirm”</p></li>
+</ol>
+<p>Your team repo should be available within 15-20 minutes. You should get a notification from GitLab, but can also find the link to the repo in the <a class="reference external" href="https://course-repos.cs.uchicago.edu">CS Course Repositories</a> website once it has been created.</p>
 <p>If you run into any issues, or need us to make any manual adjustments to your registration, please let us know via Ed Discussion.</p>
 </section>
 
@@ -437,7 +421,7 @@ can find these in the pertinent project page on this website)</p></li>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Projects - Getting Started</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-project-registration">Initial Project Registration</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#requesting-a-team-repo">Requesting a Team Repo</a></li>
 </ul>
 
   </nav></div>
