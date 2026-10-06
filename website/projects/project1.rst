@@ -79,11 +79,8 @@ Submission
 
 Before submitting, make sure you've added, committed, and pushed all
 your code to Git. You will submit your code through `Gradescope <https://gradescope.com/>`__,
-which you can access through our Canvas site.
-
-When submitting through Gradescope, you will be asked to select a repository to submit.
-Make sure that you select the correct repository and branch. Please note that you can
-submit as many times as you want before the deadline.
+which you can access through our Canvas site. Please see our :ref:`Submitting from GitLab <project_gitlab>` page
+for details on how to submit your GitLab repository on Gradescope.
 
 Please note that you must make a **single submission per pair of students** (do not make two submissions, one per student). When making your submission, you will be allowed to add "team members" to your submission. Make sure you add your project partner in your submission.
 
