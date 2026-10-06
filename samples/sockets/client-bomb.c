@@ -15,11 +15,16 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
-#include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
-#include <arpa/inet.h>
 #include <netdb.h>
+
+/* Prints a usage message to stderr and exits */
+static void usage(const char *prog)
+{
+    fprintf(stderr, "USAGE: %s -h HOST -p PORT -n NUM_CONNECTIONS\n", prog);
+    exit(EXIT_FAILURE);
+}
 
 int main(int argc, char *argv[])
 {
@@ -41,20 +46,18 @@ int main(int argc, char *argv[])
                 nsockets = atoi(optarg);
                 break;
             default:
-                printf("Unknown option\n"); exit(1);
+                /* getopt() has already printed an error message */
+                usage(argv[0]);
         }
 
     if(host == NULL || port == NULL || nsockets < 1)
-    {
-        printf("USAGE: client -h HOST -p PORT -n NUM_CONNECTIONS\n");
-        exit(1);
-    }
+        usage(argv[0]);
 
-    sockets = malloc(nsockets * sizeof(int));
+    sockets = calloc(nsockets, sizeof(int));
     if (sockets == NULL)
     {
         perror("Could not allocate memory for sockets");
-        exit(-1);
+        exit(EXIT_FAILURE);
     }
 
     memset(&hints, 0, sizeof(hints));
@@ -64,7 +67,7 @@ int main(int argc, char *argv[])
     if ((rc = getaddrinfo(host, port, &hints, &res)) != 0)
     {
         fprintf(stderr, "getaddrinfo() failed: %s\n", gai_strerror(rc));
-        exit(-1);
+        exit(EXIT_FAILURE);
     }
 
     for(p = res;p != NULL; p = p->ai_next) 
@@ -88,7 +91,7 @@ int main(int argc, char *argv[])
     if (p == NULL)
     {
         fprintf(stderr, "Could not find a socket to connect to.\n");
-        exit(-1);
+        exit(EXIT_FAILURE);
     }
 
     /* Bomb! */
@@ -118,5 +121,5 @@ int main(int argc, char *argv[])
     printf("Done\n");
 
     freeaddrinfo(res);
-    return 0;
+    return EXIT_SUCCESS;
 }
