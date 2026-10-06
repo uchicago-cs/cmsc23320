@@ -77,9 +77,17 @@ unfortunately, a common attribute of many network specifications). If you’re u
 
     telnet chirc.cs.uchicago.edu 6661
 
-Note: if that server is unresponsive, we are also running reference implementations on ports 6662-6666.
+   Like a production IRC server, if you replicate the behaviour of our reference implementation, that's good enough for us.
 
-Like a production IRC server, if you replicate the behaviour of our reference implementation, that's good enough for us.
+   Please note that our reference server is only accessible from inside the UChicago campus network.
+   If you are off-campus, you will need to use the university's `VPN <https://cvpn.uchicago.edu/>`__
+   to access the server.
+
+   Note: If you are unable to connect on port 6661, it's possible someone managed to crash the IRC server.
+   If so, you can also try connecting on ports 6662-6666.
+
+#. You may also want to check out the `Modern IRC Client Protocol <https://modern.ircdocs.horse/>`__,
+   which describes how modern IRC servers tend to interpret the RFC.
 
 ..
     Resolving IRC Ambiguities (in IRC networks)
