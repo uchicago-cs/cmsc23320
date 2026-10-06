@@ -136,7 +136,7 @@ int main(int argc, char *argv[])
             continue;
         }
 
-        if (listen(server_socket, 5) == -1)
+        if (listen(server_socket, SOMAXCONN) == -1)
         {
             perror("Socket listen() failed");
             close(server_socket);

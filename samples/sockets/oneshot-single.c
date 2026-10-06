@@ -115,11 +115,13 @@ int main(void)
     }
 
     /* Start listening. The second parameter is the "backlog", or the maximum number of
-       connections that we'll allow to queue up.
+       connections that we'll allow to queue up (i.e., connections that have been established
+       but which we have not yet accept()'ed). SOMAXCONN is the maximum backlog allowed by
+       the operating system, and is the usual choice for this parameter.
        Note that listen() doesn't block until incoming connections arrive. It just makes
        the OS aware that this process is willing to accept connections on this socket
        (which is bound to a specific IP and port) */
-    if(listen(passive_socket, 5) == -1)
+    if(listen(passive_socket, SOMAXCONN) == -1)
     {
         perror("Socket listen() failed");
         close(passive_socket);
