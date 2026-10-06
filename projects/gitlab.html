@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>Project 1: chirc &#8212; CMSC 23320 - Foundations of Computer Networks</title>
+<title>Projects - Submitting from GitLab &#8212; CMSC 23320 - Foundations of Computer Networks</title>
 
   
   
@@ -43,11 +43,11 @@
     <script src="../_static/documentation_options.js?v=a38f3fb2"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'projects/project1';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'projects/gitlab';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Project 1 Tips" href="project1_tips.html" />
+    <link rel="next" title="Project 1: chirc" href="project1.html" />
     <link rel="prev" title="Project Specifications" href="specs.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -150,7 +150,7 @@
       </button>
       <ul id="web-navbar-2" class="dropdown-menu">
         <li class=""><a class="nav-link dropdown-item nav-internal" href="started.html">Getting Started</a></li>
-        <li class="current active"><a class="nav-link dropdown-item nav-internal" href="#">Project 1: chirc</a></li>
+        <li class=""><a class="nav-link dropdown-item nav-internal" href="project1.html">Project 1: chirc</a></li>
         <li class=""><a class="nav-link dropdown-item nav-internal" href="project2.html">Project 2: chiTCP</a></li>
         <li class=""><a class="nav-link dropdown-item nav-internal" href="project3.html">Project 3: chirouter</a></li>
       </ul>
@@ -216,10 +216,6 @@
   
 
   
-    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
-      <span class="fa-solid fa-outdent"></span>
-    </button>
-  
 </div>
 
     </header>
@@ -263,7 +259,7 @@
       </button>
       <ul id="web-navbar-2" class="dropdown-menu">
         <li class=""><a class="nav-link dropdown-item nav-internal" href="started.html">Getting Started</a></li>
-        <li class="current active"><a class="nav-link dropdown-item nav-internal" href="#">Project 1: chirc</a></li>
+        <li class=""><a class="nav-link dropdown-item nav-internal" href="project1.html">Project 1: chirc</a></li>
         <li class=""><a class="nav-link dropdown-item nav-internal" href="project2.html">Project 2: chiTCP</a></li>
         <li class=""><a class="nav-link dropdown-item nav-internal" href="project3.html">Project 3: chirouter</a></li>
       </ul>
@@ -343,7 +339,7 @@
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Project 1: chirc</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Projects - Submitting from GitLab</span></li>
   </ul>
 </nav>
 </div>
@@ -360,122 +356,23 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="project-1-chirc">
-<h1>Project 1: chirc<a class="headerlink" href="#project-1-chirc" title="Link to this heading">#</a></h1>
-<p>In this project, you will implement a simple Internet Relay Chat (IRC)
-server called chirc. This project has three goals:</p>
-<ol class="arabic simple">
-<li><p>To learn how to program with sockets, as well as some basic concurrent programming
-(including refreshing some concepts covered in CMSC 14300/14400 or 15400)</p></li>
-<li><p>To implement a system that is (partially) compliant with an
-established network protocol specification.</p></li>
-<li><p>To allow you to become comfortable with high-level networking
-concepts before we move on to the lower-level concepts in this
-course.</p></li>
-</ol>
-<p>Please refer to the following documents to complete this project:</p>
-<ul class="simple">
-<li><p>Make sure you’ve read our <a class="reference internal" href="started.html#project-started"><span class="std std-ref">Getting Started</span></a> page.
-That page also includes instructions on how to request your team repo.</p></li>
-<li><p><a class="reference external" href="http://chi.cs.uchicago.edu/chirc/">chirc specification</a>: In this project,
-you will be implementing Assignments 1, 4, and 5 of chirc.</p></li>
-<li><p><a class="reference external" href="project1_rubric.html">Project 1 rubric</a></p></li>
-<li><p><a class="reference external" href="project1_tips.html">Project 1 tips</a></p></li>
-</ul>
-<section id="submission-timeline">
-<h2>Submission Timeline<a class="headerlink" href="#submission-timeline" title="Link to this heading">#</a></h2>
-<p>This project has the following submissions:</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Submission</p></th>
-<th class="head"><p>Requirements</p></th>
-<th class="head"><p>Due Date</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Project Warmup</p></td>
-<td><p><a class="reference external" href="http://chi.cs.uchicago.edu/chirc/assignment1.html">Assignment 1</a> of <a class="reference external" href="http://chi.cs.uchicago.edu/chirc/">chirc</a></p></td>
-<td><p><strong>Thursday, October 8, 8pm</strong></p></td>
-</tr>
-<tr class="row-odd"><td><p>Project 1A</p></td>
-<td><div class="line-block">
-<div class="line"><a class="reference external" href="http://chi.cs.uchicago.edu/chirc/assignment4.html">Assignment 4</a> of <a class="reference external" href="http://chi.cs.uchicago.edu/chirc/">chirc</a></div>
-<div class="line">(Note: Assignment 4 builds on Assignment 1)</div>
-</div>
-</td>
-<td><p><strong>Thursday, October 15, 8pm</strong></p></td>
-</tr>
-<tr class="row-even"><td><p>Project 1B</p></td>
-<td><div class="line-block">
-<div class="line"><a class="reference external" href="http://chi.cs.uchicago.edu/chirc/assignment5.html">Assignment 5</a> of <a class="reference external" href="http://chi.cs.uchicago.edu/chirc/">chirc</a></div>
-<div class="line">(Note: Assignment 5 builds on Assignment 4)</div>
-</div>
-</td>
-<td><p><strong>Thursday, October 22, 8pm</strong></p></td>
-</tr>
-<tr class="row-odd"><td><p>Resubmission (Optional)</p></td>
-<td><p>Address feedback received in Project 1</p></td>
-<td><p>One week after Project 1B is graded</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>Please see <a class="reference external" href="project1_rubric.html">Project 1 rubric</a> for more details on how each submission will be graded.</p>
-</section>
-<section id="initializing-your-team-repository-for-project-1">
-<h2>Initializing your Team Repository for Project 1<a class="headerlink" href="#initializing-your-team-repository-for-project-1" title="Link to this heading">#</a></h2>
-<p>Make sure that you have read the <a class="reference internal" href="started.html#project-started"><span class="std std-ref">Getting Started</span></a> page
-before following the instructions below.</p>
-<p><strong>One-time setup instructions</strong></p>
-<p>Only one team member needs to run these commands. Create an empty directory and, inside that
-directory run the following commands.</p>
-<p>In the commands below, <code class="docutils literal notranslate"><span class="pre">$REPO_URL</span></code> refers to the
-SSH URL of your repository. To get this URL, log into the <a class="reference external" href="https://gitlab.cs.uchicago.edu/">CS GitLab server</a>
-and navigate to your project repository (you can also find a direct link from the
-<a class="reference external" href="https://course-repos.cs.uchicago.edu">CS Course Repositories</a> website).
-Then, click on the “Code” button and copy the URL that appears under “Clone with SSH”.
-It should look something like this: <code class="docutils literal notranslate"><span class="pre">git&#64;gitlab.cs.uchicago.edu:courses/aut-26/cmsc23320/cnetid1-cnetid2.git</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>git init
-git commit --allow-empty -m "Initial commit"
-git branch -M main
-git remote add -f origin $REPO_URL
-git remote add -f chirc-upstream https://github.com/uchicago-cs/chirc.git
-git subtree add --prefix chirc chirc-upstream main --squash
-git push -u origin main
-</pre></div>
-</div>
-<p><strong>Cloning instructions</strong></p>
-<p>Once the repository has been set up, you can clone the repository in
-other locations as follows:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>git clone $REPO_URL
-git remote add chirc-upstream https://github.com/uchicago-cs/chirc.git
-</pre></div>
-</div>
-<p><strong>Pulling changes to the upstream code</strong></p>
-<p>If we make any changes to the upstream repository, and you want to merge them into your repository, you need to run the following command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">subtree</span> <span class="n">pull</span> <span class="o">--</span><span class="n">prefix</span> <span class="n">chirc</span> <span class="n">chirc</span><span class="o">-</span><span class="n">upstream</span> <span class="n">main</span> <span class="o">--</span><span class="n">squash</span>
-</pre></div>
-</div>
-</section>
-<section id="submission">
-<h2>Submission<a class="headerlink" href="#submission" title="Link to this heading">#</a></h2>
-<p>Before submitting, make sure you’ve added, committed, and pushed all
-your code to Git. You will submit your code through <a class="reference external" href="https://gradescope.com/">Gradescope</a>,
-which you can access through our Canvas site. Please see our <a class="reference internal" href="gitlab.html#project-gitlab"><span class="std std-ref">Submitting from GitLab</span></a> page
-for details on how to submit your GitLab repository on Gradescope.</p>
-<p>Please note that you must make a <strong>single submission per pair of students</strong> (do not make two submissions, one per student). When making your submission, you will be allowed to add “team members” to your submission. Make sure you add your project partner in your submission.</p>
-<p>In this project, Gradescope will <em>only</em> fetch the following files from the <code class="docutils literal notranslate"><span class="pre">chirc/</span></code> directory in your repository:</p>
-<ul class="simple">
-<li><p>All <code class="docutils literal notranslate"><span class="pre">.c</span></code> and <code class="docutils literal notranslate"><span class="pre">.h</span></code> files inside the <code class="docutils literal notranslate"><span class="pre">src/</span></code> directory (including any subdirectories you may
-have added in that directory)</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> file</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">DOCUMENTATION.md</span></code> file</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">RESUBMISSION.md</span></code> file (when making a resubmission)</p></li>
-</ul>
-<p>Once you submit your files, an “autograder” will run. This autograder should produce the same test results as when you run the code yourself; if it doesn’t, please let us know so we can look into it.</p>
-<div class="toctree-wrapper compound">
-</div>
-</section>
+  <section id="projects-submitting-from-gitlab">
+<span id="project-gitlab"></span><h1>Projects - Submitting from GitLab<a class="headerlink" href="#projects-submitting-from-gitlab" title="Link to this heading">#</a></h1>
+<p>This page explains how to submit your GitLab repository directly into Gradescope.</p>
+<p>Once you are ready to submit, you will be shown this form on Gradescope:</p>
+<img alt="../_images/gradescope-submit-gitlab.png" src="../_images/gradescope-submit-gitlab.png" />
+<p>Please ignore the “Upload” button. Instead, click on the <strong>Gitlab</strong> button.</p>
+<p><strong>NOTE</strong>: If you’re accessing Gradescope from inside Canvas, you may be shown
+some sort of “page cannot be accessed” message. If so, please try completing
+these steps by logging directly into <a class="reference external" href="https://www.gradescope.com/">https://www.gradescope.com/</a></p>
+<p>If this is the first time you submit from Gradescope, you will be asked to
+confirm that you want to authorize Gradescope to access your Gitlab account:</p>
+<img alt="../_images/gitlab-auth.png" src="../_images/gitlab-auth.png" />
+<p>Click on “Authorize Gradescope”</p>
+<p>Afterwards (and in subsequent submissions), you will be shown a list of the
+repositories you have access to:</p>
+<img alt="../_images/gradescope-repo-list.png" src="../_images/gradescope-repo-list.png" />
+<p>Make sure you select the correct branch (typically <code class="docutils literal notranslate"><span class="pre">main</span></code>), and click on “Submit Project”</p>
 </section>
 
 
@@ -488,26 +385,6 @@ have added in that directory)</p></li>
             </div>
             
             
-              
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-<div
-    id="pst-page-navigation-heading-2"
-    class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> On this page
-  </div>
-  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission-timeline">Submission Timeline</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initializing-your-team-repository-for-project-1">Initializing your Team Repository for Project 1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission">Submission</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
