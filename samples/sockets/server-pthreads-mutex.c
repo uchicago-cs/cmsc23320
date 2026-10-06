@@ -218,11 +218,11 @@ int main(int argc, char *argv[])
 void *service_single_client(void *args) {
     struct worker_args *wa;
     struct server_ctx *ctx;
-    int socket, nbytes, i;
+    int client_socket, nbytes, i;
     char buffer[100];
 
     wa = (struct worker_args*) args;
-    socket = wa->socket;
+    client_socket = wa->socket;
     ctx = wa->ctx;
 
     pthread_detach(pthread_self());
@@ -247,13 +247,13 @@ void *service_single_client(void *args) {
 
     while(1)
     {
-        nbytes = recv(socket, buffer, sizeof(buffer), 0);
+        nbytes = recv(client_socket, buffer, sizeof(buffer), 0);
         if (nbytes == 0)
             break;
         else if (nbytes == -1)
         {
             perror("Socket recv() failed");
-            close(socket);
+            close(client_socket);
             pthread_exit(NULL);
         }
         /* Ignore anything that's actually recv'd. We just want
@@ -273,7 +273,7 @@ void *service_single_client(void *args) {
     if(ctx->lock_enabled)
         pthread_mutex_unlock(&ctx->lock);
 
-    close(socket);
+    close(client_socket);
     pthread_exit(NULL);
 }
 

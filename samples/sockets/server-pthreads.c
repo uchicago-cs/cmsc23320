@@ -206,12 +206,12 @@ int main(void)
  */
 void *service_single_client(void *args) {
     struct worker_args *wa;
-    int socket, nbytes;
+    int client_socket, nbytes;
     char tosend[100];
 
     /* Unpack the arguments */
     wa = (struct worker_args*) args;
-    socket = wa->socket;
+    client_socket = wa->socket;
 
     /* This tells the pthreads library that no other thread is going to
        join() this thread. This means that, once this thread terminates,
@@ -219,25 +219,25 @@ void *service_single_client(void *args) {
        so they can be collected by another thread join()-ing this thread) */
     pthread_detach(pthread_self());
 
-    fprintf(stderr, "Socket %d connected\n", socket);
+    fprintf(stderr, "Socket %d connected\n", client_socket);
 
     while(1)
     {
         snprintf(tosend, sizeof(tosend), "%d -- Hello, socket!\n", (int) time(NULL));
 
-        nbytes = send(socket, tosend, strlen(tosend), 0);
+        nbytes = send(client_socket, tosend, strlen(tosend), 0);
 
         if (nbytes == -1 && (errno == ECONNRESET || errno == EPIPE))
         {
-            fprintf(stderr, "Socket %d disconnected\n", socket);
-            close(socket);
+            fprintf(stderr, "Socket %d disconnected\n", client_socket);
+            close(client_socket);
             free(wa);
             pthread_exit(NULL);
         }
         else if (nbytes == -1)
         {
             perror("Unexpected error in send()");
-            close(socket);
+            close(client_socket);
             free(wa);
             pthread_exit(NULL);
         }
