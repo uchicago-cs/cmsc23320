@@ -23,10 +23,10 @@ Please refer to the following documents to complete this project:
 - `Project 1 rubric <project1_rubric.html>`__
 - `Project 1 tips <project1_tips.html>`__
 
-Submission Timeline
-~~~~~~~~~~~~~~~~~~~
+Project Timeline
+~~~~~~~~~~~~~~~~
 
-This project has the following submissions:
+This project has the following timeline:
 
 .. include:: project1_timeline.txt
 

@@ -1,16 +1,6 @@
 Project 1 Rubric
 ================
 
-.. warning::
-
-   In Autumn 2026, we will be adding code reviews as a required component of the projects.
-   In these code reviews, you will receive feedback on your project work in-person
-   (where you must also be able to answer questions about your code). We are still working
-   out the details of this, so the rubric below does not yet reflect how these code reviews
-   will factor into the timeline and scoring of the projects.
-
-   We expect this information to be available during the 2nd week of the quarter.
-
 The grading of this project follows a specifications grading approach. If you have not already
 done so, make sure to read our `Grading <../syllabus.html#grading>`__ section of
 the syllabus for more details.
@@ -38,24 +28,26 @@ for each submission:
   - *Documentation*: You will be required to submit certain documentation on
     your code (the exact documentation is described below)
 
+Furthermore, you will complete two code reviews as part of this project.
+
 This project also has a "Warm-up" submission. This submission does not directly contribute
 to your final grade but, if you complete it, you will be more likely to get an S in Project 1A.
 To complete the "Warm-up" submission, you must score at least 90/100 points on the autograder
 for that submission.
 
-Submission Timeline
--------------------
+Project Timeline
+----------------
 
-The exact timeline of submissions will be the following:
+The exact timeline for the project will be the following:
 
 .. include:: project1_timeline.txt
 
-You will receive some early feedback from the Project 1 Warm-up before Project 1A is due.
+You will receive some early feedback from the Project 1 Warm-up before Project 1A is due,
+and from Project 1A before Project 1B is due.
 
-Project 1A will likely not be graded until after Project 1B is due. Once Project 1B is graded,
+Once Project 1B is graded,
 you will have an opportunity to make a resubmission for Project 1A and/or 1B (and, at that point,
-you will have feedback for both Project 1A and 1B). We will
-post more details about the resubmission process at a later time.
+you will have feedback for both Project 1A and 1B).
 
 Completeness
 ------------
@@ -116,6 +108,11 @@ it is not possible for us to give you an exhaustive list of every single thing t
 affect your code quality score. If you get a comment pointing out an issue in your
 code that we did not list below, take it as an opportunity to improve your work
 (and remember that you'll have a chance to revise your work!)
+
+**Note**: We use a Claude-based tool to help identify the rubric items that likely need
+attention in any given submission. While this helps ensure that no rubric items slip
+through the cracks when grading your work, the grading is ultimately done by human
+graders (who verify any suggestions made by this tool).
 
 Correctness
 ~~~~~~~~~~~
@@ -305,12 +302,74 @@ There are a couple of other issues that we care about across all projects:
 
 .. include:: additional_penalties.txt
 
+Code Reviews
+------------
+
+In this project, you will have to complete two code reviews. You must schedule
+and complete these code reviews no later than the due date specified in the
+“Project Timeline” above (see `Code Review Scheduling Instructions <code-review-scheduling.html>`__
+for instructions on how to schedule your code review).
+
+Pre-submission Code Review
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The purpose of this code review is to go over your code before Project 1B is due,
+so we can identify issues and other opportunities for improvement. In general,
+this code review will be structured as follows:
+
+- We will ask you to walk us through the code you’ve written so far. We will use
+  this walkthrough to identify aspects of your code that may need improvement. You
+  should not approach this as a line-by-line explanation of your code; instead,
+  give us a high-level sense of what you implemented, while showing us the code
+  that implements each part of the project.
+- We will ask you if you have any questions about the work that remains to be done
+  in the project.
+- Finally, we will go over any issues we identified.
+
+**You do not need to wait until you have a near-complete version of Project 1B to
+request this code review.** We recommend you schedule this code review after you
+complete Project 1A, and once you’ve had a chance to read through the requirements
+of Project 1B. That said, you can also request this code review before the Project
+1A deadline, to go over your code before you submit Project 1A.
+
+Feedback Code Review
+~~~~~~~~~~~~~~~~~~~~
+
+The purpose of this code review is to go over the grading of your Projects 1A and 1B
+submissions, and deliver additional feedback on your submissions. If you did not score
+a *Satisfactory* in Code Quality, we will also go over the items that we would expect
+you to fix in your resubmission (to be able to score a Satisfactory on the resubmission).
+
+If you are planning to make a resubmission, it is important that you schedule your
+code review as soon as possible after the grading is released, so you have enough
+time to work on a resubmission.
+
+Finally, you should not need to prepare for this code review, but bear in mind that
+we may ask you questions about your code, so we can provide you with clear feedback
+and guidance on how to improve your code.
+
+Scoring and Other Requirements
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Code reviews are graded on completion only; for the purposes of the grading Bundles
+listed in the syllabus, completing a code review earns a Satisfactory, and not
+completing a code review earns a Needs Improvement.
+
+Code reviews are conducted in-person, and both students in a team must attend and
+participate. In the Pre-submission Code Review, where we will ask you to walk us
+through your code, you may want to have a quick conversation beforehand to decide
+who will explain what portions of the code.
+
+Finally, we reserve the right to ask individual students or teams of students to
+undergo additional code reviews if there are any concerns with their understanding
+of their code.
+
 Resubmission
 ------------
 
-When you receive your graded Project 1B, you can make a resubmission to address
-any feedback you received in Projects 1A and/or 1B. This may increase your scores
-in those projects.
+After you receive your graded Project 1B, you can make a resubmission to address
+any feedback you received in Projects 1A and/or 1B (and on the Feedback Code Review).
+This may increase your scores in those projects.
 
 While the project is divided into two parts (1A and 1B), remember that Project 1B
 builds on Project 1A. As such, you should think about your

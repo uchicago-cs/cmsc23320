@@ -31,6 +31,7 @@ For more details, please see the `syllabus <syllabus.html>`_.
    projects/project1.rst
    projects/project2.rst
    projects/project3.rst
+   projects/code-review-scheduling.rst
    resources/other.rst
 
 

@@ -1,10 +1,6 @@
 Syllabus
 ========
 
-.. warning::
-
-   This syllabus is tentative and subject to change.
-
 Course description
 ------------------
 
@@ -46,7 +42,10 @@ students must master fundamental concepts and skills in networking. The
 class meets two times a week for lectures that provide a conceptual
 scaffolding for the projects, but will also cover material that is not
 directly applied in the projects. Some lectures will also be dedicated to
-in-depth discussion of the projects.
+in-depth discussion of the projects. Students will also be required to
+complete a series of code reviews where they will meet with a TA several
+times throughout the quarter to discuss their progress on the projects,
+and receive feedback on their work.
 
 Besides the projects, students must demonstrate mastery of the material covered
 in lectures and in the projects via a series of short *checkpoint exams* that take place
@@ -76,6 +75,26 @@ second week of the quarter.
 Groups can be changed from one project to another. If your partner drops out of
 the course or you feel they are not contributing to the group’s effort,
 you should make the instructor aware of this.
+
+Code Reviews
+~~~~~~~~~~~~
+
+Students must complete a series of code reviews throughout the quarter.
+For each code review, each team of students must make an appointment with
+a TA to go over their progress on the project and/or receive feedback on their work.
+
+There are a total of five code reviews throughout the quarter:
+
+- **Pre-submission Code Reviews** (Projects 1, 2, and 3): Before Projects 1B, 2B,
+  or 3 are due, students must schedule and complete a code review to go over their progress and
+  ask questions they have going into the final submission of the project.
+- **Feedback Code Reviews** (Projects 1 and 2): After Project 1B and 2B are graded,
+  students must schedule and complete a code review to receive feedback on their work.
+
+Code reviews are graded on completion only. That said, we reserve the right to
+ask individual students or teams of students to undergo additional code reviews
+if there are any concerns with their understanding of their code.
+
 
 Checkpoint Exams (and Final Exam)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -193,27 +212,24 @@ Specific assignments/exams will provide concrete guidance on what is required to
 Bundles
 ~~~~~~~
 
-.. warning::
-
-   We are revising the composition of the bundles for Autumn 2026, to reflect that
-   the projects will now involve code reviews. While the topics of the bundles
-   will remain largely the same, the way the projects are scored will likely change.
-
-There are a total of 20 SNU scores in this class:
+There are a total of 25 SNU scores in this class:
 
 - **Projects**: There are five project submissions (1A, 1B, 2A, 2B, and 3), and each contributes two SNU
   scores: one for Completeness and one for Code Quality.
 - **Checkpoint Exams**: There are ten checkpoint exams, each contributing one SNU score.
+- **Code Reviews**: There are five code reviews. Completing a code review earns an S on the code review; not completing it earns an N.
 
 These scores are distributed into 10 bundles:
 
 1. **Basic Network Programming**
     - Project 1A (Completeness)
     - Project 1A (Code Quality)
+    - Project 1 Pre-submission Code Review
 
 2. **Advanced Network Programming**
     - Project 1B (Completeness)
     - Project 1B (Code Quality)
+    - Project 1 Feedback Code Review
     - Checkpoint Exam: Project 1
 
 3. **Basic TCP**
@@ -222,10 +238,12 @@ These scores are distributed into 10 bundles:
 4. **Intermediate TCP**
     - Project 2A (Completeness)
     - Project 2A (Code Quality)
+    - Project 2 Pre-submission Code Review
 
 5. **Advanced TCP**
     - Project 2B (Completeness)
     - Project 2B (Code Quality)
+    - Project 2 Feedback Code Review
     - Checkpoint Exam: Project 2
 
 6. **Basic Data Link / Network Layer**
@@ -234,6 +252,7 @@ These scores are distributed into 10 bundles:
 7. **Intermediate Data Link / Network Layer**
     - Project 3 (Completeness)
     - Project 3 (Code Quality)
+    - Project 3 Pre-submission Code Review
     - Checkpoint Exam: Project 3
 
 8. **Advanced Data Link / Network Layer**
@@ -314,8 +333,7 @@ work to address any feedback we have given you, and to improve your score on tha
 Project resubmissions in this class will follow these guidelines:
 
 - Resubmissions for Project 1 will open after Project 1B is graded. i.e., there won't be two
-  separate resubmissions for Projects 1A and 1B. You will have roughly one week to make your
-  resubmission after Project 1B is returned to you.
+  separate resubmissions for Projects 1A and 1B.
 - Same as above, but for Project 2.
 - Project 3 is due on the last week of classes, which means there will not be enough time
   for us to grade it *and* allow resubmissions before grades are due. You will, however, be
