@@ -362,10 +362,6 @@
                   
   <section id="syllabus">
 <h1>Syllabus<a class="headerlink" href="#syllabus" title="Link to this heading">#</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This syllabus is tentative and subject to change.</p>
-</div>
 <section id="course-description">
 <h2>Course description<a class="headerlink" href="#course-description" title="Link to this heading">#</a></h2>
 <p>This course focuses on the principles and techniques used in the
@@ -420,7 +416,10 @@ students must master fundamental concepts and skills in networking. The
 class meets two times a week for lectures that provide a conceptual
 scaffolding for the projects, but will also cover material that is not
 directly applied in the projects. Some lectures will also be dedicated to
-in-depth discussion of the projects.</p>
+in-depth discussion of the projects. Students will also be required to
+complete a series of code reviews where they will meet with a TA several
+times throughout the quarter to discuss their progress on the projects,
+and receive feedback on their work.</p>
 <p>Besides the projects, students must demonstrate mastery of the material covered
 in lectures and in the projects via a series of short <em>checkpoint exams</em> that take place
 throughout the quarter. If a student does not pass a checkpoint exam, they will
@@ -443,6 +442,23 @@ second week of the quarter.</p>
 <p>Groups can be changed from one project to another. If your partner drops out of
 the course or you feel they are not contributing to the group’s effort,
 you should make the instructor aware of this.</p>
+</section>
+<section id="code-reviews">
+<h3>Code Reviews<a class="headerlink" href="#code-reviews" title="Link to this heading">#</a></h3>
+<p>Students must complete a series of code reviews throughout the quarter.
+For each code review, each team of students must make an appointment with
+a TA to go over their progress on the project and/or receive feedback on their work.</p>
+<p>There are a total of five code reviews throughout the quarter:</p>
+<ul class="simple">
+<li><p><strong>Pre-submission Code Reviews</strong> (Projects 1, 2, and 3): Before Projects 1B, 2B,
+or 3 are due, students must schedule and complete a code review to go over their progress and
+ask questions they have going into the final submission of the project.</p></li>
+<li><p><strong>Feedback Code Reviews</strong> (Projects 1 and 2): After Project 1B and 2B are graded,
+students must schedule and complete a code review to receive feedback on their work.</p></li>
+</ul>
+<p>Code reviews are graded on completion only. That said, we reserve the right to
+ask individual students or teams of students to undergo additional code reviews
+if there are any concerns with their understanding of their code.</p>
 </section>
 <section id="checkpoint-exams-and-final-exam">
 <h3>Checkpoint Exams (and Final Exam)<a class="headerlink" href="#checkpoint-exams-and-final-exam" title="Link to this heading">#</a></h3>
@@ -568,17 +584,12 @@ specifications grading.</p>
 </section>
 <section id="bundles">
 <h3>Bundles<a class="headerlink" href="#bundles" title="Link to this heading">#</a></h3>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>We are revising the composition of the bundles for Autumn 2026, to reflect that
-the projects will now involve code reviews. While the topics of the bundles
-will remain largely the same, the way the projects are scored will likely change.</p>
-</div>
-<p>There are a total of 20 SNU scores in this class:</p>
+<p>There are a total of 25 SNU scores in this class:</p>
 <ul class="simple">
 <li><p><strong>Projects</strong>: There are five project submissions (1A, 1B, 2A, 2B, and 3), and each contributes two SNU
 scores: one for Completeness and one for Code Quality.</p></li>
 <li><p><strong>Checkpoint Exams</strong>: There are ten checkpoint exams, each contributing one SNU score.</p></li>
+<li><p><strong>Code Reviews</strong>: There are five code reviews. Completing a code review earns an S on the code review; not completing it earns an N.</p></li>
 </ul>
 <p>These scores are distributed into 10 bundles:</p>
 <ol class="arabic simple">
@@ -586,6 +597,7 @@ scores: one for Completeness and one for Code Quality.</p></li>
 <dt><strong>Basic Network Programming</strong></dt><dd><ul class="simple">
 <li><p>Project 1A (Completeness)</p></li>
 <li><p>Project 1A (Code Quality)</p></li>
+<li><p>Project 1 Pre-submission Code Review</p></li>
 </ul>
 </dd>
 </dl>
@@ -594,6 +606,7 @@ scores: one for Completeness and one for Code Quality.</p></li>
 <dt><strong>Advanced Network Programming</strong></dt><dd><ul class="simple">
 <li><p>Project 1B (Completeness)</p></li>
 <li><p>Project 1B (Code Quality)</p></li>
+<li><p>Project 1 Feedback Code Review</p></li>
 <li><p>Checkpoint Exam: Project 1</p></li>
 </ul>
 </dd>
@@ -610,6 +623,7 @@ scores: one for Completeness and one for Code Quality.</p></li>
 <dt><strong>Intermediate TCP</strong></dt><dd><ul class="simple">
 <li><p>Project 2A (Completeness)</p></li>
 <li><p>Project 2A (Code Quality)</p></li>
+<li><p>Project 2 Pre-submission Code Review</p></li>
 </ul>
 </dd>
 </dl>
@@ -618,6 +632,7 @@ scores: one for Completeness and one for Code Quality.</p></li>
 <dt><strong>Advanced TCP</strong></dt><dd><ul class="simple">
 <li><p>Project 2B (Completeness)</p></li>
 <li><p>Project 2B (Code Quality)</p></li>
+<li><p>Project 2 Feedback Code Review</p></li>
 <li><p>Checkpoint Exam: Project 2</p></li>
 </ul>
 </dd>
@@ -634,6 +649,7 @@ scores: one for Completeness and one for Code Quality.</p></li>
 <dt><strong>Intermediate Data Link / Network Layer</strong></dt><dd><ul class="simple">
 <li><p>Project 3 (Completeness)</p></li>
 <li><p>Project 3 (Code Quality)</p></li>
+<li><p>Project 3 Pre-submission Code Review</p></li>
 <li><p>Checkpoint Exam: Project 3</p></li>
 </ul>
 </dd>
@@ -745,8 +761,7 @@ work to address any feedback we have given you, and to improve your score on tha
 <p>Project resubmissions in this class will follow these guidelines:</p>
 <ul class="simple">
 <li><p>Resubmissions for Project 1 will open after Project 1B is graded. i.e., there won’t be two
-separate resubmissions for Projects 1A and 1B. You will have roughly one week to make your
-resubmission after Project 1B is returned to you.</p></li>
+separate resubmissions for Projects 1A and 1B.</p></li>
 <li><p>Same as above, but for Project 2.</p></li>
 <li><p>Project 3 is due on the last week of classes, which means there will not be enough time
 for us to grade it <em>and</em> allow resubmissions before grades are due. You will, however, be
@@ -917,6 +932,7 @@ CMSC 12100 and CMSC 14200, authored by a variety of instructors throughout the y
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#communication">Communication</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-organization">Course organization</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#projects">Projects</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-reviews">Code Reviews</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checkpoint-exams-and-final-exam">Checkpoint Exams (and Final Exam)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lectures">Lectures</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-sessions">Discussion Sessions</a></li>

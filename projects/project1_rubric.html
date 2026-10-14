@@ -365,15 +365,6 @@
                   
   <section id="project-1-rubric">
 <h1>Project 1 Rubric<a class="headerlink" href="#project-1-rubric" title="Link to this heading">#</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>In Autumn 2026, we will be adding code reviews as a required component of the projects.
-In these code reviews, you will receive feedback on your project work in-person
-(where you must also be able to answer questions about your code). We are still working
-out the details of this, so the rubric below does not yet reflect how these code reviews
-will factor into the timeline and scoring of the projects.</p>
-<p>We expect this information to be available during the 2nd week of the quarter.</p>
-</div>
 <p>The grading of this project follows a specifications grading approach. If you have not already
 done so, make sure to read our <a class="reference external" href="../syllabus.html#grading">Grading</a> section of
 the syllabus for more details.</p>
@@ -402,16 +393,17 @@ your code (the exact documentation is described below)</p></li>
 </ul>
 </li>
 </ul>
+<p>Furthermore, you will complete two code reviews as part of this project.</p>
 <p>This project also has a “Warm-up” submission. This submission does not directly contribute
 to your final grade but, if you complete it, you will be more likely to get an S in Project 1A.
 To complete the “Warm-up” submission, you must score at least 90/100 points on the autograder
 for that submission.</p>
-<section id="submission-timeline">
-<h2>Submission Timeline<a class="headerlink" href="#submission-timeline" title="Link to this heading">#</a></h2>
-<p>The exact timeline of submissions will be the following:</p>
+<section id="project-timeline">
+<h2>Project Timeline<a class="headerlink" href="#project-timeline" title="Link to this heading">#</a></h2>
+<p>The exact timeline for the project will be the following:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><p>Submission</p></th>
+<tr class="row-odd"><th class="head"><p>What</p></th>
 <th class="head"><p>Requirements</p></th>
 <th class="head"><p>Due Date</p></th>
 </tr>
@@ -429,7 +421,16 @@ for that submission.</p>
 </td>
 <td><p><strong>Thursday, October 15, 8pm</strong></p></td>
 </tr>
-<tr class="row-even"><td><p>Project 1B</p></td>
+<tr class="row-even"><td><p>Pre-submission
+Code Review</p></td>
+<td><div class="line-block">
+<div class="line">Schedule and complete a Pre-submission Code Review with your TA</div>
+<div class="line">(see <a class="reference external" href="code-review-scheduling.html">Code Review Scheduling Instructions</a>)</div>
+</div>
+</td>
+<td><p><strong>Wednesday, October 21, 8pm</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Project 1B</p></td>
 <td><div class="line-block">
 <div class="line"><a class="reference external" href="http://chi.cs.uchicago.edu/chirc/assignment5.html">Assignment 5</a> of <a class="reference external" href="http://chi.cs.uchicago.edu/chirc/">chirc</a></div>
 <div class="line">(Note: Assignment 5 builds on Assignment 4)</div>
@@ -437,18 +438,28 @@ for that submission.</p>
 </td>
 <td><p><strong>Thursday, October 22, 8pm</strong></p></td>
 </tr>
+<tr class="row-even"><td><p>Feedback
+Code Review</p></td>
+<td><div class="line-block">
+<div class="line">Schedule and complete a Feedback Code Review with your TA</div>
+<div class="line">(see <a class="reference external" href="code-review-scheduling.html">Code Review Scheduling Instructions</a>)</div>
+</div>
+</td>
+<td><p><strong>Monday, November 9, 8pm</strong> (*)</p></td>
+</tr>
 <tr class="row-odd"><td><p>Resubmission (Optional)</p></td>
 <td><p>Address feedback received in Project 1</p></td>
-<td><p>One week after Project 1B is graded</p></td>
+<td><p><strong>Tuesday, November 10, 8pm</strong> (*)</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>You will receive some early feedback from the Project 1 Warm-up before Project 1A is due.</p>
-<p>Project 1A will likely not be graded until after Project 1B is due. Once Project 1B is graded,
+<p>(*) These dates may shift depending on when the Project 1 grading is available.</p>
+<p>You will receive some early feedback from the Project 1 Warm-up before Project 1A is due,
+and from Project 1A before Project 1B is due.</p>
+<p>Once Project 1B is graded,
 you will have an opportunity to make a resubmission for Project 1A and/or 1B (and, at that point,
-you will have feedback for both Project 1A and 1B). We will
-post more details about the resubmission process at a later time.</p>
+you will have feedback for both Project 1A and 1B).</p>
 </section>
 <section id="completeness">
 <h2>Completeness<a class="headerlink" href="#completeness" title="Link to this heading">#</a></h2>
@@ -521,6 +532,10 @@ it is not possible for us to give you an exhaustive list of every single thing t
 affect your code quality score. If you get a comment pointing out an issue in your
 code that we did not list below, take it as an opportunity to improve your work
 (and remember that you’ll have a chance to revise your work!)</p>
+<p><strong>Note</strong>: We use a Claude-based tool to help identify the rubric items that likely need
+attention in any given submission. While this helps ensure that no rubric items slip
+through the cracks when grading your work, the grading is ultimately done by human
+graders (who verify any suggestions made by this tool).</p>
 <section id="correctness">
 <h3>Correctness<a class="headerlink" href="#correctness" title="Link to this heading">#</a></h3>
 <p>When assessing the correctness of your code, we will be paying special attention
@@ -736,11 +751,65 @@ that is heap-allocated.</p></li>
 </ul>
 </section>
 </section>
+<section id="code-reviews">
+<h2>Code Reviews<a class="headerlink" href="#code-reviews" title="Link to this heading">#</a></h2>
+<p>In this project, you will have to complete two code reviews. You must schedule
+and complete these code reviews no later than the due date specified in the
+“Project Timeline” above (see <a class="reference external" href="code-review-scheduling.html">Code Review Scheduling Instructions</a>
+for instructions on how to schedule your code review).</p>
+<section id="pre-submission-code-review">
+<h3>Pre-submission Code Review<a class="headerlink" href="#pre-submission-code-review" title="Link to this heading">#</a></h3>
+<p>The purpose of this code review is to go over your code before Project 1B is due,
+so we can identify issues and other opportunities for improvement. In general,
+this code review will be structured as follows:</p>
+<ul class="simple">
+<li><p>We will ask you to walk us through the code you’ve written so far. We will use
+this walkthrough to identify aspects of your code that may need improvement. You
+should not approach this as a line-by-line explanation of your code; instead,
+give us a high-level sense of what you implemented, while showing us the code
+that implements each part of the project.</p></li>
+<li><p>We will ask you if you have any questions about the work that remains to be done
+in the project.</p></li>
+<li><p>Finally, we will go over any issues we identified.</p></li>
+</ul>
+<p><strong>You do not need to wait until you have a near-complete version of Project 1B to
+request this code review.</strong> We recommend you schedule this code review after you
+complete Project 1A, and once you’ve had a chance to read through the requirements
+of Project 1B. That said, you can also request this code review before the Project
+1A deadline, to go over your code before you submit Project 1A.</p>
+</section>
+<section id="feedback-code-review">
+<h3>Feedback Code Review<a class="headerlink" href="#feedback-code-review" title="Link to this heading">#</a></h3>
+<p>The purpose of this code review is to go over the grading of your Projects 1A and 1B
+submissions, and deliver additional feedback on your submissions. If you did not score
+a <em>Satisfactory</em> in Code Quality, we will also go over the items that we would expect
+you to fix in your resubmission (to be able to score a Satisfactory on the resubmission).</p>
+<p>If you are planning to make a resubmission, it is important that you schedule your
+code review as soon as possible after the grading is released, so you have enough
+time to work on a resubmission.</p>
+<p>Finally, you should not need to prepare for this code review, but bear in mind that
+we may ask you questions about your code, so we can provide you with clear feedback
+and guidance on how to improve your code.</p>
+</section>
+<section id="scoring-and-other-requirements">
+<h3>Scoring and Other Requirements<a class="headerlink" href="#scoring-and-other-requirements" title="Link to this heading">#</a></h3>
+<p>Code reviews are graded on completion only; for the purposes of the grading Bundles
+listed in the syllabus, completing a code review earns a Satisfactory, and not
+completing a code review earns a Needs Improvement.</p>
+<p>Code reviews are conducted in-person, and both students in a team must attend and
+participate. In the Pre-submission Code Review, where we will ask you to walk us
+through your code, you may want to have a quick conversation beforehand to decide
+who will explain what portions of the code.</p>
+<p>Finally, we reserve the right to ask individual students or teams of students to
+undergo additional code reviews if there are any concerns with their understanding
+of their code.</p>
+</section>
+</section>
 <section id="resubmission">
 <h2>Resubmission<a class="headerlink" href="#resubmission" title="Link to this heading">#</a></h2>
-<p>When you receive your graded Project 1B, you can make a resubmission to address
-any feedback you received in Projects 1A and/or 1B. This may increase your scores
-in those projects.</p>
+<p>After you receive your graded Project 1B, you can make a resubmission to address
+any feedback you received in Projects 1A and/or 1B (and on the Feedback Code Review).
+This may increase your scores in those projects.</p>
 <p>While the project is divided into two parts (1A and 1B), remember that Project 1B
 builds on Project 1A. As such, you should think about your
 resubmission as a final cumulative submission that addresses any remaining issues
@@ -917,7 +986,7 @@ make sure to carefully review the <a class="reference external" href="project1_r
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission-timeline">Submission Timeline</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-timeline">Project Timeline</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#completeness">Completeness</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-quality">Code Quality</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correctness">Correctness</a></li>
@@ -925,6 +994,12 @@ make sure to carefully review the <a class="reference external" href="project1_r
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#style">Style</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-code-quality-issues">Other Code Quality Issues</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-reviews">Code Reviews</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-submission-code-review">Pre-submission Code Review</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feedback-code-review">Feedback Code Review</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scoring-and-other-requirements">Scoring and Other Requirements</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resubmission">Resubmission</a><ul class="nav section-nav flex-column">
