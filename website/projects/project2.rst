@@ -1,9 +1,6 @@
 Project 2: chitcp
 -----------------
 
-.. warning::
-   This page has not yet been updated for Autumn 2026.
-
 In this project you will be implementing the Transmission Control Protocol, as
 specified in `[RFC9293] <http://tools.ietf.org/html/rfc9293>`__. However, instead
 of implementing it inside the operating system itself, you will be implementing
@@ -19,75 +16,90 @@ they do not implement the entire functionality provided by standard sockets
 Please refer to the following documents to complete this project:
 
 - Make sure you've read our :ref:`Getting Started <project_started>` page.
-  That page also includes instructions on how to register for the project (and how to
-  get your Git repo)
+  That page also includes instructions on how to request your team repo.
 - `chiTCP specification <http://chi.cs.uchicago.edu/chitcp/>`__: In this project,
   you will be implementing Assignments 1 and 2 of chiTCP.
 - `Project 2 rubric <project2_rubric.html>`__
 - `Project 2 tips <project2_tips.html>`__
 
-Submission Timeline
-~~~~~~~~~~~~~~~~~~~
+Project Timeline
+~~~~~~~~~~~~~~~~
 
-This project has the following submissions:
+This project has the following timeline:
 
 .. include:: project2_timeline.txt
 
 Please see `Project 2 rubric <project2_rubric.html>`__ for more details on how each submission will be graded.
 
-Initializing your Project 2 Repository
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Initializing your Team Repository for Project 2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Make sure that you have read the :ref:`Getting Started <project_started>` page
 before following the instructions below.
 
 **One-time setup instructions**
 
-Only one team member needs to run these commands. Create an empty directory and, inside that
-directory run the following commands. In the commands below, ``$REPO_URL`` refers to the
-SSH URL of your repository. To get this URL, log into GitHub and navigate to your
-project repository. Then, under "Quick setup — if you’ve done this kind of thing before",
-make sure the "SSH" button is selected, and copy the URL that appears next to it.
-It should look something like this: ``git@github.com:uchicago-cmsc23320-aut-24/chitcp-p2-jdoe-jrandom.git``
+Only one team member needs to run these commands. In the commands below, ``$REPO_URL`` refers to the
+SSH URL of your repository. To get this URL, log into the `CS GitLab server <https://gitlab.cs.uchicago.edu/>`__
+and navigate to your project repository (you can also find a direct link from the
+`CS Course Repositories <https://course-repos.cs.uchicago.edu>`__ website).
+Then, click on the "Code" button and copy the URL that appears under "Clone with SSH".
+It should look something like this: ``git@gitlab.cs.uchicago.edu:courses/aut-26/cmsc23320/cnetid1-cnetid2.git``
 
-::
+If you are working with the same partner as in Project 1, you will add the chiTCP code
+to your existing team repository. Inside your local copy of that repository,
+run the following commands::
+
+    git pull
+    git remote add -f chitcp-upstream https://github.com/uchicago-cs/chitcp.git
+    git subtree add --prefix chitcp chitcp-upstream main --squash
+    git push
+
+If you are working with a new partner, you will first need to request a new team repo
+(see the :ref:`Getting Started <project_started>` page). Then, create an empty directory and,
+inside that directory, run the following commands::
 
     git init
-    git remote add origin $REPO_URL
-    git remote add upstream https://github.com/uchicago-cs/chitcp.git
-    git pull upstream main
+    git commit --allow-empty -m "Initial commit"
     git branch -M main
+    git remote add -f origin $REPO_URL
+    git remote add -f chitcp-upstream https://github.com/uchicago-cs/chitcp.git
+    git subtree add --prefix chitcp chitcp-upstream main --squash
     git push -u origin main
-
 
 **Cloning instructions**
 
 Once the repository has been set up, you can clone the repository in
-other locations as follows::
+other locations as follows (if you already have a local copy of your
+team repository, just run ``git pull`` instead of ``git clone``)::
 
     git clone $REPO_URL
-    git remote add upstream https://github.com/uchicago-cs/chitcp.git
+    git remote add chitcp-upstream https://github.com/uchicago-cs/chitcp.git
+
+**Pulling changes to the upstream code**
+
+If we make any changes to the upstream repository, and you want to merge them into your repository, you need to run the following command::
+
+    git subtree pull --prefix chitcp chitcp-upstream main --squash
 
 Submission
 ~~~~~~~~~~
 
 Before submitting, make sure you've added, committed, and pushed all
-your code to GitHub. You will submit your code through `Gradescope <https://gradescope.com/>`__,
-which you can access through our Canvas site.
-
-When submitting through Gradescope, you will be asked to select a repository to submit.
-Make sure that you select the correct repository and branch. Please note that you can
-submit as many times as you want before the deadline.
+your code to Git. You will submit your code through `Gradescope <https://gradescope.com/>`__,
+which you can access through our Canvas site. Please see our :ref:`Submitting from GitLab <project_gitlab>` page
+for details on how to submit your GitLab repository on Gradescope.
 
 Please note that you must make a **single submission per pair of students** (do not make two submissions, one per student). When making your submission, you will be allowed to add "team members" to your submission. Make sure you add your project partner in your submission.
 
-In this project, Gradescope will *only* fetch the following files from your repository:
+In this project, Gradescope will *only* fetch the following files from the ``chitcp/`` directory in your repository:
 
-- ``/src/chitcpd/tcp.h``
-- ``/src/chitcpd/tcp.c``
-- ``/src/libchitcp/multitimer.c`` (Project 2B only)
-- ``/include/chitcp/multitimer.h`` (Project 2B only)
-- The ``DOCUMENTATION.md`` file in the root of your repository
+- ``src/chitcpd/tcp.h``
+- ``src/chitcpd/tcp.c``
+- ``src/libchitcp/multitimer.c`` (Project 2B only)
+- ``include/chitcp/multitimer.h`` (Project 2B only)
+- The ``DOCUMENTATION.md`` file
+- The ``RESUBMISSION.md`` file (when making a resubmission)
 
 Once you submit your files, an "autograder" will run. This autograder should produce the same test results as when you run the code yourself; if it doesn't, please let us know so we can look into it.
 

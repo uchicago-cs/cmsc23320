@@ -1,9 +1,6 @@
 Project 2 Tips
 ==============
 
-.. warning::
-   This page has not yet been updated for Autumn 2026.
-
 Before you get started, make sure you've read through the `Projects - Getting Started <../projects/started.html>`__ page.
 
 Suggested Order of Implementation
@@ -13,16 +10,16 @@ At first glance, it may seem like Project 2 requires coming up with an effective
 
 So, as you move on to Project 2, we suggest you set the following intermediate goals in Assignment 1 of chiTCP:
 
-- **Pass the Connection Establishment tests**. You can do so by implement the handling of APPLICATION_CONNECT in the CLOSED state (Hint: remember we showed you some basic code for this in the Project 2 lecture), and just enough of the packet arrival handler to implement the three-way handshake (this means you can skip everything related to processing data, FIN segments, etc.). This will ensure you are comfortable with the basics of chiTCP moving forward.
-- **Pass some half-duplex tests with <= 536 bytes**. Write a function that processes the send buffer (and sends its contents) and flesh out enough of the packet arrival handler for you to pass some of the simpler tests. This will ensure the basic aspects of data transfer are working, as you do not yet need to worry about segmenting the send buffer (which means you can write your code under the assumption that everything in the send buffer gets sent in a single packet).
+- **Pass the Connection Establishment tests**. You can do so by implementing the handling of APPLICATION_CONNECT in the CLOSED state (Hint: remember we showed you some basic code for this in the Project 2 lecture), and just enough of the segment arrival handler to implement the three-way handshake (this means you can skip everything related to processing data, FIN segments, etc.). This will ensure you are comfortable with the basics of chiTCP moving forward.
+- **Pass some half-duplex tests with <= 536 bytes**. Write a function that processes the send buffer (and sends its contents) and flesh out enough of the segment arrival handler for you to pass some of the simpler tests. This will ensure the basic aspects of data transfer are working, as you do not yet need to worry about segmenting the send buffer (which means you can write your code under the assumption that everything in the send buffer gets sent in a single segment).
 - **Move on to half-duplex tests with > 536 bytes**. This will involve segmenting the send buffer correctly.
 - **Move on to the echo tests**. A lot of moving pieces have to be working correctly for data to transfer correctly in both directions.
 - **Finally, pass the connection termination tests.**
 
-Dividing up the work in Assignment 1 of chiTCP is a bit tricky, since most of your work will involve writing the packet arrival handler (which can't easily be broken down into pieces). We suggest you approach your collaboration on Project 2 as follows:
+Dividing up the work in Assignment 1 of chiTCP is a bit tricky, since most of your work will involve writing the segment arrival handler (which can't easily be broken down into pieces). We suggest you approach your collaboration on Project 2 as follows:
 
 - **Work together on the threeway handshake**. This will ensure you are both comfortable with the basics of chiTCP before moving on to more complex parts of the project.
-- **Be careful about dividing up the packet arrival handler**. You can break it up into sections, but you should agree on a general structure first, and will need to coordinate very carefully as you make progress on it.
+- **Be careful about dividing up the segment arrival handler**. You can break it up into sections, but you should agree on a general structure first, and will need to coordinate very carefully as you make progress on it.
 - **Avoid giving one person sole responsibility over a core aspect of the code**. For example, don't ask your project partner to write the function that processes the send buffer, and to report back in a few days. If that function doesn't work, it will have a major impact on the rest of your code. It is better to work together on these or, at least, have joint ownership over that code (and make sure it gets done as early as possible)
 - **In general, avoid a “there are N functions, let’s split them up” mentality**. A team member can also be responsible for debugging tests, polishing the code, writing documentation, etc.
 
@@ -36,8 +33,8 @@ In Assignment 2 of chiTCP, we suggest you follow this implementation order:
 
 - Approach the tests *incrementally*
 
-  - Make sure you're passing all the multitimer tests before you move on to retransmissions or the persist timer. Otherwise, if a retransmission/persist test fails, it will be hard to tell whether the error originates in your retransmission/persist code, or whether its a spurious error that originates in something incorrect in the multitimer.
-  - When you move on to retransmissions, there are several simple tests that involve dropping a single packet. Focus on those first, as they will be easier to debug.
+  - Make sure you're passing all the multitimer tests before you move on to retransmissions or the persist timer. Otherwise, if a retransmission/persist test fails, it will be hard to tell whether the error originates in your retransmission/persist code, or whether it's a spurious error that originates in something incorrect in the multitimer.
+  - When you move on to retransmissions, there are several simple tests that involve dropping a single segment. Focus on those first, as they will be easier to debug.
   - Then, move onto the connection establishment/termination drop tests.
   - Finally, see if you can pass the tests with multiple drops.
   - Note: You should only attempt to debug the “random” tests if every other test (including from Assignment 1) is working correctly.
@@ -47,11 +44,11 @@ Interpreting RFC 9293
 
 In this project, you will be implementing TCP, which is specified in `RFC 9293 <http://tools.ietf.org/html/rfc9293>`__. This is a modern version of the original specification of TCP in RFC 793,
 fixing multiple errata and ambiguities that have been identified over the years. As such,
-this RFC tends to be pretty clear regarding the expected behaviour of RFC. That said,
+this RFC tends to be pretty clear regarding the expected behaviour of TCP. That said,
 if you encounter any part of the RFC that you are unsure how to interpret, then ask on Ed Discussion: we will provide an ex cathedra ruling on how you should interpret the RFC.
 
 That said, there are parts of the RFC that *do* provide unambiguous formulas.
-Sometimes, students will tweak this formulas as they try to debug their code
+Sometimes, students will tweak these formulas as they try to debug their code
 (e.g., using <= instead of <). This may make your code work for the issue you
 are trying to resolve, but will probably cause issues down the road.
 
@@ -67,22 +64,22 @@ It is your responsibility to generate the initial sequence number (ISN) for a co
 but you are not required to implement the ISS/IRS selection exactly as specified in the RFC. It is enough
 to choose a random number and, for ease of debugging, you may want to choose a random number ending in ``00000`` so you can more easily debug the sequence numbers in your transmissions.
 
-Freeing packets
----------------
+Freeing segments
+----------------
 
 Take into account that:
 
-- You're responsible for freeing any packets you create (i.e., any memory you allocate for
-  a ``tcp_packet_t`` struct).
-- You're also responsible for freeing any packets you remove from the pending packets list.
+- You're responsible for freeing any segments you create (i.e., any memory you allocate for
+  a ``tcp_segment_t`` struct).
+- You're also responsible for freeing any segments you remove from the pending segments list.
 
-In both cases, besides freeing the pointer to the ``tcp_packet_t`` struct, you also need to call
-``chitcp_tcp_packet_free`` to free other memory associated with the memory (and you should do
-this before freeing the pointer to the tcp_packet_t struct).
+In both cases, besides freeing the pointer to the ``tcp_segment_t`` struct, you also need to call
+``chitcp_tcp_segment_free`` to free other memory associated with the segment (and you should do
+this before freeing the pointer to the tcp_segment_t struct).
 
-Also, take into account that ``chitcpd_send_tcp_packet`` records all the information necessary
-to send the packet. In other words, it is safe to free the packet after ``chitcpd_send_tcp_packet``
-returns (doing so will not interfere with the packet being correctly sent).
+Also, take into account that ``chitcpd_send_tcp_segment`` records all the information necessary
+to send the segment. In other words, it is safe to free the segment after ``chitcpd_send_tcp_segment``
+returns (doing so will not interfere with the segment being correctly sent).
 
 Tests that sometimes pass, but sometimes don't
 ----------------------------------------------
@@ -96,38 +93,38 @@ apparent when changing logging levels, since the more verbose logging levels (li
 and TRACE) effectively inject substantial delays when a thread has to print logs.
 
 For example, suppose you've established a connection, and peer A has to send 5 TCP
-packets to peer B, and that peer B sends an ACK packet for each of those packets.
-If you are running with no logging, B will probably send those packets right away so,
+segments to peer B, and that peer B sends an ACK segment for each of those segments.
+If you are running with no logging, B will probably send those segments right away so,
 from peer A's perspective, the sequence of events could be something like this::
 
-    SEND packet 1
-    SEND packet 2
-    SEND packet 3
-    RECEIVE ACK of packet 1
-    SEND packet 4
-    RECEIVE ACK of packet 2
-    SEND packet 5
-    RECEIVE ACK of packet 3
-    RECEIVE ACK of packet 4
-    RECEIVE ACK of packet 5
+    SEND segment 1
+    SEND segment 2
+    SEND segment 3
+    RECEIVE ACK of segment 1
+    SEND segment 4
+    RECEIVE ACK of segment 2
+    SEND segment 5
+    RECEIVE ACK of segment 3
+    RECEIVE ACK of segment 4
+    RECEIVE ACK of segment 5
 
 On the other hand, if you're running with heavy logging, B may take slightly longer to send back
 the acknowledgements (because it's spending CPU time printing out logs), so the sequence
 of events could instead look like this::
 
-    SEND packet 1
-    SEND packet 2
-    SEND packet 3
-    SEND packet 4
-    SEND packet 5
-    RECEIVE ACK of packet 1
-    RECEIVE ACK of packet 2
-    RECEIVE ACK of packet 3
-    RECEIVE ACK of packet 4
-    RECEIVE ACK of packet 5
+    SEND segment 1
+    SEND segment 2
+    SEND segment 3
+    SEND segment 4
+    SEND segment 5
+    RECEIVE ACK of segment 1
+    RECEIVE ACK of segment 2
+    RECEIVE ACK of segment 3
+    RECEIVE ACK of segment 4
+    RECEIVE ACK of segment 5
 
 Notice how the events still happen in the correct order (the delays introduced by logging will
-not result in packets being delivered *out of order*, which is something that would happen
+not result in segments being delivered *out of order*, which is something that would happen
 at the network level), but the *interleaving* of the events is different. A correct implementation
 of TCP should be able to handle either sequence of events, but
 your code could have a subtle bug that only manifests itself when events happen in a particular
@@ -157,8 +154,8 @@ could be spent on polishing up your code, documenting it, etc. which is likely t
 impact on your Code Quality score for this project.
 
 That said, if you are in a situation where you consistently get a high score on the tests
-under a specific logging level, you are allowed to mention this in the README file in the root of
-your repository, requesting
+under a specific logging level, you are allowed to mention this in the
+"Other code details / requests for feedback" section of your ``DOCUMENTATION.md`` file, requesting
 that the graders run the tests under that logging level (you may *not* request that they run
 some tests under one logging level, and other tests under a different logging level). Please
 make sure to also include the output of ``make grade``, so the graders can ensure they're
@@ -196,11 +193,17 @@ Origin of log messages
 handles send(), recv(), connect(), etc.). The socket layer is the one that calls your ``tcp_data_init``
 function so, in the second part of the project, your timer thread will inherit the same name unless
 you specifically set a new name for the timer thread. To make your logs clearer, you can do so by
-setting the name of the timer thread with this code (at the start of the timer thread function)::
+setting the name of the timer thread in ``tcp_data_init`` (right after calling ``mt_init``), since
+that is where the socket number is available (the timer thread itself has no access to ``si`` or ``entry``).
+For example, assuming your ``multi_timer_t`` struct stores the ``pthread_t`` of its thread in
+a field called ``thread``, and that your multitimer is stored in a ``tcp_data_t`` field called ``mt``::
  
-    char thread_name[17];
-    snprintf (thread_name, 16, "timer-%d", ptr_to_fd(si, entry));
-    pthread_setname_np(pthread_self(), thread_name);
+    char thread_name[16];
+    snprintf(thread_name, sizeof(thread_name), "timer-%d", ptr_to_fd(si, entry));
+    set_thread_name(tcp_data->mt.thread, thread_name);
+ 
+(``set_thread_name`` is declared in ``include/chitcp/utils.h``. Take into account that, on macOS,
+a thread can only set its own name, so this will have no effect there.)
  
 That should make the logs a bit easier to interpret, because you'll know when a message is coming
 from the socket layer and when it's coming from the timer thread.
@@ -217,10 +220,10 @@ it will be hard to help you with the random tests if you are not already passing
 tests; when this happens, please ask for help on those (non-random) tests first.
 
 Please note that the random tests are actually deterministic, because they use the same random
-seed every time. However, the packets are dropped according to a random number generator, not
+seed every time. However, the segments are dropped according to a random number generator, not
 according to a specific well-defined situation (unlike the other unreliability tests, which
 test specific situations like "dropping the SYN/ACK in the three-way handshake", "dropping
-only one packet during the data transfer", etc.). Basically, if you can pass all the random
+only one segment during the data transfer", etc.). Basically, if you can pass all the random
 tests, that probably means your implementation is pretty solid.
 
 The RTT tests
@@ -243,7 +246,7 @@ Common Pitfalls
 * **Worrying about functionality that is handled in the socket or network layers**: Since you are writing a TCP implementation that interacts with both a socket layer and a network layer, it can sometimes be challenging to tell what is the responsibility of each layer. In the past, some students have spent a considerable amount of effort worrying about things that were actually already handled for them in other layers, most notably:
 
   * *The source/destination ports*: You should not set or modify these fields of the TCP header. These
-    fields are actually set by ``chitcpd_tcp_packet_create``, which will look at the ports associated with the socket,
+    fields are actually set by ``chitcpd_tcp_segment_create``, which will look at the ports associated with the socket,
     and will fill in the correct ports in the TCP header. Additionally, none of your code should depend on the
     value of the source/destination ports; the socket layer is in charge of delivering data to the correct process 
     (based on the destination port), and is also in charge of assigning
@@ -251,7 +254,7 @@ Common Pitfalls
     the socket layer in ``chisocket_connect`` when creating an active socket).
 
     Take into account that, even if you don't explicitly manipulate the port fields of the TCP header,
-    you will destroy that information if you zero out a TCP header *after* calling ``chitcpd_tcp_packet_create``.
+    you will destroy that information if you zero out a TCP header *after* calling ``chitcpd_tcp_segment_create``.
     If you do this, you will likely get the following error in the chitcpd logs: ``"No socket listening on port 0"``
   * *Reporting errors back to the application layer*: RFC 9293 specifies, at various points, that certain errors should
     be returned to the application layer. For example, under the ``SEND Call`` specification (corresponding to chiTCP's
@@ -271,9 +274,9 @@ Common Pitfalls
     above states, the socket layer would return an error (and this event would never propagate to your state handling
     functions).
   * *Passive sockets*: The setup and management of passive sockets is handled by the socket layer, including the
-    creation of a new active socket when a passive socket receives a SYN packet. The sockets you will deal will
+    creation of a new active socket when a passive socket receives a SYN segment. The sockets you will deal will
     in your implementation will always be active sockets, resulting either from an ``APPLICATION_CONNECT`` event or
-    from a passive socket spawning an active socket after receiving a SYN packet.
+    from a passive socket spawning an active socket after receiving a SYN segment.
 
 
 * **Not initializing the sequence number in the buffer**: You need to initialize the initial sequence number of
@@ -287,17 +290,17 @@ Common Pitfalls
 
 * **Implementing stop-and-wait instead of sliding window, or ignoring the window size**: In sliding window,
   you send as much data as allowed by the receiver's window (after accounting for any data that may already
-  be in flight). If you send one packet and wait for an ACK before sending the next one, you're implementing
-  stop-and-wait, not sliding window. If, on the other hand, you do send multiple packets at once, but send
+  be in flight). If you send one segment and wait for an ACK before sending the next one, you're implementing
+  stop-and-wait, not sliding window. If, on the other hand, you do send multiple segments at once, but send
   more data than allowed by the window, this will likely result in undefined behaviour. An easy way to
   check this is to see whether, at the start of the tests that send more than 4KB, your code send only
   4KB and doesn't send more data until it receives a first ACK. If you send (for example) 32KB all at
   once, then you're ignoring the windows size.
 
-* **Sending only one packet when segmenting**: Whenever you process the send buffer, you should always
-  send as many packets as possible without exceeding the receiver's advertised window. A common pitfall
+* **Sending only one segment when segmenting**: Whenever you process the send buffer, you should always
+  send as many segments as possible without exceeding the receiver's advertised window. A common pitfall
   is to correctly identify that the send buffer contains more than one MSS of data, but then sending
-  only that first MSS, instead of sending as many packets allowed by SND.WND.
+  only that first MSS, instead of sending as many segments allowed by SND.WND.
 
 * **Sending only when the APPLICATION_SEND event happens**: The ``APPLICATION_SEND`` event simply
   informs TCP that the application has called ``send()``, which means there is likely new data to
@@ -308,26 +311,26 @@ Common Pitfalls
   buffer and determine whether any data can be sent and, if so, send it"), and call it not just
   from the ``APPLICATION_SEND`` handler but also whenever SND.UNA or SND.WND change.
 
-* **Not setting/reading the window variables**: Every TCP packet you send must include a valid
+* **Not setting/reading the window variables**: Every TCP segment you send must include a valid
   value for SEG.WND. This is true regardless of whether the size of the receive buffer has
-  changed since the last TCP packet, and regardless of whether the packet carries a payload
+  changed since the last TCP segment, and regardless of whether the segment carries a payload
   or not. The value of SEG.WND is always set to the available space in the receive buffer.
 
-  Similarly, the value of SND.WND is always updated when you receive a valid TCP packet.
+  Similarly, the value of SND.WND is always updated when you receive a valid TCP segment.
 
-* **Not delaying the FIN packet**: When an ``APPLICATION_CLOSE`` event happens, you *only*
-  send a FIN packet if the send buffer is empty. If the send buffer still has
-  unacknowledged/unsent data, you don't send the FIN packet until the send buffer is empty.
+* **Not delaying the FIN segment**: When an ``APPLICATION_CLOSE`` event happens, you *only*
+  send a FIN segment if the send buffer is empty. If the send buffer still has
+  unacknowledged/unsent data, you don't send the FIN segment until the send buffer is empty.
 
   Similarly, it is not enough to simply process your send buffer from ``APPLICATION_CLOSE``
   to clear the buffer, because the receiver's window may not allow you to do this at that
   point. So, you have to take into account that the send buffer may not become empty
   until *after* you've processed the ``APPLICATION_CLOSE`` event.
 
-* **Not checking the return value of pthread_cond_timed_wait**: ``pthread_cond_timed_wait``
+* **Not checking the return value of pthread_cond_timedwait**: ``pthread_cond_timedwait``
   will return ``EINVAL`` under certain circumstances that you can easily find yourself in.
   The most common one is providing an invalid value for ``abstime``, usually by
-  setting the ``tv_nsec`` field to a value less than 0 or greater than 1,000,000,000.
-  So, make sure to, at the very least, ``chilog`` any time ``pthread_cond_timed_wait``
+  setting the ``tv_nsec`` field to a value less than 0 or greater than or equal to 1,000,000,000.
+  So, make sure to, at the very least, ``chilog`` any time ``pthread_cond_timedwait``
   returns a value other than ``0`` or ``ETIMEDOUT``, as that may alert you to issues
   with your code that can make your multitimer fail.

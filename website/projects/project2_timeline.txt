@@ -1,10 +1,18 @@
 +-------------------------+----------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
-| Submission              | Requirements                                                                                                               | Due Date                                                   |
+| What                    | Requirements                                                                                                               | Due Date                                                   |
 +=========================+============================================================================================================================+============================================================+
-| Project 2A              | `Assignment 1 <http://chi.cs.uchicago.edu/chitcp/assignment1.html>`__ of `chiTCP <http://chi.cs.uchicago.edu/chitcp/>`__   | **Thursday, November 7, 8pm**                              |
+| Project 2A              | `Assignment 1 <http://chi.cs.uchicago.edu/chitcp/assignment1.html>`__ of `chiTCP <http://chi.cs.uchicago.edu/chitcp/>`__   | **Thursday, November 5, 8pm**                              |
 +-------------------------+----------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
-| Project 2B              | | `Assignment 2 <http://chi.cs.uchicago.edu/chitcp/assignment2.html>`__ of `chiTCP <http://chi.cs.uchicago.edu/chitcp/>`__ | **Thursday, November 14, 8pm**                             |
+| Pre-submission          | | Schedule and complete a Pre-submission Code Review with your TA                                                          | **Wednesday, November 11, 8pm**                            |
+| Code Review             | | (see `Code Review Scheduling Instructions <code-review-scheduling.html>`__)                                              |                                                            |
++-------------------------+----------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Project 2B              | | `Assignment 2 <http://chi.cs.uchicago.edu/chitcp/assignment2.html>`__ of `chiTCP <http://chi.cs.uchicago.edu/chitcp/>`__ | **Thursday, November 12, 8pm**                             |
 |                         | | (Note: Assignment 2 builds on Assignment 1)                                                                              |                                                            |
 +-------------------------+----------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
-| Resubmission (Optional) | Address feedback received in Project 2                                                                                     | One week after Project 2B is graded                        |
+| Feedback                | | Schedule and complete a Feedback Code Review with your TA                                                                | **Friday, December 4, 8pm** (*)                            |
+| Code Review             | | (see `Code Review Scheduling Instructions <code-review-scheduling.html>`__)                                              |                                                            |
 +-------------------------+----------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Resubmission (Optional) | Address feedback received in Project 2                                                                                     | **Tuesday, December 8, 8pm** (*)                           |
++-------------------------+----------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
+
+(*) These dates may shift depending on when the Project 2 grading is available.
