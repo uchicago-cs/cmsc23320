@@ -223,7 +223,8 @@ Documentation
 
 Your submission must include a ``DOCUMENTATION.md`` file in the ``chirc/`` directory of your repository
 with some specific documentation about the code you have written. If you do not
-include this file, Gradescope will reject your submission entirely. If you do
+include this file, Gradescope will not run the tests on your submission (it will show a score of zero), and your
+submission will automatically receive a score of Needs Improvement. If you do
 include it, but the file does not provide the information we request below, this will
 be treated as a major issue in your submission.
 
