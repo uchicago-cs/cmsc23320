@@ -365,26 +365,22 @@
                   
   <section id="project-2-tips">
 <h1>Project 2 Tips<a class="headerlink" href="#project-2-tips" title="Link to this heading">#</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has not yet been updated for Autumn 2026.</p>
-</div>
 <p>Before you get started, make sure you’ve read through the <a class="reference external" href="../projects/started.html">Projects - Getting Started</a> page.</p>
 <section id="suggested-order-of-implementation">
 <h2>Suggested Order of Implementation<a class="headerlink" href="#suggested-order-of-implementation" title="Link to this heading">#</a></h2>
 <p>At first glance, it may seem like Project 2 requires coming up with an effectively complete implementation of TCP before you can test your code. This is a common pitfall in Project 2, that often leads some teams to write huge amounts of code without doing any testing, to then find that nothing is working when they finally start testing their TCP implementation.</p>
 <p>So, as you move on to Project 2, we suggest you set the following intermediate goals in Assignment 1 of chiTCP:</p>
 <ul class="simple">
-<li><p><strong>Pass the Connection Establishment tests</strong>. You can do so by implement the handling of APPLICATION_CONNECT in the CLOSED state (Hint: remember we showed you some basic code for this in the Project 2 lecture), and just enough of the packet arrival handler to implement the three-way handshake (this means you can skip everything related to processing data, FIN segments, etc.). This will ensure you are comfortable with the basics of chiTCP moving forward.</p></li>
-<li><p><strong>Pass some half-duplex tests with &lt;= 536 bytes</strong>. Write a function that processes the send buffer (and sends its contents) and flesh out enough of the packet arrival handler for you to pass some of the simpler tests. This will ensure the basic aspects of data transfer are working, as you do not yet need to worry about segmenting the send buffer (which means you can write your code under the assumption that everything in the send buffer gets sent in a single packet).</p></li>
+<li><p><strong>Pass the Connection Establishment tests</strong>. You can do so by implementing the handling of APPLICATION_CONNECT in the CLOSED state (Hint: remember we showed you some basic code for this in the Project 2 lecture), and just enough of the segment arrival handler to implement the three-way handshake (this means you can skip everything related to processing data, FIN segments, etc.). This will ensure you are comfortable with the basics of chiTCP moving forward.</p></li>
+<li><p><strong>Pass some half-duplex tests with &lt;= 536 bytes</strong>. Write a function that processes the send buffer (and sends its contents) and flesh out enough of the segment arrival handler for you to pass some of the simpler tests. This will ensure the basic aspects of data transfer are working, as you do not yet need to worry about segmenting the send buffer (which means you can write your code under the assumption that everything in the send buffer gets sent in a single segment).</p></li>
 <li><p><strong>Move on to half-duplex tests with &gt; 536 bytes</strong>. This will involve segmenting the send buffer correctly.</p></li>
 <li><p><strong>Move on to the echo tests</strong>. A lot of moving pieces have to be working correctly for data to transfer correctly in both directions.</p></li>
 <li><p><strong>Finally, pass the connection termination tests.</strong></p></li>
 </ul>
-<p>Dividing up the work in Assignment 1 of chiTCP is a bit tricky, since most of your work will involve writing the packet arrival handler (which can’t easily be broken down into pieces). We suggest you approach your collaboration on Project 2 as follows:</p>
+<p>Dividing up the work in Assignment 1 of chiTCP is a bit tricky, since most of your work will involve writing the segment arrival handler (which can’t easily be broken down into pieces). We suggest you approach your collaboration on Project 2 as follows:</p>
 <ul class="simple">
 <li><p><strong>Work together on the threeway handshake</strong>. This will ensure you are both comfortable with the basics of chiTCP before moving on to more complex parts of the project.</p></li>
-<li><p><strong>Be careful about dividing up the packet arrival handler</strong>. You can break it up into sections, but you should agree on a general structure first, and will need to coordinate very carefully as you make progress on it.</p></li>
+<li><p><strong>Be careful about dividing up the segment arrival handler</strong>. You can break it up into sections, but you should agree on a general structure first, and will need to coordinate very carefully as you make progress on it.</p></li>
 <li><p><strong>Avoid giving one person sole responsibility over a core aspect of the code</strong>. For example, don’t ask your project partner to write the function that processes the send buffer, and to report back in a few days. If that function doesn’t work, it will have a major impact on the rest of your code. It is better to work together on these or, at least, have joint ownership over that code (and make sure it gets done as early as possible)</p></li>
 <li><p><strong>In general, avoid a “there are N functions, let’s split them up” mentality</strong>. A team member can also be responsible for debugging tests, polishing the code, writing documentation, etc.</p></li>
 </ul>
@@ -399,8 +395,8 @@
 </li>
 <li><p>Approach the tests <em>incrementally</em></p>
 <ul>
-<li><p>Make sure you’re passing all the multitimer tests before you move on to retransmissions or the persist timer. Otherwise, if a retransmission/persist test fails, it will be hard to tell whether the error originates in your retransmission/persist code, or whether its a spurious error that originates in something incorrect in the multitimer.</p></li>
-<li><p>When you move on to retransmissions, there are several simple tests that involve dropping a single packet. Focus on those first, as they will be easier to debug.</p></li>
+<li><p>Make sure you’re passing all the multitimer tests before you move on to retransmissions or the persist timer. Otherwise, if a retransmission/persist test fails, it will be hard to tell whether the error originates in your retransmission/persist code, or whether it’s a spurious error that originates in something incorrect in the multitimer.</p></li>
+<li><p>When you move on to retransmissions, there are several simple tests that involve dropping a single segment. Focus on those first, as they will be easier to debug.</p></li>
 <li><p>Then, move onto the connection establishment/termination drop tests.</p></li>
 <li><p>Finally, see if you can pass the tests with multiple drops.</p></li>
 <li><p>Note: You should only attempt to debug the “random” tests if every other test (including from Assignment 1) is working correctly.</p></li>
@@ -412,10 +408,10 @@
 <h2>Interpreting RFC 9293<a class="headerlink" href="#interpreting-rfc-9293" title="Link to this heading">#</a></h2>
 <p>In this project, you will be implementing TCP, which is specified in <a class="reference external" href="http://tools.ietf.org/html/rfc9293">RFC 9293</a>. This is a modern version of the original specification of TCP in RFC 793,
 fixing multiple errata and ambiguities that have been identified over the years. As such,
-this RFC tends to be pretty clear regarding the expected behaviour of RFC. That said,
+this RFC tends to be pretty clear regarding the expected behaviour of TCP. That said,
 if you encounter any part of the RFC that you are unsure how to interpret, then ask on Ed Discussion: we will provide an ex cathedra ruling on how you should interpret the RFC.</p>
 <p>That said, there are parts of the RFC that <em>do</em> provide unambiguous formulas.
-Sometimes, students will tweak this formulas as they try to debug their code
+Sometimes, students will tweak these formulas as they try to debug their code
 (e.g., using &lt;= instead of &lt;). This may make your code work for the issue you
 are trying to resolve, but will probably cause issues down the road.</p>
 <p>Finally, it is important that you implement TCP exactly as specified in the RFC,
@@ -429,20 +425,20 @@ operations, but is not a good strategy for implementing all of TCP.</p>
 but you are not required to implement the ISS/IRS selection exactly as specified in the RFC. It is enough
 to choose a random number and, for ease of debugging, you may want to choose a random number ending in <code class="docutils literal notranslate"><span class="pre">00000</span></code> so you can more easily debug the sequence numbers in your transmissions.</p>
 </section>
-<section id="freeing-packets">
-<h2>Freeing packets<a class="headerlink" href="#freeing-packets" title="Link to this heading">#</a></h2>
+<section id="freeing-segments">
+<h2>Freeing segments<a class="headerlink" href="#freeing-segments" title="Link to this heading">#</a></h2>
 <p>Take into account that:</p>
 <ul class="simple">
-<li><p>You’re responsible for freeing any packets you create (i.e., any memory you allocate for
-a <code class="docutils literal notranslate"><span class="pre">tcp_packet_t</span></code> struct).</p></li>
-<li><p>You’re also responsible for freeing any packets you remove from the pending packets list.</p></li>
+<li><p>You’re responsible for freeing any segments you create (i.e., any memory you allocate for
+a <code class="docutils literal notranslate"><span class="pre">tcp_segment_t</span></code> struct).</p></li>
+<li><p>You’re also responsible for freeing any segments you remove from the pending segments list.</p></li>
 </ul>
-<p>In both cases, besides freeing the pointer to the <code class="docutils literal notranslate"><span class="pre">tcp_packet_t</span></code> struct, you also need to call
-<code class="docutils literal notranslate"><span class="pre">chitcp_tcp_packet_free</span></code> to free other memory associated with the memory (and you should do
-this before freeing the pointer to the tcp_packet_t struct).</p>
-<p>Also, take into account that <code class="docutils literal notranslate"><span class="pre">chitcpd_send_tcp_packet</span></code> records all the information necessary
-to send the packet. In other words, it is safe to free the packet after <code class="docutils literal notranslate"><span class="pre">chitcpd_send_tcp_packet</span></code>
-returns (doing so will not interfere with the packet being correctly sent).</p>
+<p>In both cases, besides freeing the pointer to the <code class="docutils literal notranslate"><span class="pre">tcp_segment_t</span></code> struct, you also need to call
+<code class="docutils literal notranslate"><span class="pre">chitcp_tcp_segment_free</span></code> to free other memory associated with the segment (and you should do
+this before freeing the pointer to the tcp_segment_t struct).</p>
+<p>Also, take into account that <code class="docutils literal notranslate"><span class="pre">chitcpd_send_tcp_segment</span></code> records all the information necessary
+to send the segment. In other words, it is safe to free the segment after <code class="docutils literal notranslate"><span class="pre">chitcpd_send_tcp_segment</span></code>
+returns (doing so will not interfere with the segment being correctly sent).</p>
 </section>
 <section id="tests-that-sometimes-pass-but-sometimes-don-t">
 <h2>Tests that sometimes pass, but sometimes don’t<a class="headerlink" href="#tests-that-sometimes-pass-but-sometimes-don-t" title="Link to this heading">#</a></h2>
@@ -454,38 +450,38 @@ application (like chitcp) can change from one run to another. This is specially
 apparent when changing logging levels, since the more verbose logging levels (like DEBUG
 and TRACE) effectively inject substantial delays when a thread has to print logs.</p>
 <p>For example, suppose you’ve established a connection, and peer A has to send 5 TCP
-packets to peer B, and that peer B sends an ACK packet for each of those packets.
-If you are running with no logging, B will probably send those packets right away so,
+segments to peer B, and that peer B sends an ACK segment for each of those segments.
+If you are running with no logging, B will probably send those segments right away so,
 from peer A’s perspective, the sequence of events could be something like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SEND</span> <span class="n">packet</span> <span class="mi">1</span>
-<span class="n">SEND</span> <span class="n">packet</span> <span class="mi">2</span>
-<span class="n">SEND</span> <span class="n">packet</span> <span class="mi">3</span>
-<span class="n">RECEIVE</span> <span class="n">ACK</span> <span class="n">of</span> <span class="n">packet</span> <span class="mi">1</span>
-<span class="n">SEND</span> <span class="n">packet</span> <span class="mi">4</span>
-<span class="n">RECEIVE</span> <span class="n">ACK</span> <span class="n">of</span> <span class="n">packet</span> <span class="mi">2</span>
-<span class="n">SEND</span> <span class="n">packet</span> <span class="mi">5</span>
-<span class="n">RECEIVE</span> <span class="n">ACK</span> <span class="n">of</span> <span class="n">packet</span> <span class="mi">3</span>
-<span class="n">RECEIVE</span> <span class="n">ACK</span> <span class="n">of</span> <span class="n">packet</span> <span class="mi">4</span>
-<span class="n">RECEIVE</span> <span class="n">ACK</span> <span class="n">of</span> <span class="n">packet</span> <span class="mi">5</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SEND</span> <span class="n">segment</span> <span class="mi">1</span>
+<span class="n">SEND</span> <span class="n">segment</span> <span class="mi">2</span>
+<span class="n">SEND</span> <span class="n">segment</span> <span class="mi">3</span>
+<span class="n">RECEIVE</span> <span class="n">ACK</span> <span class="n">of</span> <span class="n">segment</span> <span class="mi">1</span>
+<span class="n">SEND</span> <span class="n">segment</span> <span class="mi">4</span>
+<span class="n">RECEIVE</span> <span class="n">ACK</span> <span class="n">of</span> <span class="n">segment</span> <span class="mi">2</span>
+<span class="n">SEND</span> <span class="n">segment</span> <span class="mi">5</span>
+<span class="n">RECEIVE</span> <span class="n">ACK</span> <span class="n">of</span> <span class="n">segment</span> <span class="mi">3</span>
+<span class="n">RECEIVE</span> <span class="n">ACK</span> <span class="n">of</span> <span class="n">segment</span> <span class="mi">4</span>
+<span class="n">RECEIVE</span> <span class="n">ACK</span> <span class="n">of</span> <span class="n">segment</span> <span class="mi">5</span>
 </pre></div>
 </div>
 <p>On the other hand, if you’re running with heavy logging, B may take slightly longer to send back
 the acknowledgements (because it’s spending CPU time printing out logs), so the sequence
 of events could instead look like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SEND</span> <span class="n">packet</span> <span class="mi">1</span>
-<span class="n">SEND</span> <span class="n">packet</span> <span class="mi">2</span>
-<span class="n">SEND</span> <span class="n">packet</span> <span class="mi">3</span>
-<span class="n">SEND</span> <span class="n">packet</span> <span class="mi">4</span>
-<span class="n">SEND</span> <span class="n">packet</span> <span class="mi">5</span>
-<span class="n">RECEIVE</span> <span class="n">ACK</span> <span class="n">of</span> <span class="n">packet</span> <span class="mi">1</span>
-<span class="n">RECEIVE</span> <span class="n">ACK</span> <span class="n">of</span> <span class="n">packet</span> <span class="mi">2</span>
-<span class="n">RECEIVE</span> <span class="n">ACK</span> <span class="n">of</span> <span class="n">packet</span> <span class="mi">3</span>
-<span class="n">RECEIVE</span> <span class="n">ACK</span> <span class="n">of</span> <span class="n">packet</span> <span class="mi">4</span>
-<span class="n">RECEIVE</span> <span class="n">ACK</span> <span class="n">of</span> <span class="n">packet</span> <span class="mi">5</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SEND</span> <span class="n">segment</span> <span class="mi">1</span>
+<span class="n">SEND</span> <span class="n">segment</span> <span class="mi">2</span>
+<span class="n">SEND</span> <span class="n">segment</span> <span class="mi">3</span>
+<span class="n">SEND</span> <span class="n">segment</span> <span class="mi">4</span>
+<span class="n">SEND</span> <span class="n">segment</span> <span class="mi">5</span>
+<span class="n">RECEIVE</span> <span class="n">ACK</span> <span class="n">of</span> <span class="n">segment</span> <span class="mi">1</span>
+<span class="n">RECEIVE</span> <span class="n">ACK</span> <span class="n">of</span> <span class="n">segment</span> <span class="mi">2</span>
+<span class="n">RECEIVE</span> <span class="n">ACK</span> <span class="n">of</span> <span class="n">segment</span> <span class="mi">3</span>
+<span class="n">RECEIVE</span> <span class="n">ACK</span> <span class="n">of</span> <span class="n">segment</span> <span class="mi">4</span>
+<span class="n">RECEIVE</span> <span class="n">ACK</span> <span class="n">of</span> <span class="n">segment</span> <span class="mi">5</span>
 </pre></div>
 </div>
 <p>Notice how the events still happen in the correct order (the delays introduced by logging will
-not result in packets being delivered <em>out of order</em>, which is something that would happen
+not result in segments being delivered <em>out of order</em>, which is something that would happen
 at the network level), but the <em>interleaving</em> of the events is different. A correct implementation
 of TCP should be able to handle either sequence of events, but
 your code could have a subtle bug that only manifests itself when events happen in a particular
@@ -510,8 +506,8 @@ particularly given that you’ll have a chance to review your submission. That i
 could be spent on polishing up your code, documenting it, etc. which is likely to have a bigger
 impact on your Code Quality score for this project.</p>
 <p>That said, if you are in a situation where you consistently get a high score on the tests
-under a specific logging level, you are allowed to mention this in the README file in the root of
-your repository, requesting
+under a specific logging level, you are allowed to mention this in the
+“Other code details / requests for feedback” section of your <code class="docutils literal notranslate"><span class="pre">DOCUMENTATION.md</span></code> file, requesting
 that the graders run the tests under that logging level (you may <em>not</em> request that they run
 some tests under one logging level, and other tests under a different logging level). Please
 make sure to also include the output of <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">grade</span></code>, so the graders can ensure they’re
@@ -543,12 +539,17 @@ you need to check for is whether the <em>advertised window</em> ever becomes zer
 handles send(), recv(), connect(), etc.). The socket layer is the one that calls your <code class="docutils literal notranslate"><span class="pre">tcp_data_init</span></code>
 function so, in the second part of the project, your timer thread will inherit the same name unless
 you specifically set a new name for the timer thread. To make your logs clearer, you can do so by
-setting the name of the timer thread with this code (at the start of the timer thread function):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">char</span> <span class="n">thread_name</span><span class="p">[</span><span class="mi">17</span><span class="p">];</span>
-<span class="n">snprintf</span> <span class="p">(</span><span class="n">thread_name</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="s2">"timer-</span><span class="si">%d</span><span class="s2">"</span><span class="p">,</span> <span class="n">ptr_to_fd</span><span class="p">(</span><span class="n">si</span><span class="p">,</span> <span class="n">entry</span><span class="p">));</span>
-<span class="n">pthread_setname_np</span><span class="p">(</span><span class="n">pthread_self</span><span class="p">(),</span> <span class="n">thread_name</span><span class="p">);</span>
+setting the name of the timer thread in <code class="docutils literal notranslate"><span class="pre">tcp_data_init</span></code> (right after calling <code class="docutils literal notranslate"><span class="pre">mt_init</span></code>), since
+that is where the socket number is available (the timer thread itself has no access to <code class="docutils literal notranslate"><span class="pre">si</span></code> or <code class="docutils literal notranslate"><span class="pre">entry</span></code>).
+For example, assuming your <code class="docutils literal notranslate"><span class="pre">multi_timer_t</span></code> struct stores the <code class="docutils literal notranslate"><span class="pre">pthread_t</span></code> of its thread in
+a field called <code class="docutils literal notranslate"><span class="pre">thread</span></code>, and that your multitimer is stored in a <code class="docutils literal notranslate"><span class="pre">tcp_data_t</span></code> field called <code class="docutils literal notranslate"><span class="pre">mt</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">char</span> <span class="n">thread_name</span><span class="p">[</span><span class="mi">16</span><span class="p">];</span>
+<span class="n">snprintf</span><span class="p">(</span><span class="n">thread_name</span><span class="p">,</span> <span class="n">sizeof</span><span class="p">(</span><span class="n">thread_name</span><span class="p">),</span> <span class="s2">"timer-</span><span class="si">%d</span><span class="s2">"</span><span class="p">,</span> <span class="n">ptr_to_fd</span><span class="p">(</span><span class="n">si</span><span class="p">,</span> <span class="n">entry</span><span class="p">));</span>
+<span class="n">set_thread_name</span><span class="p">(</span><span class="n">tcp_data</span><span class="o">-&gt;</span><span class="n">mt</span><span class="o">.</span><span class="n">thread</span><span class="p">,</span> <span class="n">thread_name</span><span class="p">);</span>
 </pre></div>
 </div>
+<p>(<code class="docutils literal notranslate"><span class="pre">set_thread_name</span></code> is declared in <code class="docutils literal notranslate"><span class="pre">include/chitcp/utils.h</span></code>. Take into account that, on macOS,
+a thread can only set its own name, so this will have no effect there.)</p>
 <p>That should make the logs a bit easier to interpret, because you’ll know when a message is coming
 from the socket layer and when it’s coming from the timer thread.</p>
 </section>
@@ -562,10 +563,10 @@ any of the other tests, it is likely you will also fail the random tests). Pleas
 it will be hard to help you with the random tests if you are not already passing all the other
 tests; when this happens, please ask for help on those (non-random) tests first.</p>
 <p>Please note that the random tests are actually deterministic, because they use the same random
-seed every time. However, the packets are dropped according to a random number generator, not
+seed every time. However, the segments are dropped according to a random number generator, not
 according to a specific well-defined situation (unlike the other unreliability tests, which
 test specific situations like “dropping the SYN/ACK in the three-way handshake”, “dropping
-only one packet during the data transfer”, etc.). Basically, if you can pass all the random
+only one segment during the data transfer”, etc.). Basically, if you can pass all the random
 tests, that probably means your implementation is pretty solid.</p>
 </section>
 <section id="the-rtt-tests">
@@ -585,14 +586,14 @@ and calling either of them a second time can produce unexpected results.</p></li
 <li><p><strong>Worrying about functionality that is handled in the socket or network layers</strong>: Since you are writing a TCP implementation that interacts with both a socket layer and a network layer, it can sometimes be challenging to tell what is the responsibility of each layer. In the past, some students have spent a considerable amount of effort worrying about things that were actually already handled for them in other layers, most notably:</p>
 <ul>
 <li><p><em>The source/destination ports</em>: You should not set or modify these fields of the TCP header. These
-fields are actually set by <code class="docutils literal notranslate"><span class="pre">chitcpd_tcp_packet_create</span></code>, which will look at the ports associated with the socket,
+fields are actually set by <code class="docutils literal notranslate"><span class="pre">chitcpd_tcp_segment_create</span></code>, which will look at the ports associated with the socket,
 and will fill in the correct ports in the TCP header. Additionally, none of your code should depend on the
 value of the source/destination ports; the socket layer is in charge of delivering data to the correct process
 (based on the destination port), and is also in charge of assigning
 source ports (either because the port is specified in a call to <code class="docutils literal notranslate"><span class="pre">chisocket_bind</span></code> or because one is selected by
 the socket layer in <code class="docutils literal notranslate"><span class="pre">chisocket_connect</span></code> when creating an active socket).</p>
 <p>Take into account that, even if you don’t explicitly manipulate the port fields of the TCP header,
-you will destroy that information if you zero out a TCP header <em>after</em> calling <code class="docutils literal notranslate"><span class="pre">chitcpd_tcp_packet_create</span></code>.
+you will destroy that information if you zero out a TCP header <em>after</em> calling <code class="docutils literal notranslate"><span class="pre">chitcpd_tcp_segment_create</span></code>.
 If you do this, you will likely get the following error in the chitcpd logs: <code class="docutils literal notranslate"><span class="pre">&quot;No</span> <span class="pre">socket</span> <span class="pre">listening</span> <span class="pre">on</span> <span class="pre">port</span> <span class="pre">0&quot;</span></code></p>
 </li>
 <li><p><em>Reporting errors back to the application layer</em>: RFC 9293 specifies, at various points, that certain errors should
@@ -614,9 +615,9 @@ above states, the socket layer would return an error (and this event would never
 functions).</p>
 </li>
 <li><p><em>Passive sockets</em>: The setup and management of passive sockets is handled by the socket layer, including the
-creation of a new active socket when a passive socket receives a SYN packet. The sockets you will deal will
+creation of a new active socket when a passive socket receives a SYN segment. The sockets you will deal will
 in your implementation will always be active sockets, resulting either from an <code class="docutils literal notranslate"><span class="pre">APPLICATION_CONNECT</span></code> event or
-from a passive socket spawning an active socket after receiving a SYN packet.</p></li>
+from a passive socket spawning an active socket after receiving a SYN segment.</p></li>
 </ul>
 </li>
 <li><p><strong>Not initializing the sequence number in the buffer</strong>: You need to initialize the initial sequence number of
@@ -629,16 +630,16 @@ them to ISS+1 and IRS+1.</p>
 </li>
 <li><p><strong>Implementing stop-and-wait instead of sliding window, or ignoring the window size</strong>: In sliding window,
 you send as much data as allowed by the receiver’s window (after accounting for any data that may already
-be in flight). If you send one packet and wait for an ACK before sending the next one, you’re implementing
-stop-and-wait, not sliding window. If, on the other hand, you do send multiple packets at once, but send
+be in flight). If you send one segment and wait for an ACK before sending the next one, you’re implementing
+stop-and-wait, not sliding window. If, on the other hand, you do send multiple segments at once, but send
 more data than allowed by the window, this will likely result in undefined behaviour. An easy way to
 check this is to see whether, at the start of the tests that send more than 4KB, your code send only
 4KB and doesn’t send more data until it receives a first ACK. If you send (for example) 32KB all at
 once, then you’re ignoring the windows size.</p></li>
-<li><p><strong>Sending only one packet when segmenting</strong>: Whenever you process the send buffer, you should always
-send as many packets as possible without exceeding the receiver’s advertised window. A common pitfall
+<li><p><strong>Sending only one segment when segmenting</strong>: Whenever you process the send buffer, you should always
+send as many segments as possible without exceeding the receiver’s advertised window. A common pitfall
 is to correctly identify that the send buffer contains more than one MSS of data, but then sending
-only that first MSS, instead of sending as many packets allowed by SND.WND.</p></li>
+only that first MSS, instead of sending as many segments allowed by SND.WND.</p></li>
 <li><p><strong>Sending only when the APPLICATION_SEND event happens</strong>: The <code class="docutils literal notranslate"><span class="pre">APPLICATION_SEND</span></code> event simply
 informs TCP that the application has called <code class="docutils literal notranslate"><span class="pre">send()</span></code>, which means there is likely new data to
 send, and you should send it if possible. However, this is <em>not</em> the only time you’ll want to
@@ -647,25 +648,25 @@ if the window shifts or grows), it may be possible for you to send more data to 
 It is a good strategy to write a separate function that handles this task (“check the send
 buffer and determine whether any data can be sent and, if so, send it”), and call it not just
 from the <code class="docutils literal notranslate"><span class="pre">APPLICATION_SEND</span></code> handler but also whenever SND.UNA or SND.WND change.</p></li>
-<li><p><strong>Not setting/reading the window variables</strong>: Every TCP packet you send must include a valid
+<li><p><strong>Not setting/reading the window variables</strong>: Every TCP segment you send must include a valid
 value for SEG.WND. This is true regardless of whether the size of the receive buffer has
-changed since the last TCP packet, and regardless of whether the packet carries a payload
+changed since the last TCP segment, and regardless of whether the segment carries a payload
 or not. The value of SEG.WND is always set to the available space in the receive buffer.</p>
-<p>Similarly, the value of SND.WND is always updated when you receive a valid TCP packet.</p>
+<p>Similarly, the value of SND.WND is always updated when you receive a valid TCP segment.</p>
 </li>
-<li><p><strong>Not delaying the FIN packet</strong>: When an <code class="docutils literal notranslate"><span class="pre">APPLICATION_CLOSE</span></code> event happens, you <em>only</em>
-send a FIN packet if the send buffer is empty. If the send buffer still has
-unacknowledged/unsent data, you don’t send the FIN packet until the send buffer is empty.</p>
+<li><p><strong>Not delaying the FIN segment</strong>: When an <code class="docutils literal notranslate"><span class="pre">APPLICATION_CLOSE</span></code> event happens, you <em>only</em>
+send a FIN segment if the send buffer is empty. If the send buffer still has
+unacknowledged/unsent data, you don’t send the FIN segment until the send buffer is empty.</p>
 <p>Similarly, it is not enough to simply process your send buffer from <code class="docutils literal notranslate"><span class="pre">APPLICATION_CLOSE</span></code>
 to clear the buffer, because the receiver’s window may not allow you to do this at that
 point. So, you have to take into account that the send buffer may not become empty
 until <em>after</em> you’ve processed the <code class="docutils literal notranslate"><span class="pre">APPLICATION_CLOSE</span></code> event.</p>
 </li>
-<li><p><strong>Not checking the return value of pthread_cond_timed_wait</strong>: <code class="docutils literal notranslate"><span class="pre">pthread_cond_timed_wait</span></code>
+<li><p><strong>Not checking the return value of pthread_cond_timedwait</strong>: <code class="docutils literal notranslate"><span class="pre">pthread_cond_timedwait</span></code>
 will return <code class="docutils literal notranslate"><span class="pre">EINVAL</span></code> under certain circumstances that you can easily find yourself in.
 The most common one is providing an invalid value for <code class="docutils literal notranslate"><span class="pre">abstime</span></code>, usually by
-setting the <code class="docutils literal notranslate"><span class="pre">tv_nsec</span></code> field to a value less than 0 or greater than 1,000,000,000.
-So, make sure to, at the very least, <code class="docutils literal notranslate"><span class="pre">chilog</span></code> any time <code class="docutils literal notranslate"><span class="pre">pthread_cond_timed_wait</span></code>
+setting the <code class="docutils literal notranslate"><span class="pre">tv_nsec</span></code> field to a value less than 0 or greater than or equal to 1,000,000,000.
+So, make sure to, at the very least, <code class="docutils literal notranslate"><span class="pre">chilog</span></code> any time <code class="docutils literal notranslate"><span class="pre">pthread_cond_timedwait</span></code>
 returns a value other than <code class="docutils literal notranslate"><span class="pre">0</span></code> or <code class="docutils literal notranslate"><span class="pre">ETIMEDOUT</span></code>, as that may alert you to issues
 with your code that can make your multitimer fail.</p></li>
 </ul>
@@ -698,7 +699,7 @@ with your code that can make your multitimer fail.</p></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#suggested-order-of-implementation">Suggested Order of Implementation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpreting-rfc-9293">Interpreting RFC 9293</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-initial-sequence-numbers">Selecting Initial Sequence Numbers</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#freeing-packets">Freeing packets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#freeing-segments">Freeing segments</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tests-that-sometimes-pass-but-sometimes-don-t">Tests that sometimes pass, but sometimes don’t</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pick-your-battles-a-k-a-it-is-ok-to-not-pass-100-of-the-tests">Pick your battles (a.k.a.: “it is ok to not pass 100% of the tests”)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dealing-with-zero-windows">Dealing with Zero Windows</a></li>
