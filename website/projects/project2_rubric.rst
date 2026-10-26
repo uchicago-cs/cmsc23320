@@ -28,7 +28,8 @@ for each submission:
   - *Documentation*: You will be required to submit certain documentation on
     your code (the exact documentation is described below)
 
-Furthermore, you will complete two code reviews as part of this project.
+Furthermore, you will complete one or two code reviews as part of this project
+(see `Code Reviews`_ below).
 
 Project Timeline
 ----------------
@@ -319,7 +320,8 @@ There are a couple of other issues that we care about across all projects:
 Code Reviews
 ------------
 
-In this project, you will have to complete two code reviews. You must schedule
+In this project, you will have to complete a Pre-submission Code Review and, depending
+on your Project 2B scores, a Feedback Code Review. You must schedule
 and complete these code reviews no later than the due date specified in the
 “Project Timeline” above (see `Code Review Scheduling Instructions <code-review-scheduling.html>`__
 for instructions on how to schedule your code review).
@@ -341,13 +343,22 @@ this code review will be structured as follows:
 - Finally, we will go over any issues we identified.
 
 **You do not need to wait until you have a near-complete version of Project 2B to
-request this code review.** We recommend you schedule this code review after you
-complete Project 2A, and once you’ve had a chance to read through the requirements
-of Project 2B. That said, you can also request this code review before the Project
-2A deadline, to go over your code before you submit Project 2A.
+request this code review.** We recommend you schedule this code review as soon as you have
+a reasonably complete draft of Project 2A, so you can both get feedback on your 2A
+implementation, and also ask questions about what remains to be done in Project 2B.
 
 Feedback Code Review
 ~~~~~~~~~~~~~~~~~~~~
+
+This code review is only required if you did not score two S's (Completeness and Code Quality)
+in Project 2B. In that case, you must schedule your Feedback Code Review to take place after
+Project 2B grading has been released, and no later than the due date specified in the
+“Project Timeline” above.
+
+If you scored two S's in Project 2B, you will automatically receive an S in the
+Project 2 Feedback Code Review. You are still welcome to request a Feedback Code Review
+to receive additional feedback on your project, but it must take place after the
+Project 2 Resubmission deadline.
 
 The purpose of this code review is to go over the grading of your Projects 2A and 2B
 submissions, and deliver additional feedback on your submissions. If you did not score
@@ -367,7 +378,8 @@ Scoring and Other Requirements
 
 Code reviews are graded on completion only; for the purposes of the grading Bundles
 listed in the syllabus, completing a code review earns a Satisfactory, and not
-completing a code review earns a Needs Improvement.
+completing a code review earns a Needs Improvement. If you score two S's in
+Project 2B, you will automatically receive a Satisfactory in the Feedback Code Review.
 
 Code reviews are conducted in-person, and both students in a team must attend and
 participate. In the Pre-submission Code Review, where we will ask you to walk us

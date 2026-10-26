@@ -28,7 +28,8 @@ for each submission:
   - *Documentation*: You will be required to submit certain documentation on
     your code (the exact documentation is described below)
 
-Furthermore, you will complete two code reviews as part of this project.
+Furthermore, you will complete one or two code reviews as part of this project
+(see `Code Reviews`_ below).
 
 This project also has a "Warm-up" submission. This submission does not directly contribute
 to your final grade but, if you complete it, you will be more likely to get an S in Project 1A.
@@ -306,7 +307,8 @@ There are a couple of other issues that we care about across all projects:
 Code Reviews
 ------------
 
-In this project, you will have to complete two code reviews. You must schedule
+In this project, you will have to complete a Pre-submission Code Review and, depending
+on your Project 1B scores, a Feedback Code Review. You must schedule
 and complete these code reviews no later than the due date specified in the
 “Project Timeline” above (see `Code Review Scheduling Instructions <code-review-scheduling.html>`__
 for instructions on how to schedule your code review).
@@ -336,6 +338,16 @@ of Project 1B. That said, you can also request this code review before the Proje
 Feedback Code Review
 ~~~~~~~~~~~~~~~~~~~~
 
+This code review is only required if you did not score two S's (Completeness and Code Quality)
+in Project 1B. In that case, you must schedule your Feedback Code Review to take place after
+Project 1B grading has been released, and no later than the due date specified in the
+“Project Timeline” above.
+
+If you scored two S's in Project 1B, you will automatically receive an S in the
+Project 1 Feedback Code Review. You are still welcome to request a Feedback Code Review
+to receive additional feedback on your project, but it must take place after the
+Project 1 Resubmission deadline.
+
 The purpose of this code review is to go over the grading of your Projects 1A and 1B
 submissions, and deliver additional feedback on your submissions. If you did not score
 a *Satisfactory* in Code Quality, we will also go over the items that we would expect
@@ -354,7 +366,8 @@ Scoring and Other Requirements
 
 Code reviews are graded on completion only; for the purposes of the grading Bundles
 listed in the syllabus, completing a code review earns a Satisfactory, and not
-completing a code review earns a Needs Improvement.
+completing a code review earns a Needs Improvement. If you score two S's in
+Project 1B, you will automatically receive a Satisfactory in the Feedback Code Review.
 
 Code reviews are conducted in-person, and both students in a team must attend and
 participate. In the Pre-submission Code Review, where we will ask you to walk us

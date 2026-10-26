@@ -90,6 +90,9 @@ There are a total of five code reviews throughout the quarter:
   ask questions they have going into the final submission of the project.
 - **Feedback Code Reviews** (Projects 1 and 2): After Project 1B and 2B are graded,
   students must schedule and complete a code review to receive feedback on their work.
+  This code review is only required if you did not score two S's (Completeness and
+  Code Quality) in Project 1B or 2B; if you did, you will automatically receive
+  an S in that Feedback Code Review.
 
 Code reviews are graded on completion only. That said, we reserve the right to
 ask individual students or teams of students to undergo additional code reviews
@@ -218,6 +221,8 @@ There are a total of 25 SNU scores in this class:
   scores: one for Completeness and one for Code Quality.
 - **Checkpoint Exams**: There are ten checkpoint exams, each contributing one SNU score.
 - **Code Reviews**: There are five code reviews. Completing a code review earns an S on the code review; not completing it earns an N.
+  If you score two S's in Project 1B (or 2B), you will automatically receive an S in the
+  Project 1 (or 2) Feedback Code Review.
 
 These scores are distributed into 10 bundles:
 
