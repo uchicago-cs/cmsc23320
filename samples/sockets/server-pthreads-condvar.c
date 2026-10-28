@@ -111,6 +111,9 @@ int main(int argc, char *argv[])
     if ((rc = getaddrinfo(NULL, "23320", &hints, &res)) != 0)
     {
         fprintf(stderr, "getaddrinfo() failed: %s\n", gai_strerror(rc));
+        pthread_mutex_destroy(&ctx->lock);
+        pthread_cond_destroy(&ctx->cv_hello_rcvd);
+        free(ctx);
         return EXIT_FAILURE;
     }
 
@@ -151,6 +154,9 @@ int main(int argc, char *argv[])
     if (p == NULL)
     {
         fprintf(stderr, "Could not find a socket to bind to.\n");
+        pthread_mutex_destroy(&ctx->lock);
+        pthread_cond_destroy(&ctx->cv_hello_rcvd);
+        free(ctx);
         return EXIT_FAILURE;
     }
 
@@ -175,6 +181,12 @@ int main(int argc, char *argv[])
         wa->state = STARTING;
         wa->main_waiting = true;
 
+        /* ADDED: We lock ctx->lock before creating the worker thread. This is not
+         * strictly necessary: if the worker thread finished before we got to the
+         * while loop below, we would see that wa->state is no longer STARTING
+         * (because we check it while holding the lock) and would not wait at all.
+         * Locking first just means that the worker thread can't change wa->state
+         * until we are already waiting on the condition variable. */
         pthread_mutex_lock(&ctx->lock);
         if (pthread_create(&worker_thread, NULL, service_single_client, wa) != 0)
         {
@@ -187,7 +199,14 @@ int main(int argc, char *argv[])
 
         /* ADDED: If a timeout was specified, we compute the deadline (pthread_cond_timedwait
          * expects an absolute time, not a duration) *before* we start waiting. If we computed
-         * it inside the loop, every spurious wakeup would restart the timeout from scratch. */
+         * it inside the loop, every spurious wakeup would restart the timeout from scratch.
+         *
+         * Note: by default, pthread_cond_timedwait measures the deadline against CLOCK_REALTIME,
+         * the system's wall clock. If the system clock is changed while we wait (e.g., by NTP),
+         * the timeout will be longer or shorter than intended. On Linux, this can be avoided by
+         * initializing the condition variable with pthread_condattr_setclock() to use
+         * CLOCK_MONOTONIC (and using CLOCK_MONOTONIC here too), but macOS does not support
+         * pthread_condattr_setclock(), so we stick to the default here. */
         struct timespec ts;
         clock_gettime(CLOCK_REALTIME, &ts);
         ts.tv_sec += timeout;
@@ -198,7 +217,7 @@ int main(int argc, char *argv[])
         {
             if(timeout == 0)
             {
-                /* If not timeout is specified, we use pthread_cond_wait */
+                /* If no timeout is specified, we use pthread_cond_wait */
                 pthread_cond_wait(&ctx->cv_hello_rcvd, &ctx->lock);
             }
             else

@@ -44,7 +44,7 @@ void *hello_thread_func(void *args)
     int rc;
     struct timespec ts;
 
-    /* Thread loop. We keep looking until ctx->active is false */
+    /* Thread loop. We keep looping until ctx->active is false */
     pthread_mutex_lock(&ctx->lock);
     while (ctx->active)
     {
@@ -78,7 +78,7 @@ int main(void)
     pthread_t hello_thread;
     ctx_t *ctx;
 
-    /* Allocate an initialize the context object */
+    /* Allocate and initialize the context object */
     ctx = calloc(1, sizeof(ctx_t));
     if (ctx == NULL)
     {
@@ -93,6 +93,8 @@ int main(void)
     if (pthread_create(&hello_thread, NULL, hello_thread_func, ctx) != 0)
     {
         perror("Could not create thread");
+        pthread_mutex_destroy(&ctx->lock);
+        pthread_cond_destroy(&ctx->cv);
         free(ctx);
         return EXIT_FAILURE;
     }
@@ -103,8 +105,8 @@ int main(void)
 
     /* Switch ctx->active to false, and signal "hello thread" */
     pthread_mutex_lock(&ctx->lock);
-    pthread_cond_signal(&ctx->cv);
     ctx->active = false;
+    pthread_cond_signal(&ctx->cv);
     pthread_mutex_unlock(&ctx->lock);
 
     /* Join the "hello thread" */
