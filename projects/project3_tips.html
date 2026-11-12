@@ -365,36 +365,33 @@
                   
   <section id="project-3-tips">
 <h1>Project 3 Tips<a class="headerlink" href="#project-3-tips" title="Link to this heading">#</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has not yet been updated for Autumn 2026.</p>
-</div>
 <p>Before you get started, make sure you’ve read through the <a class="reference external" href="../projects/started.html">Projects - Getting Started</a> page.</p>
-<section id="resetting-mininet">
-<h2>Resetting Mininet<a class="headerlink" href="#resetting-mininet" title="Link to this heading">#</a></h2>
-<p>If you are running the automated tests, and start getting errors like these inside the Docker container:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ne">Exception</span><span class="p">:</span> <span class="n">Error</span> <span class="n">creating</span> <span class="n">interface</span> <span class="n">pair</span> <span class="p">(</span><span class="n">r1</span><span class="o">-</span><span class="n">eth1</span><span class="p">,</span><span class="n">s1001</span><span class="o">-</span><span class="n">eth1</span><span class="p">):</span> <span class="n">RTNETLINK</span> <span class="n">answers</span><span class="p">:</span> <span class="n">File</span> <span class="n">exists</span>
-</pre></div>
-</div>
-<p>Try running this inside the Docker container:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mn</span> <span class="o">-</span><span class="n">c</span>
-</pre></div>
-</div>
-<p>This will reset Mininet to a clean configuration. Next, try re-running the chirouter and test commands as usual.</p>
+<section id="leftover-docker-containers">
+<h2>Leftover Docker containers<a class="headerlink" href="#leftover-docker-containers" title="Link to this heading">#</a></h2>
+<p>chirouter can only be connected to one instance of Mininet at a time. If you close a
+terminal without exiting Mininet (by pressing Control-D at the <code class="docutils literal notranslate"><span class="pre">mininet&gt;</span></code> prompt),
+the Docker container may keep running in the background, and will remain connected
+to chirouter. If that happens, the next time you run <code class="docutils literal notranslate"><span class="pre">run-docker</span></code>, Mininet will
+stop after about 10 seconds with an error message saying that chirouter accepted the
+connection, but did not respond.</p>
+<p>To fix this, you can see the running containers with <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span></code> (or in the “Containers” section
+of Docker Desktop), and stop a container with <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">rm</span> <span class="pre">-f</span> <span class="pre">CONTAINER</span></code>, where
+<code class="docutils literal notranslate"><span class="pre">CONTAINER</span></code> is the container ID or name shown by <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span></code>. Then, re-run chirouter
+and <code class="docutils literal notranslate"><span class="pre">run-docker</span></code> as usual.</p>
 </section>
 <section id="always-create-protocol-headers-from-scratch">
 <h2>Always create protocol headers from scratch<a class="headerlink" href="#always-create-protocol-headers-from-scratch" title="Link to this heading">#</a></h2>
 <p>Whenever you are creating a protocol header, it is good practice to create it from scratch, instead of trying to reuse
 an existing header. For example, suppose you receive an IP datagram that will cause an ICMP reply to be sent. You may
 be tempted to take the IP header, make any necessary modifications in-place, and create a new payload. This is very
-error-prone, specially if you do this at various points in your code. It is better to have a separate function
+error-prone, especially if you do this at various points in your code. It is better to have a separate function
 that will create a new protocol header, forcing you to think about the exact values you need to provide
 in every field of the header, than to try to reuse existing headers.</p>
 <p>Note: this does not apply to IP forwarding, where the existing IP header is kept largely intact, except for some
 well-defined modifications.</p>
 <p>Finally, take into account that the chirouter <a class="reference external" href="https://chi.cs.uchicago.edu/chirouter/implementing.html">Implementation Guide</a>
 includes a code sample
-(in the “The logging functions” section) that provides an example of how
+(in the “Accessing/Creating Protocol Headers” section) that provides an example of how
 an ICMP message would be created from scratch.</p>
 </section>
 <section id="using-wireshark-to-analyze-the-capture-files">
@@ -403,6 +400,9 @@ an ICMP message would be created from scratch.</p>
 not by doing a live capture) and then open it with Wireshark. If there are any issues in the Ethernet/IP/ICMP/ARP messages you are
 generating, Wireshark will likely highlight them for you, which will make it easier to catch these
 kind of issues.</p>
+<p>Take into account that chirouter only finishes writing the capture file when it exits normally,
+so make sure you stop chirouter by pressing Control-C before opening the capture file
+in Wireshark.</p>
 <p>Take into account that, by far, the most common issue is incorrectly computing a checksum somewhere.
 This issue is particularly hard to catch because, if you include an incorrect checksum somewhere,
 your message will be silently dropped by tools like ping, traceroute, etc. In other words, you may
@@ -468,7 +468,7 @@ network order to host order)</p></li>
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resetting-mininet">Resetting Mininet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leftover-docker-containers">Leftover Docker containers</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#always-create-protocol-headers-from-scratch">Always create protocol headers from scratch</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-wireshark-to-analyze-the-capture-files">Using Wireshark to analyze the capture files</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#asking-questions">Asking questions</a></li>

@@ -1,0 +1,47 @@
+.navbar-default {
+    background-color: maroon;
+}
+
+
+a {
+    color: #155F83;
+}
+
+a:hover {
+    color: #20364E;
+}
+
+*[id]:before {
+    display: block;
+    content: " ";
+    margin-top: -75px;
+    height: 75px;
+    visibility: hidden;
+}
+
+navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
+    background-color: #9f2425;
+    color: #ffffff;
+}
+
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+    background-color: #9f2425;
+}
+
+.pager li>a, .pager li>span {
+    background-color: maroon;
+}
+
+.pager li>a:hover {
+    background-color: #9f2425;
+}
+
+.main-panels {
+    padding-top: 15px;
+}
+
+.highlight-ipython .highlight pre {
+    background-color: #eeffcc;
+    color: #000000;
+    font-weight: normal;
+}
