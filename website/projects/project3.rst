@@ -1,86 +1,104 @@
 Project 3: chirouter
 --------------------
 
-.. warning::
-   This page has not yet been updated for Autumn 2026.
-
 In this project you will be implementing a simple IP router capable of routing IPv4 datagrams between multiple networks. This router will have a static routing table, so you will not have to deal with implementing a routing protocol like RIP or OSPF; instead, the project will focus on the routing of IP datagrams. While, at a high level, this just involves receiving IP datagrams and figuring out what interface they should be sent on, this requires building additional functionality before you can actually start routing IP datagrams.
 
 Please refer to the following documents to complete this project:
 
-- `chirouter specification <http://chi.cs.uchicago.edu/chirouter/>`__
+- Make sure you've read our :ref:`Getting Started <project_started>` page.
+  That page also includes instructions on how to request your team repo.
+- `chirouter specification <http://chi.cs.uchicago.edu/chirouter/>`__: In this project,
+  you will be implementing the entire chirouter assignment.
 - `Project 3 rubric <project3_rubric.html>`__
 - `Project 3 tips <project3_tips.html>`__
 
-Take into account that this project requires using a network simulator that
-needs to be run with root privileges on a Linux machine. For students using
-Windows or Mac, we provide a Docker container that you can use to run
-the network simulator on your computer.
+Take into account that this project requires using a network simulator (Mininet) that
+needs to be run with root privileges on a Linux machine. To make this easier, we provide
+a Docker container that you will use to run the network simulator on your computer
+(regardless of whether you are using Linux, macOS, or Windows). The chirouter documentation
+explains how to `install and run <http://chi.cs.uchicago.edu/chirouter/installing.html>`__
+chirouter and the Docker container.
 
-Submission Timeline
-~~~~~~~~~~~~~~~~~~~
+Project Timeline
+~~~~~~~~~~~~~~~~
 
-This project has one required submission, and an optional resubmission:
+This project has the following timeline:
 
 .. include:: project3_timeline.txt
 
 Please see `Project 3 rubric <project3_rubric.html>`__ for more details on how your submission will be graded.
 
-Initializing your Project 3 Repository
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Initializing your Team Repository for Project 3
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Make sure that you have read the :ref:`Getting Started <project_started>` page
 before following the instructions below.
 
 **One-time setup instructions**
 
-Only one team member needs to run these commands. Create an empty directory and, inside that
-directory run the following commands. In the commands below, ``$REPO_URL`` refers to the
-SSH URL of your repository. To get this URL, log into GitHub and navigate to your
-project repository. Then, under "Quick setup — if you’ve done this kind of thing before",
-make sure the "SSH" button is selected, and copy the URL that appears next to it.
-It should look something like this: ``git@github.com:uchicago-cmsc23320-aut-24/chirc-p1-jdoe-jrandom.git``
+Only one team member needs to run these commands. In the commands below, ``$REPO_URL`` refers to the
+SSH URL of your repository. To get this URL, log into the `CS GitLab server <https://gitlab.cs.uchicago.edu/>`__
+and navigate to your project repository (you can also find a direct link from the
+`CS Course Repositories <https://course-repos.cs.uchicago.edu>`__ website).
+Then, click on the "Code" button and copy the URL that appears under "Clone with SSH".
+It should look something like this: ``git@gitlab.cs.uchicago.edu:courses/aut-26/cmsc23320/cnetid1-cnetid2.git``
 
-::
+If you are working with the same partner as in Project 2, you will add the chirouter code
+to your existing team repository. Inside your local copy of that repository,
+run the following commands::
+
+    git pull
+    git remote add -f chirouter-upstream https://github.com/uchicago-cs/chirouter.git
+    git subtree add --prefix chirouter chirouter-upstream main --squash
+    git push
+
+If you are working with a new partner, you will first need to request a new team repo
+(see the :ref:`Getting Started <project_started>` page). Then, create an empty directory and,
+inside that directory, run the following commands::
 
     git init
-    git remote add origin $REPO_URL
-    git remote add upstream https://github.com/uchicago-cs/chirouter.git
-    git pull upstream main
+    git commit --allow-empty -m "Initial commit"
     git branch -M main
+    git remote add -f origin $REPO_URL
+    git remote add -f chirouter-upstream https://github.com/uchicago-cs/chirouter.git
+    git subtree add --prefix chirouter chirouter-upstream main --squash
     git push -u origin main
-
 
 **Cloning instructions**
 
 Once the repository has been set up, you can clone the repository in
-other locations as follows::
+other locations as follows (if you already have a local copy of your
+team repository, just run ``git pull`` instead of ``git clone``)::
 
     git clone $REPO_URL
-    git remote add upstream https://github.com/uchicago-cs/chirouter.git
+    git remote add chirouter-upstream https://github.com/uchicago-cs/chirouter.git
+
+**Pulling changes to the upstream code**
+
+If we make any changes to the upstream repository, and you want to merge them into your repository, you need to run the following command::
+
+    git subtree pull --prefix chirouter chirouter-upstream main --squash
 
 Submission
 ~~~~~~~~~~
 
 Before submitting, make sure you've added, committed, and pushed all
-your code to GitHub. You will submit your code through `Gradescope <https://gradescope.com/>`__,
-which you can access through our Canvas site.
-
-When submitting through Gradescope, you will be asked to select a repository to submit.
-Make sure that you select the correct repository and branch. Please note that you can
-submit as many times as you want before the deadline.
+your code to Git. You will submit your code through `Gradescope <https://gradescope.com/>`__,
+which you can access through our Canvas site. Please see our :ref:`Submitting from GitLab <project_gitlab>` page
+for details on how to submit your GitLab repository on Gradescope.
 
 Please note that you must make a **single submission per pair of students** (do not make two submissions, one per student). When making your submission, you will be allowed to add "team members" to your submission. Make sure you add your project partner in your submission.
 
-In this project, Gradescope will *only* fetch the following files from your repository:
+In this project, Gradescope will *only* fetch the following files from the ``chirouter/`` directory in your repository:
 
 - ``src/c/router.c``
 - ``src/c/arp.c``
 - ``src/c/utils.c``
 - ``src/c/utils.h``
-- The ``DOCUMENTATION.md`` file in the root of your repository
+- The ``DOCUMENTATION.md`` file
+- The ``RESUBMISSION.md`` file (when making a resubmission)
 
-Once you submit your files, an "autograder" will run. Unlike Projects 1 and 2, the autograder will not run any automated tests, because the chirouter tests require running a Docker container with elevated privileges, which is not possible on Gradescope's autograding infrastructure. Instead, the tests will be run manually by the graders (the autograder will just build your code to ensure it builds).
+Once you submit your files, an "autograder" will run. Unlike Projects 1 and 2, the autograder will not run any automated tests, because the chirouter tests require running a Docker container with elevated privileges, which is not possible on Gradescope's autograding infrastructure. Instead, the tests will be run manually by the graders (the autograder will just build your code to ensure it builds, and will check that you have included a ``DOCUMENTATION.md`` file).
 
 .. toctree::
    :maxdepth: 2

@@ -1,20 +1,17 @@
 Project 3 Rubric
-----------------
-
-.. warning::
-   This page has not yet been updated for Autumn 2026.
+================
 
 The grading of this project follows a specifications grading approach. If you have not already
 done so, make sure to read our `Grading <../syllabus.html#grading>`__ section of
 the syllabus for more details.
 
-You will receive two SNU scores for this project:
+This project has a single submission, for which you will receive two SNU scores:
 
 - **Completeness score**: This score will be determined solely by the result of running
   the automated tests, as these give a measure of how *complete* your implementation
   is (i.e., how much of the assignment you implemented).
 - **Code Quality score**: This score is determined by a review of your code done by
-  the course staff, and is based on three aspects of your code:
+  the course staff, and is based on four aspects of your code:
 
   - *Correctness*: This encompasses issues with your code
     that, while not explicitly captured by the tests, could lead to
@@ -30,41 +27,31 @@ You will receive two SNU scores for this project:
   - *Documentation*: You will be required to submit certain documentation on
     your code (the exact documentation is described below)
 
+Furthermore, you will complete a Pre-submission Code Review as part of this project
+(see `Code Reviews`_ below).
 
-Submission Timeline
--------------------
+Project Timeline
+----------------
 
-The exact timeline of submissions will be the following:
+The exact timeline for the project will be the following:
 
 .. include:: project3_timeline.txt
 
 Unlike Projects 1 and 2, the resubmission can only be used to improve your Completeness score
-(i.e., the score on the automated tests). Since Project 3 is due by the end of the quarter,
-there is not enough to do a full resubmission-regrading cycle.
-
-**NOTE**: To make a resubmission, you must make a "good-faith" submission by the project
-deadline. A good-faith submission is any submission where it is clear you have put in
-a substantial amount of effort to complete the project. Please note that scoring an N
-in Completeness is a sufficient (but not necessary) requirement for a submission to
-be considered a good-faith submission.
-
-This means that, if you want to make a resubmission, you cannot skip the initial
-submission, or submit an effectively empty submission. The reason for this is that
-such a submission could score an S in Code Quality purely because most of the rubric
-items are moot (because there is little/no code to grade). Your resubmission could
-then score an S in Completeness, but then have major Code Quality issues.
-
-In practical terms, this means the following:
-
-- If you are scoring an N on the tests in your initial submission, you have nothing to
-  worry about. You can make a resubmission to raise your test score to an S.
-- If you skip the initial submission, or score a U in the tests, we reserve the right
-  to regrade your code for Code Quality in the resubmission.
+(i.e., the score on the automated tests). Since Project 3 is due at the end of the quarter,
+there is not enough time to do a full resubmission-regrading cycle (see `Resubmission`_ below).
 
 Completeness
 ------------
 
 The Completeness component will be determined by running the chirouter `automated tests <http://chi.cs.uchicago.edu/chirouter/automated-tests.html>`__.
+Since the automated tests cannot be run on Gradescope (see the `Submission <project3.html#submission>`__ instructions),
+the graders will run them manually.
+
+Take into account that Gradescope will only fetch the files listed in the
+`Submission <project3.html#submission>`__ instructions. Any changes you make
+to other files will be ignored, and your code will be tested with the original
+version of those files.
 
 **NOTE**: In Project 3, you will be relying on manual testing to a greater extent
 than in Projects 1 and 2. The automated tests provide a convenient way to run all
@@ -102,16 +89,20 @@ In general, your SNU score will be determined as follows:
 - **Unsatisfactory**: Your submission does not constitute a good-faith effort to complete
   the work. This includes not submitting any work at all, as well as submitting
   only placeholder code (e.g., code that includes functions for all the required
-  IRC commands, but where the functions are empty or filled with "TODO"s, etc.)
+  router functionality, but where the functions are empty or filled with "TODO"s, etc.)
 
 That said, while the issues listed below are the main things we care about in this project,
 it is not possible for us to give you an exhaustive list of every single thing that could
 affect your code quality score. If you get a comment pointing out an issue in your
-code that we did not list below, take it as an opportunity to improve your work
-(and remember that you'll have a chance to revise your work!)
+code that we did not list below, take it as an opportunity to improve your work.
+
+**Note**: We use a Claude-based tool to help identify the rubric items that likely need
+attention in any given submission. While this helps ensure that no rubric items slip
+through the cracks when grading your work, the grading is ultimately done by human
+graders (who verify any suggestions made by this tool).
 
 Correctness
------------
+~~~~~~~~~~~
 
 In this project, an incorrect implementation will almost always lead to some of the tests
 failing, so there are fewer things that we will be looking at when checking the correctness
@@ -130,10 +121,10 @@ which would not be caught by the tests:
 - **Removing pending requests from the pending ARP request list in** ``chirouter_arp_process_pending_req`` **, instead of returning ARP_REQ_REMOVE**
 - **Removing pending requests from the pending ARP request list before the request has been sent 5 times**
 - **Not removing a pending ARP request when an ARP reply is received, or when it has been sent 5 times already**
-- **Unconditionally sending a Time Exceeded reply if a forwardeable IP datagram arrives with TTL=1**.  The correct approach is to first determine whether it is a Host Unreachable and, if it is not, then send a Time Exceeded (meaning that forwardeable datagrams with TTL=1 must linger in the withheld frames list so we can determine whether there is actually a host with that IP).
+- **Unconditionally sending a Time Exceeded reply if a forwardable IP datagram arrives with TTL=1**.  The correct approach is to first determine whether it is a Host Unreachable and, if it is not, then send a Time Exceeded (meaning that forwardable datagrams with TTL=1 must linger in the withheld frames list so we can determine whether there is actually a host with that IP).
 
 Design
-------
+~~~~~~
 
 When assessing the design of your code, we will be paying special attention
 to the following:
@@ -143,7 +134,7 @@ to the following:
 - **Repeating ICMP message creation logic in multiple places in your code, instead of writing a general-purpose "create an ICMP message" function**
 
 Style
------
+~~~~~
 
 We will be checking your general adherence to
 our `Style Guide <https://uchicago-cs.github.io/student-resource-guide/style-guide/c.html>`__
@@ -173,9 +164,9 @@ attention to:
 Documentation
 ~~~~~~~~~~~~~
 
-Your submission must include a ``DOCUMENTATION.md`` file in the root of your repository
+Your submission must include a ``DOCUMENTATION.md`` file in the ``chirouter/`` directory of your repository
 with some specific documentation about the code you have written. If you do not
-include this file, Gradescope will reject your submission entirely. If you do
+include this file, your submission will automatically receive a score of Needs Improvement. If you do
 include it, but the file does not provide the information we request below, this will
 be treated as a major issue in your submission.
 
@@ -184,7 +175,7 @@ The ``DOCUMENTATION.md`` file **must** follow the template below
 
 .. code-block:: markdown
 
-    Project 2
+    Project 3
     =========
 
     Team members:
@@ -232,20 +223,135 @@ information in a given section, please do not remove the section. Instead, just 
   did not address any rubric items, please list them here. If we can provide any feedback that
   would help you address these rubric items, please let us know here as well.
 
-- **Citations**: Citations for use of Generative AI or external resources should be included,
-  when possible, as code comments above any code where you relied on external sources. However,
-  if you consulted a source that had a more broad impact on your work (and not on specific
-  pieces of code), you can include the citation here.   Additionally, if you had any high-level
-  discussions about the project with other students in the class, please list their names here.
-
-  Note: If the Generative AI platform you're using does not allow you to easily generate a
-  shareable link, please include a copy of the conversation(s) at the bottom of the
-  ``DOCUMENTATION.md`` file.
+- **Citations**: If you used AI tools, describe at a high level how you used these tools.
+  Additionally, if you had any high-level discussions about the project with other students
+  in the class, please list their names here.
 
 
 Other Code Quality Issues
--------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 There are a couple of other issues that we care about across all projects:
 
 .. include:: additional_penalties.txt
+
+Code Reviews
+------------
+
+In this project, you will have to complete a Pre-submission Code Review. You must schedule
+and complete this code review no later than the due date specified in the
+“Project Timeline” above (see `Code Review Scheduling Instructions <code-review-scheduling.html>`__
+for instructions on how to schedule your code review). Unlike Projects 1 and 2, there is
+no Feedback Code Review in Project 3.
+
+Pre-submission Code Review
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The purpose of this code review is to go over your code before Project 3 is due,
+so we can identify issues and other opportunities for improvement. In general,
+this code review will be structured as follows:
+
+- We will ask you to walk us through the code you’ve written so far. We will use
+  this walkthrough to identify aspects of your code that may need improvement. You
+  should not approach this as a line-by-line explanation of your code; instead,
+  give us a high-level sense of what you implemented, while showing us the code
+  that implements each part of the project.
+- We will ask you if you have any questions about the work that remains to be done
+  in the project.
+- Finally, we will go over any issues we identified.
+
+**You do not need to wait until you have a near-complete version of Project 3 to
+request this code review.** Since you will not be able to make a resubmission to improve your
+Code Quality score in this project, this code review is your main opportunity to get feedback
+on your code before it is graded, so we recommend you schedule it as soon as you have a
+reasonably complete draft of the ICMP and ARP parts of the project.
+
+Scoring and Other Requirements
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Code reviews are graded on completion only; for the purposes of the grading Bundles
+listed in the syllabus, completing a code review earns a Satisfactory, and not
+completing a code review earns a Needs Improvement.
+
+Code reviews are conducted in-person, and both students in a team must attend and
+participate. Since we will ask you to walk us through your code, you may want to have
+a quick conversation beforehand to decide who will explain what portions of the code.
+
+Finally, we reserve the right to ask individual students or teams of students to
+undergo additional code reviews if there are any concerns with their understanding
+of their code.
+
+Resubmission
+------------
+
+After you submit Project 3, you can make a resubmission to improve your Completeness score
+(i.e., the score on the automated tests). Your Code Quality score will not change
+(unless your initial submission was not a good-faith submission, as described below).
+
+**NOTE**: To make a resubmission, you must make a "good-faith" submission by the project
+deadline. A good-faith submission is any submission where it is clear you have put in
+a substantial amount of effort to complete the project. Please note that scoring an N
+in Completeness is a sufficient (but not necessary) requirement for a submission to
+be considered a good-faith submission.
+
+This means that, if you want to make a resubmission, you cannot skip the initial
+submission, or submit an effectively empty submission. The reason for this is that
+such a submission could score an S in Code Quality purely because most of the rubric
+items are moot (because there is little/no code to grade). Your resubmission could
+then score an S in Completeness, but then have major Code Quality issues.
+
+In practical terms, this means the following:
+
+- If you are scoring an N on the tests in your initial submission, you have nothing to
+  worry about. You can make a resubmission to raise your test score to an S.
+- If you skip the initial submission, or score a U in the tests, we reserve the right
+  to regrade your code for Code Quality in the resubmission.
+
+Required Documentation
+~~~~~~~~~~~~~~~~~~~~~~
+
+If you decide to make a resubmission, you **MUST** add a ``RESUBMISSION.md`` file
+in the ``chirouter/`` directory of your repository using the following template: (the exact sections
+are explained below)
+
+.. code-block:: markdown
+
+    Project 3 Resubmission
+    ======================
+
+    Team members:
+    - TEAM MEMBER 1 (CNETID1)
+    - TEAM MEMBER 2 (CNETID2)
+
+    Original test score: XXX / YYY
+
+    New test score: XXX / YYY
+
+    Changes made to pass additional tests
+    -------------------------------------
+    <COMPLETE THIS SECTION>
+
+Below you can find more details on each of the sections:
+
+- **Team members**: Ordinarily, this would be the same two team members who made the original submission.
+  However, if you worked individually on the resubmission (because your teammate was happy with the
+  original submission, and didn't want to work further on it), please make sure to note this here.
+
+- **Original test score** and **New test score**: Please include the test score you got in your
+  original submission, and the test score you are seeing when running the tests on your computer
+  with your resubmitted code.
+
+- **Changes made to pass additional tests**: If your work only involved a few minor bug fixes,
+  please let us know you did this (but you do not need to specify the exact changes you made).
+  If you have written substantial new code (e.g., if your original submission did not implement
+  IP forwarding), please specify the affected files and functions, as well as the new
+  functionality that is added by the new code.
+
+If you do not include a ``RESUBMISSION.md`` file with the above information,
+your resubmission **will not be graded**.
+
+Submitting
+~~~~~~~~~~
+
+You will submit your code through the "Project 3 (Resubmission)" assignment on Gradescope.
+Other than that, you should follow the same submission instructions as in the original submission.

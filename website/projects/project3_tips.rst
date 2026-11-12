@@ -1,23 +1,22 @@
 Project 3 Tips
 ==============
 
-.. warning::
-   This page has not yet been updated for Autumn 2026.
-
 Before you get started, make sure you've read through the `Projects - Getting Started <../projects/started.html>`__ page.
 
-Resetting Mininet
------------------
+Leftover Docker containers
+--------------------------
 
-If you are running the automated tests, and start getting errors like these inside the Docker container::
+chirouter can only be connected to one instance of Mininet at a time. If you close a
+terminal without exiting Mininet (by pressing Control-D at the ``mininet>`` prompt),
+the Docker container may keep running in the background, and will remain connected
+to chirouter. If that happens, the next time you run ``run-docker``, Mininet will
+stop after about 10 seconds with an error message saying that chirouter accepted the
+connection, but did not respond.
 
-    Exception: Error creating interface pair (r1-eth1,s1001-eth1): RTNETLINK answers: File exists
-
-Try running this inside the Docker container::
-
-    mn -c
-
-This will reset Mininet to a clean configuration. Next, try re-running the chirouter and test commands as usual.
+To fix this, you can see the running containers with ``docker ps`` (or in the "Containers" section
+of Docker Desktop), and stop a container with ``docker rm -f CONTAINER``, where
+``CONTAINER`` is the container ID or name shown by ``docker ps``. Then, re-run chirouter
+and ``run-docker`` as usual.
 
 
 Always create protocol headers from scratch
@@ -26,7 +25,7 @@ Always create protocol headers from scratch
 Whenever you are creating a protocol header, it is good practice to create it from scratch, instead of trying to reuse
 an existing header. For example, suppose you receive an IP datagram that will cause an ICMP reply to be sent. You may
 be tempted to take the IP header, make any necessary modifications in-place, and create a new payload. This is very
-error-prone, specially if you do this at various points in your code. It is better to have a separate function
+error-prone, especially if you do this at various points in your code. It is better to have a separate function
 that will create a new protocol header, forcing you to think about the exact values you need to provide
 in every field of the header, than to try to reuse existing headers.
 
@@ -35,7 +34,7 @@ well-defined modifications.
 
 Finally, take into account that the chirouter `Implementation Guide <https://chi.cs.uchicago.edu/chirouter/implementing.html>`__
 includes a code sample
-(in the "The logging functions" section) that provides an example of how
+(in the "Accessing/Creating Protocol Headers" section) that provides an example of how
 an ICMP message would be created from scratch.
 
 
@@ -46,6 +45,10 @@ Every time you test your router, you should generate a capture file (using the `
 not by doing a live capture) and then open it with Wireshark. If there are any issues in the Ethernet/IP/ICMP/ARP messages you are
 generating, Wireshark will likely highlight them for you, which will make it easier to catch these
 kind of issues.
+
+Take into account that chirouter only finishes writing the capture file when it exits normally,
+so make sure you stop chirouter by pressing Control-C before opening the capture file
+in Wireshark.
 
 Take into account that, by far, the most common issue is incorrectly computing a checksum somewhere.
 This issue is particularly hard to catch because, if you include an incorrect checksum somewhere,
